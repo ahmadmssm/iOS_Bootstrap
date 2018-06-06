@@ -1,0 +1,22 @@
+{
+  "name": "iOS_Bootstrap",
+  "version": "0.1.0",
+  "summary": "A short description of iOS_Bootstrap.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/MEIEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECF+ZyQgazwL4BBg4PkZXGipXjNQqVMfNEeWMWphYgdRvZaY=/iOS_Bootstrap",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "MEIEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECF+ZyQgazwL4BBg4PkZXGipXjNQqVMfNEeWMWphYgdRvZaY=": "ams.eng@hotmail.com"
+  },
+  "source": {
+    "git": "https://github.com/MEIEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECF+ZyQgazwL4BBg4PkZXGipXjNQqVMfNEeWMWphYgdRvZaY=/iOS_Bootstrap.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "iOS_Bootstrap/Classes/**/*"
+}

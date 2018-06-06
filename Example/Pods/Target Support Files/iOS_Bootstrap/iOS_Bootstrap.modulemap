@@ -1,0 +1,6 @@
+framework module iOS_Bootstrap {
+  umbrella header "iOS_Bootstrap-umbrella.h"
+
+  export *
+  module * { export * }
+}

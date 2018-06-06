@@ -1,0 +1,16 @@
+PODS:
+  - iOS_Bootstrap (0.1.0)
+
+DEPENDENCIES:
+  - iOS_Bootstrap (from `../`)
+
+EXTERNAL SOURCES:
+  iOS_Bootstrap:
+    :path: ../
+
+SPEC CHECKSUMS:
+  iOS_Bootstrap: cd08e46e525d9b76d1dd579c47f119aeb81cb9a3
+
+PODFILE CHECKSUM: ebd3c05d2c0261ff0d2e4602ad5b27ee986d72b4
+
+COCOAPODS: 1.4.0
