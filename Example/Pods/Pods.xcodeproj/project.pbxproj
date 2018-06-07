@@ -127,11 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				C948C3EF20C94F91003A9ADC /* Storyboard manager */,
-				C948C3EB20C94F41003A9ADC /* Listing */,
 				C948C3E020C94E59003A9ADC /* ReusableClasses */,
+				C948C3EB20C94F41003A9ADC /* Listing */,
 				C948C3CF20C945CC003A9ADC /* NetworkManager */,
-				5A9BB0E6EEA09416D718CEA9CA279760 /* Pod */,
-				6CC714AB16460FDBDAB377673D8376E8 /* Support Files */,
 			);
 			name = iOS_Bootstrap;
 			path = ../..;
@@ -148,6 +146,8 @@
 		2B0389C49D5D2EE0D995C4E84E0AC115 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
+				5A9BB0E6EEA09416D718CEA9CA279760 /* Pod */,
+				6CC714AB16460FDBDAB377673D8376E8 /* Support Files */,
 				21D12AB534E2A88C49FC539D1CABA535 /* iOS_Bootstrap */,
 			);
 			name = "Development Pods";
@@ -170,6 +170,7 @@
 				8352538D30DD1A6833F613D2C76213F1 /* README.md */,
 			);
 			name = Pod;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		6CC714AB16460FDBDAB377673D8376E8 /* Support Files */ = {
@@ -183,7 +184,7 @@
 				596F2108375C6BDAFBD8F25C7918FD62 /* iOS_Bootstrap-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "Example/Pods/Target Support Files/iOS_Bootstrap";
+			path = iOS_Bootstrap;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {

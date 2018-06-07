@@ -31,7 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.1'
   s.swift_version = '4.0'
 
-  s.source_files = 'iOS_Bootstrap/Classes/**/*'
+  s.source_files = 'Classes/**/*'
   
   # s.resource_bundles = {
   #   'iOS_Bootstrap' => ['iOS_Bootstrap/Assets/*.png']

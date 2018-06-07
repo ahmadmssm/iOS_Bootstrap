@@ -1,11 +1,4 @@
 framework module iOS_Bootstrap {
-  umbrella header "iOS_Bootstrap-umbrella.h"
-
-  export *
-  module * { export * }
-}
-
-module iOS_Bootstrap.Swift {
     header "iOS_Bootstrap-Swift.h"
     requires objc
 }
