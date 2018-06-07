@@ -1,0 +1,22 @@
+/* 
+  How to use.strings
+  ReusableTableView
+
+  Created by Ahmad Mahmoud on 5/20/18.
+  Copyright © 2018 Ahmad Mahmoud. All rights reserved.
+*/
+
+/*
+
+ super.viewDidLoad() {
+    self.collectionView.register(BookCell.self)
+ }
+ 
+ func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    //
+    let cell: BookCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
+    // TODO: configure cell
+    return cell
+ }
+ 
+*/
