@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'iOS_Bootstrap'
   s.version          = '0.1.0'
-  s.summary          = 'iOS Bootstrap.'
+  s.summary          = 'iOS Bootstrap library'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,14 +21,15 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://gitlab.com/amssm/iOS_Bootstrap'
+  s.homepage         = 'https://github.com/ahmadmssm'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'MEIEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECF+ZyQgazwL4BBg4PkZXGipXjNQqVMfNEeWMWphYgdRvZaY=' => 'ams.eng@hotmail.com' }
-  s.source           = { :git => 'https://github.com/MEIEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECF+ZyQgazwL4BBg4PkZXGipXjNQqVMfNEeWMWphYgdRvZaY=/iOS_Bootstrap.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/ahmadmssm/iOS_Bootstrap.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.1'
+  s.swift_version = '4.0'
 
   s.source_files = 'iOS_Bootstrap/Classes/**/*'
   
@@ -37,6 +38,8 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Moya/RxSwift', '~> 11.0'
+  s.dependency 'RxSwift'
+  s.dependency 'HandyJSON', '~> 4.1.1'
+
 end

@@ -2,7 +2,7 @@
 //  MoyaResponseErrorHandlerProtocol.swift
 //  Pods
 //
-//  Created by Levi Bostian on 8/26/17.
+//  Created by Levi Bostian on 26/8/2017. and update by AMS on 7/6/2018
 //
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 /// Protocol used to return a human readable error message you can use to show to user in your app.
-public protocol LucidErrorMessageProvider {
+public protocol GenericErrorMessageProvider {
     
     /**
      Moya network request was successful, but it returned a status code you may not have wanted to receive (such as a 422, 403, 401, 500, whatever it is).

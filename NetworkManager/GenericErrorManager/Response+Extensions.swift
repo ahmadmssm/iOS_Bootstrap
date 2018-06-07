@@ -74,7 +74,7 @@ public extension Response {
     
     /// Filters out responses that don't fall within the given range, generating a MoyaError status code error when others are encountered.
     /// This function will also run any errors thrown through `.getLucidError()` for you to process error using Lucid.
-    public func filterAndProcessErrors(statusCodes: [ClosedRange<Int>], errorHandler: LucidErrorMessageProvider? = Singleton.sharedInstance.errorHandler) throws -> Response {
+    public func filterAndProcessErrors(statusCodes: [ClosedRange<Int>], errorHandler: GenericErrorMessageProvider? = Singleton.sharedInstance.errorHandler) throws -> Response {
         var successfulStatusCode = false
         statusCodes.forEach { (statsCodesSet: ClosedRange<Int>) in
             if statsCodesSet.contains(statusCode) {
@@ -90,7 +90,7 @@ public extension Response {
     
     /// Filters out responses that do not have a status code >=200, <300 and don't fall within the given range, generating a MoyaError status code error when others are encountered.
     /// This function will also run any errors thrown through `.getLucidError()` for you to process error using Lucid.
-    public func filterSuccessfulStatusCodesAndProcessErrors(code: Int? = nil, statusCodes: [ClosedRange<Int>] = [], errorHandler: LucidErrorMessageProvider? = Singleton.sharedInstance.errorHandler) throws -> Response {
+    public func filterSuccessfulStatusCodesAndProcessErrors(code: Int? = nil, statusCodes: [ClosedRange<Int>] = [], errorHandler: GenericErrorMessageProvider? = Singleton.sharedInstance.errorHandler) throws -> Response {
         var allStatusCodes = statusCodes
         
         if let code = code { allStatusCodes.append(code...code) }
@@ -111,7 +111,7 @@ public extension Response {
     
     /// Filters out responses that do not have a status code >=200, <400 and don't fall within the given range, generating a MoyaError status code error when others are encountered.
     /// This function will also run any errors thrown through `.getLucidError()` for you to process error using Lucid.
-    public func filterSuccessfulStatusAndRedirectCodesAndProcessErrors(code: Int? = nil, statusCodes: [ClosedRange<Int>] = [], errorHandler: LucidErrorMessageProvider? = Singleton.sharedInstance.errorHandler) throws -> Response {
+    public func filterSuccessfulStatusAndRedirectCodesAndProcessErrors(code: Int? = nil, statusCodes: [ClosedRange<Int>] = [], errorHandler: GenericErrorMessageProvider? = Singleton.sharedInstance.errorHandler) throws -> Response {
         var allStatusCodes = statusCodes
         
         if let code = code { allStatusCodes.append(code...code) }

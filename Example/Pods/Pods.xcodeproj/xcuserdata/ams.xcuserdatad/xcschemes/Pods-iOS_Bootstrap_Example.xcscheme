@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F3B53726CAE44C1026F4CBCCD1FEE462"
-               BuildableName = "Pods_iOS_Bootstrap_Example.framework"
+               BuildableName = "Pods-iOS_Bootstrap_Example"
                BlueprintName = "Pods-iOS_Bootstrap_Example"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -48,7 +48,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F3B53726CAE44C1026F4CBCCD1FEE462"
-            BuildableName = "Pods_iOS_Bootstrap_Example.framework"
+            BuildableName = "Pods-iOS_Bootstrap_Example"
             BlueprintName = "Pods-iOS_Bootstrap_Example"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

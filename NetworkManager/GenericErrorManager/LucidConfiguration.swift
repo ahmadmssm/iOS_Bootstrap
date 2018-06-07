@@ -12,7 +12,7 @@ import Result
 
 public class Singleton {
     
-    public var errorHandler: LucidErrorMessageProvider?
+    public var errorHandler: GenericErrorMessageProvider?
     
     public static let sharedInstance = Singleton()
     
@@ -25,7 +25,7 @@ public class Singleton {
  */
 public class LucidConfiguration {
     
-    public class func setDefaultErrorHandler(_ errorHandler: LucidErrorMessageProvider?) {
+    public class func setDefaultErrorHandler(_ errorHandler: GenericErrorMessageProvider?) {
         Singleton.sharedInstance.errorHandler = errorHandler
     }
     

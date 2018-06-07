@@ -16,7 +16,7 @@ import Foundation
 import UIKit
 
 /// MARK: - This protocol is used to allows cell to be dequeued with strong type
-public protocol ReusableCell: class {
+protocol ReusableCell: class {
     
     /// Return the nib name in which the dequeuable resource is located
     /// You must implement it if your cell is located in a separate xib file

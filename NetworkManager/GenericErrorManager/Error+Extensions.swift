@@ -16,7 +16,7 @@ public extension Swift.Error {
     }
     
     /// Take the error that Moya returned to you after performing the networking request to get a better, human readable error message `LucidMoyaResponseError`.
-    public func getLucidError(errorHandler: LucidErrorMessageProvider? = Singleton.sharedInstance.errorHandler) -> Swift.Error {
+    public func getLucidError(errorHandler: GenericErrorMessageProvider? = Singleton.sharedInstance.errorHandler) -> Swift.Error {
         guard let errorHandler = errorHandler else {
             errorHandlerNotSet()
             // this code below exists only to make the compiler happy. Really, it should never run as a fatal error is thrown above but the swift compiler doesn't consider that a break.

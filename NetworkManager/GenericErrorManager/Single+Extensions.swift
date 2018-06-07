@@ -22,14 +22,14 @@ enum MoyaResponseHandlerFatalError: Swift.Error, LocalizedError {
 }
 
 public extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
-    private func getOnError(errorHandler: LucidErrorMessageProvider?) -> (Swift.Error) throws -> Single<ElementType> {
+    private func getOnError(errorHandler: GenericErrorMessageProvider?) -> (Swift.Error) throws -> Single<ElementType> {
         return { (error: Swift.Error) -> Single<ElementType> in
             throw error.getLucidError()
         }
     }
     
     /// Any error that goes through the Observable stream will be caught and processed by Lucid.
-    public func processErrors(errorHandler: LucidErrorMessageProvider? = Singleton.sharedInstance.errorHandler) -> Single<ElementType> {
+    public func processErrors(errorHandler: GenericErrorMessageProvider? = Singleton.sharedInstance.errorHandler) -> Single<ElementType> {
         return catchError(self.getOnError(errorHandler: errorHandler))
     }
 }
@@ -65,7 +65,7 @@ public extension PrimitiveSequence where TraitType == SingleTrait, ElementType =
     
     /// Filters out responses that don't fall within the given range, generating a MoyaError status code error when others are encountered.
     /// This function will also run any errors thrown through `.getLucidError()` for you to process error using Lucid.
-    public func filterAndProcessErrors(statusCodes: [ClosedRange<Int>], errorHandler: LucidErrorMessageProvider? = Singleton.sharedInstance.errorHandler) -> Single<ElementType> {
+    public func filterAndProcessErrors(statusCodes: [ClosedRange<Int>], errorHandler: GenericErrorMessageProvider? = Singleton.sharedInstance.errorHandler) -> Single<ElementType> {
         return flatMap { response -> Single<ElementType> in
             return Single.just(try response.filterAndProcessErrors(statusCodes: statusCodes, errorHandler: errorHandler))
         }
@@ -73,7 +73,7 @@ public extension PrimitiveSequence where TraitType == SingleTrait, ElementType =
     
     /// Filters out responses that do not have a status code >=200, <300 and don't fall within the given range, a MoyaError status code error errors when others are encountered.
     /// This function will also run any errors thrown through `.getLucidError()` for you to process error using Lucid.
-    public func filterSuccessfulStatusCodesAndProcessErrors(code: Int? = nil, statusCodes: [ClosedRange<Int>] = [], errorHandler: LucidErrorMessageProvider? = Singleton.sharedInstance.errorHandler) -> Single<ElementType> {
+    public func filterSuccessfulStatusCodesAndProcessErrors(code: Int? = nil, statusCodes: [ClosedRange<Int>] = [], errorHandler: GenericErrorMessageProvider? = Singleton.sharedInstance.errorHandler) -> Single<ElementType> {
         return flatMap { response -> Single<ElementType> in
             return Single.just(try response.filterSuccessfulStatusCodesAndProcessErrors(code: code, statusCodes: statusCodes, errorHandler: errorHandler))
         }
@@ -81,7 +81,7 @@ public extension PrimitiveSequence where TraitType == SingleTrait, ElementType =
     
     /// Filters out responses that do not have a status code >=200, <400 and don't fall within the given range, a MoyaError status code error errors when others are encountered.
     /// This function will also run any errors thrown through `.getLucidError()` for you to process error using Lucid.
-    public func filterSuccessfulStatusAndRedirectCodesAndProcessErrors(code: Int? = nil, statusCodes: [ClosedRange<Int>] = [], errorHandler: LucidErrorMessageProvider? = Singleton.sharedInstance.errorHandler) -> Single<ElementType> {
+    public func filterSuccessfulStatusAndRedirectCodesAndProcessErrors(code: Int? = nil, statusCodes: [ClosedRange<Int>] = [], errorHandler: GenericErrorMessageProvider? = Singleton.sharedInstance.errorHandler) -> Single<ElementType> {
         return flatMap { response -> Single<ElementType> in
             return Single.just(try response.filterSuccessfulStatusAndRedirectCodesAndProcessErrors(code: code, statusCodes: statusCodes, errorHandler: errorHandler))
         }
