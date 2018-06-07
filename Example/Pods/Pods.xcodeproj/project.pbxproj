@@ -143,14 +143,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2B0389C49D5D2EE0D995C4E84E0AC115 /* Development Pods */ = {
+		2B0389C49D5D2EE0D995C4E84E0AC115 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				5A9BB0E6EEA09416D718CEA9CA279760 /* Pod */,
 				6CC714AB16460FDBDAB377673D8376E8 /* Support Files */,
 				21D12AB534E2A88C49FC539D1CABA535 /* iOS_Bootstrap */,
 			);
-			name = "Development Pods";
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		4BB3506D18C8FFD6DDA175FDD6E940B1 /* Targets Support Files */ = {
@@ -191,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				2B0389C49D5D2EE0D995C4E84E0AC115 /* Development Pods */,
+				2B0389C49D5D2EE0D995C4E84E0AC115 /* Classes */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				22F9DE9230F6967583A614CE1BF7A220 /* Products */,
 				4BB3506D18C8FFD6DDA175FDD6E940B1 /* Targets Support Files */,
