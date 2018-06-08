@@ -13,10 +13,11 @@ extension UITableView {
     /// Register a cell from external xib into a table instance.
     ///
     /// - Parameter _: cell class
-    public func register<T: UITableViewCell>(_: T.Type) where T: ReusableCell {
-        let bundle = Bundle(for: T.self)
-        let nib = UINib(nibName: T.dequeueNibName, bundle: bundle)
-        self.register(nib, forCellReuseIdentifier: T.dequeueIdentifier)
+    public func register<T: UITableViewCell>(cellClass: T.Type) where T: ReusableCell {
+        let bundle = Bundle(for: cellClass.self)
+        let cellClassName : String = String(describing: cellClass.self)
+        let nib = UINib(nibName: cellClassName, bundle: bundle)
+        self.register(nib, forCellReuseIdentifier: cellClassName)
     }
     
     /// Dequeue a cell instance strongly typed.

@@ -16,7 +16,8 @@
 		6CAA006B599699BFE88C6644 /* Pods_iOS_Bootstrap_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B039792C69D59A524D4825F /* Pods_iOS_Bootstrap_Example.framework */; };
 		796A996F9EBA5182169CEA2C /* Pods_iOS_Bootstrap_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E383126EFB494BDC5270F3F6 /* Pods_iOS_Bootstrap_Tests.framework */; };
 		C915C58D20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */; };
-		C915C59520CAAFE50029F5D9 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C59320CAAFE50029F5D9 /* CustomCell.swift */; };
+		C915C59C20CAC1F10029F5D9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */; };
+		C915C59D20CAC1F10029F5D9 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +47,8 @@
 		9E0EDC66FA3FB48BCD76CFE4 /* Pods-iOS_Bootstrap_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Tests/Pods-iOS_Bootstrap_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A020FFAEB06850A9A92AEB7C /* Pods-iOS_Bootstrap_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Example/Pods-iOS_Bootstrap_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_ReusableTableVC.swift; sourceTree = "<group>"; };
-		C915C59320CAAFE50029F5D9 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		C915C59420CAAFE50029F5D9 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		E383126EFB494BDC5270F3F6 /* Pods_iOS_Bootstrap_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Bootstrap_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BFEB017ECAAB4B900CC096 /* iOS_Bootstrap.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = iOS_Bootstrap.podspec; path = ../iOS_Bootstrap.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EA97E69C3092BBDE3AC0DD10 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -110,9 +111,9 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */,
-				C915C59320CAAFE50029F5D9 /* CustomCell.swift */,
-				C915C59420CAAFE50029F5D9 /* CustomCell.xib */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */,
+				C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -254,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				C915C59D20CAC1F10029F5D9 /* TableViewCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -340,9 +342,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C915C59C20CAC1F10029F5D9 /* TableViewCell.swift in Sources */,
 				C915C58D20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				C915C59520CAAFE50029F5D9 /* CustomCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

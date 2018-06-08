@@ -21,12 +21,28 @@ open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelega
                                     dataSource: [Any],
                                     nibClass : BaseTableViewCell.Type!,
                                     delegate : TableViewDelegates) {
+        //
+        self.mNibClass = nibClass
+        mTableview?.register(cellClass: mNibClass.self)
+        configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
+    }
+    
+    public func configureTableWithStoryboardCell (tableView: UITableView,
+                                           dataSource: [Any],
+                                           nibClass : BaseTableViewCell.Type!,
+                                           delegate : TableViewDelegates) {
+        //
+        configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
+    }
+    
+    private func configureTable (tableView: UITableView,
+                                           dataSource: [Any],
+                                           delegate : TableViewDelegates) {
         self.tableViewDataSource = dataSource
         self.mTableview = tableView
         self.mDelegate = delegate
-        self.mNibClass = nibClass
         //
-        self.mTableview?.register(mNibClass.self)
+        mTableview?.register(cellClass: mNibClass.self)
         mTableview?.dataSource = self
         mTableview?.delegate = self
         //

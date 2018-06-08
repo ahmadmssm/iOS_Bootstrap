@@ -11,23 +11,9 @@ import iOS_Bootstrap
 
 class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
     
-    
-    func configureCell(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : CustomCell = tableview.dequeueReusableCell(forIndexPath: indexPath) as CustomCell
-        
-        cell.labelCountryName.text = "Egypt"
-       // cell.labelCountryCapital.text = dataSource [indexPath.row]
-        return cell
-    }
-    
-    func configureNumberOfRowsPerSection(section: Int) -> Int {
-        return dataSource.count
-    }
-    
-    
     @IBOutlet weak var tableview: UITableView!
     
-    private var tableAdapter : TableviewAdapter?
+    private let tableAdapter : TableviewAdapter = TableviewAdapter()
     private var dataSource : [String] = [String]()
     
     override func viewDidLoad() {
@@ -35,12 +21,24 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
         //
         dataSource = ["1", "2", "3", "4", "5"]
         //
-        tableAdapter = TableviewAdapter()
-        tableAdapter?.configureTableWithXibCell(tableView: tableview, dataSource: dataSource, nibClass: CustomCell.self, delegate: self)
-        tableAdapter?.reloadTable(dataSourcee: dataSource)
+        tableAdapter.configureTableWithXibCell(tableView: tableview, dataSource: dataSource, nibClass: TableViewCell.self, delegate: self)
+        tableAdapter.reloadTable(dataSourcee: dataSource)
     }
     
+    func configureCell(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       let cell : TableViewCell = tableview.dequeueReusableCell(forIndexPath: indexPath)
+        cell.labelCountryName.text = "Egypt"
+        cell.labelCountryCode.text = dataSource [indexPath.row]
+        return cell
+    }
+    
+    func configureNumberOfRowsPerSection(section: Int) -> Int {
+        return dataSource.count
+    }
    
+    func configureNumberOfRows() -> Int {
+        return dataSource.count
+    }
 
 
 }
