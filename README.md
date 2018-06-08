@@ -22,7 +22,7 @@ pod 'iOS_Bootstrap'
 
 ## Author
 
-ams.eng@hotmail.com, ams.eng@hotmail.com
+Ahmad Mahmoud Saleh
 
 ## License
 
