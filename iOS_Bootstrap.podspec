@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
     s.homepage         = 'https://github.com/ahmadmssm/iOS_Bootstrap'
     # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
-    s.author           = { 'ams.eng@hotmail.com' => 'ams.eng@hotmail.com' }
+    s.author           = { 'Ahmad Mahmoud Saleh' => 'ams.eng@hotmail.com' }
     s.source           = { :git => 'https://github.com/ams.eng@hotmail.com/iOS_Bootstrap.git', :tag => s.version.to_s }
     
     s.ios.deployment_target = '9.1'
