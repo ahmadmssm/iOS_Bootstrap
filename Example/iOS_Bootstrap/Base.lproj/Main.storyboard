@@ -21,26 +21,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztp-xA-xyF">
-                                <rect key="frame" x="39" y="144" width="298" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzA-qF-acX">
+                                <rect key="frame" x="31" y="91" width="314" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Network layer + Reusable talbe adapter"/>
+                                <state key="normal" title="Network layer + reusable table view adapter"/>
                                 <connections>
-                                    <segue destination="uVG-uk-gqq" kind="show" id="I4m-aw-6Wc"/>
+                                    <segue destination="JoE-Pg-2nN" kind="show" id="D2A-Ko-frm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="063-ob-xqM">
-                                <rect key="frame" x="164" y="253" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgX-Dh-cOf">
+                                <rect key="frame" x="164" y="208" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPu-GX-UJd">
-                                <rect key="frame" x="164" y="390" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74S-GB-FaI">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4t-ky-CLY">
-                                <rect key="frame" x="164" y="494" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vl-tK-3cJ">
+                                <rect key="frame" x="164" y="462" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRy-pZ-k5s">
+                                <rect key="frame" x="164" y="551" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
@@ -50,67 +55,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="100.29985007496252"/>
+            <point key="canvasLocation" x="669.60000000000002" y="63.418290854572717"/>
         </scene>
-        <!--Ex Reusable TableVC View Controller-->
-        <scene sceneID="i9n-fU-t20">
+        <!--Ex Reusable TableVC-->
+        <scene sceneID="78K-9q-05L">
             <objects>
-                <viewController id="uVG-uk-gqq" customClass="Ex_ReusableTableVCViewController" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JoE-Pg-2nN" customClass="Ex_ReusableTableVC" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1XA-Gd-PTF"/>
-                        <viewControllerLayoutGuide type="bottom" id="2BW-H6-ZfW"/>
+                        <viewControllerLayoutGuide type="top" id="xG9-Er-eGb"/>
+                        <viewControllerLayoutGuide type="bottom" id="rOL-0Z-cju"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CZz-vX-qVF">
+                    <view key="view" contentMode="scaleToFill" id="1Hg-b1-GIU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6t0-Cs-6tb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h8y-n1-RK8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="38" id="pRd-iu-zWZ">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="38"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="iOS_Bootstrap_Example.CustomCell" rowHeight="59" id="pA3-bf-R18" customClass="CustomCell" customModule="iOS_Bootstrap_Example" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pRd-iu-zWZ" id="Ey8-VG-DHk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="37.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tcv-Rc-RVU">
-                                        <rect key="frame" x="0.0" y="66" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tcv-Rc-RVU" id="8Ea-ro-W3B">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xLa-Ll-c9D">
-                                        <rect key="frame" x="0.0" y="110" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xLa-Ll-c9D" id="cer-gz-sZm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pA3-bf-R18" id="p1f-bo-5vi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <sections/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2BW-H6-ZfW" firstAttribute="top" secondItem="6t0-Cs-6tb" secondAttribute="bottom" id="CSh-EK-3gR"/>
-                            <constraint firstItem="6t0-Cs-6tb" firstAttribute="leading" secondItem="CZz-vX-qVF" secondAttribute="leading" id="U29-dt-uXL"/>
-                            <constraint firstAttribute="trailing" secondItem="6t0-Cs-6tb" secondAttribute="trailing" id="llF-o5-v4L"/>
-                            <constraint firstItem="6t0-Cs-6tb" firstAttribute="top" secondItem="CZz-vX-qVF" secondAttribute="top" id="u9E-gE-IDf"/>
+                            <constraint firstItem="rOL-0Z-cju" firstAttribute="top" secondItem="h8y-n1-RK8" secondAttribute="bottom" id="2ZT-JX-ynq"/>
+                            <constraint firstItem="h8y-n1-RK8" firstAttribute="top" secondItem="1Hg-b1-GIU" secondAttribute="top" id="GnN-jp-UUw"/>
+                            <constraint firstItem="h8y-n1-RK8" firstAttribute="leading" secondItem="1Hg-b1-GIU" secondAttribute="leading" id="YQC-OU-2ao"/>
+                            <constraint firstAttribute="trailing" secondItem="h8y-n1-RK8" secondAttribute="trailing" id="hPK-2x-87I"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableview" destination="6t0-Cs-6tb" id="aem-aP-DKs"/>
+                        <outlet property="tableview" destination="h8y-n1-RK8" id="cdl-Vd-XBV"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KcA-lp-c1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfw-Fg-La5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="989.60000000000002" y="99.400299850074973"/>
+            <point key="canvasLocation" x="1416.8" y="62.518740629685162"/>
         </scene>
     </scenes>
 </document>

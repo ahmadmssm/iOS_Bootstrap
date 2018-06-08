@@ -3,11 +3,11 @@
   'case-sensitive': 'false',
   'roots': [{
     'type': 'directory',
-    'name': '/Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/Example/build/Debug-iphoneos/iOS_Bootstrap/iOS_Bootstrap.framework/Modules'
+    'name': '/Users/ams/Desktop/iOS_Bootstrap/Example/build/Debug-iphoneos/iOS_Bootstrap/iOS_Bootstrap.framework/Modules'
     'contents': [{
       'type': 'file',
       'name': 'module.modulemap',
-      'external-contents': '/Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/Example/build/Pods.build/Debug-iphoneos/iOS_Bootstrap.build/unextended-module.modulemap',
+      'external-contents': '/Users/ams/Desktop/iOS_Bootstrap/Example/build/Pods.build/Debug-iphoneos/iOS_Bootstrap.build/unextended-module.modulemap',
     }]
   }]
 }

@@ -1,16 +1,42 @@
 PODS:
-  - iOS_Bootstrap (0.1.0)
+  - Alamofire (4.7.2)
+  - HandyJSON (4.1.1)
+  - iOS_Bootstrap (0.2.0):
+    - HandyJSON (~> 4.1.1)
+    - Moya/RxSwift (~> 11.0)
+    - RxSwift
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.2):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - Result (3.2.4)
+  - RxSwift (4.1.2)
 
 DEPENDENCIES:
   - iOS_Bootstrap (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - HandyJSON
+    - Moya
+    - Result
+    - RxSwift
+
 EXTERNAL SOURCES:
   iOS_Bootstrap:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  iOS_Bootstrap: cd08e46e525d9b76d1dd579c47f119aeb81cb9a3
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
+  iOS_Bootstrap: 8108c9770ef10707ee56387606c4e922e70b1782
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
 
 PODFILE CHECKSUM: ebd3c05d2c0261ff0d2e4602ad5b27ee986d72b4
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

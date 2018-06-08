@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  iOS_Bootstrap
 //
-//  Created by MEIEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECF+ZyQgazwL4BBg4PkZXGipXjNQqVMfNEeWMWphYgdRvZaY= on 06/05/2018.
-//  Copyright (c) 2018 MEIEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECF+ZyQgazwL4BBg4PkZXGipXjNQqVMfNEeWMWphYgdRvZaY=. All rights reserved.
+//  Created by ams.eng@hotmail.com on 06/08/2018.
+//  Copyright (c) 2018 ams.eng@hotmail.com. All rights reserved.
 //
 
 import UIKit
