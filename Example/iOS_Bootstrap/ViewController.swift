@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonGoToHomeStoryboard(_ sender: UIButton) {
         
-        let storyboard = UIStoryboard.getStoryboardNamed(Storyboard.home.rawValue)
+        let storyboard = UIStoryboard.getStoryboardWithName(Storyboard.home.rawValue)
         let homeVC = storyboard.instantiateInitialViewController() as! HomeVC
         homeVC.x = 2
         present(homeVC, animated: true, completion: nil)

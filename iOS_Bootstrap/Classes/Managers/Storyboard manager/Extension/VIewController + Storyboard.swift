@@ -37,14 +37,15 @@ extension UIStoryboard {
     }
     
     // MARK: - Class Functions
-    open class func getStoryboardNamed(_ storyboard: String, bundle: Bundle? = nil) -> UIStoryboard {
+    open class func getStoryboardWithName(_ storyboard: String, bundle: Bundle? = nil) -> UIStoryboard {
         return UIStoryboard(name: storyboard.capitalized, bundle: bundle)
     }
     
     // MARK: - View Controller Instantiation from Generics
-    public func instantiateViewController<T: UIViewController>() -> T where T: StoryboardIdentifiable {
-    guard let viewController = self.instantiateViewController(withIdentifier: T.storyboardIdentifier) as? T else {
-            fatalError("Couldn't instantiate view controller with identifier \(T.storyboardIdentifier) ")
+    public func instantiateViewController<T>() -> T where T: StoryboardIdentifiable {
+        guard let viewController = self.instantiateViewController(withIdentifier: T.storyboardIdentifier) as? T
+        else {
+                fatalError("Couldn't instantiate view controller with identifier \(T.storyboardIdentifier)")
         }
         return viewController
     }

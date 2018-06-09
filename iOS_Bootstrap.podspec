@@ -31,6 +31,9 @@ Pod::Spec.new do |s|
     s.swift_version = '4.0'
     
     s.source_files = 'iOS_Bootstrap/Classes/**/*'
+    s.xcconfig = {
+        'VALID_ARCHS' =>  'arm64 x86_64',
+    }
     
     # s.resource_bundles = {
     #   'iOS_Bootstrap' => ['iOS_Bootstrap/Assets/*.png']
@@ -40,5 +43,6 @@ Pod::Spec.new do |s|
     s.dependency 'Moya/RxSwift', '~> 11.0'
     s.dependency 'RxSwift'
     s.dependency 'HandyJSON', '~> 4.1.1'
+    s.frameworks = 'Foundation'
     
 end
