@@ -29,6 +29,7 @@ Pod::Spec.new do |s|
     
     s.ios.deployment_target = '9.1'
     s.swift_version = '4.0'
+    s.platform = : iOS, '9.1'
     
     s.source_files = 'iOS_Bootstrap/Classes/**/*'
     s.xcconfig = {
@@ -43,6 +44,6 @@ Pod::Spec.new do |s|
     s.dependency 'Moya/RxSwift', '~> 11.0'
     s.dependency 'RxSwift'
     s.dependency 'HandyJSON', '~> 4.1.1'
-    s.frameworks = 'Foundation'
+    # s.frameworks = 'Foundation'
     
 end

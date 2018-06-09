@@ -221,38 +221,38 @@
 		C75FA70B9545445F6554FB18E19248D7 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B57BCD49BDE4AFA80A11AB68B22F30 /* Range.swift */; };
 		C8A6DE6D9B3C65D42A14D207F42C42AE /* Repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6754526312052516C99D9BEB726471 /* Repeat.swift */; };
 		C99EA65120CC168F00D7C158 /* GlobalModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA65020CC168F00D7C158 /* GlobalModules.swift */; };
-		C99EA65420CC16AD00D7C158 /* EZLoadingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA65220CC16AD00D7C158 /* EZLoadingActivity.swift */; };
-		C99EA65520CC16AD00D7C158 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA65320CC16AD00D7C158 /* CardView.swift */; };
-		C99EA65720CC170C00D7C158 /* UserDefaultsManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA65620CC170C00D7C158 /* UserDefaultsManger.swift */; };
-		C99EA66220CC172500D7C158 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA65920CC172400D7C158 /* BaseTableViewCell.swift */; };
-		C99EA66320CC172500D7C158 /* Tableview+Reusablel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA65A20CC172400D7C158 /* Tableview+Reusablel.swift */; };
-		C99EA66420CC172500D7C158 /* TableviewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA65B20CC172400D7C158 /* TableviewAdapter.swift */; };
-		C99EA66520CC172500D7C158 /* TableViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA65C20CC172400D7C158 /* TableViewDelegates.swift */; };
-		C99EA66620CC172500D7C158 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA65D20CC172400D7C158 /* NibLoadableView.swift */; };
-		C99EA66720CC172500D7C158 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA65E20CC172400D7C158 /* ReusableCell.swift */; };
-		C99EA66820CC172500D7C158 /* Collectionview+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA66120CC172400D7C158 /* Collectionview+Reusable.swift */; };
-		C99EA68220CC175B00D7C158 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA66A20CC175B00D7C158 /* BaseModel.swift */; };
-		C99EA68320CC175B00D7C158 /* ConnectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA66B20CC175B00D7C158 /* ConnectionResult.swift */; };
-		C99EA68420CC175B00D7C158 /* GenericConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA66C20CC175B00D7C158 /* GenericConnector.swift */; };
-		C99EA68520CC175B00D7C158 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA66E20CC175B00D7C158 /* Error+Extensions.swift */; };
-		C99EA68620CC175B00D7C158 /* GenericErrorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA66F20CC175B00D7C158 /* GenericErrorConfigurator.swift */; };
-		C99EA68720CC175B00D7C158 /* GenericErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA67020CC175B00D7C158 /* GenericErrorHandler.swift */; };
-		C99EA68820CC175B00D7C158 /* LucidErrorMessageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA67120CC175B00D7C158 /* LucidErrorMessageProvider.swift */; };
-		C99EA68920CC175C00D7C158 /* LucidMoyaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA67220CC175B00D7C158 /* LucidMoyaError.swift */; };
-		C99EA68A20CC175C00D7C158 /* LucidMoyaNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA67320CC175B00D7C158 /* LucidMoyaNetworkingError.swift */; };
-		C99EA68B20CC175C00D7C158 /* Response+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA67420CC175B00D7C158 /* Response+Extensions.swift */; };
-		C99EA68C20CC175C00D7C158 /* Single+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA67520CC175B00D7C158 /* Single+Extensions.swift */; };
-		C99EA68D20CC175C00D7C158 /* APIsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA67720CC175B00D7C158 /* APIsProvider.swift */; };
-		C99EA68E20CC175C00D7C158 /* GenericAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA67820CC175B00D7C158 /* GenericAPIs.swift */; };
-		C99EA68F20CC175C00D7C158 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA67920CC175B00D7C158 /* Parameters.swift */; };
-		C99EA69020CC175C00D7C158 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA67A20CC175B00D7C158 /* Route.swift */; };
-		C99EA69120CC175C00D7C158 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA67B20CC175B00D7C158 /* Parser.swift */; };
-		C99EA69220CC175C00D7C158 /* VIewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA67E20CC175B00D7C158 /* VIewController + Storyboard.swift */; };
-		C99EA69320CC175C00D7C158 /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA68120CC175B00D7C158 /* StoryboardIdentifiable.swift */; };
 		C99EA69920CC17A100D7C158 /* String to dicrionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA69520CC17A100D7C158 /* String to dicrionary.swift */; };
 		C99EA69A20CC17A100D7C158 /* UIColor + Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA69620CC17A100D7C158 /* UIColor + Hex.swift */; };
 		C99EA69B20CC17A100D7C158 /* UIImage + Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA69720CC17A100D7C158 /* UIImage + Gif.swift */; };
 		C99EA69C20CC17A100D7C158 /* UILabel + format part of the text.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA69820CC17A100D7C158 /* UILabel + format part of the text.swift */; };
+		C99EA6CA20CC94C200D7C158 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6C820CC94C100D7C158 /* CardView.swift */; };
+		C99EA6CB20CC94C200D7C158 /* EZLoadingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6C920CC94C100D7C158 /* EZLoadingActivity.swift */; };
+		C99EA6F220CC94D200D7C158 /* Collectionview+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6CF20CC94D200D7C158 /* Collectionview+Reusable.swift */; };
+		C99EA6F320CC94D200D7C158 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6D120CC94D200D7C158 /* NibLoadableView.swift */; };
+		C99EA6F420CC94D200D7C158 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6D220CC94D200D7C158 /* ReusableCell.swift */; };
+		C99EA6F520CC94D200D7C158 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6D420CC94D200D7C158 /* BaseTableViewCell.swift */; };
+		C99EA6F620CC94D200D7C158 /* Tableview+Reusablel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6D520CC94D200D7C158 /* Tableview+Reusablel.swift */; };
+		C99EA6F720CC94D200D7C158 /* TableviewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6D620CC94D200D7C158 /* TableviewAdapter.swift */; };
+		C99EA6F820CC94D200D7C158 /* TableViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6D720CC94D200D7C158 /* TableViewDelegates.swift */; };
+		C99EA6F920CC94D200D7C158 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6D920CC94D200D7C158 /* BaseModel.swift */; };
+		C99EA6FA20CC94D200D7C158 /* ConnectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6DA20CC94D200D7C158 /* ConnectionResult.swift */; };
+		C99EA6FB20CC94D200D7C158 /* GenericConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6DB20CC94D200D7C158 /* GenericConnector.swift */; };
+		C99EA6FC20CC94D200D7C158 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6DD20CC94D200D7C158 /* Error+Extensions.swift */; };
+		C99EA6FD20CC94D200D7C158 /* GenericErrorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6DE20CC94D200D7C158 /* GenericErrorConfigurator.swift */; };
+		C99EA6FE20CC94D200D7C158 /* GenericErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6DF20CC94D200D7C158 /* GenericErrorHandler.swift */; };
+		C99EA6FF20CC94D200D7C158 /* LucidErrorMessageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6E020CC94D200D7C158 /* LucidErrorMessageProvider.swift */; };
+		C99EA70020CC94D200D7C158 /* LucidMoyaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6E120CC94D200D7C158 /* LucidMoyaError.swift */; };
+		C99EA70120CC94D200D7C158 /* LucidMoyaNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6E220CC94D200D7C158 /* LucidMoyaNetworkingError.swift */; };
+		C99EA70220CC94D200D7C158 /* Response+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6E320CC94D200D7C158 /* Response+Extensions.swift */; };
+		C99EA70320CC94D200D7C158 /* Single+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6E420CC94D200D7C158 /* Single+Extensions.swift */; };
+		C99EA70420CC94D200D7C158 /* APIsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6E620CC94D200D7C158 /* APIsProvider.swift */; };
+		C99EA70520CC94D200D7C158 /* GenericAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6E720CC94D200D7C158 /* GenericAPIs.swift */; };
+		C99EA70620CC94D200D7C158 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6E820CC94D200D7C158 /* Parameters.swift */; };
+		C99EA70720CC94D200D7C158 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6E920CC94D200D7C158 /* Route.swift */; };
+		C99EA70820CC94D200D7C158 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6EA20CC94D200D7C158 /* Parser.swift */; };
+		C99EA70920CC94D200D7C158 /* VIewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6ED20CC94D200D7C158 /* VIewController + Storyboard.swift */; };
+		C99EA70A20CC94D200D7C158 /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6F020CC94D200D7C158 /* StoryboardIdentifiable.swift */; };
+		C99EA70B20CC94D200D7C158 /* UserDefaultsManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA6F120CC94D200D7C158 /* UserDefaultsManger.swift */; };
 		CAE909CEB6CA799D5F2675A7885A1BEC /* Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA493CE91CED289DF495631C1D0E6D /* Maybe.swift */; };
 		CB6D60925223897FFA2662667DF83E8A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673E47D05929D164FE7022A23681A1C0 /* Response.swift */; };
 		CC22ED0C9A57CDBA9908A9484F794973 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A8DD9908059430109F1BA8EB3CF880 /* Error.swift */; };
@@ -637,40 +637,40 @@
 		C8D25655C2E89C73760168F5D2ED3853 /* Deferred.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deferred.swift; path = RxSwift/Observables/Deferred.swift; sourceTree = "<group>"; };
 		C99695B8CF7E2AA425FF422F5538E5A7 /* BehaviorSubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BehaviorSubject.swift; path = RxSwift/Subjects/BehaviorSubject.swift; sourceTree = "<group>"; };
 		C99EA65020CC168F00D7C158 /* GlobalModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalModules.swift; path = iOS_Bootstrap/Classes/GlobalModules.swift; sourceTree = "<group>"; };
-		C99EA65220CC16AD00D7C158 /* EZLoadingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EZLoadingActivity.swift; path = ../iOS_Bootstrap/Classes/CustomComponents/EZLoadingActivity.swift; sourceTree = "<group>"; };
-		C99EA65320CC16AD00D7C158 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = ../iOS_Bootstrap/Classes/CustomComponents/CardView.swift; sourceTree = "<group>"; };
-		C99EA65620CC170C00D7C158 /* UserDefaultsManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsManger.swift; path = ../iOS_Bootstrap/Classes/Managers/UserDefaultsManger.swift; sourceTree = "<group>"; };
-		C99EA65920CC172400D7C158 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		C99EA65A20CC172400D7C158 /* Tableview+Reusablel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tableview+Reusablel.swift"; sourceTree = "<group>"; };
-		C99EA65B20CC172400D7C158 /* TableviewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableviewAdapter.swift; sourceTree = "<group>"; };
-		C99EA65C20CC172400D7C158 /* TableViewDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDelegates.swift; sourceTree = "<group>"; };
-		C99EA65D20CC172400D7C158 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NibLoadableView.swift; path = ../../iOS_Bootstrap/Classes/Managers/ListingManager/NibLoadableView.swift; sourceTree = "<group>"; };
-		C99EA65E20CC172400D7C158 /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReusableCell.swift; path = ../../iOS_Bootstrap/Classes/Managers/ListingManager/ReusableCell.swift; sourceTree = "<group>"; };
-		C99EA65F20CC172400D7C158 /* How_to_use.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = How_to_use.strings; path = ../../iOS_Bootstrap/Classes/Managers/ListingManager/How_to_use.strings; sourceTree = "<group>"; };
-		C99EA66120CC172400D7C158 /* Collectionview+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collectionview+Reusable.swift"; sourceTree = "<group>"; };
-		C99EA66A20CC175B00D7C158 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		C99EA66B20CC175B00D7C158 /* ConnectionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionResult.swift; sourceTree = "<group>"; };
-		C99EA66C20CC175B00D7C158 /* GenericConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericConnector.swift; sourceTree = "<group>"; };
-		C99EA66E20CC175B00D7C158 /* Error+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
-		C99EA66F20CC175B00D7C158 /* GenericErrorConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericErrorConfigurator.swift; sourceTree = "<group>"; };
-		C99EA67020CC175B00D7C158 /* GenericErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericErrorHandler.swift; sourceTree = "<group>"; };
-		C99EA67120CC175B00D7C158 /* LucidErrorMessageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucidErrorMessageProvider.swift; sourceTree = "<group>"; };
-		C99EA67220CC175B00D7C158 /* LucidMoyaError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucidMoyaError.swift; sourceTree = "<group>"; };
-		C99EA67320CC175B00D7C158 /* LucidMoyaNetworkingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucidMoyaNetworkingError.swift; sourceTree = "<group>"; };
-		C99EA67420CC175B00D7C158 /* Response+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+Extensions.swift"; sourceTree = "<group>"; };
-		C99EA67520CC175B00D7C158 /* Single+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Single+Extensions.swift"; sourceTree = "<group>"; };
-		C99EA67720CC175B00D7C158 /* APIsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIsProvider.swift; sourceTree = "<group>"; };
-		C99EA67820CC175B00D7C158 /* GenericAPIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericAPIs.swift; sourceTree = "<group>"; };
-		C99EA67920CC175B00D7C158 /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
-		C99EA67A20CC175B00D7C158 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
-		C99EA67B20CC175B00D7C158 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		C99EA67E20CC175B00D7C158 /* VIewController + Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VIewController + Storyboard.swift"; sourceTree = "<group>"; };
-		C99EA67F20CC175B00D7C158 /* How_to_use.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = How_to_use.strings; sourceTree = "<group>"; };
-		C99EA68120CC175B00D7C158 /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
 		C99EA69520CC17A100D7C158 /* String to dicrionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String to dicrionary.swift"; sourceTree = "<group>"; };
 		C99EA69620CC17A100D7C158 /* UIColor + Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + Hex.swift"; sourceTree = "<group>"; };
 		C99EA69720CC17A100D7C158 /* UIImage + Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage + Gif.swift"; sourceTree = "<group>"; };
 		C99EA69820CC17A100D7C158 /* UILabel + format part of the text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel + format part of the text.swift"; sourceTree = "<group>"; };
+		C99EA6C820CC94C100D7C158 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C99EA6C920CC94C100D7C158 /* EZLoadingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZLoadingActivity.swift; sourceTree = "<group>"; };
+		C99EA6CF20CC94D200D7C158 /* Collectionview+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collectionview+Reusable.swift"; sourceTree = "<group>"; };
+		C99EA6D020CC94D200D7C158 /* How_to_use.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = How_to_use.strings; sourceTree = "<group>"; };
+		C99EA6D120CC94D200D7C158 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		C99EA6D220CC94D200D7C158 /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		C99EA6D420CC94D200D7C158 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		C99EA6D520CC94D200D7C158 /* Tableview+Reusablel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tableview+Reusablel.swift"; sourceTree = "<group>"; };
+		C99EA6D620CC94D200D7C158 /* TableviewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableviewAdapter.swift; sourceTree = "<group>"; };
+		C99EA6D720CC94D200D7C158 /* TableViewDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDelegates.swift; sourceTree = "<group>"; };
+		C99EA6D920CC94D200D7C158 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		C99EA6DA20CC94D200D7C158 /* ConnectionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionResult.swift; sourceTree = "<group>"; };
+		C99EA6DB20CC94D200D7C158 /* GenericConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericConnector.swift; sourceTree = "<group>"; };
+		C99EA6DD20CC94D200D7C158 /* Error+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
+		C99EA6DE20CC94D200D7C158 /* GenericErrorConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericErrorConfigurator.swift; sourceTree = "<group>"; };
+		C99EA6DF20CC94D200D7C158 /* GenericErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericErrorHandler.swift; sourceTree = "<group>"; };
+		C99EA6E020CC94D200D7C158 /* LucidErrorMessageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucidErrorMessageProvider.swift; sourceTree = "<group>"; };
+		C99EA6E120CC94D200D7C158 /* LucidMoyaError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucidMoyaError.swift; sourceTree = "<group>"; };
+		C99EA6E220CC94D200D7C158 /* LucidMoyaNetworkingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucidMoyaNetworkingError.swift; sourceTree = "<group>"; };
+		C99EA6E320CC94D200D7C158 /* Response+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+Extensions.swift"; sourceTree = "<group>"; };
+		C99EA6E420CC94D200D7C158 /* Single+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Single+Extensions.swift"; sourceTree = "<group>"; };
+		C99EA6E620CC94D200D7C158 /* APIsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIsProvider.swift; sourceTree = "<group>"; };
+		C99EA6E720CC94D200D7C158 /* GenericAPIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericAPIs.swift; sourceTree = "<group>"; };
+		C99EA6E820CC94D200D7C158 /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		C99EA6E920CC94D200D7C158 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		C99EA6EA20CC94D200D7C158 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		C99EA6ED20CC94D200D7C158 /* VIewController + Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VIewController + Storyboard.swift"; sourceTree = "<group>"; };
+		C99EA6EE20CC94D200D7C158 /* How_to_use.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = How_to_use.strings; sourceTree = "<group>"; };
+		C99EA6F020CC94D200D7C158 /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
+		C99EA6F120CC94D200D7C158 /* UserDefaultsManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManger.swift; sourceTree = "<group>"; };
 		C9F5156777D6FF7B41B8EE442C4CD0BE /* Pods-iOS_Bootstrap_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS_Bootstrap_Tests-resources.sh"; sourceTree = "<group>"; };
 		CA4042C618C60EC1BCF591D7799699D5 /* Dematerialize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dematerialize.swift; path = RxSwift/Observables/Dematerialize.swift; sourceTree = "<group>"; };
 		CAC0BBDD5B8E9221FC0B7417212FCFD9 /* Result-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Result-dummy.m"; sourceTree = "<group>"; };
@@ -1021,18 +1021,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		94FC5E40A91CD7D907D5E0B0A093F7E3 /* ListingManager */ = {
-			isa = PBXGroup;
-			children = (
-				C99EA66020CC172400D7C158 /* CollectionviewManager */,
-				C99EA65F20CC172400D7C158 /* How_to_use.strings */,
-				C99EA65D20CC172400D7C158 /* NibLoadableView.swift */,
-				C99EA65E20CC172400D7C158 /* ReusableCell.swift */,
-				C99EA65820CC172400D7C158 /* TableviewManager */,
-			);
-			path = ListingManager;
-			sourceTree = "<group>";
-		};
 		96BD2A71AF2BF74A6558220E57EF66F6 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1105,114 +1093,6 @@
 			path = "../Target Support Files/Moya";
 			sourceTree = "<group>";
 		};
-		C99EA63620CBE78A00D7C158 /* CustomComponents */ = {
-			isa = PBXGroup;
-			children = (
-				C99EA65320CC16AD00D7C158 /* CardView.swift */,
-				C99EA65220CC16AD00D7C158 /* EZLoadingActivity.swift */,
-			);
-			path = CustomComponents;
-			sourceTree = "<group>";
-		};
-		C99EA64F20CBF99700D7C158 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				C99EA65620CC170C00D7C158 /* UserDefaultsManger.swift */,
-				C99EA66920CC175B00D7C158 /* NetworkManager */,
-				C99EA67C20CC175B00D7C158 /* Storyboard manager */,
-				94FC5E40A91CD7D907D5E0B0A093F7E3 /* ListingManager */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		C99EA65820CC172400D7C158 /* TableviewManager */ = {
-			isa = PBXGroup;
-			children = (
-				C99EA65920CC172400D7C158 /* BaseTableViewCell.swift */,
-				C99EA65A20CC172400D7C158 /* Tableview+Reusablel.swift */,
-				C99EA65B20CC172400D7C158 /* TableviewAdapter.swift */,
-				C99EA65C20CC172400D7C158 /* TableViewDelegates.swift */,
-			);
-			name = TableviewManager;
-			path = ../../iOS_Bootstrap/Classes/Managers/ListingManager/TableviewManager;
-			sourceTree = "<group>";
-		};
-		C99EA66020CC172400D7C158 /* CollectionviewManager */ = {
-			isa = PBXGroup;
-			children = (
-				C99EA66120CC172400D7C158 /* Collectionview+Reusable.swift */,
-			);
-			name = CollectionviewManager;
-			path = ../../iOS_Bootstrap/Classes/Managers/ListingManager/CollectionviewManager;
-			sourceTree = "<group>";
-		};
-		C99EA66920CC175B00D7C158 /* NetworkManager */ = {
-			isa = PBXGroup;
-			children = (
-				C99EA66A20CC175B00D7C158 /* BaseModel.swift */,
-				C99EA66B20CC175B00D7C158 /* ConnectionResult.swift */,
-				C99EA66C20CC175B00D7C158 /* GenericConnector.swift */,
-				C99EA66D20CC175B00D7C158 /* GenericErrorManager */,
-				C99EA67620CC175B00D7C158 /* MoyaSugar */,
-				C99EA67B20CC175B00D7C158 /* Parser.swift */,
-			);
-			name = NetworkManager;
-			path = ../iOS_Bootstrap/Classes/Managers/NetworkManager;
-			sourceTree = "<group>";
-		};
-		C99EA66D20CC175B00D7C158 /* GenericErrorManager */ = {
-			isa = PBXGroup;
-			children = (
-				C99EA66E20CC175B00D7C158 /* Error+Extensions.swift */,
-				C99EA66F20CC175B00D7C158 /* GenericErrorConfigurator.swift */,
-				C99EA67020CC175B00D7C158 /* GenericErrorHandler.swift */,
-				C99EA67120CC175B00D7C158 /* LucidErrorMessageProvider.swift */,
-				C99EA67220CC175B00D7C158 /* LucidMoyaError.swift */,
-				C99EA67320CC175B00D7C158 /* LucidMoyaNetworkingError.swift */,
-				C99EA67420CC175B00D7C158 /* Response+Extensions.swift */,
-				C99EA67520CC175B00D7C158 /* Single+Extensions.swift */,
-			);
-			path = GenericErrorManager;
-			sourceTree = "<group>";
-		};
-		C99EA67620CC175B00D7C158 /* MoyaSugar */ = {
-			isa = PBXGroup;
-			children = (
-				C99EA67720CC175B00D7C158 /* APIsProvider.swift */,
-				C99EA67820CC175B00D7C158 /* GenericAPIs.swift */,
-				C99EA67920CC175B00D7C158 /* Parameters.swift */,
-				C99EA67A20CC175B00D7C158 /* Route.swift */,
-			);
-			path = MoyaSugar;
-			sourceTree = "<group>";
-		};
-		C99EA67C20CC175B00D7C158 /* Storyboard manager */ = {
-			isa = PBXGroup;
-			children = (
-				C99EA67D20CC175B00D7C158 /* Extension */,
-				C99EA67F20CC175B00D7C158 /* How_to_use.strings */,
-				C99EA68020CC175B00D7C158 /* Protocol */,
-			);
-			name = "Storyboard manager";
-			path = "../iOS_Bootstrap/Classes/Managers/Storyboard manager";
-			sourceTree = "<group>";
-		};
-		C99EA67D20CC175B00D7C158 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				C99EA67E20CC175B00D7C158 /* VIewController + Storyboard.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		C99EA68020CC175B00D7C158 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				C99EA68120CC175B00D7C158 /* StoryboardIdentifiable.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
 		C99EA69420CC17A100D7C158 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1223,6 +1103,124 @@
 			);
 			name = Extensions;
 			path = iOS_Bootstrap/Classes/Extensions;
+			sourceTree = "<group>";
+		};
+		C99EA6C720CC94C100D7C158 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA6C820CC94C100D7C158 /* CardView.swift */,
+				C99EA6C920CC94C100D7C158 /* EZLoadingActivity.swift */,
+			);
+			name = CustomComponents;
+			path = iOS_Bootstrap/Classes/CustomComponents;
+			sourceTree = "<group>";
+		};
+		C99EA6CC20CC94D200D7C158 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA6CD20CC94D200D7C158 /* ListingManager */,
+				C99EA6D820CC94D200D7C158 /* NetworkManager */,
+				C99EA6EB20CC94D200D7C158 /* Storyboard manager */,
+				C99EA6F120CC94D200D7C158 /* UserDefaultsManger.swift */,
+			);
+			name = Managers;
+			path = iOS_Bootstrap/Classes/Managers;
+			sourceTree = "<group>";
+		};
+		C99EA6CD20CC94D200D7C158 /* ListingManager */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA6CE20CC94D200D7C158 /* CollectionviewManager */,
+				C99EA6D020CC94D200D7C158 /* How_to_use.strings */,
+				C99EA6D120CC94D200D7C158 /* NibLoadableView.swift */,
+				C99EA6D220CC94D200D7C158 /* ReusableCell.swift */,
+				C99EA6D320CC94D200D7C158 /* TableviewManager */,
+			);
+			path = ListingManager;
+			sourceTree = "<group>";
+		};
+		C99EA6CE20CC94D200D7C158 /* CollectionviewManager */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA6CF20CC94D200D7C158 /* Collectionview+Reusable.swift */,
+			);
+			path = CollectionviewManager;
+			sourceTree = "<group>";
+		};
+		C99EA6D320CC94D200D7C158 /* TableviewManager */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA6D420CC94D200D7C158 /* BaseTableViewCell.swift */,
+				C99EA6D520CC94D200D7C158 /* Tableview+Reusablel.swift */,
+				C99EA6D620CC94D200D7C158 /* TableviewAdapter.swift */,
+				C99EA6D720CC94D200D7C158 /* TableViewDelegates.swift */,
+			);
+			path = TableviewManager;
+			sourceTree = "<group>";
+		};
+		C99EA6D820CC94D200D7C158 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA6D920CC94D200D7C158 /* BaseModel.swift */,
+				C99EA6DA20CC94D200D7C158 /* ConnectionResult.swift */,
+				C99EA6DB20CC94D200D7C158 /* GenericConnector.swift */,
+				C99EA6DC20CC94D200D7C158 /* GenericErrorManager */,
+				C99EA6E520CC94D200D7C158 /* MoyaSugar */,
+				C99EA6EA20CC94D200D7C158 /* Parser.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		C99EA6DC20CC94D200D7C158 /* GenericErrorManager */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA6DD20CC94D200D7C158 /* Error+Extensions.swift */,
+				C99EA6DE20CC94D200D7C158 /* GenericErrorConfigurator.swift */,
+				C99EA6DF20CC94D200D7C158 /* GenericErrorHandler.swift */,
+				C99EA6E020CC94D200D7C158 /* LucidErrorMessageProvider.swift */,
+				C99EA6E120CC94D200D7C158 /* LucidMoyaError.swift */,
+				C99EA6E220CC94D200D7C158 /* LucidMoyaNetworkingError.swift */,
+				C99EA6E320CC94D200D7C158 /* Response+Extensions.swift */,
+				C99EA6E420CC94D200D7C158 /* Single+Extensions.swift */,
+			);
+			path = GenericErrorManager;
+			sourceTree = "<group>";
+		};
+		C99EA6E520CC94D200D7C158 /* MoyaSugar */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA6E620CC94D200D7C158 /* APIsProvider.swift */,
+				C99EA6E720CC94D200D7C158 /* GenericAPIs.swift */,
+				C99EA6E820CC94D200D7C158 /* Parameters.swift */,
+				C99EA6E920CC94D200D7C158 /* Route.swift */,
+			);
+			path = MoyaSugar;
+			sourceTree = "<group>";
+		};
+		C99EA6EB20CC94D200D7C158 /* Storyboard manager */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA6EC20CC94D200D7C158 /* Extension */,
+				C99EA6EE20CC94D200D7C158 /* How_to_use.strings */,
+				C99EA6EF20CC94D200D7C158 /* Protocol */,
+			);
+			path = "Storyboard manager";
+			sourceTree = "<group>";
+		};
+		C99EA6EC20CC94D200D7C158 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA6ED20CC94D200D7C158 /* VIewController + Storyboard.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C99EA6EF20CC94D200D7C158 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA6F020CC94D200D7C158 /* StoryboardIdentifiable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		D350594A6AC865CA0506173A24CAB3EE /* RxSwift */ = {
@@ -1433,8 +1431,8 @@
 			isa = PBXGroup;
 			children = (
 				C99EA65020CC168F00D7C158 /* GlobalModules.swift */,
-				C99EA63620CBE78A00D7C158 /* CustomComponents */,
-				C99EA64F20CBF99700D7C158 /* Managers */,
+				C99EA6C720CC94C100D7C158 /* CustomComponents */,
+				C99EA6CC20CC94D200D7C158 /* Managers */,
 				C99EA69420CC17A100D7C158 /* Extensions */,
 				AFF72354AA0E013733CECF9E0AEF8A8D /* Pod */,
 				2EE74DA03AA2A2CD3B42EB2136952CD3 /* Support Files */,
@@ -1995,40 +1993,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C99EA69120CC175C00D7C158 /* Parser.swift in Sources */,
-				C99EA65420CC16AD00D7C158 /* EZLoadingActivity.swift in Sources */,
-				C99EA69020CC175C00D7C158 /* Route.swift in Sources */,
-				C99EA68B20CC175C00D7C158 /* Response+Extensions.swift in Sources */,
-				C99EA68420CC175B00D7C158 /* GenericConnector.swift in Sources */,
+				C99EA6CB20CC94C200D7C158 /* EZLoadingActivity.swift in Sources */,
+				C99EA6F220CC94D200D7C158 /* Collectionview+Reusable.swift in Sources */,
+				C99EA6FD20CC94D200D7C158 /* GenericErrorConfigurator.swift in Sources */,
+				C99EA70720CC94D200D7C158 /* Route.swift in Sources */,
+				C99EA6FE20CC94D200D7C158 /* GenericErrorHandler.swift in Sources */,
+				C99EA6F420CC94D200D7C158 /* ReusableCell.swift in Sources */,
+				C99EA70120CC94D200D7C158 /* LucidMoyaNetworkingError.swift in Sources */,
+				C99EA70620CC94D200D7C158 /* Parameters.swift in Sources */,
 				68E46A7F3ABAA67E4E62D4AE6853C7A6 /* iOS_Bootstrap-dummy.m in Sources */,
-				C99EA68620CC175B00D7C158 /* GenericErrorConfigurator.swift in Sources */,
-				C99EA68720CC175B00D7C158 /* GenericErrorHandler.swift in Sources */,
-				C99EA68920CC175C00D7C158 /* LucidMoyaError.swift in Sources */,
-				C99EA66320CC172500D7C158 /* Tableview+Reusablel.swift in Sources */,
-				C99EA68A20CC175C00D7C158 /* LucidMoyaNetworkingError.swift in Sources */,
-				C99EA65720CC170C00D7C158 /* UserDefaultsManger.swift in Sources */,
-				C99EA68F20CC175C00D7C158 /* Parameters.swift in Sources */,
-				C99EA68820CC175B00D7C158 /* LucidErrorMessageProvider.swift in Sources */,
-				C99EA66220CC172500D7C158 /* BaseTableViewCell.swift in Sources */,
-				C99EA66720CC172500D7C158 /* ReusableCell.swift in Sources */,
-				C99EA68220CC175B00D7C158 /* BaseModel.swift in Sources */,
-				C99EA66620CC172500D7C158 /* NibLoadableView.swift in Sources */,
-				C99EA65520CC16AD00D7C158 /* CardView.swift in Sources */,
+				C99EA70B20CC94D200D7C158 /* UserDefaultsManger.swift in Sources */,
+				C99EA70520CC94D200D7C158 /* GenericAPIs.swift in Sources */,
+				C99EA70A20CC94D200D7C158 /* StoryboardIdentifiable.swift in Sources */,
+				C99EA70920CC94D200D7C158 /* VIewController + Storyboard.swift in Sources */,
+				C99EA6FA20CC94D200D7C158 /* ConnectionResult.swift in Sources */,
+				C99EA6F320CC94D200D7C158 /* NibLoadableView.swift in Sources */,
+				C99EA6F820CC94D200D7C158 /* TableViewDelegates.swift in Sources */,
+				C99EA70020CC94D200D7C158 /* LucidMoyaError.swift in Sources */,
+				C99EA6FF20CC94D200D7C158 /* LucidErrorMessageProvider.swift in Sources */,
+				C99EA6CA20CC94C200D7C158 /* CardView.swift in Sources */,
+				C99EA6FC20CC94D200D7C158 /* Error+Extensions.swift in Sources */,
+				C99EA6FB20CC94D200D7C158 /* GenericConnector.swift in Sources */,
+				C99EA6F520CC94D200D7C158 /* BaseTableViewCell.swift in Sources */,
 				C99EA69C20CC17A100D7C158 /* UILabel + format part of the text.swift in Sources */,
 				C99EA69920CC17A100D7C158 /* String to dicrionary.swift in Sources */,
 				C99EA69B20CC17A100D7C158 /* UIImage + Gif.swift in Sources */,
-				C99EA66520CC172500D7C158 /* TableViewDelegates.swift in Sources */,
-				C99EA68E20CC175C00D7C158 /* GenericAPIs.swift in Sources */,
-				C99EA68520CC175B00D7C158 /* Error+Extensions.swift in Sources */,
-				C99EA68D20CC175C00D7C158 /* APIsProvider.swift in Sources */,
+				C99EA6F920CC94D200D7C158 /* BaseModel.swift in Sources */,
+				C99EA6F720CC94D200D7C158 /* TableviewAdapter.swift in Sources */,
+				C99EA70420CC94D200D7C158 /* APIsProvider.swift in Sources */,
 				C99EA69A20CC17A100D7C158 /* UIColor + Hex.swift in Sources */,
-				C99EA66820CC172500D7C158 /* Collectionview+Reusable.swift in Sources */,
-				C99EA68C20CC175C00D7C158 /* Single+Extensions.swift in Sources */,
-				C99EA66420CC172500D7C158 /* TableviewAdapter.swift in Sources */,
-				C99EA69220CC175C00D7C158 /* VIewController + Storyboard.swift in Sources */,
-				C99EA68320CC175B00D7C158 /* ConnectionResult.swift in Sources */,
-				C99EA69320CC175C00D7C158 /* StoryboardIdentifiable.swift in Sources */,
+				C99EA6F620CC94D200D7C158 /* Tableview+Reusablel.swift in Sources */,
+				C99EA70820CC94D200D7C158 /* Parser.swift in Sources */,
+				C99EA70220CC94D200D7C158 /* Response+Extensions.swift in Sources */,
 				C99EA65120CC168F00D7C158 /* GlobalModules.swift in Sources */,
+				C99EA70320CC94D200D7C158 /* Single+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

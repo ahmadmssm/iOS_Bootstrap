@@ -18,7 +18,7 @@ open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelega
     private var mDelegate : TableViewDelegates!
 
     public func configureTableWithXibCell (tableView: UITableView,
-                                    dataSource: [Any],
+                                    dataSource: [Any]!,
                                     nibClass : BaseTableViewCell.Type!,
                                     delegate : TableViewDelegates) {
         //
@@ -62,7 +62,7 @@ open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelega
         mDelegate?.pullToRefresh?(refreshcontrole: refreshControl)
     }
     
-    public func reloadTable(dataSourcee: [Any]) {
+    public func reloadTable(dataSourcee:[Any]) {
         self.tableViewDataSource = dataSourcee
         mTableview?.reloadData()
     }
