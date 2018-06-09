@@ -26,7 +26,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qm4-Nw-EpP">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capital name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qm4-Nw-EpP">
                         <rect key="frame" x="191" y="11" width="113" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="113" id="Z8t-Ui-Guz"/>
@@ -46,7 +46,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="labelCountryCode" destination="qm4-Nw-EpP" id="Ztp-55-IZR"/>
+                <outlet property="labelCapitalName" destination="qm4-Nw-EpP" id="yv7-Ki-ZOg"/>
                 <outlet property="labelCountryName" destination="tDW-MR-kH0" id="6e9-xP-xru"/>
             </connections>
         </tableViewCell>

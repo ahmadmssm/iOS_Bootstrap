@@ -18,6 +18,11 @@
 		C915C58D20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */; };
 		C915C59C20CAC1F10029F5D9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */; };
 		C915C59D20CAC1F10029F5D9 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */; };
+		C99EA60320CB3D7900D7C158 /* HumanReadableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60020CB3D7800D7C158 /* HumanReadableError.swift */; };
+		C99EA60420CB3D7900D7C158 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60120CB3D7800D7C158 /* API.swift */; };
+		C99EA60520CB3D7900D7C158 /* API_Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60220CB3D7800D7C158 /* API_Connector.swift */; };
+		C99EA61F20CB466300D7C158 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA61E20CB466300D7C158 /* Country.swift */; };
+		C99EA62420CB4DCB00D7C158 /* ReadableErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA62320CB4DCB00D7C158 /* ReadableErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_ReusableTableVC.swift; sourceTree = "<group>"; };
 		C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		C99EA60020CB3D7800D7C158 /* HumanReadableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanReadableError.swift; sourceTree = "<group>"; };
+		C99EA60120CB3D7800D7C158 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		C99EA60220CB3D7800D7C158 /* API_Connector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_Connector.swift; sourceTree = "<group>"; };
+		C99EA61E20CB466300D7C158 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		C99EA62320CB4DCB00D7C158 /* ReadableErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReadableErrors.swift; path = ../../iOS_Bootstrap/Classes/NetworkManager/GenericErrorManager/ReadableErrors.swift; sourceTree = "<group>"; };
 		E383126EFB494BDC5270F3F6 /* Pods_iOS_Bootstrap_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Bootstrap_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BFEB017ECAAB4B900CC096 /* iOS_Bootstrap.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = iOS_Bootstrap.podspec; path = ../iOS_Bootstrap.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EA97E69C3092BBDE3AC0DD10 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -108,12 +118,11 @@
 		607FACD21AFB9204008FA782 /* Example for iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */,
-				C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */,
+				C99EA62220CB4D5900D7C158 /* Table */,
+				C99EA60620CB41A600D7C158 /* Networking */,
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -166,6 +175,36 @@
 				9E0EDC66FA3FB48BCD76CFE4 /* Pods-iOS_Bootstrap_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C99EA60620CB41A600D7C158 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA60120CB3D7800D7C158 /* API.swift */,
+				C99EA60220CB3D7800D7C158 /* API_Connector.swift */,
+				C99EA60020CB3D7800D7C158 /* HumanReadableError.swift */,
+				C99EA61D20CB461B00D7C158 /* Models */,
+				C99EA62320CB4DCB00D7C158 /* ReadableErrors.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		C99EA61D20CB461B00D7C158 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA61E20CB466300D7C158 /* Country.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C99EA62220CB4D5900D7C158 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */,
+				C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */,
+				C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */,
+			);
+			name = Table;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,10 +381,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C99EA62420CB4DCB00D7C158 /* ReadableErrors.swift in Sources */,
 				C915C59C20CAC1F10029F5D9 /* TableViewCell.swift in Sources */,
 				C915C58D20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				C99EA60320CB3D7900D7C158 /* HumanReadableError.swift in Sources */,
+				C99EA61F20CB466300D7C158 /* Country.swift in Sources */,
+				C99EA60420CB3D7900D7C158 /* API.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				C99EA60520CB3D7900D7C158 /* API_Connector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

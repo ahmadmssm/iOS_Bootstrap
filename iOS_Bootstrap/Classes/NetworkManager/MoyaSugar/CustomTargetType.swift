@@ -2,7 +2,7 @@ import struct Foundation.URL
 
 import Moya
 
-public protocol SugarTargetType: TargetType {
+public protocol CustomTargetType: TargetType {
   var url: URL { get }
 
   /// Returns `Route` which contains HTTP method and URL path information.
@@ -18,7 +18,7 @@ public protocol SugarTargetType: TargetType {
   var parameters: Parameters? { get }
 }
 
-public extension SugarTargetType {
+public extension CustomTargetType {
   public var url: URL {
     return self.defaultURL
   }

@@ -8,4 +8,4 @@
 
 import HandyJSON
 
-protocol BaseModel : HandyJSON {}
+public protocol BaseModel : HandyJSON {}

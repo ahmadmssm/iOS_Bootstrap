@@ -12,7 +12,7 @@ import iOS_Bootstrap
 class TableViewCell: BaseTableViewCell {
 
     @IBOutlet weak var labelCountryName: UILabel!
-    @IBOutlet weak var labelCountryCode: UILabel!
+    @IBOutlet weak var labelCapitalName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

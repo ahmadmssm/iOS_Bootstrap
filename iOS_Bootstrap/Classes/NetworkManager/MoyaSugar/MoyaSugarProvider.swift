@@ -4,7 +4,7 @@ import Moya
 /// `MoyaSugarProvider` overrides `parameterEncoding` and `httpHeaderFields` of the
 /// `endpointClosure` with `SugarTargetType`. `MoyaSugarProvider` can be used only with
 /// `SugarTargetType`.
-open class MoyaSugarProvider<Target: SugarTargetType>: MoyaProvider<Target> {
+open class MoyaSugarProvider<Target: CustomTargetType>: MoyaProvider<Target> {
     
     override public init(
         endpointClosure: @escaping EndpointClosure = MoyaProvider.defaultEndpointMapping,
@@ -15,7 +15,7 @@ open class MoyaSugarProvider<Target: SugarTargetType>: MoyaProvider<Target> {
         plugins: [PluginType] = [],
         trackInflights: Bool = false
         ) {
-        func sugarEndpointClosure(target: Target) -> Endpoint {
+        func customEndpointClosure(target: Target) -> Endpoint {
             let endpoint = endpointClosure(target)
             return Endpoint(
                 url: target.url.absoluteString,
@@ -26,7 +26,7 @@ open class MoyaSugarProvider<Target: SugarTargetType>: MoyaProvider<Target> {
             )
         }
         super.init(
-            endpointClosure: sugarEndpointClosure,
+            endpointClosure: customEndpointClosure,
             requestClosure: requestClosure,
             stubClosure: stubClosure,
             callbackQueue: callbackQueue,
