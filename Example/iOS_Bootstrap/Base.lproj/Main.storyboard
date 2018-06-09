@@ -30,9 +30,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgX-Dh-cOf">
-                                <rect key="frame" x="164" y="208" width="46" height="30"/>
+                                <rect key="frame" x="86" y="208" width="203" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Go to Home storyboard"/>
+                                <connections>
+                                    <action selector="buttonGoToHomeStoryboard:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="McF-YT-vqP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74S-GB-FaI">
                                 <rect key="frame" x="164" y="318" width="46" height="30"/>

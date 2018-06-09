@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/Ex_ReusableTableVC.swift"
-            timestampString = "550194946.053936"
+            timestampString = "550241989.261115"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "getWorldCountries()"
             landmarkType = "7">
          </BreakpointContent>

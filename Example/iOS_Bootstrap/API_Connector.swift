@@ -8,17 +8,16 @@
 
 import iOS_Bootstrap
 
-class API_Connector : NSObject {
+class API_Connector : GenericConnector {
 
-    private let apiProvide : MoyaSugarProvider<API>
+    private let apiProvide : APIsProvider<APIs>!
     
     required override init() {
-        GenericErrorConfiguration.setDefaultErrorHandler(HumanReadableError())
-        apiProvide = MoyaSugarProvider<API>()
+        GenericErrorConfigurator.defaultErrorHandler(HumanReadableError())
+        apiProvide = APIsProvider<APIs>()
     }
     
-    
-    func getAllCountries (completion: @escaping (ConnectionResult) -> ()) {
+    func getAllCountries (completion: @escaping completionHandler) {
         let _ = apiProvide.rx
             .request(.getWorldCountries())
             .filterSuccessfulStatusCodes()

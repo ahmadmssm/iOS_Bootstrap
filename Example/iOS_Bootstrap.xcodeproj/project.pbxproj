@@ -19,10 +19,12 @@
 		C915C59C20CAC1F10029F5D9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */; };
 		C915C59D20CAC1F10029F5D9 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */; };
 		C99EA60320CB3D7900D7C158 /* HumanReadableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60020CB3D7800D7C158 /* HumanReadableError.swift */; };
-		C99EA60420CB3D7900D7C158 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60120CB3D7800D7C158 /* API.swift */; };
+		C99EA60420CB3D7900D7C158 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60120CB3D7800D7C158 /* APIs.swift */; };
 		C99EA60520CB3D7900D7C158 /* API_Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60220CB3D7800D7C158 /* API_Connector.swift */; };
 		C99EA61F20CB466300D7C158 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA61E20CB466300D7C158 /* Country.swift */; };
-		C99EA62420CB4DCB00D7C158 /* ReadableErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA62320CB4DCB00D7C158 /* ReadableErrors.swift */; };
+		C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA63820CBECFB00D7C158 /* Storyboards.swift */; };
+		C99EA63B20CBED4200D7C158 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99EA63A20CBED4200D7C158 /* Home.storyboard */; };
+		C99EA63F20CBF0DB00D7C158 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA63E20CBF0DB00D7C158 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +57,12 @@
 		C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		C99EA60020CB3D7800D7C158 /* HumanReadableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanReadableError.swift; sourceTree = "<group>"; };
-		C99EA60120CB3D7800D7C158 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		C99EA60120CB3D7800D7C158 /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
 		C99EA60220CB3D7800D7C158 /* API_Connector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_Connector.swift; sourceTree = "<group>"; };
 		C99EA61E20CB466300D7C158 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		C99EA62320CB4DCB00D7C158 /* ReadableErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReadableErrors.swift; path = ../../iOS_Bootstrap/Classes/NetworkManager/GenericErrorManager/ReadableErrors.swift; sourceTree = "<group>"; };
+		C99EA63820CBECFB00D7C158 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		C99EA63A20CBED4200D7C158 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		C99EA63E20CBF0DB00D7C158 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E383126EFB494BDC5270F3F6 /* Pods_iOS_Bootstrap_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Bootstrap_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BFEB017ECAAB4B900CC096 /* iOS_Bootstrap.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = iOS_Bootstrap.podspec; path = ../iOS_Bootstrap.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EA97E69C3092BBDE3AC0DD10 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -119,7 +123,10 @@
 			isa = PBXGroup;
 			children = (
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				C99EA63820CBECFB00D7C158 /* Storyboards.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				C99EA63E20CBF0DB00D7C158 /* HomeVC.swift */,
+				C99EA63A20CBED4200D7C158 /* Home.storyboard */,
 				C99EA62220CB4D5900D7C158 /* Table */,
 				C99EA60620CB41A600D7C158 /* Networking */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
@@ -180,11 +187,10 @@
 		C99EA60620CB41A600D7C158 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C99EA60120CB3D7800D7C158 /* API.swift */,
+				C99EA60120CB3D7800D7C158 /* APIs.swift */,
 				C99EA60220CB3D7800D7C158 /* API_Connector.swift */,
 				C99EA60020CB3D7800D7C158 /* HumanReadableError.swift */,
 				C99EA61D20CB461B00D7C158 /* Models */,
-				C99EA62320CB4DCB00D7C158 /* ReadableErrors.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -294,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				C99EA63B20CBED4200D7C158 /* Home.storyboard in Resources */,
 				C915C59D20CAC1F10029F5D9 /* TableViewCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -381,13 +388,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C99EA62420CB4DCB00D7C158 /* ReadableErrors.swift in Sources */,
 				C915C59C20CAC1F10029F5D9 /* TableViewCell.swift in Sources */,
+				C99EA63F20CBF0DB00D7C158 /* HomeVC.swift in Sources */,
 				C915C58D20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				C99EA60320CB3D7900D7C158 /* HumanReadableError.swift in Sources */,
 				C99EA61F20CB466300D7C158 /* Country.swift in Sources */,
-				C99EA60420CB3D7900D7C158 /* API.swift in Sources */,
+				C99EA60420CB3D7900D7C158 /* APIs.swift in Sources */,
+				C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				C99EA60520CB3D7900D7C158 /* API_Connector.swift in Sources */,
 			);

@@ -15,6 +15,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    @IBAction func buttonGoToHomeStoryboard(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard.getStoryboardNamed(Storyboard.home.rawValue)
+        let homeVC = storyboard.instantiateInitialViewController() as! HomeVC
+        homeVC.x = 2
+        present(homeVC, animated: true, completion: nil)
+    }
+    
 }
 

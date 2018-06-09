@@ -11,19 +11,20 @@ import iOS_Bootstrap
 class HumanReadableError: GenericErrorHandler {
     
     override func statusCodeError(_ statusCode: Int, request: URLRequest?, response: URLResponse?) -> String {
-        var errorMessage : String?
+        //
         switch statusCode {
-        case 401:
-            errorMessage = "Not authorised !"
-        case 404:
-            errorMessage = "Not found !"
-        default:
-            errorMessage = "Unknown error !"
-            break
-        }
+                    case 401:
+                        errorMessage = "Not authorised !"
+                    case 404:
+                        errorMessage = "Not found !"
+                    default:
+                        errorMessage = "Unknown error !"
+                        break
+                    }
         return errorMessage!
     }
     
+
     override func networkingError(_ error: LucidMoyaNetworkingError) -> String {
         return ""
     }
