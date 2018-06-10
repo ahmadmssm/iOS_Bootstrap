@@ -220,6 +220,8 @@
 		C740DAF8D8FB17DEA86E71EB713A9227 /* SynchronizedOnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313B2DAABD2D6C93F4B61AAD1392AB3C /* SynchronizedOnType.swift */; };
 		C75FA70B9545445F6554FB18E19248D7 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B57BCD49BDE4AFA80A11AB68B22F30 /* Range.swift */; };
 		C8A6DE6D9B3C65D42A14D207F42C42AE /* Repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6754526312052516C99D9BEB726471 /* Repeat.swift */; };
+		C931ECA320CD368C0023FA4C /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931ECA220CD368C0023FA4C /* Toast.swift */; };
+		C931ECA620CD3C810023FA4C /* Remove duplicates + filter array.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931ECA520CD3C810023FA4C /* Remove duplicates + filter array.swift */; };
 		C99EA65120CC168F00D7C158 /* GlobalModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA65020CC168F00D7C158 /* GlobalModules.swift */; };
 		C99EA69920CC17A100D7C158 /* String to dicrionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA69520CC17A100D7C158 /* String to dicrionary.swift */; };
 		C99EA69A20CC17A100D7C158 /* UIColor + Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA69620CC17A100D7C158 /* UIColor + Hex.swift */; };
@@ -635,6 +637,9 @@
 		C2B81051A371D9A732488C2D0045182A /* Pods_iOS_Bootstrap_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Bootstrap_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D7065E3E9B0FB7295769B1BA60CF3A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8D25655C2E89C73760168F5D2ED3853 /* Deferred.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deferred.swift; path = RxSwift/Observables/Deferred.swift; sourceTree = "<group>"; };
+		C931ECA220CD368C0023FA4C /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		C931ECA420CD37040023FA4C /* How_to_use_toast.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = How_to_use_toast.strings; sourceTree = "<group>"; };
+		C931ECA520CD3C810023FA4C /* Remove duplicates + filter array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Remove duplicates + filter array.swift"; sourceTree = "<group>"; };
 		C99695B8CF7E2AA425FF422F5538E5A7 /* BehaviorSubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BehaviorSubject.swift; path = RxSwift/Subjects/BehaviorSubject.swift; sourceTree = "<group>"; };
 		C99EA65020CC168F00D7C158 /* GlobalModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalModules.swift; path = iOS_Bootstrap/Classes/GlobalModules.swift; sourceTree = "<group>"; };
 		C99EA69520CC17A100D7C158 /* String to dicrionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String to dicrionary.swift"; sourceTree = "<group>"; };
@@ -1100,6 +1105,9 @@
 				C99EA69620CC17A100D7C158 /* UIColor + Hex.swift */,
 				C99EA69720CC17A100D7C158 /* UIImage + Gif.swift */,
 				C99EA69820CC17A100D7C158 /* UILabel + format part of the text.swift */,
+				C931ECA220CD368C0023FA4C /* Toast.swift */,
+				C931ECA420CD37040023FA4C /* How_to_use_toast.strings */,
+				C931ECA520CD3C810023FA4C /* Remove duplicates + filter array.swift */,
 			);
 			name = Extensions;
 			path = iOS_Bootstrap/Classes/Extensions;
@@ -2006,6 +2014,7 @@
 				C99EA70520CC94D200D7C158 /* GenericAPIs.swift in Sources */,
 				C99EA70A20CC94D200D7C158 /* StoryboardIdentifiable.swift in Sources */,
 				C99EA70920CC94D200D7C158 /* VIewController + Storyboard.swift in Sources */,
+				C931ECA620CD3C810023FA4C /* Remove duplicates + filter array.swift in Sources */,
 				C99EA6FA20CC94D200D7C158 /* ConnectionResult.swift in Sources */,
 				C99EA6F320CC94D200D7C158 /* NibLoadableView.swift in Sources */,
 				C99EA6F820CC94D200D7C158 /* TableViewDelegates.swift in Sources */,
@@ -2020,6 +2029,7 @@
 				C99EA69B20CC17A100D7C158 /* UIImage + Gif.swift in Sources */,
 				C99EA6F920CC94D200D7C158 /* BaseModel.swift in Sources */,
 				C99EA6F720CC94D200D7C158 /* TableviewAdapter.swift in Sources */,
+				C931ECA320CD368C0023FA4C /* Toast.swift in Sources */,
 				C99EA70420CC94D200D7C158 /* APIsProvider.swift in Sources */,
 				C99EA69A20CC17A100D7C158 /* UIColor + Hex.swift in Sources */,
 				C99EA6F620CC94D200D7C158 /* Tableview+Reusablel.swift in Sources */,

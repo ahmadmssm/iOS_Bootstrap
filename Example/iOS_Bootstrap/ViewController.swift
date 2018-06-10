@@ -6,8 +6,21 @@
 //  Copyright (c) 2018 ams.eng@hotmail.com. All rights reserved.
 //
 
+/*
+ 
+ How to use :
+ 
+ let arrayOfInts = [2, 2, 4, 4]
+ 
+ Remove duplicates :
+ print(arrayOfInts.removeDuplicates()) // Prints: [2, 4]
+ 
+ Filtering based on properties :
+ let filteredElements = myElements.filterDuplicates { $0.PropertyOne == $1.PropertyOne && $0.PropertyTwo == $1.PropertyTwo }
+ 
+*/
+
 import UIKit
-import iOS_Bootstrap
 
 class ViewController: UIViewController {
 
@@ -22,6 +35,7 @@ class ViewController: UIViewController {
         let homeVC = storyboard.instantiateInitialViewController() as! HomeVC
         homeVC.x = 2
         present(homeVC, animated: true, completion: nil)
+        
     }
     
 }
