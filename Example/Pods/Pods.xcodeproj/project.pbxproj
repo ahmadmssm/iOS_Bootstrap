@@ -222,6 +222,7 @@
 		C8A6DE6D9B3C65D42A14D207F42C42AE /* Repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6754526312052516C99D9BEB726471 /* Repeat.swift */; };
 		C931ECA320CD368C0023FA4C /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931ECA220CD368C0023FA4C /* Toast.swift */; };
 		C931ECA620CD3C810023FA4C /* Remove duplicates + filter array.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931ECA520CD3C810023FA4C /* Remove duplicates + filter array.swift */; };
+		C931EDC520CD763A0023FA4C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931EDC420CD763A0023FA4C /* Logger.swift */; };
 		C99EA65120CC168F00D7C158 /* GlobalModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA65020CC168F00D7C158 /* GlobalModules.swift */; };
 		C99EA69920CC17A100D7C158 /* String to dicrionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA69520CC17A100D7C158 /* String to dicrionary.swift */; };
 		C99EA69A20CC17A100D7C158 /* UIColor + Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA69620CC17A100D7C158 /* UIColor + Hex.swift */; };
@@ -640,6 +641,7 @@
 		C931ECA220CD368C0023FA4C /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		C931ECA420CD37040023FA4C /* How_to_use_toast.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = How_to_use_toast.strings; sourceTree = "<group>"; };
 		C931ECA520CD3C810023FA4C /* Remove duplicates + filter array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Remove duplicates + filter array.swift"; sourceTree = "<group>"; };
+		C931EDC420CD763A0023FA4C /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = ../iOS_Bootstrap/Classes/Logger/Logger.swift; sourceTree = "<group>"; };
 		C99695B8CF7E2AA425FF422F5538E5A7 /* BehaviorSubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BehaviorSubject.swift; path = RxSwift/Subjects/BehaviorSubject.swift; sourceTree = "<group>"; };
 		C99EA65020CC168F00D7C158 /* GlobalModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalModules.swift; path = iOS_Bootstrap/Classes/GlobalModules.swift; sourceTree = "<group>"; };
 		C99EA69520CC17A100D7C158 /* String to dicrionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String to dicrionary.swift"; sourceTree = "<group>"; };
@@ -1098,6 +1100,14 @@
 			path = "../Target Support Files/Moya";
 			sourceTree = "<group>";
 		};
+		C931EDBD20CD74630023FA4C /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				C931EDC420CD763A0023FA4C /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 		C99EA69420CC17A100D7C158 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1438,6 +1448,7 @@
 		E7FA65CEDCA55C31FA85D3F9A426829A /* iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
+				C931EDBD20CD74630023FA4C /* Logger */,
 				C99EA65020CC168F00D7C158 /* GlobalModules.swift */,
 				C99EA6C720CC94C100D7C158 /* CustomComponents */,
 				C99EA6CC20CC94D200D7C158 /* Managers */,
@@ -2027,6 +2038,7 @@
 				C99EA69C20CC17A100D7C158 /* UILabel + format part of the text.swift in Sources */,
 				C99EA69920CC17A100D7C158 /* String to dicrionary.swift in Sources */,
 				C99EA69B20CC17A100D7C158 /* UIImage + Gif.swift in Sources */,
+				C931EDC520CD763A0023FA4C /* Logger.swift in Sources */,
 				C99EA6F920CC94D200D7C158 /* BaseModel.swift in Sources */,
 				C99EA6F720CC94D200D7C158 /* TableviewAdapter.swift in Sources */,
 				C931ECA320CD368C0023FA4C /* Toast.swift in Sources */,
