@@ -25,17 +25,11 @@ Pod::Spec.new do |s|
     # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'Ahmad Mahmoud Saleh' => 'ams.eng@hotmail.com' }
-    s.source           = { :git => 'https://github.com/ahmadmssm/iOS_Bootstrap', :tag => s.version.to_s }
+    s.source           = { :git => 'https://github.com/ahmadmssm/iOS_Bootstrap.git', :tag => s.version.to_s }
     
-    s.ios.deployment_target = '9.1'
-    s.platform = : iOS, '9.1'
-    s.swift_version = '3.0'
-    s.build = s.version
-    
+    s.ios.deployment_target = '9.3'
+    s.swift_version = '4'
     s.source_files = 'iOS_Bootstrap/Classes/**/*'
-    s.xcconfig = {
-        'VALID_ARCHS' =>  'arm64 x86_64',
-    }
     
     # s.resource_bundles = {
     #   'iOS_Bootstrap' => ['iOS_Bootstrap/Assets/*.png']
@@ -45,6 +39,8 @@ Pod::Spec.new do |s|
     s.dependency 'Moya/RxSwift', '~> 11.0'
     s.dependency 'RxSwift'
     s.dependency 'HandyJSON', '~> 4.1.1'
-    # s.frameworks = 'Foundation'
+    s.frameworks = 'Foundation'
     
 end
+
+
