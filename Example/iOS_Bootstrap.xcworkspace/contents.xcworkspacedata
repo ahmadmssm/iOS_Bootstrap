@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:iOS_Bootstrap.xcodeproj">
+      location = "container:iOS_Bootstrap.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:iOS_Bootstrap.xcodeproj">
    </FileRef>
 </Workspace>

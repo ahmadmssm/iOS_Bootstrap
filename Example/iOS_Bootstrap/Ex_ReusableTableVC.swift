@@ -25,7 +25,9 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
 //        tableAdapter.configurePullToRefresh(refreshControl: refreshControl)
         //
         dataSource.removeAll()
-        getWorldCountries()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.getWorldCountries()
+        }
     }
     
     func getWorldCountries() {
@@ -58,6 +60,18 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
     func configureNumberOfRows() -> Int {
         return dataSource.count
     }
-
+    
+    func emptyDataSetShouldDisplay() -> Bool {
+        return true
+    }
+    
+    func rowDidSelected(indexPath: IndexPath) {
+        Log.info("Row no. " + String(indexPath.row))
+    }
+    
+    func emptyDataSetDescriptionText() -> NSAttributedString {
+        let attributes: [String:AnyObject] = [NSForegroundColorAttributeName : UIColor.blue]
+        return NSAttributedString(string: "No data !", attributes: attributes)
+    }
 
 }

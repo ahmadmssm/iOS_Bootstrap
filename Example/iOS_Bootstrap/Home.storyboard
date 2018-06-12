@@ -13,7 +13,7 @@
         <!--HomeVC-->
         <scene sceneID="xDf-Nc-2mu">
             <objects>
-                <viewController id="ydq-zz-gRt" customClass="HomeVC" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ydq-zz-gRt" customClass="HomeVC" customModule="iOS_Bootstrap_Example" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ggi-Dy-rk2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,13 +24,47 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPt-34-YpL" customClass="CustomizableView" customModule="iOS_Bootstrap_Example" customModuleProvider="target">
+                                <rect key="frame" x="67" y="45" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="YBZ-fc-gmY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOc-iV-ozt" customClass="Checkbox" customModule="iOS_Bootstrap">
+                                <rect key="frame" x="67" y="506" width="65" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="checkLineWidth">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="checkColor">
+                                        <color key="value" red="0.25036770105361938" green="0.10539831966161728" blue="0.9453321099281311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="containerColor">
+                                        <color key="value" red="0.86845642328262329" green="0.16273203492164612" blue="0.062681175768375397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="containerFillsOnToggleOn" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.25384736060000002" green="0.79934781789999998" blue="0.2267209888" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5Ox-qE-bm5" firstAttribute="trailing" secondItem="Mm9-kE-32B" secondAttribute="trailing" constant="123" id="39h-CA-QeH"/>
                             <constraint firstItem="Mm9-kE-32B" firstAttribute="top" secondItem="5Ox-qE-bm5" secondAttribute="top" constant="278" id="L5O-Xc-Iia"/>
                             <constraint firstItem="5Ox-qE-bm5" firstAttribute="bottom" secondItem="Mm9-kE-32B" secondAttribute="bottom" constant="348" id="Pna-5L-2dq"/>
+                            <constraint firstItem="NPt-34-YpL" firstAttribute="top" secondItem="5Ox-qE-bm5" secondAttribute="top" constant="25" id="ark-Ug-GZ6"/>
                             <constraint firstItem="Mm9-kE-32B" firstAttribute="leading" secondItem="5Ox-qE-bm5" secondAttribute="leading" constant="123" id="ds8-7k-sU1"/>
+                            <constraint firstItem="5Ox-qE-bm5" firstAttribute="trailing" secondItem="NPt-34-YpL" secondAttribute="trailing" constant="68" id="ebl-1m-D1Q"/>
+                            <constraint firstItem="NPt-34-YpL" firstAttribute="leading" secondItem="5Ox-qE-bm5" secondAttribute="leading" constant="67" id="uIh-3v-WbE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Ox-qE-bm5"/>
                     </view>

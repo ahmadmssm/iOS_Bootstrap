@@ -6,9 +6,7 @@
 //  Copyright © 2018 Ahmad Mahmoud. All rights reserved.
 //
 
-import Foundation
 import UIKit
-
 
 open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
     
@@ -46,6 +44,9 @@ open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelega
         mTableview?.dataSource = self
         mTableview?.delegate = self
         //
+        mTableview.emptyDataSetDelegate = self
+        mTableview.emptyDataSetSource = self
+        //
         mDelegate?.configureAdditionalTableProperties?(table: mTableview!)
     }
     
@@ -70,8 +71,8 @@ open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelega
     //
     // Configure number of rows/sections
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (mDelegate?.configureNumberOfRowsPerSection(section: section)) != nil {
-            return (mDelegate?.configureNumberOfRowsPerSection(section: section))!
+        if (mDelegate?.configureNumberOfRowsPerSection!(section: section)) != nil {
+            return (mDelegate?.configureNumberOfRowsPerSection!(section: section))!
         }
         else if (tableViewDataSource != nil && (tableViewDataSource?.count)! > 0) {
             return (tableViewDataSource?.count)!
@@ -88,7 +89,7 @@ open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelega
     }
     // cell did selected at index
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        mDelegate?.rowDidSelected?(atIndexPath: indexPath)
+        mDelegate?.rowDidSelected?(indexPath: indexPath)
     }
     
     // Pagination
@@ -97,10 +98,59 @@ open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelega
     }
 }
 
-//extension TableviewAdapter : DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
-//    //
-//    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
-//        return (mDelegate?.emptyDataSetShouldDisplay!())!
-//    }
-//}
+extension TableviewAdapter : EmptyDataSetSource, EmptyDataSetDelegate {
+    //
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return (mDelegate?.emptyDataSetShouldDisplay?()) ?? false
+    }
+    
+    public func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return (mDelegate?.emptyDataSetTitleText?())
+    }
+    
+    public func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return (mDelegate?.emptyDataSetDescriptionText?())
+
+    }
+    public func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return (mDelegate?.emptyDataSetImage?())
+    }
+    
+    public func emptyDataSet(_ scrollView: UIScrollView, didTapView view: UIView) {
+        mDelegate?.emptyDataSetClicked?(didTap: view)
+    }
+    
+    public func emptyDataSetShouldAllowTouch(_ scrollView: UIScrollView) -> Bool {
+        return (mDelegate?.emptyDataSetAllowTouch?()) ?? true
+    }
+    
+    public func customView(forEmptyDataSet scrollView: UIScrollView) -> UIView? {
+        return (mDelegate?.emptyDataSetCustomView?())
+    }
+    
+    public func backgroundColor(forEmptyDataSet scrollView: UIScrollView) -> UIColor? {
+        return (mDelegate?.emptyDataSetBackgroundColor?())
+    }
+    
+    public func imageAnimation(forEmptyDataSet scrollView: UIScrollView) -> CAAnimation? {
+        return (mDelegate?.emptyDataSetAnimatedImage?())
+    }
+    
+    public func buttonImage(forEmptyDataSet scrollView: UIScrollView, for state: UIControlState) -> UIImage? {
+        return (mDelegate?.emptyDataSetButtonImage?())
+    }
+    
+    public func buttonBackgroundImage(forEmptyDataSet scrollView: UIScrollView, for state: UIControlState) -> UIImage? {
+        return (mDelegate?.emptyDataSetButtonBackgroundImage?())
+    }
+    
+    public func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControlState) -> NSAttributedString? {
+        return (mDelegate?.emptyDataSetButtonLabel?())
+    }
+    
+    public func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {
+         mDelegate?.emptyDataSetButtonTapped?(didTapButton: button)
+    }
+
+}
 

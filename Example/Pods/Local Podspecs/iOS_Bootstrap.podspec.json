@@ -16,7 +16,7 @@
     "tag": "0.2.5"
   },
   "platforms": {
-    "ios": "9.3"
+    "ios": "9.1"
   },
   "swift_version": "4",
   "source_files": "iOS_Bootstrap/Classes/**/*",
@@ -29,6 +29,9 @@
     ],
     "HandyJSON": [
       "~> 4.1.1"
+    ],
+    "ActionSheetPicker-3.0": [
+      "~> 2.3.0"
     ]
   },
   "frameworks": "Foundation"
