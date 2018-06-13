@@ -24,7 +24,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPt-34-YpL" customClass="CustomizableView" customModule="iOS_Bootstrap_Example" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPt-34-YpL">
                                 <rect key="frame" x="67" y="45" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -32,7 +32,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOc-iV-ozt" customClass="Checkbox" customModule="iOS_Bootstrap">
-                                <rect key="frame" x="67" y="506" width="65" height="56"/>
+                                <rect key="frame" x="67" y="506" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -43,9 +43,9 @@
                                         <color key="value" red="0.25036770105361938" green="0.10539831966161728" blue="0.9453321099281311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="containerColor">
-                                        <color key="value" red="0.86845642328262329" green="0.16273203492164612" blue="0.062681175768375397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="containerFillsOnToggleOn" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="containerFillsOnToggleOn" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>

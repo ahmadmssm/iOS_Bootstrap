@@ -53,9 +53,9 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
         return cell
     }
     
-    func configureNumberOfRowsPerSection(section: Int) -> Int {
-        return dataSource.count
-    }
+//    func configureNumberOfRowsPerSection(section: Int) -> Int {
+//        return dataSource.count
+//    }
    
     func configureNumberOfRows() -> Int {
         return dataSource.count
@@ -69,9 +69,9 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
         Log.info("Row no. " + String(indexPath.row))
     }
     
-    func emptyDataSetDescriptionText() -> NSAttributedString {
-        let attributes: [String:AnyObject] = [NSForegroundColorAttributeName : UIColor.blue]
-        return NSAttributedString(string: "No data !", attributes: attributes)
-    }
+//    func emptyDataSetDescriptionText() -> NSAttributedString {
+//        let attributes: [String:AnyObject] = [NSForegroundColorAttributeName : UIColor.blue]
+//        return NSAttributedString(string: "No data !", attributes: attributes)
+//    }
 
 }

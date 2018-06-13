@@ -78,6 +78,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loggers(_ sender: UIButton) {
+       
         Log.debug("Hi !")
         Log.error("There is an error :(")
     }
