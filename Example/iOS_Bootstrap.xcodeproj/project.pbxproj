@@ -109,7 +109,6 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				C91221BC20D0020400798C71 /* SocialMediaManager.swift */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for iOS_Bootstrap */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -131,6 +130,7 @@
 		607FACD21AFB9204008FA782 /* Example for iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
+				C91221BC20D0020400798C71 /* SocialMediaManager.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				C99EA63820CBECFB00D7C158 /* Storyboards.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
