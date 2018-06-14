@@ -13,7 +13,7 @@ open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelega
     private var mTableview : UITableView!
     private var tableViewDataSource: [Any]!
     private var mNibClass : BaseTableViewCell.Type!
-    private var mDelegate : TableViewDelegates!
+    fileprivate var mDelegate : TableViewDelegates!
 
     public func configureTableWithXibCell (tableView: UITableView,
                                     dataSource: [Any]!,

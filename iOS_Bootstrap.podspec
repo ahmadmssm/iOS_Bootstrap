@@ -28,18 +28,25 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/ahmadmssm/iOS_Bootstrap.git', :tag => s.version.to_s }
     
     s.ios.deployment_target = '9.1'
-    s.swift_version = '4'
+    s.swift_version = '3.2'
     s.source_files = 'iOS_Bootstrap/Classes/**/*'
     
+
+    # s.static_framework = true
     # s.resource_bundles = {
     #   'iOS_Bootstrap' => ['iOS_Bootstrap/Assets/*.png']
     # }
     
     # s.public_header_files = 'Pod/Classes/**/*.h'
+    
+    # s.pod_target_xcconfig = { 'SWIFT_WHOLE_MODULE_OPTIMIZATION' => 'YES',
+    # 'APPLICATION_EXTENSION_API_ONLY' => 'YES', 'DEFINES_MODULE' => 'YES' }
+    
     s.dependency 'Moya/RxSwift', '~> 11.0'
     s.dependency 'RxSwift'
     s.dependency 'HandyJSON', '~> 4.1.1'
-    s.dependency 'ActionSheetPicker-3.0', '~> 2.3.0'
+    # s.dependency 'ActionSheetPicker-3.0', '~> 2.3.0'
+    
     s.frameworks = 'Foundation'
     
 end
