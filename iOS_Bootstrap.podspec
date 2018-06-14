@@ -44,9 +44,7 @@ Pod::Spec.new do |s|
     
     s.dependency 'Moya/RxSwift', '~> 11.0'
     s.dependency 'RxSwift'
-    s.dependency 'HandyJSON', '~> 4.1.1'
-    # s.dependency 'ActionSheetPicker-3.0', '~> 2.3.0'
-    
+    s.dependency 'HandyJSON', '~> 4.1.1'    
     s.frameworks = 'Foundation'
     
 end

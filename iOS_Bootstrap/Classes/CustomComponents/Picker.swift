@@ -1,10 +1,9 @@
 //
-//  CustomPicker.swift
+//  Picker.swift
 //  iOS_Bootstrap
 //
 //  Created by Ahmad Mahmoud on 6/12/18.
 //
-
 
 public struct PickerData {
     
@@ -17,7 +16,7 @@ public struct PickerData {
     public var selectedItem : Any?
 }
 
-open class CustomPicker {
+open class Picker {
     
     public init () {}
     

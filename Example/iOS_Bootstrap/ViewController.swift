@@ -27,7 +27,7 @@ import iOS_Bootstrap
 
 class ViewController: UIViewController {
 
-    let picker = CustomPicker()
+    let picker = Picker()
     var socialMediaManager : SocialMediaManager?
 
     override func viewDidLoad() {
