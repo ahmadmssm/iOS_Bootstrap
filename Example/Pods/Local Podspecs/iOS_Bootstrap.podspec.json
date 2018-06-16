@@ -1,6 +1,6 @@
 {
   "name": "iOS_Bootstrap",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "summary": "iOS Bootstrap library",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/ahmadmssm/iOS_Bootstrap",
@@ -13,22 +13,22 @@
   },
   "source": {
     "git": "https://github.com/ahmadmssm/iOS_Bootstrap.git",
-    "tag": "0.2.6"
+    "tag": "0.2.7"
   },
   "platforms": {
     "ios": "9.1"
   },
-  "swift_version": "3.2",
+  "swift_version": "4",
   "source_files": "iOS_Bootstrap/Classes/**/*",
   "dependencies": {
     "Moya/RxSwift": [
       "~> 11.0"
     ],
-    "RxSwift": [
-
-    ],
     "HandyJSON": [
       "~> 4.1.1"
+    ],
+    "IQKeyboardManagerSwift": [
+      "5.0.0"
     ]
   },
   "frameworks": "Foundation"

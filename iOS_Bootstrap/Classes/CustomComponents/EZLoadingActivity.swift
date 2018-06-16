@@ -53,7 +53,7 @@ public struct EZLoadingActivity {
             return false
         }
         
-        guard topMostController != nil else {
+        guard topMostViewController != nil else {
             print("EZLoadingActivity Error: You don't have any views set. You may be calling them in viewDidLoad. Try viewDidAppear instead.")
             return false
         }
@@ -65,7 +65,7 @@ public struct EZLoadingActivity {
                     overlay = UIView(frame: UIApplication.shared.keyWindow!.frame)
                 }
                 overlay.backgroundColor = UIColor.black.withAlphaComponent(0)
-                topMostController?.view.addSubview(overlay)
+                topMostViewController?.view.addSubview(overlay)
                 UIView.animate(withDuration: 0.2, animations: {overlay.backgroundColor = overlay.backgroundColor?.withAlphaComponent(0.5)})
             }
             instance?.showLoadingActivity()
@@ -118,8 +118,8 @@ public struct EZLoadingActivity {
         if overlay != nil {
             UIView.animate(withDuration: 0.2, animations: {
                 overlay.backgroundColor = overlay.backgroundColor?.withAlphaComponent(0)
-                }, completion: { _ in
-                    overlay.removeFromSuperview()
+            }, completion: { _ in
+                overlay.removeFromSuperview()
             })
         }
         
@@ -140,7 +140,7 @@ public struct EZLoadingActivity {
         
         convenience init(text: String, disableUI: Bool) {
             self.init(frame: CGRect(x: 0, y: 0, width: Settings.ActivityWidth, height: Settings.ActivityHeight))
-            center = CGPoint(x: topMostController!.view.bounds.midX, y: topMostController!.view.bounds.midY)
+            center = CGPoint(x: topMostViewController!.view.bounds.midX, y: topMostViewController!.view.bounds.midY)
             autoresizingMask = [.flexibleTopMargin, .flexibleLeftMargin, .flexibleBottomMargin, .flexibleRightMargin]
             backgroundColor = Settings.BackgroundColor
             alpha = 1
@@ -179,8 +179,9 @@ public struct EZLoadingActivity {
             
             if Settings.LoadOverApplicationWindow {
                 UIApplication.shared.windows.first?.addSubview(self)
-            } else {
-                topMostController!.view.addSubview(self)
+            }
+            else {
+                topMostViewController!.view.addSubview(self)
             }
             
             //make it smoothly
@@ -262,14 +263,14 @@ public struct EZLoadingActivity {
                 activityView.stopAnimating()
                 UIView.animate(withDuration: animationDuration, animations: {
                     self.icon.alpha = 1
-                    }, completion: { (value: Bool) in
-                        UIView.animate(withDuration: 0.2, animations: {
-                            self.alpha = 0
-                            }, completion: { (success) in
-                                self.callSelectorAsync(#selector(UIView.removeFromSuperview), delay: animationDuration)
-                        })
-                        instance = nil
-                        hidingInProgress = false
+                }, completion: { (value: Bool) in
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self.alpha = 0
+                    }, completion: { (success) in
+                        self.callSelectorAsync(#selector(UIView.removeFromSuperview), delay: animationDuration)
+                    })
+                    instance = nil
+                    hidingInProgress = false
                 })
             } else {
                 activityView.stopAnimating()
@@ -325,11 +326,10 @@ private extension UIScreen {
     }
 }
 
-private var topMostController: UIViewController? {
+private var topMostViewController: UIViewController? {
     var presentedVC = UIApplication.shared.keyWindow?.rootViewController
     while let pVC = presentedVC?.presentedViewController {
         presentedVC = pVC
     }
-    
     return presentedVC
 }

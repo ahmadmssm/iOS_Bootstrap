@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/ahmadmssm/iOS_Bootstrap.git', :tag => s.version.to_s }
     
     s.ios.deployment_target = '9.1'
-    s.swift_version = '3.2'
+    s.swift_version = '4'
     s.source_files = 'iOS_Bootstrap/Classes/**/*'
     
 
@@ -43,8 +43,8 @@ Pod::Spec.new do |s|
     # 'APPLICATION_EXTENSION_API_ONLY' => 'YES', 'DEFINES_MODULE' => 'YES' }
     
     s.dependency 'Moya/RxSwift', '~> 11.0'
-    # s.dependency 'RxSwift'
     s.dependency 'HandyJSON', '~> 4.1.1'
+    s.dependency 'IQKeyboardManagerSwift', '5.0.0'
     s.frameworks = 'Foundation'
     
 end
