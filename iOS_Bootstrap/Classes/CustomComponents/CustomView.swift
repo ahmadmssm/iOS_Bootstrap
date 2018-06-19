@@ -41,11 +41,11 @@ open class CustomView: UIView {
         }
     }
     
-//    @IBInspectable public var backgroundImage: UIImage? = nil {
-//        didSet {
-//            layer.backgroundColor = UIColor(patternImage: backgroundImage!).cgColor
-//        }
-//    }
+    @IBInspectable public var backgroundImage: UIImage? {
+        didSet {
+            layer.contents = backgroundImage?.cgImage
+        }
+    }
     
     @IBInspectable public var shadowOffsetWidth: Int = 0
     @IBInspectable public var shadowOffsetHeight: Int = 3
