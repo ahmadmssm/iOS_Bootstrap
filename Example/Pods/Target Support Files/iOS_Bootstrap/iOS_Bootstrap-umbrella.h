@@ -23,10 +23,10 @@
 #import "DistancePickerView.h"
 #import "SWActionSheet.h"
 #import "ToggleButton.h"
-#import "SNSFacebook.h"
-#import "SNSFacebookInteractions.h"
-#import "SNSFacebookLogin.h"
-#import "SNSTwitter.h"
+//#import "SNSFacebook.h"
+//#import "SNSFacebookInteractions.h"
+//#import "SNSFacebookLogin.h"
+//#import "SNSTwitter.h"
 
 FOUNDATION_EXPORT double iOS_BootstrapVersionNumber;
 FOUNDATION_EXPORT const unsigned char iOS_BootstrapVersionString[];
