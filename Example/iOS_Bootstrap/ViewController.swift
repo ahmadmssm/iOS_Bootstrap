@@ -23,16 +23,12 @@
 import UIKit
 import iOS_Bootstrap
 
-
-
 class ViewController: UIViewController {
 
     let picker = Picker()
-    var socialMediaManager : SocialMediaManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        socialMediaManager = SocialMediaManager(context: self)
     }
     
     @IBAction func buttonGoToHomeStoryboard(_ sender: UIButton) {

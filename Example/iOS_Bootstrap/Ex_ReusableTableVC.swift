@@ -16,10 +16,16 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
     private let tableAdapter : TableviewAdapter = TableviewAdapter()
     private var dataSource : [Country] = [Country]()
     
+    var reusableView : CountriesReusableTable!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-        tableAdapter.configureTableWithXibCell(tableView: tableview, dataSource: dataSource, nibClass: TableViewCell.self, delegate: self)
+        
+        reusableView = CountriesReusableTable(tableview: tableview, tableViewDataSource: dataSource, delegate: self)
+        
+     //   tableAdapter.configureTableWithXibCell(tableView: tableview, dataSource: dataSource, nibClass: TableViewCell.self, delegate: self)
         //
 //        let refreshControl = UIRefreshControl()
 //        tableAdapter.configurePullToRefresh(refreshControl: refreshControl)
@@ -37,13 +43,18 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
                 let countriesArr : [Country] = (countries as! [Country])
                 print("Country title : ", countriesArr[0].capital!)
                 self.dataSource = countriesArr
-                self.tableAdapter.reloadTable(dataSourcee: self.dataSource)
+               // self.tableAdapter.reloadTable(dataSource: self.dataSource)
+                self.reusableView.reloadTableViewData(dataSource: self.dataSource)
                 break
             case .failure(let errorMsg):
                 print("Error : " + errorMsg)
                 break
             }
         })
+    }
+    
+    func configureNumberOfRowsPerSectionWithSection() {
+        
     }
     
     func configureCell(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,9 +64,9 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
         return cell
     }
     
-//    func configureNumberOfRowsPerSection(section: Int) -> Int {
-//        return dataSource.count
-//    }
+    func configureNumberOfSections() -> Int {
+        return 1
+    }
    
     func configureNumberOfRows() -> Int {
         return dataSource.count
@@ -69,9 +80,14 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
         Log.info("Row no. " + String(indexPath.row))
     }
     
-//    func emptyDataSetDescriptionText() -> NSAttributedString {
-//        let attributes: [String:AnyObject] = [NSForegroundColorAttributeName : UIColor.blue]
-//        return NSAttributedString(string: "No data !", attributes: attributes)
-//    }
+    func emptyDataSetDescriptionText() -> NSAttributedString {
+        let attributes: [NSAttributedStringKey : Any] = [
+            NSAttributedStringKey.strokeColor : UIColor.black,
+            NSAttributedStringKey.foregroundColor : UIColor.blue,
+            NSAttributedStringKey.strokeWidth : -2.0,
+            NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18)
+        ]
+        return NSAttributedString(string: "No data !", attributes: attributes)
+    }
 
 }

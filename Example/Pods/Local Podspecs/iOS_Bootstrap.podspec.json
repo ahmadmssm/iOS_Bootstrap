@@ -29,7 +29,22 @@
     ],
     "IQKeyboardManagerSwift": [
       "5.0.0"
+    ],
+    "FBSDKCoreKit": [
+
+    ],
+    "FBSDKLoginKit": [
+
+    ],
+    "FBSDKShareKit": [
+
     ]
   },
-  "frameworks": "Foundation"
+  "frameworks": "Foundation",
+  "subspecs": [
+    {
+      "name": "Facebook",
+      "source_files": "Classes/iOS_Bootstrap/Managers/SocialMediaManager/**/*.swift"
+    }
+  ]
 }

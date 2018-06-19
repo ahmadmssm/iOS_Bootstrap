@@ -10,12 +10,12 @@ import UIKit
 
 open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
     
-    private var mTableview : UITableView!
-    private var tableViewDataSource: [Any]!
-    private var mNibClass : BaseTableViewCell.Type!
-    fileprivate var mDelegate : TableViewDelegates!
+    private final var mTableview : UITableView!
+    private final var tableViewDataSource: [Any]!
+    private final var mNibClass : BaseTableViewCell.Type!
+    fileprivate final var mDelegate : TableViewDelegates!
 
-    public func configureTableWithXibCell (tableView: UITableView,
+    public final func configureTableWithXibCell (tableView: UITableView,
                                     dataSource: [Any]!,
                                     nibClass : BaseTableViewCell.Type!,
                                     delegate : TableViewDelegates) {
@@ -25,7 +25,7 @@ open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelega
         configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
     }
     
-    public func configureTableWithStoryboardCell (tableView: UITableView,
+    public final func configureTableWithStoryboardCell (tableView: UITableView,
                                            dataSource: [Any],
                                            nibClass : BaseTableViewCell.Type!,
                                            delegate : TableViewDelegates) {
@@ -33,7 +33,7 @@ open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelega
         configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
     }
     
-    private func configureTable (tableView: UITableView,
+    private final func configureTable (tableView: UITableView,
                                            dataSource: [Any],
                                            delegate : TableViewDelegates) {
         self.tableViewDataSource = dataSource
@@ -63,15 +63,15 @@ open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelega
         mDelegate?.pullToRefresh?(refreshcontrole: refreshControl)
     }
     
-    public func reloadTable(dataSourcee:[Any]) {
-        self.tableViewDataSource = dataSourcee
+    public final func reloadTable(dataSource:[Any]) {
+        self.tableViewDataSource = dataSource
         mTableview?.reloadData()
     }
     // Table view callbacks
     //
     // Configure number of rows/sections
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (mDelegate?.configureNumberOfRowsPerSection!(section: section)) != nil {
+        if (mDelegate?.configureNumberOfRowsPerSection?(section: section)) != nil {
             return (mDelegate?.configureNumberOfRowsPerSection!(section: section))!
         }
         else if (tableViewDataSource != nil && (tableViewDataSource?.count)! > 0) {

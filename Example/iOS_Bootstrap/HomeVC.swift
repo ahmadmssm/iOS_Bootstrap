@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import iOS_Bootstrap
 
 class HomeVC: UIViewController {
   
     var x : Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,4 +20,12 @@ class HomeVC: UIViewController {
         print("X = ", x)
     }
 
+    @IBAction func onToggleButtonClicked(_ sender: ToggleButton) {
+//        if sender.isSelected {
+//            sender.isSelected = false
+//        }
+//        else {
+//            sender.isSelected = true
+//        }
+    }
 }

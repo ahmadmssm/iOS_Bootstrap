@@ -30,9 +30,10 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '9.1'
     s.swift_version = '4'
     s.source_files = 'iOS_Bootstrap/Classes/**/*'
-    
 
-    # s.static_framework = true
+
+    # s.ios.xcconfig = {'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'}
+
     # s.resource_bundles = {
     #   'iOS_Bootstrap' => ['iOS_Bootstrap/Assets/*.png']
     # }
@@ -45,7 +46,23 @@ Pod::Spec.new do |s|
     s.dependency 'Moya/RxSwift', '~> 11.0'
     s.dependency 'HandyJSON', '~> 4.1.1'
     s.dependency 'IQKeyboardManagerSwift', '5.0.0'
+    s.dependency 'IQKeyboardManagerSwift', '5.0.0'
+    # s.dependency 'FBSDKCoreKit'
+    # s.dependency 'FBSDKLoginKit'
+    # s.dependency 'FBSDKShareKit'
+    # s.dependency 'STTwitter', '0.2.5'
+    # s.dependency 'Firebase/Core'
+    # s.dependency 'Firebase/Messaging'
     s.frameworks = 'Foundation'
+    
+    s.subspec 'Facebook' do |facebook|
+        
+        facebook.source_files = 'Classes/Managers/SocialMediaManager/*'
+        facebook.dependency 'FBSDKCoreKit'
+        facebook.dependency 'FBSDKLoginKit'
+        facebook.dependency 'FBSDKShareKit'
+    end
+        
     
 end
 

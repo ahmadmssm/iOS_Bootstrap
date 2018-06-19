@@ -24,7 +24,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Pe-P2-jPb" customClass="UICheckbox" customModule="iOS_Bootstrap">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Pe-P2-jPb" customClass="CustomView" customModule="iOS_Bootstrap">
                                 <rect key="frame" x="67" y="422" width="119" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90378695726394653" green="0.2577444314956665" blue="0.044638149440288544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,9 +41,12 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="IQButtonBarArrowRight.png"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="IQButtonBarArrowLeft.png"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="IQButtonBarArrowRight.png"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPt-34-YpL" customClass="CardView" customModule="iOS_Bootstrap">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPt-34-YpL" customClass="CardView" customModule="iOS_Bootstrap">
                                 <rect key="frame" x="31" y="44" width="297" height="128"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -74,18 +77,50 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="BGImage" value="thumbs-down"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="thumbs-up"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fn-hA-TbZ" customClass="ToggleButton">
+                                <rect key="frame" x="103" y="609" width="149" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.86845642328262329" green="0.16273203492164612" blue="0.062681175768375397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleShadowColor" red="0.17088087939999999" green="0.851149559" blue="0.13137255179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="thumbs-down"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="thumbs-up"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconStrokeWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="marginWidth">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                        <color key="value" red="0.86845642329999995" green="0.16273203489999999" blue="0.06268117577" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onToggleButtonClicked:" destination="ydq-zz-gRt" eventType="touchUpInside" id="rv1-fj-0bS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5Ox-qE-bm5" firstAttribute="trailing" secondItem="Mm9-kE-32B" secondAttribute="trailing" constant="123" id="39h-CA-QeH"/>
                             <constraint firstItem="Mm9-kE-32B" firstAttribute="top" secondItem="5Ox-qE-bm5" secondAttribute="top" constant="278" id="L5O-Xc-Iia"/>
                             <constraint firstItem="5Ox-qE-bm5" firstAttribute="bottom" secondItem="Mm9-kE-32B" secondAttribute="bottom" constant="348" id="Pna-5L-2dq"/>
-                            <constraint firstItem="NPt-34-YpL" firstAttribute="top" secondItem="5Ox-qE-bm5" secondAttribute="top" constant="25" id="ark-Ug-GZ6"/>
+                            <constraint firstItem="NPt-34-YpL" firstAttribute="top" secondItem="5Ox-qE-bm5" secondAttribute="top" constant="24" id="ark-Ug-GZ6"/>
                             <constraint firstItem="Mm9-kE-32B" firstAttribute="leading" secondItem="5Ox-qE-bm5" secondAttribute="leading" constant="123" id="ds8-7k-sU1"/>
-                            <constraint firstItem="5Ox-qE-bm5" firstAttribute="trailing" secondItem="NPt-34-YpL" secondAttribute="trailing" constant="25" id="ebl-1m-D1Q"/>
-                            <constraint firstItem="NPt-34-YpL" firstAttribute="leading" secondItem="5Ox-qE-bm5" secondAttribute="leading" constant="53" id="uIh-3v-WbE"/>
+                            <constraint firstItem="5Ox-qE-bm5" firstAttribute="trailing" secondItem="NPt-34-YpL" secondAttribute="trailing" constant="47" id="ebl-1m-D1Q"/>
+                            <constraint firstItem="NPt-34-YpL" firstAttribute="leading" secondItem="5Ox-qE-bm5" secondAttribute="leading" constant="31" id="uIh-3v-WbE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Ox-qE-bm5"/>
                     </view>
@@ -95,4 +130,10 @@
             <point key="canvasLocation" x="200.80000000000001" y="200.14992503748127"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="IQButtonBarArrowLeft.png" width="12" height="21"/>
+        <image name="IQButtonBarArrowRight.png" width="12" height="21"/>
+        <image name="thumbs-down" width="20" height="22"/>
+        <image name="thumbs-up" width="20" height="22"/>
+    </resources>
 </document>
