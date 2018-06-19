@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'iOS_Bootstrap'
-    s.version          = '0.2.8'
+    s.version          = '0.2.9'
     s.summary          = 'iOS Bootstrap library'
     
     # This description is used to generate tags and improve search results.
@@ -47,22 +47,22 @@ Pod::Spec.new do |s|
     s.dependency 'HandyJSON', '~> 4.1.1'
     s.dependency 'IQKeyboardManagerSwift', '5.0.0'
     s.dependency 'IQKeyboardManagerSwift', '5.0.0'
-    # s.dependency 'FBSDKCoreKit'
-    # s.dependency 'FBSDKLoginKit'
-    # s.dependency 'FBSDKShareKit'
-    # s.dependency 'STTwitter', '0.2.5'
-    # s.dependency 'Firebase/Core'
-    # s.dependency 'Firebase/Messaging'
+
     s.frameworks = 'Foundation'
     
     s.subspec 'Facebook' do |facebook|
-        
-        facebook.source_files = 'Classes/Managers/SocialMediaManager/*'
-        facebook.dependency 'FBSDKCoreKit'
-        facebook.dependency 'FBSDKLoginKit'
-        facebook.dependency 'FBSDKShareKit'
+        facebook.source_files = 'Classes/Managers/SocialMediaManager/**/*'
+        facebook.ios.dependency     'FBSDKCoreKit',   '~> 4.22'
+        facebook.ios.dependency     'FBSDKShareKit',  '~> 4.22'
+        facebook.ios.dependency 'FBSDKLoginKit', '~> 4.22'
     end
         
+ 
+    s.subspec 'Twitter' do |twitter|
+        twitter.source_files = 'Classes/Managers/SocialMediaManager/**/*'
+        twitter.dependency 'STTwitter', '0.2.5'
+    end
+ 
     
 end
 
