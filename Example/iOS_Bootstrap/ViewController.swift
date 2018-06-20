@@ -4,21 +4,8 @@
 //
 //  Created by ams.eng@hotmail.com on 06/08/2018.
 //  Copyright (c) 2018 ams.eng@hotmail.com. All rights reserved.
-//  Ref : https://stackoverflow.com/questions/25738817/removing-duplicate-elements-from-an-array
+//
 
-/*
- 
- How to use :
- 
- let arrayOfInts = [2, 2, 4, 4]
- 
- Remove duplicates :
- print(arrayOfInts.removeDuplicates()) // Prints: [2, 4]
- 
- Filtering based on properties :
- let filteredElements = myElements.filterDuplicates { $0.PropertyOne == $1.PropertyOne && $0.PropertyTwo == $1.PropertyTwo }
- 
-*/
 
 import UIKit
 import iOS_Bootstrap
@@ -42,11 +29,8 @@ class ViewController: UIViewController {
         EZLoadingActivity.showWithDelay("Waiting...", disableUI: false, seconds: 2)
     }
     
-
-    
-    @IBAction func showPicker(_ sender: UIButton) {
+    @IBAction func showDatePicker(_ sender: UIButton) {
        openDatePicker(sender: sender)
-       // smc?.postToFacebook(text: "Hopa")
         
     }
     @IBAction func showTimePicker(_ sender: UIButton) {
@@ -74,11 +58,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loggers(_ sender: UIButton) {
-       
         Log.debug("Hi !")
         Log.error("There is an error :(")
     }
-    
     
     func openMultiDatasourcePicker(sender : UIButton) {
         let dataSource : [[String]] = [["One", "Two", "A lot"], ["Many", "Many more", "Infinite"],["One", "Two", "A lot"]]
@@ -126,6 +108,28 @@ class ViewController: UIViewController {
             Log.info(date)
         }
     }
-        
+    
+    
+    @IBAction func showShareTo(_ sender: UIButton) {
+        let sharingManager : SocialMediaManager = SocialMediaManager(context: self)
+        sharingManager.share(itemToShare: "Text" as AnyObject, excludedItems: nil)
+    }
+    
 }
+
+//  Ref : https://stackoverflow.com/questions/25738817/removing-duplicate-elements-from-an-array
+
+/*
+ 
+ How to use :
+ 
+ let arrayOfInts = [2, 2, 4, 4]
+ 
+ Remove duplicates :
+ print(arrayOfInts.removeDuplicates()) // Prints: [2, 4]
+ 
+ Filtering based on properties :
+ let filteredElements = myElements.filterDuplicates { $0.PropertyOne == $1.PropertyOne && $0.PropertyTwo == $1.PropertyTwo }
+ 
+ */
 

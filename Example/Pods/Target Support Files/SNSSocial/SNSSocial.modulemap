@@ -1,0 +1,6 @@
+framework module SNSSocial {
+  umbrella header "SNSSocial-umbrella.h"
+
+  export *
+  module * { export * }
+}

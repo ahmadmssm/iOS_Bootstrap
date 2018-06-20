@@ -13,21 +13,27 @@ PODS:
   - FBSDKShareKit (4.33.0):
     - FBSDKCoreKit (~> 4.33.0)
   - HandyJSON (4.1.1)
-  - iOS_Bootstrap (0.2.7):
-    - FBSDKCoreKit
-    - FBSDKLoginKit
-    - FBSDKShareKit
+  - iOS_Bootstrap (0.3.0):
     - HandyJSON (~> 4.1.1)
-    - iOS_Bootstrap/Facebook (= 0.2.7)
+    - iOS_Bootstrap/Facebook (= 0.3.0)
+    - iOS_Bootstrap/Twitter (= 0.3.0)
     - IQKeyboardManagerSwift (= 5.0.0)
     - Moya/RxSwift (~> 11.0)
-  - iOS_Bootstrap/Facebook (0.2.7):
-    - FBSDKCoreKit
-    - FBSDKLoginKit
-    - FBSDKShareKit
+    - SNSSocial (~> 2.0)
+  - iOS_Bootstrap/Facebook (0.3.0):
+    - FBSDKCoreKit (~> 4.22)
+    - FBSDKLoginKit (~> 4.22)
+    - FBSDKShareKit (~> 4.22)
     - HandyJSON (~> 4.1.1)
     - IQKeyboardManagerSwift (= 5.0.0)
     - Moya/RxSwift (~> 11.0)
+    - SNSSocial (~> 2.0)
+  - iOS_Bootstrap/Twitter (0.3.0):
+    - HandyJSON (~> 4.1.1)
+    - IQKeyboardManagerSwift (= 5.0.0)
+    - Moya/RxSwift (~> 11.0)
+    - SNSSocial (~> 2.0)
+    - STTwitter (= 0.2.5)
   - IQKeyboardManagerSwift (5.0.0)
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
@@ -37,6 +43,16 @@ PODS:
     - RxSwift (~> 4.0)
   - Result (3.2.4)
   - RxSwift (4.2.0)
+  - SNSSocial (2.1.0):
+    - SNSSocial/Facebook (= 2.1.0)
+    - SNSSocial/Twitter (= 2.1.0)
+  - SNSSocial/Facebook (2.1.0):
+    - FBSDKCoreKit (~> 4.22)
+    - FBSDKLoginKit (~> 4.22)
+    - FBSDKShareKit (~> 4.22)
+  - SNSSocial/Twitter (2.1.0):
+    - STTwitter (= 0.2.5)
+  - STTwitter (0.2.5)
 
 DEPENDENCIES:
   - iOS_Bootstrap (from `../`)
@@ -53,6 +69,8 @@ SPEC REPOS:
     - Moya
     - Result
     - RxSwift
+    - SNSSocial
+    - STTwitter
 
 EXTERNAL SOURCES:
   iOS_Bootstrap:
@@ -65,11 +83,13 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 88cb456349cfb3b554427ce4f8b43729d85dfb40
   FBSDKShareKit: 1869cb24db2cea90666a50cb9d568deb38e2d16e
   HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
-  iOS_Bootstrap: 972587b105d59e4b7d85f96590856274f3ba23ff
+  iOS_Bootstrap: 340a98a73ee12409cf15133cbf7b6784e92cc199
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  SNSSocial: da578a11684a47c9c60ee491b4c7cd157eda01d3
+  STTwitter: 5c157e8dcb4f0e4cf5b4374393021b7d7b7fd497
 
 PODFILE CHECKSUM: e4d7cf921e9a245cbc84a211f59c20fcab4d3521
 

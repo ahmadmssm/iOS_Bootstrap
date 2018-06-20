@@ -153,6 +153,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Result/Result.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SNSSocial/SNSSocial.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/STTwitter/STTwitter.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/iOS_Bootstrap/iOS_Bootstrap.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -166,6 +168,8 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Result/Result.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SNSSocial/SNSSocial.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/STTwitter/STTwitter.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/iOS_Bootstrap/iOS_Bootstrap.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

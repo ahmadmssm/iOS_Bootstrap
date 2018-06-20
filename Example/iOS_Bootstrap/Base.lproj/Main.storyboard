@@ -50,7 +50,7 @@
                                         <rect key="frame" x="0.0" y="127" width="323" height="32.5"/>
                                         <state key="normal" title="Show date picker"/>
                                         <connections>
-                                            <action selector="showPicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UPu-GH-TKM"/>
+                                            <action selector="showDatePicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mAY-YB-1jP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRy-pZ-k5s">
@@ -148,7 +148,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fn-eB-MrZ">
                                         <rect key="frame" x="0.0" y="423.5" width="323" height="32.5"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Share to"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="5"/>
@@ -160,6 +160,9 @@
                                                 <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showShareTo:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V7j-dy-eWz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJ9-N4-gPi">
                                         <rect key="frame" x="0.0" y="466" width="323" height="32.5"/>
