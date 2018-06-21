@@ -20,7 +20,7 @@ for Swift</h1>
 
 ## Index :
 
-- [Features](#features:)
+- [Features](#features-:)
 - [Requirements](#requirements:)
 - [Installation](#installation:)
 -  [FAQ](#faqs:)
