@@ -15,7 +15,8 @@ for Swift</h1>
 
 ##Overview :
 <p style='color:#2270FF'>
-**Networking**, **tableview**, **user defaults**, **data parsing**, etc..., are the most common things among many more whic we use in almost every project, so why do we repeat the same work again and again if there is somthing that do that work for us like a boss !! 😎😎.
+
+__Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are the most common things among many more whic we use in almost every project, so why do we repeat the same work again and again if there is somthing that do that work for us like a boss !! 😎😎.
 </p>
 
 ## Index :
@@ -59,7 +60,7 @@ for Swift</h1>
 
 ## Up coming features :
 
-1. Collectionv view adapter.
+1. Collection view adapter.
 2.  Reusable collection view adapter.
 3. Pagination handler.
 4. Date and time manager.
@@ -125,13 +126,12 @@ Due to a bug in Cocoapods, so the Storyboard sometimes many fail to render if yo
 
 ```ruby
 # Workaround for Cocoapods issue #7606
-post_install do |installer|
-installer.pods_project.build_configurations.each do |config|
-config.build_settings.delete('CODE_SIGNING_ALLOWED')
-config.build_settings.delete('CODE_SIGNING_REQUIRED')
+    post_install do |installer|
+        installer.pods_project.build_configurations.each do |config|
+        config.build_settings.delete('CODE_SIGNING_ALLOWED')
+        config.build_settings.delete('CODE_SIGNING_REQUIRED')
+    end
 end
-end
-
 ```
 > For more details, please see this __[link](https://github.com/CocoaPods/CocoaPods/issues/7606#issuecomment-381279098)__
 
@@ -196,5 +196,6 @@ As a developer trying this pod out for the first time, you can make a valuable c
 
 ## License
 
-__iOS_Bootstrap__  is released under the MIT license. __[See License](https://github.com/ahmadmssm/iOS_Bootstrap/blob/master/LICENSE)__ for details.
+__iOS_Bootstrap__ is released under the MIT license. __[See License](https://github.com/ahmadmssm/iOS_Bootstrap/blob/master/LICENSE)__ for details.
+
 ---
