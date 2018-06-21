@@ -1,17 +1,16 @@
-<center>
-<h1>
-<b style='color:#2270FF'>
-iOS_Bootstrap </b> for Swift
-</p>
-</h1>
-</center>
-<br>
 
-<center>
-[![Version](https://img.shields.io/cocoapods/v/iOS_Bootstrap.svg?style=flat)](https://cocoapods.org/pods/iOS_Bootstrap)
-[![License](https://img.shields.io/cocoapods/l/iOS_Bootstrap.svg?style=flat)](https://cocoapods.org/pods/iOS_Bootstrap)
-[![Platform](https://img.shields.io/cocoapods/p/iOS_Bootstrap.svg?style=flat)](https://cocoapods.org/pods/iOS_Bootstrap)
-</center>
+<h1 align ="center">
+<b style='color:#2270FF'>
+iOS_Bootstrap
+</b>
+for Swift</h1>
+
+
+<p align="center">
+<a href="https://cocoapods.org/pods/iOS_Bootstrap"><img src="https://img.shields.io/cocoapods/v/iOS_Bootstrap.svg?style=flat"></a>
+<a href="https://cocoapods.org/pods/iOS_Bootstrap/"><img src="https://img.shields.io/cocoapods/l/iOS_Bootstrap.svg?style=flat"></a>
+<a href="https://cocoapods.org/pods/iOS_Bootstrap"><img src="https://img.shields.io/cocoapods/p/iOS_Bootstrap.svg?style=flat"></a>
+</p>
 
 
 ##Overview :
@@ -198,5 +197,4 @@ As a developer trying this pod out for the first time, you can make a valuable c
 ## License
 
 __iOS_Bootstrap__  is released under the MIT license. __[See License](https://github.com/ahmadmssm/iOS_Bootstrap/blob/master/LICENSE)__ for details.
-
 ---
