@@ -20,7 +20,7 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are 
 
 ## Index :
 
-- [Features](#features:)
+- [Features](#features)
 - [Requirements](#requirements:)
 - [Installation](#installation:)
 -  [FAQ](#faqs:)
@@ -28,7 +28,7 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are 
 - [License](#License:)
 
 <br>
-## Features :
+## Features
 
 1. Only import boot strap.
 2. Network layer (Unifed error + unified closure).
