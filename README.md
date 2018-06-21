@@ -25,7 +25,7 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are 
 - [Upcoming features](upcoming-features)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [QuickStart](#auickstart)
+- [Quick start](#quick-start)
 - [How to use](#how-touse)
 - [FAQ](#faqs)
 - [Credits](#credits)
@@ -115,7 +115,7 @@ Once your project is integrated with the __iOS_Bootstrap__ , you can pull update
 $ pod update
 ```
 
-## QuickStart
+## Quick start
 
 Just import  `iOS_Bootstrap` and your are ready to go.
 
