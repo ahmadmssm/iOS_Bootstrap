@@ -22,13 +22,14 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are 
 ## Index :
 
 - [Features](#features:)
-- [Requirements](#Requirements :)
+- [Requirements](#requirements :)
 - [Installation](#installation:)
 -  [FAQ](#faqs:)
 - [Credits](#Credits:)
 - [License](#License:)
 
 <br>
+
 ## Features :
 
 1. Only import boot strap.
