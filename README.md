@@ -21,7 +21,7 @@ for Swift</h1>
 ## Overview
 <p style='color:#2270FF'>
 
-__Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are the most common things among many more whic we use in almost every project, so why do we repeat the same work again and again if there is somthing that do that work for us like a boss !! 😎😎.
+__Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, are the most common things among many more whic we use in almost every project, so why do we repeat the same work again and again if there is somthing that do that work for us like a boss !! 😎😎.
 </p>
 
 ## Index
@@ -135,10 +135,10 @@ Due to a bug in Cocoapods, so the Storyboard sometimes many fail to render if yo
 ```ruby
 # Workaround for Cocoapods issue #7606
 post_install do |installer|
-installer.pods_project.build_configurations.each do |config|
-config.build_settings.delete('CODE_SIGNING_ALLOWED')
-config.build_settings.delete('CODE_SIGNING_REQUIRED')
-end
+    installer.pods_project.build_configurations.each do |config|
+        config.build_settings.delete('CODE_SIGNING_ALLOWED')
+        config.build_settings.delete('CODE_SIGNING_REQUIRED')
+    end
 end
 ```
 > For more details, please see this __[link](https://github.com/CocoaPods/CocoaPods/issues/7606#issuecomment-381279098)__
