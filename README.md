@@ -15,12 +15,12 @@ for Swift</h1>
 
 ##Overview :
 <p style='color:#2270FF'>
-**Networking**, __tableview__, __user defaults__, __data parsing__, etc..., are the most common things among many more whic we use in almost every project, so why do we repeat the same work again and again if there is somthing that do that work for us like a boss !! 😎😎.
+**Networking**, **tableview**, **user defaults**, **data parsing**, etc..., are the most common things among many more whic we use in almost every project, so why do we repeat the same work again and again if there is somthing that do that work for us like a boss !! 😎😎.
 </p>
 
 ## Index :
 
-- [Features](#features-:)
+- [Features](#features:)
 - [Requirements](#requirements:)
 - [Installation](#installation:)
 -  [FAQ](#faqs:)
@@ -131,6 +131,7 @@ config.build_settings.delete('CODE_SIGNING_ALLOWED')
 config.build_settings.delete('CODE_SIGNING_REQUIRED')
 end
 end
+
 ```
 > For more details, please see this __[link](https://github.com/CocoaPods/CocoaPods/issues/7606#issuecomment-381279098)__
 
