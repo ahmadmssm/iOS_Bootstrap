@@ -21,16 +21,23 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are 
 
 ## Index :
 
-- [Features](#features-%3A)
-- [Requirements](#requirements :)
-- [Installation](#installation:)
--  [FAQ](#faqs:)
-- [Credits](#Credits:)
-- [License](#License:)
+- [Features](#features)
+- [Upcoming features](upcoming-features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [QuickStart](#auickstart)
+- [How to use](#how-touse)
+- [FAQ](#faqs)
+- [Credits](#credits)
+- [Help me improve the documentation](#help-me-improve-the-documentation)
+- [Author](#authors)
+- [Contributers](#contributers)
+- [Contact US](#contact-us)
+- [License](#license)
 
 <br>
 
-## Features :
+## Features
 
 1. Only import boot strap.
 2. Network layer (Unifed error + unified closure).
@@ -59,7 +66,7 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are 
 
 > How to use and documentaion + references.
 
-## Up coming features :
+## Upcoming features
 
 1. Collection view adapter.
 2.  Reusable collection view adapter.
@@ -78,7 +85,7 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are 
 - Xcode 9.2+
 - Swift 4.0 +
 
-## Installation :
+## Installation
 
 You can integrate __iOS_Bootstrap__ into your project using __[CocoaPods](http://cocoapods.org)__.
 
@@ -108,7 +115,7 @@ Once your project is integrated with the __iOS_Bootstrap__ , you can pull update
 $ pod update
 ```
 
-##QuickStart :
+##QuickStart
 
 Just import  `iOS_Bootstrap` and your are ready to go.
 
@@ -139,7 +146,7 @@ end
 
 
 
-## FAQs :
+## FAQs
 
 1.  <b style='color:red'>__Do i need to install Alamofire ?__</b><br>
 No, you do not need to do so since Alamofire will be installed  once you add  the `iOS_Bootstrap` to your project.
@@ -150,7 +157,7 @@ All you have to do is to import the library to your view comtroller instead of i
 
 
 
-## Credits :
+## Credits
 
 The following awesome libraries are used as dependanceis in my pod :
 
@@ -167,7 +174,7 @@ In addition, Rhe following repos helped me alot either by including there code d
 3. [Lucid](https://github.com/levibostian/Lucid).
 2. [ActionSheetPicker-3.0](https://github.com/skywinder/ActionSheetPicker-3.0).
 
-## Help me improving the documentation :
+## Help me improving the documentation
 
 As a developer trying this pod out for the first time, you can make a valuable contribution by improving the documentation.
 
@@ -177,16 +184,16 @@ As a developer trying this pod out for the first time, you can make a valuable c
 -  Bug reports, feature requests, patches, well-wishes, and rap demo tapes are always welcome.
 
 
-## Author :
+## Author
 
 <b style='color:#2270FF'>Ahmad Mahmoud Saleh</b>
 
 
-## Contributers :
+## Contributers
 
 <br>
 
-## Contact US :
+## Contact US
 - [Mail](mailto:ams.eng@hotmail.com "Send Mail")
 - [Github](https://github.com/ahmadmssm "Author's Github account")
 
