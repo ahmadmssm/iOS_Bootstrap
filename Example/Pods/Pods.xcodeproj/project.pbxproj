@@ -2960,7 +2960,6 @@
 				ED144A463DA1BDD1EACE71948445A6A5 /* GlobalModules.swift */,
 				70829C67B0B7C56AC9364BB5B7AD0574 /* CustomComponents */,
 				C5B2E42B86B2B19A9E5DF427BEEFB887 /* Extensions */,
-				F8DD55CD5C51A393F04447610E39E7AC /* Facebook */,
 				E09ED8B77AD7759B3F58DA9886216325 /* Logger */,
 				51245A96729FE7E04494E2F79B519211 /* Managers */,
 				E5C0D75A1C28EBCD0FB9988AE486F106 /* Pod */,
@@ -3409,13 +3408,6 @@
 				5111B2CC71BFBAD474DD239941569BDE /* MoyaSugar */,
 			);
 			path = NetworkManager;
-			sourceTree = "<group>";
-		};
-		F8DD55CD5C51A393F04447610E39E7AC /* Facebook */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Facebook;
 			sourceTree = "<group>";
 		};
 		F9A435947F12A6066721765E23513A62 /* Support Files */ = {
