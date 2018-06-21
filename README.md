@@ -12,6 +12,8 @@ for Swift</h1>
 <a href="https://cocoapods.org/pods/iOS_Bootstrap"><img src="https://img.shields.io/cocoapods/p/iOS_Bootstrap.svg?style=flat"></a>
 </p>
 
+<h1 style="color:blue;">This is a Blue Heading</h1>
+
 
 ## Overview :
 <p style='color:#2270FF'>
@@ -40,31 +42,28 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are 
 ## Features
 
 1. Only import boot strap.
-2. Network layer (Unifed error + unified closure).
+2. Abstract network layer (Unifed error + unified result closure).
 3. Generic error manager.
 4. Unified parser.
-5. Table and collection views adapter with empty data set handler.
-6. Extensions (UIlabel partial text format, UIimage GIF).
-7. Deque cell and go to Viewcontroller using an easy syntaxt.
-8. Custom pickers (List, date, time, date & time, multi lists).
-9. Customizable progress dialog.
-10. Unifed base model for payload parsing (Serialize & deserialize).
-11. Unifed base push notification model for push notification payload parsing.
-12. User defaults manager
-13. Base collection and table view cells
-14. only one delegate for collection view & 1 for the table view (Including empty data set)
-15. Singleton logger class
-16. Useful extensions (String to dictionary, remove duplicates from array, hex to UI color)
-17. Customizable UIview.
-18. Cardview.
-19. Customizable UIbutton.
-20. Customizable toggle button (Check box + radio button).
-21. Table view adapter.
-22. Reusable table view adapter.
-23. Keyboard handler
-
-
-> How to use and documentaion + references.
+5. Tableview adapter with empty data set handler.
+6. Reusable table view adapter.
+7. Toast meassages component ( Like the one in Android 😉 ).
+8. Simpliefied syntax ( Deque cell, go to Viewcontroller programatically ).
+9. Custom pickers  ( List, date, time, date & time, multi lists ).
+10. Customizable progress dialog.
+11. Unifed base model for objects parsing (Serialize & deserialize).
+12. Unifed base push notification model for push notification payload parsing.
+13. User defaults manager.
+14. Base collection and table view cells.
+15. Only one delegate for collection view & one for table view ( Including empty data set ).
+16. Singleton logger class ( Like the one in Android 😉 ).
+17. Useful extensions (String to dictionary, remove duplicates from array, hex to UI color, UIlabel partial text formatting, UIimage + GIF)
+18. Customizable UIview.
+19. Customizable Cardview.
+20. Customizable UIbutton.
+21. Customizable toggle button ( Check box + radio button ).
+22. Keyboard handler
+23. How to use and documentaion + references.
 
 ## Upcoming features
 
@@ -125,8 +124,6 @@ Just import  `iOS_Bootstrap` and your are ready to go.
 
 
 ## How to use :
-
-####__<p style='color:red'>Note :</p>__
 
 
 Due to a bug in Cocoapods, so the Storyboard sometimes many fail to render if you added a custom ```@IBDesignable``` view to a component in storyboard and this custom ```@IBDesignable``` view was in the pod files path (Any pod not just my pod) and not your project files path, so to solve this problem please add the following code to the end of your pod file.
