@@ -15,7 +15,7 @@ for Swift</h1>
 
 ##Overview :
 <p style='color:#2270FF'>
-__Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are the most common things among many more whic we use in almost every project, so why do we repeat the same work again and again if there is somthing that do that work for us like a boss !! 😎😎.
+**Networking**, __tableview__, __user defaults__, __data parsing__, etc..., are the most common things among many more whic we use in almost every project, so why do we repeat the same work again and again if there is somthing that do that work for us like a boss !! 😎😎.
 </p>
 
 ## Index :
