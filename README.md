@@ -20,7 +20,7 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are 
 
 ## Index :
 
-- [Features](#features:)
+- [Features](#features-:)
 - [Requirements](#requirements:)
 - [Installation](#installation:)
 -  [FAQ](#faqs:)
