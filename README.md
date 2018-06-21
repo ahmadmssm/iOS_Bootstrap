@@ -8,20 +8,23 @@ for Swift</h1>
 
 <p align="center">
 <a href="https://cocoapods.org/pods/iOS_Bootstrap"><img src="https://img.shields.io/cocoapods/v/iOS_Bootstrap.svg?style=flat"></a>
-<a href="https://cocoapods.org/pods/iOS_Bootstrap/"><img src="https://img.shields.io/cocoapods/l/iOS_Bootstrap.svg?style=flat"></a>
 <a href="https://cocoapods.org/pods/iOS_Bootstrap"><img src="https://img.shields.io/cocoapods/p/iOS_Bootstrap.svg?style=flat"></a>
+<a href="https://cocoapods.org/pods/iOS_Bootstrap"><img src="https://img.shields.io/badge/Swift-4.0-F16D39.svg?style=flat"></a>
+<a href="https://cocoapods.org/pods/iOS_Bootstrap/"><img src="https://img.shields.io/cocoapods/l/iOS_Bootstrap.svg?style=flat"></a>
+<a ><img src="https://img.shields.io/github/last-commit/ahmadmssm/iOS_Bootstrap.svg?style=flat"></a>
+
 </p>
 
-<h1 style="color:blue;">This is a Blue Heading</h1>
 
 
-## Overview :
+
+## Overview
 <p style='color:#2270FF'>
 
 __Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are the most common things among many more whic we use in almost every project, so why do we repeat the same work again and again if there is somthing that do that work for us like a boss !! 😎😎.
 </p>
 
-## Index :
+## Index
 
 - [Features](#features)
 - [Upcoming features](#upcoming-features)
@@ -132,10 +135,10 @@ Due to a bug in Cocoapods, so the Storyboard sometimes many fail to render if yo
 ```ruby
 # Workaround for Cocoapods issue #7606
 post_install do |installer|
-        installer.pods_project.build_configurations.each do |config|
-        config.build_settings.delete('CODE_SIGNING_ALLOWED')
-        config.build_settings.delete('CODE_SIGNING_REQUIRED')
-    end
+installer.pods_project.build_configurations.each do |config|
+config.build_settings.delete('CODE_SIGNING_ALLOWED')
+config.build_settings.delete('CODE_SIGNING_REQUIRED')
+end
 end
 ```
 > For more details, please see this __[link](https://github.com/CocoaPods/CocoaPods/issues/7606#issuecomment-381279098)__
@@ -204,3 +207,4 @@ As a developer trying this pod out for the first time, you can make a valuable c
 __iOS_Bootstrap__ is released under the MIT license. __[See License](https://github.com/ahmadmssm/iOS_Bootstrap/blob/master/LICENSE)__ for details.
 
 ---
+
