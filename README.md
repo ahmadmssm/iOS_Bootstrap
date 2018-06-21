@@ -30,7 +30,7 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, etc..., are 
 - [FAQ](#faqs)
 - [Credits](#credits)
 - [Help me improve the documentation](#help-me-improve-the-documentation)
-- [Author](#authors)
+- [Author](#author)
 - [Contributers](#contributers)
 - [Contact US](#contact-us)
 - [License](#license)
@@ -115,7 +115,7 @@ Once your project is integrated with the __iOS_Bootstrap__ , you can pull update
 $ pod update
 ```
 
-##QuickStart
+## QuickStart
 
 Just import  `iOS_Bootstrap` and your are ready to go.
 
@@ -124,7 +124,7 @@ Just import  `iOS_Bootstrap` and your are ready to go.
 - For any thing not clear or for help, please  __[contact me](#Contact-US-:)__ or open a bug and i will assist you as soon as i can.
 
 
-##How to use :
+## How to use :
 
 ####__<p style='color:red'>Note :</p>__
 
@@ -174,7 +174,7 @@ In addition, Rhe following repos helped me alot either by including there code d
 3. [Lucid](https://github.com/levibostian/Lucid).
 2. [ActionSheetPicker-3.0](https://github.com/skywinder/ActionSheetPicker-3.0).
 
-## Help me improving the documentation
+## Help me improve the documentation
 
 As a developer trying this pod out for the first time, you can make a valuable contribution by improving the documentation.
 
