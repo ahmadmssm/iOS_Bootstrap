@@ -31,7 +31,7 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Quick start](#quick-start)
-- [How to use](#how-to-use-(highlights))
+- [How to use](#how-to-use-/(highlights)/)
 - [FAQs](#faqs)
 - [Credits](#credits)
 - [Help me improve the documentation](#help-me-improve-the-documentation)
