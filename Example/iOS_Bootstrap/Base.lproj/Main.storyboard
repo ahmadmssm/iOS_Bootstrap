@@ -41,7 +41,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74S-GB-FaI">
                                         <rect key="frame" x="0.0" y="84.5" width="323" height="32.5"/>
-                                        <state key="normal" title="Shop progress dialog"/>
+                                        <state key="normal" title="Show progress dialog"/>
                                         <connections>
                                             <action selector="showProgress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QvB-OL-BF8"/>
                                         </connections>
@@ -87,7 +87,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chO-x2-mF4">
                                         <rect key="frame" x="0.0" y="296.5" width="323" height="32.5"/>
-                                        <state key="normal" title="Show multi item picker"/>
+                                        <state key="normal" title="Show multi items picker"/>
                                         <connections>
                                             <action selector="showMultiArrayPicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Eo5-Z8-PAt"/>
                                         </connections>

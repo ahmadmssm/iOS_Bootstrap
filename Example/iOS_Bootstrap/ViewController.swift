@@ -116,20 +116,3 @@ class ViewController: UIViewController {
     }
     
 }
-
-//  Ref : https://stackoverflow.com/questions/25738817/removing-duplicate-elements-from-an-array
-
-/*
- 
- How to use :
- 
- let arrayOfInts = [2, 2, 4, 4]
- 
- Remove duplicates :
- print(arrayOfInts.removeDuplicates()) // Prints: [2, 4]
- 
- Filtering based on properties :
- let filteredElements = myElements.filterDuplicates { $0.PropertyOne == $1.PropertyOne && $0.PropertyTwo == $1.PropertyTwo }
- 
- */
-

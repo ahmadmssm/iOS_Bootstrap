@@ -23,9 +23,9 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
         super.viewDidLoad()
         //
         
-        reusableView = CountriesReusableTable(tableview: tableview, tableViewDataSource: dataSource, delegate: self)
+       // reusableView = CountriesReusableTable(tableview: tableview, tableViewDataSource: dataSource, delegate: self)
         
-     //   tableAdapter.configureTableWithXibCell(tableView: tableview, dataSource: dataSource, nibClass: TableViewCell.self, delegate: self)
+        tableAdapter.configureTableWithXibCell(tableView: tableview, dataSource: dataSource, nibClass: TableViewCell.self, delegate: self)
         //
 //        let refreshControl = UIRefreshControl()
 //        tableAdapter.configurePullToRefresh(refreshControl: refreshControl)
