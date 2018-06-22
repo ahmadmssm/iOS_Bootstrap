@@ -31,7 +31,7 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Quick start](#quick-start)
-- [How to use](#how-to-use-/(highlights)/)
+- [How to use](#how-to-use-highlights)
 - [FAQs](#faqs)
 - [Credits](#credits)
 - [Help me improve the documentation](#help-me-improve-the-documentation)
@@ -123,10 +123,10 @@ Just import  `iOS_Bootstrap` and your are ready to go.
 
 >
 - For almost every feature available in this __Pod__  their is an example or how to use file or a link to an example or explanation.
-- For any thing not clear or for help, please  __[contact me](#contact-us)__ or open a bug and i will assist you as soon as i can.
+- For any thing not clear or for help, please  __[contact me](#contact-us-)__ or open a bug and i will assist you as soon as i can.
 
 
-## How to use (Highlights)
+## How to use \(Highlights\)
 
 
 #### Table view adabter :
