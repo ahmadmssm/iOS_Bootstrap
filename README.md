@@ -177,19 +177,20 @@ When you use Alamofire, you get success and fail result and the failure closure 
 
 ```swift
 func getAllCountries (completion: @escaping completionHandler) {
-let _ = apiProvide.rx
-.request(.getWorldCountries())
-.filterSuccessfulStatusCodes()
-.processErrors()
-.mapString()
-.subscribe { event in
-switch event {
-case .success(let responseString):
-let countries : [Country] = Parser.arrayOfObjectsFromJSONstring(object: Country.self, JSONString: responseString)! as! [Country]
-completion(.success(countries as AnyObject))
-case .error(let error):
-completion(.failure(error.localizedDescription))
-}}
+    let _ = apiProvide.rx
+            .request(.getWorldCountries())
+            .filterSuccessfulStatusCodes()
+            .processErrors()
+            .mapString()
+            .subscribe { event in
+                switch event {
+                case .success(let responseString):
+                    let countries : [Country] = Parser.arrayOfObjectsFromJSONstring(object: Country.self, JSONString: responseString)! as! [Country]
+                    completion(.success(countries as AnyObject))
+                case .error(let error):
+                    completion(.failure(error.localizedDescription))
+                    }
+            }
 }
 ```
 
@@ -224,10 +225,10 @@ Instead of filling your code with statemetns which is not good plus it will affe
 ```ruby
 # Workaround for Cocoapods issue #7606
 post_install do |installer|
-installer.pods_project.build_configurations.each do |config|
-config.build_settings.delete('CODE_SIGNING_ALLOWED')
-config.build_settings.delete('CODE_SIGNING_REQUIRED')
-end
+    installer.pods_project.build_configurations.each do |config|
+        config.build_settings.delete('CODE_SIGNING_ALLOWED')
+        config.build_settings.delete('CODE_SIGNING_REQUIRED')
+    end
 end
 ```
 
