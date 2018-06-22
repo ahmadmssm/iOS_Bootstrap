@@ -123,7 +123,7 @@ Just import  `iOS_Bootstrap` and your are ready to go.
 
 >
 - For almost every feature available in this __Pod__  their is an example or how to use file or a link to an example or explanation.
-- For any thing not clear or for help, please  __[contact me](#contact-us-)__ or open a bug and i will assist you as soon as i can.
+- For any thing not clear or for help, please  __[contact me](#contact-us)__ or open a bug and i will assist you as soon as i can.
 
 
 ## How to use (Highlights)
