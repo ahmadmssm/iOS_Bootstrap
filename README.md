@@ -32,7 +32,7 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 - [Installation](#installation)
 - [Quick start](#quick-start)
 - [How to use](#how-to-use-(highlights))
-- [FAQ](#faqs)
+- [FAQs](#faqs)
 - [Credits](#credits)
 - [Help me improve the documentation](#help-me-improve-the-documentation)
 - [Author](#author)
@@ -220,7 +220,8 @@ Instead of filling your code with statemetns which is not good plus it will affe
 >Due to a bug in Cocoapods, so the Storyboard sometimes many fail to render if you added a custom `@IBDesignable` view to a component in storyboard and this custom `@IBDesignable` view was in the pod files path (Any pod not just my pod) and not your project files path, so to solve this problem please add the following code to the end of your pod file.
 
 
->```ruby
+>
+```ruby
 # Workaround for Cocoapods issue #7606
 post_install do |installer|
 installer.pods_project.build_configurations.each do |config|
@@ -229,8 +230,8 @@ config.build_settings.delete('CODE_SIGNING_REQUIRED')
 end
 end
 ```
-> For more details, please see this __[link](https://github.com/CocoaPods/CocoaPods/issues/7606#issuecomment-381279098)__
 
+> For more details, please see this __[link](https://github.com/CocoaPods/CocoaPods/issues/7606#issuecomment-381279098)__
 
 
 
