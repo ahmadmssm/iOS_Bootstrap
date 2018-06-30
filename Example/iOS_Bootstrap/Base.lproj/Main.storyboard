@@ -166,7 +166,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJ9-N4-gPi">
                                         <rect key="frame" x="0.0" y="466" width="323" height="32.5"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="MVP test"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="color">
                                                 <color key="value" red="0.87741392850875854" green="0.96865373849868774" blue="0.052339173853397369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -187,6 +187,9 @@
                                                 <color key="value" red="0.070456869900226593" green="0.46492594480514526" blue="0.85114955902099609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="vJF-oG-Mjd" kind="show" id="tJW-Ys-yKO"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgg-mS-HL2">
                                         <rect key="frame" x="0.0" y="508.5" width="323" height="32"/>
@@ -243,7 +246,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Te-ZE-8dH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="997" y="757"/>
+            <point key="canvasLocation" x="1009" y="829"/>
+        </scene>
+        <!--My View Controller-->
+        <scene sceneID="DZU-Mv-Lv1">
+            <objects>
+                <viewController id="vJF-oG-Mjd" customClass="MyViewController" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nua-u2-s1v"/>
+                        <viewControllerLayoutGuide type="bottom" id="hsu-1l-66c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6yS-hY-YZJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHC-o6-8dF">
+                                <rect key="frame" x="164" y="309" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Test"/>
+                                <connections>
+                                    <action selector="TestButton:" destination="vJF-oG-Mjd" eventType="touchUpInside" id="wKw-wm-udO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZY3-Lq-GF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="829"/>
         </scene>
         <!--Ex Reusable TableVC-->
         <scene sceneID="78K-9q-05L">

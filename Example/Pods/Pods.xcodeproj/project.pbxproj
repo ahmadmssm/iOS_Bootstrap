@@ -652,6 +652,9 @@
 		C8D3B303525A0A91B471993DD93C8BD4 /* DispatchQueueConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F109DB3A7C28A9D901C91FFB9D7FC6B /* DispatchQueueConfiguration.swift */; };
 		C913904620DA690D000BC516 /* FacebookPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C913904520DA690D000BC516 /* FacebookPermissions.swift */; };
 		C92C0B7D339FDAE12D03156E5B6B19F2 /* FBSDKURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FD9E1782D1D224772082B5C88E89990 /* FBSDKURLConnection.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C9555AA320E8168D007A698D /* BaseContractProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9555AA020E8168D007A698D /* BaseContractProtocol.swift */; };
+		C9555AA420E8168D007A698D /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9555AA120E8168D007A698D /* BasePresenter.swift */; };
+		C9555AA520E8168D007A698D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9555AA220E8168D007A698D /* BaseViewController.swift */; };
 		C9B7CA64E20C05294641038FDB1766EA /* FBSDKViewImpressionTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD48911ACC817E975DE7535B7C67C5A /* FBSDKViewImpressionTracker.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C9DB1CE02F6E14C99DED80DCBBF37F46 /* FBSDKServerConfigurationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C903C6CE64270AD63FB6BB8EF03E2DE6 /* FBSDKServerConfigurationManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C9F67B0BC1BECB2B3E03EA9B0E93536B /* STTwitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A280BED6984434AF540A081FABC710 /* STTwitter.framework */; };
@@ -1745,6 +1748,9 @@
 		C903C6CE64270AD63FB6BB8EF03E2DE6 /* FBSDKServerConfigurationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKServerConfigurationManager.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfigurationManager.h; sourceTree = "<group>"; };
 		C913904520DA690D000BC516 /* FacebookPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookPermissions.swift; sourceTree = "<group>"; };
 		C91B81CFF39F01F4C25CF204EBD5608B /* FBSDKCrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKCrypto.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Cryptography/FBSDKCrypto.m; sourceTree = "<group>"; };
+		C9555AA020E8168D007A698D /* BaseContractProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseContractProtocol.swift; sourceTree = "<group>"; };
+		C9555AA120E8168D007A698D /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		C9555AA220E8168D007A698D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C9B20F08236D294B23F1D3178DD6B41A /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F5156777D6FF7B41B8EE442C4CD0BE /* Pods-iOS_Bootstrap_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS_Bootstrap_Tests-resources.sh"; sourceTree = "<group>"; };
 		CA1EF0DF0F1BFE91DAF716710EAA3925 /* STTwitterHTML.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STTwitterHTML.m; path = STTwitter/STTwitterHTML.m; sourceTree = "<group>"; };
@@ -2958,6 +2964,7 @@
 			children = (
 				013B3CEF1932F08FB1BFDC6458D77FF6 /* DateTimeManager.swift */,
 				ED144A463DA1BDD1EACE71948445A6A5 /* GlobalModules.swift */,
+				C9555A9F20E8168D007A698D /* MVP */,
 				70829C67B0B7C56AC9364BB5B7AD0574 /* CustomComponents */,
 				C5B2E42B86B2B19A9E5DF427BEEFB887 /* Extensions */,
 				E09ED8B77AD7759B3F58DA9886216325 /* Logger */,
@@ -3074,6 +3081,17 @@
 			);
 			name = Extensions;
 			path = iOS_Bootstrap/Classes/Extensions;
+			sourceTree = "<group>";
+		};
+		C9555A9F20E8168D007A698D /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				C9555AA020E8168D007A698D /* BaseContractProtocol.swift */,
+				C9555AA120E8168D007A698D /* BasePresenter.swift */,
+				C9555AA220E8168D007A698D /* BaseViewController.swift */,
+			);
+			name = MVP;
+			path = iOS_Bootstrap/Classes/MVP;
 			sourceTree = "<group>";
 		};
 		C96E6C74F2159C1A12F567B914181018 /* IQKeyboardManagerSwift */ = {
@@ -4373,6 +4391,7 @@
 				7EFE5A145AE2796810669D6FCD5E31D1 /* ActionSheetDatePicker.m in Sources */,
 				E55283FD01402463F5F27D58BA4E6855 /* ActionSheetDistancePicker.m in Sources */,
 				F31CA6EF0B0E0FD5EBDB609F41029579 /* ActionSheetLocalePicker.m in Sources */,
+				C9555AA520E8168D007A698D /* BaseViewController.swift in Sources */,
 				2E96043EB110A21C87E281617CB15B7A /* ActionSheetMultipleStringPicker.m in Sources */,
 				BDC42B1306E897C77AD84C917D3FA108 /* ActionSheetStringPicker.m in Sources */,
 				2B5171D446A904B5C91064B9F05DD113 /* APIsProvider.swift in Sources */,
@@ -4398,6 +4417,7 @@
 				BFF1B498699E834B57395D33618F4138 /* GenericAPIs.swift in Sources */,
 				8C6E57BC11E7B175BE24529EE73A1EC9 /* GenericConnector.swift in Sources */,
 				8D2799775F6D90FC40DFB602E4E2772A /* GenericErrorConfigurator.swift in Sources */,
+				C9555AA320E8168D007A698D /* BaseContractProtocol.swift in Sources */,
 				8B656C8B3BFE1D9B1FA1A15320490E53 /* GenericErrorHandler.swift in Sources */,
 				32CD5FF26242E0E85116ED66417D3AE3 /* GlobalModules.swift in Sources */,
 				BBFE3CC0F7FEB9C1241F63A205F9357F /* How_to_use.strings in Sources */,
@@ -4430,6 +4450,7 @@
 				1C59C87D97BD90A11A352C6EDB4293AE /* Tableview + Reusablel.swift in Sources */,
 				3D49D7BF0928FDE77AE2CF9931F9772B /* TableviewAdapter.swift in Sources */,
 				7CA951D056E4966990AD3C1431DC6DE1 /* TableViewDelegates.swift in Sources */,
+				C9555AA420E8168D007A698D /* BasePresenter.swift in Sources */,
 				97972117E877DCAFA32194450ADACE78 /* Toast.swift in Sources */,
 				191FBC880958A47063624220C81536B5 /* ToggleButton.m in Sources */,
 				8E6F0EB7AC0944E5C9D3AEF317CBF4AA /* UIColor + Hex.swift in Sources */,

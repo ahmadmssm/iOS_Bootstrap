@@ -19,6 +19,9 @@
 		C915C59C20CAC1F10029F5D9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */; };
 		C915C59D20CAC1F10029F5D9 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */; };
 		C9316DBE20D6717C00FB6A6A /* CountriesReusableTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9316DBD20D6717C00FB6A6A /* CountriesReusableTable.swift */; };
+		C9555AAD20E8171C007A698D /* MyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9555AAB20E8171B007A698D /* MyPresenter.swift */; };
+		C9555AAE20E8171C007A698D /* MyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9555AAC20E8171B007A698D /* MyProtocol.swift */; };
+		C9555AB020E8174B007A698D /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9555AAF20E8174B007A698D /* MyViewController.swift */; };
 		C99EA60320CB3D7900D7C158 /* HumanReadableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60020CB3D7800D7C158 /* HumanReadableError.swift */; };
 		C99EA60420CB3D7900D7C158 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60120CB3D7800D7C158 /* APIs.swift */; };
 		C99EA60520CB3D7900D7C158 /* API_Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60220CB3D7800D7C158 /* API_Connector.swift */; };
@@ -59,6 +62,9 @@
 		C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		C9316DBD20D6717C00FB6A6A /* CountriesReusableTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesReusableTable.swift; sourceTree = "<group>"; };
+		C9555AAB20E8171B007A698D /* MyPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPresenter.swift; sourceTree = "<group>"; };
+		C9555AAC20E8171B007A698D /* MyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProtocol.swift; sourceTree = "<group>"; };
+		C9555AAF20E8174B007A698D /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		C99EA60020CB3D7800D7C158 /* HumanReadableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanReadableError.swift; sourceTree = "<group>"; };
 		C99EA60120CB3D7800D7C158 /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
 		C99EA60220CB3D7800D7C158 /* API_Connector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_Connector.swift; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 		607FACD21AFB9204008FA782 /* Example for iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
+				C9555AA620E816A8007A698D /* MVP */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				C99EA63820CBECFB00D7C158 /* Storyboards.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -184,6 +191,16 @@
 				876F4E4DF9532FA87A402CC4 /* Pods-iOS_Bootstrap_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C9555AA620E816A8007A698D /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				C9555AAF20E8174B007A698D /* MyViewController.swift */,
+				C9555AAB20E8171B007A698D /* MyPresenter.swift */,
+				C9555AAC20E8171B007A698D /* MyProtocol.swift */,
+			);
+			name = MVP;
 			sourceTree = "<group>";
 		};
 		C99EA60620CB41A600D7C158 /* Networking */ = {
@@ -414,9 +431,12 @@
 				C99EA60320CB3D7900D7C158 /* HumanReadableError.swift in Sources */,
 				C99EA61F20CB466300D7C158 /* Country.swift in Sources */,
 				C99EA60420CB3D7900D7C158 /* APIs.swift in Sources */,
+				C9555AAE20E8171C007A698D /* MyProtocol.swift in Sources */,
 				C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */,
 				C9316DBE20D6717C00FB6A6A /* CountriesReusableTable.swift in Sources */,
+				C9555AB020E8174B007A698D /* MyViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				C9555AAD20E8171C007A698D /* MyPresenter.swift in Sources */,
 				C99EA60520CB3D7900D7C158 /* API_Connector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
