@@ -23,10 +23,10 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
         super.viewDidLoad()
         //
         
-       // reusableView = CountriesReusableTable(tableview: tableview, tableViewDataSource: dataSource, delegate: self)
-        
-        tableAdapter.configureTableWithXibCell(tableView: tableview, dataSource: dataSource, nibClass: TableViewCell.self, delegate: self)
-        //
+        // tableAdapter.configureTableWithXibCell(tableView: tableview, dataSource: dataSource, nibClass: TableViewCell.self, delegate: self)
+
+        reusableView = CountriesReusableTable(tableview: tableview, tableViewDataSource: dataSource, delegate: self)
+                //
 //        let refreshControl = UIRefreshControl()
 //        tableAdapter.configurePullToRefresh(refreshControl: refreshControl)
         //
@@ -59,7 +59,7 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
     
     func configureCell(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell : TableViewCell = tableview.dequeueReusableCell(forIndexPath: indexPath)
-        cell.labelCountryName.text = dataSource [indexPath.row].nativeName
+        cell.labelCountryName.text = dataSource [indexPath.row].countryName
         cell.labelCapitalName.text = dataSource [indexPath.row].capital
         return cell
     }

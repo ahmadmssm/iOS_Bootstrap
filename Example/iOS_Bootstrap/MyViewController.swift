@@ -21,6 +21,6 @@ class MyViewController: BaseViewController<MyPresenter>, MyProtocol {
     }
     
     func doNothing() {
-        print("I'm here...")
+        Log.info("I'm here...")
     }
 }
