@@ -67,6 +67,22 @@ open class CollectionViewAdapter : NSObject {
         self.collectionViewDataSource = dataSource
         mCollectionview?.reloadData()
     }
+    // return cells that are square sized
+    public func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, padding : CGFloat) -> CGSize {
+        let collectionViewSize = mCollectionview.frame.size.width - padding
+        if (numberOfItemsPerRow > 0) {
+            return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+        }
+        return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+    }
+    // configure dimesions and number of items per row
+    public func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, itemHeight : CGFloat, padding : CGFloat) -> CGSize {
+        let collectionViewSize = mCollectionview.frame.size.width - padding
+        if (numberOfItemsPerRow > 0) {
+            return CGSize(width: collectionViewSize/2, height: itemHeight)
+        }
+        return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+    }
 }
 
 extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -93,9 +109,20 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
         if (mDelegate?.sizeForItemAtIndexPath?(collectionViewLayout: collectionViewLayout)) != nil {
             return(mDelegate?.sizeForItemAtIndexPath?(collectionViewLayout: collectionViewLayout))! }
         // 2 cells per row
-        let cellWidth = Float(UIScreen.main.bounds.size.width / 2.0)
+        //
+        // let cellWidth = Float(UIScreen.main.bounds.size.width / 2.0)
         // Replace the divisor with the column count requirement. Make sure to have it in float.
-        return CGSize(width: CGFloat(cellWidth), height: CGFloat(cellWidth))
+        // return CGSize(width: CGFloat(cellWidth), height: CGFloat(cellWidth))
+        //
+        return configureNumberOfCollectionViewItemsPerRow(numberOfItemsPerRow: 2, padding: 1)
+    }
+    // Configure spacing between row items
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return (mDelegate?.spacingBetweenRowItems?(collectionViewLayout: collectionViewLayout, section: section)) ?? 1
+    }
+    // Configure spacing between rows
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return (mDelegate?.spacingBetweenRows?(collectionViewLayout: collectionViewLayout, section: section)) ?? 1
     }
     // Configure cell
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
