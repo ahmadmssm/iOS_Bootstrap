@@ -7,14 +7,11 @@
 
 
 @objc public protocol CollectionViewDelegates : BaseListingDelegates {
-    
     func configureCell (cellForRowAt indexPath: IndexPath) -> UICollectionViewCell
     @objc optional func configureNumberOfItemsInSection(section : Int) -> Int
     @objc optional func itemDidSelected(indexPath : IndexPath)
     @objc optional func didHighlightItemAtIndexPath(indexPath : IndexPath)
     @objc optional func didUnHighlightItemAtIndexPath(indexPath : IndexPath)
-    @objc optional func configureAdditionalCollectionViewProperties (table : UITableView)
-    @objc optional func sizeForItemAtIndexPath (table : UITableView) -> CGSize
-
-    
+    @objc optional func configureAdditionalCollectionViewProperties (collectionView : UICollectionView)
+    @objc optional func sizeForItemAtIndexPath (collectionViewLayout: UICollectionViewLayout) -> CGSize
 }

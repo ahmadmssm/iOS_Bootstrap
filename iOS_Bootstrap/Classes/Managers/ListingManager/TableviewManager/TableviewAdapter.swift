@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelegate {
+open class TableviewAdapter : NSObject {
     
     private final var mTableview : UITableView!
     private final var tableViewDataSource: [Any]!
@@ -67,7 +67,10 @@ open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelega
         self.tableViewDataSource = dataSource
         mTableview?.reloadData()
     }
-    // Table view callbacks
+}
+
+extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
+    // TableView callbacks
     //
     // Configure number of rows/sections
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,7 +94,6 @@ open class TableviewAdapter : NSObject, UITableViewDataSource, UITableViewDelega
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         mDelegate?.rowDidSelected?(indexPath: indexPath)
     }
-    
     // Pagination
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         mDelegate?.loadMore?(indexPath: indexPath)
@@ -151,6 +153,5 @@ extension TableviewAdapter : EmptyDataSetSource, EmptyDataSetDelegate {
     public func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {
          mDelegate?.emptyDataSetButtonTapped?(didTapButton: button)
     }
-
 }
 
