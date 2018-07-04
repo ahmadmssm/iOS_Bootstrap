@@ -13,14 +13,14 @@ PODS:
   - FBSDKShareKit (4.33.0):
     - FBSDKCoreKit (~> 4.33.0)
   - HandyJSON (4.1.1)
-  - iOS_Bootstrap (0.3.2):
+  - iOS_Bootstrap (0.3.4):
     - HandyJSON (~> 4.1.1)
-    - iOS_Bootstrap/Facebook (= 0.3.2)
-    - iOS_Bootstrap/Twitter (= 0.3.2)
+    - iOS_Bootstrap/Facebook (= 0.3.4)
+    - iOS_Bootstrap/Twitter (= 0.3.4)
     - IQKeyboardManagerSwift (= 5.0.0)
     - Moya/RxSwift (~> 11.0)
     - SNSSocial (~> 2.0)
-  - iOS_Bootstrap/Facebook (0.3.2):
+  - iOS_Bootstrap/Facebook (0.3.4):
     - FBSDKCoreKit (~> 4.22)
     - FBSDKLoginKit (~> 4.22)
     - FBSDKShareKit (~> 4.22)
@@ -28,7 +28,7 @@ PODS:
     - IQKeyboardManagerSwift (= 5.0.0)
     - Moya/RxSwift (~> 11.0)
     - SNSSocial (~> 2.0)
-  - iOS_Bootstrap/Twitter (0.3.2):
+  - iOS_Bootstrap/Twitter (0.3.4):
     - HandyJSON (~> 4.1.1)
     - IQKeyboardManagerSwift (= 5.0.0)
     - Moya/RxSwift (~> 11.0)
@@ -83,7 +83,7 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 88cb456349cfb3b554427ce4f8b43729d85dfb40
   FBSDKShareKit: 1869cb24db2cea90666a50cb9d568deb38e2d16e
   HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
-  iOS_Bootstrap: 8de682f5c4779641f638516c22619f29ae98f07a
+  iOS_Bootstrap: 956fd029149444186cf1b75dd1bd2e74cc6b5040
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10

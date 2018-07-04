@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "388F1230F0DEEB5D8B915EF69773C0A8"
+               BlueprintIdentifier = "577FE6C1E64F230B784A9DFB5A1DB811"
                BlueprintName = "STTwitter"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "STTwitter.framework">
