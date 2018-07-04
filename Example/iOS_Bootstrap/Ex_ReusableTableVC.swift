@@ -23,7 +23,7 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
         super.viewDidLoad()
         //
         
-        // tableAdapter.configureTableWithXibCell(tableView: tableview, dataSource: dataSource, nibClass: TableViewCell.self, delegate: self)
+         tableAdapter.configureTableWithXibCell(tableView: tableview, dataSource: dataSource, nibClass: TableViewCell.self, delegate: self)
 
         reusableView = CountriesReusableTable(tableview: tableview, tableViewDataSource: dataSource, delegate: self)
                 //
@@ -31,6 +31,7 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
 //        tableAdapter.configurePullToRefresh(refreshControl: refreshControl)
         //
         dataSource.removeAll()
+        // Mock netwirk delay with 3 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.getWorldCountries()
         }

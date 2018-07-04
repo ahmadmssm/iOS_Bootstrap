@@ -9,6 +9,5 @@
 import Foundation
 
 @objc public protocol BaseContractProtocol {
-    @objc optional func viewDidAttached()
-    @objc optional func viewWillReload()
+ 
 }
