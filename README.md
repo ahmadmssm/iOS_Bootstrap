@@ -66,18 +66,18 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 20. Customizable UIbutton.
 21. Customizable toggle button ( Check box + radio button ).
 22. Keyboard handler
+23. Collection view adapter.
+24. Reusable collection view adapter.
 23. How to use and documentation + references.
 
 ## Upcoming features
 
-1. Collection view adapter.
-2.  Reusable collection view adapter.
-3. Pagination handler.
-4. Date and time manager.
-5. Push notification manager.
-6. Social media manager.
-7. More extensions! Please if there is an extension you are constantly using, send a pull request now.
-8. Documentations inside code .
+1. Pagination handler.
+2. Date and time manager.
+3. Push notification manager.
+4. Social media manager.
+5. More extensions! Please if there is an extension you are constantly using, send a pull request now.
+6. Documentations inside code .
 
 
 
