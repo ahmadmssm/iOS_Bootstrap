@@ -22,8 +22,7 @@ class Ex_ReusableTableVC: UIViewController, TableViewDelegates {
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-        
-         tableAdapter.configureTableWithXibCell(tableView: tableview, dataSource: dataSource, nibClass: TableViewCell.self, delegate: self)
+        // tableAdapter.configureTableWithXibCell(tableView: tableview, dataSource: dataSource, nibClass: TableViewCell.self, delegate: self)
 
         reusableView = CountriesReusableTable(tableview: tableview, tableViewDataSource: dataSource, delegate: self)
                 //

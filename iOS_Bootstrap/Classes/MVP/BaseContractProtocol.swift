@@ -8,6 +8,6 @@
 
 import Foundation
 
-@objc public protocol BaseContractProtocol {
+@objc public protocol BaseContractProtocol where Self: UIViewController {
  
 }

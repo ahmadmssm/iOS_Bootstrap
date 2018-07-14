@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9CFC36298DCEDAF62396EF16 /* Pods_iOS_Bootstrap_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D137F84A69B1F899F3E224 /* Pods_iOS_Bootstrap_Example.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		C902036F20F571C100A63492 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902036E20F571C100A63492 /* NavigationCoordinator.swift */; };
 		C915C58D20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */; };
 		C915C59C20CAC1F10029F5D9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */; };
 		C915C59D20CAC1F10029F5D9 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */; };
@@ -59,6 +60,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		876F4E4DF9532FA87A402CC4 /* Pods-iOS_Bootstrap_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Tests/Pods-iOS_Bootstrap_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9CCFB36A3BA0ACD17B0068E4 /* Pods-iOS_Bootstrap_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Tests/Pods-iOS_Bootstrap_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C902036E20F571C100A63492 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 		C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_ReusableTableVC.swift; sourceTree = "<group>"; };
 		C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -132,14 +134,11 @@
 		607FACD21AFB9204008FA782 /* Example for iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				C9555AA620E816A8007A698D /* MVP */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				C99EA63820CBECFB00D7C158 /* Storyboards.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				C99EA63E20CBF0DB00D7C158 /* HomeVC.swift */,
-				C99EA63A20CBED4200D7C158 /* Home.storyboard */,
-				C99EA62220CB4D5900D7C158 /* Table */,
 				C99EA60620CB41A600D7C158 /* Networking */,
+				C99EA62220CB4D5900D7C158 /* Table */,
+				C9C960F720FA8BA30023CDD7 /* Views */,
+				C9555AA620E816A8007A698D /* MVP */,
+				C902036E20F571C100A63492 /* NavigationCoordinator.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -234,6 +233,18 @@
 				C9316DBD20D6717C00FB6A6A /* CountriesReusableTable.swift */,
 			);
 			name = Table;
+			sourceTree = "<group>";
+		};
+		C9C960F720FA8BA30023CDD7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C99EA63A20CBED4200D7C158 /* Home.storyboard */,
+				C99EA63E20CBF0DB00D7C158 /* HomeVC.swift */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				C99EA63820CBECFB00D7C158 /* Storyboards.swift */,
+				607FACD71AFB9204008FA782 /* ViewController.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +443,7 @@
 				C99EA63F20CBF0DB00D7C158 /* HomeVC.swift in Sources */,
 				C915C58D20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				C902036F20F571C100A63492 /* NavigationCoordinator.swift in Sources */,
 				C99EA60320CB3D7900D7C158 /* HumanReadableError.swift in Sources */,
 				C99EA61F20CB466300D7C158 /* Country.swift in Sources */,
 				C99EA60420CB3D7900D7C158 /* APIs.swift in Sources */,

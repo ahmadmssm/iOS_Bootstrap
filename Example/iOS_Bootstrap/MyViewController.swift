@@ -11,16 +11,32 @@ import iOS_Bootstrap
 
 class MyViewController: BaseViewController<MyPresenter>, MyProtocol {
     
+    var mNavigator : NavigationCoordinator?
+    var x : Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        mNavigator = self.navigator as? NavigationCoordinator
+        //
+        AppDelegate.setContext(context: self)
+        //
+        Log.debug(x!)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     @IBAction func TestButton(_ sender: UIButton) {
         self.presenter.test()
     }
     
     func doNothing() {
         Log.info("I'm here...")
+    }
+
+    @IBAction func testNavigator(_ sender: UIButton) {
+        self.mNavigator?.startInitialView()
     }
 }

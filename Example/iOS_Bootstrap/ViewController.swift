@@ -13,16 +13,23 @@ import iOS_Bootstrap
 class ViewController: UIViewController {
 
     let picker = Picker()
+    //
+    public weak var navigator: NavigationCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //
+        self.title = "View controller"
     }
     
     @IBAction func buttonGoToHomeStoryboard(_ sender: UIButton) {
-        let storyboard = UIStoryboard.getStoryboardWithName(Storyboard.home.rawValue)
-        let homeVC = storyboard.instantiateInitialViewController() as! HomeVC
-        homeVC.x = 2
-        present(homeVC, animated: true, completion: nil)
+      //  let storyboard = UIStoryboard.getStoryboardWithName(Storyboard.home.rawValue)
+       // let homeVC = storyboard.instantiateInitialViewController() as! HomeVC
+      //  homeVC.x = 2
+      //  present(homeVC, animated: true, completion: nil)
+        
+        AppDelegate.setContext(context: self)
+        NavigationCoordinator.getInstance.goToHomeStoryBoard(number: 2)
     }
     
     @IBAction func showProgress(_ sender: UIButton) {
