@@ -646,6 +646,7 @@
 		C902035F20F3F76800A63492 /* InternetConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902035E20F3F76800A63492 /* InternetConnectionManager.swift */; };
 		C902036420F41F5D00A63492 /* NetworkStatusListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902036320F41F5D00A63492 /* NetworkStatusListener.swift */; };
 		C902036920F4E9C600A63492 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902036820F4E9C600A63492 /* Coordinator.swift */; };
+		C918123C20FE60E500C62879 /* PopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918123B20FE60E500C62879 /* PopUpProtocol.swift */; };
 		C92C0B7D339FDAE12D03156E5B6B19F2 /* FBSDKURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FD9E1782D1D224772082B5C88E89990 /* FBSDKURLConnection.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C9533F65DB7A5E3FB1FB8665736A6291 /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78FEDCAC2DFB0F10F3332EE962E4BC2 /* ObservableType+Extensions.swift */; };
 		C9B7CA64E20C05294641038FDB1766EA /* FBSDKViewImpressionTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD48911ACC817E975DE7535B7C67C5A /* FBSDKViewImpressionTracker.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -1754,12 +1755,13 @@
 		C902036320F41F5D00A63492 /* NetworkStatusListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusListener.swift; sourceTree = "<group>"; };
 		C902036820F4E9C600A63492 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C903C6CE64270AD63FB6BB8EF03E2DE6 /* FBSDKServerConfigurationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKServerConfigurationManager.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfigurationManager.h; sourceTree = "<group>"; };
+		C918123B20FE60E500C62879 /* PopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpProtocol.swift; sourceTree = "<group>"; };
 		C91B81CFF39F01F4C25CF204EBD5608B /* FBSDKCrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKCrypto.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Cryptography/FBSDKCrypto.m; sourceTree = "<group>"; };
 		C9B20F08236D294B23F1D3178DD6B41A /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B63DAD01D550578B666E71496D3541 /* GenericErrorConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GenericErrorConfigurator.swift; sourceTree = "<group>"; };
 		C9C960F320FA8B160023CDD7 /* BaseNavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationCoordinator.swift; sourceTree = "<group>"; };
 		C9C960F520FA8B750023CDD7 /* GlobalConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalConfiguration.swift; path = iOS_Bootstrap/Classes/GlobalConfiguration.swift; sourceTree = "<group>"; };
-		C9C960FC20FAA0D80023CDD7 /* DependancyInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependancyInjection.swift; path = iOS_Bootstrap/Classes/DependancyInjection.swift; sourceTree = "<group>"; };
+		C9C960FC20FAA0D80023CDD7 /* DependancyInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependancyInjection.swift; sourceTree = "<group>"; };
 		C9F5156777D6FF7B41B8EE442C4CD0BE /* Pods-iOS_Bootstrap_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS_Bootstrap_Tests-resources.sh"; sourceTree = "<group>"; };
 		CA1EF0DF0F1BFE91DAF716710EAA3925 /* STTwitterHTML.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STTwitterHTML.m; path = STTwitter/STTwitterHTML.m; sourceTree = "<group>"; };
 		CA615D163BBBAE9B8D720A771394D786 /* RecursiveLock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecursiveLock.swift; path = Platform/RecursiveLock.swift; sourceTree = "<group>"; };
@@ -2405,7 +2407,7 @@
 				C9C960F520FA8B750023CDD7 /* GlobalConfiguration.swift */,
 				7487F0B6CD9E3F24F6A47BE6908E4661 /* DateTimeManager.swift */,
 				F06E0E7D749C85D5A317DF28659138AD /* GlobalModules.swift */,
-				C9C960FC20FAA0D80023CDD7 /* DependancyInjection.swift */,
+				C91D53B320FE67F100D29CD0 /* Helpers */,
 				AF5AAF981035110DC2E69EAD2F4630FA /* CustomComponents */,
 				40485985DF3493602540CB4102A07612 /* Extensions */,
 				F85B482E4194FB54B28979E787C44929 /* Facebook */,
@@ -3112,6 +3114,16 @@
 				C902036820F4E9C600A63492 /* Coordinator.swift */,
 			);
 			path = NavigationManager;
+			sourceTree = "<group>";
+		};
+		C91D53B320FE67F100D29CD0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C9C960FC20FAA0D80023CDD7 /* DependancyInjection.swift */,
+				C918123B20FE60E500C62879 /* PopUpProtocol.swift */,
+			);
+			name = Helpers;
+			path = iOS_Bootstrap/Classes/Helpers;
 			sourceTree = "<group>";
 		};
 		C96E6C74F2159C1A12F567B914181018 /* IQKeyboardManagerSwift */ = {
@@ -4674,6 +4686,7 @@
 				4C64B34D054768C54B5A5688B3CC9028 /* UIColor + Hex.swift in Sources */,
 				4575DA4D56D2EF9AD2EE2B69900E9239 /* UIImage + Gif.swift in Sources */,
 				8E8E04CDA21FB9FAA6E5E6D1220CB6CB /* UILabel + format part of the text.swift in Sources */,
+				C918123C20FE60E500C62879 /* PopUpProtocol.swift in Sources */,
 				635C321A37134E78DD017D8B4CEDFEA0 /* UserDefaultsManger.swift in Sources */,
 				518B9C8FB3EA98AD002F01376131BBAE /* VIewController + Storyboard.swift in Sources */,
 			);

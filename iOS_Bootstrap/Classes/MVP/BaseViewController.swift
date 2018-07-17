@@ -10,7 +10,8 @@ import UIKit
 
 open class BaseViewController <T: BasePresenter> : UIViewController,
                                     BaseContractProtocol,
-                                    NetworkStatusListener {
+                                    NetworkStatusListener,
+                                    PopUpProtocol {
     //
     public weak var navigator: BaseNavigationCoordinator?
     //
