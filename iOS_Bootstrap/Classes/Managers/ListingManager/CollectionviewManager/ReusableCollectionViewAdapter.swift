@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class ReusableCollectionViewAdapter : NSObject {
+open class ReusableCollectionViewAdapter : NSObject, CollectionViewDelegates {
     
     private final var mCollectionview : UICollectionView!
     private final var mCollectionViewDataSource: [Any]!
@@ -17,14 +17,14 @@ open class ReusableCollectionViewAdapter : NSObject {
     //
     private final var adapter : CollectionViewAdapter!
     
-    required public init(collectionView : UICollectionView!, dataSource: [Any]!, delegate : CollectionViewDelegates) {
+    required public init(collectionView : UICollectionView!, dataSource: [Any]!) {
         super.init()
         //
         self.mCollectionview = collectionView
         self.mCollectionViewDataSource = dataSource
-        self.mDelegate = delegate
+        self.mDelegate = self
         //
-        configureReusableCollectionView()
+        configureReusableCollectionView(collectionViewDataSource: mCollectionViewDataSource)
         //
         if ((mCollectionview != nil) &&
             (mCollectionViewDataSource != nil) &&
@@ -35,12 +35,20 @@ open class ReusableCollectionViewAdapter : NSObject {
         }
     }
     
-    public final func reloadCollectionViewData(dataSource: [Any]!) {
-        self.mCollectionViewDataSource = dataSource
-        adapter.reloadCollectionView(dataSource: dataSource)
+    open func configureCell(collectionView: UICollectionView, cellForRowAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell : BaseCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
+        return cell
     }
     
-    open func configureReusableCollectionView()  {
+    public final func configurePaginationParameters(totalNumberOfItems : Int, itemsPerPage : Int) {
+        adapter.configurePaginationParameters(totalNumberOfItems: totalNumberOfItems, itemsPerPage: itemsPerPage)
+    }
+    
+    open func reloadCollectionViewData(pageItems: [Any]!, currentPage: Int) {
+        adapter.reloadCollectionView(pageItems: pageItems, currentPage: currentPage)
+    }
+    
+    open func configureReusableCollectionView(collectionViewDataSource: [Any]!)  {
         // Set tableview cell here
     }
     

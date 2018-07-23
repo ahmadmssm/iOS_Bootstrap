@@ -8,6 +8,7 @@
 @objc public protocol BaseListingDelegates {
     @objc optional func configureNumberOfSections() -> Int
     @objc optional func loadMore (indexPath: IndexPath)
+    @objc optional func loadMore ()
     @objc optional func configurePullToRefresh (refreshcontrole : UIRefreshControl)
     @objc optional func pullToRefresh (refreshcontrole : UIRefreshControl)
     // Empty dataset callbacks

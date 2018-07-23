@@ -6,7 +6,7 @@
 //
 
 @objc public protocol CollectionViewDelegates : BaseListingDelegates {
-    func configureCell (cellForRowAt indexPath: IndexPath) -> UICollectionViewCell
+    func configureCell (collectionView: UICollectionView, cellForRowAt indexPath: IndexPath) -> UICollectionViewCell
     @objc optional func configureNumberOfItemsInSection(section : Int) -> Int
     @objc optional func itemDidSelected(indexPath : IndexPath)
     @objc optional func didHighlightItemAtIndexPath(indexPath : IndexPath)

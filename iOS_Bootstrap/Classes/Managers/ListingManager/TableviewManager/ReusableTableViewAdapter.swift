@@ -5,11 +5,9 @@
 //  Created by Ahmad Mahmoud on 6/17/18.
 //
 
-import Foundation
-
-open class ReusableTableViewAdapter : NSObject {
+open class ReusableTableViewAdapter : NSObject, TableViewDelegates {
     
-    private final var mTableview : UITableView!
+    private final var tableview : UITableView!
     private final var tableViewDataSource: [Any]!
     //
     public final var nibClass : BaseTableViewCell.Type!
@@ -17,16 +15,16 @@ open class ReusableTableViewAdapter : NSObject {
     //
     private final var adapter : TableviewAdapter!
     
-    required public init(tableview : UITableView!, tableViewDataSource: [Any]!, delegate : TableViewDelegates) {
+    required public init(tableview : UITableView!, tableViewDataSource: [Any]!) {
         super.init()
         //
-        self.mTableview = tableview
+        self.tableview = tableview
         self.tableViewDataSource = tableViewDataSource
-        self.mDelegate = delegate
+        self.mDelegate = self
         //
-        configureReusableTableView()
+        configureReusableTableView(tableViewDataSource: tableViewDataSource)
         //
-        if ((mTableview != nil) &&
+        if ((tableview != nil) &&
             (tableViewDataSource != nil) &&
             (nibClass != nil) &&
             (mDelegate != nil)) {
@@ -35,13 +33,20 @@ open class ReusableTableViewAdapter : NSObject {
         }
     }
     
-    public final func reloadTableViewData(dataSource: [Any]!) {
-        self.tableViewDataSource = dataSource
-        adapter.reloadTable(dataSource: dataSource)
+    open func configureCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell : BaseTableViewCell = tableview.dequeueReusableCell(forIndexPath: indexPath)
+        return cell
     }
     
-    open func configureReusableTableView()  {
-        // Set tableview cell here
+    public final func configurePaginationParameters(totalNumberOfItems : Int, itemsPerPage : Int) {
+        adapter.configurePaginationParameters(totalNumberOfItems: totalNumberOfItems, itemsPerPage: itemsPerPage)
     }
     
+    open func reloadTableViewData(pageItems: [Any]!, currentPage: Int) {
+        adapter.reloadTable(pageItems: pageItems, currentPage: currentPage)
+    }
+    
+    open func configureReusableTableView(tableViewDataSource: [Any]!) {}
+    
+
 }

@@ -22,7 +22,7 @@ extension UICollectionView {
         register(nib, forCellWithReuseIdentifier: cellClassName)
     }
     
-    public func dequeueReusableCell<T: UICollectionViewCell>(forIndexPath indexPath: NSIndexPath) -> T where T: ReusableCell {
+    public func dequeueReusableCell<T: UICollectionViewCell>(forIndexPath indexPath: IndexPath) -> T where T: ReusableCell {
         guard let cell = dequeueReusableCell(withReuseIdentifier: T.dequeueIdentifier, for: indexPath as IndexPath) as? T else {
             fatalError("Could not dequeue cell with identifier: \(T.dequeueIdentifier)")
         }

@@ -317,7 +317,7 @@ fileprivate extension InternetConnectionManager {
     private var flags: SCNetworkReachabilityFlags {
         var flags = SCNetworkReachabilityFlags()
         if SCNetworkReachabilityGetFlags(reachabilityRef, &flags) {
-            print("Returning flags \(flags)")
+           // print("Returning flags \(flags)")
             return flags
         }
         else {
@@ -343,7 +343,7 @@ extension InternetConnectionManager {
         }
         //
         for listener in listeners {
-            listener.networkStatusDidChanged(status: self.connection)
+            listener.networkStatusDidChanged(status: network.connection)
         }
     }
     

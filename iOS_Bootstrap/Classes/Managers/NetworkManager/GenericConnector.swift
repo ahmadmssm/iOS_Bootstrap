@@ -9,6 +9,6 @@ import Foundation
 
 open class GenericConnector: NSObject {
     
-    public typealias completionHandler = (ConnectionResult) -> ()
+    public typealias completionHandler<T> = (ConnectionResult<T>) -> ()
 
 }

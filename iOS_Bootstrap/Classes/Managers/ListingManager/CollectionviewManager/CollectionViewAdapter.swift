@@ -15,7 +15,17 @@ open class CollectionViewAdapter : NSObject {
     private final var collectionViewDataSource: [Any]!
     private final var mNibClass : BaseCollectionViewCell.Type!
     fileprivate final var mDelegate : CollectionViewDelegates!
-    
+    //
+    fileprivate var mTotalNumberOfItems : Int?
+    fileprivate var mItemsPerPage : Int?
+    fileprivate var mNumberOfPages : Int = 0
+    fileprivate var mCurrentPage : Int?
+    fileprivate var hasMore : Bool = false
+    //
+    private var firstTime : Bool = true
+    //
+    fileprivate var spinner : UIActivityIndicatorView?
+
     public final func configureCollectionviewWithXibCell (collectionView: UICollectionView,
                                                  dataSource: [Any]!,
                                                  nibClass : BaseCollectionViewCell.Type!,
@@ -50,6 +60,24 @@ open class CollectionViewAdapter : NSObject {
         //
         mDelegate.configureAdditionalCollectionViewProperties?(collectionView: collectionView)
     }
+    //
+    public final func configurePaginationParameters(totalNumberOfItems : Int, itemsPerPage : Int) {
+        if (firstTime) {
+            firstTime = false
+            //
+            self.mTotalNumberOfItems = totalNumberOfItems
+            self.mItemsPerPage = itemsPerPage
+            // Calculte the total number of pages from the given parameters
+            var tempNumberOfPages : Double = Double(totalNumberOfItems/itemsPerPage)
+            if (tempNumberOfPages - round(tempNumberOfPages) < 0) {
+                tempNumberOfPages = round(tempNumberOfPages) + 1
+                self.mNumberOfPages = Int(tempNumberOfPages)
+            }
+            else {
+                self.mNumberOfPages = totalNumberOfItems/itemsPerPage
+            }
+        }
+    }
     // Pull to refresh configuration
     public func configurePullToRefresh(refreshControl : UIRefreshControl) {
         mDelegate?.configurePullToRefresh?(refreshcontrole: refreshControl)
@@ -63,10 +91,20 @@ open class CollectionViewAdapter : NSObject {
         mDelegate?.pullToRefresh?(refreshcontrole: refreshControl)
     }
     
-    public final func reloadCollectionView(dataSource:[Any]) {
-        self.collectionViewDataSource = dataSource
+    public final func reloadCollectionView(pageItems:[Any], currentPage : Int) {
+        self.mCurrentPage = currentPage
         mCollectionview?.reloadData()
+        //
+        if (currentPage < mNumberOfPages) { hasMore = true }
+        //
+        if (self.collectionViewDataSource.isEmpty) { self.collectionViewDataSource = pageItems }
+        else { self.collectionViewDataSource.append(contentsOf: pageItems) }
+        mCollectionview?.reloadData()
+        //
+        spinner?.stopAnimating()
+        // mTableview.tableFooterView?.isHidden = true
     }
+    
     // return cells that are square sized
     public func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, padding : CGFloat) -> CGSize {
         let collectionViewSize = mCollectionview.frame.size.width - padding
@@ -126,7 +164,7 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
     }
     // Configure cell
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return (mDelegate?.configureCell(cellForRowAt: indexPath))!
+        return (mDelegate?.configureCell(collectionView: collectionView, cellForRowAt: indexPath))!
     }
     // item did selected at index
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -135,6 +173,33 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
     // Pagination
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         mDelegate?.loadMore?(indexPath: indexPath)
+    }
+    
+    
+    // Pagination (Load more)
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if (scrollView == mCollectionview) {
+            if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= (scrollView.contentSize.height)) {
+                //
+                if (hasMore) {
+                    spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+                    spinner?.startAnimating()
+                    spinner?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: mCollectionview.bounds.width, height: CGFloat(45))
+                    
+
+                    mCollectionview.addSubview(spinner!)
+                //    mCollectionview.tableFooterView = spinner
+                //    mCollectionview.tableFooterView?.isHidden = false
+                    //
+                    hasMore = false
+                    mDelegate?.loadMore?()
+                }
+            }
+            else {
+                spinner?.stopAnimating()
+              //  mCollectionview.tableFooterView?.isHidden = true
+            }
+        }
     }
 }
 

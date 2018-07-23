@@ -6,7 +6,7 @@
 //
 
 public protocol Coordinator {
-
+    
     var navigationController: UINavigationController? { get set }
     func startInitialView()
 }

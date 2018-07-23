@@ -68,17 +68,19 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 22. Keyboard handler
 23. Collection view adapter.
 24. Reusable collection view adapter.
-23. How to use and documentation + references.
+25. Table and collection views pagination handler.
+26. Added Kingfisher  library.
+27. Coordinator design pattern + viewcontrollers naviagator base class + examples
+28. Simple depenfancy injection implementation.
+29. How to use and documentation + references.
+
 
 ## Upcoming features
 
-1. Pagination handler.
-2. Date and time manager.
+2. Date and Time manager.
 3. Push notification manager.
 4. Social media manager.
 5. More extensions! Please if there is an extension you are constantly using, send a pull request now.
-6. Documentations inside code .
-
 
 
 ## Requirements
@@ -255,7 +257,8 @@ The following awesome libraries are used as dependancies in my pod :
 2. [Moya](https://github.com/Moya/Moya).
 3. [HandyJSON](https://github.com/alibaba/HandyJSON).
 4. [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager).
-5. [SNSSocial](https://github.com/smartnsoft/SNSSocial).
+5. [Kingfisher](https://github.com/onevcat/Kingfisher)
+6. [SNSSocial](https://github.com/smartnsoft/SNSSocial).
 
 In addition, the following Repos helped me alot either by including their code directly into my pod or using some portion of their codes to improve my things or to learn something new so __**thank you**__ for sharing your awesome codes for free to the community.
 

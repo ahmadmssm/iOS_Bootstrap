@@ -9,10 +9,10 @@ open class BaseNavigationCoordinator : Coordinator {
     
     public var childCoordinators = [Coordinator]()
     public var navigationController: UINavigationController?
-
-    public init () {
+    //
+    public init (){
         // Create the main navigation controller
         navigationController = UINavigationController()
     }
-        
+    
 }

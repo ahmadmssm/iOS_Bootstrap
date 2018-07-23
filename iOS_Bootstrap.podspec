@@ -46,6 +46,8 @@ Pod::Spec.new do |s|
     s.dependency 'IQKeyboardManagerSwift', '5.0.0'
     s.dependency 'IQKeyboardManagerSwift', '5.0.0'
     s.dependency 'SNSSocial', '~> 2.0'
+    s.dependency 'SNSSocial', '~> 2.0'
+    s.dependency 'Kingfisher', '~> 4.0'
 
     s.frameworks = 'Foundation'
     

@@ -13,7 +13,9 @@ open class BaseViewController <T: BasePresenter> : UIViewController,
                                     NetworkStatusListener,
                                     PopUpProtocol {
     //
-    public weak var navigator: BaseNavigationCoordinator?
+    public var navigator: BaseNavigationCoordinator?
+    //
+    private var snackbar : TTGSnackbar? = nil
     //
     public var presenter : T!
     override open func viewDidLoad() { self.presenter = T.init(contract: self) }
@@ -21,6 +23,9 @@ open class BaseViewController <T: BasePresenter> : UIViewController,
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         InternetConnectionManager.getInstance.addListener(listener: self)
+        //
+        self.snackbar = TTGSnackbar(message: "",duration: .short)
+        self.snackbar?.backgroundColor = UIColor.blue
     }
     //
     override open func viewDidDisappear(_ animated: Bool) {
@@ -29,25 +34,24 @@ open class BaseViewController <T: BasePresenter> : UIViewController,
     }
     //
     public func networkStatusDidChanged(status: InternetConnectionManager.Connection) {
-        var snackbar : TTGSnackbar? = nil
         var message : String = ""
-        var duration : TTGSnackbarDuration
+        var duration : TTGSnackbarDuration = .short
+     
         switch status {
         case .notConnected:
             message = "Network became unreachable"
             duration = .forever
         case .wifi:
             message = "Network reachable through WiFi"
-            duration = .long
         case .cellular:
             message = "Network reachable through Mobile data"
-            duration = .long
         }
             //
         DispatchQueue.main.async {
-            snackbar = TTGSnackbar(message: message,duration: duration)
-            snackbar?.backgroundColor = UIColor.blue
-            snackbar?.show()
+            self.snackbar?.hideAllToasts()
+            self.snackbar?.message = message
+            self.snackbar?.duration = duration
+            self.snackbar?.show()
         }
     }
 }

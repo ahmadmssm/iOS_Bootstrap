@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ConnectionResult {
-    case success(AnyObject)
+public enum ConnectionResult<T> {
+    case success(T)
     case failure(String)
 }

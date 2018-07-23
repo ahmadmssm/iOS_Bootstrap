@@ -12,6 +12,7 @@ enum APIs {
     
     case getWorldCountries()
     case getCountryDetailsByCountryName(countryName : String)
+    case getUsers(page : String)
     
 }
 
@@ -19,7 +20,13 @@ extension APIs : GenericAPIs {
     
     // override default url building behavior
     var baseURL: URL {
-        return URL(string: "https://restcountries.eu/rest/v2")!
+        switch self {
+        case .getWorldCountries(),
+             .getCountryDetailsByCountryName( _):
+            return URL(string: "https://restcountries.eu/rest/v2")!
+        case .getUsers( _):
+            return URL(string: "https://reqres.in/api/users")!
+        }
     }
     
     // method + path
@@ -29,6 +36,8 @@ extension APIs : GenericAPIs {
             return .get("/all")
         case .getCountryDetailsByCountryName(let countryName):
             return .get("/name/\(countryName)")
+        case .getUsers( _):
+            return .get("")
         }
     }
     
@@ -43,6 +52,8 @@ extension APIs : GenericAPIs {
         case .getWorldCountries(),
              .getCountryDetailsByCountryName(_):
             return nil
+        case .getUsers(let page):
+            return URLEncoding() => ["page": page]
         }
     }
     

@@ -14,6 +14,16 @@ open class TableviewAdapter : NSObject {
     private final var tableViewDataSource: [Any]!
     private final var mNibClass : BaseTableViewCell.Type!
     fileprivate final var mDelegate : TableViewDelegates!
+    //
+    fileprivate var mTotalNumberOfItems : Int?
+    fileprivate var mItemsPerPage : Int?
+    fileprivate var mNumberOfPages : Int = 0
+    fileprivate var mCurrentPage : Int?
+    fileprivate var hasMore : Bool = false
+    //
+    private var firstTime : Bool = true
+    //
+    fileprivate var spinner : UIActivityIndicatorView?
 
     public final func configureTableWithXibCell (tableView: UITableView,
                                     dataSource: [Any]!,
@@ -34,8 +44,8 @@ open class TableviewAdapter : NSObject {
     }
     
     private final func configureTable (tableView: UITableView,
-                                           dataSource: [Any],
-                                           delegate : TableViewDelegates) {
+                                       dataSource: [Any],
+                                       delegate : TableViewDelegates) {
         self.tableViewDataSource = dataSource
         self.mTableview = tableView
         self.mDelegate = delegate
@@ -48,6 +58,25 @@ open class TableviewAdapter : NSObject {
         mTableview.emptyDataSetSource = self
         //
         mDelegate?.configureAdditionalTableProperties?(table: mTableview!)
+    }
+    
+    //
+    public final func configurePaginationParameters(totalNumberOfItems : Int, itemsPerPage : Int) {
+        if (firstTime) {
+            firstTime = false
+            //
+            self.mTotalNumberOfItems = totalNumberOfItems
+            self.mItemsPerPage = itemsPerPage
+            // Calculte the total number of pages from the given parameters
+            var tempNumberOfPages : Double = Double(totalNumberOfItems/itemsPerPage)
+            if (tempNumberOfPages - round(tempNumberOfPages) < 0) {
+                tempNumberOfPages = round(tempNumberOfPages) + 1
+                self.mNumberOfPages = Int(tempNumberOfPages)
+            }
+            else {
+                self.mNumberOfPages = totalNumberOfItems/itemsPerPage
+            }
+        }
     }
     
     // Pull to refresh configuration
@@ -63,9 +92,18 @@ open class TableviewAdapter : NSObject {
         mDelegate?.pullToRefresh?(refreshcontrole: refreshControl)
     }
     
-    public final func reloadTable(dataSource:[Any]) {
-        self.tableViewDataSource = dataSource
+    public final func reloadTable(pageItems:[Any], currentPage : Int) {
+        //
+        self.mCurrentPage = currentPage
+        if (currentPage < mNumberOfPages) { hasMore = true }
+        //
+        if (self.tableViewDataSource.isEmpty) { self.tableViewDataSource = pageItems }
+        else { self.tableViewDataSource.append(contentsOf: pageItems) }
+
         mTableview?.reloadData()
+        //
+        spinner?.stopAnimating()
+        mTableview.tableFooterView?.isHidden = true
     }
 }
 
@@ -88,15 +126,34 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     }
     // Configure cell
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return (mDelegate?.configureCell(cellForRowAt: indexPath))!
+      //  spinner?.stopAnimating()
+        return (mDelegate?.configureCell(tableView: mTableview, cellForRowAt: indexPath))!
     }
     // cell did selected at index
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         mDelegate?.rowDidSelected?(indexPath: indexPath)
     }
-    // Pagination
-    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        mDelegate?.loadMore?(indexPath: indexPath)
+    // Pagination (Load more)
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if (scrollView == mTableview) {
+            if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= (scrollView.contentSize.height)) {
+                //
+                if (hasMore) {
+                    spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+                    spinner?.startAnimating()
+                    spinner?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: mTableview.bounds.width, height: CGFloat(45))
+                    mTableview.tableFooterView = spinner
+                    mTableview.tableFooterView?.isHidden = false
+                    //
+                    hasMore = false
+                    mDelegate?.loadMore?()
+                }
+            }
+            else {
+                spinner?.stopAnimating()
+                mTableview.tableFooterView?.isHidden = true
+            }
+        }
     }
 }
 

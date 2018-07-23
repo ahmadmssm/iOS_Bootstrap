@@ -8,7 +8,7 @@
 
 
 @objc public protocol TableViewDelegates : BaseListingDelegates {
-    func configureCell (cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func configureCell (tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     @objc optional func configureNumberOfRowsPerSection(section : Int) -> Int
     @objc optional func rowDidSelected(indexPath : IndexPath)
     @objc optional func configureAdditionalTableProperties (table : UITableView)

@@ -9,24 +9,26 @@
 import UIKit
 import iOS_Bootstrap
 
-class NavigationCoordinator: BaseNavigationCoordinator {
+class NavigationCoordinator: BaseNavigationCoordinator  {
     
     static let getInstance = NavigationCoordinator()
-    private override init() {
-        super.init()
-    }
+    
+    private override init() {}
+  
+   
+
     //
     func goToHomeStoryBoard(number : Int) {
-        let storyboard = UIStoryboard.getStoryboardWithName(Storyboard.main.rawValue)
+        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.main.getStringName)
         let homeVC = storyboard.instantiateViewController() as MyViewController
         homeVC.navigator = self
         homeVC.x = number
        // AppDelegate.getContext().present(homeVC, animated: true, completion: nil)
         navigationController?.pushViewController(homeVC, animated: false)
     }
-    
+
     func startInitialView() {
-        let storyboard =  UIStoryboard.getStoryboardWithName(Storyboard.main.rawValue)
+        let storyboard =  UIStoryboard.getStoryboardWithName(Storyboards.main.getStringName)
         let vc = storyboard.instantiateViewController() as ViewController
         vc.navigator = self
         navigationController?.pushViewController(vc, animated: false)

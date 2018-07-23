@@ -6,12 +6,13 @@
 //  Copyright © 2018 Ahmad Mahmoud. All rights reserved.
 //
 
-import UIKit
+import iOS_Bootstrap
 
 // The unifiend place where we state all the storyboard we have in our application
-enum Storyboard: String {
+enum Storyboards : BaseStoryboards {
     
-        case main
-        case home
+    case main
+    case home
+   
 }
 

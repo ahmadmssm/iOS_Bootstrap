@@ -19,6 +19,10 @@
 		C915C58D20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */; };
 		C915C59C20CAC1F10029F5D9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */; };
 		C915C59D20CAC1F10029F5D9 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */; };
+		C923619E2102AA7C00C2B630 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923619D2102AA7C00C2B630 /* User.swift */; };
+		C92361A02102AA9200C2B630 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923619F2102AA9200C2B630 /* Page.swift */; };
+		C92361A32102B0FE00C2B630 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92361A12102B0FE00C2B630 /* UserCell.swift */; };
+		C92361A42102B0FE00C2B630 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92361A22102B0FE00C2B630 /* UserCell.xib */; };
 		C9316DBE20D6717C00FB6A6A /* CountriesReusableTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9316DBD20D6717C00FB6A6A /* CountriesReusableTable.swift */; };
 		C9555AAD20E8171C007A698D /* MyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9555AAB20E8171B007A698D /* MyPresenter.swift */; };
 		C9555AAE20E8171C007A698D /* MyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9555AAC20E8171B007A698D /* MyProtocol.swift */; };
@@ -64,6 +68,10 @@
 		C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_ReusableTableVC.swift; sourceTree = "<group>"; };
 		C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		C923619D2102AA7C00C2B630 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C923619F2102AA9200C2B630 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		C92361A12102B0FE00C2B630 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		C92361A22102B0FE00C2B630 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		C9316DBD20D6717C00FB6A6A /* CountriesReusableTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesReusableTable.swift; sourceTree = "<group>"; };
 		C9555AAB20E8171B007A698D /* MyPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPresenter.swift; sourceTree = "<group>"; };
 		C9555AAC20E8171B007A698D /* MyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProtocol.swift; sourceTree = "<group>"; };
@@ -220,6 +228,8 @@
 			children = (
 				C99EA61E20CB466300D7C158 /* Country.swift */,
 				C9555AB120E925AB007A698D /* Translations.swift */,
+				C923619D2102AA7C00C2B630 /* User.swift */,
+				C923619F2102AA9200C2B630 /* Page.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -243,6 +253,8 @@
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				C99EA63820CBECFB00D7C158 /* Storyboards.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				C92361A12102B0FE00C2B630 /* UserCell.swift */,
+				C92361A22102B0FE00C2B630 /* UserCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -335,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92361A42102B0FE00C2B630 /* UserCell.xib in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				C99EA63B20CBED4200D7C158 /* Home.storyboard in Resources */,
 				C915C59D20CAC1F10029F5D9 /* TableViewCell.xib in Resources */,
@@ -442,15 +455,18 @@
 				C9555AB220E925AB007A698D /* Translations.swift in Sources */,
 				C99EA63F20CBF0DB00D7C158 /* HomeVC.swift in Sources */,
 				C915C58D20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift in Sources */,
+				C92361A32102B0FE00C2B630 /* UserCell.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				C902036F20F571C100A63492 /* NavigationCoordinator.swift in Sources */,
 				C99EA60320CB3D7900D7C158 /* HumanReadableError.swift in Sources */,
+				C923619E2102AA7C00C2B630 /* User.swift in Sources */,
 				C99EA61F20CB466300D7C158 /* Country.swift in Sources */,
 				C99EA60420CB3D7900D7C158 /* APIs.swift in Sources */,
 				C9555AAE20E8171C007A698D /* MyProtocol.swift in Sources */,
 				C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */,
 				C9316DBE20D6717C00FB6A6A /* CountriesReusableTable.swift in Sources */,
 				C9555AB020E8174B007A698D /* MyViewController.swift in Sources */,
+				C92361A02102AA9200C2B630 /* Page.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				C9555AAD20E8171C007A698D /* MyPresenter.swift in Sources */,
 				C99EA60520CB3D7900D7C158 /* API_Connector.swift in Sources */,
