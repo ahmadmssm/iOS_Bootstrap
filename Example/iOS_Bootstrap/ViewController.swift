@@ -23,10 +23,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonGoToHomeStoryboard(_ sender: UIButton) {
-        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.home.getStringName)
-        let homeVC = storyboard.instantiateInitialViewController() as! HomeVC
-        homeVC.x = 2
-        present(homeVC, animated: true, completion: nil)
+//
+//        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.home.getStringName)
+//        let homeVC = storyboard.instantiateInitialViewController() as! HomeVC
+//        homeVC.x = 2
+//        present(homeVC, animated: true, completion: nil)
         
         AppDelegate.setContext(context: self)
         NavigationCoordinator.getInstance.goToHomeStoryBoard(number: 2)

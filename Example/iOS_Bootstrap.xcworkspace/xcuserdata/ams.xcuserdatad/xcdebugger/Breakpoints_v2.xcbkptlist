@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/HomeVC.swift"
-            timestampString = "553218854.810756"
+            timestampString = "554061302.279213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/ViewController.swift"
-            timestampString = "553947458.735158"
+            timestampString = "554060644.971366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "loggers(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,29 +122,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/Managers/ListingManager/TableviewManager/TableviewAdapter.swift"
-            timestampString = "553953428.023975"
+            timestampString = "554057064.54881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "reloadTable(pageItems:currentPage:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/ListingManager/TableviewManager/TableviewAdapter.swift"
-            timestampString = "553953428.024309"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "TableviewAdapter"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/Managers/ListingManager/TableviewManager/ReusableTableViewAdapter.swift"
-            timestampString = "553953428.024696"
+            timestampString = "554036383.334892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -170,28 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/Managers/ListingManager/TableviewManager/ReusableTableViewAdapter.swift"
-            timestampString = "553953428.024883"
+            timestampString = "554036383.334964"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
             landmarkName = "init(tableview:tableViewDataSource:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOS_Bootstrap/MyViewController.swift"
-            timestampString = "553997459.487844"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "TestButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -234,13 +202,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/MVP/BaseViewController.swift"
-            timestampString = "553953428.025842"
+            timestampString = "554060644.9715869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "networkStatusDidChanged(status:)"
-            landmarkType = "7">
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "BaseViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -298,27 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/MVP/BaseViewController.swift"
-            timestampString = "553953428.02969"
+            timestampString = "554060644.972047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/MVP/BaseViewController.swift"
-            timestampString = "553953428.030951"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "networkStatusDidChanged(status:)"
             landmarkType = "7">
             <Locations>
@@ -394,13 +346,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/MVP/BaseViewController.swift"
-            timestampString = "553953428.033622"
+            timestampString = "554060644.97237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "networkStatusDidChanged(status:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../iOS_Bootstrap/Classes/MVP/BasePresenter.swift"
+            timestampString = "554060644.972822"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "BasePresenter"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../iOS_Bootstrap/Classes/MVP/BasePresenter.swift"
+            timestampString = "554060644.973156"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "init(contract:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_Bootstrap.BasePresenter.__allocating_init(contract: A) -&gt; iOS_Bootstrap.BasePresenter&lt;A&gt;"
+                  moduleName = "iOS_Bootstrap"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/iOS_Bootstrap/Classes/MVP/BasePresenter.swift"
+                  timestampString = "554058551.404258"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_Bootstrap.BasePresenter.init(contract: A) -&gt; iOS_Bootstrap.BasePresenter&lt;A&gt;"
+                  moduleName = "iOS_Bootstrap"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/iOS_Bootstrap/Classes/MVP/BasePresenter.swift"
+                  timestampString = "554058551.408049"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "139">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

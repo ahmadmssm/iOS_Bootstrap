@@ -19,7 +19,7 @@ open class CollectionViewAdapter : NSObject {
     fileprivate var mTotalNumberOfItems : Int?
     fileprivate var mItemsPerPage : Int?
     fileprivate var mNumberOfPages : Int = 0
-    fileprivate var mCurrentPage : Int?
+    fileprivate var mCurrentPage : Int = 1
     fileprivate var hasMore : Bool = false
     //
     private var firstTime : Bool = true
@@ -91,18 +91,22 @@ open class CollectionViewAdapter : NSObject {
         mDelegate?.pullToRefresh?(refreshcontrole: refreshControl)
     }
     
-    public final func reloadCollectionView(pageItems:[Any], currentPage : Int) {
-        self.mCurrentPage = currentPage
-        mCollectionview?.reloadData()
+  //  public final func reloadCollectionView(pageItems:[Any], currentPage : Int) {
+    public final func reloadCollectionView(pageItems:[Any]) {
+
+       // self.mCurrentPage = currentPage
         //
-        if (currentPage < mNumberOfPages) { hasMore = true }
+        if (self.mCurrentPage < mNumberOfPages) { hasMore = true }
         //
         if (self.collectionViewDataSource.isEmpty) { self.collectionViewDataSource = pageItems }
         else { self.collectionViewDataSource.append(contentsOf: pageItems) }
+        //
         mCollectionview?.reloadData()
         //
         spinner?.stopAnimating()
         // mTableview.tableFooterView?.isHidden = true
+        //
+        self.mCurrentPage += 1
     }
     
     // return cells that are square sized
@@ -170,11 +174,11 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         mDelegate?.itemDidSelected?(indexPath: indexPath)
     }
-    // Pagination
-    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        mDelegate?.loadMore?(indexPath: indexPath)
-    }
     
+    // Pagination
+//    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        mDelegate?.loadMore?(forPage: indexPath)
+//    }
     
     // Pagination (Load more)
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -192,7 +196,8 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
                 //    mCollectionview.tableFooterView?.isHidden = false
                     //
                     hasMore = false
-                    mDelegate?.loadMore?()
+                   // mDelegate?.loadMore?()
+                    mDelegate?.loadMore?(forPage: mCurrentPage, updatedDataSource: collectionViewDataSource)
                 }
             }
             else {

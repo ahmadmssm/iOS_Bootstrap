@@ -8,9 +8,11 @@
 
 import iOS_Bootstrap
 
-struct User : BaseModel {
+struct User : Codable {
+
     var id : Int?
     var first_name : String?
     var last_name : String?
     var avatar : String?
+    
 }

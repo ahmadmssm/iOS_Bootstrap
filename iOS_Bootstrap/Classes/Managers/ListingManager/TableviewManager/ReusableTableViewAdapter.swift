@@ -43,7 +43,8 @@ open class ReusableTableViewAdapter : NSObject, TableViewDelegates {
     }
     
     open func reloadTableViewData(pageItems: [Any]!, currentPage: Int) {
-        adapter.reloadTable(pageItems: pageItems, currentPage: currentPage)
+       // adapter.reloadTable(pageItems: pageItems, currentPage: currentPage)
+        adapter.reloadTable(pageItems: pageItems)
     }
     
     open func configureReusableTableView(tableViewDataSource: [Any]!) {}

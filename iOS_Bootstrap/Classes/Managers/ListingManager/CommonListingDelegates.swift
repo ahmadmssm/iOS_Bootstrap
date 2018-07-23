@@ -5,10 +5,9 @@
 //  Created by Ahmad Mahmoud on 6/12/18.
 //
 
-@objc public protocol BaseListingDelegates {
+@objc public protocol CommonListingDelegates {
     @objc optional func configureNumberOfSections() -> Int
-    @objc optional func loadMore (indexPath: IndexPath)
-    @objc optional func loadMore ()
+    @objc optional func loadMore (forPage page : Int, updatedDataSource : [Any])
     @objc optional func configurePullToRefresh (refreshcontrole : UIRefreshControl)
     @objc optional func pullToRefresh (refreshcontrole : UIRefreshControl)
     // Empty dataset callbacks

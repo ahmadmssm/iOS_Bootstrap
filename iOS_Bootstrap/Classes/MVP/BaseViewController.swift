@@ -8,17 +8,21 @@
 
 import UIKit
 
-open class BaseViewController <T: BasePresenter> : UIViewController,
+open class BaseViewController <T, P> :
+                                    UIViewController,
                                     BaseContractProtocol,
                                     NetworkStatusListener,
-                                    PopUpProtocol {
-    //
-    public var navigator: BaseNavigationCoordinator?
+                                    PopUpProtocol
+                                    where T : BasePresenter<P> {
     //
     private var snackbar : TTGSnackbar? = nil
     //
+    public var navigator: BaseNavigationCoordinator?
     public var presenter : T!
-    override open func viewDidLoad() { self.presenter = T.init(contract: self) }
+    
+    override open func viewDidLoad() {
+        self.presenter = T.init(contract: self as! P)
+    }
     //
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -47,12 +51,13 @@ open class BaseViewController <T: BasePresenter> : UIViewController,
             message = "Network reachable through Mobile data"
         }
             //
-        DispatchQueue.main.async {
-            self.snackbar?.hideAllToasts()
-            self.snackbar?.message = message
-            self.snackbar?.duration = duration
-            self.snackbar?.show()
-        }
+//        DispatchQueue.main.async {
+//            self.snackbar?.hideAllToasts()
+//            self.snackbar?.message = message
+//            self.snackbar?.duration = duration
+//            self.snackbar?.show()
+//        }
+        Log.warning(message)
     }
 }
 

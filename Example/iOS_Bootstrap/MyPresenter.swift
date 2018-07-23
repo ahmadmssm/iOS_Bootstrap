@@ -9,17 +9,13 @@
 import Foundation
 import iOS_Bootstrap
 
-class MyPresenter: BasePresenter {
-    
-    private var delegator : MyProtocol!
-    //
-    required public init<T>(contract: T!) where T : BaseContractProtocol {
+class MyPresenter: BasePresenter<MyProtocol> {
+
+    required init(contract: MyProtocol) {
         super.init(contract: contract)
-        //
-        delegator = self.viewDelegator as? MyProtocol
     }
-    
+   
     func test() {
-        delegator.doNothing()
+        self.viewDelegator?.doNothing()
     }
 }

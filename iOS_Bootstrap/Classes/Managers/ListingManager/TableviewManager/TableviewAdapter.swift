@@ -11,14 +11,14 @@ import UIKit
 open class TableviewAdapter : NSObject {
     
     private final var mTableview : UITableView!
-    private final var tableViewDataSource: [Any]!
+    fileprivate var tableViewDataSource: [Any]!
     private final var mNibClass : BaseTableViewCell.Type!
     fileprivate final var mDelegate : TableViewDelegates!
     //
     fileprivate var mTotalNumberOfItems : Int?
     fileprivate var mItemsPerPage : Int?
     fileprivate var mNumberOfPages : Int = 0
-    fileprivate var mCurrentPage : Int?
+    fileprivate var mCurrentPage : Int = 1
     fileprivate var hasMore : Bool = false
     //
     private var firstTime : Bool = true
@@ -92,18 +92,24 @@ open class TableviewAdapter : NSObject {
         mDelegate?.pullToRefresh?(refreshcontrole: refreshControl)
     }
     
-    public final func reloadTable(pageItems:[Any], currentPage : Int) {
+  //  public final func reloadTable(pageItems:[Any], currentPage : Int) {
+    public final func reloadTable(pageItems:[Any]) {
         //
-        self.mCurrentPage = currentPage
-        if (currentPage < mNumberOfPages) { hasMore = true }
+       // self.mCurrentPage = currentPage
+       // self.mCurrentPage += 1
+//        if (currentPage < mNumberOfPages) { hasMore = true }
+        if (self.mCurrentPage < mNumberOfPages) { hasMore = true }
+
         //
         if (self.tableViewDataSource.isEmpty) { self.tableViewDataSource = pageItems }
         else { self.tableViewDataSource.append(contentsOf: pageItems) }
-
+        //
         mTableview?.reloadData()
         //
         spinner?.stopAnimating()
         mTableview.tableFooterView?.isHidden = true
+        //
+        self.mCurrentPage += 1
     }
 }
 
@@ -146,7 +152,8 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
                     mTableview.tableFooterView?.isHidden = false
                     //
                     hasMore = false
-                    mDelegate?.loadMore?()
+                  //  mDelegate?.loadMore?()
+                    mDelegate.loadMore?(forPage: mCurrentPage, updatedDataSource: tableViewDataSource)
                 }
             }
             else {

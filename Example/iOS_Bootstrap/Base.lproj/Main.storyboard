@@ -34,7 +34,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgX-Dh-cOf">
                                         <rect key="frame" x="0.0" y="45.5" width="323" height="35.5"/>
-                                        <state key="normal" title="Go to Home storyboard"/>
+                                        <state key="normal" title="( MVP + Navigator ) Go to Home storyboard"/>
                                         <connections>
                                             <action selector="buttonGoToHomeStoryboard:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="McF-YT-vqP"/>
                                         </connections>

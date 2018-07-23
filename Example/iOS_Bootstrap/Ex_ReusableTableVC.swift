@@ -36,8 +36,7 @@ class Ex_ReusableTableVC: UIViewController {
         API_Connector().getAllCountries (completion: { response in
             switch response {
             case .success(let countries):
-                let countriesArr : [Country] = countries
-                self.dataSource = countriesArr
+                self.dataSource = countries
                 self.reusableView.reloadTableViewData(pageItems: self.dataSource, currentPage: 0)
                 break
             case .failure(let errorMsg):

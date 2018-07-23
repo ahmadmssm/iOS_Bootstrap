@@ -44,8 +44,12 @@ open class ReusableCollectionViewAdapter : NSObject, CollectionViewDelegates {
         adapter.configurePaginationParameters(totalNumberOfItems: totalNumberOfItems, itemsPerPage: itemsPerPage)
     }
     
-    open func reloadCollectionViewData(pageItems: [Any]!, currentPage: Int) {
-        adapter.reloadCollectionView(pageItems: pageItems, currentPage: currentPage)
+//    open func reloadCollectionViewData(pageItems: [Any]!, currentPage: Int) {
+//        adapter.reloadCollectionView(pageItems: pageItems, currentPage: currentPage)
+//    }
+    
+    open func reloadCollectionViewData(pageItems: [Any]!) {
+        adapter.reloadCollectionView(pageItems: pageItems)
     }
     
     open func configureReusableCollectionView(collectionViewDataSource: [Any]!)  {

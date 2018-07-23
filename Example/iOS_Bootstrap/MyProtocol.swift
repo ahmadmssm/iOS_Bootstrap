@@ -8,6 +8,8 @@
 
 import iOS_Bootstrap
 
-public protocol MyProtocol : BaseContractProtocol {
+@objc public protocol MyProtocol {
     func doNothing()
+    @objc optional func doThing ()
 }
+

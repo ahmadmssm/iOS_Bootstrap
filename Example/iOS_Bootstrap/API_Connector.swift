@@ -38,15 +38,15 @@ class API_Connector : GenericConnector {
             .request(.getUsers(page: String(page)))
             .filterSuccessfulStatusCodes()
             .processErrors()
-            .mapString()
+            .map(Page.self)
             .subscribe { event in
                 switch event {
-                case .success(let responseString):
-                    let users : Page = Parser.objectFromJSONstring(object: Page.self, JSONString: responseString)!
-                    completion(.success(users))
+                case .success(let page):
+                    completion(.success(page))
                 case .error(let error):
                     completion(.failure(error.localizedDescription))
-                }}
+                }
+        }
     }
     
 }
