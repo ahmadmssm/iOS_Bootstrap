@@ -9,7 +9,7 @@
 import UIKit
 import iOS_Bootstrap
 
-class MyViewController: BaseViewController<MyPresenter, MyProtocol>, MyProtocol, TableViewDelegates {
+class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegator>, MyViewControllerDelegator, TableViewDelegates {
     
     @IBOutlet weak var usersTableVIew: UITableView!
     private let tableAdapter : TableviewAdapter = TableviewAdapter()
@@ -53,6 +53,8 @@ class MyViewController: BaseViewController<MyPresenter, MyProtocol>, MyProtocol,
         cell.lastName.text = dataSource [indexPath.row].last_name
         return cell
     }
+    
+    
     
     private func getUsers(pageNumber : Int) {
         API_Connector().getFakeUsers(page: pageNumber, completion: { response in

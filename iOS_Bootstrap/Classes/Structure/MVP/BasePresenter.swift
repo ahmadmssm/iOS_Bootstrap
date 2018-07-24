@@ -9,17 +9,10 @@
 
 open class BasePresenter <T> {
     
-//    required public init (contract : T) {
-//      //  self.viewDelegator = contract
-//    }
-    
-    public final var viewDelegator: T!
+    public final let viewDelegator: T!
     
     required public init (contract : T) {
         self.viewDelegator = contract 
     }
-    
-    // required public init (delegator : T) { self.viewDelegator = delegator }
-
 }
 

@@ -6,12 +6,11 @@
 //  Copyright © 2018 Ahmad Mahmoud. All rights reserved.
 //
 
-import Foundation
 import iOS_Bootstrap
 
-class MyPresenter: BasePresenter<MyProtocol> {
+class MyPresenter: BasePresenter<MyViewControllerDelegator> {
 
-    required init(contract: MyProtocol) {
+    required init(contract: MyViewControllerDelegator) {
         super.init(contract: contract)
     }
    

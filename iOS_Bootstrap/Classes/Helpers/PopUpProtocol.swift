@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol PopUpProtocol {}
+public protocol PopUpProtocol {}
 extension PopUpProtocol where Self: UIViewController {
     //
     func showAlert(title : String, message: String, actions : [UIAlertAction]) {

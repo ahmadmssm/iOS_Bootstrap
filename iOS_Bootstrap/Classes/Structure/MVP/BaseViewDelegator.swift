@@ -1,5 +1,5 @@
 //
-//  BaseContractProtocol.swift
+//  BaseViewDelegator.swift
 //  iOS_Bootstrap
 //
 //  Created by Ahmad Mahmoud on 6/28/18.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-@objc public protocol BaseContractProtocol where Self: UIViewController {
+@objc public protocol BaseViewDelegator where Self: UIViewController {
  
 }

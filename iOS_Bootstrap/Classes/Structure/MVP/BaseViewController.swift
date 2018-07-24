@@ -8,12 +8,11 @@
 
 import UIKit
 
-open class BaseViewController <T, P> :
+open class BaseViewController <T, D> :
                                     UIViewController,
-                                    BaseContractProtocol,
-                                    NetworkStatusListener,
-                                    PopUpProtocol
-                                    where T : BasePresenter<P> {
+                                    BaseViewDelegator,
+                                    ViewControllerCommonFeatures
+                                    where T : BasePresenter<D> {
     //
     private var snackbar : TTGSnackbar? = nil
     //
@@ -21,7 +20,7 @@ open class BaseViewController <T, P> :
     public var presenter : T!
     
     override open func viewDidLoad() {
-        self.presenter = T.init(contract: self as! P)
+        self.presenter = T.init(contract: self as! D)
     }
     //
     override open func viewWillAppear(_ animated: Bool) {

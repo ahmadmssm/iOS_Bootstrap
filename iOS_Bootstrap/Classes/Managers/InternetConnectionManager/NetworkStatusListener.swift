@@ -9,3 +9,4 @@
 public protocol NetworkStatusListener : class {
     func networkStatusDidChanged(status: InternetConnectionManager.Connection)
 }
+
