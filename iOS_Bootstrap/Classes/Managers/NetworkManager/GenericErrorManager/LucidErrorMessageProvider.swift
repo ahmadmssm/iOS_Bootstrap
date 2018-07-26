@@ -18,7 +18,7 @@ public protocol LucidErrorMessageProvider {
      
      This function will only trigger if you set `.filterStatusCodes()` on a Moya response. No matter what status code is returned from a HTTP request, Moya considers it successful if a response comes back at all. It doesn't care about the returned status code. That fact along with the idea that each HTTP request handles different status codes differently is why you must filter out what status codes are not considered successful yourself on every request.
      */
-    func statusCodeError(_ statusCode: Int, request: URLRequest?, response: URLResponse?) -> String
+    func statusCodeError(_ statusCode: Int, errorBody : String?, request: URLRequest?, response: URLResponse?) -> String
     
     /**
      Moya network request was not successful. No network connection, bad network connection, permission error, SSL error, etc.

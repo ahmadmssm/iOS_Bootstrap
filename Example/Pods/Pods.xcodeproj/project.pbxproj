@@ -645,6 +645,10 @@
 		C902036420F41F5D00A63492 /* NetworkStatusListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902036320F41F5D00A63492 /* NetworkStatusListener.swift */; };
 		C902036920F4E9C600A63492 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902036820F4E9C600A63492 /* Coordinator.swift */; };
 		C918123C20FE60E500C62879 /* PopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918123B20FE60E500C62879 /* PopUpProtocol.swift */; };
+		C918AAB52109C93800F08C38 /* BaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AAB42109C93800F08C38 /* BaseSession.swift */; };
+		C918AAB72109D46100F08C38 /* RetryWithAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AAB62109D46100F08C38 /* RetryWithAuthentication.swift */; };
+		C918AAB92109D9A800F08C38 /* SessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AAB82109D9A800F08C38 /* SessionProtocol.swift */; };
+		C918AABB210A007C00F08C38 /* Network logger data formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AABA210A007C00F08C38 /* Network logger data formatter.swift */; };
 		C92361962101FC9100C2B630 /* BaseStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92361952101FC9000C2B630 /* BaseStoryboards.swift */; };
 		C92C0B7D339FDAE12D03156E5B6B19F2 /* FBSDKURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FD9E1782D1D224772082B5C88E89990 /* FBSDKURLConnection.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C9533F65DB7A5E3FB1FB8665736A6291 /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78FEDCAC2DFB0F10F3332EE962E4BC2 /* ObservableType+Extensions.swift */; };
@@ -660,6 +664,8 @@
 		C9D731A32106935400152DD9 /* ViewControllerCommonFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7319D2106935400152DD9 /* ViewControllerCommonFeatures.swift */; };
 		C9D731A5210720DD00152DD9 /* GenericTypesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D731A4210720DD00152DD9 /* GenericTypesHelper.swift */; };
 		C9D731A72107236E00152DD9 /* Codable + dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D731A62107236E00152DD9 /* Codable + dictionary.swift */; };
+		C9D731A92107927100152DD9 /* ConnectionResultWithGenericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D731A82107927100152DD9 /* ConnectionResultWithGenericError.swift */; };
+		C9D731AB210879FD00152DD9 /* NetworkConnectionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D731AA210879FD00152DD9 /* NetworkConnectionConfiguration.swift */; };
 		C9DB1CE02F6E14C99DED80DCBBF37F46 /* FBSDKServerConfigurationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C903C6CE64270AD63FB6BB8EF03E2DE6 /* FBSDKServerConfigurationManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CA00EA6CF028D183DB85D19D4BC30D97 /* SynchronizedDisposeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28C817D600AFBA4847B57E0D6A41A5 /* SynchronizedDisposeType.swift */; };
 		CA5C54679DEAAD7C1B4384E913F68291 /* _FBSDKTemporaryErrorRecoveryAttempter.m in Sources */ = {isa = PBXBuildFile; fileRef = E55ADD517D61AD98B9C29E3765A7BF58 /* _FBSDKTemporaryErrorRecoveryAttempter.m */; };
@@ -1761,6 +1767,10 @@
 		C902036820F4E9C600A63492 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C903C6CE64270AD63FB6BB8EF03E2DE6 /* FBSDKServerConfigurationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKServerConfigurationManager.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfigurationManager.h; sourceTree = "<group>"; };
 		C918123B20FE60E500C62879 /* PopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpProtocol.swift; sourceTree = "<group>"; };
+		C918AAB42109C93800F08C38 /* BaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSession.swift; sourceTree = "<group>"; };
+		C918AAB62109D46100F08C38 /* RetryWithAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryWithAuthentication.swift; sourceTree = "<group>"; };
+		C918AAB82109D9A800F08C38 /* SessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProtocol.swift; sourceTree = "<group>"; };
+		C918AABA210A007C00F08C38 /* Network logger data formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network logger data formatter.swift"; sourceTree = "<group>"; };
 		C91B81CFF39F01F4C25CF204EBD5608B /* FBSDKCrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKCrypto.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Cryptography/FBSDKCrypto.m; sourceTree = "<group>"; };
 		C92361952101FC9000C2B630 /* BaseStoryboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseStoryboards.swift; path = iOS_Bootstrap/Classes/BaseStoryboards.swift; sourceTree = "<group>"; };
 		C9B20F08236D294B23F1D3178DD6B41A /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1776,6 +1786,8 @@
 		C9D7319D2106935400152DD9 /* ViewControllerCommonFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCommonFeatures.swift; sourceTree = "<group>"; };
 		C9D731A4210720DD00152DD9 /* GenericTypesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTypesHelper.swift; sourceTree = "<group>"; };
 		C9D731A62107236E00152DD9 /* Codable + dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable + dictionary.swift"; sourceTree = "<group>"; };
+		C9D731A82107927100152DD9 /* ConnectionResultWithGenericError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionResultWithGenericError.swift; sourceTree = "<group>"; };
+		C9D731AA210879FD00152DD9 /* NetworkConnectionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectionConfiguration.swift; sourceTree = "<group>"; };
 		C9F5156777D6FF7B41B8EE442C4CD0BE /* Pods-iOS_Bootstrap_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS_Bootstrap_Tests-resources.sh"; sourceTree = "<group>"; };
 		CA1EF0DF0F1BFE91DAF716710EAA3925 /* STTwitterHTML.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STTwitterHTML.m; path = STTwitter/STTwitterHTML.m; sourceTree = "<group>"; };
 		CA615D163BBBAE9B8D720A771394D786 /* RecursiveLock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecursiveLock.swift; path = Platform/RecursiveLock.swift; sourceTree = "<group>"; };
@@ -2376,6 +2388,7 @@
 				6441557EED8918B687830E95F59F3DDC /* UIColor + Hex.swift */,
 				1757573DC7B7597FDA10169428A02C71 /* UI components */,
 				C9D731A62107236E00152DD9 /* Codable + dictionary.swift */,
+				C918AABA210A007C00F08C38 /* Network logger data formatter.swift */,
 			);
 			name = Extensions;
 			path = iOS_Bootstrap/Classes/Extensions;
@@ -2408,6 +2421,7 @@
 			children = (
 				C92361952101FC9000C2B630 /* BaseStoryboards.swift */,
 				C9C960F520FA8B750023CDD7 /* GlobalConfiguration.swift */,
+				C918AAB42109C93800F08C38 /* BaseSession.swift */,
 				7487F0B6CD9E3F24F6A47BE6908E4661 /* DateTimeManager.swift */,
 				F06E0E7D749C85D5A317DF28659138AD /* GlobalModules.swift */,
 				C91D53B320FE67F100D29CD0 /* Helpers */,
@@ -2968,10 +2982,14 @@
 			children = (
 				12AC26082B7BF4904813C20B20321993 /* BaseModel.swift */,
 				465DA2B3156B8FCA2A6A2368F0A07DDB /* ConnectionResult.swift */,
+				C9D731A82107927100152DD9 /* ConnectionResultWithGenericError.swift */,
 				E9958A8F244BEF38CB7E9A7341B7125A /* GenericConnector.swift */,
+				C918AAB82109D9A800F08C38 /* SessionProtocol.swift */,
 				27FF8EA9EBB65D499388E395CA4D3388 /* Parser.swift */,
 				3E01BB7970550FCA35706315E3C9B9DF /* GenericErrorManager */,
 				1AA350E11496CBCDFB7016E1337E52C3 /* MoyaSugar */,
+				C918AAB22108C9BE00F08C38 /* Moya plugins */,
+				C9D731AA210879FD00152DD9 /* NetworkConnectionConfiguration.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -3117,6 +3135,14 @@
 				C902036820F4E9C600A63492 /* Coordinator.swift */,
 			);
 			path = NavigationManager;
+			sourceTree = "<group>";
+		};
+		C918AAB22108C9BE00F08C38 /* Moya plugins */ = {
+			isa = PBXGroup;
+			children = (
+				C918AAB62109D46100F08C38 /* RetryWithAuthentication.swift */,
+			);
+			path = "Moya plugins";
 			sourceTree = "<group>";
 		};
 		C91D53B320FE67F100D29CD0 /* Helpers */ = {
@@ -4661,6 +4687,7 @@
 				C9D731A72107236E00152DD9 /* Codable + dictionary.swift in Sources */,
 				A3610F5B4BF3236403C18D1722AD22C7 /* CardView.swift in Sources */,
 				BF6E25F533F6394FA7F96BB845974FE3 /* Collectionview+Reusable.swift in Sources */,
+				C9D731A92107927100152DD9 /* ConnectionResultWithGenericError.swift in Sources */,
 				FF00B85FF46B5C98C2228F61469397A6 /* CollectionViewAdapter.swift in Sources */,
 				0B4DD0B7DEA1F0829775BB7A389D5E3F /* CollectionViewDelegates.swift in Sources */,
 				44CEE150F5E0E2AAF4E3DBC158438969 /* ConnectionResult.swift in Sources */,
@@ -4669,6 +4696,7 @@
 				C61246959D5AF6B9AC373EF0ED9D7B38 /* CustomView.swift in Sources */,
 				2854E34997BCABD86B75B67157ABA0EC /* DateTimeManager.swift in Sources */,
 				24145C61B753ACCBC7107C5A2EC8FFE2 /* DistancePickerView.m in Sources */,
+				C9D731AB210879FD00152DD9 /* NetworkConnectionConfiguration.swift in Sources */,
 				C902035F20F3F76800A63492 /* InternetConnectionManager.swift in Sources */,
 				2451368CBC025DEE92F361F16EFDB4AF /* EmptyDataSet.swift in Sources */,
 				B184CE2D9CDBAECAB8D1D55A426D070E /* EmptyDataSetDelegate.swift in Sources */,
@@ -4686,6 +4714,7 @@
 				C9D731A22106935400152DD9 /* BaseViewDelegator.swift in Sources */,
 				F7494F42C4A22603CB5433C5F2625546 /* How_to_use.strings in Sources */,
 				F7494F42C4A22603CB5433C5F2625546 /* How_to_use.strings in Sources */,
+				C918AAB92109D9A800F08C38 /* SessionProtocol.swift in Sources */,
 				35079FF64FF4855E20CCF9BF1543356D /* How_to_use_toast.strings in Sources */,
 				C9C960F620FA8B750023CDD7 /* GlobalConfiguration.swift in Sources */,
 				C902036420F41F5D00A63492 /* NetworkStatusListener.swift in Sources */,
@@ -4716,14 +4745,17 @@
 				4C525022AEBED4EA7F7271FDDE750103 /* SocialMediaManager.swift in Sources */,
 				8C0C4A196356E00D8D5907B0C0D3EAF6 /* StoryboardIdentifiable.swift in Sources */,
 				C3D9CD18462CEA9EB9B4DE9FD9326884 /* String to dicrionary.swift in Sources */,
+				C918AAB52109C93800F08C38 /* BaseSession.swift in Sources */,
 				88BDBF79E21A04D64A00046D82DBBF48 /* SWActionSheet.m in Sources */,
 				AE99F97DF3811D19B91714751DF9626B /* Tableview + Reusablel.swift in Sources */,
+				C918AAB72109D46100F08C38 /* RetryWithAuthentication.swift in Sources */,
 				E9BC167C2C65082C30A82C93B9AD341E /* TableviewAdapter.swift in Sources */,
 				063C11607086FC1C51EC0F6974AAA5EB /* TableViewDelegates.swift in Sources */,
 				17E82CD5ECB184B4A3A960457B70E9B2 /* Toast.swift in Sources */,
 				F7342E6323AFAF33908E67678FCFD983 /* ToggleButton.m in Sources */,
 				4C64B34D054768C54B5A5688B3CC9028 /* UIColor + Hex.swift in Sources */,
 				4575DA4D56D2EF9AD2EE2B69900E9239 /* UIImage + Gif.swift in Sources */,
+				C918AABB210A007C00F08C38 /* Network logger data formatter.swift in Sources */,
 				C9D731A02106935400152DD9 /* BasePresenter.swift in Sources */,
 				8E8E04CDA21FB9FAA6E5E6D1220CB6CB /* UILabel + format part of the text.swift in Sources */,
 				C918123C20FE60E500C62879 /* PopUpProtocol.swift in Sources */,

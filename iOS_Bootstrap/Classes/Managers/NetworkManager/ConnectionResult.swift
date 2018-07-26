@@ -5,8 +5,6 @@
 //  Copyright © 2018 Robustastudio. All rights reserved.
 //
 
-import Foundation
-
 public enum ConnectionResult<T> {
     case success(T)
     case failure(String)

@@ -15,8 +15,7 @@ open class Singleton {
     
     public static let sharedInstance = Singleton()
     
-    private init() {
-    }
+    private init() {}
 }
 
 /**

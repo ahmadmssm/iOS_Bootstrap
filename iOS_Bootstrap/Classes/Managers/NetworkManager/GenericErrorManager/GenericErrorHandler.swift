@@ -6,15 +6,24 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-open class GenericErrorHandler: LucidErrorMessageProvider {    
+open class GenericErrorHandler: LucidErrorMessageProvider {
     
     open var errorMessage : String?
     
     public init() {}
     
-    open func statusCodeError(_ statusCode: Int, request: URLRequest?, response: URLResponse?) -> String {
+    open func statusCodeError(_ statusCode: Int, errorBody: String?, request: URLRequest?, response: URLResponse?) -> String {
         return "Unknown error !"
     }
+    
+    
+//    open func statusCodeError(_ statusCode: Int, message: String, request: URLRequest?, response: URLResponse?) -> String {
+//        return "Unknown error !"
+//    }
+    
+//    open func statusCodeError(_ statusCode: Int, request: URLRequest?, response: URLResponse?) -> String {
+//        return "Unknown error !"
+//    }
     
     open func networkingError(_ error: LucidMoyaNetworkingError) -> String {
         return ""

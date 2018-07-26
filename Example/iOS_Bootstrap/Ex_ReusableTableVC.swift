@@ -28,7 +28,8 @@ class Ex_ReusableTableVC: UIViewController {
         dataSource.removeAll()
         // Mock a network delay with 3 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.getWorldCountries()
+           // self.getWorldCountries()
+            self.getError()
         }
     }
     
@@ -46,4 +47,15 @@ class Ex_ReusableTableVC: UIViewController {
         })
     }
 
+    func getError () {
+        API_Connector().getErrorFromRequest (completion: { response in
+            switch response {
+            case .success( _):
+                break
+            case .failure(let errorMsg):
+                print("Error : " + errorMsg)
+                break
+            }
+        })
+    }
 }

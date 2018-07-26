@@ -25,9 +25,16 @@ public extension Swift.Error {
         if let moyaError = self as? MoyaError {
             switch moyaError {
             case MoyaError.statusCode(let response):
-                let errorMessage = errorHandler.statusCodeError(response.statusCode, request: response.request, response: response.response)
+//                let errorMessage = errorHandler.statusCodeError(response.statusCode, request: response.request, response: response.response)
+                var errorBodyAsString : String?
+                do {
+                    errorBodyAsString = try moyaError.response?.mapString()
+                }
+                catch {}
                 
-                return LucidMoyaError.statusCodeError(message: errorMessage, statusCode: response.statusCode, request: response.request, response: response.response)
+                let errorMessage = errorHandler.statusCodeError(response.statusCode, errorBody: errorBodyAsString, request: response.request, response: response.response)
+                
+                return LucidMoyaError.statusCodeError(message: errorMessage, errorBody: errorBodyAsString, statusCode: response.statusCode, request: response.request, response: response.response)
             case MoyaError.imageMapping, MoyaError.jsonMapping, MoyaError.requestMapping, MoyaError.stringMapping, MoyaError.parameterEncoding, MoyaError.encodableMapping, MoyaError.objectMapping:
                 let errorMessage = errorHandler.moyaError(moyaError)
                 
