@@ -29,12 +29,22 @@ public enum LucidMoyaError: Swift.Error, LocalizedError {
         case .statusCodeError(let message, let errorBody, _, _, _):
        // case .statusCodeError(let message, _, _, response: let response):
        // case .statusCodeError(let message, _, _, let response):
-            if (errorBody != nil) {
+            if (errorBody != nil && !(errorBody?.isEmpty)!) {
                 return errorBody
             }
             return message // An error was encountered. Try again.
         case .moyaError(let message, _):
             return message // Moya specific error. Error creating Moya Endpoint, parsing JSON/Image/String, invalid status code received.
         }
+    }
+    
+    public var statusCode: Int? {
+        switch self {
+        case .statusCodeError(_, _,let statusCode, _, _):
+            return statusCode
+        default:
+            break
+        }
+        return 0
     }
 }

@@ -647,8 +647,8 @@
 		C918123C20FE60E500C62879 /* PopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918123B20FE60E500C62879 /* PopUpProtocol.swift */; };
 		C918AAB52109C93800F08C38 /* BaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AAB42109C93800F08C38 /* BaseSession.swift */; };
 		C918AAB72109D46100F08C38 /* RetryWithAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AAB62109D46100F08C38 /* RetryWithAuthentication.swift */; };
-		C918AAB92109D9A800F08C38 /* SessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AAB82109D9A800F08C38 /* SessionProtocol.swift */; };
-		C918AABB210A007C00F08C38 /* Network logger data formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AABA210A007C00F08C38 /* Network logger data formatter.swift */; };
+		C918AAB92109D9A800F08C38 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AAB82109D9A800F08C38 /* Session.swift */; };
+		C918AABB210A007C00F08C38 /* NetworkLoggerDataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AABA210A007C00F08C38 /* NetworkLoggerDataFormatter.swift */; };
 		C92361962101FC9100C2B630 /* BaseStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92361952101FC9000C2B630 /* BaseStoryboards.swift */; };
 		C92C0B7D339FDAE12D03156E5B6B19F2 /* FBSDKURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FD9E1782D1D224772082B5C88E89990 /* FBSDKURLConnection.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C9533F65DB7A5E3FB1FB8665736A6291 /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78FEDCAC2DFB0F10F3332EE962E4BC2 /* ObservableType+Extensions.swift */; };
@@ -1769,10 +1769,10 @@
 		C918123B20FE60E500C62879 /* PopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpProtocol.swift; sourceTree = "<group>"; };
 		C918AAB42109C93800F08C38 /* BaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSession.swift; sourceTree = "<group>"; };
 		C918AAB62109D46100F08C38 /* RetryWithAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryWithAuthentication.swift; sourceTree = "<group>"; };
-		C918AAB82109D9A800F08C38 /* SessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProtocol.swift; sourceTree = "<group>"; };
-		C918AABA210A007C00F08C38 /* Network logger data formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network logger data formatter.swift"; sourceTree = "<group>"; };
+		C918AAB82109D9A800F08C38 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		C918AABA210A007C00F08C38 /* NetworkLoggerDataFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerDataFormatter.swift; sourceTree = "<group>"; };
 		C91B81CFF39F01F4C25CF204EBD5608B /* FBSDKCrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKCrypto.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Cryptography/FBSDKCrypto.m; sourceTree = "<group>"; };
-		C92361952101FC9000C2B630 /* BaseStoryboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseStoryboards.swift; path = iOS_Bootstrap/Classes/BaseStoryboards.swift; sourceTree = "<group>"; };
+		C92361952101FC9000C2B630 /* BaseStoryboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStoryboards.swift; sourceTree = "<group>"; };
 		C9B20F08236D294B23F1D3178DD6B41A /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B63DAD01D550578B666E71496D3541 /* GenericErrorConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GenericErrorConfigurator.swift; sourceTree = "<group>"; };
 		C9C960F320FA8B160023CDD7 /* BaseNavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationCoordinator.swift; sourceTree = "<group>"; };
@@ -2383,12 +2383,12 @@
 		40485985DF3493602540CB4102A07612 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C918AABA210A007C00F08C38 /* NetworkLoggerDataFormatter.swift */,
 				7AA16EBB1C4AA0EA3BBB5A766F566284 /* Remove duplicates + filter array.swift */,
 				A8A6E041FC1CFD1C736D7BD0019C3F8E /* String to dicrionary.swift */,
 				6441557EED8918B687830E95F59F3DDC /* UIColor + Hex.swift */,
 				1757573DC7B7597FDA10169428A02C71 /* UI components */,
 				C9D731A62107236E00152DD9 /* Codable + dictionary.swift */,
-				C918AABA210A007C00F08C38 /* Network logger data formatter.swift */,
 			);
 			name = Extensions;
 			path = iOS_Bootstrap/Classes/Extensions;
@@ -2419,9 +2419,8 @@
 		4B4389571E2AA4DB0FC7B1B04C03522C /* iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				C92361952101FC9000C2B630 /* BaseStoryboards.swift */,
-				C9C960F520FA8B750023CDD7 /* GlobalConfiguration.swift */,
 				C918AAB42109C93800F08C38 /* BaseSession.swift */,
+				C9C960F520FA8B750023CDD7 /* GlobalConfiguration.swift */,
 				7487F0B6CD9E3F24F6A47BE6908E4661 /* DateTimeManager.swift */,
 				F06E0E7D749C85D5A317DF28659138AD /* GlobalModules.swift */,
 				C91D53B320FE67F100D29CD0 /* Helpers */,
@@ -2984,7 +2983,7 @@
 				465DA2B3156B8FCA2A6A2368F0A07DDB /* ConnectionResult.swift */,
 				C9D731A82107927100152DD9 /* ConnectionResultWithGenericError.swift */,
 				E9958A8F244BEF38CB7E9A7341B7125A /* GenericConnector.swift */,
-				C918AAB82109D9A800F08C38 /* SessionProtocol.swift */,
+				C918AAB82109D9A800F08C38 /* Session.swift */,
 				27FF8EA9EBB65D499388E395CA4D3388 /* Parser.swift */,
 				3E01BB7970550FCA35706315E3C9B9DF /* GenericErrorManager */,
 				1AA350E11496CBCDFB7016E1337E52C3 /* MoyaSugar */,
@@ -2998,6 +2997,7 @@
 			isa = PBXGroup;
 			children = (
 				777A6ABFC0FD69417EDD0768279FDA3D /* How_to_use.strings */,
+				C92361952101FC9000C2B630 /* BaseStoryboards.swift */,
 				E587E1D2FBCA6D2212A451FC9DC26CD7 /* Extension */,
 				71AFD8D2F561D23F9995018AD90F9678 /* Protocol */,
 			);
@@ -4714,7 +4714,7 @@
 				C9D731A22106935400152DD9 /* BaseViewDelegator.swift in Sources */,
 				F7494F42C4A22603CB5433C5F2625546 /* How_to_use.strings in Sources */,
 				F7494F42C4A22603CB5433C5F2625546 /* How_to_use.strings in Sources */,
-				C918AAB92109D9A800F08C38 /* SessionProtocol.swift in Sources */,
+				C918AAB92109D9A800F08C38 /* Session.swift in Sources */,
 				35079FF64FF4855E20CCF9BF1543356D /* How_to_use_toast.strings in Sources */,
 				C9C960F620FA8B750023CDD7 /* GlobalConfiguration.swift in Sources */,
 				C902036420F41F5D00A63492 /* NetworkStatusListener.swift in Sources */,
@@ -4755,7 +4755,7 @@
 				F7342E6323AFAF33908E67678FCFD983 /* ToggleButton.m in Sources */,
 				4C64B34D054768C54B5A5688B3CC9028 /* UIColor + Hex.swift in Sources */,
 				4575DA4D56D2EF9AD2EE2B69900E9239 /* UIImage + Gif.swift in Sources */,
-				C918AABB210A007C00F08C38 /* Network logger data formatter.swift in Sources */,
+				C918AABB210A007C00F08C38 /* NetworkLoggerDataFormatter.swift in Sources */,
 				C9D731A02106935400152DD9 /* BasePresenter.swift in Sources */,
 				8E8E04CDA21FB9FAA6E5E6D1220CB6CB /* UILabel + format part of the text.swift in Sources */,
 				C918123C20FE60E500C62879 /* PopUpProtocol.swift in Sources */,

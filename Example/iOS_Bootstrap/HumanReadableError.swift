@@ -12,6 +12,7 @@ class HumanReadableError: GenericErrorHandler {
     
     
     override func statusCodeError(_ statusCode: Int, errorBody: String?, request: URLRequest?, response: URLResponse?) -> String {
+        //
         switch statusCode {
         case 401:
             errorMessage = "Not authorised !"

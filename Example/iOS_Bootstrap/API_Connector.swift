@@ -18,7 +18,9 @@ class API_Connector : GenericConnector {
         GenericErrorConfigurator.defaultErrorHandler(HumanReadableError())
         // With plugins
         //
-        let networkLogger = NetworkLoggerPlugin(verbose: true)
+        // let networkLogger = NetworkLoggerPlugin(verbose: true)
+        // With formatted output
+        let networkLogger = NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)
         //
         let plugins : [PluginType] = [networkLogger]
         apiProvider = APIsProvider<APIs>(plugins: plugins)
@@ -26,19 +28,14 @@ class API_Connector : GenericConnector {
        // apiProvider = APIsProvider<APIs>()
     }
     
-    override func refreshToken() {
-        // Get or refresh your token here
-        // Save it locally
-        // the previous request will be called automatically
-        // Do any other stuff
-    }
     
     func getAllCountries (completion: @escaping completionHandler<[Country]>) {
         let _ = apiProvider.rx
             .request(.getWorldCountries())
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-           //  .filterSuccessfulStatusAndRedirectCodes()
-           // .processErrors()
+            .asObservable()
+            .retryWithAuthIfNeeded(sessionServiceDelegate: self)
+            .asSingle()
             .mapString()
             .subscribe { event in
                 switch event {
@@ -49,13 +46,25 @@ class API_Connector : GenericConnector {
                     completion(.failure(error.localizedDescription))
                 }}
     }
+    
+    override func getRefreshTokenObservable() -> Observable<Response> {
+        return
+            apiProvider.rx
+                .request(.doRequestThatReturnsAnError())
+                .asObservable()
+//        return
+//            apiProvider.rx
+//                .request(.getWorldCountries())
+//                .asObservable()
+    }
+    
 
     func getFakeUsers (page : Int, completion: @escaping completionHandler<Page>) {
         let _ = apiProvider.rx
             .request(.getUsers(page: String(page)))
             .filterSuccessfulStatusAndRedirectCodes()
             .asObservable()
-            .retryWithTokenAuthentication(sessionServiceDelegate: self)
+            .retryWithAuthIfNeeded(sessionServiceDelegate: self)
             .asSingle()
             .map(Page.self)
             .subscribe { event in
@@ -73,8 +82,11 @@ class API_Connector : GenericConnector {
         let _ =
         apiProvider
             .rx
-            .request(.doRequestWhicReturnsAnError())
+            .request(.doRequestThatReturnsAnError())
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
+            .asObservable()
+            .retryWithAuthIfNeeded(sessionServiceDelegate: self)
+            .asSingle()
             .mapString()
             .subscribe { event in
                 switch event {
