@@ -15,7 +15,7 @@ class HumanReadableError: GenericErrorHandler {
         //
         switch statusCode {
         case 401:
-            errorMessage = "Not authorised !"
+            errorMessage = "Not authorised ! " + errorBody!
         case 404:
             errorMessage = "Not found !"
         default:

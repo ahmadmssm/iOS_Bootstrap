@@ -7,7 +7,7 @@ import Result
 /// `SugarTargetType`.
 
 open class APIsProvider<Target: GenericAPIs>: MoyaProvider<Target> {
-    
+        
     override public init(
         endpointClosure: @escaping EndpointClosure = MoyaProvider.defaultEndpointMapping,
         requestClosure: @escaping RequestClosure = APIsProvider.defaultRequestMapping,
@@ -37,5 +37,7 @@ open class APIsProvider<Target: GenericAPIs>: MoyaProvider<Target> {
             trackInflights: trackInflights
         )
     }
-}
     
+}
+
+

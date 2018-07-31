@@ -645,7 +645,6 @@
 		C902036420F41F5D00A63492 /* NetworkStatusListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902036320F41F5D00A63492 /* NetworkStatusListener.swift */; };
 		C902036920F4E9C600A63492 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902036820F4E9C600A63492 /* Coordinator.swift */; };
 		C918123C20FE60E500C62879 /* PopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918123B20FE60E500C62879 /* PopUpProtocol.swift */; };
-		C918AAB52109C93800F08C38 /* BaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AAB42109C93800F08C38 /* BaseSession.swift */; };
 		C918AAB72109D46100F08C38 /* RetryWithAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AAB62109D46100F08C38 /* RetryWithAuthentication.swift */; };
 		C918AAB92109D9A800F08C38 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AAB82109D9A800F08C38 /* Session.swift */; };
 		C918AABB210A007C00F08C38 /* NetworkLoggerDataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AABA210A007C00F08C38 /* NetworkLoggerDataFormatter.swift */; };
@@ -1767,7 +1766,6 @@
 		C902036820F4E9C600A63492 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C903C6CE64270AD63FB6BB8EF03E2DE6 /* FBSDKServerConfigurationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKServerConfigurationManager.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfigurationManager.h; sourceTree = "<group>"; };
 		C918123B20FE60E500C62879 /* PopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpProtocol.swift; sourceTree = "<group>"; };
-		C918AAB42109C93800F08C38 /* BaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSession.swift; sourceTree = "<group>"; };
 		C918AAB62109D46100F08C38 /* RetryWithAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryWithAuthentication.swift; sourceTree = "<group>"; };
 		C918AAB82109D9A800F08C38 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		C918AABA210A007C00F08C38 /* NetworkLoggerDataFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerDataFormatter.swift; sourceTree = "<group>"; };
@@ -2419,7 +2417,6 @@
 		4B4389571E2AA4DB0FC7B1B04C03522C /* iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				C918AAB42109C93800F08C38 /* BaseSession.swift */,
 				C9C960F520FA8B750023CDD7 /* GlobalConfiguration.swift */,
 				7487F0B6CD9E3F24F6A47BE6908E4661 /* DateTimeManager.swift */,
 				F06E0E7D749C85D5A317DF28659138AD /* GlobalModules.swift */,
@@ -2988,7 +2985,6 @@
 				3E01BB7970550FCA35706315E3C9B9DF /* GenericErrorManager */,
 				1AA350E11496CBCDFB7016E1337E52C3 /* MoyaSugar */,
 				C918AAB22108C9BE00F08C38 /* Moya plugins */,
-				C9D731AA210879FD00152DD9 /* NetworkConnectionConfiguration.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -3140,6 +3136,7 @@
 		C918AAB22108C9BE00F08C38 /* Moya plugins */ = {
 			isa = PBXGroup;
 			children = (
+				C9D731AA210879FD00152DD9 /* NetworkConnectionConfiguration.swift */,
 				C918AAB62109D46100F08C38 /* RetryWithAuthentication.swift */,
 			);
 			path = "Moya plugins";
@@ -4745,7 +4742,6 @@
 				4C525022AEBED4EA7F7271FDDE750103 /* SocialMediaManager.swift in Sources */,
 				8C0C4A196356E00D8D5907B0C0D3EAF6 /* StoryboardIdentifiable.swift in Sources */,
 				C3D9CD18462CEA9EB9B4DE9FD9326884 /* String to dicrionary.swift in Sources */,
-				C918AAB52109C93800F08C38 /* BaseSession.swift in Sources */,
 				88BDBF79E21A04D64A00046D82DBBF48 /* SWActionSheet.m in Sources */,
 				AE99F97DF3811D19B91714751DF9626B /* Tableview + Reusablel.swift in Sources */,
 				C918AAB72109D46100F08C38 /* RetryWithAuthentication.swift in Sources */,

@@ -17,7 +17,7 @@ enum APIs {
     case refreshToken(token: String)
 }
 
-extension APIs : GenericAPIs {
+extension APIs : GenericAPIs, AccessTokenAuthorizable {
     
     // override default url building behavior
     var baseURL: URL {
@@ -40,7 +40,8 @@ extension APIs : GenericAPIs {
         case .getWorldCountries():
             return .get("//all")
         case .getCountryDetailsByCountryName(let countryName):
-            return .get("/name/\(countryName)")
+            return .get("/all")
+//            return .get("/name/\(countryName)")
         case .getUsers( _):
             return .get("")
         case .refreshToken(let token):
@@ -59,6 +60,15 @@ extension APIs : GenericAPIs {
                 "Authorization": "key=AAAAF2vApGE:APA91bEV8Ao4LEX7fCu03ppNKMao6EOmeBOVLLxKv1gwte2-klmsT4BYwDaa-1NEt2eeo1avkqpXmvf4dJqR7nI5XNL8x6hU4DWXX9Q9Vl00uZLaYahtJKoqsZuhJblr7x3aPv060vkrCcC2Y7XY5VsQHv-KsziEe"]
         default:
             return nil
+        }
+    }
+    
+    var authorizationType: AuthorizationType {
+        switch self {
+        case .doRequestThatReturnsAnError():
+            return .bearer
+        default:
+            return .none
         }
     }
    

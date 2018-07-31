@@ -8,7 +8,7 @@
 import RxSwift
 
 public protocol SessionProtocol {
-    func getRefreshTokenObservable() -> Observable<Response>
+    func getRefreshTokenObservable() -> Single<Response>
     func didFailedToRefreshToken()
     func tokenDidRefresh (response : String)
 }

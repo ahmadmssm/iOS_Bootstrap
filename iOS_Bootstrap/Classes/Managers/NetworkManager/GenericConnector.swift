@@ -24,8 +24,8 @@ open class GenericConnector: NSObject, SessionProtocol {
         disposeBag = DisposeBag()
     }
     
-    open func getRefreshTokenObservable() -> Observable<Response> {
-        return Observable.empty()
+    open func getRefreshTokenObservable() -> Single<Response> {
+        return Observable.empty().asSingle()
     }
     // Override this function to handle token refresh
     // Write token refresh request in this function
@@ -34,8 +34,9 @@ open class GenericConnector: NSObject, SessionProtocol {
         NotificationCenter.default.post(name: .newAuthenticationToken, object: nil, userInfo: dictionary)
     }
     //
-    open func didFailedToRefreshToken() {
+    public func didFailedToRefreshToken() {
         NotificationCenter.default.post(name: .expiredToken, object: nil)
     }
+    
 
 }

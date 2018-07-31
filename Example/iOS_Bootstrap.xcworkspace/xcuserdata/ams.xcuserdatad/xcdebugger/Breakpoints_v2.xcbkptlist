@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/AppDelegate.swift"
-            timestampString = "554501908.410081"
+            timestampString = "554768031.607646"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
@@ -438,11 +438,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/GenericErrorManager/LucidMoyaError.swift"
-            timestampString = "554501908.411173"
+            timestampString = "554690353.313489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -458,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/GenericErrorManager/LucidMoyaError.swift"
-            timestampString = "554501908.4113261"
+            timestampString = "554690353.313623"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -473,24 +473,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iOS_Bootstrap/API_Connector.swift"
-            timestampString = "554501908.41145"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "getRefreshTokenObservable()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/GenericErrorManager/LucidMoyaError.swift"
-            timestampString = "554501908.411826"
+            timestampString = "554690353.313735"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -505,70 +489,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iOS_Bootstrap/API_Connector.swift"
-            timestampString = "554501908.4119689"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "getRefreshTokenObservable()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOS_Bootstrap/API_Connector.swift"
-            timestampString = "554501908.412302"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "API_Connector"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/Moya plugins/RetryWithAuthentication.swift"
-            timestampString = "554501908.4129421"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "retryWithAuthIfNeeded(sessionServiceDelegate:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOS_Bootstrap/API_Connector.swift"
-            timestampString = "554501908.413502"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/HumanReadableError.swift"
-            timestampString = "554501908.413762"
+            timestampString = "554690353.315564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -584,7 +506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/HumanReadableError.swift"
-            timestampString = "554501908.413862"
+            timestampString = "554690353.315892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -596,79 +518,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/Moya plugins/RetryWithAuthentication.swift"
-            timestampString = "554501908.413956"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "retryWithAuthIfNeeded(sessionServiceDelegate:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/Moya plugins/RetryWithAuthentication.swift"
-            timestampString = "554501908.4140919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "retryWithAuthIfNeeded(sessionServiceDelegate:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in iOS_Bootstrap):RxSwift.ObservableType&lt;A where A: RxSwift.ObservableType, A.E == Moya.Response&gt;.retryWithAuthIfNeeded(sessionServiceDelegate: iOS_Bootstrap.SessionProtocol) -&gt; RxSwift.Observable&lt;Moya.Response&gt;"
-                  moduleName = "iOS_Bootstrap"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/iOS_Bootstrap/Classes/Managers/NetworkManager/Moya%20plugins/RetryWithAuthentication.swift"
-                  timestampString = "554501910.530893"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "22">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (RxSwift.Observable&lt;Swift.Error&gt;) -&gt; RxSwift.Observable&lt;Moya.Response&gt; in (extension in iOS_Bootstrap):RxSwift.ObservableType&lt;A where A: RxSwift.ObservableType, A.E == Moya.Response&gt;.retryWithAuthIfNeeded(sessionServiceDelegate: iOS_Bootstrap.SessionProtocol) -&gt; RxSwift.Observable&lt;Moya.Response&gt;"
-                  moduleName = "iOS_Bootstrap"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/iOS_Bootstrap/Classes/Managers/NetworkManager/Moya%20plugins/RetryWithAuthentication.swift"
-                  timestampString = "554501910.533915"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "17">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/APIs.swift"
-            timestampString = "554501908.414265"
+            timestampString = "554768031.608186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "headers"
             landmarkType = "24">
          </BreakpointContent>
@@ -680,7 +538,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/HumanReadableError.swift"
-            timestampString = "554501908.414335"
+            timestampString = "554690353.318298"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -692,16 +550,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/GenericErrorManager/LucidMoyaError.swift"
+            timestampString = "554690353.326013"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "errorDescription"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/Moya plugins/RetryWithAuthentication.swift"
-            timestampString = "554501908.41443"
+            filePath = "Pods/Moya/Sources/RxMoya/Single+Response.swift"
+            timestampString = "554577226.713086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "retryWithAuthIfNeeded(sessionServiceDelegate:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "filterSuccessfulStatusAndRedirectCodes()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -712,26 +586,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/API_Connector.swift"
-            timestampString = "554501908.4145679"
+            timestampString = "554768031.608385"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106">
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "getErrorFromRequest(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Bootstrap/API_Connector.swift"
+            timestampString = "554768031.6092581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "getErrorFromRequest(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Bootstrap/API_Connector.swift"
+            timestampString = "554768031.610628"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "getErrorFromRequest(completion:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "iOS_Bootstrap_Example.API_Connector.getErrorFromRequest(completion: (iOS_Bootstrap.ConnectionResult&lt;Swift.Array&lt;iOS_Bootstrap_Example.Country&gt;&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (RxSwift.SingleEvent&lt;Swift.String&gt;) -&gt; () in iOS_Bootstrap_Example.API_Connector.getErrorFromRequest(completion: (iOS_Bootstrap.ConnectionResult&lt;Swift.Array&lt;iOS_Bootstrap_Example.Country&gt;&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "iOS_Bootstrap_Example"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/Example/iOS_Bootstrap/API_Connector.swift"
-                  timestampString = "554501909.6911"
+                  timestampString = "554768032.998126"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
-                  offsetFromSymbolStart = "912">
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "451">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -741,12 +649,12 @@
                   moduleName = "iOS_Bootstrap_Example"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/Example/iOS_Bootstrap/API_Connector.swift"
-                  timestampString = "554501909.693774"
+                  timestampString = "554768033.001093"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
-                  offsetFromSymbolStart = "46">
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "522">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -758,26 +666,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/API_Connector.swift"
-            timestampString = "554501908.4147021"
+            timestampString = "554768031.6116771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/Moya plugins/RetryWithAuthentication.swift"
-            timestampString = "554501908.414812"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "retryWithAuthIfNeeded(sessionServiceDelegate:)"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "getErrorFromRequest(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -787,109 +681,189 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/GenericErrorManager/LucidMoyaError.swift"
-            timestampString = "554501908.4149179"
+            filePath = "iOS_Bootstrap/API_Connector.swift"
+            timestampString = "554768031.612639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "errorDescription"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "getErrorFromRequest(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Bootstrap/API_Connector.swift"
+            timestampString = "554768031.613776"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "getErrorFromRequest(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Bootstrap/API_Connector.swift"
+            timestampString = "554768031.615322"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getAllCountries(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Bootstrap/API_Connector.swift"
+            timestampString = "554768031.6161751"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getAllCountries(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Bootstrap/API_Connector.swift"
+            timestampString = "554768031.6166331"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getAllCountries(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.SingleEvent&lt;Swift.String&gt;) -&gt; () in iOS_Bootstrap_Example.API_Connector.getAllCountries(completion: (iOS_Bootstrap.ConnectionResult&lt;Swift.Array&lt;iOS_Bootstrap_Example.Country&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "iOS_Bootstrap_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/Example/iOS_Bootstrap/API_Connector.swift"
+                  timestampString = "554768033.041332"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "433">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.SingleEvent&lt;Swift.String&gt;) -&gt; () in iOS_Bootstrap_Example.API_Connector.getAllCountries(completion: (iOS_Bootstrap.ConnectionResult&lt;Swift.Array&lt;iOS_Bootstrap_Example.Country&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "iOS_Bootstrap_Example"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/Example/iOS_Bootstrap/API_Connector.swift"
+                  timestampString = "554768033.04441"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "504">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Bootstrap/API_Connector.swift"
+            timestampString = "554768031.617011"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "getAllCountries(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Bootstrap/API_Connector.swift"
+            timestampString = "554768031.617365"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getAllCountries(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Bootstrap/AppDelegate.swift"
+            timestampString = "554768031.617699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "tokenDidRefresh(response:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Bootstrap/APIs.swift"
+            timestampString = "554768031.617756"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "headers"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/Moya plugins/RetryWithAuthentication.swift"
-            timestampString = "554501908.414975"
+            filePath = "iOS_Bootstrap/AppDelegate.swift"
+            timestampString = "554768031.621407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "retryWithAuthIfNeeded(sessionServiceDelegate:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/Moya plugins/RetryWithAuthentication.swift"
-            timestampString = "554501908.415079"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "retryWithAuthIfNeeded(sessionServiceDelegate:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/Moya plugins/RetryWithAuthentication.swift"
-            timestampString = "554501908.415179"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "retryWithAuthIfNeeded(sessionServiceDelegate:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/Moya plugins/RetryWithAuthentication.swift"
-            timestampString = "554501908.4152941"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "retryWithAuthIfNeeded(sessionServiceDelegate:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/GenericErrorManager/Error+Extensions.swift"
-            timestampString = "554431161.2813931"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "getLucidError(errorHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/NetworkManager/Moya plugins/RetryWithAuthentication.swift"
-            timestampString = "554501908.4158829"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "retryWithAuthIfNeeded(sessionServiceDelegate:)"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "didFailedToRefreshToken()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -4,38 +4,12 @@
 //
 //  Created by Ahmad Mahmoud on 7/26/18.
 //
-// Ref : https://stackoverflow.com/questions/48558208/correct-use-of-retrywhen-operator-with-rxswift-4-0-0
+// Ref :
+// https://stackoverflow.com/questions/48558208/correct-use-of-retrywhen-operator-with-rxswift-4-0-0
+// http://sapandiwakar.in/refresh-oauth-tokens-using-moya-rxswift/
+// https://github.com/Moya/Moya/issues/1177
 
 import RxSwift
-
-public extension ObservableType where E == Response {
-    
-//            return Observable.zip(e, Observable.range(start: 1, count: 3), resultSelector: { $1 })
-//                .flatMap { i in
-//                    return sessionServiceDelegate
-//                        .hopa()?.filterSuccessfulStatusAndRedirectCodes()
-//
-//                        .catchError {
-//                            error in
-//                            log.debug("ReAuth error: \(error)")
-//                            if case Error.StatusCode(let response) = error {
-//                                if response.statusCode == 401 {
-//                                    // Force logout after failed attempt
-//                                    log.debug("401:, force user logout")
-//                                    NSNotificationCenter.defaultCenter().postNotificationName(Constants.Notifications.userNotAuthenticated, object: nil, userInfo: nil)
-//                                }
-//                            }
-//                            return Observable.error(error)
-//                        }.flatMapLatest({
-//                            token -> Observable<Accesstoken> in
-//                            AuthenticationManager.defaultInstance().storeServiceTokenInKeychain(token)
-//                            return Observable.just(token)
-//                        })
-         //   }
-    //   }
-  //  }
-}
-
 
 public extension Notification.Name {
     static let newAuthenticationToken = Notification.Name("newAuthenticationToken")
@@ -61,42 +35,100 @@ public extension Response {
 
 public extension ObservableType where E == Response {
     
-    /// Tries to refresh auth token on 401 & 403 errors and retry the request.
-    /// If the refresh fails, the signal errors.
-    public func retryWithAuthIfNeeded(sessionServiceDelegate : SessionProtocol) -> Observable<E> {
-        return self.retryWhen { e -> Observable<Response> in
-            return Observable
-                // Retry the the same request only one time after calling refresh token request
-                  .zip(e, Observable.range(start: 1, count: 1),resultSelector: { $1 })
-                  .flatMap { (response) -> Observable<Response> in
-                        // Token expired >> We need to re-authenticate
-                        return sessionServiceDelegate
+    // Tries to refresh auth token on 401 & 403 errors and retry the request.
+    // If the refresh fails it returns an error .
+    public func refreshAuthenticationTokenIfNeeded(sessionServiceDelegate : SessionProtocol) -> Observable<E> {
+        return
+            // Retry and process the request if any error occurred
+            self.retryWhen { responseFromFirstRequest in
+                responseFromFirstRequest.flatMap { originalRequestResponseError -> Observable<Response> in
+                    if let lucidErrorOfOriginalRequest : LucidMoyaError = originalRequestResponseError as? LucidMoyaError {
+                        let statusCode = lucidErrorOfOriginalRequest.statusCode!
+                        if statusCode == 401 || statusCode == 403 {
+                            // Token expired >> Call refresh token request
+                            return sessionServiceDelegate
                                 .getRefreshTokenObservable()
-                                .asSingle()
-                               // .filterSuccessfulStatusAndRedirectCodes()
-                                .filterUnAuthorized()
-                                .processErrors()
+                                .filterSuccessfulStatusCodesAndProcessErrors()
                                 .asObservable()
-                                .catchError { error -> Observable<Response> in
-                                    // Log.debug("Re-authentication error : \(error)")
-                                    if let lucidError : LucidMoyaError = error as? LucidMoyaError {
-                                        let statusCode = lucidError.statusCode!
-                                        if statusCode == 401 || statusCode == 403 {
-                                            // Failed to refresh token
-                                            // Logo out or do any thing related
-                                            sessionServiceDelegate.didFailedToRefreshToken()
-                                            return Observable.error(lucidError)
-                                        }
-                                        else { return Observable.error(error) }
+                                .catchError { tokeRefreshRequestError -> Observable<Response> in
+                                    // Failed to refresh token
+                                    if let lucidErrorOfTokenRefreshRequest : LucidMoyaError = tokeRefreshRequestError as? LucidMoyaError {
+                                        //
+                                        // Logout or do any thing related
+                                        sessionServiceDelegate.didFailedToRefreshToken()
+                                        //
+                                        return Observable.error(lucidErrorOfTokenRefreshRequest)
                                     }
-                                    return Observable.error(error.getLucidError())
-                                    // return Observable.empty()
+                                    return Observable.error(tokeRefreshRequestError)
+                                }
+                                .flatMapLatest { tokenRefreshResponseString -> Observable<Response> in
+                                    // Refresh token response string
+                                    // Save new token locally to use with any request from now on
+                                    sessionServiceDelegate.tokenDidRefresh(response: try! tokenRefreshResponseString.mapString())
+                                    // Retry the original request one more time
+                                    return self.retry(1)
                             }
-                            .flatMapLatest({ (s) -> Observable<Response> in
-                                sessionServiceDelegate.tokenDidRefresh(response: try! s.mapString())
-                                return Observable.just(s)
-                            })
-            }
+                        }
+                        else {
+                            // Retuen errors other than 401 & 403 of the original request
+                            return Observable.error(lucidErrorOfOriginalRequest)
+                        }
+                    }
+                    // Return any other error
+                    return Observable.error(originalRequestResponseError)
+                }
         }
     }
+    
 }
+
+
+extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
+    
+    // Tries to refresh auth token on 401 & 403 errors and retry the request.
+    // If the refresh fails it returns an error .
+    public func refreshAuthenticationTokenIfNeeded(sessionServiceDelegate : SessionProtocol) -> Single<Response> {
+        return
+            // Retry and process the request if any error occurred
+            self.retryWhen { responseFromFirstRequest in
+                responseFromFirstRequest.flatMap { originalRequestResponseError -> PrimitiveSequence<SingleTrait, ElementType> in
+                        if let lucidErrorOfOriginalRequest : LucidMoyaError = originalRequestResponseError as? LucidMoyaError {
+                        let statusCode = lucidErrorOfOriginalRequest.statusCode!
+                        if statusCode == 401 || statusCode == 403 {
+                            // Token expired >> Call refresh token request
+                            return sessionServiceDelegate
+                                .getRefreshTokenObservable()
+                                .filterSuccessfulStatusCodesAndProcessErrors()
+                                .catchError { tokeRefreshRequestError -> Single<Response> in
+                                    // Failed to refresh token
+                                    if let lucidErrorOfTokenRefreshRequest : LucidMoyaError = tokeRefreshRequestError as? LucidMoyaError {
+                                        //
+                                        // Logout or do any thing related
+                                        sessionServiceDelegate.didFailedToRefreshToken()
+                                        //
+                                        return Single.error(lucidErrorOfTokenRefreshRequest)
+                                    }
+                                    return Single.error(tokeRefreshRequestError)
+                                }
+                                .flatMap { tokenRefreshResponseString -> Single<Response> in
+                                    // Refresh token response string
+                                    // Save new token locally to use with any request from now on
+                                    sessionServiceDelegate.tokenDidRefresh(response: try! tokenRefreshResponseString.mapString())
+                                    // Retry the original request one more time
+                                    return self.retry(1)
+                            }
+                        }
+                        else {
+                            // Retuen errors other than 401 & 403 of the original request
+                            return Single.error(lucidErrorOfOriginalRequest)
+                        }
+                    }
+                    // Return any other error
+                    return Single.error(originalRequestResponseError)
+                }
+        }
+    }
+    
+}
+
+ 

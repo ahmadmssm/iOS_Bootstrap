@@ -1,3 +1,4 @@
+
 //
 //  API_Connector.swift
 //  NetworkAbstractLayer_sample
@@ -10,7 +11,7 @@ import iOS_Bootstrap
 import RxSwift
 
 class API_Connector : GenericConnector {
-
+    
     fileprivate final var apiProvider : APIsProvider<APIs>!
     
     required override init() {
@@ -22,19 +23,20 @@ class API_Connector : GenericConnector {
         // With formatted output
         let networkLogger = NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)
         //
+        let authPlugin = AccessTokenPlugin(tokenClosure: "token")
+        //
         let plugins : [PluginType] = [networkLogger]
         apiProvider = APIsProvider<APIs>(plugins: plugins)
         // Without plugins
-       // apiProvider = APIsProvider<APIs>()
+        // apiProvider = APIsProvider<APIs>()
     }
-    
     
     func getAllCountries (completion: @escaping completionHandler<[Country]>) {
         let _ = apiProvider.rx
             .request(.getWorldCountries())
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
             .asObservable()
-            .retryWithAuthIfNeeded(sessionServiceDelegate: self)
+            .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
             .asSingle()
             .mapString()
             .subscribe { event in
@@ -47,46 +49,45 @@ class API_Connector : GenericConnector {
                 }}
     }
     
-    override func getRefreshTokenObservable() -> Observable<Response> {
+    override func getRefreshTokenObservable() -> Single<Response> {
+//               return
+//                    apiProvider.rx
+//                        .request(.doRequestThatReturnsAnError())
+        
+//                return
+//                    apiProvider.rx
+//                        .request(.getWorldCountries())
+        
         return
             apiProvider.rx
-                .request(.doRequestThatReturnsAnError())
-                .asObservable()
-//        return
-//            apiProvider.rx
-//                .request(.getWorldCountries())
-//                .asObservable()
+                .request(.getCountryDetailsByCountryName(countryName: ""))
     }
     
-
     func getFakeUsers (page : Int, completion: @escaping completionHandler<Page>) {
         let _ = apiProvider.rx
             .request(.getUsers(page: String(page)))
             .filterSuccessfulStatusAndRedirectCodes()
             .asObservable()
-            .retryWithAuthIfNeeded(sessionServiceDelegate: self)
+            .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
             .asSingle()
             .map(Page.self)
             .subscribe { event in
                 switch event {
-                    case .success(let page) :
-                        completion(.success(page))
-                    case .error(let error):
-                        completion(.failure(error.localizedDescription))
+                case .success(let page) :
+                    completion(.success(page))
+                case .error(let error):
+                    completion(.failure(error.localizedDescription))
                 }
             }
             .disposed(by: self.disposeBag)
     }
     
+    
     func getErrorFromRequest (completion: @escaping completionHandler<[Country]>) {
-        let _ =
-        apiProvider
-            .rx
+        let _ = apiProvider.rx
             .request(.doRequestThatReturnsAnError())
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-            .asObservable()
-            .retryWithAuthIfNeeded(sessionServiceDelegate: self)
-            .asSingle()
+            .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
             .mapString()
             .subscribe { event in
                 switch event {
@@ -94,10 +95,13 @@ class API_Connector : GenericConnector {
                     let countries : [Country] = Parser.arrayOfObjectsFromJSONstring(object: Country.self, JSONString: responseString)! as! [Country]
                     completion(.success(countries))
                 case .error(let error):
+                    print("Error message " + error.localizedDescription)
                     completion(.failure(error.localizedDescription))
                 }
         }
+        
     }
+    
     
 }
 
