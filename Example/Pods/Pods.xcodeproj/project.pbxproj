@@ -648,6 +648,7 @@
 		C918AAB72109D46100F08C38 /* RetryWithAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AAB62109D46100F08C38 /* RetryWithAuthentication.swift */; };
 		C918AAB92109D9A800F08C38 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AAB82109D9A800F08C38 /* Session.swift */; };
 		C918AABB210A007C00F08C38 /* NetworkLoggerDataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918AABA210A007C00F08C38 /* NetworkLoggerDataFormatter.swift */; };
+		C91FC7122111F78700A199F0 /* Response + HandyJSON + RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FC7112111F78700A199F0 /* Response + HandyJSON + RX.swift */; };
 		C92361962101FC9100C2B630 /* BaseStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92361952101FC9000C2B630 /* BaseStoryboards.swift */; };
 		C92C0B7D339FDAE12D03156E5B6B19F2 /* FBSDKURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FD9E1782D1D224772082B5C88E89990 /* FBSDKURLConnection.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C9533F65DB7A5E3FB1FB8665736A6291 /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78FEDCAC2DFB0F10F3332EE962E4BC2 /* ObservableType+Extensions.swift */; };
@@ -1770,6 +1771,7 @@
 		C918AAB82109D9A800F08C38 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		C918AABA210A007C00F08C38 /* NetworkLoggerDataFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerDataFormatter.swift; sourceTree = "<group>"; };
 		C91B81CFF39F01F4C25CF204EBD5608B /* FBSDKCrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKCrypto.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Cryptography/FBSDKCrypto.m; sourceTree = "<group>"; };
+		C91FC7112111F78700A199F0 /* Response + HandyJSON + RX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Response + HandyJSON + RX.swift"; path = "iOS_Bootstrap/Classes/Response + HandyJSON + RX.swift"; sourceTree = "<group>"; };
 		C92361952101FC9000C2B630 /* BaseStoryboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStoryboards.swift; sourceTree = "<group>"; };
 		C9B20F08236D294B23F1D3178DD6B41A /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B63DAD01D550578B666E71496D3541 /* GenericErrorConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GenericErrorConfigurator.swift; sourceTree = "<group>"; };
@@ -2417,6 +2419,7 @@
 		4B4389571E2AA4DB0FC7B1B04C03522C /* iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
+				C91FC7112111F78700A199F0 /* Response + HandyJSON + RX.swift */,
 				C9C960F520FA8B750023CDD7 /* GlobalConfiguration.swift */,
 				7487F0B6CD9E3F24F6A47BE6908E4661 /* DateTimeManager.swift */,
 				F06E0E7D749C85D5A317DF28659138AD /* GlobalModules.swift */,
@@ -4734,6 +4737,7 @@
 				CC097F0121A5235E6FF7CF2F67319A48 /* Response+Extensions.swift in Sources */,
 				24957D9837DD501B3CB32BB0529E979A /* ReusableCell.swift in Sources */,
 				C4DC81D651A8C101BA40BCB8E0D37A31 /* ReusableCollectionViewAdapter.swift in Sources */,
+				C91FC7122111F78700A199F0 /* Response + HandyJSON + RX.swift in Sources */,
 				C92361962101FC9100C2B630 /* BaseStoryboards.swift in Sources */,
 				C7855E03BF6E0F13A0641856411BF34F /* ReusableTableViewAdapter.swift in Sources */,
 				C9D7319E2106935400152DD9 /* BaseController.swift in Sources */,

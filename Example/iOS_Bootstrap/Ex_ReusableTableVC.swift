@@ -28,8 +28,8 @@ class Ex_ReusableTableVC: BaseView {
        
         // Mock a network delay with 3 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-           // self.getWorldCountries()
-            self.controller.getError()
+            self.controller.getWorldCountries()
+           // self.controller.getError()
         }
     }
     

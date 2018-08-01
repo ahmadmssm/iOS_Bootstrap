@@ -67,11 +67,11 @@ class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegato
     //
     func didGetFakeUsers(page: Page) {
         // Configure pagination parameters
-        self.tableAdapter.configurePaginationParameters(totalNumberOfItems: page.total!, itemsPerPage: page.per_page!)
+        self.tableAdapter.configurePaginationParameters(totalNumberOfItems: page.total!, itemsPerPage: page.perPage!)
         // Reload table with new page items only (Not the whole data source)
-        self.tableAdapter.reloadTable(pageItems: page.data!)
+        self.tableAdapter.reloadTable(pageItems: page.users!)
         // Update your data source
-        self.dataSource.append(contentsOf: (page.data)!)
+        self.dataSource.append(contentsOf: page.users!)
     }
     //
     func didFailToGetFakeUsers(error: String) {

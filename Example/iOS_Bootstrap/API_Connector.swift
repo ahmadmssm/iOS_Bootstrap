@@ -23,8 +23,6 @@ class API_Connector : GenericConnector {
         // With formatted output
         let networkLogger = NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)
         //
-        let authPlugin = AccessTokenPlugin(tokenClosure: "token")
-        //
         let plugins : [PluginType] = [networkLogger]
         apiProvider = APIsProvider<APIs>(plugins: plugins)
         // Without plugins
@@ -38,12 +36,12 @@ class API_Connector : GenericConnector {
             .asObservable()
             .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
             .asSingle()
-            .mapString()
+          //  .mapString()
+            .mapArray(Country.self)
             .subscribe { event in
                 switch event {
-                case .success(let responseString):
-                    let countries : [Country] = Parser.arrayOfObjectsFromJSONstring(object: Country.self, JSONString: responseString)! as! [Country]
-                    completion(.success(countries))
+                case .success(let response):
+                    completion(.success(response))
                 case .error(let error):
                     completion(.failure(error.localizedDescription))
                 }}
