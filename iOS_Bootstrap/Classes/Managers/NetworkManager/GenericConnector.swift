@@ -14,17 +14,15 @@ open class GenericConnector: NSObject, SessionProtocol {
     public typealias completionHandlerWithErrorModel<T, E> = 
         (ConnectionResultWithGenericError<T, E>) -> ()
     //
-    final var sessionDelegate : SessionProtocol!
-    public final var disposeBag : DisposeBag!
+    private final var sessionDelegate : SessionProtocol!
     
     public override init() {
         super.init()
         //
         sessionDelegate = self
-        disposeBag = DisposeBag()
     }
     
-    open func getRefreshTokenObservable() -> Single<Response> {
+    open func getTokenRefreshService() -> Single<Response> {
         return Observable.empty().asSingle()
     }
     // Override this function to handle token refresh
@@ -37,6 +35,5 @@ open class GenericConnector: NSObject, SessionProtocol {
     public func didFailedToRefreshToken() {
         NotificationCenter.default.post(name: .expiredToken, object: nil)
     }
-    
 
 }

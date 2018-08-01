@@ -21,30 +21,30 @@ class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegato
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        mNavigator = self.navigator as? NavigationCoordinator
-        AppDelegate.setContext(context: self)
-        //
-        tableAdapter.configureTableWithXibCell(tableView: usersTableVIew, dataSource: dataSource, nibClass: UserCell.self, delegate: self)
+        initUI()
     }
     //
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //
-        self.getUsers(pageNumber: 1)
+        // Set context
+        AppDelegate.setContext(context: self)
     }
     
+    func initUI() {
+        mNavigator = self.navigator as? NavigationCoordinator
+        // Setup tableview adapter
+        tableAdapter.configureTableWithXibCell(tableView: usersTableVIew, dataSource: dataSource, nibClass: UserCell.self, delegate: self)
+    }
+    
+    // Button actions
     @IBAction func TestButton(_ sender: UIButton) {
-       self.presenter.test()
+        presenter.getUsers(pageNumber: 1)
     }
-
-    func doNothing() {
-        Log.info("I'm here...")
-    }
-    
+    //
     @IBAction func testNavigator(_ sender: UIButton) {
         self.mNavigator?.startInitialView()
     }
-    
+    // Tableview adapter functions
     func configureCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //
         let cell : UserCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
@@ -53,31 +53,33 @@ class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegato
         cell.lastName.text = dataSource [indexPath.row].last_name
         return cell
     }
-    
-    
-    
-    private func getUsers(pageNumber : Int) {
-        API_Connector().getFakeUsers(page: pageNumber, completion: { response in
-            switch response {
-            case .success(let userPage):
-                // Configure pagination parameters
-                self.tableAdapter.configurePaginationParameters(totalNumberOfItems: userPage.total!, itemsPerPage: userPage.per_page!)
-                // Reload table with new page items only (Not the whole data source)
-                self.tableAdapter.reloadTable(pageItems: userPage.data!)
-                // Update your data source
-                self.dataSource.append(contentsOf: (userPage.data)!)
-                //
-                break
-            case .failure(let errorMsg):
-                print("Error : " + errorMsg)
-                break
-            }
-        })
-    }
-    
+    //
     func loadMore(forPage page: Int, updatedDataSource: [Any]) {
         self.dataSource = updatedDataSource as! [User]
-        getUsers(pageNumber: page)
+        presenter.getUsers(pageNumber: page)
     }
+    
+    // Delegate functions
+    //
+    func doNothing() {
+        Log.info("I'm here...")
+    }
+    //
+    func didGetFakeUsers(page: Page) {
+        // Configure pagination parameters
+        self.tableAdapter.configurePaginationParameters(totalNumberOfItems: page.total!, itemsPerPage: page.per_page!)
+        // Reload table with new page items only (Not the whole data source)
+        self.tableAdapter.reloadTable(pageItems: page.data!)
+        // Update your data source
+        self.dataSource.append(contentsOf: (page.data)!)
+    }
+    //
+    func didFailToGetFakeUsers(error: String) {
+        EZLoadingActivity.showWithDelay(error, disableUI: true, seconds: 3.0)
+    }
+
+    
+    
+   
     
 }

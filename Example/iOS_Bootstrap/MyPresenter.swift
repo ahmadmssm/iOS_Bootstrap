@@ -13,8 +13,19 @@ class MyPresenter: BasePresenter<MyViewControllerDelegator> {
     required init(contract: MyViewControllerDelegator) {
         super.init(contract: contract)
     }
-   
-    func test() {
-        self.viewDelegator?.doNothing()
+    
+    func getUsers(pageNumber : Int) {
+        API_Connector().getFakeUsers(page: pageNumber, completion: { response in
+            switch response {
+            case .success(let userPage):
+                self.getViewDelegator.didGetFakeUsers(page: userPage)
+                break
+            case .failure(let errorMsg):
+                print("Error : " + errorMsg)
+                self.getViewDelegator.didFailToGetFakeUsers(error: errorMsg)
+                break
+            }
+        })
     }
+    
 }

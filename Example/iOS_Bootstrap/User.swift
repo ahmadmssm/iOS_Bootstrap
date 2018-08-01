@@ -6,13 +6,24 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-import iOS_Bootstrap
-
 struct User : Codable {
-
+    
     var id : Int?
     var first_name : String?
     var last_name : String?
     var avatar : String?
+    
+//    enum CodingKeys: String, CodingKey {
+//        case firstName = "first_name"
+//        case lastName = "last_name"
+//    }
+    
+//    func encode(to encoder: Encoder) throws {
+//
+//    }
+//
+//    init(from decoder: Decoder) throws {
+//
+//    }
     
 }

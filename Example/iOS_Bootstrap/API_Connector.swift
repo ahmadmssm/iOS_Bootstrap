@@ -49,7 +49,7 @@ class API_Connector : GenericConnector {
                 }}
     }
     
-    override func getRefreshTokenObservable() -> Single<Response> {
+    override func getTokenRefreshService() -> Single<Response> {
 //               return
 //                    apiProvider.rx
 //                        .request(.doRequestThatReturnsAnError())
@@ -79,7 +79,6 @@ class API_Connector : GenericConnector {
                     completion(.failure(error.localizedDescription))
                 }
             }
-            .disposed(by: self.disposeBag)
     }
     
     

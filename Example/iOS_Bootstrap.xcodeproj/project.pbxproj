@@ -19,6 +19,7 @@
 		C915C58D20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */; };
 		C915C59C20CAC1F10029F5D9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */; };
 		C915C59D20CAC1F10029F5D9 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */; };
+		C91FC70E2111A62400A199F0 /* Ex_ReusableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FC70D2111A62400A199F0 /* Ex_ReusableTableController.swift */; };
 		C923619E2102AA7C00C2B630 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923619D2102AA7C00C2B630 /* User.swift */; };
 		C92361A02102AA9200C2B630 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923619F2102AA9200C2B630 /* Page.swift */; };
 		C92361A32102B0FE00C2B630 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92361A12102B0FE00C2B630 /* UserCell.swift */; };
@@ -70,6 +71,7 @@
 		C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_ReusableTableVC.swift; sourceTree = "<group>"; };
 		C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		C91FC70D2111A62400A199F0 /* Ex_ReusableTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_ReusableTableController.swift; sourceTree = "<group>"; };
 		C923619D2102AA7C00C2B630 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C923619F2102AA9200C2B630 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		C92361A12102B0FE00C2B630 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -146,11 +148,12 @@
 		607FACD21AFB9204008FA782 /* Example for iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
+				C99EA61D20CB461B00D7C158 /* Models */,
 				C99EA60620CB41A600D7C158 /* Networking */,
 				C99EA62220CB4D5900D7C158 /* Table */,
 				C9C960F720FA8BA30023CDD7 /* Views */,
-				C9555AA620E816A8007A698D /* MVP */,
-				C9CFACE7210652E200587F66 /* MVC-C */,
+				C9555AA620E816A8007A698D /* MVP Example */,
+				C9CFACE7210652E200587F66 /* MVC-C Example */,
 				C902036E20F571C100A63492 /* NavigationCoordinator.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -207,14 +210,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C9555AA620E816A8007A698D /* MVP */ = {
+		C9555AA620E816A8007A698D /* MVP Example */ = {
 			isa = PBXGroup;
 			children = (
 				C9555AAF20E8174B007A698D /* MyViewController.swift */,
 				C9555AAB20E8171B007A698D /* MyPresenter.swift */,
 				C9555AAC20E8171B007A698D /* MyViewControllerDelegator.swift */,
 			);
-			name = MVP;
+			name = "MVP Example";
 			sourceTree = "<group>";
 		};
 		C99EA60620CB41A600D7C158 /* Networking */ = {
@@ -223,7 +226,6 @@
 				C99EA60120CB3D7800D7C158 /* APIs.swift */,
 				C99EA60220CB3D7800D7C158 /* API_Connector.swift */,
 				C99EA60020CB3D7800D7C158 /* HumanReadableError.swift */,
-				C99EA61D20CB461B00D7C158 /* Models */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */,
+				C91FC70D2111A62400A199F0 /* Ex_ReusableTableController.swift */,
 				C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */,
 				C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */,
 				C9316DBD20D6717C00FB6A6A /* CountriesReusableTable.swift */,
@@ -264,13 +267,13 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		C9CFACE7210652E200587F66 /* MVC-C */ = {
+		C9CFACE7210652E200587F66 /* MVC-C Example */ = {
 			isa = PBXGroup;
 			children = (
 				C9CFACE8210654DA00587F66 /* MVC_ViewController.swift */,
 				C9CFACEA210654FC00587F66 /* MyController.swift */,
 			);
-			name = "MVC-C";
+			name = "MVC-C Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,6 +486,7 @@
 				C9555AB020E8174B007A698D /* MyViewController.swift in Sources */,
 				C92361A02102AA9200C2B630 /* Page.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				C91FC70E2111A62400A199F0 /* Ex_ReusableTableController.swift in Sources */,
 				C9555AAD20E8171C007A698D /* MyPresenter.swift in Sources */,
 				C99EA60520CB3D7900D7C158 /* API_Connector.swift in Sources */,
 				C9CFACE9210654DA00587F66 /* MVC_ViewController.swift in Sources */,

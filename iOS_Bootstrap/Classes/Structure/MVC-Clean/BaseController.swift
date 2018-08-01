@@ -7,14 +7,14 @@
 
 open class BaseController <V : UIViewController> {
     
-    public final var view: V!
+    public final var getView: V!
     
     required public init (view : V) {
-        self.view = view
+        self.getView = view
     }
     
     func detachView() {
-        self.view = nil
+        self.getView = nil
     }
     
    // required public init <V : UIViewController> (view : V) { self.view = view }

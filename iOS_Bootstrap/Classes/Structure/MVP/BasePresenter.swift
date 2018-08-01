@@ -9,10 +9,10 @@
 
 open class BasePresenter <T> {
     
-    public final let viewDelegator: T!
+    public final let getViewDelegator: T!
     
     required public init (contract : T) {
-        self.viewDelegator = contract 
+        self.getViewDelegator = contract 
     }
 }
 

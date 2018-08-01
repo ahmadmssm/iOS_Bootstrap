@@ -9,16 +9,31 @@
 import UIKit
 import iOS_Bootstrap
 
-class Ex_ReusableTableVC: UIViewController {
+class Ex_ReusableTableVC: BaseView {
     
     @IBOutlet weak var tableview: UITableView!
     private let tableAdapter : TableviewAdapter = TableviewAdapter()
     private var dataSource : [Country] = [Country]()
     private var reusableView : CountriesReusableTable!
+    //
+    private var controller : Ex_ReusableTableController!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //
+        initUI()
+        controller = Ex_ReusableTableController(view: self)
+        //
+       
+        // Mock a network delay with 3 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+           // self.getWorldCountries()
+            self.controller.getError()
+        }
+    }
+    
+    private func initUI() {
         //
         reusableView = CountriesReusableTable(tableview: tableview, tableViewDataSource: dataSource)
         //
@@ -26,36 +41,17 @@ class Ex_ReusableTableVC: UIViewController {
         // tableAdapter.configurePullToRefresh(refreshControl: refreshControl)
         //
         dataSource.removeAll()
-        // Mock a network delay with 3 seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-           // self.getWorldCountries()
-            self.getError()
-        }
     }
     
-    func getWorldCountries() {
-        API_Connector().getAllCountries (completion: { response in
-            switch response {
-            case .success(let countries):
-                self.dataSource = countries
-                self.reusableView.reloadTableViewData(pageItems: self.dataSource, currentPage: 0)
-                break
-            case .failure(let errorMsg):
-                print("Error : " + errorMsg)
-                break
-            }
-        })
+    func didGetCountries(countries : [Country]) {
+        self.dataSource = countries
+        self.reusableView.reloadTableViewData(pageItems: self.dataSource, currentPage: 0)
     }
-
-    func getError () {
-        API_Connector().getErrorFromRequest (completion: { response in
-            switch response {
-            case .success( _):
-                break
-            case .failure(let errorMsg):
-                print("Error : " + errorMsg)
-                break
-            }
-        })
+    
+    func didFailToGetCountries(error : String) {
+        // Do any thing with your error
+        Log.error("Error " + error)
     }
+    
+    
 }

@@ -33,6 +33,7 @@ public extension Response {
     }
 }
 
+// Using Observable
 public extension ObservableType where E == Response {
     
     // Tries to refresh auth token on 401 & 403 errors and retry the request.
@@ -47,7 +48,7 @@ public extension ObservableType where E == Response {
                         if statusCode == 401 || statusCode == 403 {
                             // Token expired >> Call refresh token request
                             return sessionServiceDelegate
-                                .getRefreshTokenObservable()
+                                .getTokenRefreshService()
                                 .filterSuccessfulStatusCodesAndProcessErrors()
                                 .asObservable()
                                 .catchError { tokeRefreshRequestError -> Observable<Response> in
@@ -82,7 +83,7 @@ public extension ObservableType where E == Response {
     
 }
 
-
+// Using Single
 extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
     
     // Tries to refresh auth token on 401 & 403 errors and retry the request.
@@ -97,7 +98,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                         if statusCode == 401 || statusCode == 403 {
                             // Token expired >> Call refresh token request
                             return sessionServiceDelegate
-                                .getRefreshTokenObservable()
+                                .getTokenRefreshService()
                                 .filterSuccessfulStatusCodesAndProcessErrors()
                                 .catchError { tokeRefreshRequestError -> Single<Response> in
                                     // Failed to refresh token

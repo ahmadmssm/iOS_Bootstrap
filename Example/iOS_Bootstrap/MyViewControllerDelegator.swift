@@ -8,8 +8,8 @@
 
 import iOS_Bootstrap
 
-@objc public protocol MyViewControllerDelegator : BaseViewDelegator {
-    func doNothing()
-    @objc optional func doThing ()
+public protocol MyViewControllerDelegator : BaseViewDelegator {
+    func didGetFakeUsers(page : Page)
+    func didFailToGetFakeUsers (error : String)
 }
 
