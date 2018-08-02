@@ -1,5 +1,5 @@
 //
-//  Configurations.swift
+//  BuildVariantService.swift
 //  iOS_Bootstrap
 //
 //  Created by Ahmad Mahmoud on 8/2/18.
@@ -9,9 +9,9 @@
 //  https://cocoacasts.com/switching-environments-with-configurations
 //
 
-public protocol Configurations {}
+public protocol BuildVariantService {}
 
-public extension Configurations {
+public extension BuildVariantService {
     //
     // Enum looping helper function
     private static func Enum<T: Hashable>(_: T.Type) -> AnyIterator<T> {

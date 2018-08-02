@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class UserDefaultsManger {
+open class UserDefaultsManager {
     
     private let prefFile = UserDefaults.standard
     

@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-struct GlobalConfigurations : Configurations {
+struct GlobalConfigurations : BuildVariantService {
     
     static let getEnvironmentVariables: Environment = {
         return getEnvironment(Environment.self)
