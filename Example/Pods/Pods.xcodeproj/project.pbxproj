@@ -662,6 +662,7 @@
 		C8E46C770E12822928A5D1466B61B46C /* ActionSheetCustomPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 30FE5502F019426B101F84321612F92C /* ActionSheetCustomPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C904AD8E37D9181131194057B74FB593 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA17DBE3473D6B3C73A13F7F33876028 /* Moya.framework */; };
 		C91D6C730CE92BAC6418F101D02D37BD /* Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9D647454DEE24C54403AA3A1B06B8D /* Kingfisher.swift */; };
+		C966063521138F7F00E2D38A /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = C966063421138F7F00E2D38A /* Files.swift */; };
 		CA72E23C3F0F4F4C4B58D50AF119C081 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EEF9BA975A01246ED3585C06B50A6E /* Image.swift */; };
 		CB15512CC97BEC1CAF9A4957BEF28DC5 /* FBSDKAccessTokenCacheV3.m in Sources */ = {isa = PBXBuildFile; fileRef = 695FC6D82E79C8E91FC598A3EE203B71 /* FBSDKAccessTokenCacheV3.m */; };
 		CB4E9BE9C0DDB7E67CF258C28B5B9C6C /* PushNotificationBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286A0B36F0892DD9834E36510D349B0A /* PushNotificationBaseModel.swift */; };
@@ -1867,6 +1868,7 @@
 		C7EB78832406AB719921ECD4216E29E1 /* FBSDKServerConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKServerConfiguration.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfiguration.h; sourceTree = "<group>"; };
 		C8B726F10E9B3C5E866D92D613D2F012 /* STTwitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STTwitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95FEF2E258D695B4713CE3CD598FA06 /* ActionSheetLocalePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ActionSheetLocalePicker.h; sourceTree = "<group>"; };
+		C966063421138F7F00E2D38A /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		C96D84ABB1A518F26D70622BC63ECA51 /* NSError+STTwitter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+STTwitter.m"; path = "STTwitter/NSError+STTwitter.m"; sourceTree = "<group>"; };
 		C9CF51A7C28AD80C7206E61152A1723D /* NetworkActivityPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkActivityPlugin.swift; path = Sources/Moya/Plugins/NetworkActivityPlugin.swift; sourceTree = "<group>"; };
 		C9DF3B5851041076883CB9585E320C14 /* SynchronizedDisposeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedDisposeType.swift; path = RxSwift/Concurrency/SynchronizedDisposeType.swift; sourceTree = "<group>"; };
@@ -2400,6 +2402,7 @@
 				D2F1464B2AC5A731C0B581FE147A7170 /* PushNotificationManager */,
 				C49A9CF457E153381343AC22B097AFE1 /* SocialMediaManager */,
 				DB4E8B2B4842AD2ADEDF622ADDC3E704 /* Storyboard manager */,
+				C966063321138F2800E2D38A /* StorageManager */,
 			);
 			name = Managers;
 			path = iOS_Bootstrap/Classes/Managers;
@@ -3518,6 +3521,14 @@
 				B9ADE4B4E6D7F0D6E128CC4E4CE5E4F2 /* Support Files */,
 			);
 			path = FBSDKCoreKit;
+			sourceTree = "<group>";
+		};
+		C966063321138F2800E2D38A /* StorageManager */ = {
+			isa = PBXGroup;
+			children = (
+				C966063421138F7F00E2D38A /* Files.swift */,
+			);
+			path = StorageManager;
 			sourceTree = "<group>";
 		};
 		D2F1464B2AC5A731C0B581FE147A7170 /* PushNotificationManager */ = {
@@ -5007,6 +5018,7 @@
 				49FFDBCF972A6F3CB259DBE2B6035D09 /* GenericErrorConfigurator.swift in Sources */,
 				CBD51AA76FA652540C67461F11A0E450 /* GenericErrorHandler.swift in Sources */,
 				08EF03436B10122B318C6D7E8444F48A /* GenericTypesHelper.swift in Sources */,
+				C966063521138F7F00E2D38A /* Files.swift in Sources */,
 				024AE38CAC070BF0E701921B5F6EA1B9 /* GlobalModules.swift in Sources */,
 				A013FBAA5AAA612BAB0B528752FC4A48 /* How_to_use.strings in Sources */,
 				A013FBAA5AAA612BAB0B528752FC4A48 /* How_to_use.strings in Sources */,

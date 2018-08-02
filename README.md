@@ -72,7 +72,14 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 26. Added Kingfisher  library.
 27. Coordinator design pattern + viewcontrollers naviagator base class + examples
 28. Simple depenfancy injection implementation.
-29. How to use and documentation + references.
+29. Refresh token plugin for moya.
+30. Refresh token RX Swift plugin.
+31. Real time listeners for token update/expire event ( Work with 29 or 30 but not alone ).
+32. HandyJSON Moya plugin.
+33. HandyJSON RX Swift plugin.
+34. Out of the box build variants ( Debug - Staging - Release ) auto handler.
+35. Read/Write Files/Folder managers.
+36. How to use and documentation + references.
 
 
 ## Upcoming features

@@ -18,6 +18,6 @@ class MVC_ViewController : BaseView {
         // Do any additional setup after loading the view.
         controller = MyController(view: self)
     }
-
+    
  }
 
