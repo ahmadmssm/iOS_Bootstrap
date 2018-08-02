@@ -22,6 +22,9 @@ class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegato
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initUI()
+        // Initialize Configuration
+        print(GlobalConfigurations.getEnvironmentVariables.baseURL)
+        //
     }
     //
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +66,7 @@ class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegato
     //
     func doNothing() {
         Log.info("I'm here...")
+        
     }
     //
     func didGetFakeUsers(page: Page) {

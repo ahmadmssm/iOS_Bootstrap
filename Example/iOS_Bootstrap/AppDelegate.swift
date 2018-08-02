@@ -10,29 +10,17 @@ import UIKit
 import iOS_Bootstrap
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, DependancyInjection, SessionService {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
-    // Dependancy Injection
-    static var context: UIViewController?
-    
-    static func setContext(context: UIViewController) {
-        self.context = context
-    }
-    static func getContext() -> UIViewController {
-        return context!
-    }
-    
+   
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //
-        GlobalConfiguration.setMainConfigurations()
-        GlobalConfiguration.configureSessionService(context: self)
-        
+        DefaultConfigurations.setMandatoryConfigurations()
+        DefaultConfigurations.configureSessionService(context: self)
+        DefaultConfigurations.configureNavigationBarApperance(barColor: UIColor.green, backButtonColor: UIColor.blue, textApperance: nil)
         //
-        GlobalConfiguration.configureNavigationBarApperance(barColor: UIColor.green, backButtonColor: UIColor.blue, textApperance: nil)
-
         // send that into our coordinator so that it can display view controllers
         let nav = NavigationCoordinator.getInstance
         //
@@ -43,20 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DependancyInjection, Sess
         //
         NavigationCoordinator.getInstance.startInitialView()
         //
-        
-      
-        //
         return true
     }
-    
-    
-    func didFailedToRefreshToken() {
-    }
-    
-    func tokenDidRefresh(response: String) {
-        Log.debug("Refresh token response : " + response)
-    }
-
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -89,3 +65,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DependancyInjection, Sess
 
 }
 
+extension AppDelegate: DependancyInjection {
+    // Dependancy Injection
+    static var context: UIViewController?
+    
+    static func setContext(context: UIViewController) {
+        self.context = context
+    }
+    static func getContext() -> UIViewController {
+        return context!
+    }
+}
+
+extension AppDelegate: SessionService {
+    //
+    func didFailedToRefreshToken() {
+        //
+    }
+    
+    func tokenDidRefresh(response: String) {
+        Log.debug("Refresh token response : " + response)
+    }
+}

@@ -1,5 +1,5 @@
 //
-//  GlobalConfiguration.swift
+//  DefaultConfigurations.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 7/14/18.
@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-open class GlobalConfiguration {
+open class DefaultConfigurations {
     
     private static var notificationContext : Any?
     
-    public static func setMainConfigurations ()  {
+    public static func setMandatoryConfigurations ()  {
         KeyboardManager.handleKeyboardManager()
     }
     
@@ -35,7 +35,6 @@ open class GlobalConfiguration {
             sessionServiceDelegate.tokenDidRefresh(response: responseString)
         }
     }
-    
     
     public static func configureNavigationBarApperance
         (barColor : UIColor, backButtonColor : UIColor, textApperance : [NSAttributedStringKey : Any]!) {

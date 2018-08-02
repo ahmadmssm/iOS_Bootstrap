@@ -20,6 +20,8 @@
 		C915C59C20CAC1F10029F5D9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */; };
 		C915C59D20CAC1F10029F5D9 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */; };
 		C91FC70E2111A62400A199F0 /* Ex_ReusableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FC70D2111A62400A199F0 /* Ex_ReusableTableController.swift */; };
+		C91FC7172112FE8800A199F0 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FC7162112FE8800A199F0 /* Environment.swift */; };
+		C91FC7192113092600A199F0 /* GlobalConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FC7182113092600A199F0 /* GlobalConfigurations.swift */; };
 		C923619E2102AA7C00C2B630 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923619D2102AA7C00C2B630 /* User.swift */; };
 		C92361A02102AA9200C2B630 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923619F2102AA9200C2B630 /* Page.swift */; };
 		C92361A32102B0FE00C2B630 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92361A12102B0FE00C2B630 /* UserCell.swift */; };
@@ -65,13 +67,17 @@
 		607FACE51AFB9204008FA782 /* iOS_Bootstrap_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_Bootstrap_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		6EF0DDB201FCB6637EF098C8 /* Pods-iOS_Bootstrap_Example.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Example.staging.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Example/Pods-iOS_Bootstrap_Example.staging.xcconfig"; sourceTree = "<group>"; };
 		876F4E4DF9532FA87A402CC4 /* Pods-iOS_Bootstrap_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Tests/Pods-iOS_Bootstrap_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9CCFB36A3BA0ACD17B0068E4 /* Pods-iOS_Bootstrap_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Tests/Pods-iOS_Bootstrap_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		9CD613CB2DA2C8BEF5721F8D /* Pods-iOS_Bootstrap_Tests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Tests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Tests/Pods-iOS_Bootstrap_Tests.staging.xcconfig"; sourceTree = "<group>"; };
 		C902036E20F571C100A63492 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 		C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_ReusableTableVC.swift; sourceTree = "<group>"; };
 		C915C59A20CAC1F10029F5D9 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		C91FC70D2111A62400A199F0 /* Ex_ReusableTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_ReusableTableController.swift; sourceTree = "<group>"; };
+		C91FC7162112FE8800A199F0 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		C91FC7182113092600A199F0 /* GlobalConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigurations.swift; sourceTree = "<group>"; };
 		C923619D2102AA7C00C2B630 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C923619F2102AA9200C2B630 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		C92361A12102B0FE00C2B630 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -148,6 +154,8 @@
 		607FACD21AFB9204008FA782 /* Example for iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
+				C91FC7162112FE8800A199F0 /* Environment.swift */,
+				C91FC7182113092600A199F0 /* GlobalConfigurations.swift */,
 				C99EA61D20CB461B00D7C158 /* Models */,
 				C99EA60620CB41A600D7C158 /* Networking */,
 				C99EA62220CB4D5900D7C158 /* Table */,
@@ -206,6 +214,8 @@
 				391E8062EDB4ACBF62F604AF /* Pods-iOS_Bootstrap_Example.release.xcconfig */,
 				9CCFB36A3BA0ACD17B0068E4 /* Pods-iOS_Bootstrap_Tests.debug.xcconfig */,
 				876F4E4DF9532FA87A402CC4 /* Pods-iOS_Bootstrap_Tests.release.xcconfig */,
+				6EF0DDB201FCB6637EF098C8 /* Pods-iOS_Bootstrap_Example.staging.xcconfig */,
+				9CD613CB2DA2C8BEF5721F8D /* Pods-iOS_Bootstrap_Tests.staging.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -415,6 +425,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -431,6 +442,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -481,6 +493,7 @@
 				C99EA61F20CB466300D7C158 /* Country.swift in Sources */,
 				C99EA60420CB3D7900D7C158 /* APIs.swift in Sources */,
 				C9555AAE20E8171C007A698D /* MyViewControllerDelegator.swift in Sources */,
+				C91FC7192113092600A199F0 /* GlobalConfigurations.swift in Sources */,
 				C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */,
 				C9316DBE20D6717C00FB6A6A /* CountriesReusableTable.swift in Sources */,
 				C9555AB020E8174B007A698D /* MyViewController.swift in Sources */,
@@ -488,6 +501,7 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				C91FC70E2111A62400A199F0 /* Ex_ReusableTableController.swift in Sources */,
 				C9555AAD20E8171C007A698D /* MyPresenter.swift in Sources */,
+				C91FC7172112FE8800A199F0 /* Environment.swift in Sources */,
 				C99EA60520CB3D7900D7C158 /* API_Connector.swift in Sources */,
 				C9CFACE9210654DA00587F66 /* MVC_ViewController.swift in Sources */,
 			);
@@ -708,6 +722,100 @@
 			};
 			name = Release;
 		};
+		C91FC7132112FD5C00A199F0 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Staging;
+		};
+		C91FC7142112FD5C00A199F0 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EF0DDB201FCB6637EF098C8 /* Pods-iOS_Bootstrap_Example.staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GV86YZ8K5S;
+				INFOPLIST_FILE = iOS_Bootstrap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Staging;
+		};
+		C91FC7152112FD5C00A199F0 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CD613CB2DA2C8BEF5721F8D /* Pods-iOS_Bootstrap_Tests.staging.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = GV86YZ8K5S;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS_Bootstrap_Example.app/iOS_Bootstrap_Example";
+			};
+			name = Staging;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -715,6 +823,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACED1AFB9204008FA782 /* Debug */,
+				C91FC7132112FD5C00A199F0 /* Staging */,
 				607FACEE1AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -724,6 +833,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
+				C91FC7142112FD5C00A199F0 /* Staging */,
 				607FACF11AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -733,6 +843,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,
+				C91FC7152112FD5C00A199F0 /* Staging */,
 				607FACF41AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
