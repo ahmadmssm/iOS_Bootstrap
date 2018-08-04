@@ -17,8 +17,18 @@ open class DefaultConfigurations {
         KeyboardManager.handleKeyboardManager()
     }
     
-    static func configureAppWindow() {
-        
+    /**
+     You must call .configureNavigationBarApperance if you want to customize the app navigation bar apperance
+     */
+    public static func configureAppWindow(window : UIWindow) {
+        window.makeKeyAndVisible()
+    }
+    
+    public static func configureAppWindowWithRootNavigationController(window : UIWindow, navController : UINavigationController) {
+        // create a basic UIWindow and activate it
+        // let window : UIWindow = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = navController
+        window.makeKeyAndVisible()
     }
     
     public static func configureSessionService(context : Any) {

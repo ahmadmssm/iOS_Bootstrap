@@ -2,7 +2,7 @@
 //  UIStoryboard+Storyboards.swift
 //  AHStoryboard
 //
-//  Created by Andyy Hope on 19/01/2016.
+//  Created by Andyy Hope on 19/01/2016, Edited by Ahmad Mahmoud on Jul 07/20/2018.
 //  Copyright © 2016 Andyy Hope. All rights reserved.
 //
 
@@ -37,8 +37,9 @@ extension UIStoryboard {
     }
     
     // MARK: - Class Functions
-    open class func getStoryboardWithName(_ storyboard: String, bundle: Bundle? = nil) -> UIStoryboard {
-        return UIStoryboard(name: storyboard.capitalized, bundle: bundle)
+   
+    open class func getStoryboardWithName <T: RawRepresentable>(_ storyboard: T, bundle: Bundle? = nil) -> UIStoryboard where T.RawValue == String {
+        return UIStoryboard(name: storyboard.rawValue.capitalized, bundle: bundle)
     }
     
     // MARK: - View Controller Instantiation from Generics

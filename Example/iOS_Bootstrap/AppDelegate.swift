@@ -13,21 +13,14 @@ import iOS_Bootstrap
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-   
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //
         DefaultConfigurations.setMandatoryConfigurations()
         DefaultConfigurations.configureSessionService(context: self)
         DefaultConfigurations.configureNavigationBarApperance(barColor: UIColor.green, backButtonColor: UIColor.blue, textApperance: nil)
-        //
-        // send that into our coordinator so that it can display view controllers
-        let nav = NavigationCoordinator.getInstance
-        //
-        // create a basic UIWindow and activate it
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = nav.navigationController
-        window?.makeKeyAndVisible()
+        DefaultConfigurations.configureAppWindowWithRootNavigationController(window: window!, navController: NavigationCoordinator.getInstance.navigationController!)
         //
         NavigationCoordinator.getInstance.startInitialView()
         //

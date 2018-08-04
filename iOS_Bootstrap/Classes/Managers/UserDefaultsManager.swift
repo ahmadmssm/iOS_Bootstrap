@@ -12,6 +12,8 @@ open class UserDefaultsManager {
     
     private let prefFile = UserDefaults.standard
     
+    public init() {}
+    
     public func getBooleanValueWithKey(_ key : String) -> Bool {
         return prefFile.bool(forKey: key)
     }

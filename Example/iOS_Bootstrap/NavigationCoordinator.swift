@@ -17,7 +17,7 @@ class NavigationCoordinator: BaseNavigationCoordinator  {
     
     //
     func goToHomeStoryBoard(number : Int) {
-        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.main.getStringName)
+        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.main)
         let homeVC = storyboard.instantiateViewController() as MyViewController
         homeVC.navigator = self
         homeVC.x = number
@@ -26,9 +26,9 @@ class NavigationCoordinator: BaseNavigationCoordinator  {
         // To push
         navigationController?.pushViewController(homeVC, animated: false)
     }
-
+    
     func startInitialView() {
-        let storyboard =  UIStoryboard.getStoryboardWithName(Storyboards.main.getStringName)
+        let storyboard =  UIStoryboard.getStoryboardWithName(Storyboards.main)
         let vc = storyboard.instantiateViewController() as ViewController
         vc.navigator = self
         navigationController?.pushViewController(vc, animated: false)

@@ -11,7 +11,9 @@ import iOS_Bootstrap
 
 class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegator>, MyViewControllerDelegator, TableViewDelegates {
     
+    @IBOutlet weak var switchLanguageButton: UIButton!
     @IBOutlet weak var usersTableVIew: UITableView!
+    //
     private let tableAdapter : TableviewAdapter = TableviewAdapter()
     private var dataSource : [User] = [User]()
     //
@@ -23,14 +25,16 @@ class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegato
         // Do any additional setup after loading the view.
         initUI()
         // Initialize Configuration
-        print(GlobalConfigurations.getEnvironmentVariables.baseURL)
-        //
+        Log.debug(GlobalConfigurations.getEnvironmentVariables.baseURL)
     }
     //
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Set context
         AppDelegate.setContext(context: self)
+        //
+        Log.debug("ChangeLng".localized())
+        switchLanguageButton.setTitle("ChangeLng".localized(), for: .normal)
     }
     
     func initUI() {
@@ -45,7 +49,34 @@ class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegato
     }
     //
     @IBAction func testNavigator(_ sender: UIButton) {
-        self.mNavigator?.startInitialView()
+        // self.mNavigator?.startInitialView()
+
+        let langMgr : MultiLanguageManager = MultiLanguageManager()
+        if (langMgr.getCurrentAppLanguage() == Languages.Arabic.rawValue) {
+            langMgr.switchAppLanguageInstantly(language: Languages.English)
+        }
+        else {
+           langMgr.switchAppLanguageInstantly(language: Languages.Arabic)
+        }
+        
+     //   let window = (UIApplication.shared.delegate as! AppDelegate).window
+     //   let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.main)
+      //  window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "root")
+        
+     //   UIView.transition(with: window!, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
+        //
+        // Or
+        //
+        let windows = UIApplication.shared.windows
+//        // Get the current app window without casting to app delegate
+        for window in windows {
+            for view in window.subviews {
+                view.removeFromSuperview()
+                window.rootViewController = mNavigator?.navigationController
+                window.addSubview(view)
+           }
+        }
+        navigationController?.popViewController(animated: true)
     }
     // Tableview adapter functions
     func configureCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

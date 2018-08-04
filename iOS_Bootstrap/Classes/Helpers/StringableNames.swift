@@ -1,5 +1,5 @@
 //
-//  BaseStoryboards.swift
+//  StringableNames.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 7/20/18.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-public protocol BaseStoryboards {
+public protocol StringableNames {
     var getStringName: String { get }
     
 }
 
-extension BaseStoryboards {
+extension StringableNames {
     public var getStringName: String {
         get {
             return String(describing: self)

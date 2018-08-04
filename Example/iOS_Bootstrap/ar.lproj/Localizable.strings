@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  iOS_Bootstrap
+
+  Created by Ahmad Mahmoud on 8/3/18.
+  Copyright © 2018 CocoaPods. All rights reserved.
+*/
+
+"ChangeLng" = "تغيير اللغة";

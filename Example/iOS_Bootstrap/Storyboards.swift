@@ -9,7 +9,7 @@
 import iOS_Bootstrap
 
 // The unifiend place where we state all the storyboard we have in our application
-enum Storyboards : BaseStoryboards {
+enum Storyboards : String {
     
     case main
     case home
