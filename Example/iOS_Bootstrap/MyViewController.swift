@@ -25,7 +25,7 @@ class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegato
         // Do any additional setup after loading the view.
         initUI()
         // Initialize Configuration
-        Log.debug(GlobalConfigurations.getEnvironmentVariables.baseURL)
+        Log.debug(GlobalKeys.getEnvironmentVariables.baseURL)
     }
     //
     override func viewWillAppear(_ animated: Bool) {

@@ -79,7 +79,9 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 33. HandyJSON RX Swift plugin.
 34. Out of the box build variants ( Debug - Staging - Release ) auto handler.
 35. Read/Write Files/Folder managers.
-36. How to use and documentation + references.
+36. In app localization manager ( No need tor restart your app 😉 ).
+37. Cleaner localization syntax.
+38. How to use and documentation + references.
 
 
 ## Upcoming features

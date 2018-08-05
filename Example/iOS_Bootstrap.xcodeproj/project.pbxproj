@@ -21,7 +21,7 @@
 		C915C59D20CAC1F10029F5D9 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */; };
 		C91FC70E2111A62400A199F0 /* Ex_ReusableTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FC70D2111A62400A199F0 /* Ex_ReusableTableController.swift */; };
 		C91FC7172112FE8800A199F0 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FC7162112FE8800A199F0 /* Environment.swift */; };
-		C91FC7192113092600A199F0 /* GlobalConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FC7182113092600A199F0 /* GlobalConfigurations.swift */; };
+		C91FC7192113092600A199F0 /* GlobalKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FC7182113092600A199F0 /* GlobalKeys.swift */; };
 		C923619E2102AA7C00C2B630 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923619D2102AA7C00C2B630 /* User.swift */; };
 		C92361A02102AA9200C2B630 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923619F2102AA9200C2B630 /* Page.swift */; };
 		C92361A32102B0FE00C2B630 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92361A12102B0FE00C2B630 /* UserCell.swift */; };
@@ -78,7 +78,7 @@
 		C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		C91FC70D2111A62400A199F0 /* Ex_ReusableTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_ReusableTableController.swift; sourceTree = "<group>"; };
 		C91FC7162112FE8800A199F0 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		C91FC7182113092600A199F0 /* GlobalConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigurations.swift; sourceTree = "<group>"; };
+		C91FC7182113092600A199F0 /* GlobalKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalKeys.swift; sourceTree = "<group>"; };
 		C923619D2102AA7C00C2B630 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C923619F2102AA9200C2B630 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		C92361A12102B0FE00C2B630 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				C91FC7162112FE8800A199F0 /* Environment.swift */,
-				C91FC7182113092600A199F0 /* GlobalConfigurations.swift */,
+				C91FC7182113092600A199F0 /* GlobalKeys.swift */,
 				C96606402114A04C00E2D38A /* Localizable.strings */,
 				C99EA61D20CB461B00D7C158 /* Models */,
 				C99EA60620CB41A600D7C158 /* Networking */,
@@ -515,7 +515,7 @@
 				C99EA61F20CB466300D7C158 /* Country.swift in Sources */,
 				C99EA60420CB3D7900D7C158 /* APIs.swift in Sources */,
 				C9555AAE20E8171C007A698D /* MyViewControllerDelegator.swift in Sources */,
-				C91FC7192113092600A199F0 /* GlobalConfigurations.swift in Sources */,
+				C91FC7192113092600A199F0 /* GlobalKeys.swift in Sources */,
 				C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */,
 				C9316DBE20D6717C00FB6A6A /* CountriesReusableTable.swift in Sources */,
 				C9555AB020E8174B007A698D /* MyViewController.swift in Sources */,
