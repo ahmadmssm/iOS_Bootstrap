@@ -1,5 +1,5 @@
 //
-//  EnvironmentConfiguration.swift
+//  Environment.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 8/2/18.

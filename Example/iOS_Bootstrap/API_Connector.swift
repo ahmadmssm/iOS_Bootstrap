@@ -16,7 +16,7 @@ class API_Connector : GenericConnector {
     
     required override init() {
         super.init()
-        GenericErrorConfigurator.defaultErrorHandler(HumanReadableError())
+        GenericErrorConfigurator.defaultErrorHandler(HumanReadableErrorHandler())
         // With plugins
         //
         // let networkLogger = NetworkLoggerPlugin(verbose: true)
@@ -29,6 +29,7 @@ class API_Connector : GenericConnector {
         // apiProvider = APIsProvider<APIs>()
     }
     
+    // Write your network calls here
     func getAllCountries (completion: @escaping completionHandler<[Country]>) {
         let _ = apiProvider.rx
             .request(.getWorldCountries())
@@ -65,9 +66,7 @@ class API_Connector : GenericConnector {
         let _ = apiProvider.rx
             .request(.getUsers(page: String(page)))
             .filterSuccessfulStatusAndRedirectCodes()
-            .asObservable()
             .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
-            .asSingle()
             .map(Page.self)
             .subscribe { event in
                 switch event {

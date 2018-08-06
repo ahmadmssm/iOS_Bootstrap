@@ -36,7 +36,7 @@ public extension Response {
 // Using Observable
 public extension ObservableType where E == Response {
     
-    // Tries to refresh auth token on 401 & 403 errors and retry the request.
+    // Tries to refresh auth token on 401 error and retry the request.
     // If the refresh fails it returns an error .
     public func refreshAuthenticationTokenIfNeeded(sessionServiceDelegate : SessionProtocol) -> Observable<E> {
         return
@@ -45,7 +45,8 @@ public extension ObservableType where E == Response {
                 responseFromFirstRequest.flatMap { originalRequestResponseError -> Observable<Response> in
                     if let lucidErrorOfOriginalRequest : LucidMoyaError = originalRequestResponseError as? LucidMoyaError {
                         let statusCode = lucidErrorOfOriginalRequest.statusCode!
-                        if statusCode == 401 || statusCode == 403 {
+                       // if statusCode == 401 || statusCode == 403 {
+                        if statusCode == 401 {
                             // Token expired >> Call refresh token request
                             return sessionServiceDelegate
                                 .getTokenRefreshService()
@@ -86,7 +87,7 @@ public extension ObservableType where E == Response {
 // Using Single
 extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
     
-    // Tries to refresh auth token on 401 & 403 errors and retry the request.
+    // Tries to refresh auth token on 401 error and retry the request.
     // If the refresh fails it returns an error .
     public func refreshAuthenticationTokenIfNeeded(sessionServiceDelegate : SessionProtocol) -> Single<Response> {
         return
@@ -95,7 +96,8 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                 responseFromFirstRequest.flatMap { originalRequestResponseError -> PrimitiveSequence<SingleTrait, ElementType> in
                         if let lucidErrorOfOriginalRequest : LucidMoyaError = originalRequestResponseError as? LucidMoyaError {
                         let statusCode = lucidErrorOfOriginalRequest.statusCode!
-                        if statusCode == 401 || statusCode == 403 {
+                       // if statusCode == 401 || statusCode == 403 {
+                        if statusCode == 401 {
                             // Token expired >> Call refresh token request
                             return sessionServiceDelegate
                                 .getTokenRefreshService()

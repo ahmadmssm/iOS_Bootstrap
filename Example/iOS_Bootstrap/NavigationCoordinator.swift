@@ -28,6 +28,7 @@ class NavigationCoordinator: BaseNavigationCoordinator  {
     }
     
     func startInitialView() {
+        // Write initial (first) view controller navigation here
         let storyboard =  UIStoryboard.getStoryboardWithName(Storyboards.main)
         let vc = storyboard.instantiateViewController() as ViewController
         vc.navigator = self

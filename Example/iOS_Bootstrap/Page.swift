@@ -33,7 +33,6 @@ public struct Page : Codable {
         try container.encode(total, forKey: .total)
         try container.encode(totalPages, forKey: .totalPages)
         try container.encode(users, forKey: .users)
-
     }
     
     //

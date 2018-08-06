@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-// The unifiend place where we state all the storyboard we have in our application
+// The unified place where we state all the storyboard we have in our application
 enum Storyboards : String {
     
     case main

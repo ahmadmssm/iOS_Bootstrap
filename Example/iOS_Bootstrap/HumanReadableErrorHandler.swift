@@ -1,5 +1,5 @@
 //
-//  GenericError.swift
+//  HumanReadableErrorHandler.swift
 //  PassApp
 //
 //  Created by Ahmad Mahmoud on 4/14/18.
@@ -8,8 +8,7 @@
 
 import iOS_Bootstrap
 
-class HumanReadableError: GenericErrorHandler {
-    
+class HumanReadableErrorHandler: GenericErrorHandler {
     
     override func statusCodeError(_ statusCode: Int, errorBody: String?, request: URLRequest?, response: URLResponse?) -> String {
         //

@@ -33,7 +33,7 @@
 		C9555AB220E925AB007A698D /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9555AB120E925AB007A698D /* Translations.swift */; };
 		C966063E2114A04C00E2D38A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96606402114A04C00E2D38A /* Localizable.strings */; };
 		C96606482114A12B00E2D38A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C966064A2114A12B00E2D38A /* Home.storyboard */; };
-		C99EA60320CB3D7900D7C158 /* HumanReadableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60020CB3D7800D7C158 /* HumanReadableError.swift */; };
+		C99EA60320CB3D7900D7C158 /* HumanReadableErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60020CB3D7800D7C158 /* HumanReadableErrorHandler.swift */; };
 		C99EA60420CB3D7900D7C158 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60120CB3D7800D7C158 /* APIs.swift */; };
 		C99EA60520CB3D7900D7C158 /* API_Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60220CB3D7800D7C158 /* API_Connector.swift */; };
 		C99EA61F20CB466300D7C158 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA61E20CB466300D7C158 /* Country.swift */; };
@@ -105,7 +105,7 @@
 		C99A404C21163028007B88A4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C99A404D21163028007B88A4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C99A404E211630F9007B88A4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ar; path = ar.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C99EA60020CB3D7800D7C158 /* HumanReadableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanReadableError.swift; sourceTree = "<group>"; };
+		C99EA60020CB3D7800D7C158 /* HumanReadableErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanReadableErrorHandler.swift; sourceTree = "<group>"; };
 		C99EA60120CB3D7800D7C158 /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
 		C99EA60220CB3D7800D7C158 /* API_Connector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_Connector.swift; sourceTree = "<group>"; };
 		C99EA61E20CB466300D7C158 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -171,19 +171,13 @@
 		607FACD21AFB9204008FA782 /* Example for iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				C91FC7162112FE8800A199F0 /* Environment.swift */,
+				C99EA63820CBECFB00D7C158 /* Storyboards.swift */,
 				C91FC7182113092600A199F0 /* GlobalKeys.swift */,
-				C96606402114A04C00E2D38A /* Localizable.strings */,
+				C91FC7162112FE8800A199F0 /* Environment.swift */,
+				C99A405121186C3F007B88A4 /* Resources */,
 				C99EA61D20CB461B00D7C158 /* Models */,
 				C99EA60620CB41A600D7C158 /* Networking */,
-				C99EA62220CB4D5900D7C158 /* Table */,
 				C9C960F720FA8BA30023CDD7 /* Views */,
-				C9555AA620E816A8007A698D /* MVP Example */,
-				C9CFACE7210652E200587F66 /* MVC-C Example */,
-				C902036E20F571C100A63492 /* NavigationCoordinator.swift */,
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for iOS_Bootstrap";
@@ -193,6 +187,7 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -248,12 +243,21 @@
 			name = "MVP Example";
 			sourceTree = "<group>";
 		};
+		C99A405121186C3F007B88A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C96606402114A04C00E2D38A /* Localizable.strings */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		C99EA60620CB41A600D7C158 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				C99EA60120CB3D7800D7C158 /* APIs.swift */,
 				C99EA60220CB3D7800D7C158 /* API_Connector.swift */,
-				C99EA60020CB3D7800D7C158 /* HumanReadableError.swift */,
+				C99EA60020CB3D7800D7C158 /* HumanReadableErrorHandler.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -269,7 +273,7 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		C99EA62220CB4D5900D7C158 /* Table */ = {
+		C99EA62220CB4D5900D7C158 /* Table view adapter examples */ = {
 			isa = PBXGroup;
 			children = (
 				C915C58C20CAAADE0029F5D9 /* Ex_ReusableTableVC.swift */,
@@ -278,19 +282,23 @@
 				C915C59B20CAC1F10029F5D9 /* TableViewCell.xib */,
 				C9316DBD20D6717C00FB6A6A /* CountriesReusableTable.swift */,
 			);
-			name = Table;
+			name = "Table view adapter examples";
 			sourceTree = "<group>";
 		};
 		C9C960F720FA8BA30023CDD7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C902036E20F571C100A63492 /* NavigationCoordinator.swift */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				C966064A2114A12B00E2D38A /* Home.storyboard */,
 				C99EA63E20CBF0DB00D7C158 /* HomeVC.swift */,
+				C99EA62220CB4D5900D7C158 /* Table view adapter examples */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				C99EA63820CBECFB00D7C158 /* Storyboards.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				C92361A12102B0FE00C2B630 /* UserCell.swift */,
 				C92361A22102B0FE00C2B630 /* UserCell.xib */,
+				C9CFACE7210652E200587F66 /* MVC-C Example */,
+				C9555AA620E816A8007A698D /* MVP Example */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -510,7 +518,7 @@
 				C92361A32102B0FE00C2B630 /* UserCell.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				C902036F20F571C100A63492 /* NavigationCoordinator.swift in Sources */,
-				C99EA60320CB3D7900D7C158 /* HumanReadableError.swift in Sources */,
+				C99EA60320CB3D7900D7C158 /* HumanReadableErrorHandler.swift in Sources */,
 				C923619E2102AA7C00C2B630 /* User.swift in Sources */,
 				C99EA61F20CB466300D7C158 /* Country.swift in Sources */,
 				C99EA60420CB3D7900D7C158 /* APIs.swift in Sources */,
