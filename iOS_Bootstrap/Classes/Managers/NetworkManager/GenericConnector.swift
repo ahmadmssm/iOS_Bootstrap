@@ -25,8 +25,7 @@ open class GenericConnector: NSObject, SessionProtocol {
     open func getTokenRefreshService() -> Single<Response> {
         return Observable.empty().asSingle()
     }
-    // Override this function to handle token refresh
-    // Write token refresh request in this function
+    // Override this function to handle token response
     public func tokenDidRefresh(response: String) {
         let dictionary = ["response" : response]
         NotificationCenter.default.post(name: .newAuthenticationToken, object: nil, userInfo: dictionary)

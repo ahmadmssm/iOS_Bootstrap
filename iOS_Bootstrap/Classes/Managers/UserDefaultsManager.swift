@@ -10,61 +10,73 @@ import Foundation
 
 open class UserDefaultsManager {
     
-    private let prefFile = UserDefaults.standard
+    private let defaults : UserDefaults
+    public init() { defaults = UserDefaults.standard }
     
-    public init() {}
-    
-    public func getBooleanValueWithKey(_ key : String) -> Bool {
-        return prefFile.bool(forKey: key)
+    public func setBooleanWithKey(value : Bool, key : String) {
+        defaults.set(value, forKey: key)
+        defaults.synchronize()
     }
     
-    public func getStringValueWithKey(_ key : String) -> String {
-        if let value : String = prefFile.string(forKey: key) { return value }
+    public func getBooleanWithKey(key : String) -> Bool { return defaults.bool(forKey: key) }
+    
+    public func setStringWithKey(value : String, key : String) {
+        defaults.set(value, forKey: key)
+        defaults.synchronize()
+    }
+    
+    public func getStringWithKey(key : String) -> String {
+        if let value : String = defaults.string(forKey: key) { return value }
         return ""
     }
     
-    public func getDoubleValueWithKey(_ key : String) -> Double {
-        return prefFile.double(forKey: key)
+    public func getDoubleWithKey(key : String) -> Double { return defaults.double(forKey: key) }
+    
+    public func setIntegerWithKey(value : Int, key : String) {
+        defaults.set(value, forKey: key)
+        defaults.synchronize()
     }
     
-    public func getIntegerValueWithKey(_ key : String) -> Int {
-        return prefFile.integer(forKey: key)
+    public func getIntegerWithKey(key : String) -> Int { return defaults.integer(forKey: key) }
+    
+    public func setArrayWithKey<T>(value : [T], key : String) {
+        defaults.set(value, forKey: key)
+        defaults.synchronize()
     }
     
-    
-    public func getArrayWithKey(_ key : String) -> [String] {
-        if let value : [String] = prefFile.array(forKey: key) as! [String]? { return value }
-        return [""]
+    public func setArrayWithKey(value : [AnyObject], key : String) {
+        defaults.set(value, forKey: key)
+        defaults.synchronize()
     }
     
-    public func getObjectValueWithKey(_ key : String) -> AnyObject {
-        if let value : AnyObject = prefFile.object(forKey: key) as AnyObject? { return value }
-        return "" as AnyObject
+    public func getArrayWithKey(key : String) -> [AnyObject] {
+        if let value : [AnyObject] = defaults.array(forKey: key) as [AnyObject]? { return value }
+        return [] as [AnyObject]
     }
     
-    
-    public func setStringValueWithKey(_ value : String, key : String) {
-        prefFile.set(value, forKey: key)
-        prefFile.synchronize()
+    public func getArrayWithKey<T>(key : String) -> [T] {
+        if let value : [T] = defaults.array(forKey: key)! as? [T] { return value }
+        return [] as [T]
     }
     
-    public func setBooleanValueWithKey(_ value : Bool, key : String) {
-        prefFile.set(value, forKey: key)
-        prefFile.synchronize()
-    }
-    public func setIntegerWithKey(_ value : Int, key : String) {
-        prefFile.set(value, forKey: key)
-        prefFile.synchronize()
+    public func setObjectWithKey(value : AnyObject, key : String) {
+        defaults.set(value, forKey: key)
+        defaults.synchronize()
     }
     
-    public func setArrayValueWithKey(_ value : [String], key : String) {
-        prefFile.set(value, forKey: key)
-        prefFile.synchronize()
+    public func setObjectWithKey<T>(value : T, key : String) {
+        defaults.set(value, forKey: key)
+        defaults.synchronize()
     }
     
-    public func setObjectValueWithKey(_ value : AnyObject, key : String) {
-        prefFile.set(value, forKey: key)
-        prefFile.synchronize()
+    public func getObjectWithKey(key : String) -> AnyObject? {
+        if let value = defaults.object(forKey: key) { return value as AnyObject }
+        return nil
+    }
+    
+    public func getObjectWithKey<T>(key : String) -> T? {
+        if let value = defaults.object(forKey: key) { return value as? T }
+        return nil
     }
 
 }

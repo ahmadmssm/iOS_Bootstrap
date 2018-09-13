@@ -23,7 +23,7 @@ open class TableviewAdapter : NSObject {
     //
     private var firstTime : Bool = true
     //
-    fileprivate var spinner : UIActivityIndicatorView?
+    fileprivate var indicator : UIActivityIndicatorView?
 
     public final func configureTableWithXibCell (tableView: UITableView,
                                     dataSource: [Any]!,
@@ -106,7 +106,7 @@ open class TableviewAdapter : NSObject {
         //
         mTableview?.reloadData()
         //
-        spinner?.stopAnimating()
+        indicator?.stopAnimating()
         mTableview.tableFooterView?.isHidden = true
         //
         self.mCurrentPage += 1
@@ -132,7 +132,7 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     }
     // Configure cell
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      //  spinner?.stopAnimating()
+      //  indicator?.stopAnimating()
         return (mDelegate?.configureCell(tableView: mTableview, cellForRowAt: indexPath))!
     }
     // cell did selected at index
@@ -145,10 +145,10 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
             if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= (scrollView.contentSize.height)) {
                 //
                 if (hasMore) {
-                    spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-                    spinner?.startAnimating()
-                    spinner?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: mTableview.bounds.width, height: CGFloat(45))
-                    mTableview.tableFooterView = spinner
+                    indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+                    indicator?.startAnimating()
+                    indicator?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: mTableview.bounds.width, height: CGFloat(45))
+                    mTableview.tableFooterView = indicator
                     mTableview.tableFooterView?.isHidden = false
                     //
                     hasMore = false
@@ -157,7 +157,7 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
                 }
             }
             else {
-                spinner?.stopAnimating()
+                indicator?.stopAnimating()
                 mTableview.tableFooterView?.isHidden = true
             }
         }

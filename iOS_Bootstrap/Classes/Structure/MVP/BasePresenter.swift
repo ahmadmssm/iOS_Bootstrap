@@ -7,12 +7,18 @@
 //
 
 
-open class BasePresenter <T> {
+open class BasePresenter <T> : UserDefaultsService {
     
     public final let getViewDelegator: T!
     
+    private let userDefaultsManager : UserDefaultsManager!
+
     required public init (contract : T) {
-        self.getViewDelegator = contract 
+        self.getViewDelegator = contract
+        userDefaultsManager = UserDefaultsManager()
     }
+    
+    public func getUserDefaults() -> UserDefaultsManager { return userDefaultsManager }
+    
 }
 

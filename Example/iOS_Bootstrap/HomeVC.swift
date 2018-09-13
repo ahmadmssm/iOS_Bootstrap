@@ -10,7 +10,7 @@ import UIKit
 import iOS_Bootstrap
 
 class HomeVC: UIViewController {
-  
+
     var x : Int = 0
     
     

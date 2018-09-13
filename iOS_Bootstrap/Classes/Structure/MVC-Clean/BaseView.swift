@@ -7,10 +7,7 @@
 
 import UIKit
 
-open class BaseView:
-                        UIViewController,
-ViewControllerCommonFeatures {
-    
+open class BaseView: UIViewController, ViewControllerCommonFeatures {
     //
     private var snackbar : TTGSnackbar? = nil
     //

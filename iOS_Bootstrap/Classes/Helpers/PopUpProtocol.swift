@@ -7,10 +7,13 @@
 
 import Foundation
 
+private var activityIndicatorAlert: UIAlertController!
+
+
 public protocol PopUpProtocol {}
-extension PopUpProtocol where Self: UIViewController {
+public extension PopUpProtocol where Self: UIViewController {
     //
-    func showAlert(title : String, message: String, actions : [UIAlertAction]) {
+    public func showAlert(title : String, message: String, actions : [UIAlertAction]) {
         let alert = UIAlertController (
             title: title,
             message: message,
@@ -23,7 +26,7 @@ extension PopUpProtocol where Self: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     //
-    func showActionSheet(title : String, message: String, actions : [UIAlertAction]) {
+    public func showActionSheet(title : String, message: String, actions : [UIAlertAction]) {
         let actionSheet = UIAlertController(
             title: title,
             message: message, preferredStyle: .actionSheet)
@@ -33,6 +36,21 @@ extension PopUpProtocol where Self: UIViewController {
             }
         }
         self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    public func showLoading(message: String) {
+      
+        activityIndicatorAlert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.startAnimating()
+        activityIndicatorAlert.view.addSubview(loadingIndicator)
+        present(activityIndicatorAlert, animated: true, completion: nil)
+    }
+    
+    public func hideLoading() {
+        activityIndicatorAlert.dismiss(animated: true, completion: nil)
     }
     
 }

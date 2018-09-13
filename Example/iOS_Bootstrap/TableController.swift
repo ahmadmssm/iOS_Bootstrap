@@ -1,5 +1,5 @@
 //
-//  Ex_ReusableTableController.swift
+//  TableController.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 8/1/18.
@@ -8,9 +8,9 @@
 
 import iOS_Bootstrap
 
-class Ex_ReusableTableController: BaseController<Ex_ReusableTableVC> {
+class TableController: BaseController<TableExampleView> {
     
-    required init(view: Ex_ReusableTableVC) {
+    required init(view: TableExampleView) {
         super.init(view: view)
     }
 
@@ -29,6 +29,8 @@ class Ex_ReusableTableController: BaseController<Ex_ReusableTableVC> {
     }
     
     func getError () {
+        
+
         API_Connector().getErrorFromRequest (completion: { response in
             switch response {
             case .success( _):

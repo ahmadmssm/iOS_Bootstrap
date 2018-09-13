@@ -8,6 +8,4 @@
 
 import Foundation
 
-@objc public protocol BaseViewDelegator where Self: UIViewController {
- 
-}
+@objc public protocol BaseViewDelegator where Self: UIViewController {}

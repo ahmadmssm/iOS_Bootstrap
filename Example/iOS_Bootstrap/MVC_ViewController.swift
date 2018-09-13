@@ -19,5 +19,9 @@ class MVC_ViewController : BaseView {
         controller = MyController(view: self)
     }
     
+    func changeStatus() {
+        
+    }
+    
  }
 

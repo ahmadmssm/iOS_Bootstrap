@@ -81,7 +81,11 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 35. Read/Write Files/Folder managers.
 36. In app localization manager ( No need tor restart your app 😉 ).
 37. Cleaner localization syntax.
-38. How to use and documentation + references.
+38. UI button show/hide loading extension.
+39. Show/hode loading in any vew controller
+40. BaseTableAdapterController,  BaseTableAdapterPresenter, BaseCollectionAdapterController,  BaseCollectionAdapterPresenter to save you somtime and code when you implement table or collection view.
+41. You can call getUserDefaults from BaseController and BasePresenter by default.
+42. How to use and documentation + references.
 
 
 ## Upcoming features
@@ -127,6 +131,11 @@ Once your project is integrated with the __iOS_Bootstrap__ , you can pull update
 ```bash
 $ pod update
 ```
+
+## Note
+
+There is a project generator to help you buld things faster at thils [Link](https://github.com/ahmadmssm/iOS_Bootstrap-generator/releases), Enjoy 😎.
+
 
 ## Quick start
 

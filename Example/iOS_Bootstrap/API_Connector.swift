@@ -12,7 +12,7 @@ import RxSwift
 
 class API_Connector : GenericConnector {
     
-    fileprivate final var apiProvider : APIsProvider<APIs>!
+    private final var apiProvider : APIsProvider<APIs>!
     
     required override init() {
         super.init()
@@ -65,6 +65,7 @@ class API_Connector : GenericConnector {
     func getFakeUsers (page : Int, completion: @escaping completionHandler<Page>) {
         let _ = apiProvider.rx
             .request(.getUsers(page: String(page)))
+            //.showLoading()
             .filterSuccessfulStatusAndRedirectCodes()
             .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
             .map(Page.self)

@@ -25,8 +25,9 @@ open class MultiLanguageManager {
     }
     
     public func getCurrentAppLanguage() -> String {
+       
+        let langsArrary : NSArray = defaults.getArrayWithKey(key: appleLanguagesKey) as NSArray
         
-        let langsArrary : NSArray = defaults.getArrayWithKey(appleLanguagesKey) as NSArray
         let languageStr : String = langsArrary.firstObject as! String
         return languageStr
         
@@ -66,9 +67,9 @@ open class MultiLanguageManager {
     private func setAppLanguage(languageKey: String) {
         let langsArray = [languageKey, getCurrentAppLanguage()]
         if (!languageKey.isEqual("AppleLanguages")) {
-            defaults.setArrayValueWithKey(langsArray, key: "AppleLanguages")
+            defaults.setArrayWithKey(value: langsArray, key: "AppleLanguages")
         }
-        defaults.setArrayValueWithKey(langsArray, key: appleLanguagesKey)
+        defaults.setArrayWithKey(value: langsArray, key: appleLanguagesKey)
         //
         if ((languageKey.range(of: "ar")) != nil) {
             UIView.appearance().semanticContentAttribute = .forceRightToLeft

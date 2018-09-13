@@ -92,40 +92,35 @@
                                             <action selector="showMultiArrayPicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Eo5-Z8-PAt"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yrs-kM-oXt">
-                                        <rect key="frame" x="0.0" y="364" width="323" height="35.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghE-xj-hXA" customClass="CustomButton" customModule="iOS_Bootstrap_Example">
-                                                <rect key="frame" x="0.0" y="0.0" width="323" height="35.5"/>
-                                                <state key="normal" title="Show date and time picker">
-                                                    <color key="titleColor" red="0.86845642329999995" green="0.16273203489999999" blue="0.06268117577" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
-                                                        <color key="value" red="0.070456869900226593" green="0.46492594480514526" blue="0.85114955902099609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomGradientColor">
-                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="showDateAndTimePicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HQR-cZ-6am"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghE-xj-hXA" customClass="CustomButton" customModule="iOS_Bootstrap_Example">
+                                        <rect key="frame" x="0.0" y="295" width="323" height="35.5"/>
+                                        <state key="normal" title="Show date and time picker">
+                                            <color key="titleColor" red="0.86845642329999995" green="0.16273203489999999" blue="0.06268117577" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
+                                                <color key="value" red="0.070456869900226593" green="0.46492594480514526" blue="0.85114955902099609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bottomGradientColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showDateAndTimePicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HQR-cZ-6am"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6j-Hu-us8" customClass="CustomButton" customModule="iOS_Bootstrap">
                                         <rect key="frame" x="0.0" y="409.5" width="323" height="35.5"/>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="Loading gradient button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -313,10 +308,10 @@
             </objects>
             <point key="canvasLocation" x="1756" y="828.93553223388312"/>
         </scene>
-        <!--Ex Reusable TableVC-->
+        <!--Table Example View-->
         <scene sceneID="78K-9q-05L">
             <objects>
-                <viewController id="JoE-Pg-2nN" customClass="Ex_ReusableTableVC" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JoE-Pg-2nN" customClass="TableExampleView" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xG9-Er-eGb"/>
                         <viewControllerLayoutGuide type="bottom" id="rOL-0Z-cju"/>

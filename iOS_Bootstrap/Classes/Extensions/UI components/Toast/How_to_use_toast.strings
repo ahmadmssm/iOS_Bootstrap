@@ -25,7 +25,7 @@
   }
   }
   
-  // display toast with an activity spinner
+  // display toast with an activity indicator
   self.view.makeToastActivity(.center)
   
   // display any view as toast

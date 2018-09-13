@@ -5,16 +5,17 @@
 //  Created by Ahmad Mahmoud on 6/30/18.
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
+// Ref : https://stackoverflow.com/questions/27960556/loading-an-overlay-when-running-long-tasks-in-ios
+//
 
 import UIKit
 import iOS_Bootstrap
 
-class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegator>, MyViewControllerDelegator, TableViewDelegates {
+class MyViewController: BaseTableAdapterViewController<MyPresenter, MyViewControllerDelegator>, MyViewControllerDelegator, TableViewDelegates {
     
     @IBOutlet weak var switchLanguageButton: UIButton!
     @IBOutlet weak var usersTableVIew: UITableView!
     //
-    private let tableAdapter : TableviewAdapter = TableviewAdapter()
     private var dataSource : [User] = [User]()
     //
     private var mNavigator : NavigationCoordinator?
@@ -22,10 +23,10 @@ class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegato
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         initUI()
         // Initialize Configuration
         Log.debug(GlobalKeys.getEnvironmentVariables.baseURL)
+        
     }
     //
     override func viewWillAppear(_ animated: Bool) {
@@ -39,8 +40,7 @@ class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegato
     
     func initUI() {
         mNavigator = self.navigator as? NavigationCoordinator
-        // Setup tableview adapter
-        tableAdapter.configureTableWithXibCell(tableView: usersTableVIew, dataSource: dataSource, nibClass: UserCell.self, delegate: self)
+        getTableViewAdapter().configureTableWithXibCell(tableView: usersTableVIew, dataSource: dataSource, nibClass: UserCell.self, delegate: self)
     }
     
     // Button actions
@@ -80,7 +80,6 @@ class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegato
     }
     // Tableview adapter functions
     func configureCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //
         let cell : UserCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.userID.text = String(describing: dataSource [indexPath.row].id!)
         cell.firstName.text = dataSource [indexPath.row].first_name
@@ -92,19 +91,17 @@ class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegato
         self.dataSource = updatedDataSource as! [User]
         presenter.getUsers(pageNumber: page)
     }
-    
-    // Delegate functions
+ 
     //
     func doNothing() {
         Log.info("I'm here...")
-        
     }
     //
     func didGetFakeUsers(page: Page) {
         // Configure pagination parameters
-        self.tableAdapter.configurePaginationParameters(totalNumberOfItems: page.total!, itemsPerPage: page.perPage!)
+         getTableViewAdapter().configurePaginationParameters(totalNumberOfItems: page.total!, itemsPerPage: page.perPage!)
         // Reload table with new page items only (Not the whole data source)
-        self.tableAdapter.reloadTable(pageItems: page.users!)
+         getTableViewAdapter().reloadTable(pageItems: page.users!)
         // Update your data source
         self.dataSource.append(contentsOf: page.users!)
     }
@@ -113,8 +110,4 @@ class MyViewController: BaseViewController<MyPresenter, MyViewControllerDelegato
         EZLoadingActivity.showWithDelay(error, disableUI: true, seconds: 3.0)
     }
 
-    
-    
-   
-    
 }

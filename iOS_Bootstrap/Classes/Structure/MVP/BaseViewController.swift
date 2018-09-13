@@ -10,7 +10,6 @@ import UIKit
 
 open class BaseViewController <T, D> :
                                     UIViewController,
-                                    BaseViewDelegator,
                                     ViewControllerCommonFeatures
                                     where T : BasePresenter<D> {
     //
