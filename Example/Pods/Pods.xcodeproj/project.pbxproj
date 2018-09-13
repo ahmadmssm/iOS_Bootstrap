@@ -662,6 +662,7 @@
 		C8E46C770E12822928A5D1466B61B46C /* ActionSheetCustomPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 30FE5502F019426B101F84321612F92C /* ActionSheetCustomPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C904AD8E37D9181131194057B74FB593 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA17DBE3473D6B3C73A13F7F33876028 /* Moya.framework */; };
 		C91D6C730CE92BAC6418F101D02D37BD /* Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9D647454DEE24C54403AA3A1B06B8D /* Kingfisher.swift */; };
+		C91FF7A6214ADD5500BB44E2 /* String to Codable object.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FF7A5214ADD5500BB44E2 /* String to Codable object.swift */; };
 		C92FD6AD211F525100595FD8 /* Viewcontroller + loading indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FD6AC211F525100595FD8 /* Viewcontroller + loading indicator.swift */; };
 		C94D406E21162694002E7623 /* String + Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94D406D21162694002E7623 /* String + Localizable.swift */; };
 		C95A1F0C21373CD2005E20C3 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A1F0A21373CC8005E20C3 /* UserDefaultsService.swift */; };
@@ -1879,6 +1880,7 @@
 		C7C0995C2A1598EC5211D4F2C35EB2B9 /* AccessTokenPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessTokenPlugin.swift; path = Sources/Moya/Plugins/AccessTokenPlugin.swift; sourceTree = "<group>"; };
 		C7EB78832406AB719921ECD4216E29E1 /* FBSDKServerConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKServerConfiguration.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfiguration.h; sourceTree = "<group>"; };
 		C8B726F10E9B3C5E866D92D613D2F012 /* STTwitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STTwitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C91FF7A5214ADD5500BB44E2 /* String to Codable object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String to Codable object.swift"; sourceTree = "<group>"; };
 		C92FD6AC211F525100595FD8 /* Viewcontroller + loading indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Viewcontroller + loading indicator.swift"; sourceTree = "<group>"; };
 		C94D406D21162694002E7623 /* String + Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Localizable.swift"; sourceTree = "<group>"; };
 		C95A1F0A21373CC8005E20C3 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
@@ -2411,6 +2413,7 @@
 				4A8D4201D00FE7615A9E7ED2D4506474 /* String to dicrionary.swift */,
 				CC5295E24DABBAC11F86FE4EAA7977AC /* UIColor + Hex.swift */,
 				C94D406D21162694002E7623 /* String + Localizable.swift */,
+				C91FF7A5214ADD5500BB44E2 /* String to Codable object.swift */,
 				4E0C3C510D308B2A1BBF7CD930F0B9D3 /* UI components */,
 			);
 			name = Extensions;
@@ -5019,6 +5022,7 @@
 				F052ED18A64C7A7203240B37D5543409 /* ActionSheetCustomPicker.m in Sources */,
 				BFD326ECCEC1B91CD052191D6BF1D48D /* ActionSheetDatePicker.m in Sources */,
 				FBA66EE6567CCA9296D16CDBFBA53EA1 /* ActionSheetDistancePicker.m in Sources */,
+				C91FF7A6214ADD5500BB44E2 /* String to Codable object.swift in Sources */,
 				D736E32067DFD3CE16709057CEB27215 /* ActionSheetLocalePicker.m in Sources */,
 				455492924512E3FA935AB0B52B4EADC7 /* ActionSheetMultipleStringPicker.m in Sources */,
 				C74B289EF0E3C9FDA829B2A8D7FF3FF8 /* ActionSheetStringPicker.m in Sources */,
