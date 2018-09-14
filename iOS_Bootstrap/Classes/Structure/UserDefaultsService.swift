@@ -8,7 +8,7 @@
 import Foundation
 
 
-public protocol UserDefaultsService {
-    func getUserDefaults() -> UserDefaultsManager
-}
+//public protocol UserDefaultsService {
+//    func getUserDefaults() -> UserDefaultsManager
+//}
 

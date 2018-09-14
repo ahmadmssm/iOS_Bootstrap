@@ -7,22 +7,29 @@
 
 import UIKit
 
-open class BaseView: UIViewController, ViewControllerCommonFeatures {
-    //
-    private var snackbar : TTGSnackbar? = nil
-    //
+
+open class BaseView : UIViewController, ViewControllerCommonFeatures  {
+    
+    public var snackbar : TTGSnackbar? = nil
     public var navigator: BaseNavigationCoordinator?
-    
-   // public var controller : C!
-    
-    override open func viewDidLoad() {
-      //  self.controller = C.init(view: self as UIViewController)
+
+    open func getController<C>() -> C? {
+        return nil
     }
+    
+    override open func viewDidLoad() {}
     //
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         InternetConnectionManager.getInstance.addListener(listener: self)
-        //
+        configureSnackBar()
+    }
+   
+}
+
+public extension BaseView {
+    
+    func configureSnackBar() {
         self.snackbar = TTGSnackbar(message: "",duration: .short)
         self.snackbar?.backgroundColor = UIColor.blue
     }
@@ -40,14 +47,10 @@ open class BaseView: UIViewController, ViewControllerCommonFeatures {
         case .cellular:
             message = "Network reachable through Mobile data"
         }
-        //
-        //        DispatchQueue.main.async {
-        //            self.snackbar?.hideAllToasts()
-        //            self.snackbar?.message = message
-        //            self.snackbar?.duration = duration
-        //            self.snackbar?.show()
-        //        }
+        self.snackbar?.hideAllToasts()
+        self.snackbar?.message = message
+        self.snackbar?.duration = duration
+        self.snackbar?.show()
         Log.warning(message)
     }
-    
 }

@@ -26,7 +26,6 @@ class MyViewController: BaseTableAdapterViewController<MyPresenter, MyViewContro
         initUI()
         // Initialize Configuration
         Log.debug(GlobalKeys.getEnvironmentVariables.baseURL)
-        
     }
     //
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +44,7 @@ class MyViewController: BaseTableAdapterViewController<MyPresenter, MyViewContro
     
     // Button actions
     @IBAction func TestButton(_ sender: UIButton) {
-        presenter.getUsers(pageNumber: 1)
+        getPresenter.getUsers(pageNumber: 1)
     }
     //
     @IBAction func testNavigator(_ sender: UIButton) {
@@ -89,7 +88,7 @@ class MyViewController: BaseTableAdapterViewController<MyPresenter, MyViewContro
     //
     func loadMore(forPage page: Int, updatedDataSource: [Any]) {
         self.dataSource = updatedDataSource as! [User]
-        presenter.getUsers(pageNumber: page)
+        getPresenter.getUsers(pageNumber: page)
     }
  
     //

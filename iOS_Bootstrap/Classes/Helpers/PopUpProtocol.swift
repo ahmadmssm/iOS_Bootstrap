@@ -9,7 +9,6 @@ import Foundation
 
 private var activityIndicatorAlert: UIAlertController!
 
-
 public protocol PopUpProtocol {}
 public extension PopUpProtocol where Self: UIViewController {
     //
@@ -51,6 +50,14 @@ public extension PopUpProtocol where Self: UIViewController {
     
     public func hideLoading() {
         activityIndicatorAlert.dismiss(animated: true, completion: nil)
+    }
+    
+    public func showEZloadinActivity(message : String, cancelable : Bool) {
+        EZLoadingActivity.show(message, disableUI: cancelable)
+    }
+    
+    public func hideEZloadingActivity() {
+        EZLoadingActivity.hide()
     }
     
 }

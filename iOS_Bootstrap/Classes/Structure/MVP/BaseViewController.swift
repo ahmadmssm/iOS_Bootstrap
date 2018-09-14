@@ -16,10 +16,10 @@ open class BaseViewController <T, D> :
     private var snackbar : TTGSnackbar? = nil
     //
     public var navigator: BaseNavigationCoordinator?
-    public var presenter : T!
+    public var getPresenter : T!
     
     override open func viewDidLoad() {
-        self.presenter = T.init(contract: self as! D)
+        self.getPresenter = T.init(contract: self as! D)
     }
     //
     override open func viewWillAppear(_ animated: Bool) {

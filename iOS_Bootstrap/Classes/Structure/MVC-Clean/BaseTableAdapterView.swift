@@ -9,3 +9,4 @@ open class BaseTableAdapterView: BaseView {
     private let tableViewAdapter : TableviewAdapter = TableviewAdapter()
     public func getTableViewAdapter() -> TableviewAdapter { return tableViewAdapter }
 }
+

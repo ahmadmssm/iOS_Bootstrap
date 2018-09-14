@@ -31,7 +31,6 @@ public extension BuildVariantService {
             {
         if let configuration = Bundle.main.object(forInfoDictionaryKey: "Configuration") as? String {
             for environment in Enum(T.self) {
-//                if configuration.isEqual(environment.hashValue) {
                 if (configuration.range(of: (environment.rawValue)) != nil) {
                     return environment
                 }

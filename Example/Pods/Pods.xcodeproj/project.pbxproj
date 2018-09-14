@@ -3761,8 +3761,8 @@
 		F2999A152139199E3F65E77E2B5CAEF0 /* MVP */ = {
 			isa = PBXGroup;
 			children = (
-				58BA1FB7A1EA26EB5CC6235349826FE6 /* BasePresenter.swift */,
 				B42CF759B624DFF8003FC1CB79DB78E0 /* BaseViewController.swift */,
+				58BA1FB7A1EA26EB5CC6235349826FE6 /* BasePresenter.swift */,
 				9ACADAA4F3EBDF92A662DAB0399D061D /* BaseViewDelegator.swift */,
 				C95A1F132137638E005E20C3 /* BaseTableAdapterViewController.swift */,
 				C95A1F1121376321005E20C3 /* BaseCollectionAdapterViewController.swift */,

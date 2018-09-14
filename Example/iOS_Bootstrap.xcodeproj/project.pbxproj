@@ -39,8 +39,8 @@
 		C99EA61F20CB466300D7C158 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA61E20CB466300D7C158 /* Country.swift */; };
 		C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA63820CBECFB00D7C158 /* Storyboards.swift */; };
 		C99EA63F20CBF0DB00D7C158 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA63E20CBF0DB00D7C158 /* HomeVC.swift */; };
-		C9CFACE9210654DA00587F66 /* MVC_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFACE8210654DA00587F66 /* MVC_ViewController.swift */; };
-		C9CFACEB210654FC00587F66 /* MyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFACEA210654FC00587F66 /* MyController.swift */; };
+		C9CFACE9210654DA00587F66 /* MVC_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFACE8210654DA00587F66 /* MVC_View.swift */; };
+		C9CFACEB210654FC00587F66 /* MVC_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFACEA210654FC00587F66 /* MVC_Controller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,8 +110,8 @@
 		C99EA61E20CB466300D7C158 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		C99EA63820CBECFB00D7C158 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		C99EA63E20CBF0DB00D7C158 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		C9CFACE8210654DA00587F66 /* MVC_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVC_ViewController.swift; sourceTree = "<group>"; };
-		C9CFACEA210654FC00587F66 /* MyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyController.swift; sourceTree = "<group>"; };
+		C9CFACE8210654DA00587F66 /* MVC_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVC_View.swift; sourceTree = "<group>"; };
+		C9CFACEA210654FC00587F66 /* MVC_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVC_Controller.swift; sourceTree = "<group>"; };
 		E8BFEB017ECAAB4B900CC096 /* iOS_Bootstrap.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = iOS_Bootstrap.podspec; path = ../iOS_Bootstrap.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EA97E69C3092BBDE3AC0DD10 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		EE1D9FD411B4C49B117C5CCA /* Pods-iOS_Bootstrap_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Example/Pods-iOS_Bootstrap_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -305,8 +305,8 @@
 		C9CFACE7210652E200587F66 /* MVC-C Example */ = {
 			isa = PBXGroup;
 			children = (
-				C9CFACE8210654DA00587F66 /* MVC_ViewController.swift */,
-				C9CFACEA210654FC00587F66 /* MyController.swift */,
+				C9CFACE8210654DA00587F66 /* MVC_View.swift */,
+				C9CFACEA210654FC00587F66 /* MVC_Controller.swift */,
 			);
 			name = "MVC-C Example";
 			sourceTree = "<group>";
@@ -512,7 +512,7 @@
 				C915C59C20CAC1F10029F5D9 /* TableViewCell.swift in Sources */,
 				C9555AB220E925AB007A698D /* Translations.swift in Sources */,
 				C99EA63F20CBF0DB00D7C158 /* HomeVC.swift in Sources */,
-				C9CFACEB210654FC00587F66 /* MyController.swift in Sources */,
+				C9CFACEB210654FC00587F66 /* MVC_Controller.swift in Sources */,
 				C915C58D20CAAADE0029F5D9 /* TableExampleView.swift in Sources */,
 				C92361A32102B0FE00C2B630 /* UserCell.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
@@ -532,7 +532,7 @@
 				C9555AAD20E8171C007A698D /* MyPresenter.swift in Sources */,
 				C91FC7172112FE8800A199F0 /* Environment.swift in Sources */,
 				C99EA60520CB3D7900D7C158 /* API_Connector.swift in Sources */,
-				C9CFACE9210654DA00587F66 /* MVC_ViewController.swift in Sources */,
+				C9CFACE9210654DA00587F66 /* MVC_View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

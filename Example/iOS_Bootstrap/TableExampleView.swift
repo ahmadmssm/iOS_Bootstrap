@@ -23,11 +23,11 @@ class TableExampleView: BaseView {
         super.viewDidLoad()
         //
       //  initUI()
-        controller = TableController(view: self)
+//        controller = TableController(view: self)
         //
         // Mock a network delay with 3 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.controller.getWorldCountries()
+         //   self.controller.getWorldCountries()
             self.controller.getError()
         }
     }
@@ -56,5 +56,5 @@ class TableExampleView: BaseView {
     }
     
     
-    
 }
+

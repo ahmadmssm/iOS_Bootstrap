@@ -8,9 +8,9 @@
 
 import iOS_Bootstrap
 
-class TableController: BaseController<TableExampleView> {
+ class TableController: BaseController<TableExampleView> {
     
-    required init(view: TableExampleView) {
+    required override init(view: TableExampleView) {
         super.init(view: view)
     }
 
@@ -29,7 +29,6 @@ class TableController: BaseController<TableExampleView> {
     }
     
     func getError () {
-        
 
         API_Connector().getErrorFromRequest (completion: { response in
             switch response {
@@ -41,5 +40,6 @@ class TableController: BaseController<TableExampleView> {
             }
         })
     }
-   
-}
+
+ }
+

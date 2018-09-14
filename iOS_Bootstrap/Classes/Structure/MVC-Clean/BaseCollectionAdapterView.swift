@@ -9,3 +9,4 @@ open class BaseCollectionAdapterView: BaseView {
     private let collectionViewAdapter : CollectionViewAdapter = CollectionViewAdapter()
     public func getCollectionViewAdapter() -> CollectionViewAdapter { return collectionViewAdapter }
 }
+

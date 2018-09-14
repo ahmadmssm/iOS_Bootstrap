@@ -18,7 +18,7 @@ class HumanReadableErrorHandler: GenericErrorHandler {
         case 404:
             errorMessage = "Not found !"
         default:
-            errorMessage = "Unknown error !"
+            errorMessage = errorBody
             break
         }
         return errorMessage!
