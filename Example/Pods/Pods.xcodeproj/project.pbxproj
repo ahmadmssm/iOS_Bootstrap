@@ -570,7 +570,7 @@
 		ABC043B79BE1CECCEF6E12A653B800B8 /* FBSDKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED2067B3E269722DEDBAA7F62A65D3A /* FBSDKButton.m */; };
 		ABE20C57997BCB734948FC93A8419288 /* FBSDKTypeUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = C163F01731CEA8BD383824E1B151A942 /* FBSDKTypeUtility.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		AC39DDA48B3A3D4B9F2E5C955BA115A7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC2AB8515628214E3E18B124C3AE32B /* RxSwift.framework */; };
-		ACB98285AEE3509F5F8B6D7B943F332A /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02515178FA09EC131442F8352215CF18 /* Toast.swift */; };
+		ACB98285AEE3509F5F8B6D7B943F332A /* UIView + Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02515178FA09EC131442F8352215CF18 /* UIView + Toast.swift */; };
 		AD086AEC0038656E009E8E8F83A4952C /* SkipWhile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1E33B41756FADA3704F0A216E0D410 /* SkipWhile.swift */; };
 		AD478D0AB228DB8A9FBEB7D97C840830 /* FBSDKLoginUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = A9DDAB8AE465219113C4251EF455B2DD /* FBSDKLoginUtility.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		AD76E2A0A9DF82934F4F45462DD4157F /* FBSDKErrorRecoveryConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF72C8031C0983BC001BDFD4A0ACB99 /* FBSDKErrorRecoveryConfiguration.m */; };
@@ -663,6 +663,7 @@
 		C904AD8E37D9181131194057B74FB593 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA17DBE3473D6B3C73A13F7F33876028 /* Moya.framework */; };
 		C91D6C730CE92BAC6418F101D02D37BD /* Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9D647454DEE24C54403AA3A1B06B8D /* Kingfisher.swift */; };
 		C91FF7A6214ADD5500BB44E2 /* String to Codable object.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FF7A5214ADD5500BB44E2 /* String to Codable object.swift */; };
+		C922AADE214FAA8D007AD96E /* String + phone number validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922AADD214FAA8D007AD96E /* String + phone number validator.swift */; };
 		C92FD6AD211F525100595FD8 /* Viewcontroller + loading indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FD6AC211F525100595FD8 /* Viewcontroller + loading indicator.swift */; };
 		C94D406E21162694002E7623 /* String + Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94D406D21162694002E7623 /* String + Localizable.swift */; };
 		C95A1F0C21373CD2005E20C3 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A1F0A21373CC8005E20C3 /* UserDefaultsService.swift */; };
@@ -1173,7 +1174,7 @@
 		01BE006FEFD26B953BCC49EFE563B7AC /* FBSDKLikeButtonPopWAV.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLikeButtonPopWAV.h; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKLikeButtonPopWAV.h; sourceTree = "<group>"; };
 		021D2A9E64DCEF41C5ADB1D8FC55EC9B /* FBSDKShareError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKShareError.h; path = FBSDKShareKit/FBSDKShareKit/Internal/FBSDKShareError.h; sourceTree = "<group>"; };
 		024E94114021D5B327F2E189DECB40D3 /* BFAppLinkReturnToRefererView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFAppLinkReturnToRefererView.m; path = Bolts/iOS/BFAppLinkReturnToRefererView.m; sourceTree = "<group>"; };
-		02515178FA09EC131442F8352215CF18 /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		02515178FA09EC131442F8352215CF18 /* UIView + Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView + Toast.swift"; sourceTree = "<group>"; };
 		02C99D8442B7834913C12F4FF6C49410 /* Moya-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Moya-dummy.m"; sourceTree = "<group>"; };
 		02D019446B78B6D4BF9E9B6DDE2DE59B /* FBSDKBase64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKBase64.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Base64/FBSDKBase64.h; sourceTree = "<group>"; };
 		02FDC858032811E1C9043DB022BDAB3E /* STHTTPRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STHTTPRequest.h; path = STTwitter/Vendor/STHTTPRequest.h; sourceTree = "<group>"; };
@@ -1881,6 +1882,7 @@
 		C7EB78832406AB719921ECD4216E29E1 /* FBSDKServerConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKServerConfiguration.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKServerConfiguration.h; sourceTree = "<group>"; };
 		C8B726F10E9B3C5E866D92D613D2F012 /* STTwitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STTwitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91FF7A5214ADD5500BB44E2 /* String to Codable object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String to Codable object.swift"; sourceTree = "<group>"; };
+		C922AADD214FAA8D007AD96E /* String + phone number validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + phone number validator.swift"; sourceTree = "<group>"; };
 		C92FD6AC211F525100595FD8 /* Viewcontroller + loading indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Viewcontroller + loading indicator.swift"; sourceTree = "<group>"; };
 		C94D406D21162694002E7623 /* String + Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Localizable.swift"; sourceTree = "<group>"; };
 		C95A1F0A21373CC8005E20C3 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
@@ -2407,14 +2409,11 @@
 		3A03BFC58E77588884F9CE40B856466F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C922AADF214FAB0C007AD96E /* String extensions */,
+				4E0C3C510D308B2A1BBF7CD930F0B9D3 /* UI components */,
 				3D30E1928B60E0C76EF3B101465C97C4 /* Codable + dictionary.swift */,
 				786D5168E1AD02AAA01054ED1463D877 /* NetworkLoggerDataFormatter.swift */,
 				7E59C46CB32AFD9C3C814D2BA0C5789C /* Remove duplicates + filter array.swift */,
-				4A8D4201D00FE7615A9E7ED2D4506474 /* String to dicrionary.swift */,
-				CC5295E24DABBAC11F86FE4EAA7977AC /* UIColor + Hex.swift */,
-				C94D406D21162694002E7623 /* String + Localizable.swift */,
-				C91FF7A5214ADD5500BB44E2 /* String to Codable object.swift */,
-				4E0C3C510D308B2A1BBF7CD930F0B9D3 /* UI components */,
 			);
 			name = Extensions;
 			path = iOS_Bootstrap/Classes/Extensions;
@@ -2783,10 +2782,11 @@
 		4E0C3C510D308B2A1BBF7CD930F0B9D3 /* UI components */ = {
 			isa = PBXGroup;
 			children = (
+				BB88A560DA421AAD056203DA84EEEA3A /* Toast */,
 				CAE23AF9F50B06D97C10B8E1B62AB2ED /* UIImage + Gif.swift */,
 				5E4F084BD41F1C5283B3527EAE2D6370 /* UILabel + format part of the text.swift */,
 				C95A1F172137EEA6005E20C3 /* UIButton + ActivityIndicator.swift */,
-				BB88A560DA421AAD056203DA84EEEA3A /* Toast */,
+				CC5295E24DABBAC11F86FE4EAA7977AC /* UIColor + Hex.swift */,
 			);
 			path = "UI components";
 			sourceTree = "<group>";
@@ -3362,7 +3362,7 @@
 			isa = PBXGroup;
 			children = (
 				823413DB14BB78F31F52E5AB2BB6355F /* How_to_use_toast.strings */,
-				02515178FA09EC131442F8352215CF18 /* Toast.swift */,
+				02515178FA09EC131442F8352215CF18 /* UIView + Toast.swift */,
 			);
 			path = Toast;
 			sourceTree = "<group>";
@@ -3555,6 +3555,17 @@
 				B9ADE4B4E6D7F0D6E128CC4E4CE5E4F2 /* Support Files */,
 			);
 			path = FBSDKCoreKit;
+			sourceTree = "<group>";
+		};
+		C922AADF214FAB0C007AD96E /* String extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A8D4201D00FE7615A9E7ED2D4506474 /* String to dicrionary.swift */,
+				C94D406D21162694002E7623 /* String + Localizable.swift */,
+				C91FF7A5214ADD5500BB44E2 /* String to Codable object.swift */,
+				C922AADD214FAA8D007AD96E /* String + phone number validator.swift */,
+			);
+			path = "String extensions";
 			sourceTree = "<group>";
 		};
 		C9647DA421150DBE00D8BB47 /* MultiLanguagesManager */ = {
@@ -5115,7 +5126,7 @@
 				58682388177107F22DFBC26598C6A89A /* Tableview + Reusablel.swift in Sources */,
 				028892F9F9EF9E7634BAA321902A5A9A /* TableviewAdapter.swift in Sources */,
 				55E3C129A12DA630FAD4A15A76225DE6 /* TableViewDelegates.swift in Sources */,
-				ACB98285AEE3509F5F8B6D7B943F332A /* Toast.swift in Sources */,
+				ACB98285AEE3509F5F8B6D7B943F332A /* UIView + Toast.swift in Sources */,
 				5BD7EDE4789B236B9875EFA2DD38C613 /* ToggleButton.m in Sources */,
 				B123F4AE12AB1850F0D25CA8D25B87E7 /* TTGSnackbar.swift in Sources */,
 				692CF8886874227B693FD84444990012 /* UIColor + Hex.swift in Sources */,
@@ -5123,6 +5134,7 @@
 				2D64E09F4958363498A5250C17BF382F /* UILabel + format part of the text.swift in Sources */,
 				C95A1F142137638E005E20C3 /* BaseTableAdapterViewController.swift in Sources */,
 				3512159797F0EB9B9B3D2460BD325BF3 /* UserDefaultsManager.swift in Sources */,
+				C922AADE214FAA8D007AD96E /* String + phone number validator.swift in Sources */,
 				FAD4C66BF9261A8AA980CEDD2B6053B9 /* VIewController + Storyboard.swift in Sources */,
 				13FFF22C5936C487F041D2245D759245 /* ViewControllerCommonFeatures.swift in Sources */,
 				C966063921148FB100E2D38A /* MultiLanguageManager.swift in Sources */,

@@ -6,10 +6,7 @@
 //  Copyright © 2018 Robustastudio. All rights reserved.
 //
 
-import Foundation
-
 extension String {
-    
     public func toDictionary() -> [String: Any]? {
         if let data = self.data(using: .utf8) {
             do {
@@ -21,5 +18,4 @@ extension String {
         }
         return nil
     }
-    
 }

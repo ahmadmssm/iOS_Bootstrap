@@ -12,7 +12,7 @@
 private var originalButtonText: String?
 private var activityIndicator: UIActivityIndicatorView!
 
-public extension UIButton{
+public extension UIButton {
     
     public func showLoading() {
         originalButtonText = self.titleLabel?.text
