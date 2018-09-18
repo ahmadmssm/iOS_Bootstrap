@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'iOS_Bootstrap'
-    s.version          = '0.3.9'
+    s.version          = '0.4.0'
     s.summary          = 'iOS Bootstrap library'
     
     # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/ahmadmssm/iOS_Bootstrap.git', :tag => s.version.to_s }
     
     s.ios.deployment_target = '9.1'
-    s.swift_version = '4'
+    s.swift_version = '4.1'
     s.source_files = 'iOS_Bootstrap/Classes/**/*'
 
 
