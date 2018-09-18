@@ -38,7 +38,7 @@ extension APIs : GenericAPIs {
     var route: Route {
         switch self {
         case .getWorldCountries():
-            return .get("//all")
+            return .get("/all")
         case .getCountryDetailsByCountryName(let countryName):
             return .get("/all")
 //            return .get("/name/\(countryName)")

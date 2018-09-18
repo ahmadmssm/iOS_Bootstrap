@@ -7,7 +7,7 @@
 //
 //  - How to -
 //
-//  1. Project settings  -> project (not targe) -> info tab -> Configuration section -> Plus button to add new modes.
+//  1. Project settings  -> project (not targe) -> info tab -> Configurations section -> Plus button to add new modes.
 //  2. Add new row in Info.plist with key named : Configuration & value : $(CONFIGURATION)
 //  3. Create and configure/Edit a Scheme.
 //  Note : If you have pods in your project make pod install to avoid any problems (Must be done).

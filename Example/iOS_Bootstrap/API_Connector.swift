@@ -34,10 +34,7 @@ class API_Connector : GenericConnector {
         let _ = apiProvider.rx
             .request(.getWorldCountries())
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-            .asObservable()
-            .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
-            .asSingle()
-          //  .mapString()
+           // .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
             .mapArray(Country.self)
             .subscribe { event in
                 switch event {

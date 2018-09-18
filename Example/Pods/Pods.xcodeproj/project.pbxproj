@@ -2346,9 +2346,9 @@
 				D4D83C0FEC1E7123DD09680C761B63B1 /* How_to_use.strings */,
 				AFC0B3BA5612CC75141CE4C363F893C8 /* NibLoadableView.swift */,
 				6EDA643AC75FCD7629C5B398C3C05EA4 /* ReusableCell.swift */,
+				68C35DD29A8D7F3B0457E6DDE99E948B /* TableviewManager */,
 				A59092DAB6E46D1F611911487C8F4882 /* CollectionviewManager */,
 				9B07C1F420EECF1D7A0F212E3D73F93E /* EmptyDataSet */,
-				68C35DD29A8D7F3B0457E6DDE99E948B /* TableviewManager */,
 			);
 			path = ListingManager;
 			sourceTree = "<group>";

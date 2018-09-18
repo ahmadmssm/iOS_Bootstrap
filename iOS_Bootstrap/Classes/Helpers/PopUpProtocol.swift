@@ -55,7 +55,9 @@ public extension PopUpProtocol where Self: UIViewController {
     public func showEZloadinActivity(message : String, cancelable : Bool) {
         EZLoadingActivity.show(message, disableUI: cancelable)
     }
-    
+    public func showEZloadinActivityWithDuration(message : String, cancelable : Bool, seconds : Double) {
+        EZLoadingActivity.showWithDelay(message, disableUI: cancelable, seconds: seconds)
+    }
     public func hideEZloadingActivity() {
         EZLoadingActivity.hide()
     }

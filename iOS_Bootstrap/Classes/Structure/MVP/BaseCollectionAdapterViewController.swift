@@ -6,6 +6,13 @@
 //
 
 open class BaseCollectionAdapterViewController <T, D> : BaseViewController<T, D> where T : BasePresenter<D> {
+    
     private let collectionViewAdapter : CollectionViewAdapter = CollectionViewAdapter()
-    public func getCollectionViewAdapter() -> CollectionViewAdapter { return collectionViewAdapter }
+    private var collectionViewDataSource : [D] = [D]()
+    //
+    public final var getCollectionViewAdapter : CollectionViewAdapter { get { return collectionViewAdapter } }
+    public var getCollectionViewDataSource : [D] {
+        set (newDataSource) { collectionViewDataSource = newDataSource }
+        get { return collectionViewDataSource }
+    }
 }

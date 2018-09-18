@@ -5,8 +5,15 @@
 //  Created by Ahmad Mahmoud on 8/30/18.
 //
 
-open class BaseCollectionAdapterView: BaseView {
+open class BaseCollectionAdapterView<D>: BaseView {
+    
     private let collectionViewAdapter : CollectionViewAdapter = CollectionViewAdapter()
-    public func getCollectionViewAdapter() -> CollectionViewAdapter { return collectionViewAdapter }
+    private var collectionViewDataSource : [D] = [D]()
+    //
+    public final var getCollectionViewAdapter : CollectionViewAdapter { get { return collectionViewAdapter } }
+    public var getCollectionViewDataSource : [D] {
+        set (newDataSource) { collectionViewDataSource = newDataSource }
+        get { return collectionViewDataSource }
+    }
 }
 

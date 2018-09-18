@@ -86,7 +86,8 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 40. BaseTableAdapterController,  BaseTableAdapterPresenter, BaseCollectionAdapterController,  BaseCollectionAdapterPresenter to save you somtime and code when you implement table or collection view.
 41. You can call getUserDefaults from BaseController and BasePresenter by default.
 42. Phone number validator string extension.
-42. How to use and documentation + references.
+43. Included **SCLAlertView** awesone swift library.
+44. How to use and documentation + references.
 
 
 ## Upcoming features

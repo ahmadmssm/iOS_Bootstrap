@@ -8,10 +8,10 @@
 
 import UIKit
 
-open class BaseViewController <T, D> :
+open class BaseViewController <T, V> :
                                     UIViewController,
                                     ViewControllerCommonFeatures
-                                    where T : BasePresenter<D> {
+                                    where T : BasePresenter<V> {
     //
     private var snackbar : TTGSnackbar? = nil
     //
@@ -19,7 +19,8 @@ open class BaseViewController <T, D> :
     public var getPresenter : T!
     
     override open func viewDidLoad() {
-        self.getPresenter = T.init(contract: self as! D)
+        self.getPresenter = T.init(contract: self as! V)
+        initUI()
     }
     //
     override open func viewWillAppear(_ animated: Bool) {
@@ -34,6 +35,9 @@ open class BaseViewController <T, D> :
         super.viewDidDisappear(animated)
         InternetConnectionManager.getInstance.removeListener(listener: self)
     }
+    
+    open func initUI () { fatalError("Must Override") }
+
     //
     public func networkStatusDidChanged(status: InternetConnectionManager.Connection) {
         var message : String = ""

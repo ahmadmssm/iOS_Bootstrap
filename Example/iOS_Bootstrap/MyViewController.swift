@@ -11,21 +11,21 @@
 import UIKit
 import iOS_Bootstrap
 
-class MyViewController: BaseTableAdapterViewController<MyPresenter, MyViewControllerDelegator>, MyViewControllerDelegator, TableViewDelegates {
-    
+class MyViewController:
+                BaseTableAdapterViewController<MyPresenter, MyViewControllerDelegator, User>,
+                MyViewControllerDelegator,
+                TableViewDelegates {
+    //
     @IBOutlet weak var switchLanguageButton: UIButton!
     @IBOutlet weak var usersTableVIew: UITableView!
-    //
-    private var dataSource : [User] = [User]()
     //
     private var mNavigator : NavigationCoordinator?
     var x : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initUI()
-        // Initialize Configuration
         Log.debug(GlobalKeys.getEnvironmentVariables.baseURL)
+        mNavigator = self.navigator as? NavigationCoordinator
     }
     //
     override func viewWillAppear(_ animated: Bool) {
@@ -37,9 +37,8 @@ class MyViewController: BaseTableAdapterViewController<MyPresenter, MyViewContro
         switchLanguageButton.setTitle("ChangeLng".localized(), for: .normal)
     }
     
-    func initUI() {
-        mNavigator = self.navigator as? NavigationCoordinator
-        getTableViewAdapter().configureTableWithXibCell(tableView: usersTableVIew, dataSource: dataSource, nibClass: UserCell.self, delegate: self)
+    override func initUI() {
+        getTableViewAdapter.configureTableWithXibCell(tableView: usersTableVIew, dataSource: getTableViewDataSource, nibClass: UserCell.self, delegate: self)
     }
     
     // Button actions
@@ -49,7 +48,6 @@ class MyViewController: BaseTableAdapterViewController<MyPresenter, MyViewContro
     //
     @IBAction func testNavigator(_ sender: UIButton) {
         // self.mNavigator?.startInitialView()
-
         let langMgr : MultiLanguageManager = MultiLanguageManager()
         if (langMgr.getCurrentAppLanguage() == Languages.Arabic.rawValue) {
             langMgr.switchAppLanguageInstantly(language: Languages.English)
@@ -77,36 +75,40 @@ class MyViewController: BaseTableAdapterViewController<MyPresenter, MyViewContro
         }
         navigationController?.popViewController(animated: true)
     }
+    
     // Tableview adapter functions
     func configureCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UserCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        cell.userID.text = String(describing: dataSource [indexPath.row].id!)
-        cell.firstName.text = dataSource [indexPath.row].first_name
-        cell.lastName.text = dataSource [indexPath.row].last_name
+        cell.userID.text = String(describing: getTableViewDataSource [indexPath.row].id!)
+        cell.firstName.text = getTableViewDataSource [indexPath.row].first_name
+        cell.lastName.text = getTableViewDataSource [indexPath.row].last_name
         return cell
     }
     //
     func loadMore(forPage page: Int, updatedDataSource: [Any]) {
-        self.dataSource = updatedDataSource as! [User]
+        getTableViewDataSource = updatedDataSource as! [User]
         getPresenter.getUsers(pageNumber: page)
     }
- 
-    //
-    func doNothing() {
-        Log.info("I'm here...")
+    
+    func loadMore<T>(forPage page: Int, updatedDataSource: [T]) {
+        getTableViewDataSource = updatedDataSource as! [User]
+        getPresenter.getUsers(pageNumber: page)
     }
+    //
+    //
+    func doNothing() { Log.info("I'm here...") }
     //
     func didGetFakeUsers(page: Page) {
         // Configure pagination parameters
-         getTableViewAdapter().configurePaginationParameters(totalNumberOfItems: page.total!, itemsPerPage: page.perPage!)
+        getTableViewAdapter.configurePaginationParameters(totalNumberOfItems: page.total!, itemsPerPage: page.perPage!)
         // Reload table with new page items only (Not the whole data source)
-         getTableViewAdapter().reloadTable(pageItems: page.users!)
+        getTableViewAdapter.reloadTable(pageItems: page.users!)
         // Update your data source
-        self.dataSource.append(contentsOf: page.users!)
+        getTableViewDataSource.append(contentsOf: page.users!)
     }
     //
     func didFailToGetFakeUsers(error: String) {
-        EZLoadingActivity.showWithDelay(error, disableUI: true, seconds: 3.0)
+        showEZloadinActivityWithDuration(message: error, cancelable: true, seconds: 3.0)
     }
 
 }

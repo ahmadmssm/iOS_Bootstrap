@@ -29,7 +29,6 @@ import iOS_Bootstrap
     }
     
     func getError () {
-
         API_Connector().getErrorFromRequest (completion: { response in
             switch response {
             case .success( _):

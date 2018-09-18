@@ -17,7 +17,10 @@ open class BaseView : UIViewController, ViewControllerCommonFeatures  {
         return nil
     }
     
-    override open func viewDidLoad() {}
+    override open func viewDidLoad() {
+        initController()
+        initUI()
+    }
     //
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,7 +28,11 @@ open class BaseView : UIViewController, ViewControllerCommonFeatures  {
         configureSnackBar()
     }
    
+    open func initUI () { fatalError("Must Override") }
+    open func initController () { fatalError("Must Override") }
+
 }
+
 
 public extension BaseView {
     

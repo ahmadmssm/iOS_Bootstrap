@@ -15,8 +15,6 @@ class ViewController: UIViewController {
     let picker = Picker()
     //
     public weak var navigator: NavigationCoordinator?
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

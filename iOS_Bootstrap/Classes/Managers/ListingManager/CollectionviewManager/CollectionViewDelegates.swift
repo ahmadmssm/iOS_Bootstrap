@@ -5,9 +5,11 @@
 //  Created by Ahmad Mahmoud on 6/12/18.
 //
 
-@objc public protocol CollectionViewDelegates : CommonListingDelegates {
+public protocol CollectionViewDelegates : CollectionViewOptionalDelegates {
     func configureCell (collectionView: UICollectionView, cellForRowAt indexPath: IndexPath) -> UICollectionViewCell
+}
 
+@objc public protocol  CollectionViewOptionalDelegates : CommonListingDelegates {
     @objc optional func configureNumberOfItemsInSection(section : Int) -> Int
     @objc optional func itemDidSelected(indexPath : IndexPath)
     @objc optional func didHighlightItemAtIndexPath(indexPath : IndexPath)

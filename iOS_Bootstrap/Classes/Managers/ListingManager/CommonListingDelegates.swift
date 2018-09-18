@@ -27,5 +27,3 @@
     @objc optional func emptyDataSetButtonTapped (didTapButton button: UIButton)
 }
 
-
-

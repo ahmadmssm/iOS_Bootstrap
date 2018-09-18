@@ -9,52 +9,45 @@
 import UIKit
 import iOS_Bootstrap
 
-class TableExampleView: BaseView {
+class TableExampleView: BaseTableAdapterView<Country>, TableViewDelegates {
     
     @IBOutlet weak var tableview: UITableView!
-    private let tableAdapter : TableviewAdapter = TableviewAdapter()
-    private var dataSource : [Country] = [Country]()
-    // private var reusableView : CountriesReusableTable!
-    //
     private var controller : TableController!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-      //  initUI()
-//        controller = TableController(view: self)
-        //
         // Mock a network delay with 3 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-         //   self.controller.getWorldCountries()
-            self.controller.getError()
+            self.controller.getWorldCountries()
         }
     }
-//
     
+    override func initUI() {
+        getTableViewAdapter.configureTableWithXibCell(tableView: tableview, dataSource: getTableViewDataSource, nibClass: TableViewCell.self, delegate: self)
+        let refreshControl = UIRefreshControl()
+        getTableViewAdapter.configurePullToRefresh(refreshControl: refreshControl)
+        getTableViewDataSource.removeAll()
+    }
+    
+    override func initController() { controller = TableController(view: self) }
 
-    
-    private func initUI() {
-        //
-        // reusableView = CountriesReusableTable(tableview: tableview, tableViewDataSource: dataSource)
-        //
-        // let refreshControl = UIRefreshControl()
-        // tableAdapter.configurePullToRefresh(refreshControl: refreshControl)
-        //
-        dataSource.removeAll()
+    func configureCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell : TableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        cell.labelCountryName.text = getTableViewDataSource [indexPath.row].countryName
+        cell.labelCapitalName.text = getTableViewDataSource [indexPath.row].capital
+        return cell
     }
     
     func didGetCountries(countries : [Country]) {
-        self.dataSource = countries
-      //  self.reusableView.reloadTableViewData(pageItems: self.dataSource, currentPage: 0)
+        getTableViewDataSource = countries
+        getTableViewAdapter.reloadTable(pageItems: countries)
     }
     
     func didFailToGetCountries(error : String) {
         // Do any thing with your error
         Log.error("Error " + error)
     }
-    
     
 }
 

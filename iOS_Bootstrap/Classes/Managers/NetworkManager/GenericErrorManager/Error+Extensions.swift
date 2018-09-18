@@ -11,7 +11,7 @@ import Foundation
 public extension Swift.Error {
     
     private func errorHandlerNotSet() {
-        fatalError("You did not provide an error handler for Lucid.")
+        fatalError("You did not provide an error handler Class.")
     }
     
     /// Take the error that Moya returned to you after performing the networking request to get a better, human readable error message `LucidMoyaResponseError`.
