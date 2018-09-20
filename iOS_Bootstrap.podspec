@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'iOS_Bootstrap'
-    s.version          = '0.4.3'
+    s.version          = '0.4.4'
     s.summary          = 'iOS Bootstrap library'
     
     # This description is used to generate tags and improve search results.
@@ -45,7 +45,7 @@ Pod::Spec.new do |s|
     s.dependency 'HandyJSON'
     s.dependency 'IQKeyboardManagerSwift', '5.0.0'
     # s.dependency 'SNSSocial', '~> 2.0'
-    s.dependency 'Kingfisher', '~> 4.0'
+    s.dependency 'Kingfisher', '~> 4.10'
     s.dependency 'SCLAlertView'
 
     s.frameworks = 'Foundation'
