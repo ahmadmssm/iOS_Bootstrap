@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'iOS_Bootstrap'
-    s.version          = '0.4.2'
+    s.version          = '0.4.3'
     s.summary          = 'iOS Bootstrap library'
     
     # This description is used to generate tags and improve search results.
@@ -50,23 +50,23 @@ Pod::Spec.new do |s|
 
     s.frameworks = 'Foundation'
     
-    s.subspec 'Facebook' do |facebook|
-        facebook.source_files = 'iOS_Bootstrap/Classes/Managers/SocialMediaManager/**/*'
-        facebook.ios.dependency     'FBSDKCoreKit',   '~> 4.22'
-        facebook.ios.dependency     'FBSDKShareKit',  '~> 4.22'
-        facebook.ios.dependency 'FBSDKLoginKit', '~> 4.22'
-    end
-    
-    s.subspec 'Twitter' do |twitter|
-        twitter.source_files = 'iOS_Bootstrap/Classes/Managers/SocialMediaManager/**/*'
-        twitter.dependency 'STTwitter', '0.2.5'
-    end
- 
- # s.subspec 'Firebase' do |firebase|
- #       firebase.source_files = 'iOS_Bootstrap/Classes/Managers/PushNotificationManager/**/*'
- #       firebase.dependency 'Firebase/Core'
- #       firebase.dependency 'Firebase/Messaging'
- #   end
+    #s.subspec 'Facebook' do |facebook|
+    #     facebook.source_files = 'iOS_Bootstrap/Classes/Managers/SocialMediaManager/**/*'
+    #    facebook.ios.dependency     'FBSDKCoreKit',   '~> 4.22'
+    #   facebook.ios.dependency     'FBSDKShareKit',  '~> 4.22'
+    #  facebook.ios.dependency 'FBSDKLoginKit', '~> 4.22'
+    # end
+
+    #s.subspec 'Twitter' do |twitter|
+    #       twitter.source_files = 'iOS_Bootstrap/Classes/Managers/SocialMediaManager/**/*'
+    #       twitter.dependency 'STTwitter', '0.2.5'
+    #   end
+
+     # s.subspec 'Firebase' do |firebase|
+     #       firebase.source_files = 'iOS_Bootstrap/Classes/Managers/PushNotificationManager/**/*'
+     #       firebase.dependency 'Firebase/Core'
+     #       firebase.dependency 'Firebase/Messaging'
+     #   end
     
 end
 
