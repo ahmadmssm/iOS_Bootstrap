@@ -119,8 +119,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func showShareTo(_ sender: UIButton) {
-        let sharingManager : SocialMediaManager = SocialMediaManager(context: self)
-        sharingManager.share(itemToShare: "Text" as AnyObject, excludedItems: nil)
+      // let sharingManager : SocialMediaManager = SocialMediaManager(context: self)
+      //  sharingManager.share(itemToShare: "Text" as AnyObject, excludedItems: nil)
     }
     
 }
