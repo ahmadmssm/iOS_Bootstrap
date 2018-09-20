@@ -9,7 +9,7 @@
 import UIKit
 import iOS_Bootstrap
 
-class TableExampleView: BaseTableAdapterView<Country>, TableViewDelegates {
+class TableExampleView: BaseTableView<Country>, TableViewDelegates {
     
     @IBOutlet weak var tableview: UITableView!
     private var controller : TableController!
@@ -21,6 +21,8 @@ class TableExampleView: BaseTableAdapterView<Country>, TableViewDelegates {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.controller.getWorldCountries()
         }
+        
+        
     }
     
     override func initUI() {

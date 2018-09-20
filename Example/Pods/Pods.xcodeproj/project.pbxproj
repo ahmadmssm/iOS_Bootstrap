@@ -668,9 +668,9 @@
 		C94D406E21162694002E7623 /* String + Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94D406D21162694002E7623 /* String + Localizable.swift */; };
 		C95A1F0C21373CD2005E20C3 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A1F0A21373CC8005E20C3 /* UserDefaultsService.swift */; };
 		C95A1F0E21375E42005E20C3 /* BaseCollectionAdapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A1F0D21375E42005E20C3 /* BaseCollectionAdapterView.swift */; };
-		C95A1F1021375F2E005E20C3 /* BaseTableAdapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A1F0F21375F2E005E20C3 /* BaseTableAdapterView.swift */; };
-		C95A1F1221376321005E20C3 /* BaseCollectionAdapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A1F1121376321005E20C3 /* BaseCollectionAdapterViewController.swift */; };
-		C95A1F142137638E005E20C3 /* BaseTableAdapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A1F132137638E005E20C3 /* BaseTableAdapterViewController.swift */; };
+		C95A1F1021375F2E005E20C3 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A1F0F21375F2E005E20C3 /* BaseTableView.swift */; };
+		C95A1F1221376321005E20C3 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A1F1121376321005E20C3 /* BaseCollectionViewController.swift */; };
+		C95A1F142137638E005E20C3 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A1F132137638E005E20C3 /* BaseTableViewController.swift */; };
 		C95A1F16213769B2005E20C3 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A1F15213769B2005E20C3 /* LoadingButton.swift */; };
 		C95A1F182137EEA6005E20C3 /* UIButton + ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A1F172137EEA6005E20C3 /* UIButton + ActivityIndicator.swift */; };
 		C9647DA12114CC3B00D8BB47 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9647DA02114CC3A00D8BB47 /* Languages.swift */; };
@@ -1887,9 +1887,9 @@
 		C94D406D21162694002E7623 /* String + Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Localizable.swift"; sourceTree = "<group>"; };
 		C95A1F0A21373CC8005E20C3 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		C95A1F0D21375E42005E20C3 /* BaseCollectionAdapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionAdapterView.swift; sourceTree = "<group>"; };
-		C95A1F0F21375F2E005E20C3 /* BaseTableAdapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableAdapterView.swift; sourceTree = "<group>"; };
-		C95A1F1121376321005E20C3 /* BaseCollectionAdapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionAdapterViewController.swift; sourceTree = "<group>"; };
-		C95A1F132137638E005E20C3 /* BaseTableAdapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableAdapterViewController.swift; sourceTree = "<group>"; };
+		C95A1F0F21375F2E005E20C3 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
+		C95A1F1121376321005E20C3 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
+		C95A1F132137638E005E20C3 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		C95A1F15213769B2005E20C3 /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		C95A1F172137EEA6005E20C3 /* UIButton + ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ActivityIndicator.swift"; sourceTree = "<group>"; };
 		C95FEF2E258D695B4713CE3CD598FA06 /* ActionSheetLocalePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ActionSheetLocalePicker.h; sourceTree = "<group>"; };
@@ -3634,7 +3634,7 @@
 			children = (
 				9311B0DE87753AE361454012751BC5AB /* BaseView.swift */,
 				48F46F9CCE035E302AEF2FDC32429791 /* BaseController.swift */,
-				C95A1F0F21375F2E005E20C3 /* BaseTableAdapterView.swift */,
+				C95A1F0F21375F2E005E20C3 /* BaseTableView.swift */,
 				C95A1F0D21375E42005E20C3 /* BaseCollectionAdapterView.swift */,
 			);
 			path = "MVC-Clean";
@@ -3775,8 +3775,8 @@
 				B42CF759B624DFF8003FC1CB79DB78E0 /* BaseViewController.swift */,
 				58BA1FB7A1EA26EB5CC6235349826FE6 /* BasePresenter.swift */,
 				9ACADAA4F3EBDF92A662DAB0399D061D /* BaseViewDelegator.swift */,
-				C95A1F132137638E005E20C3 /* BaseTableAdapterViewController.swift */,
-				C95A1F1121376321005E20C3 /* BaseCollectionAdapterViewController.swift */,
+				C95A1F132137638E005E20C3 /* BaseTableViewController.swift */,
+				C95A1F1121376321005E20C3 /* BaseCollectionViewController.swift */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -5041,7 +5041,7 @@
 				67F2DD3916F0A9889009AC423BEA7C43 /* BaseCollectionViewCell.swift in Sources */,
 				C9647DA12114CC3B00D8BB47 /* Languages.swift in Sources */,
 				BECF83E91F15C34DD7CCC4DB53445CE6 /* BaseController.swift in Sources */,
-				C95A1F1221376321005E20C3 /* BaseCollectionAdapterViewController.swift in Sources */,
+				C95A1F1221376321005E20C3 /* BaseCollectionViewController.swift in Sources */,
 				86D7A91D3A70574C76720D2CB880B7A4 /* BaseModel.swift in Sources */,
 				C88AB0D723CD262AE8F8360C94A85D12 /* BaseNavigationCoordinator.swift in Sources */,
 				26225711C17C6273C77468E57816AB93 /* BasePresenter.swift in Sources */,
@@ -5115,7 +5115,7 @@
 				90027CE22FC97F4FDCAE7ED9FDE3DBB0 /* ReusableCollectionViewAdapter.swift in Sources */,
 				C9647DA321150CD500D8BB47 /* LocalizationHelpers.swift in Sources */,
 				A7F6AF1797CE6169E797E568B302C49E /* ReusableTableViewAdapter.swift in Sources */,
-				C95A1F1021375F2E005E20C3 /* BaseTableAdapterView.swift in Sources */,
+				C95A1F1021375F2E005E20C3 /* BaseTableView.swift in Sources */,
 				167880361994A34B8879CE0C5D6D357D /* Route.swift in Sources */,
 				AAC310BE8FD00FF183BBE392A10309E0 /* Session.swift in Sources */,
 				1375DE78C6FEEF7ED64605B7C4D3977B /* Single+Extensions.swift in Sources */,
@@ -5132,7 +5132,7 @@
 				692CF8886874227B693FD84444990012 /* UIColor + Hex.swift in Sources */,
 				F979713BD2633141109F3FD1429C71FF /* UIImage + Gif.swift in Sources */,
 				2D64E09F4958363498A5250C17BF382F /* UILabel + format part of the text.swift in Sources */,
-				C95A1F142137638E005E20C3 /* BaseTableAdapterViewController.swift in Sources */,
+				C95A1F142137638E005E20C3 /* BaseTableViewController.swift in Sources */,
 				3512159797F0EB9B9B3D2460BD325BF3 /* UserDefaultsManager.swift in Sources */,
 				C922AADE214FAA8D007AD96E /* String + phone number validator.swift in Sources */,
 				FAD4C66BF9261A8AA980CEDD2B6053B9 /* VIewController + Storyboard.swift in Sources */,

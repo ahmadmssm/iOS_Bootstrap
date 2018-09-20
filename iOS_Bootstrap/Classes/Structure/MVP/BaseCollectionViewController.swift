@@ -1,11 +1,11 @@
 //
-//  BaseCollectionAdapterViewController.swift
+//  BaseCollectionViewController.swift
 //  iOS_Bootstrap
 //
 //  Created by Ahmad Mahmoud on 8/30/18.
 //
 
-open class BaseCollectionAdapterViewController <T, D> : BaseViewController<T, D> where T : BasePresenter<D> {
+open class BaseCollectionViewController <T, D> : BaseViewController<T, D> where T : BasePresenter<D> {
     
     private let collectionViewAdapter : CollectionViewAdapter = CollectionViewAdapter()
     private var collectionViewDataSource : [D] = [D]()

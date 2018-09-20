@@ -10,10 +10,8 @@ import UIKit
 import iOS_Bootstrap
 
 class MVC_View : BaseView {
-        
     override func viewDidLoad() { super.viewDidLoad() }
     override func initUI() {}
     override func initController() {}
-    
  }
 

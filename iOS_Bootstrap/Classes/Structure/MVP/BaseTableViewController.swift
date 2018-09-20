@@ -1,12 +1,14 @@
 //
-//  BaseTableAdapterView.swift
+//  BaseTableViewController.swift
 //  iOS_Bootstrap
 //
 //  Created by Ahmad Mahmoud on 8/30/18.
 //
 
-open class BaseTableAdapterView<D>: BaseView {
-    //
+open class BaseTableViewController <T, V, D> :
+                            BaseViewController<T, V>
+                            where T : BasePresenter<V> {
+    
     private let tableViewAdapter : TableviewAdapter = TableviewAdapter()
     private var tableViewDataSource : [D] = [D]()
     //
@@ -16,4 +18,3 @@ open class BaseTableAdapterView<D>: BaseView {
         get { return tableViewDataSource }
     }
 }
-

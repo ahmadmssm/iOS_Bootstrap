@@ -12,7 +12,7 @@ import UIKit
 import iOS_Bootstrap
 
 class MyViewController:
-                BaseTableAdapterViewController<MyPresenter, MyViewControllerDelegator, User>,
+                BaseTableViewController<MyPresenter, MyViewControllerDelegator, User>,
                 MyViewControllerDelegator,
                 TableViewDelegates {
     //
@@ -39,6 +39,7 @@ class MyViewController:
     
     override func initUI() {
         getTableViewAdapter.configureTableWithXibCell(tableView: usersTableVIew, dataSource: getTableViewDataSource, nibClass: UserCell.self, delegate: self)
+        
     }
     
     // Button actions
