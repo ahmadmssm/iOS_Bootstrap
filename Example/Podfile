@@ -23,3 +23,4 @@ post_install do |installer|
         config.build_settings.delete('CODE_SIGNING_REQUIRED')
     end
 end
+
