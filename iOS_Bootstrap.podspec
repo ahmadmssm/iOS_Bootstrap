@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'iOS_Bootstrap'
-    s.version          = '0.4.6'
+    s.version          = '0.4.7'
     s.summary          = 'iOS Bootstrap library'
     
     # This description is used to generate tags and improve search results.
@@ -41,13 +41,13 @@ Pod::Spec.new do |s|
     # s.pod_target_xcconfig = { 'SWIFT_WHOLE_MODULE_OPTIMIZATION' => 'YES',
     # 'APPLICATION_EXTENSION_API_ONLY' => 'YES', 'DEFINES_MODULE' => 'YES' }
     
-    s.dependency 'Moya/RxSwift', '~> 11.0'
+    s.dependency 'Moya/RxSwift'
     s.dependency 'HandyJSON'
-    s.dependency 'IQKeyboardManagerSwift', '6.0.4'
-    # s.dependency 'SNSSocial', '~> 2.0'
-    # s.dependency 'Kingfisher', '~> 4.0'
+    s.dependency 'IQKeyboardManagerSwift'
+    s.dependency 'Kingfisher', '~> 4.0'
     s.dependency 'SCLAlertView'
-
+    # s.dependency 'SNSSocial', '~> 2.0'
+    #
     s.frameworks = 'Foundation'
     
     #s.subspec 'Facebook' do |facebook|
@@ -62,11 +62,11 @@ Pod::Spec.new do |s|
     #       twitter.dependency 'STTwitter', '0.2.5'
     #   end
 
-     # s.subspec 'Firebase' do |firebase|
-     #       firebase.source_files = 'iOS_Bootstrap/Classes/Managers/PushNotificationManager/**/*'
-     #       firebase.dependency 'Firebase/Core'
-     #       firebase.dependency 'Firebase/Messaging'
-     #   end
+    # s.subspec 'Firebase' do |firebase|
+    #       firebase.source_files = 'iOS_Bootstrap/Classes/Managers/PushNotificationManager/**/*'
+    #       firebase.dependency 'Firebase/Core'
+    #       firebase.dependency 'Firebase/Messaging'
+    #   end
     
 end
 

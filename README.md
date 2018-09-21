@@ -92,17 +92,16 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 
 ## Upcoming features
 
-2. Date and Time manager.
-3. Push notification manager.
-4. Social media manager.
-5. More extensions! Please if there is an extension you are constantly using, send a pull request now.
+1. Date and Time manager.
+2. Push notification manager.
+3. More extensions! Please if there is an extension you are constantly using, send a pull request now.
 
 
 ## Requirements
 
 - iOS 9.1+
 - Xcode 9.2+
-- Swift 4.0 +
+- Swift 4.1 +
 
 ## Installation
 
@@ -278,7 +277,7 @@ The following awesome libraries are used as dependancies in my pod :
 3. [HandyJSON](https://github.com/alibaba/HandyJSON).
 4. [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager).
 5. [Kingfisher](https://github.com/onevcat/Kingfisher)
-6. [SNSSocial](https://github.com/smartnsoft/SNSSocial).
+6. [SCLAlertView](https://github.com/vikmeup/SCLAlertView-Swift).
 
 In addition, the following Repos helped me alot either by including their code directly into my pod or using some portion of their codes to improve my things or to learn something new so __**thank you**__ for sharing your awesome codes for free to the community.
 
