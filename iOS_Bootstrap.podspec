@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/ahmadmssm/iOS_Bootstrap.git', :tag => s.version.to_s }
     
     s.ios.deployment_target = '9.1'
-    s.swift_version = '4.1'
+    s.swift_version = '4.0'
     s.source_files = 'iOS_Bootstrap/Classes/**/*'
 
 
