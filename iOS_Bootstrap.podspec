@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
     s.dependency 'Moya/RxSwift'
     s.dependency 'HandyJSON'
     s.dependency 'IQKeyboardManagerSwift'
-    s.dependency 'Kingfisher', ‘4.9.0'
+    s.dependency 'Kingfisher', '4.9.0'
     s.dependency 'SCLAlertView'
     # s.dependency 'SNSSocial', '~> 2.0'
     #
