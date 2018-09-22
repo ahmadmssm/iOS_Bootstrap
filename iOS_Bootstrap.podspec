@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
     # 'APPLICATION_EXTENSION_API_ONLY' => 'YES', 'DEFINES_MODULE' => 'YES' }
     
     s.dependency 'Moya/RxSwift', '~> 11.0'
-    s.dependency 'HandyJSON'
+    s.dependency 'HandyJSON', '4.1.1'
     s.dependency 'IQKeyboardManagerSwift'
     s.dependency 'Kingfisher', '4.9.0'
     s.dependency 'SCLAlertView'
