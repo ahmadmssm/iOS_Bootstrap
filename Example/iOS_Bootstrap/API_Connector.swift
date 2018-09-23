@@ -34,12 +34,13 @@ class API_Connector : GenericConnector {
         let _ = apiProvider.rx
             .request(.getWorldCountries())
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-           // .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
+            .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
             .mapArray(Country.self)
             .subscribe { event in
                 switch event {
                 case .success(let response):
                     completion(.success(response))
+                
                 case .error(let error):
                     completion(.failure(error.localizedDescription))
                 }}

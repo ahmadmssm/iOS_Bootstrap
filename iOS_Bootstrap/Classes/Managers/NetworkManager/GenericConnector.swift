@@ -8,12 +8,12 @@
 import Foundation
 import RxSwift
 
+public typealias completionHandler<T> = (ConnectionResult<T>) -> ()
+public typealias completionHandlerWithErrorModel<T, E> =
+    (ConnectionResultWithGenericError<T, E>) -> ()
+
 open class GenericConnector: NSObject, SessionProtocol {
     
-    public typealias completionHandler<T> = (ConnectionResult<T>) -> ()
-    public typealias completionHandlerWithErrorModel<T, E> = 
-        (ConnectionResultWithGenericError<T, E>) -> ()
-    //
     private final var sessionDelegate : SessionProtocol!
     
     public override init() {
