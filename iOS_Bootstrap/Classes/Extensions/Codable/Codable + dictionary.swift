@@ -3,8 +3,8 @@
 //  iOS_Bootstrap
 //
 //  Created by Ahmad Mahmoud on 7/24/18.
+//  Ref : https://stackoverflow.com/questions/45209743/how-can-i-use-swift-s-codable-to-encode-into-a-dictionary
 //
-// https://stackoverflow.com/questions/45209743/how-can-i-use-swift-s-codable-to-encode-into-a-dictionary
 
 extension Encodable {
     public func toDictionary() throws -> [String: Any] {

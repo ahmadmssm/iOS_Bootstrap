@@ -9,7 +9,7 @@
 import iOS_Bootstrap
 import HandyJSON
 
-struct Country : BaseModel {
+struct Country : BaseModel, StringConvertable {
     
     var countryName : String?
     var capital : String?
@@ -18,6 +18,7 @@ struct Country : BaseModel {
     var subregion : String?
     var translations : Translations?
     
+
     mutating func mapping(mapper: HelpingMapper) {
         // Class attribute : Required name , String name (Name between quotes) : Json field name.
         mapper <<< self.countryName <-- "name"

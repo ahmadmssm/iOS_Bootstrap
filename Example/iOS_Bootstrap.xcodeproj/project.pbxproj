@@ -39,6 +39,7 @@
 		C99EA61F20CB466300D7C158 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA61E20CB466300D7C158 /* Country.swift */; };
 		C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA63820CBECFB00D7C158 /* Storyboards.swift */; };
 		C99EA63F20CBF0DB00D7C158 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA63E20CBF0DB00D7C158 /* HomeVC.swift */; };
+		C9AF5B2221599F2A00C1FED3 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF5B2121599F2A00C1FED3 /* ErrorModel.swift */; };
 		C9CFACE9210654DA00587F66 /* MVC_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFACE8210654DA00587F66 /* MVC_View.swift */; };
 		C9CFACEB210654FC00587F66 /* MVC_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFACEA210654FC00587F66 /* MVC_Controller.swift */; };
 /* End PBXBuildFile section */
@@ -110,6 +111,7 @@
 		C99EA61E20CB466300D7C158 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		C99EA63820CBECFB00D7C158 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		C99EA63E20CBF0DB00D7C158 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		C9AF5B2121599F2A00C1FED3 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		C9CFACE8210654DA00587F66 /* MVC_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVC_View.swift; sourceTree = "<group>"; };
 		C9CFACEA210654FC00587F66 /* MVC_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVC_Controller.swift; sourceTree = "<group>"; };
 		E8BFEB017ECAAB4B900CC096 /* iOS_Bootstrap.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = iOS_Bootstrap.podspec; path = ../iOS_Bootstrap.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -268,6 +270,7 @@
 				C9555AB120E925AB007A698D /* Translations.swift */,
 				C923619D2102AA7C00C2B630 /* User.swift */,
 				C923619F2102AA9200C2B630 /* Page.swift */,
+				C9AF5B2121599F2A00C1FED3 /* ErrorModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				C99EA63F20CBF0DB00D7C158 /* HomeVC.swift in Sources */,
 				C9CFACEB210654FC00587F66 /* MVC_Controller.swift in Sources */,
 				C915C58D20CAAADE0029F5D9 /* TableExampleView.swift in Sources */,
+				C9AF5B2221599F2A00C1FED3 /* ErrorModel.swift in Sources */,
 				C92361A32102B0FE00C2B630 /* UserCell.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				C902036F20F571C100A63492 /* NavigationCoordinator.swift in Sources */,

@@ -17,6 +17,12 @@ class HumanReadableErrorHandler: GenericErrorHandler {
             errorMessage = "Not authorised ! " + errorBody!
         case 404:
             errorMessage = "Not found !"
+        case 504:
+            var errorModel : ErrorModel = ErrorModel()
+            errorModel.statusCode = statusCode
+            errorModel.description = errorBody
+            errorModel.response = response
+            errorMessage = errorModel.toString()
         default:
             errorMessage = errorBody
             break
