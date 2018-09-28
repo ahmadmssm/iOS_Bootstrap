@@ -8,10 +8,10 @@
 import UIKit
 
 
-open class BaseView : UIViewController, ViewControllerCommonFeatures  {
+open class BaseView : UIViewController, ViewControllerCommonFeatures {
     
     public var snackbar : TTGSnackbar? = nil
-    public var navigator: BaseNavigationCoordinator?
+    public var navigator: BaseNavigator?
 
     open func getController<C>() -> C? {
         return nil
@@ -24,6 +24,8 @@ open class BaseView : UIViewController, ViewControllerCommonFeatures  {
     //
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //
+        setContext(context: self)
         InternetConnectionManager.getInstance.addListener(listener: self)
         configureSnackBar()
     }
@@ -60,4 +62,7 @@ public extension BaseView {
         self.snackbar?.show()
         Log.warning(message)
     }
+    
+    func showLoading() {}
+    func hideLoading() {}
 }

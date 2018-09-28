@@ -1,5 +1,5 @@
 //
-//  NavigationCoordinator.swift
+//  Navigator.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 7/11/18.
@@ -9,29 +9,26 @@
 import UIKit
 import iOS_Bootstrap
 
-class NavigationCoordinator: BaseNavigationCoordinator  {
-    
-    static let getInstance = NavigationCoordinator()
-    
-    private override init() {}
-    
+class Navigator: BaseNavigator {
     //
-    func goToHomeStoryBoard(number : Int) {
+    static func goToHomeStoryBoard(number : Int) {
         let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.main)
-        let homeVC = storyboard.instantiateViewController() as MyViewController
-        homeVC.navigator = self
-        homeVC.x = number
-        // To present
-        // AppDelegate.getContext().present(homeVC, animated: true, completion: nil)
-        // To push
-        navigationController?.pushViewController(homeVC, animated: false)
+        let vc = storyboard.instantiateViewController() as MyViewController
+        vc.x = number
+        getContext().present(vc, animated: true, completion: nil)
     }
     
-    func startInitialView() {
+    //
+    static func goToExambleOfTableViewCOntroller() {
+        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.main)
+        let vc = storyboard.instantiateViewController() as TableExampleView
+        getContext().navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    static func startInitialView() {
         // Write initial (first) view controller navigation here
         let storyboard =  UIStoryboard.getStoryboardWithName(Storyboards.main)
         let vc = storyboard.instantiateViewController() as ViewController
-        vc.navigator = self
         navigationController?.pushViewController(vc, animated: false)
     }
     

@@ -7,7 +7,7 @@
 //  Empty Dataset library URL : https://github.com/Xiaoye220/EmptyDataSet-Swift?files=1
 
 
-public protocol TableViewDelegates : TableViewOptionalDelegates {
+public protocol BaseTableViewDelegates : TableViewOptionalDelegates {
     func configureCell (tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
 }
 

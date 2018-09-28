@@ -311,7 +311,7 @@
         <!--Table Example View-->
         <scene sceneID="78K-9q-05L">
             <objects>
-                <viewController id="JoE-Pg-2nN" customClass="TableExampleView" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TableExampleView" id="JoE-Pg-2nN" customClass="TableExampleView" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xG9-Er-eGb"/>
                         <viewControllerLayoutGuide type="bottom" id="rOL-0Z-cju"/>

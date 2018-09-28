@@ -9,7 +9,7 @@
 import UIKit
 import iOS_Bootstrap
 
-class TableExampleView: BaseTableView<Country>, TableViewDelegates {
+class TableExampleView: BaseTableView<Country>, BaseTableViewDelegates {
     
     @IBOutlet weak var tableview: UITableView!
     private var controller : TableController!
@@ -21,15 +21,16 @@ class TableExampleView: BaseTableView<Country>, TableViewDelegates {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.controller.getWorldCountries()
         }
-        
-        
     }
     
     override func initUI() {
-        getTableViewAdapter.configureTableWithXibCell(tableView: tableview, dataSource: getTableViewDataSource, nibClass: TableViewCell.self, delegate: self)
         let refreshControl = UIRefreshControl()
         getTableViewAdapter.configurePullToRefresh(refreshControl: refreshControl)
         getTableViewDataSource.removeAll()
+    }
+    
+    override func initTableViewAdapterConfiguraton() {
+        getTableViewAdapter.configureTableWithXibCell(tableView: tableview, nibClass: TableViewCell.self, delegate: self)
     }
     
     override func initController() { controller = TableController(view: self) }
@@ -42,7 +43,6 @@ class TableExampleView: BaseTableView<Country>, TableViewDelegates {
     }
     
     func didGetCountries(countries : [Country]) {
-        getTableViewDataSource = countries
         getTableViewAdapter.reloadTable(pageItems: countries)
     }
     

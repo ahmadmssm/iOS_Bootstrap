@@ -13,7 +13,7 @@ open class TableviewAdapter : NSObject {
     private final var mTableview : UITableView!
     fileprivate var tableViewDataSource: [Any]!
     private final var mNibClass : BaseTableViewCell.Type!
-    fileprivate final var mDelegate : TableViewDelegates!
+    fileprivate final var mDelegate : BaseTableViewDelegates!
     //
     fileprivate var mTotalNumberOfItems : Int?
     fileprivate var mItemsPerPage : Int?
@@ -24,29 +24,48 @@ open class TableviewAdapter : NSObject {
     private var firstTime : Bool = true
     //
     fileprivate var indicator : UIActivityIndicatorView?
+    
+    public var getDataSource : [Any] {
+        set (dataSource) { return tableViewDataSource = dataSource }
+        get { if (tableViewDataSource != nil) { return tableViewDataSource }; return [] }
+    }
 
     public final func configureTableWithXibCell (tableView: UITableView,
                                     dataSource: [Any]!,
                                     nibClass : BaseTableViewCell.Type!,
-                                    delegate : TableViewDelegates) {
+                                    delegate : BaseTableViewDelegates) {
         //
         self.mNibClass = nibClass
         mTableview?.register(cellClass: mNibClass.self)
         configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
     }
     
+    public final func configureTableWithXibCell (tableView: UITableView,
+                                                 nibClass : BaseTableViewCell.Type!,
+                                                 delegate : BaseTableViewDelegates) {
+        //
+        self.mNibClass = nibClass
+        mTableview?.register(cellClass: mNibClass.self)
+        configureTable(tableView: tableView, dataSource: [], delegate: delegate)
+    }
+    
     public final func configureTableWithStoryboardCell (tableView: UITableView,
                                            dataSource: [Any],
                                            nibClass : BaseTableViewCell.Type!,
-                                           delegate : TableViewDelegates) {
+                                           delegate : BaseTableViewDelegates) {
         //
         configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
     }
     
+    public final func setDataSource (dataSource: [Any]) {
+        self.tableViewDataSource = dataSource
+    }
+    
     private final func configureTable (tableView: UITableView,
                                        dataSource: [Any],
-                                       delegate : TableViewDelegates) {
-        self.tableViewDataSource = dataSource
+                                       delegate : BaseTableViewDelegates) {
+        // self.tableViewDataSource = dataSource
+        setDataSource(dataSource: dataSource)
         self.mTableview = tableView
         self.mDelegate = delegate
         //
@@ -111,6 +130,7 @@ open class TableviewAdapter : NSObject {
         //
         self.mCurrentPage += 1
     }
+    
 }
 
 extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {

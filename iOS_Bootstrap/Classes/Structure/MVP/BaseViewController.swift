@@ -15,7 +15,7 @@ open class BaseViewController <T, V> :
     //
     private var snackbar : TTGSnackbar? = nil
     //
-    public var navigator: BaseNavigationCoordinator?
+    public var navigator: BaseNavigator?
     public var getPresenter : T!
     
     override open func viewDidLoad() {
@@ -25,10 +25,10 @@ open class BaseViewController <T, V> :
     //
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        InternetConnectionManager.getInstance.addListener(listener: self)
         //
-        self.snackbar = TTGSnackbar(message: "",duration: .short)
-        self.snackbar?.backgroundColor = UIColor.blue
+        setContext(context: self)
+        InternetConnectionManager.getInstance.addListener(listener: self)
+        configureSnackBar()
     }
     //
     override open func viewDidDisappear(_ animated: Bool) {
@@ -38,7 +38,15 @@ open class BaseViewController <T, V> :
     
     open func initUI () { fatalError("Must Override") }
 
-    //
+}
+
+extension BaseViewController {
+    
+    func configureSnackBar() {
+        self.snackbar = TTGSnackbar(message: "",duration: .short)
+        self.snackbar?.backgroundColor = UIColor.blue
+    }
+    
     public func networkStatusDidChanged(status: InternetConnectionManager.Connection) {
         var message : String = ""
         var duration : TTGSnackbarDuration = .short
@@ -52,13 +60,10 @@ open class BaseViewController <T, V> :
         case .cellular:
             message = "Network reachable through Mobile data"
         }
-            //
-//        DispatchQueue.main.async {
-//            self.snackbar?.hideAllToasts()
-//            self.snackbar?.message = message
-//            self.snackbar?.duration = duration
-//            self.snackbar?.show()
-//        }
+        self.snackbar?.hideAllToasts()
+        self.snackbar?.message = message
+        self.snackbar?.duration = duration
+        self.snackbar?.show()
         Log.warning(message)
     }
 }

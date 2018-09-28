@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DefaultConfigurations.setMandatoryConfigurations()
         DefaultConfigurations.configureSessionService(context: self)
         DefaultConfigurations.configureNavigationBarApperance(barColor: UIColor.green, backButtonColor: UIColor.blue, textApperance: nil)
-        DefaultConfigurations.configureAppWindowWithRootNavigationController(window: window!, navController: NavigationCoordinator.getInstance.navigationController!)
+        DefaultConfigurations.configureAppWindowWithRootNavigationController(window: window!, navController: Navigator.navigationController!)
         //
-        NavigationCoordinator.getInstance.startInitialView()
+        Navigator.startInitialView()
         //
         return true
     }
@@ -55,28 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
 
-extension AppDelegate: DependancyInjection {
-    // Dependancy Injection
-    static var context: UIViewController?
-    
-    static func setContext(context: UIViewController) {
-        self.context = context
-    }
-    static func getContext() -> UIViewController {
-        return context!
-    }
+extension AppDelegate: AppDelegateService {
+    // Refresh token callbacks
+    func didFailedToRefreshToken() {}
+    func tokenDidRefresh(response: String) { Log.debug("Refresh token response : " + response) }
 }
 
-extension AppDelegate: SessionService {
-    //
-    func didFailedToRefreshToken() {
-        //
-    }
-    
-    func tokenDidRefresh(response: String) {
-        Log.debug("Refresh token response : " + response)
-    }
-}

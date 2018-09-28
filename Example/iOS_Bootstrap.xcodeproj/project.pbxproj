@@ -84,9 +84,6 @@
 		C923619F2102AA9200C2B630 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		C92361A12102B0FE00C2B630 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		C92361A22102B0FE00C2B630 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
-		C92C4F99213868E800D717A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		C92C4F9B213868EB00D717A7 /* ar-EG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/Main.strings"; sourceTree = "<group>"; };
-		C92C4F9D213868F100D717A7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		C9316DBD20D6717C00FB6A6A /* CountriesReusableTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesReusableTable.swift; sourceTree = "<group>"; };
 		C94D407021162AF4002E7623 /* ar-EG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C94D407821162C14002E7623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -553,9 +550,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				607FACDA1AFB9204008FA782 /* Base */,
-				C92C4F99213868E800D717A7 /* en */,
-				C92C4F9B213868EB00D717A7 /* ar-EG */,
-				C92C4F9D213868F100D717A7 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

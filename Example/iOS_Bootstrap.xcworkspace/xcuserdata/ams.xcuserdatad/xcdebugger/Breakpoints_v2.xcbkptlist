@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/HomeVC.swift"
-            timestampString = "557314461.462054"
+            timestampString = "559830856.407442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/ViewController.swift"
-            timestampString = "559522010.9005899"
+            timestampString = "559838491.1765029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "loggers(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/AppDelegate.swift"
-            timestampString = "557344533.776002"
+            timestampString = "559838491.176579"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -698,7 +698,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/AppDelegate.swift"
-            timestampString = "557344533.777004"
+            timestampString = "559838491.177685"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -719,8 +719,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
             endingLineNumber = "70"
-            landmarkName = "getFakeUsers(page:completion:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -767,8 +767,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "getFakeUsers(page:completion:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -778,28 +778,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/Managers/ListingManager/TableviewManager/TableviewAdapter.swift"
-            timestampString = "558978799.766428"
+            timestampString = "559838491.177847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/ListingManager/TableviewManager/TableviewAdapter.swift"
-            timestampString = "558978799.766554"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "configureTable(tableView:dataSource:delegate:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -826,11 +810,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/Managers/ListingManager/TableviewManager/TableviewAdapter.swift"
-            timestampString = "558978799.766796"
+            timestampString = "559838491.178295"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "reloadTable(pageItems:)"
             landmarkType = "7">
          </BreakpointContent>

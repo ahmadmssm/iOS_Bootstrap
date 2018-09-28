@@ -14,24 +14,22 @@ import iOS_Bootstrap
 class MyViewController:
                 BaseTableViewController<MyPresenter, MyViewControllerDelegator, User>,
                 MyViewControllerDelegator,
-                TableViewDelegates {
+                BaseTableViewDelegates {
     //
     @IBOutlet weak var switchLanguageButton: UIButton!
     @IBOutlet weak var usersTableVIew: UITableView!
     //
-    private var mNavigator : NavigationCoordinator?
+    private var mNavigator : Navigator?
     var x : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Log.debug(GlobalKeys.getEnvironmentVariables.baseURL)
-        mNavigator = self.navigator as? NavigationCoordinator
+        mNavigator = self.navigator as? Navigator
     }
     //
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Set context
-        AppDelegate.setContext(context: self)
         //
         Log.debug("ChangeLng".localized())
         switchLanguageButton.setTitle("ChangeLng".localized(), for: .normal)
@@ -70,7 +68,7 @@ class MyViewController:
         for window in windows {
             for view in window.subviews {
                 view.removeFromSuperview()
-                window.rootViewController = mNavigator?.navigationController
+                window.rootViewController = Navigator.navigationController
                 window.addSubview(view)
            }
         }

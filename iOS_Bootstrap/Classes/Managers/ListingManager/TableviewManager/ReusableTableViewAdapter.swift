@@ -5,13 +5,13 @@
 //  Created by Ahmad Mahmoud on 6/17/18.
 //
 
-open class ReusableTableViewAdapter : NSObject, TableViewDelegates {
+open class ReusableTableViewAdapter : NSObject, BaseTableViewDelegates {
     
     private final var tableview : UITableView!
     private final var tableViewDataSource: [Any]!
     //
     public final var nibClass : BaseTableViewCell.Type!
-    private final var mDelegate : TableViewDelegates!
+    private final var mDelegate : BaseTableViewDelegates!
     //
     private final var adapter : TableviewAdapter!
     

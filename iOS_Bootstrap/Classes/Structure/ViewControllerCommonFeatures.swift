@@ -7,4 +7,5 @@
 
 public protocol ViewControllerCommonFeatures :
                                               NetworkStatusListener,
-                                              PopUpProtocol {}
+                                              PopUpProtocol,
+                                              Injectable {}

@@ -10,27 +10,24 @@
 import UIKit
 import iOS_Bootstrap
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Injectable {
 
     let picker = Picker()
     //
-    public weak var navigator: NavigationCoordinator?
+    public weak var navigator: Navigator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //
         self.title = "View controller"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setContext(context: self)
+    }
+    
     @IBAction func buttonGoToHomeStoryboard(_ sender: UIButton) {
-//
-//        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.home.getStringName)
-//        let homeVC = storyboard.instantiateInitialViewController() as! HomeVC
-//        homeVC.x = 2
-//        present(homeVC, animated: true, completion: nil)
-        
-        AppDelegate.setContext(context: self)
-        NavigationCoordinator.getInstance.goToHomeStoryBoard(number: 2)
+        Navigator.goToHomeStoryBoard(number: 2)
     }
     
     @IBAction func showProgress(_ sender: UIButton) {
@@ -121,6 +118,28 @@ class ViewController: UIViewController {
     @IBAction func showShareTo(_ sender: UIButton) {
       // let sharingManager : SocialMediaManager = SocialMediaManager(context: self)
       //  sharingManager.share(itemToShare: "Text" as AnyObject, excludedItems: nil)
+        
+        var user : User = User()
+        user.first_name = "First"
+        user.last_name = "Last"
+        user.id = 123
+        //
+        let objStr : String = user.toString()
+        print(objStr)
+        let u : User = objStr.toObjectOfType(Object: User.self)
+        print(u.first_name!)
+        //
+        var country : Country = Country()
+        country.countryName = "Hopa"
+        country.capital = "Capital Hopa"
+        country.pop = 1000000
+        let jsonStr = country.toString()
+        print(jsonStr)
+        print(jsonStr.toDictionary() ["capital"]!)
     }
     
 }
+
+
+
+
