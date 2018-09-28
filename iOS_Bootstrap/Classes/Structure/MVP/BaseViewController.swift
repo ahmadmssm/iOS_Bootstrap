@@ -29,8 +29,6 @@ open class BaseViewController <T, V> :
         setContext(context: self)
         InternetConnectionManager.getInstance.addListener(listener: self)
         configureSnackBar()
-        //
-        fatalError("Must Override")
     }
     //
     override open func viewDidDisappear(_ animated: Bool) {

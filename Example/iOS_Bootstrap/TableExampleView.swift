@@ -37,6 +37,8 @@ class TableExampleView: BaseTableView<Country>, BaseTableViewDelegates {
         getTableViewAdapter.configureTableWithXibCell(tableView: tableview, nibClass: TableViewCell.self, delegate: self)
     }
     
+    override func initPaginationParameters() {}
+    
     override func initController() { controller = TableController(view: self) }
 
     func configureCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,6 +47,7 @@ class TableExampleView: BaseTableView<Country>, BaseTableViewDelegates {
         cell.labelCapitalName.text = getTableViewDataSource [indexPath.row].capital
         return cell
     }
+    
     
     func didGetCountries(countries : [Country]) {
         getTableViewAdapter.reloadTable(pageItems: countries)

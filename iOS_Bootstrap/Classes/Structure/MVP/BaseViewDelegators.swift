@@ -12,3 +12,16 @@ import Foundation
     @objc optional func showLoading()
     @objc optional func hideLoading()
 }
+
+@objc public protocol BaseTableViewDelegator : BaseViewDelegator {
+    func didGetTableViewItems(forPage page: Int, updatedDataSource: [Any])
+}
+
+@objc public protocol BaseCollectionViewDelegator : BaseViewDelegator {
+    func didGetCollectionViewItems(forPage page: Int, updatedDataSource: [Any])
+}
+
+
+
+
+

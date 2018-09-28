@@ -116,7 +116,7 @@
 		3F456B396AC6BD6807F98816D59AD8C6 /* LocalizationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353F7C5F4277BD05E3A3470374A52DF5 /* LocalizationHelpers.swift */; };
 		3F537693453E6A4ECBE629DF7C1396A7 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D382657AB7FB7940261BAEE89B391A6 /* TransformType.swift */; };
 		40AC956F479C8AC1357D9887A404C7D0 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6B13D04E35DC3C747476DFFD4A70F5 /* IQUIScrollView+Additions.swift */; };
-		41958FFBCDF39195C9EF35EEBDEE3057 /* BaseViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F2B4F05593A2F8941AF036FA32F58A /* BaseViewDelegator.swift */; };
+		41958FFBCDF39195C9EF35EEBDEE3057 /* BaseViewDelegators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F2B4F05593A2F8941AF036FA32F58A /* BaseViewDelegators.swift */; };
 		41E88C66EDA43B7129B9111A23F30EA1 /* ConnectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C15E84C424F97395FFAF97007AC7C /* ConnectionResult.swift */; };
 		41FF55C561EDCF2AE2ECA9D4DEA1079E /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C24E811A4A81334D8C101256F4A7275 /* ParameterEncoding.swift */; };
 		42B12807D149DEA0549F0DEAC822539A /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EBC5673EC1F8BFEF3EEB3EBF691FF0 /* CustomDateFormatTransform.swift */; };
@@ -735,7 +735,7 @@
 		424D6EFB4D6290058A37DCA016DFE704 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42D45BAD50701000D675FF04EC948108 /* Error+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		43A747EEE222E491B2031F5C645B9882 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		44F2B4F05593A2F8941AF036FA32F58A /* BaseViewDelegator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseViewDelegator.swift; sourceTree = "<group>"; };
+		44F2B4F05593A2F8941AF036FA32F58A /* BaseViewDelegators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseViewDelegators.swift; sourceTree = "<group>"; };
 		450ADABFDC09A81FE5744B07DBE3CF49 /* ObserverBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObserverBase.swift; path = RxSwift/Observers/ObserverBase.swift; sourceTree = "<group>"; };
 		469631DEECFE960E7801C3EA09817040 /* BuiltInBridgeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BuiltInBridgeType.swift; path = Source/BuiltInBridgeType.swift; sourceTree = "<group>"; };
 		474FB5C1E15744FFA2C0D94B9EACFFE4 /* PrimitiveSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrimitiveSequence.swift; path = RxSwift/Traits/PrimitiveSequence.swift; sourceTree = "<group>"; };
@@ -2049,7 +2049,7 @@
 				C05E1934EC846549966376819636893C /* BaseTableViewController.swift */,
 				B39D30092C628EBF34623430CEEAD9A9 /* BaseCollectionViewController.swift */,
 				3AFDAE2DA0F07C5473C04581BFB2A5C0 /* BasePresenter.swift */,
-				44F2B4F05593A2F8941AF036FA32F58A /* BaseViewDelegator.swift */,
+				44F2B4F05593A2F8941AF036FA32F58A /* BaseViewDelegators.swift */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -2617,7 +2617,7 @@
 				F7A28C387A1ECBFB924BB4FFB5FEF176 /* BaseTableViewController.swift in Sources */,
 				955DE75BE04BC2577F0E9D6FFFF945B4 /* BaseView.swift in Sources */,
 				FE72907CCB90A97A9DD637AD0617001D /* BaseViewController.swift in Sources */,
-				41958FFBCDF39195C9EF35EEBDEE3057 /* BaseViewDelegator.swift in Sources */,
+				41958FFBCDF39195C9EF35EEBDEE3057 /* BaseViewDelegators.swift in Sources */,
 				CF38DDDA7F9814DDE74D82721E94410D /* BuildVariantService.swift in Sources */,
 				A1D8BB99F2CB846B94C94BF6B0BF573B /* CardView.swift in Sources */,
 				853FD5AC5B7CB941C1974382F00B732A /* Codable + dictionary.swift in Sources */,

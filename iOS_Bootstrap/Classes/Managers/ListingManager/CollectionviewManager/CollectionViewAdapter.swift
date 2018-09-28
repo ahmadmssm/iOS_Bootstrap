@@ -23,7 +23,7 @@ open class CollectionViewAdapter : NSObject {
     //
     private var firstTime : Bool = true
     //
-    fileprivate var spinner : UIActivityIndicatorView?
+    fileprivate var indicator : UIActivityIndicatorView?
     
     public var getDataSource : [Any] {
         set (dataSource) { return collectionViewDataSource = dataSource }
@@ -109,29 +109,22 @@ open class CollectionViewAdapter : NSObject {
         mDelegate?.pullToRefresh?(refreshcontrole: refreshControl)
     }
     
-  //  public final func reloadCollectionView(pageItems:[Any], currentPage : Int) {
     public final func reloadCollectionView(pageItems:[Any]) {
-
-       // self.mCurrentPage = currentPage
         //
         if (self.mCurrentPage < mNumberOfPages) { hasMore = true }
-        //
         if (self.collectionViewDataSource.isEmpty) { self.collectionViewDataSource = pageItems }
         else {
             if (collectionViewDataSource.count == pageItems.count) {
-                let set1 = NSSet(array: collectionViewDataSource)
-                let set2 = NSSet(array: pageItems)
-                if (!set1.isEqual(set2)) {
+                if (!collectionViewDataSource.description.isEqual(pageItems.description)) {
                     self.collectionViewDataSource.append(contentsOf: pageItems)
                 }
             }
+            else { self.collectionViewDataSource.append(contentsOf: pageItems) }
         }
         //
         mCollectionview?.reloadData()
         //
-        spinner?.stopAnimating()
-        // mTableview.tableFooterView?.isHidden = true
-        //
+        indicator?.stopAnimating()
         self.mCurrentPage += 1
     }
     
@@ -212,12 +205,12 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
             if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= (scrollView.contentSize.height)) {
                 //
                 if (hasMore) {
-                    spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-                    spinner?.startAnimating()
-                    spinner?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: mCollectionview.bounds.width, height: CGFloat(45))
+                    indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+                    indicator?.startAnimating()
+                    indicator?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: mCollectionview.bounds.width, height: CGFloat(45))
                     
 
-                    mCollectionview.addSubview(spinner!)
+                    mCollectionview.addSubview(indicator!)
                 //    mCollectionview.tableFooterView = spinner
                 //    mCollectionview.tableFooterView?.isHidden = false
                     //
@@ -227,7 +220,7 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
                 }
             }
             else {
-                spinner?.stopAnimating()
+                indicator?.stopAnimating()
               //  mCollectionview.tableFooterView?.isHidden = true
             }
         }

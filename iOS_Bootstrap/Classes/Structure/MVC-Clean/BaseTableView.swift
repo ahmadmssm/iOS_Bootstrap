@@ -22,5 +22,9 @@ open class BaseTableView<D>: BaseView {
     }
     
     open func initTableViewAdapterConfiguraton() { fatalError("Must Override") }
+    open func initPaginationParameters() {}
+    open func didGetTableViewItems(forPage page: Int, updatedDataSource: [D]) {
+        initPaginationParameters()
+    }
 }
 

@@ -25,5 +25,6 @@ open class BaseTableViewController <T, V, D> :
     }
     
     open func initTableViewAdapterConfiguraton() { fatalError("Must Override") }
-    
+    open func initPaginationParameters() {}
+
 }

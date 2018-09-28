@@ -36,8 +36,10 @@ class MyViewController:
     }
     
     override func initUI() {
-        getTableViewAdapter.configureTableWithXibCell(tableView: usersTableVIew, dataSource: getTableViewDataSource, nibClass: UserCell.self, delegate: self)
-        
+    }
+    
+    override func initTableViewAdapterConfiguraton() {
+        getTableViewAdapter.configureTableWithXibCell(tableView: usersTableVIew, nibClass: UserCell.self, delegate: self)
     }
     
     // Button actions
@@ -85,25 +87,18 @@ class MyViewController:
     }
     //
     func loadMore(forPage page: Int, updatedDataSource: [Any]) {
-        getTableViewDataSource = updatedDataSource as! [User]
         getPresenter.getUsers(pageNumber: page)
     }
     
-    func loadMore<T>(forPage page: Int, updatedDataSource: [T]) {
-        getTableViewDataSource = updatedDataSource as! [User]
-        getPresenter.getUsers(pageNumber: page)
-    }
-    //
     //
     func doNothing() { Log.info("I'm here...") }
     //
+    
     func didGetFakeUsers(page: Page) {
         // Configure pagination parameters
         getTableViewAdapter.configurePaginationParameters(totalNumberOfItems: page.total!, itemsPerPage: page.perPage!)
         // Reload table with new page items only (Not the whole data source)
         getTableViewAdapter.reloadTable(pageItems: page.users!)
-        // Update your data source
-        getTableViewDataSource.append(contentsOf: page.users!)
     }
     //
     func didFailToGetFakeUsers(error: String) {

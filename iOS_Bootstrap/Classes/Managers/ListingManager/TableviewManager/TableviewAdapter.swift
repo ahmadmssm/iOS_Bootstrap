@@ -117,26 +117,26 @@ open class TableviewAdapter : NSObject {
        // self.mCurrentPage = currentPage
        // self.mCurrentPage += 1
 //        if (currentPage < mNumberOfPages) { hasMore = true }
-        if (self.mCurrentPage < mNumberOfPages) { hasMore = true }
-
+        if (self.mCurrentPage < mNumberOfPages) {
+            hasMore = true
+        }
         //
         if (self.tableViewDataSource.isEmpty) { self.tableViewDataSource = pageItems }
         else {
             if (tableViewDataSource.count == pageItems.count) {
-                let set1 = NSSet(array: tableViewDataSource)
-                let set2 = NSSet(array: pageItems)
-                if (!set1.isEqual(set2)) {
+                if (!tableViewDataSource.description.isEqual(pageItems.description)) {
                     self.tableViewDataSource.append(contentsOf: pageItems)
                 }
             }
-//            self.tableViewDataSource.append(contentsOf: pageItems)
+            else {
+                self.tableViewDataSource.append(contentsOf: pageItems)
+            }
         }
         //
         mTableview?.reloadData()
         //
         indicator?.stopAnimating()
         mTableview.tableFooterView?.isHidden = true
-        //
         self.mCurrentPage += 1
     }
     
