@@ -12,8 +12,22 @@ open class BaseCollectionView<D>: BaseView {
     //
     public final var getCollectionViewAdapter : CollectionViewAdapter { get { return collectionViewAdapter } }
     public var getCollectionViewDataSource : [D] {
-        set (newDataSource) { collectionViewDataSource = newDataSource }
-        get { return collectionViewDataSource }
+        set (dataSource) { return collectionViewAdapter.getDataSource = dataSource}
+        get { return collectionViewAdapter.getDataSource as! [D] }
     }
+    
+    
+    public final var getTableViewAdapter : CollectionViewAdapter {
+        get { return collectionViewAdapter }
+    }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        initCollectionViewAdapterConfiguraton()
+        let collectionViewDataSource : [D] = [D]()
+        collectionViewAdapter.setDataSource(dataSource: collectionViewDataSource)
+    }
+    
+    open func initCollectionViewAdapterConfiguraton() {}
 }
 

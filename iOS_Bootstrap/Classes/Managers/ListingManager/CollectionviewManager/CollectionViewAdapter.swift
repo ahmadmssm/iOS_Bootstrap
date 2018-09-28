@@ -25,6 +25,11 @@ open class CollectionViewAdapter : NSObject {
     private var firstTime : Bool = true
     //
     fileprivate var spinner : UIActivityIndicatorView?
+    
+    public var getDataSource : [Any] {
+        set (dataSource) { return collectionViewDataSource = dataSource }
+        get { if (collectionViewDataSource != nil) { return collectionViewDataSource }; return [] }
+    }
 
     public final func configureCollectionviewWithXibCell (collectionView: UICollectionView,
                                                  dataSource: [Any]!,
@@ -36,6 +41,15 @@ open class CollectionViewAdapter : NSObject {
         configureCollectionView(collectionView: collectionView, dataSource: dataSource, delegate: delegate)
     }
     
+    public final func configureCollectionviewWithXibCell (collectionView: UICollectionView,
+                                                          nibClass : BaseCollectionViewCell.Type!,
+                                                          delegate : CollectionViewDelegates) {
+        //
+        self.mNibClass = nibClass
+        mCollectionview?.register(cellClass: mNibClass.self)
+        configureCollectionView(collectionView: collectionView, dataSource: [], delegate: delegate)
+    }
+    
     public final func configureCollectionviewWithStoryboardCell (collectionView: UICollectionView,
                                                         dataSource: [Any],
                                                         nibClass : BaseCollectionViewCell.Type!,
@@ -44,10 +58,15 @@ open class CollectionViewAdapter : NSObject {
         configureCollectionView(collectionView: collectionView, dataSource: dataSource, delegate: delegate)
     }
     
+    public final func setDataSource (dataSource: [Any]) {
+        self.collectionViewDataSource = dataSource
+    }
+    
     private final func configureCollectionView (collectionView: UICollectionView,
                                        dataSource: [Any],
                                        delegate : CollectionViewDelegates) {
-        self.collectionViewDataSource = dataSource
+        // self.collectionViewDataSource = dataSource
+        setDataSource(dataSource: dataSource)
         self.mCollectionview = collectionView
         self.mDelegate = delegate
         //

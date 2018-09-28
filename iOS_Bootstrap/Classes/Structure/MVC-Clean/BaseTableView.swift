@@ -22,6 +22,5 @@ open class BaseTableView<D>: BaseView {
     }
     
     open func initTableViewAdapterConfiguraton() {}
-    
 }
 
