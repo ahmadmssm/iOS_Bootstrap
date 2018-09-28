@@ -28,6 +28,8 @@ open class BaseView : UIViewController, ViewControllerCommonFeatures {
         setContext(context: self)
         InternetConnectionManager.getInstance.addListener(listener: self)
         configureSnackBar()
+        //
+        fatalError("Must Override")
     }
    
     open func initUI () { fatalError("Must Override") }
@@ -63,6 +65,6 @@ public extension BaseView {
         Log.warning(message)
     }
     
-    func showLoading() {}
-    func hideLoading() {}
+//    open func showLoading() {}
+//    open func hideLoading() {}
 }

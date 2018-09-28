@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/ViewController.swift"
-            timestampString = "559838491.1765029"
+            timestampString = "559847915.5287139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/AppDelegate.swift"
-            timestampString = "559838491.176579"
+            timestampString = "559847915.528852"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -698,7 +698,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/AppDelegate.swift"
-            timestampString = "559838491.177685"
+            timestampString = "559847915.52997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -777,22 +777,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../iOS_Bootstrap/Classes/Managers/ListingManager/TableviewManager/TableviewAdapter.swift"
-            timestampString = "559838491.177847"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/APIs.swift"
             timestampString = "559391157.201117"
             startingColumnNumber = "9223372036854775807"
@@ -810,7 +794,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/Managers/ListingManager/TableviewManager/TableviewAdapter.swift"
-            timestampString = "559838491.178295"
+            timestampString = "559847915.53019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"

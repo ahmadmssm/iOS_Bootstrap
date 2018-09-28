@@ -121,7 +121,16 @@ open class TableviewAdapter : NSObject {
 
         //
         if (self.tableViewDataSource.isEmpty) { self.tableViewDataSource = pageItems }
-        else { self.tableViewDataSource.append(contentsOf: pageItems) }
+        else {
+            if (tableViewDataSource.count == pageItems.count) {
+                let set1 = NSSet(array: tableViewDataSource)
+                let set2 = NSSet(array: pageItems)
+                if (!set1.isEqual(set2)) {
+                    self.tableViewDataSource.append(contentsOf: pageItems)
+                }
+            }
+//            self.tableViewDataSource.append(contentsOf: pageItems)
+        }
         //
         mTableview?.reloadData()
         //
@@ -186,7 +195,7 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
 
 extension TableviewAdapter : EmptyDataSetSource, EmptyDataSetDelegate {
     //
-    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+    public func emptyDataSetShouldDisplay(_ scrollView: UIScrollView) -> Bool {
         return (mDelegate?.emptyDataSetShouldDisplay?()) ?? false
     }
     

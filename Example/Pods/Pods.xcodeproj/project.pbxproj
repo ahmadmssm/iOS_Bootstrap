@@ -1393,9 +1393,9 @@
 				E363FA0F87670C69A34E3E755BAC8D6E /* How_to_use.strings */,
 				6FBEA6F425D9C018FF41AFEEC4D26605 /* NibLoadableView.swift */,
 				C7E837944C64337F1D1981A1A6C9C57A /* ReusableCell.swift */,
+				98EEF070EF2B4D6551FB6470E65E7045 /* TableviewManager */,
 				558A091A58629E15B2AED22A906AE7D7 /* CollectionviewManager */,
 				A9C3E9E1B0A2CCF1383868CB8C0C98A8 /* EmptyDataSet */,
-				98EEF070EF2B4D6551FB6470E65E7045 /* TableviewManager */,
 			);
 			path = ListingManager;
 			sourceTree = "<group>";

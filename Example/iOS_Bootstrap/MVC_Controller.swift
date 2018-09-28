@@ -14,6 +14,5 @@ class MVC_Controller : BaseController<MVC_View> {
         super.init(view: view)
         // You can call any function for your view using the ready presented variable : getView
     }
-
 }
 

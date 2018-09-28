@@ -10,7 +10,6 @@ import UIKit
 
 open class CollectionViewAdapter : NSObject {
     
-    
     private final var mCollectionview : UICollectionView!
     private final var collectionViewDataSource: [Any]!
     private final var mNibClass : BaseCollectionViewCell.Type!
@@ -118,7 +117,15 @@ open class CollectionViewAdapter : NSObject {
         if (self.mCurrentPage < mNumberOfPages) { hasMore = true }
         //
         if (self.collectionViewDataSource.isEmpty) { self.collectionViewDataSource = pageItems }
-        else { self.collectionViewDataSource.append(contentsOf: pageItems) }
+        else {
+            if (collectionViewDataSource.count == pageItems.count) {
+                let set1 = NSSet(array: collectionViewDataSource)
+                let set2 = NSSet(array: pageItems)
+                if (!set1.isEqual(set2)) {
+                    self.collectionViewDataSource.append(contentsOf: pageItems)
+                }
+            }
+        }
         //
         mCollectionview?.reloadData()
         //
@@ -229,7 +236,7 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
 
 extension CollectionViewAdapter : EmptyDataSetSource, EmptyDataSetDelegate {
     //
-    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+    public func emptyDataSetShouldDisplay(_ scrollView: UIScrollView) -> Bool {
         return (mDelegate?.emptyDataSetShouldDisplay?()) ?? false
     }
     

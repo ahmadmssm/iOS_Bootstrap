@@ -8,9 +8,9 @@
 open class BaseCollectionView<D>: BaseView {
     
     private let collectionViewAdapter : CollectionViewAdapter = CollectionViewAdapter()
-    private var collectionViewDataSource : [D] = [D]()
-    //
-    public final var getCollectionViewAdapter : CollectionViewAdapter { get { return collectionViewAdapter } }
+    public final var getCollectionViewAdapter : CollectionViewAdapter {
+        get { return collectionViewAdapter }
+    }
     public var getCollectionViewDataSource : [D] {
         set (dataSource) { return collectionViewAdapter.getDataSource = dataSource}
         get { return collectionViewAdapter.getDataSource as! [D] }
@@ -28,6 +28,6 @@ open class BaseCollectionView<D>: BaseView {
         collectionViewAdapter.setDataSource(dataSource: collectionViewDataSource)
     }
     
-    open func initCollectionViewAdapterConfiguraton() {}
+    open func initCollectionViewAdapterConfiguraton() { fatalError("Must Override") }
 }
 

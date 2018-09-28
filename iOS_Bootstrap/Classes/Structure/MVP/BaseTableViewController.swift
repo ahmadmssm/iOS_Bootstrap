@@ -24,5 +24,6 @@ open class BaseTableViewController <T, V, D> :
         tableViewAdapter.setDataSource(dataSource: tableViewDataSource)
     }
     
-    open func initTableViewAdapterConfiguraton() {}
+    open func initTableViewAdapterConfiguraton() { fatalError("Must Override") }
+    
 }

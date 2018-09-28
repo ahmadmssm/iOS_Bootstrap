@@ -37,7 +37,7 @@ public extension PopUpProtocol where Self: UIViewController {
         self.present(actionSheet, animated: true, completion: nil)
     }
     
-    public func showLoading(message: String) {
+    public func showLoadingIndicator(message: String) {
       
         activityIndicatorAlert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
@@ -48,7 +48,7 @@ public extension PopUpProtocol where Self: UIViewController {
         present(activityIndicatorAlert, animated: true, completion: nil)
     }
     
-    public func hideLoading() {
+    public func hideLoadingIndicator() {
         activityIndicatorAlert.dismiss(animated: true, completion: nil)
     }
     

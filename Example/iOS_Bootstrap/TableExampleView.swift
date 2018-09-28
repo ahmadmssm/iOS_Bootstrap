@@ -23,6 +23,10 @@ class TableExampleView: BaseTableView<Country>, BaseTableViewDelegates {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func initUI() {
         let refreshControl = UIRefreshControl()
         getTableViewAdapter.configurePullToRefresh(refreshControl: refreshControl)
