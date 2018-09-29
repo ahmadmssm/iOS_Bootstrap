@@ -36,9 +36,7 @@ class TableExampleView: BaseTableView<Country>, BaseTableViewDelegates {
     override func initTableViewAdapterConfiguraton() {
         getTableViewAdapter.configureTableWithXibCell(tableView: tableview, nibClass: TableViewCell.self, delegate: self)
     }
-    
-    override func initPaginationParameters() {}
-    
+        
     override func initController() { controller = TableController(view: self) }
 
     func configureCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

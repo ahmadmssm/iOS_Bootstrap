@@ -29,6 +29,5 @@ open class BaseCollectionViewController <T, D> : BaseViewController<T, D> where 
     }
     
     open func initCollectionViewAdapterConfiguraton() { fatalError("Must Override") }
-    open func initPaginationParameters() {}
     
 }

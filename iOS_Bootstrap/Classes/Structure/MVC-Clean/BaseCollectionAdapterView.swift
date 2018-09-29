@@ -29,10 +29,6 @@ open class BaseCollectionView<D>: BaseView {
     }
     
     open func initCollectionViewAdapterConfiguraton() { fatalError("Must Override") }
-    open func initPaginationParameters() {}
-    open func didGetCollectionViewItems(forPage page: Int, updatedDataSource: [D]) {
-        initPaginationParameters()
-    }
 
 }
 
