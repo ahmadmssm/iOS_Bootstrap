@@ -356,6 +356,9 @@
 		C9AF5B1D21599B1700C1FED3 /* StringConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF5B1C21599B1700C1FED3 /* StringConvertable.swift */; };
 		C9AF5B1F21599B6D00C1FED3 /* Codable + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF5B1E21599B6D00C1FED3 /* Codable + String.swift */; };
 		C9B161C921579EEF00210D77 /* Collection + nillable values.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B161C821579EEF00210D77 /* Collection + nillable values.swift */; };
+		C9D50E0E215F8ACA00B5CB85 /* DTPagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D50E0B215F8ACA00B5CB85 /* DTPagerController.swift */; };
+		C9D50E0F215F8ACA00B5CB85 /* DTSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D50E0C215F8ACA00B5CB85 /* DTSegmentedControl.swift */; };
+		C9D50E10215F8ACA00B5CB85 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D50E0D215F8ACA00B5CB85 /* UIViewController.swift */; };
 		CAB1423FFCE5443FC097B76C4E1762ED /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96FF8533AA54B22446AB8F465DC488C /* DispatchQueue+Extensions.swift */; };
 		CB3B246599C3AEBE7A645B5A5DCAA783 /* URLRequest+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D3D36181AFC99F6E2D9B1D9E21B687 /* URLRequest+Encoding.swift */; };
 		CB44910F26CA7EF3B7C9513AD10E6B9D /* ObserverBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450ADABFDC09A81FE5744B07DBE3CF49 /* ObserverBase.swift */; };
@@ -988,6 +991,9 @@
 		C9AF5B1C21599B1700C1FED3 /* StringConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConvertable.swift; sourceTree = "<group>"; };
 		C9AF5B1E21599B6D00C1FED3 /* Codable + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable + String.swift"; sourceTree = "<group>"; };
 		C9B161C821579EEF00210D77 /* Collection + nillable values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection + nillable values.swift"; sourceTree = "<group>"; };
+		C9D50E0B215F8ACA00B5CB85 /* DTPagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTPagerController.swift; sourceTree = "<group>"; };
+		C9D50E0C215F8ACA00B5CB85 /* DTSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTSegmentedControl.swift; sourceTree = "<group>"; };
+		C9D50E0D215F8ACA00B5CB85 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		C9E7F16989A914149813CB3180F94AC7 /* DefaultIfEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultIfEmpty.swift; path = RxSwift/Observables/DefaultIfEmpty.swift; sourceTree = "<group>"; };
 		CAA980407E166187FFF1B2BD26125A0D /* RxSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwift-prefix.pch"; sourceTree = "<group>"; };
 		CB9FF9A4CB1E4C903EB790FD371E871D /* ObservableType+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ObservableType+Extensions.swift"; path = "RxSwift/ObservableType+Extensions.swift"; sourceTree = "<group>"; };
@@ -1912,6 +1918,7 @@
 				4D707C9D7361A45FFBD99E90AA4DD412 /* LoadingButton.swift */,
 				856269C7FF9459457C8D21FD963D8394 /* Picker.swift */,
 				A99C9F8091C31D3EBAB1E803C94AE499 /* TTGSnackbar.swift */,
+				C9D50E0A215F8ACA00B5CB85 /* DTPagerController */,
 				F01D81A31264F268238C04D4F937EE34 /* ActionSheetPicker */,
 				39647EB0E5BB31D8C2BD4AFEC52E47CE /* ToogleButton */,
 			);
@@ -2082,6 +2089,16 @@
 				8AB3D31E58B4F2AF04652D23D1B020D9 /* Codable + dictionary.swift */,
 			);
 			path = Codable;
+			sourceTree = "<group>";
+		};
+		C9D50E0A215F8ACA00B5CB85 /* DTPagerController */ = {
+			isa = PBXGroup;
+			children = (
+				C9D50E0B215F8ACA00B5CB85 /* DTPagerController.swift */,
+				C9D50E0C215F8ACA00B5CB85 /* DTSegmentedControl.swift */,
+				C9D50E0D215F8ACA00B5CB85 /* UIViewController.swift */,
+			);
+			path = DTPagerController;
 			sourceTree = "<group>";
 		};
 		D89CCBD4A6157A09374445F622E046CC /* MultiLanguagesManager */ = {
@@ -2609,6 +2626,7 @@
 				8EC566FE9E91880FD76CEB263575A827 /* BaseCollectionViewCell.swift in Sources */,
 				98EDA0388775C779C0A3DAB6CE50DBA7 /* BaseCollectionViewController.swift in Sources */,
 				BBC5C7A2DFADAF9AC805ACB0BD7C6FDF /* BaseController.swift in Sources */,
+				C9D50E0E215F8ACA00B5CB85 /* DTPagerController.swift in Sources */,
 				EE571EE0EA2873B5C0330237C41E27F1 /* BaseModel.swift in Sources */,
 				58E215AE293C01613133F3E21E3B78F7 /* BaseNavigator.swift in Sources */,
 				8E4CB25719B1EABE05D3FD354A75341D /* BasePresenter.swift in Sources */,
@@ -2693,6 +2711,7 @@
 				76B4DEA93FA37D25DA7963C41D0999D1 /* StringableNames.swift in Sources */,
 				AA7E65C44770F0691F1D65581D7C307A /* SWActionSheet.m in Sources */,
 				BB6AF572769307ACD4D0262101D52B65 /* Tableview + Reusablel.swift in Sources */,
+				C9D50E10215F8ACA00B5CB85 /* UIViewController.swift in Sources */,
 				FA6BE20484787CAE52A913D43B5E167C /* TableviewAdapter.swift in Sources */,
 				A5757C9E63E1AF8702BD36700C499C3E /* BaseTableViewDelegates.swift in Sources */,
 				C9AF5B1F21599B6D00C1FED3 /* Codable + String.swift in Sources */,
@@ -2700,6 +2719,7 @@
 				5DCCC714B95F18A0A4376CC82792493F /* TTGSnackbar.swift in Sources */,
 				1B34E273B7CE9B190AEB46989214326D /* UIButton + ActivityIndicator.swift in Sources */,
 				655C39BD71BBFD247CF2A3E3293A5110 /* UIColor + Hex.swift in Sources */,
+				C9D50E0F215F8ACA00B5CB85 /* DTSegmentedControl.swift in Sources */,
 				D084D56BB00C9ED637D7F1C6841652E4 /* UIImage + Gif.swift in Sources */,
 				D66B9ED23507ACD9EC67461BA3D2DE66 /* UILabel + format part of the text.swift in Sources */,
 				C9AF5B1D21599B1700C1FED3 /* StringConvertable.swift in Sources */,

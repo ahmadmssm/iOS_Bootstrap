@@ -86,8 +86,10 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 40. BaseTableAdapterController,  BaseTableAdapterPresenter, BaseCollectionAdapterController,  BaseCollectionAdapterPresenter to save you somtime and code when you implement table or collection view.
 41. You can call getUserDefaults from BaseController and BasePresenter by default.
 42. Phone number validator string extension.
-43. Included **SCLAlertView** awesone swift library.
-44. How to use and documentation + references.
+43. Includes **SCLAlertView** awesone swift library.
+44. ViewPager (AKA : Segmented controller) as the one in Android 😁.
+45. Automated Contexts injection.
+46. How to use and documentation + references.
 
 
 ## Upcoming features
@@ -284,7 +286,9 @@ In addition, the following Repos helped me alot either by including their code d
 1. [EZLoadingActivity](https://github.com/goktugyil/EZLoadingActivity).
 2. [MoyaSugar](https://github.com/devxoul/MoyaSugar).
 3. [Lucid](https://github.com/levibostian/Lucid).
-2. [ActionSheetPicker-3.0](https://github.com/skywinder/ActionSheetPicker-3.0).
+4. [ActionSheetPicker-3.0](https://github.com/skywinder/ActionSheetPicker-3.0).
+5. [ADTPagerController](https://github.com/tungvoduc/DTPagerController).
+
 
 ## Help me improve the documentation
 

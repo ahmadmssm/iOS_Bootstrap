@@ -128,6 +128,10 @@ open class CollectionViewAdapter : NSObject {
         self.mCurrentPage += 1
     }
     
+    public final func reloadCollectionView() {
+        mCollectionview?.reloadData()
+    }
+    
     // return cells that are square sized
     public func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, padding : CGFloat) -> CGSize {
         let collectionViewSize = mCollectionview.frame.size.width - padding

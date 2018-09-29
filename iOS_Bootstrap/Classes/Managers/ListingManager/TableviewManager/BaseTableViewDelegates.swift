@@ -15,4 +15,6 @@ public protocol BaseTableViewDelegates : TableViewOptionalDelegates {
     @objc optional func configureNumberOfRowsPerSection(section : Int) -> Int
     @objc optional func rowDidSelected(indexPath : IndexPath)
     @objc optional func configureAdditionalTableProperties (table : UITableView)
+    @objc optional func configureHeightForRowAt (indexPath: IndexPath) -> CGFloat
+
 }

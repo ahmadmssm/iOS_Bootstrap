@@ -140,6 +140,14 @@ open class TableviewAdapter : NSObject {
         self.mCurrentPage += 1
     }
     
+    public final func reloadTable() {
+        mTableview?.reloadData()
+    }
+    
+    public final func reloadTableRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation) {
+        mTableview.reloadRows(at: indexPaths, with: animation)
+    }
+    
 }
 
 extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
@@ -167,6 +175,10 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     // cell did selected at index
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         mDelegate?.rowDidSelected?(indexPath: indexPath)
+    }
+    //
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return (mDelegate?.configureHeightForRowAt?(indexPath: indexPath)) ?? UITableViewAutomaticDimension
     }
     // Pagination (Load more)
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
