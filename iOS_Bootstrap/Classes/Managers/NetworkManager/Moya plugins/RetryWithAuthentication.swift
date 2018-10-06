@@ -235,7 +235,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
         }
     }
     
-    public func refreshAuthenticationTokenIfNeeded(sessionServiceDelegate : SessionProtocol, r tatusCode : Int) -> Single<Response> {
+    public func refreshAuthenticationTokenIfNeeded(sessionServiceDelegate : SessionProtocol, refreshTokenStatusCode : Int) -> Single<Response> {
         return refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: sessionServiceDelegate, refreshTokenStatusCodes: refreshTokenStatusCode...refreshTokenStatusCode)
     }
 }
