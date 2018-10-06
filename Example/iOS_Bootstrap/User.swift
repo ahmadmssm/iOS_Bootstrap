@@ -6,6 +6,8 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
+import iOS_Bootstrap
+
 struct User : Codable {
     
     var id : Int?

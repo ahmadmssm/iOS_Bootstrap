@@ -16,10 +16,11 @@ open class BaseViewController <T, V> :
     private var snackbar : TTGSnackbar? = nil
     //
     public var navigator: BaseNavigator?
-    public var getPresenter : T!
+    private var presenter : T!
     
     override open func viewDidLoad() {
-        self.getPresenter = T.init(contract: self as! V)
+        // self.getPresenter = T.init(contract: self as! V)
+        self.presenter = T.init()
         initUI()
     }
     //
@@ -37,17 +38,26 @@ open class BaseViewController <T, V> :
     }
     
     open func initUI () { fatalError("Must Override") }
+    
+    public final var getPresenter : T {
+        get {
+            if (presenter.getViewDelegator == nil) {
+                presenter.attachView(contract: self as! V)
+            }
+            return presenter
+        }
+    }
 
 }
 
 extension BaseViewController {
     
-    func configureSnackBar() {
+    open func configureSnackBar() {
         self.snackbar = TTGSnackbar(message: "",duration: .short)
         self.snackbar?.backgroundColor = UIColor.blue
     }
     
-    public func networkStatusDidChanged(status: InternetConnectionManager.Connection) {
+    open func networkStatusDidChanged(status: InternetConnectionManager.Connection) {
         var message : String = ""
         var duration : TTGSnackbarDuration = .short
      

@@ -14,11 +14,11 @@ import Foundation
 }
 
 @objc public protocol BaseTableViewDelegator : BaseViewDelegator {
-    func didGetTableViewItems(forPage page: Int, updatedDataSource: [Any])
+    @objc optional func didGetTableViewItems(forPage page: Int, updatedDataSource: [Any])
 }
 
 @objc public protocol BaseCollectionViewDelegator : BaseViewDelegator {
-    func didGetCollectionViewItems(forPage page: Int, updatedDataSource: [Any])
+    @objc optional func didGetCollectionViewItems(forPage page: Int, updatedDataSource: [Any])
 }
 
 

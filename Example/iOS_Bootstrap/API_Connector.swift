@@ -35,15 +35,16 @@ class API_Connector : GenericConnector {
             .request(.getWorldCountries())
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
             .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
-            .mapArray(Country.self)
+    //        .mapArray(Country.self)
             .subscribe { event in
                 switch event {
                 case .success(let response):
-                    completion(.success(response))
-                
+                    completion(.success(try! response.mapArray(Country.self)))
                 case .error(let error):
+                    error.localizedDescription
                     completion(.failure(error.localizedDescription))
-                }}
+                }
+        }
     }
     
     override func getTokenRefreshService() -> Single<Response> {
@@ -90,13 +91,10 @@ class API_Connector : GenericConnector {
                     let countries : [Country] = Parser.arrayOfObjectsFromJSONstring(object: Country.self, JSONString: responseString)! as! [Country]
                     completion(.success(countries))
                 case .error(let error):
-                    print("Error message " + error.localizedDescription)
+                    print("Error string " + error.localizedDescription)
                     completion(.failure(error.localizedDescription))
                 }
         }
         
     }
-    
-    
 }
-

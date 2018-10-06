@@ -14,8 +14,10 @@ open class BaseController<V> : UserDefaultsService {
         getView = view
      //   getUserDefaults = UserDefaultsManager()
     }
+    
+    deinit { self.getView = nil }
 
-    func detachView() { self.getView = nil }
+    open func logOut() {}
 
 }
 

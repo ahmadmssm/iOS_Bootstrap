@@ -9,14 +9,21 @@
 
 open class BasePresenter <T> : UserDefaultsService {
     
-    public final let getViewDelegator: T!
+    public final var getViewDelegator: T!
     
     // public let getUserDefaults : UserDefaultsManager!
 
-    required public init (contract : T) {
-        self.getViewDelegator = contract
+    // required public init (contract : T) {
+       // self.getViewDelegator = contract
        // getUserDefaults = UserDefaultsManager()
-    }
+   // }
     
+    required public init () {}
+    
+    public final func attachView(contract : T) { self.getViewDelegator = contract }
+    
+    deinit { getViewDelegator = nil }
+
+    open func logOut() {}
 }
 

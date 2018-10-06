@@ -10,9 +10,7 @@ import iOS_Bootstrap
 
 class MyPresenter: BasePresenter<MyViewControllerDelegator> {
 
-    required init(contract: MyViewControllerDelegator) {
-        super.init(contract: contract)
-    }
+    required init() {}
     
     func getUsers(pageNumber : Int) {
         API_Connector().getFakeUsers(page: pageNumber, completion: { response in
