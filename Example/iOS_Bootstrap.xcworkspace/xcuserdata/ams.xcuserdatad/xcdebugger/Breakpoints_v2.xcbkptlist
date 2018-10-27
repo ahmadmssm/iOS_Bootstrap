@@ -74,28 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/ViewController.swift"
-            timestampString = "559865851.812714"
+            timestampString = "562354810.233695"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
             endingLineNumber = "67"
             landmarkName = "loggers(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOS_Bootstrap/AppDelegate.swift"
-            timestampString = "559865851.812989"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "applicationDidBecomeActive(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -697,88 +681,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iOS_Bootstrap/AppDelegate.swift"
-            timestampString = "559865851.815273"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOS_Bootstrap/API_Connector.swift"
-            timestampString = "559522010.9013129"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "getFakeUsers(page:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iOS_Bootstrap_Example.API_Connector.getFakeUsers(page: Swift.Int, completion: (iOS_Bootstrap.ConnectionResult&lt;iOS_Bootstrap_Example.Page&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "iOS_Bootstrap_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/Example/iOS_Bootstrap/API_Connector.swift"
-                  timestampString = "555938573.536902"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "879">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (RxSwift.SingleEvent&lt;iOS_Bootstrap_Example.Page&gt;) -&gt; () in iOS_Bootstrap_Example.API_Connector.getFakeUsers(page: Swift.Int, completion: (iOS_Bootstrap.ConnectionResult&lt;iOS_Bootstrap_Example.Page&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "iOS_Bootstrap_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/Example/iOS_Bootstrap/API_Connector.swift"
-                  timestampString = "555938573.54008"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "117">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOS_Bootstrap/API_Connector.swift"
-            timestampString = "559522010.901683"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "getFakeUsers(page:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "iOS_Bootstrap/APIs.swift"
-            timestampString = "559391157.201117"
+            timestampString = "562354810.234884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -822,7 +726,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/Managers/ListingManager/TableviewManager/TableviewAdapter.swift"
@@ -838,71 +742,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOS_Bootstrap/MyPresenter.swift"
-            timestampString = "559864233.290787"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "getUsers(pageNumber:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOS_Bootstrap/MyPresenter.swift"
-            timestampString = "559864233.290953"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "getUsers(pageNumber:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iOS_Bootstrap_Example.MyPresenter.getUsers(pageNumber: Swift.Int) -&gt; ()"
-                  moduleName = "iOS_Bootstrap_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/Example/iOS_Bootstrap/MyPresenter.swift"
-                  timestampString = "559864152.811311"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "18">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (iOS_Bootstrap.ConnectionResult&lt;iOS_Bootstrap_Example.Page&gt;) -&gt; () in iOS_Bootstrap_Example.MyPresenter.getUsers(pageNumber: Swift.Int) -&gt; ()"
-                  moduleName = "iOS_Bootstrap_Example"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ams/Desktop/Projects/Work/Bootstrap/iOS/iOS_Bootstrap/Example/iOS_Bootstrap/MyPresenter.swift"
-                  timestampString = "559864152.814055"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "110">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/Managers/ListingManager/TableviewManager/TableviewAdapter.swift"
@@ -912,6 +752,70 @@
             startingLineNumber = "172"
             endingLineNumber = "172"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Bootstrap/ViewController.swift"
+            timestampString = "562354810.235146"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "buttonGoToHomeStoryboard(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../iOS_Bootstrap/Classes/Structure/UIViewControllerEnvironment.swift"
+            timestampString = "562354810.235306"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "setupViewDidDisappearEssentials()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../iOS_Bootstrap/Classes/Structure/UIViewControllerEnvironment.swift"
+            timestampString = "562354810.235395"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "networkStatusDidChanged(status:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../iOS_Bootstrap/Classes/Structure/UIViewControllerEnvironment.swift"
+            timestampString = "562354810.235472"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "networkStatusDidChanged(status:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

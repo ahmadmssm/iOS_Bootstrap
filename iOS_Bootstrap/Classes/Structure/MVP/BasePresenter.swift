@@ -11,12 +11,7 @@ open class BasePresenter <T> : UserDefaultsService {
     
     public final var getViewDelegator: T!
     
-    // public let getUserDefaults : UserDefaultsManager!
-
-    // required public init (contract : T) {
-       // self.getViewDelegator = contract
-       // getUserDefaults = UserDefaultsManager()
-   // }
+    // public init (contract : T) { self.getViewDelegator = contract }
     
     required public init () {}
     

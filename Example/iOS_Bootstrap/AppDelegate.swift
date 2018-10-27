@@ -14,13 +14,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //
-        DefaultConfigurations.setMandatoryConfigurations()
-        DefaultConfigurations.configureSessionService(context: self)
-        DefaultConfigurations.configureNavigationBarApperance(barColor: UIColor.green, backButtonColor: UIColor.blue, textApperance: nil)
-        DefaultConfigurations.configureAppWindowWithRootNavigationController(window: window!, navController: Navigator.navigationController!)
+        DefaultConfigurations
+                .init()
+                .enableIQKeyboard()
+                .iqKeyboardCanGoBack()
+                .iqKeyboardCanGoNext()
+                .configureSessionService(context: self)
+                .configureNavigationBarApperance(barColor: UIColor.green, backButtonColor: UIColor.blue, textApperance: nil)
+                .configureAppWindowWithRootNavigationController(window: window!, navController: Navigator.navigationController!)
+                .build()
         //
         Navigator.startInitialView()
         //

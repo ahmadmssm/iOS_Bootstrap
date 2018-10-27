@@ -19,13 +19,11 @@ class MyViewController:
     @IBOutlet weak var switchLanguageButton: UIButton!
     @IBOutlet weak var usersTableVIew: UITableView!
     //
-    private var mNavigator : Navigator?
     var x : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Log.debug(GlobalKeys.getEnvironmentVariables.baseURL)
-        mNavigator = self.navigator as? Navigator
     }
     //
     override func viewWillAppear(_ animated: Bool) {
@@ -35,16 +33,17 @@ class MyViewController:
         switchLanguageButton.setTitle("ChangeLng".localized(), for: .normal)
     }
     
-    override func initUI() {
-    }
+    override func initUI() {}
     
     override func initTableViewAdapterConfiguraton() {
         getTableViewAdapter.configureTableWithXibCell(tableView: usersTableVIew, nibClass: UserCell.self, delegate: self)
     }
     
+    
     // Button actions
     @IBAction func TestButton(_ sender: UIButton) {
         getPresenter.getUsers(pageNumber: 1)
+       // getPresenter.getErrorFromRequest()
     }
     //
     @IBAction func testNavigator(_ sender: UIButton) {

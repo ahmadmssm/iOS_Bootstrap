@@ -11,18 +11,18 @@ import IQKeyboardManagerSwift
 
 open class KeyboardManager {
     
-    public static let iqKeyboardManagerInstanace = IQKeyboardManager.sharedManager()
+    private static let iqKeyboardManagerInstanace = IQKeyboardManager.sharedManager()
     
-    public static func handleKeyboardManager() {
+    static func setupKeyboardManager() {
         iqKeyboardManagerInstanace.enable = true
         iqKeyboardManagerInstanace.shouldResignOnTouchOutside = true
     }
     
-    public static func canGoNext() {
+    static func canGoNext() {
         iqKeyboardManagerInstanace.goNext()
     }
 
-    public static func canGoPrevious() {
+    static func canGoPrevious() {
         iqKeyboardManagerInstanace.goPrevious()
     }
     

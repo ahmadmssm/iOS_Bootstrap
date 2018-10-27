@@ -23,7 +23,7 @@ extension APIs : GenericAPIs {
     var baseURL: URL {
         switch self {
         case .doRequestThatReturnsAnError():
-            return URL(string: "https://fcm.googleapis.com/fcm/send")!
+            return URL(string: "https://restcountries.eu/rest/v2")!
         case .getWorldCountries(),
              .getCountryDetailsByCountryName ( _):
             return URL(string: "https://restcountries.eu/rest/v2")!
@@ -47,7 +47,7 @@ extension APIs : GenericAPIs {
         case .refreshToken(let token):
             return .post("")
         case .doRequestThatReturnsAnError:
-            return .post("")
+            return .get("//al")
 
         }
     }
@@ -62,6 +62,17 @@ extension APIs : GenericAPIs {
             return nil
         }
     }
+    
+//    public var task: Task {
+//        switch self {
+//        case let .uploadGif(data, description):
+//            let gifData = MultipartFormData(provider: .data(data), name: "file", fileName: "gif.gif", mimeType: "image/gif")
+//            let descriptionData = MultipartFormData(provider: .data(description.data(using: .utf8)!), name: "description")
+//            let multipartData = [gifData, descriptionData]
+//
+//            return .uploadMultipart(multipartData)
+//        }
+//    }
    
     // Encoding + Parameters
     // Use `URLEncoding()` as default when not specified
@@ -83,6 +94,7 @@ extension APIs : GenericAPIs {
         }
     }
     
-    var sampleData: Data { return Data() }
+    var sampleData: Data {
+        return Data() }
     
 }

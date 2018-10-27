@@ -10,7 +10,7 @@
 import UIKit
 import iOS_Bootstrap
 
-class ViewController: UIViewController, Injectable {
+class ViewController: UIViewController {
 
     let picker = Picker()
     //

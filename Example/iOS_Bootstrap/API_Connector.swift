@@ -78,12 +78,11 @@ class API_Connector : GenericConnector {
             }
     }
     
-    
     func getErrorFromRequest (completion: @escaping completionHandler<[Country]>) {
         let _ = apiProvider.rx
             .request(.doRequestThatReturnsAnError())
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-            .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
+            .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self, refreshTokenStatusCode: 404)
             .mapString()
             .subscribe { event in
                 switch event {
@@ -96,5 +95,7 @@ class API_Connector : GenericConnector {
                 }
         }
         
+        
     }
+
 }

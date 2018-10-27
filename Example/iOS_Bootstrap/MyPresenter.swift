@@ -12,6 +12,20 @@ class MyPresenter: BasePresenter<MyViewControllerDelegator> {
 
     required init() {}
     
+    
+    func getErrorFromRequest() {
+        API_Connector().getErrorFromRequest { response in
+            switch response {
+            case .success( _):
+                print("Good")
+                break
+            case .failure(let errorMsg):
+                print("Error : " + errorMsg)
+                break
+            }
+        }
+    }
+    
     func getUsers(pageNumber : Int) {
         API_Connector().getFakeUsers(page: pageNumber, completion: { response in
             switch response {
