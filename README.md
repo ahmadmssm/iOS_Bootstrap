@@ -92,8 +92,7 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 46. Added UITabBar controller MVP base class.
 47. Updated the default configurations Class to use builder design pattern instead of static methods.
 48. Added a new network gneric completion handler in addition to the older ones.
-49.
-50. How to use and documentation + references.
+49. How to use and documentation + references.
 
 
 ## Upcoming features
