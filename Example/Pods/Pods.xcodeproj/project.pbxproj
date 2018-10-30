@@ -359,6 +359,15 @@
 		C97DB9BE2184AF0100D2C1EB /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DB9BA2184AF0100D2C1EB /* Throttler.swift */; };
 		C97DB9C02184B34400D2C1EB /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DB9BF2184B34400D2C1EB /* BaseTabBarController.swift */; };
 		C97DB9C22184BFB600D2C1EB /* UIViewControllerEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DB9C12184BFB600D2C1EB /* UIViewControllerEnvironment.swift */; };
+		C99AA0512185BC59001683B8 /* OverridableFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0502185BC59001683B8 /* OverridableFunctions.swift */; };
+		C99AA0532185C38E001683B8 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0522185C38E001683B8 /* SlideMenuController.swift */; };
+		C99AA0552185EBB6001683B8 /* BaseSideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0542185EBB6001683B8 /* BaseSideMenuController.swift */; };
+		C99AA0582185FD27001683B8 /* BaseSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0572185FD27001683B8 /* BaseSideMenuViewController.swift */; };
+		C99AA072218742DF001683B8 /* UIView + load nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA071218742DF001683B8 /* UIView + load nib.swift */; };
+		C99AA07421874520001683B8 /* String + class name.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA07321874520001683B8 /* String + class name.swift */; };
+		C99AA076218745AD001683B8 /* BaseMenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA075218745AD001683B8 /* BaseMenuItemViewController.swift */; };
+		C99AA07A21876125001683B8 /* BaseSideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA07921876125001683B8 /* BaseSideMenuModel.swift */; };
+		C99AA07D21876E9D001683B8 /* UIViewController + SideMenuIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA07C21876E9D001683B8 /* UIViewController + SideMenuIcon.swift */; };
 		C9AF5B1B21599A5700C1FED3 /* JsonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF5B1A21599A5700C1FED3 /* JsonSerializer.swift */; };
 		C9AF5B1D21599B1700C1FED3 /* StringConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF5B1C21599B1700C1FED3 /* StringConvertable.swift */; };
 		C9AF5B1F21599B6D00C1FED3 /* Codable + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF5B1E21599B6D00C1FED3 /* Codable + String.swift */; };
@@ -1002,6 +1011,15 @@
 		C97DB9BA2184AF0100D2C1EB /* Throttler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		C97DB9BF2184B34400D2C1EB /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		C97DB9C12184BFB600D2C1EB /* UIViewControllerEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerEnvironment.swift; sourceTree = "<group>"; };
+		C99AA0502185BC59001683B8 /* OverridableFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverridableFunctions.swift; sourceTree = "<group>"; };
+		C99AA0522185C38E001683B8 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
+		C99AA0542185EBB6001683B8 /* BaseSideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSideMenuController.swift; sourceTree = "<group>"; };
+		C99AA0572185FD27001683B8 /* BaseSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSideMenuViewController.swift; sourceTree = "<group>"; };
+		C99AA071218742DF001683B8 /* UIView + load nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + load nib.swift"; sourceTree = "<group>"; };
+		C99AA07321874520001683B8 /* String + class name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + class name.swift"; sourceTree = "<group>"; };
+		C99AA075218745AD001683B8 /* BaseMenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMenuItemViewController.swift; sourceTree = "<group>"; };
+		C99AA07921876125001683B8 /* BaseSideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSideMenuModel.swift; sourceTree = "<group>"; };
+		C99AA07C21876E9D001683B8 /* UIViewController + SideMenuIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + SideMenuIcon.swift"; sourceTree = "<group>"; };
 		C99F115D5C4AEA8766823965C029A962 /* GroupedObservable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroupedObservable.swift; path = RxSwift/GroupedObservable.swift; sourceTree = "<group>"; };
 		C9AF5B1A21599A5700C1FED3 /* JsonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonSerializer.swift; sourceTree = "<group>"; };
 		C9AF5B1C21599B1700C1FED3 /* StringConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConvertable.swift; sourceTree = "<group>"; };
@@ -1248,9 +1266,9 @@
 		018D051DB1065988C9CE3A363EED5D7D /* iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				7ABE7AC1E956BFD4F74ED3BAB4C905B3 /* DateTimeManager.swift */,
-				9FFD7B6B978F42E53C7BBFD3321EADDA /* DefaultConfigurations.swift */,
 				BC6D7C299B33646207B0F081B8DF4DE0 /* GlobalModules.swift */,
+				9FFD7B6B978F42E53C7BBFD3321EADDA /* DefaultConfigurations.swift */,
+				7ABE7AC1E956BFD4F74ED3BAB4C905B3 /* DateTimeManager.swift */,
 				C9250EE3215DA7A40086D2F8 /* Services */,
 				8940A1A89B5C41ED51B247AB766C0E56 /* CustomComponents */,
 				9970E44B0AA4F330AF3EBA5FCCE804FF /* Extensions */,
@@ -1473,6 +1491,7 @@
 			children = (
 				D21E0A44D26D1F13E552CE64AFD546EE /* ViewControllerCommonFeatures.swift */,
 				C97DB9C12184BFB600D2C1EB /* UIViewControllerEnvironment.swift */,
+				C99AA0502185BC59001683B8 /* OverridableFunctions.swift */,
 				C9D50E11215F9DA000B5CB85 /* BaseModels */,
 				F2D476DC84F0514AF6884E1CAABBA6C6 /* MVC-Clean */,
 				C36749F7DF922111E1C5B23D0E008B17 /* MVP */,
@@ -1682,6 +1701,7 @@
 		6ECEEB2B3461567D707A769D9B6596F3 /* String */ = {
 			isa = PBXGroup;
 			children = (
+				C99AA07321874520001683B8 /* String + class name.swift */,
 				84D9A21B21C6CA1CA10A7BFB78436F11 /* String + Localizable.swift */,
 				B1130DD978A2330F44276D75A3129138 /* String + phone number validator.swift */,
 				5067EE05A139B8A521026D2C24E04760 /* String to Codable object.swift */,
@@ -1932,6 +1952,7 @@
 		8940A1A89B5C41ED51B247AB766C0E56 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
+				C99AA0522185C38E001683B8 /* SlideMenuController.swift */,
 				1231DEBFFB1CE67E1713D23A8E565303 /* CardView.swift */,
 				3BB1262FF9C5EC495BC278DA39484D32 /* CustomButton.swift */,
 				011A9B57C17A0615599A763A18BA703A /* CustomView.swift */,
@@ -1974,6 +1995,7 @@
 		9970E44B0AA4F330AF3EBA5FCCE804FF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C99AA071218742DF001683B8 /* UIView + load nib.swift */,
 				86D3DB1DCEA2CA727F4DE0467043DD30 /* NetworkLoggerDataFormatter.swift */,
 				A872F8BB488D37D7C3F85DB8B303B553 /* Remove duplicates + filter array.swift */,
 				C9AF5B2021599B8100C1FED3 /* Codable */,
@@ -2073,12 +2095,13 @@
 		C36749F7DF922111E1C5B23D0E008B17 /* MVP */ = {
 			isa = PBXGroup;
 			children = (
+				C99AA0562185FC8A001683B8 /* SideMenu */,
 				1F5E9EAAD1788423CF37EAEAF8A35B50 /* BaseViewController.swift */,
+				C97DB9BF2184B34400D2C1EB /* BaseTabBarController.swift */,
 				3AFDAE2DA0F07C5473C04581BFB2A5C0 /* BasePresenter.swift */,
 				C05E1934EC846549966376819636893C /* BaseTableViewController.swift */,
 				B39D30092C628EBF34623430CEEAD9A9 /* BaseCollectionViewController.swift */,
 				44F2B4F05593A2F8941AF036FA32F58A /* BaseViewDelegators.swift */,
-				C97DB9BF2184B34400D2C1EB /* BaseTabBarController.swift */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -2139,6 +2162,18 @@
 				C97DB9BA2184AF0100D2C1EB /* Throttler.swift */,
 			);
 			path = Throttler;
+			sourceTree = "<group>";
+		};
+		C99AA0562185FC8A001683B8 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C99AA0542185EBB6001683B8 /* BaseSideMenuController.swift */,
+				C99AA0572185FD27001683B8 /* BaseSideMenuViewController.swift */,
+				C99AA075218745AD001683B8 /* BaseMenuItemViewController.swift */,
+				C99AA07921876125001683B8 /* BaseSideMenuModel.swift */,
+				C99AA07C21876E9D001683B8 /* UIViewController + SideMenuIcon.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		C9AF5B2021599B8100C1FED3 /* Codable */ = {
@@ -2284,11 +2319,11 @@
 		F4672127BF562671EBD7044AF6BA98CD /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
-				C97DB9B12184968500D2C1EB /* ConnectionResultClosures */,
-				5410C587DF45A8EF6C8A4B79CE9F4E63 /* BaseModel.swift */,
 				50D7E54C02E653CAEAD91CE5D010759A /* GenericConnector.swift */,
 				891030114747C5220B633FC7F700B6F0 /* Parser.swift */,
 				BF45235E820B47576D7DE997653F0695 /* Session.swift */,
+				5410C587DF45A8EF6C8A4B79CE9F4E63 /* BaseModel.swift */,
+				C97DB9B12184968500D2C1EB /* ConnectionResultClosures */,
 				68A5F2F5843D9866BF6D814A388203AA /* GenericErrorManager */,
 				709F0C141D798C1EF6B3D282048A03A9 /* Moya plugins */,
 				05A5196144B5E848796E8F662DD1BA9C /* MoyaSugar */,
@@ -2712,6 +2747,7 @@
 				C97DB9BE2184AF0100D2C1EB /* Throttler.swift in Sources */,
 				C9AF5B1B21599A5700C1FED3 /* JsonSerializer.swift in Sources */,
 				4C7CB7A57747B92BA001385927FA531E /* CollectionViewAdapter.swift in Sources */,
+				C99AA072218742DF001683B8 /* UIView + load nib.swift in Sources */,
 				FE13D361B905F94135AF08DF6DA595B7 /* CollectionViewDelegates.swift in Sources */,
 				11AF0C9ADF4153EE24AAF9F425BBC131 /* CommonListingDelegates.swift in Sources */,
 				41E88C66EDA43B7129B9111A23F30EA1 /* ConnectionResult.swift in Sources */,
@@ -2724,7 +2760,9 @@
 				6475EA034A83B806D470E48398C3ED6A /* DistancePickerView.m in Sources */,
 				13D8CFEDA71664117ABD992C93A6C211 /* EmptyDataSet.swift in Sources */,
 				E45CAFF7C9DA6CE1358611E559686DBE /* EmptyDataSetDelegate.swift in Sources */,
+				C99AA07421874520001683B8 /* String + class name.swift in Sources */,
 				2845691F2848F4A71BCD6E68BD4BE7D1 /* EmptyDataSetSource.swift in Sources */,
+				C99AA07D21876E9D001683B8 /* UIViewController + SideMenuIcon.swift in Sources */,
 				7A949A94B2BF8F73F137EEA04251CFED /* EmptyDataSetView+Extension.swift in Sources */,
 				AC3021D3F95DC7B9D763211ABA32D2E3 /* EmptyDataSetView.swift in Sources */,
 				86E015B15FAF400A5848862658A4B0F6 /* Error+Extensions.swift in Sources */,
@@ -2745,6 +2783,7 @@
 				03D28A4F19C19CA0EEE0BA78C43E50BD /* LoadingButton.swift in Sources */,
 				3F456B396AC6BD6807F98816D59AD8C6 /* LocalizationHelpers.swift in Sources */,
 				60D6DFD9893376D2B79621D6F980FDAF /* Logger.swift in Sources */,
+				C99AA0512185BC59001683B8 /* OverridableFunctions.swift in Sources */,
 				C9B161C921579EEF00210D77 /* Collection + nillable values.swift in Sources */,
 				1D392452A313FD183E80E10A8007C514 /* LucidErrorMessageProvider.swift in Sources */,
 				0C4B0DD697C7D6A36466134DE4B4EEF2 /* LucidMoyaError.swift in Sources */,
@@ -2752,12 +2791,14 @@
 				C97DB9BD2184AF0100D2C1EB /* UIViewController+Bartinter.swift in Sources */,
 				C6DCFCCC3E092D8062A5E349A83852A8 /* MultiLanguageManager.swift in Sources */,
 				B98BF59409EF6B1E3F9F32E09FF10DD7 /* NetworkConnectionConfiguration.swift in Sources */,
+				C99AA076218745AD001683B8 /* BaseMenuItemViewController.swift in Sources */,
 				B45074D43AA8B633ACD7BE27D5F29392 /* NetworkLoggerDataFormatter.swift in Sources */,
 				63A3D3D3D8A94903F4FE2D154B64DFAF /* NetworkStatusListener.swift in Sources */,
 				F9A9CBE7A30439171DC0BBC54A423D02 /* NibLoadableView.swift in Sources */,
 				52095725C4E60551AA1991B8CC8F959A /* Parameters.swift in Sources */,
 				A42D5DD2C842474B503D8160C6043AB6 /* Parser.swift in Sources */,
 				C9250EE9215DA7A40086D2F8 /* ServicesInstances.swift in Sources */,
+				C99AA0552185EBB6001683B8 /* BaseSideMenuController.swift in Sources */,
 				E14D3B9A7203BE0C7B13342E906C6A04 /* Picker.swift in Sources */,
 				91C7C12FF43FCB576E9F7C655F379E0F /* PopUpProtocol.swift in Sources */,
 				82402460C67839C1D5B16408DD64FF81 /* PushNotificationBaseModel.swift in Sources */,
@@ -2770,11 +2811,13 @@
 				6130CFD2ABF278044632B1D361DB2A0C /* ReusableCollectionViewAdapter.swift in Sources */,
 				C9250EE7215DA7A40086D2F8 /* IServices.swift in Sources */,
 				1021D94CBE207D1714058BB6D453FF1C /* ReusableTableViewAdapter.swift in Sources */,
+				C99AA0532185C38E001683B8 /* SlideMenuController.swift in Sources */,
 				C97DB9B3218496E200D2C1EB /* ConnectionResultWithError.swift in Sources */,
 				2E86BE7B7205A5340F12BD2D27859A59 /* Route.swift in Sources */,
 				0326B6E8DE56AEB9D05C94EFD50AD72E /* Session.swift in Sources */,
 				21C926CCA035AF72A57D36ACAFF22C3C /* Single+Extensions.swift in Sources */,
 				0F1F3AD034B06F6F54BC03E8C43BF2E7 /* SocialMediaManager.swift in Sources */,
+				C99AA0582185FD27001683B8 /* BaseSideMenuViewController.swift in Sources */,
 				2CE8A75E5D60A8B9FC4BAE66E7BD36BD /* StoryboardIdentifiable.swift in Sources */,
 				8CA7E486390A98AF25DA49BF6585BD48 /* String + Localizable.swift in Sources */,
 				F8EA824019325AEA9C8F42DF5BD937BD /* String + phone number validator.swift in Sources */,
@@ -2783,6 +2826,7 @@
 				81DBA2F5EBEDFD830CFCDD0DF6F41E5C /* String to dicrionary.swift in Sources */,
 				76B4DEA93FA37D25DA7963C41D0999D1 /* StringableNames.swift in Sources */,
 				AA7E65C44770F0691F1D65581D7C307A /* SWActionSheet.m in Sources */,
+				C99AA07A21876125001683B8 /* BaseSideMenuModel.swift in Sources */,
 				BB6AF572769307ACD4D0262101D52B65 /* Tableview + Reusablel.swift in Sources */,
 				C9D50E10215F8ACA00B5CB85 /* UIViewController.swift in Sources */,
 				FA6BE20484787CAE52A913D43B5E167C /* TableviewAdapter.swift in Sources */,

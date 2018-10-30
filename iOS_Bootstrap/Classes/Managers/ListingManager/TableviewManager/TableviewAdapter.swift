@@ -170,7 +170,7 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     // Configure cell
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       //  indicator?.stopAnimating()
-        return (mDelegate?.configureCell(tableView: mTableview, cellForRowAt: indexPath))!
+        return (mDelegate?.configureTableViewCell(tableView: mTableview, cellForRowAt: indexPath))!
     }
     // cell did selected at index
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

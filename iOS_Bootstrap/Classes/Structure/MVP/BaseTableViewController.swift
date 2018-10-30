@@ -10,6 +10,7 @@ open class BaseTableViewController <T, V, D> :
                             where T : BasePresenter<V> {
     
     private let tableViewAdapter : TableviewAdapter = TableviewAdapter()
+    
     //
     public final var getTableViewAdapter : TableviewAdapter { get { return tableViewAdapter } }
     public var getTableViewDataSource : [D] {
@@ -19,11 +20,15 @@ open class BaseTableViewController <T, V, D> :
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        initTableViewAdapterConfiguraton()
         let tableViewDataSource : [D] = [D]()
         tableViewAdapter.setDataSource(dataSource: tableViewDataSource)
+        initTableViewAdapterConfiguraton()
     }
     
     open func initTableViewAdapterConfiguraton() { fatalError("Must Override") }
 
+    public final func initDataSourceIfNeeded(tableViewDataSource : [D]) {
+        tableViewAdapter.setDataSource(dataSource: tableViewDataSource)
+    }
+    
 }

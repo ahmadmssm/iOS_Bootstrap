@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ydq-zz-gRt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JSL-2o-5vF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,13 +13,13 @@
         <!--HomeVC-->
         <scene sceneID="xDf-Nc-2mu">
             <objects>
-                <viewController id="ydq-zz-gRt" customClass="HomeVC" customModule="iOS_Bootstrap_Example" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="ydq-zz-gRt" customClass="HomeVC" customModule="iOS_Bootstrap_Example" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ggi-Dy-rk2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mm9-kE-32B">
-                                <rect key="frame" x="123" y="298" width="129" height="21"/>
+                                <rect key="frame" x="123" y="342" width="129" height="21"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,8 +46,38 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="IQButtonBarArrowRight.png"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPt-34-YpL" customClass="CardView" customModule="iOS_Bootstrap">
-                                <rect key="frame" x="31" y="44" width="297" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fn-hA-TbZ" customClass="ToggleButton">
+                                <rect key="frame" x="103" y="609" width="149" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.86845642328262329" green="0.16273203492164612" blue="0.062681175768375397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleShadowColor" red="0.17088087939999999" green="0.851149559" blue="0.13137255179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="thumbs-down"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="thumbs-up"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconStrokeWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="marginWidth">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                        <color key="value" red="0.86845642329999995" green="0.16273203489999999" blue="0.06268117577" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onToggleButtonClicked:" destination="ydq-zz-gRt" eventType="touchUpInside" id="rv1-fj-0bS"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPt-34-YpL" customClass="CardView" customModule="iOS_Bootstrap">
+                                <rect key="frame" x="29" y="118" width="297" height="128"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="YBZ-fc-gmY"/>
@@ -81,36 +111,6 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="thumbs-up"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fn-hA-TbZ" customClass="ToggleButton">
-                                <rect key="frame" x="103" y="609" width="149" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.86845642328262329" green="0.16273203492164612" blue="0.062681175768375397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="selected">
-                                    <color key="titleShadowColor" red="0.17088087939999999" green="0.851149559" blue="0.13137255179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="thumbs-down"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="thumbs-up"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iconStrokeWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="marginWidth">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
-                                        <color key="value" red="0.86845642329999995" green="0.16273203489999999" blue="0.06268117577" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="onToggleButtonClicked:" destination="ydq-zz-gRt" eventType="touchUpInside" id="rv1-fj-0bS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -124,10 +124,44 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Ox-qE-bm5"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dKv-1a-HFH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikU-nh-eAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="200.80000000000001" y="200.14992503748127"/>
+            <point key="canvasLocation" x="1463" y="199"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3f8-wQ-chB">
+            <objects>
+                <viewController storyboardIdentifier="Home" id="BVz-5T-6GH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Peg-HZ-VP6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="9xO-dr-yfN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LA9-eJ-GXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2137" y="198"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9FG-cV-huF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JSL-2o-5vF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bgK-pq-64l">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ydq-zz-gRt" kind="relationship" relationship="rootViewController" id="Plw-mM-y9R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4o-Oo-dhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="200" y="199.70014992503749"/>
         </scene>
     </scenes>
     <resources>

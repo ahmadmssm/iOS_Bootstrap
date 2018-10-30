@@ -13,6 +13,7 @@ enum Storyboards : String {
     
     case main
     case home
-   
+    case menu
+
 }
 

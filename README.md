@@ -92,7 +92,8 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 46. Added UITabBar controller MVP base class.
 47. Updated the default configurations Class to use builder design pattern instead of static methods.
 48. Added a new network gneric completion handler in addition to the older ones.
-49. How to use and documentation + references.
+49. Cancel any newtowrk request out of the box.
+50. How to use and documentation + references.
 
 
 ## Upcoming features
@@ -292,6 +293,7 @@ In addition, the following Repos helped me alot either by including their code d
 4. [ActionSheetPicker-3.0](https://github.com/skywinder/ActionSheetPicker-3.0).
 5. [ADTPagerController](https://github.com/tungvoduc/DTPagerController).
 6. [Bartinter](https://github.com/MaximKotliar/Bartinter).
+7. [SlideMenuControllerSwift](https://github.com/dekatotoro/SlideMenuControllerSwift).
 
 
 ## Help me improve the documentation

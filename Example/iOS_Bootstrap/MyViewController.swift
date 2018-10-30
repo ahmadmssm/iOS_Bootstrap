@@ -34,11 +34,10 @@ class MyViewController:
     }
     
     override func initUI() {}
-    
+        
     override func initTableViewAdapterConfiguraton() {
         getTableViewAdapter.configureTableWithXibCell(tableView: usersTableVIew, nibClass: UserCell.self, delegate: self)
     }
-    
     
     // Button actions
     @IBAction func TestButton(_ sender: UIButton) {
@@ -77,7 +76,7 @@ class MyViewController:
     }
     
     // Tableview adapter functions
-    func configureCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func configureTableViewCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UserCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.userID.text = String(describing: getTableViewDataSource [indexPath.row].id!)
         cell.firstName.text = getTableViewDataSource [indexPath.row].first_name

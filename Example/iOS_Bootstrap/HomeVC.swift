@@ -9,7 +9,15 @@
 import UIKit
 import iOS_Bootstrap
 
-class HomeVC: UIViewController {
+protocol HomeViewDelegator : BaseViewDelegator {
+    
+}
+
+class HomePresenter: BasePresenter<HomeViewDelegator> {
+    
+}
+
+class HomeVC: BaseViewController<HomePresenter, HomeViewDelegator> {
 
     var x : Int = 0
     
@@ -19,7 +27,19 @@ class HomeVC: UIViewController {
         // Do any additional setup after loading the view.
         print("X = ", x)
     }
+    
+    override func awakeFromNib() {
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "Home") {
+           // self.mainViewController = controller
+        }
+//        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "Left") {
+//            self.leftViewController = controller
+//        }
+        super.awakeFromNib()
+    }
 
+    override func initUI() {}
+    
     @IBAction func onToggleButtonClicked(_ sender: ToggleButton) {
 //        if sender.isSelected {
 //            sender.isSelected = false

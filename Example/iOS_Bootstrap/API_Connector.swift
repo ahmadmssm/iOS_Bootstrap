@@ -31,7 +31,7 @@ class API_Connector : GenericConnector {
     
     // Write your network calls here
     func getAllCountries (completion: @escaping completionHandler<[Country]>) {
-        let _ = apiProvider.rx
+        subscriber = apiProvider.rx
             .request(.getWorldCountries())
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
             .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
@@ -62,7 +62,7 @@ class API_Connector : GenericConnector {
     }
     
     func getFakeUsers (page : Int, completion: @escaping completionHandler<Page>) {
-        let _ = apiProvider.rx
+        subscriber = apiProvider.rx
             .request(.getUsers(page: String(page)))
             //.showLoading()
             .filterSuccessfulStatusAndRedirectCodes()
@@ -79,7 +79,7 @@ class API_Connector : GenericConnector {
     }
     
     func getErrorFromRequest (completion: @escaping completionHandler<[Country]>) {
-        let _ = apiProvider.rx
+        subscriber = apiProvider.rx
             .request(.doRequestThatReturnsAnError())
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
             .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self, refreshTokenStatusCode: 404)
@@ -94,8 +94,6 @@ class API_Connector : GenericConnector {
                     completion(.failure(error.localizedDescription))
                 }
         }
-        
-        
     }
 
 }

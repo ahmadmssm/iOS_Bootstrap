@@ -17,16 +17,21 @@ public typealias completionHandlerWithError<T, Error> =
 open class GenericConnector: NSObject, SessionProtocol {
     
     private final var sessionDelegate : SessionProtocol!
+    public var subscriber: Disposable?
     
     public override init() {
         super.init()
-        //
         sessionDelegate = self
     }
     
     open func getTokenRefreshService() -> Single<Response> {
         return Observable.empty().asSingle()
     }
+    
+    public final func cancelRequest () {
+        if (subscriber != nil) { subscriber?.dispose() }
+    }
+    
     // Override this function to handle token response
     public func tokenDidRefresh(response: String) {
         let dictionary = ["response" : response]

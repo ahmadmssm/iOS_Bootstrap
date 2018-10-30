@@ -22,7 +22,7 @@ class CountriesReusableTable: ReusableTableViewAdapter {
         self.countries = pageItems as? [Country]
     }
     
-    override func configureCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func configureTableViewCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : TableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.labelCountryName.text = countries! [indexPath.row].countryName
         cell.labelCapitalName.text = countries! [indexPath.row].capital

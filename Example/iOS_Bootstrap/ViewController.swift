@@ -28,7 +28,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonGoToHomeStoryboard(_ sender: UIButton) {
-        Navigator.goToHomeStoryBoard(number: 2)
+        Navigator.goToHomeStoryBoard()
+    }
+    
+    @IBAction func buttonGoToSideMenuStoryboard(_ sender: UIButton) {
+        Navigator.goToSideMenuStoryboard()
     }
     
     @IBAction func showProgress(_ sender: UIButton) {

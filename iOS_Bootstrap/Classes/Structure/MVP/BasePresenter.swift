@@ -20,5 +20,6 @@ open class BasePresenter <T> : UserDefaultsService {
     deinit { getViewDelegator = nil }
 
     open func logOut() {}
+    
 }
 

@@ -184,9 +184,12 @@
                                         <rect key="frame" x="0.0" y="546" width="323" height="35.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="Go to side menu storyboard">
                                             <color key="titleColor" red="0.070456869900226593" green="0.46492594480514526" blue="0.85114955902099609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonGoToSideMenuStoryboard:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zq6-m7-1Cd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yi8-CJ-NyV">
                                         <rect key="frame" x="0.0" y="591.5" width="323" height="35.5"/>

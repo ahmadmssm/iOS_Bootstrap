@@ -33,7 +33,7 @@ open class ReusableTableViewAdapter : NSObject, BaseTableViewDelegates {
         }
     }
     
-    open func configureCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func configureTableViewCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : BaseTableViewCell = tableview.dequeueReusableCell(forIndexPath: indexPath)
         return cell
     }

@@ -39,7 +39,7 @@ class TableExampleView: BaseTableView<Country>, BaseTableViewDelegates {
         
     override func initController() { controller = TableController(view: self) }
 
-    func configureCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func configureTableViewCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : TableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.labelCountryName.text = getTableViewDataSource [indexPath.row].countryName
         cell.labelCapitalName.text = getTableViewDataSource [indexPath.row].capital

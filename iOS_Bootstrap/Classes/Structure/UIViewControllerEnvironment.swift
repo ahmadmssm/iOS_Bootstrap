@@ -22,7 +22,7 @@ extension UIViewController : ViewControllerCommonFeatures {
         snackbar = TTGSnackbar(message: "",duration: .short)
         snackbar?.backgroundColor = UIColor.blue
     }
-    
+        
     func setupViewWillAppearEssentials() {
         setContext(context: self)
         InternetConnectionManager.getInstance.addListener(listener: self)

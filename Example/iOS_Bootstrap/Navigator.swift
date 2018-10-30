@@ -11,15 +11,37 @@ import iOS_Bootstrap
 
 class Navigator: BaseNavigator {
     //
-    static func goToHomeStoryBoard(number : Int) {
+    static func goToMainStoryBoard(number : Int) {
         let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.main)
         let vc = storyboard.instantiateViewController() as MyViewController
         vc.x = number
         getContext().present(vc, animated: true, completion: nil)
     }
     
-    //
-    static func goToExambleOfTableViewCOntroller() {
+    static func goToSideMenuStoryboard() {
+        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.menu)
+        let mainViewController : SwiftViewController = storyboard.instantiateViewController()
+        let sideMenuViewController : SideMenuViewController = storyboard.instantiateViewController()
+        let navigationController: UINavigationController = UINavigationController(rootViewController: mainViewController)
+        // Set the main menu view controller
+        sideMenuViewController.mainViewController = mainViewController
+        // Add rignt and/or left menu (We can add 2 different menues for right and left sides).
+        let slidingMenu = BaseSideMenuController(
+                mainViewController:navigationController,
+                leftMenuViewController: sideMenuViewController,
+                rightMenuViewController: sideMenuViewController)
+        //
+        AppDelegate.getAppWindow().rootViewController = slidingMenu
+        AppDelegate.getAppWindow().makeKeyAndVisible()
+    }
+    
+    static func goToHomeStoryBoard() {
+        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.home)
+        let vc = storyboard.instantiateViewController() as HomeVC
+        getContext().present(vc, animated: true, completion: nil)
+    }
+    
+    static func goToExambleOfTableViewController() {
         let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.main)
         let vc = storyboard.instantiateViewController() as TableExampleView
         getContext().navigationController?.pushViewController(vc, animated: false)
