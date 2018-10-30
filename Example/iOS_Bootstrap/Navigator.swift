@@ -27,9 +27,7 @@ class Navigator: BaseNavigator {
         sideMenuViewController.mainViewController = mainViewController
         // Add rignt and/or left menu (We can add 2 different menues for right and left sides).
         let slidingMenu = MySlidingMenu ( mainViewController:navigationController, leftMenuViewController: sideMenuViewController)
-        //
-        AppDelegate.getAppWindow().rootViewController = slidingMenu
-        AppDelegate.getAppWindow().makeKeyAndVisible()
+        getContext().present(slidingMenu, animated: true, completion: nil)
     }
     
     static func goToHomeStoryBoard() {
