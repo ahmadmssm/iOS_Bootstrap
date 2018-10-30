@@ -9,7 +9,7 @@
 import UIKit
 import iOS_Bootstrap
 
-class GoViewController: MyBaseMenuItemViewController<GoPresenter, GoViewDelegator> {
+class GoViewController: MyMenuItemViewController<GoPresenter, GoViewDelegator> {
     override func viewDidLoad() { super.viewDidLoad() }
     override func initUI() {}
 }

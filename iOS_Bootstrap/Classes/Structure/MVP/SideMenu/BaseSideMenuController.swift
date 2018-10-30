@@ -7,6 +7,11 @@
 
 open class BaseSideMenuController : SlideMenuController {
     
+    open override func initView() {
+        configureMenuPropsIfNeeded()
+        super.initView()
+    }
+    
     open func getVisableViewController() -> UIViewController? {
         if var topController = UIApplication.shared.keyWindow?.rootViewController {
             while let presentedViewController = topController.presentedViewController {
@@ -15,6 +20,11 @@ open class BaseSideMenuController : SlideMenuController {
             return topController
         }
         return nil
+    }
+    
+    open func configureMenuPropsIfNeeded() {
+        SlideMenuOptions.hideStatusBar = false
+        SlideMenuOptions.contentViewScale = 1
     }
     
 }

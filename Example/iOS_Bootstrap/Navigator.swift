@@ -26,10 +26,7 @@ class Navigator: BaseNavigator {
         // Set the main menu view controller
         sideMenuViewController.mainViewController = mainViewController
         // Add rignt and/or left menu (We can add 2 different menues for right and left sides).
-        let slidingMenu = BaseSideMenuController(
-                mainViewController:navigationController,
-                leftMenuViewController: sideMenuViewController,
-                rightMenuViewController: sideMenuViewController)
+        let slidingMenu = MySlidingMenu ( mainViewController:navigationController, leftMenuViewController: sideMenuViewController)
         //
         AppDelegate.getAppWindow().rootViewController = slidingMenu
         AppDelegate.getAppWindow().makeKeyAndVisible()

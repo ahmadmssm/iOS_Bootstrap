@@ -9,7 +9,7 @@
 import UIKit
 import iOS_Bootstrap
 
-class JavaViewController: MyBaseMenuItemViewController<JavaPresenter, JavaViewDelegator> {
+class JavaViewController: MyMenuItemViewController<JavaPresenter, JavaViewDelegator> {
     
     override func viewDidLoad() {
         super.viewDidLoad()

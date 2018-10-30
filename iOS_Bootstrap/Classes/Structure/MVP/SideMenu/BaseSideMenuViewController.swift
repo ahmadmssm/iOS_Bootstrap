@@ -19,6 +19,7 @@ open class BaseSideMenuViewController<T, V, M> :
         menuItems = setupMenuItemsData()
         menuViewControllers = setupSideMenuViewControllers()
         super.viewDidLoad()
+        // if (shouldBlurBackgroundItem()) { addBlurEffect() }
         getTableViewAdapter.reloadTable()
     }
     
@@ -26,10 +27,28 @@ open class BaseSideMenuViewController<T, V, M> :
         super.viewWillTransition(to: size, with: coordinator)
     }
     
+    open override func initUI() {}
+
     open override func initTableViewAdapterConfiguraton() {
         getTableViewAdapter.configureTableWithXibCell(tableView: setupSideMenuTableView(), nibClass: setupMenuItemCell(), delegate: self)
         getTableViewAdapter.configurePaginationParameters(totalNumberOfItems: (menuItems?.count)!, itemsPerPage: (menuItems?.count)!)
         initDataSourceIfNeeded(tableViewDataSource: setupMenuItemsData())
+    }
+    
+    private func addBlurEffect() {
+        // Set the background of the view controller to clear (transparent)
+        self.view.backgroundColor = UIColor.clear
+        // Create a blur effect
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        // Fill the view
+        blurEffectView.frame = view.bounds
+        // Ensure the blur conforms to resizing (not used in a fixed menu UI)
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        // Add the view to the view controller stack
+        view.addSubview(blurEffectView)
+        // Ensure the blur view is in the back
+        self.view.sendSubview(toBack: blurEffectView)
     }
     
     // Side menu configuration functions
@@ -53,7 +72,9 @@ open class BaseSideMenuViewController<T, V, M> :
     open func setupSideMenuViewControllers() -> [UIViewController] {
         fatalError("Must Override")
     }
-    
+    //
+    // open func shouldBlurBackgroundItem() -> Bool { return false }
+    //
     // Actions
     //
     open func menuItemDidSelected(menu : M, menuItemIndex : Int, viewControllerAtIndex : UIViewController) {}

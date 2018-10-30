@@ -69,6 +69,9 @@ class SideMenuViewController :
         return menuViewControllers
     }
     
+    // override func shouldBlurBackgroundItem() -> Bool { return true }
+    
+    //
     override func menuItemDidSelected(menu: ExampleMenuModel, menuItemIndex: Int, viewControllerAtIndex: UIViewController) {
         self.replaceVisableMenuViewControllerWith(menuItemViewController: viewControllerAtIndex, closeMenu: true)
     }

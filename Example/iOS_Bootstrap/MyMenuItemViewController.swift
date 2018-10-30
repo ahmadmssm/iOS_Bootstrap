@@ -1,5 +1,5 @@
 //
-//  MyBaseMenuItemViewController.swift
+//  MyMenuItemViewController.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 10/30/18.
@@ -9,7 +9,7 @@
 import UIKit
 import iOS_Bootstrap
 
-class MyBaseMenuItemViewController <P, V> : BaseMenuItemViewController <P, V> where P : BasePresenter<V> {
+class MyMenuItemViewController <P, V> : BaseMenuItemViewController <P, V> where P : BasePresenter<V> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

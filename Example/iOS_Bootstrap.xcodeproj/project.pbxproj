@@ -41,7 +41,7 @@
 		C99AA0652187388C001683B8 /* GoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0612187388C001683B8 /* GoViewController.swift */; };
 		C99AA06F218740CD001683B8 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA06D218740CD001683B8 /* SideMenuCell.swift */; };
 		C99AA070218740CD001683B8 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99AA06E218740CD001683B8 /* SideMenuCell.xib */; };
-		C99AA0812187D360001683B8 /* MyBaseMenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0802187D360001683B8 /* MyBaseMenuItemViewController.swift */; };
+		C99AA0812187D360001683B8 /* MyMenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0802187D360001683B8 /* MyMenuItemViewController.swift */; };
 		C99AA0842187D3D0001683B8 /* GoViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0832187D3D0001683B8 /* GoViewDelegator.swift */; };
 		C99AA0862187D3E2001683B8 /* GoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0852187D3E2001683B8 /* GoPresenter.swift */; };
 		C99AA08B21884526001683B8 /* SwiftViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA08A21884526001683B8 /* SwiftViewDelegator.swift */; };
@@ -53,7 +53,7 @@
 		C99AA098218847E4001683B8 /* SideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA097218847E4001683B8 /* SideMenuPresenter.swift */; };
 		C99AA09A21884803001683B8 /* SideMenuViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA09921884803001683B8 /* SideMenuViewDelegator.swift */; };
 		C99AA09C21884824001683B8 /* ExampleMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA09B21884824001683B8 /* ExampleMenuModel.swift */; };
-		C99AA0A121886120001683B8 /* SlidingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0A021886120001683B8 /* SlidingMenu.swift */; };
+		C99AA0A121886120001683B8 /* MySlidingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0A021886120001683B8 /* MySlidingMenu.swift */; };
 		C99EA60320CB3D7900D7C158 /* HumanReadableErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60020CB3D7800D7C158 /* HumanReadableErrorHandler.swift */; };
 		C99EA60420CB3D7900D7C158 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60120CB3D7800D7C158 /* APIs.swift */; };
 		C99EA60520CB3D7900D7C158 /* API_Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA60220CB3D7800D7C158 /* API_Connector.swift */; };
@@ -127,7 +127,7 @@
 		C99AA0612187388C001683B8 /* GoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoViewController.swift; sourceTree = "<group>"; };
 		C99AA06D218740CD001683B8 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		C99AA06E218740CD001683B8 /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
-		C99AA0802187D360001683B8 /* MyBaseMenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBaseMenuItemViewController.swift; sourceTree = "<group>"; };
+		C99AA0802187D360001683B8 /* MyMenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuItemViewController.swift; sourceTree = "<group>"; };
 		C99AA0832187D3D0001683B8 /* GoViewDelegator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewDelegator.swift; sourceTree = "<group>"; };
 		C99AA0852187D3E2001683B8 /* GoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPresenter.swift; sourceTree = "<group>"; };
 		C99AA08A21884526001683B8 /* SwiftViewDelegator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewDelegator.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		C99AA097218847E4001683B8 /* SideMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuPresenter.swift; sourceTree = "<group>"; };
 		C99AA09921884803001683B8 /* SideMenuViewDelegator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewDelegator.swift; sourceTree = "<group>"; };
 		C99AA09B21884824001683B8 /* ExampleMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMenuModel.swift; sourceTree = "<group>"; };
-		C99AA0A021886120001683B8 /* SlidingMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingMenu.swift; sourceTree = "<group>"; };
+		C99AA0A021886120001683B8 /* MySlidingMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySlidingMenu.swift; sourceTree = "<group>"; };
 		C99EA60020CB3D7800D7C158 /* HumanReadableErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanReadableErrorHandler.swift; sourceTree = "<group>"; };
 		C99EA60120CB3D7800D7C158 /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
 		C99EA60220CB3D7800D7C158 /* API_Connector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_Connector.swift; sourceTree = "<group>"; };
@@ -291,7 +291,7 @@
 		C99AA066218738CA001683B8 /* Items */ = {
 			isa = PBXGroup;
 			children = (
-				C99AA0802187D360001683B8 /* MyBaseMenuItemViewController.swift */,
+				C99AA0802187D360001683B8 /* MyMenuItemViewController.swift */,
 				C99AA087218844AB001683B8 /* SwiftViewController */,
 				C99AA088218844E0001683B8 /* JavaViewController */,
 				C99AA0822187D3AC001683B8 /* GoViewController */,
@@ -303,7 +303,7 @@
 		C99AA07B21876747001683B8 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				C99AA0A021886120001683B8 /* SlidingMenu.swift */,
+				C99AA0A021886120001683B8 /* MySlidingMenu.swift */,
 				C99AA09D21884867001683B8 /* SideMenuViewController */,
 				C99AA066218738CA001683B8 /* Items */,
 				C99AA09B21884824001683B8 /* ExampleMenuModel.swift */,
@@ -363,9 +363,9 @@
 		C99AA09D21884867001683B8 /* SideMenuViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C99AA09921884803001683B8 /* SideMenuViewDelegator.swift */,
-				C99AA097218847E4001683B8 /* SideMenuPresenter.swift */,
 				C99AA05B21872013001683B8 /* SideMenuViewController.swift */,
+				C99AA097218847E4001683B8 /* SideMenuPresenter.swift */,
+				C99AA09921884803001683B8 /* SideMenuViewDelegator.swift */,
 				C99AA09621884704001683B8 /* SideMenuCell */,
 			);
 			name = SideMenuViewController;
@@ -647,7 +647,7 @@
 				C923619E2102AA7C00C2B630 /* User.swift in Sources */,
 				C99EA61F20CB466300D7C158 /* Country.swift in Sources */,
 				C99AA0862187D3E2001683B8 /* GoPresenter.swift in Sources */,
-				C99AA0A121886120001683B8 /* SlidingMenu.swift in Sources */,
+				C99AA0A121886120001683B8 /* MySlidingMenu.swift in Sources */,
 				C99AA0632187388C001683B8 /* JavaViewController.swift in Sources */,
 				C99AA091218845E7001683B8 /* JavaPresenter.swift in Sources */,
 				C99AA0622187388C001683B8 /* SwiftViewController.swift in Sources */,
@@ -666,7 +666,7 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				C99AA0652187388C001683B8 /* GoViewController.swift in Sources */,
 				C99AA0842187D3D0001683B8 /* GoViewDelegator.swift in Sources */,
-				C99AA0812187D360001683B8 /* MyBaseMenuItemViewController.swift in Sources */,
+				C99AA0812187D360001683B8 /* MyMenuItemViewController.swift in Sources */,
 				C91FC70E2111A62400A199F0 /* TableController.swift in Sources */,
 				C9555AAD20E8171C007A698D /* MyPresenter.swift in Sources */,
 				C99AA098218847E4001683B8 /* SideMenuPresenter.swift in Sources */,

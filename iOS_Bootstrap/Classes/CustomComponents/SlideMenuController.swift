@@ -59,7 +59,6 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
         case rightFlickClose
     }
     
-    
     struct PanInfo {
         var action: SlideAction
         var shouldBounce: Bool
