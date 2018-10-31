@@ -9,9 +9,10 @@
 import iOS_Bootstrap
 
 class MyPresenter: BasePresenter<MyViewControllerDelegator> {
-
-    required init() {}
     
+    required init(viewDelegator: MyViewControllerDelegator) {
+        super.init(viewDelegator: viewDelegator)
+    }
     
     func getErrorFromRequest() {
         API_Connector().getErrorFromRequest { response in
@@ -30,11 +31,11 @@ class MyPresenter: BasePresenter<MyViewControllerDelegator> {
         API_Connector().getFakeUsers(page: pageNumber, completion: { response in
             switch response {
             case .success(let userPage):
-                self.getViewDelegator.didGetFakeUsers(page: userPage)
+                self.getViewDelegator().didGetFakeUsers(page: userPage)
                 break
             case .failure(let errorMsg):
                 print("Error : " + errorMsg)
-                self.getViewDelegator.didFailToGetFakeUsers(error: errorMsg)
+                self.getViewDelegator().didFailToGetFakeUsers(error: errorMsg)
                 break
             }
         })

@@ -9,12 +9,12 @@
 import UIKit
 import iOS_Bootstrap
 
-class SwiftViewController: MyMenuItemViewController<SwiftPresenter, SwiftViewDelegator> {
+class SwiftViewController: MyMenuItemTableViewController<SwiftPresenter, SwiftViewDelegator, Movies> {
         
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    override func viewDidLoad() { super.viewDidLoad() }
     
     override func initUI() {}
+    
+    override func initTableViewAdapterConfiguraton() {}
     
 }

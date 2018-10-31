@@ -13,14 +13,21 @@ open class BaseViewController <T, V> : UIViewController where T : BasePresenter<
     private var presenter : T!
     
     override open func viewDidLoad() {
-        // self.getPresenter = T.init(contract: self as! V)
-        self.presenter = T.init()
+        self.presenter = T.init(viewDelegator: self as! V)
+        getPresenter().viewControllerDidLoaded()
         initUI()
+        getPresenter().viewControllerDidFinishedSettingUpUI()
     }
     //
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupViewWillAppearEssentials()
+        getPresenter().viewControllerWillRefresh()
+    }
+    //
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        getPresenter().viewControllerWillDisappear()
     }
     //
     override open func viewDidDisappear(_ animated: Bool) {
@@ -29,14 +36,7 @@ open class BaseViewController <T, V> : UIViewController where T : BasePresenter<
         setupViewDidDisappearEssentials()
     }
     
-    public final var getPresenter : T {
-        get {
-            if (presenter.getViewDelegator == nil) {
-                presenter.attachView(contract: self as! V)
-            }
-            return presenter
-        }
-    }
+    public final func getPresenter() -> T { return presenter }
 
     open func initUI () { fatalError("Must Override") }
 

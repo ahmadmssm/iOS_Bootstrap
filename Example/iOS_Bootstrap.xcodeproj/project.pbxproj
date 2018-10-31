@@ -27,6 +27,7 @@
 		C92361A32102B0FE00C2B630 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92361A12102B0FE00C2B630 /* UserCell.swift */; };
 		C92361A42102B0FE00C2B630 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92361A22102B0FE00C2B630 /* UserCell.xib */; };
 		C9316DBE20D6717C00FB6A6A /* CountriesReusableTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9316DBD20D6717C00FB6A6A /* CountriesReusableTable.swift */; };
+		C953267C2189BE2500105260 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953267B2189BE2500105260 /* Books.swift */; };
 		C9555AAD20E8171C007A698D /* MyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9555AAB20E8171B007A698D /* MyPresenter.swift */; };
 		C9555AAE20E8171C007A698D /* MyViewControllerDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9555AAC20E8171B007A698D /* MyViewControllerDelegator.swift */; };
 		C9555AB020E8174B007A698D /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9555AAF20E8174B007A698D /* MyViewController.swift */; };
@@ -41,7 +42,7 @@
 		C99AA0652187388C001683B8 /* GoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0612187388C001683B8 /* GoViewController.swift */; };
 		C99AA06F218740CD001683B8 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA06D218740CD001683B8 /* SideMenuCell.swift */; };
 		C99AA070218740CD001683B8 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99AA06E218740CD001683B8 /* SideMenuCell.xib */; };
-		C99AA0812187D360001683B8 /* MyMenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0802187D360001683B8 /* MyMenuItemViewController.swift */; };
+		C99AA0812187D360001683B8 /* MyBaseMenuItemViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0802187D360001683B8 /* MyBaseMenuItemViewControllers.swift */; };
 		C99AA0842187D3D0001683B8 /* GoViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0832187D3D0001683B8 /* GoViewDelegator.swift */; };
 		C99AA0862187D3E2001683B8 /* GoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0852187D3E2001683B8 /* GoPresenter.swift */; };
 		C99AA08B21884526001683B8 /* SwiftViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA08A21884526001683B8 /* SwiftViewDelegator.swift */; };
@@ -108,16 +109,13 @@
 		C9316DBD20D6717C00FB6A6A /* CountriesReusableTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesReusableTable.swift; sourceTree = "<group>"; };
 		C94D407021162AF4002E7623 /* ar-EG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C94D407821162C14002E7623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C953267B2189BE2500105260 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 		C9555AAB20E8171B007A698D /* MyPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPresenter.swift; sourceTree = "<group>"; };
 		C9555AAC20E8171B007A698D /* MyViewControllerDelegator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewControllerDelegator.swift; sourceTree = "<group>"; };
 		C9555AAF20E8174B007A698D /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		C9555AB120E925AB007A698D /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
 		C96606432114A0D000E2D38A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C96606452114A0DF00E2D38A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C96606472114A11600E2D38A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C96606492114A12B00E2D38A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
-		C966064F2114A21700E2D38A /* ar-EG */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		C99A404C21163028007B88A4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C99A404D21163028007B88A4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C99AA05921871BBB001683B8 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		C99AA05B21872013001683B8 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +125,7 @@
 		C99AA0612187388C001683B8 /* GoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoViewController.swift; sourceTree = "<group>"; };
 		C99AA06D218740CD001683B8 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		C99AA06E218740CD001683B8 /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
-		C99AA0802187D360001683B8 /* MyMenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuItemViewController.swift; sourceTree = "<group>"; };
+		C99AA0802187D360001683B8 /* MyBaseMenuItemViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBaseMenuItemViewControllers.swift; sourceTree = "<group>"; };
 		C99AA0832187D3D0001683B8 /* GoViewDelegator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewDelegator.swift; sourceTree = "<group>"; };
 		C99AA0852187D3E2001683B8 /* GoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPresenter.swift; sourceTree = "<group>"; };
 		C99AA08A21884526001683B8 /* SwiftViewDelegator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewDelegator.swift; sourceTree = "<group>"; };
@@ -207,9 +205,9 @@
 		607FACD21AFB9204008FA782 /* Example for iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				C99EA63820CBECFB00D7C158 /* Storyboards.swift */,
 				C91FC7182113092600A199F0 /* GlobalKeys.swift */,
 				C91FC7162112FE8800A199F0 /* Environment.swift */,
+				C99EA63820CBECFB00D7C158 /* Storyboards.swift */,
 				C99A405121186C3F007B88A4 /* Resources */,
 				C99EA61D20CB461B00D7C158 /* Models */,
 				C99EA60620CB41A600D7C158 /* Networking */,
@@ -291,7 +289,7 @@
 		C99AA066218738CA001683B8 /* Items */ = {
 			isa = PBXGroup;
 			children = (
-				C99AA0802187D360001683B8 /* MyMenuItemViewController.swift */,
+				C99AA0802187D360001683B8 /* MyBaseMenuItemViewControllers.swift */,
 				C99AA087218844AB001683B8 /* SwiftViewController */,
 				C99AA088218844E0001683B8 /* JavaViewController */,
 				C99AA0822187D3AC001683B8 /* GoViewController */,
@@ -324,9 +322,9 @@
 		C99AA087218844AB001683B8 /* SwiftViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C99AA08A21884526001683B8 /* SwiftViewDelegator.swift */,
 				C99AA05E2187388B001683B8 /* SwiftViewController.swift */,
 				C99AA08C2188455E001683B8 /* SwiftPresenter.swift */,
+				C99AA08A21884526001683B8 /* SwiftViewDelegator.swift */,
 			);
 			name = SwiftViewController;
 			sourceTree = "<group>";
@@ -400,6 +398,7 @@
 				C923619D2102AA7C00C2B630 /* User.swift */,
 				C923619F2102AA9200C2B630 /* Page.swift */,
 				C9AF5B2121599F2A00C1FED3 /* ErrorModel.swift */,
+				C953267B2189BE2500105260 /* Books.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -656,6 +655,7 @@
 				C99AA08B21884526001683B8 /* SwiftViewDelegator.swift in Sources */,
 				C99AA08F218845C9001683B8 /* JavaViewDelegator.swift in Sources */,
 				C9555AAE20E8171C007A698D /* MyViewControllerDelegator.swift in Sources */,
+				C953267C2189BE2500105260 /* Books.swift in Sources */,
 				C99AA09A21884803001683B8 /* SideMenuViewDelegator.swift in Sources */,
 				C91FC7192113092600A199F0 /* GlobalKeys.swift in Sources */,
 				C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */,
@@ -666,7 +666,7 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				C99AA0652187388C001683B8 /* GoViewController.swift in Sources */,
 				C99AA0842187D3D0001683B8 /* GoViewDelegator.swift in Sources */,
-				C99AA0812187D360001683B8 /* MyMenuItemViewController.swift in Sources */,
+				C99AA0812187D360001683B8 /* MyBaseMenuItemViewControllers.swift in Sources */,
 				C91FC70E2111A62400A199F0 /* TableController.swift in Sources */,
 				C9555AAD20E8171C007A698D /* MyPresenter.swift in Sources */,
 				C99AA098218847E4001683B8 /* SideMenuPresenter.swift in Sources */,
@@ -710,10 +710,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				607FACDF1AFB9204008FA782 /* Base */,
-				C96606452114A0DF00E2D38A /* en */,
-				C96606472114A11600E2D38A /* nl */,
-				C966064F2114A21700E2D38A /* ar-EG */,
-				C99A404C21163028007B88A4 /* ar */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

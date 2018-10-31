@@ -9,8 +9,8 @@
 import Foundation
 
 @objc public protocol BaseViewDelegator where Self: UIViewController {
-    @objc optional func showLoading()
-    @objc optional func hideLoading()
+    @objc optional func loadingDidStarted()
+    @objc optional func didFinishedLoading()
 }
 
 @objc public protocol BaseTableViewDelegator : BaseViewDelegator {

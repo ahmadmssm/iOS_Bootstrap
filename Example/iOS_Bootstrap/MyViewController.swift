@@ -41,7 +41,7 @@ class MyViewController:
     
     // Button actions
     @IBAction func TestButton(_ sender: UIButton) {
-        getPresenter.getUsers(pageNumber: 1)
+        getPresenter().getUsers(pageNumber: 1)
        // getPresenter.getErrorFromRequest()
     }
     //
@@ -85,7 +85,7 @@ class MyViewController:
     }
     //
     func loadMore(forPage page: Int, updatedDataSource: [Any]) {
-        getPresenter.getUsers(pageNumber: page)
+        getPresenter().getUsers(pageNumber: page)
     }
     
     //

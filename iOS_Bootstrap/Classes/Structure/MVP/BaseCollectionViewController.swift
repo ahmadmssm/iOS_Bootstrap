@@ -5,8 +5,8 @@
 //  Created by Ahmad Mahmoud on 8/30/18.
 //
 
-open class BaseCollectionViewController <T, D> : BaseViewController<T, D> where T : BasePresenter<D> {
-    
+open class BaseCollectionViewController <T, V, D> : BaseViewController<T, V> where T : BasePresenter<V> {
+        
     private let collectionViewAdapter : CollectionViewAdapter = CollectionViewAdapter()
     public final var getCollectionViewAdapter : CollectionViewAdapter {
         get { return collectionViewAdapter }
@@ -23,11 +23,15 @@ open class BaseCollectionViewController <T, D> : BaseViewController<T, D> where 
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-        initCollectionViewAdapterConfiguraton()
         let collectionViewDataSource : [D] = [D]()
         collectionViewAdapter.setDataSource(dataSource: collectionViewDataSource)
+        initCollectionViewAdapterConfiguraton()
     }
     
     open func initCollectionViewAdapterConfiguraton() { fatalError("Must Override") }
+    
+    public final func initDataSourceIfNeeded(collectionViewDataSource : [D]) {
+        collectionViewAdapter.setDataSource(dataSource: collectionViewDataSource)
+    }
     
 }

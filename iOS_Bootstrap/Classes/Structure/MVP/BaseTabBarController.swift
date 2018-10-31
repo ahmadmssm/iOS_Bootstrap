@@ -12,29 +12,29 @@ open class BaseTabBarController <T, V> : UITabBarController where T : BasePresen
     private var presenter : T!
     
     override open func viewDidLoad() {
-        self.presenter = T.init()
+        self.presenter = T.init(viewDelegator: self as! V)
+        getPresenter().viewControllerDidLoaded()
         initUI()
-    }
+        getPresenter().viewControllerDidFinishedSettingUpUI()    }
     //
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupViewWillAppearEssentials()
+        getPresenter().viewControllerWillRefresh()
+    }
+    //
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        getPresenter().viewControllerWillDisappear()
     }
     //
     override open func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        setupViewDidDisappearEssentials()
+        InternetConnectionManager.getInstance.removeListener(listener: self)
         setupViewDidDisappearEssentials()
     }
-        
-    public final var getPresenter : T {
-        get {
-            if (presenter.getViewDelegator == nil) {
-                presenter.attachView(contract: self as! V)
-            }
-            return presenter
-        }
-    }
+    
+    public final func getPresenter() -> T { return presenter }
     
     open func initUI () { fatalError("Must Override") }
 
