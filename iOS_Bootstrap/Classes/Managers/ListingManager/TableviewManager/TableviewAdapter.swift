@@ -26,10 +26,11 @@ open class TableviewAdapter : NSObject {
     fileprivate var indicator : UIActivityIndicatorView?
     
     public var getDataSource : [Any] {
-        set (dataSource) { return tableViewDataSource = dataSource }
         get { if (tableViewDataSource != nil) { return tableViewDataSource }; return [] }
     }
 
+    public final func setDataSource (dataSource : [Any]) { tableViewDataSource = dataSource }
+        
     public final func configureTableWithXibCell (tableView: UITableView,
                                     dataSource: [Any]!,
                                     nibClass : BaseTableViewCell.Type!,
@@ -55,10 +56,6 @@ open class TableviewAdapter : NSObject {
                                            delegate : BaseTableViewDelegates) {
         //
         configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
-    }
-    
-    public final func setDataSource (dataSource: [Any]) {
-        self.tableViewDataSource = dataSource
     }
     
     private final func configureTable (tableView: UITableView,

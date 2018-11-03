@@ -8,4 +8,10 @@
 
 import iOS_Bootstrap
 
-class JavaPresenter : BasePresenter<JavaViewDelegator> {}
+class JavaPresenter : BasePresenter<JavaViewDelegator> {
+    
+    required init(viewDelegator: JavaViewDelegator) {
+        super.init(viewDelegator: viewDelegator)
+    }
+    
+}

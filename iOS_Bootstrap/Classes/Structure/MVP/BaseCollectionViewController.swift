@@ -8,19 +8,18 @@
 open class BaseCollectionViewController <T, V, D> : BaseViewController<T, V> where T : BasePresenter<V> {
         
     private let collectionViewAdapter : CollectionViewAdapter = CollectionViewAdapter()
-    public final var getCollectionViewAdapter : CollectionViewAdapter {
-        get { return collectionViewAdapter }
-    }
-    public var getCollectionViewDataSource : [D] {
-        set (dataSource) { return collectionViewAdapter.getDataSource = dataSource}
-        get { return collectionViewAdapter.getDataSource as! [D] }
+    
+     public final func getCollectionViewAdapter() -> CollectionViewAdapter {
+        return collectionViewAdapter
     }
 
-
-    public final var getTableViewAdapter : CollectionViewAdapter {
-        get { return collectionViewAdapter }
+    public final var getCollectionViewDataSource : [D] {
+        get { return collectionViewAdapter.getDataSource() as! [D] }
     }
-
+    
+    public final func setDataSource(datasource : [D]) {
+        collectionViewAdapter.setDataSource(dataSource: datasource)
+    }
     open override func viewDidLoad() {
         super.viewDidLoad()
         let collectionViewDataSource : [D] = [D]()
@@ -31,7 +30,7 @@ open class BaseCollectionViewController <T, V, D> : BaseViewController<T, V> whe
     open func initCollectionViewAdapterConfiguraton() { fatalError("Must Override") }
     
     public final func initDataSourceIfNeeded(collectionViewDataSource : [D]) {
-        collectionViewAdapter.setDataSource(dataSource: collectionViewDataSource)
+        setDataSource(datasource: collectionViewDataSource)
     }
     
 }

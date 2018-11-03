@@ -8,4 +8,9 @@
 
 import iOS_Bootstrap
 
-class RubyPresenter : BasePresenter<RubyViewDelegator> {}
+class RubyPresenter : BasePresenter<RubyViewDelegator> {
+    
+    required init(viewDelegator: RubyViewDelegator) {
+        super.init(viewDelegator: viewDelegator)
+    }
+}

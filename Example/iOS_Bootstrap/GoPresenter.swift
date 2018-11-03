@@ -8,5 +8,10 @@
 
 import iOS_Bootstrap
 
-class GoPresenter : BasePresenter<GoViewDelegator> {}
+class GoPresenter : BasePresenter<GoViewDelegator> {
+    
+    required init(viewDelegator: GoViewDelegator) {
+        super.init(viewDelegator: viewDelegator)
+    }
+}
 

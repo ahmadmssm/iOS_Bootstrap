@@ -20,18 +20,18 @@ open class BaseUser: Codable, HandyJSON, UserDefaultsService {
     
     
     public final func cache() {
-        getUserDefaults.setObjectWithKey(value: self, key: "UserProfile_0")
+        getUserDefaults().setObjectWithKey(value: self, key: "UserProfile_0")
     }
     
     public final func cacheWithKey(key : String) {
-        getUserDefaults.setObjectWithKey(value: self, key: key)
+        getUserDefaults().setObjectWithKey(value: self, key: key)
     }
     
     public final func getCachedUser() -> BaseUser? {
-        return getUserDefaults.getObjectWithKey(key: "UserProfile_0")
+        return getUserDefaults().getObjectWithKey(key: "UserProfile_0")
     }
     
     public final func getCachedUserWithKey(key : String) -> BaseUser? {
-        return getUserDefaults.getObjectWithKey(key: key)
+        return getUserDefaults().getObjectWithKey(key: key)
     }
 }

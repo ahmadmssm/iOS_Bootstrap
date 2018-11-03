@@ -40,32 +40,18 @@ extension UIViewController : ViewControllerCommonFeatures {
     }
     
     open func networkStatusDidChanged(status: InternetConnectionManager.Connection) {
-        var message : String = ""
-        var duration : TTGSnackbarDuration = .long
-        var actionText : String = ""
-        //
-        switch status {
-        case .notConnected:
-            message = "Network became unreachable"
-            actionText  = "Dismiss"
+        snackbar?.dismiss()
+        if (status == InternetConnectionManager.Connection.notConnected) {
+            snackbar?.actionText = "Dismiss"
             snackbar?.actionBlock = { snackbar in
                 snackbar.dismiss()
             }
-            duration = .forever
-            break
-        case .wifi:
-            message = "Network reachable through WiFi"
-            break
-        case .cellular:
-            message = "Network reachable through Mobile data"
-            break
+            self.snackbar?.message = "Network became unreachable"
+            self.snackbar?.duration = .forever
+            DispatchQueue.main.async {
+                self.snackbar?.show()
+            }
         }
-        //
-        snackbar?.actionText = actionText
-        self.snackbar?.hideAllToasts()
-        self.snackbar?.message = message
-        self.snackbar?.duration = duration
-        self.snackbar?.show()
     }
     
 }

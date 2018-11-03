@@ -10,15 +10,15 @@
 import UIKit
 import iOS_Bootstrap
 
-class ViewController: UIViewController {
+class CustomViewsViewController:
+                    BaseViewController<CustomViewsPresenter, CustomViewsDelegator>,
+                    CustomViewsDelegator {
 
-    let picker = Picker()
-    //
-    public weak var navigator: Navigator?
+    private let picker = Picker()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "View controller"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,12 +27,8 @@ class ViewController: UIViewController {
         setContext(context: self)
     }
     
-    @IBAction func buttonGoToHomeStoryboard(_ sender: UIButton) {
-        Navigator.goToHomeStoryBoard()
-    }
-    
-    @IBAction func buttonGoToSideMenuStoryboard(_ sender: UIButton) {
-        Navigator.goToSideMenuStoryboard()
+    override func initUI() {
+        self.title = "Custom views"
     }
     
     @IBAction func showProgress(_ sender: UIButton) {
@@ -41,8 +37,8 @@ class ViewController: UIViewController {
     
     @IBAction func showDatePicker(_ sender: UIButton) {
        openDatePicker(sender: sender)
-        
     }
+    
     @IBAction func showTimePicker(_ sender: UIButton) {
         openTimePicker(sender: sender)
     }
@@ -50,7 +46,6 @@ class ViewController: UIViewController {
     @IBAction func showLocalePicker(_ sender: UIButton) {
         openLocalePicer(sender: sender)
     }
-    
     
     @IBAction func showArrayPicker(_ sender: UIButton) {
         openDataPicker(sender: sender)
@@ -64,12 +59,12 @@ class ViewController: UIViewController {
         openDateAndTimePicker(sender: sender)
     }
     
-    @IBAction func showDataPicker(_ sender: UIButton) {
+    @IBAction func showToast(_ sender: UIButton) {
+        self.view.makeToast("This is a piece of toast", duration: 3.0, position: .center)
     }
-    
+
     @IBAction func loggers(_ sender: UIButton) {
-        Log.debug("Hi !")
-        Log.error("There is an error :(")
+        Log.info("Hi, I'm a logger that prints what you want in Xcode console and i work in debug mode only")
     }
     
     func openMultiDatasourcePicker(sender : UIButton) {
@@ -117,30 +112,6 @@ class ViewController: UIViewController {
         picker.showDatePicker(sender: sender, title: "", minimumDate: nil, maximumDate: nil, currentLocaleButtonTitle: nil, okButton: rightButton, cancelButton: nil) { (date) in
             Log.info(date)
         }
-    }
-    
-    
-    @IBAction func showShareTo(_ sender: UIButton) {
-      // let sharingManager : SocialMediaManager = SocialMediaManager(context: self)
-      //  sharingManager.share(itemToShare: "Text" as AnyObject, excludedItems: nil)
-        
-        var user : User = User()
-        user.first_name = "First"
-        user.last_name = "Last"
-        user.id = 123
-        //
-        let objStr : String = user.toString()
-        print(objStr)
-        let u : User = objStr.toObjectOfType(Object: User.self)
-        print(u.first_name!)
-        //
-        var country : Country = Country()
-        country.countryName = "Hopa"
-        country.capital = "Capital Hopa"
-        country.pop = 1000000
-        let jsonStr = country.toString()
-        print(jsonStr)
-        print(jsonStr.toDictionary() ["capital"]!)
     }
     
 }

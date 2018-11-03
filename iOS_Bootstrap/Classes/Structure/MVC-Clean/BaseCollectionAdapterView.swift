@@ -11,8 +11,9 @@ open class BaseCollectionView<D>: BaseView {
     public final var getCollectionViewAdapter : CollectionViewAdapter {
         get { return collectionViewAdapter }
     }
+    
     public var getCollectionViewDataSource : [D] {
-        set (dataSource) { return collectionViewAdapter.getDataSource = dataSource}
+        set (dataSource) { return collectionViewAdapter.setDataSource(dataSource: dataSource) }
         get { return collectionViewAdapter.getDataSource as! [D] }
     }
     

@@ -7,13 +7,13 @@
 
 import Foundation
 
-open class ReusableCollectionViewAdapter : NSObject, CollectionViewDelegates {
+open class ReusableCollectionViewAdapter : NSObject, BaseCollectionViewDelegates {
     
     private final var mCollectionview : UICollectionView!
     private final var mCollectionViewDataSource: [Any]!
     //
     private final var nibClass : BaseCollectionViewCell.Type!
-    fileprivate final var mDelegate : CollectionViewDelegates!
+    fileprivate final var mDelegate : BaseCollectionViewDelegates!
     //
     private final var adapter : CollectionViewAdapter!
     
@@ -35,7 +35,7 @@ open class ReusableCollectionViewAdapter : NSObject, CollectionViewDelegates {
         }
     }
     
-    open func configureCell(collectionView: UICollectionView, cellForRowAt indexPath: IndexPath) -> UICollectionViewCell {
+    open func configureCollectionViewCell(collectionView: UICollectionView, cellForRowAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : BaseCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
         return cell
     }
@@ -52,9 +52,7 @@ open class ReusableCollectionViewAdapter : NSObject, CollectionViewDelegates {
         adapter.reloadCollectionView(pageItems: pageItems)
     }
     
-    open func configureReusableCollectionView(collectionViewDataSource: [Any]!)  {
-        // Set tableview cell here
-    }
+    open func configureReusableCollectionView(collectionViewDataSource: [Any]!)  {}
     
 }
 

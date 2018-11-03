@@ -17,13 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //
+        let navigationBarTextStyle =
+            [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.white]
         DefaultConfigurations
                 .init()
                 .enableIQKeyboard()
                 .iqKeyboardCanGoBack()
                 .iqKeyboardCanGoNext()
                 .configureSessionService(context: self)
-                .configureNavigationBarApperance(barColor: UIColor.green, backButtonColor: UIColor.blue, textApperance: nil)
+                .configureNavigationBarApperance(barColor: StaticResources.CustomColors.beautifulBlueColor, backButtonColor: UIColor.white, textApperance: navigationBarTextStyle)
                 .configureAppWindowWithRootNavigationController(window: window!, navController: Navigator.navigationController!)
                 .build()
         //

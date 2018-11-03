@@ -12,11 +12,20 @@ open class BaseTableViewController <T, V, D> :
     private let tableViewAdapter : TableviewAdapter = TableviewAdapter()
     
     //
-    public final var getTableViewAdapter : TableviewAdapter { get { return tableViewAdapter } }
+    
+    public final func getTableViewAdapter() -> TableviewAdapter {
+        return tableViewAdapter
+    }
+    
+//    public final func getTableViewDataSource() -> [D] {
+//        return tableViewAdapter.getDataSource as! [D]
+//    }
+    
     public var getTableViewDataSource : [D] {
-        set (dataSource) { return tableViewAdapter.getDataSource = dataSource}
         get { return tableViewAdapter.getDataSource as! [D] }
     }
+    
+    public final func setTableViewDataSource(tableViewDataSource : [D])  { tableViewAdapter.setDataSource(dataSource: tableViewDataSource) }
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +37,7 @@ open class BaseTableViewController <T, V, D> :
     open func initTableViewAdapterConfiguraton() { fatalError("Must Override") }
 
     public final func initDataSourceIfNeeded(tableViewDataSource : [D]) {
-        tableViewAdapter.setDataSource(dataSource: tableViewDataSource)
+        setTableViewDataSource(tableViewDataSource: tableViewDataSource)
     }
     
 }

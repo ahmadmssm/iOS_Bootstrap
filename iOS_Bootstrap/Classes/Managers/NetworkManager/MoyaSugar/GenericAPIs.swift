@@ -1,7 +1,7 @@
 import struct Foundation.URL
 
 
-public protocol GenericAPIs: TargetType {
+public protocol GenericAPIs: TargetType, UserDefaultsService {
   var url: URL { get }
 
   /// Returns `Route` which contains HTTP method and URL path information.
@@ -39,3 +39,5 @@ public extension GenericAPIs {
     return .requestParameters(parameters: parameters.values, encoding: parameters.encoding)
   }
 }
+
+

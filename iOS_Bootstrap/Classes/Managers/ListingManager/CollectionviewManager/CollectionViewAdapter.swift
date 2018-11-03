@@ -7,13 +7,12 @@
 
 import UIKit
 
-
 open class CollectionViewAdapter : NSObject {
     
     private final var mCollectionview : UICollectionView!
     private final var collectionViewDataSource: [Any]!
     private final var mNibClass : BaseCollectionViewCell.Type!
-    fileprivate final var mDelegate : CollectionViewDelegates!
+    fileprivate final var mDelegate : BaseCollectionViewDelegates!
     //
     fileprivate var mTotalNumberOfItems : Int?
     fileprivate var mItemsPerPage : Int?
@@ -25,15 +24,19 @@ open class CollectionViewAdapter : NSObject {
     //
     fileprivate var indicator : UIActivityIndicatorView?
     
-    public var getDataSource : [Any] {
-        set (dataSource) { return collectionViewDataSource = dataSource }
-        get { if (collectionViewDataSource != nil) { return collectionViewDataSource }; return [] }
+    public final func getDataSource() -> [Any] {
+        if (collectionViewDataSource != nil) { return collectionViewDataSource }
+        return []
     }
 
+    public final func setDataSource (dataSource: [Any]) {
+        self.collectionViewDataSource = dataSource
+    }
+    
     public final func configureCollectionviewWithXibCell (collectionView: UICollectionView,
                                                  dataSource: [Any]!,
                                                  nibClass : BaseCollectionViewCell.Type!,
-                                                 delegate : CollectionViewDelegates) {
+                                                 delegate : BaseCollectionViewDelegates) {
         //
         self.mNibClass = nibClass
         mCollectionview?.register(cellClass: mNibClass.self)
@@ -42,7 +45,7 @@ open class CollectionViewAdapter : NSObject {
     
     public final func configureCollectionviewWithXibCell (collectionView: UICollectionView,
                                                           nibClass : BaseCollectionViewCell.Type!,
-                                                          delegate : CollectionViewDelegates) {
+                                                          delegate : BaseCollectionViewDelegates) {
         //
         self.mNibClass = nibClass
         mCollectionview?.register(cellClass: mNibClass.self)
@@ -52,18 +55,14 @@ open class CollectionViewAdapter : NSObject {
     public final func configureCollectionviewWithStoryboardCell (collectionView: UICollectionView,
                                                         dataSource: [Any],
                                                         nibClass : BaseCollectionViewCell.Type!,
-                                                        delegate : CollectionViewDelegates) {
+                                                        delegate : BaseCollectionViewDelegates) {
         //
         configureCollectionView(collectionView: collectionView, dataSource: dataSource, delegate: delegate)
     }
     
-    public final func setDataSource (dataSource: [Any]) {
-        self.collectionViewDataSource = dataSource
-    }
-    
     private final func configureCollectionView (collectionView: UICollectionView,
                                        dataSource: [Any],
-                                       delegate : CollectionViewDelegates) {
+                                       delegate : BaseCollectionViewDelegates) {
         // self.collectionViewDataSource = dataSource
         setDataSource(dataSource: dataSource)
         self.mCollectionview = collectionView
@@ -133,20 +132,25 @@ open class CollectionViewAdapter : NSObject {
     }
     
     // return cells that are square sized
-    public func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, padding : CGFloat) -> CGSize {
+    public func configurePaddingForSquareSizedCells (padding : CGFloat) -> CGSize {
         let collectionViewSize = mCollectionview.frame.size.width - padding
-        if (numberOfItemsPerRow > 0) {
-            return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
-        }
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
     }
     // configure dimesions and number of items per row
     public func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, itemHeight : CGFloat, padding : CGFloat) -> CGSize {
         let collectionViewSize = mCollectionview.frame.size.width - padding
-        if (numberOfItemsPerRow > 0) {
-            return CGSize(width: collectionViewSize/2, height: itemHeight)
-        }
-        return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+        return CGSize(width: collectionViewSize/numberOfItemsPerRow, height: itemHeight)
+    }
+    //
+    // configure dimesions and number of items per row
+    public func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, padding : CGFloat) -> CGSize {
+        let collectionViewSize = mCollectionview.frame.size.width - padding
+        return CGSize(width: collectionViewSize/numberOfItemsPerRow, height: collectionViewSize/numberOfItemsPerRow)
+    }
+    //
+    public func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, cellHeight : CGFloat, padding : CGFloat) -> CGSize {
+        let collectionViewSize = mCollectionview.frame.size.width - padding
+        return CGSize(width: collectionViewSize/numberOfItemsPerRow, height: cellHeight)
     }
 }
 
@@ -179,7 +183,8 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
         // Replace the divisor with the column count requirement. Make sure to have it in float.
         // return CGSize(width: CGFloat(cellWidth), height: CGFloat(cellWidth))
         //
-        return configureNumberOfCollectionViewItemsPerRow(numberOfItemsPerRow: 2, padding: 1)
+        return configurePaddingForSquareSizedCells(padding: 25)
+       // return CGSize(width: 50, height: 50)
     }
     // Configure spacing between row items
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -189,9 +194,43 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return (mDelegate?.spacingBetweenRows?(collectionViewLayout: collectionViewLayout, section: section)) ?? 1
     }
+    //
+//    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//
+//        //Where elements_count is the count of all your items in that
+//        //Collection view...
+//        let cellCount = CGFloat(getDataSource().count)
+//
+//        //If the cell count is zero, there is no point in calculating anything.
+//        if cellCount > 0 {
+//            let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+//            let cellWidth = flowLayout.itemSize.width + flowLayout.minimumInteritemSpacing
+//
+//            //20.00 was just extra spacing I wanted to add to my cell.
+//            let totalCellWidth = cellWidth*cellCount + 20.00 * (cellCount-1)
+//            let contentWidth = collectionView.frame.size.width - collectionView.contentInset.left - collectionView.contentInset.right
+//
+//            if (totalCellWidth < contentWidth) {
+//                //If the number of cells that exists take up less room than the
+//                //collection view width... then there is an actual point to centering them.
+//
+//                //Calculate the right amount of padding to center the cells.
+//                let padding = (contentWidth - totalCellWidth) / 2.0
+//                return UIEdgeInsetsMake(0, padding, 0, padding)
+//            } else {
+//                //Pretty much if the number of cells that exist take up
+//                //more room than the actual collectionView width, there is no
+//                // point in trying to center them. So we leave the default behavior.
+//                return UIEdgeInsetsMake(0, 40, 0, 40)
+//            }
+//        }
+//
+//        return UIEdgeInsets.zero
+//    }
+    //
     // Configure cell
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return (mDelegate?.configureCell(collectionView: collectionView, cellForRowAt: indexPath))!
+        return (mDelegate?.configureCollectionViewCell(collectionView: collectionView, cellForRowAt: indexPath))!
     }
     // item did selected at index
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -12,8 +12,8 @@ public protocol UserDefaultsService : IServicesInstances {}
 public protocol AppDelegateService : SessionService, UserDefaultsService {}
 //
 public extension UserDefaultsService {
-    var getUserDefaults : UserDefaultsManager {
-        get { return servicesInstaces.userDefaultsManagerInstance }
+    public func getUserDefaults() -> UserDefaultsManager {
+        return servicesInstaces.userDefaultsManagerInstance
     }
 }
 //

@@ -21,27 +21,27 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NyM-Sh-JGQ">
-                        <rect key="frame" x="75" y="12" width="204" height="22"/>
+                        <rect key="frame" x="75" y="12" width="210" height="22"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LbQ-Rx-RRK">
-                        <rect key="frame" x="10" y="4" width="35" height="35"/>
+                        <rect key="frame" x="20" y="11" width="26" height="26"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="35" id="5hM-Q4-Vis"/>
+                            <constraint firstAttribute="width" constant="26" id="5hM-Q4-Vis"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="NyM-Sh-JGQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="8HV-Ap-6Jc"/>
                     <constraint firstItem="NyM-Sh-JGQ" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="1" id="Hgl-nX-gbu"/>
-                    <constraint firstItem="LbQ-Rx-RRK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="SvA-Ul-U0j"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="NyM-Sh-JGQ" secondAttribute="trailing" constant="25" id="oYs-VI-iSn"/>
-                    <constraint firstAttribute="bottom" secondItem="LbQ-Rx-RRK" secondAttribute="bottom" constant="4" id="wJb-oL-4Bl"/>
-                    <constraint firstItem="LbQ-Rx-RRK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="x1P-Rg-KlK"/>
-                    <constraint firstItem="NyM-Sh-JGQ" firstAttribute="leading" secondItem="LbQ-Rx-RRK" secondAttribute="trailing" constant="30" id="zca-vE-A8k"/>
+                    <constraint firstItem="LbQ-Rx-RRK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="SvA-Ul-U0j"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="NyM-Sh-JGQ" secondAttribute="trailing" constant="19" id="oYs-VI-iSn"/>
+                    <constraint firstAttribute="bottom" secondItem="LbQ-Rx-RRK" secondAttribute="bottom" constant="6.5" id="wJb-oL-4Bl"/>
+                    <constraint firstItem="LbQ-Rx-RRK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="x1P-Rg-KlK"/>
+                    <constraint firstItem="NyM-Sh-JGQ" firstAttribute="leading" secondItem="LbQ-Rx-RRK" secondAttribute="trailing" constant="29" id="zca-vE-A8k"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

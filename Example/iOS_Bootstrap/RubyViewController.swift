@@ -9,7 +9,7 @@
 import UIKit
 import iOS_Bootstrap
 
-class RubyViewController: MyMenuItemViewController<RubyPresenter, RubyViewDelegator> {
+class RubyViewController: MyMenuItemViewController<RubyPresenter, RubyViewDelegator>, RubyViewDelegator {
     
     override func viewDidLoad() {
         super.viewDidLoad()

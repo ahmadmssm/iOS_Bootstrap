@@ -8,5 +8,9 @@
 
 import iOS_Bootstrap
 
-class SideMenuPresenter : BasePresenter<SideMenuViewDelegator> {}
+class SideMenuPresenter : BasePresenter<SideMenuViewDelegator> {
+    required init(viewDelegator: SideMenuViewDelegator) {
+        super.init(viewDelegator: viewDelegator)
+    }
+}
 

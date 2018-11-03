@@ -11,16 +11,16 @@ import iOS_Bootstrap
 
 class Navigator: BaseNavigator {
     //
-    static func goToMainStoryBoard(number : Int) {
-        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.main)
-        let vc = storyboard.instantiateViewController() as MyViewController
-        vc.x = number
-        getContext().present(vc, animated: true, completion: nil)
+    private static let mainStoryboard = UIStoryboard.getStoryboardWithName(Storyboards.main)
+    //
+    static func startInitialView() {
+        let mainViewController : MainViewController = mainStoryboard.instantiateViewController()
+        navigationController?.pushViewController(mainViewController, animated: false)
     }
-    
+    //
     static func goToSideMenuStoryboard() {
         let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.menu)
-        let mainViewController : SwiftViewController = storyboard.instantiateViewController()
+        let mainViewController : TrendingMoviesViewController = storyboard.instantiateViewController()
         let sideMenuViewController : SideMenuViewController = storyboard.instantiateViewController()
         let navigationController: UINavigationController = UINavigationController(rootViewController: mainViewController)
         // Set the main menu view controller
@@ -29,24 +29,15 @@ class Navigator: BaseNavigator {
         let slidingMenu = MySlidingMenu ( mainViewController:navigationController, leftMenuViewController: sideMenuViewController)
         getContext().present(slidingMenu, animated: true, completion: nil)
     }
-    
-    static func goToHomeStoryBoard() {
-        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.home)
-        let vc = storyboard.instantiateViewController() as HomeVC
-        getContext().present(vc, animated: true, completion: nil)
-    }
-    
+    //
     static func goToExambleOfTableViewController() {
-        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.main)
-        let vc = storyboard.instantiateViewController() as TableExampleView
+        let vc = mainStoryboard.instantiateViewController() as TableExampleView
         getContext().navigationController?.pushViewController(vc, animated: false)
     }
     
-    static func startInitialView() {
-        // Write initial (first) view controller navigation here
-        let storyboard =  UIStoryboard.getStoryboardWithName(Storyboards.main)
-        let vc = storyboard.instantiateViewController() as ViewController
-        navigationController?.pushViewController(vc, animated: false)
+    static func goToViewController() {
+        let viewController : CustomViewsViewController = mainStoryboard.instantiateViewController()
+        getContext().navigationController?.pushViewController(viewController, animated: false)
     }
     
 }

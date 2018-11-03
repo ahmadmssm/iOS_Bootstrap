@@ -10,7 +10,5 @@ import UIKit
 import iOS_Bootstrap
 
 class MySlidingMenu: BaseSideMenuController {
-    override func configureMenuPropsIfNeeded() {
-        super.configureMenuPropsIfNeeded()
-    }
+    override func configureMenuPropsIfNeeded() { super.configureMenuPropsIfNeeded() }
 }

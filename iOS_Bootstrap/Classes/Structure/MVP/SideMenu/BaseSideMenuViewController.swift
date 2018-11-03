@@ -20,7 +20,7 @@ open class BaseSideMenuViewController<T, V, M> :
         menuViewControllers = setupSideMenuViewControllers()
         super.viewDidLoad()
         // if (shouldBlurBackgroundItem()) { addBlurEffect() }
-        getTableViewAdapter.reloadTable()
+        getTableViewAdapter().reloadTable()
     }
     
     override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -30,8 +30,8 @@ open class BaseSideMenuViewController<T, V, M> :
     open override func initUI() {}
 
     open override func initTableViewAdapterConfiguraton() {
-        getTableViewAdapter.configureTableWithXibCell(tableView: setupSideMenuTableView(), nibClass: setupMenuItemCell(), delegate: self)
-        getTableViewAdapter.configurePaginationParameters(totalNumberOfItems: (menuItems?.count)!, itemsPerPage: (menuItems?.count)!)
+        getTableViewAdapter().configureTableWithXibCell(tableView: setupSideMenuTableView(), nibClass: setupMenuItemCell(), delegate: self)
+        getTableViewAdapter().configurePaginationParameters(totalNumberOfItems: (menuItems?.count)!, itemsPerPage: (menuItems?.count)!)
         initDataSourceIfNeeded(tableViewDataSource: setupMenuItemsData())
     }
     

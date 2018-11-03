@@ -46,21 +46,7 @@ Pod::Spec.new do |s|
     s.dependency 'IQKeyboardManagerSwift', '5.0.0'
     s.dependency 'Kingfisher', '4.9.0'
     s.dependency 'SCLAlertView'
-    # s.dependency 'SNSSocial', '~> 2.0'
-    #
     s.frameworks = 'Foundation'
-    
-    #s.subspec 'Facebook' do |facebook|
-    #     facebook.source_files = 'iOS_Bootstrap/Classes/Managers/SocialMediaManager/**/*'
-    #    facebook.ios.dependency     'FBSDKCoreKit',   '~> 4.22'
-    #   facebook.ios.dependency     'FBSDKShareKit',  '~> 4.22'
-    #  facebook.ios.dependency 'FBSDKLoginKit', '~> 4.22'
-    # end
-
-    #s.subspec 'Twitter' do |twitter|
-    #       twitter.source_files = 'iOS_Bootstrap/Classes/Managers/SocialMediaManager/**/*'
-    #       twitter.dependency 'STTwitter', '0.2.5'
-    #   end
 
     # s.subspec 'Firebase' do |firebase|
     #       firebase.source_files = 'iOS_Bootstrap/Classes/Managers/PushNotificationManager/**/*'

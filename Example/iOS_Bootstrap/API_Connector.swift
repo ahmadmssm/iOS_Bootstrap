@@ -16,17 +16,15 @@ class API_Connector : GenericConnector {
     
     required override init() {
         super.init()
+        //
+        getUserDefaults().setStringWithKey(value: "22be16bc2f5eecf293aea95be4a83105", key: UserDefaultKeys.tmdbToken)
+        //
         GenericErrorConfigurator.defaultErrorHandler(HumanReadableErrorHandler())
         // With plugins
-        //
-        // let networkLogger = NetworkLoggerPlugin(verbose: true)
-        // With formatted output
         let networkLogger = NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)
         //
         let plugins : [PluginType] = [networkLogger]
         apiProvider = APIsProvider<APIs>(plugins: plugins)
-        // Without plugins
-        // apiProvider = APIsProvider<APIs>()
     }
     
     // Write your network calls here
@@ -61,21 +59,21 @@ class API_Connector : GenericConnector {
                 .request(.getCountryDetailsByCountryName(countryName: ""))
     }
     
-    func getFakeUsers (page : Int, completion: @escaping completionHandler<Page>) {
+    func getTrendingMovies (pageNo : Int, completion: @escaping completionHandler<MoviesPage>) {
         subscriber = apiProvider.rx
-            .request(.getUsers(page: String(page)))
-            //.showLoading()
-            .filterSuccessfulStatusAndRedirectCodes()
+            .request(.getTrendingMovies(page: pageNo))
+            .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
             .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
-            .map(Page.self)
+            .map(MoviesPage.self)
             .subscribe { event in
                 switch event {
-                case .success(let page) :
-                    completion(.success(page))
+                case .success(let moviesPage):
+                     completion(.success(moviesPage))
                 case .error(let error):
+                    print("Error string " + error.localizedDescription)
                     completion(.failure(error.localizedDescription))
                 }
-            }
+        }
     }
     
     func getErrorFromRequest (completion: @escaping completionHandler<[Country]>) {

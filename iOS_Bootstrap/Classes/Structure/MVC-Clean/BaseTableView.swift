@@ -10,7 +10,7 @@ open class BaseTableView<D>: BaseView {
     private let tableViewAdapter : TableviewAdapter = TableviewAdapter()
     public final var getTableViewAdapter : TableviewAdapter { get { return tableViewAdapter } }
     public var getTableViewDataSource : [D] {
-        set (dataSource) { return tableViewAdapter.getDataSource = dataSource}
+        set (dataSource) { return tableViewAdapter.setDataSource(dataSource: dataSource) }
         get { return tableViewAdapter.getDataSource as! [D] }
     }
     

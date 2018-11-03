@@ -11,7 +11,7 @@ import iOS_Bootstrap
 class SideMenuViewController :
                BaseSideMenuViewController<SideMenuPresenter,
                             SideMenuViewDelegator,
-                            ExampleMenuModel> {
+                            ExampleMenuModel>, SideMenuViewDelegator {
     //
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerViewContainer: UIView!
@@ -33,7 +33,7 @@ class SideMenuViewController :
     
     override func setupMenuItemsData() -> [ExampleMenuModel] {
         var menu : [ExampleMenuModel] = []
-        let swiftMenuItem = ExampleMenuModel(itemName: "Swift", itemId: 0, itemIcon: #imageLiteral(resourceName: "bill"))
+        let swiftMenuItem = ExampleMenuModel(itemName: "Trending Movies", itemId: 0, itemIcon: #imageLiteral(resourceName: "trending-movies"))
         let javaMenuItem = ExampleMenuModel(itemName: "Java", itemId: 1, itemIcon: #imageLiteral(resourceName: "bill"))
         let goMenuItem = ExampleMenuModel(itemName: "Go", itemId: 2, itemIcon: #imageLiteral(resourceName: "bill"))
         let noMenuItem = ExampleMenuModel(itemName: "Ruby", itemId: 3, itemIcon: #imageLiteral(resourceName: "bill"))
@@ -58,8 +58,8 @@ class SideMenuViewController :
     override func setupSideMenuViewControllers() -> [UIViewController] {
         var menuViewControllers : [UIViewController] = []
         let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.menu)
-        let swiftViewController : SwiftViewController = storyboard.instantiateViewController()
-        menuViewControllers.append(UINavigationController(rootViewController: swiftViewController))
+        let trendingMovies : TrendingMoviesViewController = storyboard.instantiateViewController()
+        menuViewControllers.append(UINavigationController(rootViewController: trendingMovies))
         let javaViewController : JavaViewController = storyboard.instantiateViewController()
         menuViewControllers.append(UINavigationController(rootViewController: javaViewController))
         let goViewController : GoViewController = storyboard.instantiateViewController()

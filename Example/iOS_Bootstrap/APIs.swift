@@ -15,6 +15,8 @@ enum APIs {
     case getCountryDetailsByCountryName(countryName : String)
     case getUsers(page : String)
     case refreshToken(token: String)
+    case getTrendingMovies(page : Int)
+
 }
 
 extension APIs : GenericAPIs {
@@ -29,6 +31,8 @@ extension APIs : GenericAPIs {
             return URL(string: "https://restcountries.eu/rest/v2")!
         case .getUsers( _):
             return URL(string: "https://reqres.in/api/users")!
+        case .getTrendingMovies( _):
+            return URL(string: "https://api.themoviedb.org/3/")!
         default :
             return URL(string: "https://fcm.googleapis.com/fcm/send")!
         }
@@ -48,7 +52,8 @@ extension APIs : GenericAPIs {
             return .post("")
         case .doRequestThatReturnsAnError:
             return .get("//al")
-
+        case .getTrendingMovies( _):
+            return .get("movie/popular")
         }
     }
     
@@ -62,17 +67,6 @@ extension APIs : GenericAPIs {
             return nil
         }
     }
-    
-//    public var task: Task {
-//        switch self {
-//        case let .uploadGif(data, description):
-//            let gifData = MultipartFormData(provider: .data(data), name: "file", fileName: "gif.gif", mimeType: "image/gif")
-//            let descriptionData = MultipartFormData(provider: .data(description.data(using: .utf8)!), name: "description")
-//            let multipartData = [gifData, descriptionData]
-//
-//            return .uploadMultipart(multipartData)
-//        }
-//    }
    
     // Encoding + Parameters
     // Use `URLEncoding()` as default when not specified
@@ -91,6 +85,11 @@ extension APIs : GenericAPIs {
             return nil
         case .refreshToken(let token):
             return nil
+        case .getTrendingMovies(let page):
+            return URLEncoding() => [
+                "api_key" : getUserDefaults().getStringWithKey(key: UserDefaultKeys.tmdbToken),
+                "page": page
+            ]
         }
     }
     

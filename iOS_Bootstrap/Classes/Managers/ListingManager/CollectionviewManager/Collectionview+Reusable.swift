@@ -11,11 +11,11 @@ import UIKit
 
 extension UICollectionView {
     
-    public func register<T: UICollectionViewCell>(cellClass: T.Type) where T: ReusableCell {
-        register(cellClass, forCellWithReuseIdentifier: String(describing: cellClass.self))
-    }
+//    public func register<T: UICollectionViewCell>(cellClass: T.Type) where T: ReusableCell {
+//        register(cellClass, forCellWithReuseIdentifier: String(describing: cellClass.self))
+//    }
     
-    public func register<T: UICollectionViewCell>(cellClass: T.Type) where T: ReusableCell, T: NibLoadableView {
+    public func register<T: UICollectionViewCell>(cellClass: T.Type) where T: ReusableCell {
         let bundle = Bundle(for: cellClass.self)
         let cellClassName : String = String(describing: cellClass.self)
         let nib = UINib(nibName: cellClassName, bundle: bundle)

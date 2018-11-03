@@ -5,8 +5,8 @@
 //  Created by Ahmad Mahmoud on 6/12/18.
 //
 
-public protocol CollectionViewDelegates : CollectionViewOptionalDelegates {
-    func configureCell (collectionView: UICollectionView, cellForRowAt indexPath: IndexPath) -> UICollectionViewCell
+public protocol BaseCollectionViewDelegates : CollectionViewOptionalDelegates {
+    func configureCollectionViewCell (collectionView: UICollectionView, cellForRowAt indexPath: IndexPath) -> UICollectionViewCell
 }
 
 @objc public protocol  CollectionViewOptionalDelegates : CommonListingDelegates {
