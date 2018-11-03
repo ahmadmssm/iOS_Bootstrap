@@ -11,7 +11,7 @@ import iOS_Bootstrap
 class SideMenuViewController :
                BaseSideMenuViewController<SideMenuPresenter,
                             SideMenuViewDelegator,
-                            ExampleMenuModel>, SideMenuViewDelegator {
+                            SideMenuModel>, SideMenuViewDelegator {
     //
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerViewContainer: UIView!
@@ -28,17 +28,17 @@ class SideMenuViewController :
         profileImage.clipsToBounds = true
         profileImage.layer.borderWidth = 1
         profileImage.layer.borderColor = UIColor.white.cgColor
-        profileTitle.text = "Username"
+        profileTitle.text = "John Doe"
     }
     
-    override func setupMenuItemsData() -> [ExampleMenuModel] {
-        var menu : [ExampleMenuModel] = []
-        let swiftMenuItem = ExampleMenuModel(itemName: "Trending Movies", itemId: 0, itemIcon: #imageLiteral(resourceName: "trending-movies"))
-        let javaMenuItem = ExampleMenuModel(itemName: "Java", itemId: 1, itemIcon: #imageLiteral(resourceName: "bill"))
-        let goMenuItem = ExampleMenuModel(itemName: "Go", itemId: 2, itemIcon: #imageLiteral(resourceName: "bill"))
-        let noMenuItem = ExampleMenuModel(itemName: "Ruby", itemId: 3, itemIcon: #imageLiteral(resourceName: "bill"))
-        menu.append(swiftMenuItem)
-        menu.append(javaMenuItem)
+    override func setupMenuItemsData() -> [SideMenuModel] {
+        var menu : [SideMenuModel] = []
+        let trendingMoviesMenuItem = SideMenuModel(itemName: "Trending Movies", itemId: 0, itemIcon: #imageLiteral(resourceName: "trending-movies"))
+        let countriesListMenuItem = SideMenuModel(itemName: "World Countries", itemId: 1, itemIcon: #imageLiteral(resourceName: "bill"))
+        let goMenuItem = SideMenuModel(itemName: "Go", itemId: 2, itemIcon: #imageLiteral(resourceName: "bill"))
+        let noMenuItem = SideMenuModel(itemName: "Ruby", itemId: 3, itemIcon: #imageLiteral(resourceName: "bill"))
+        menu.append(trendingMoviesMenuItem)
+        menu.append(countriesListMenuItem)
         menu.append(goMenuItem)
         menu.append(noMenuItem)
         return menu
@@ -48,7 +48,7 @@ class SideMenuViewController :
     
     override func setupMenuItemCell() -> BaseTableViewCell.Type { return SideMenuCell.self }
     
-    override func setupSideMenuItemCell(indexPath: IndexPath, menuItem: ExampleMenuModel) -> UITableViewCell {
+    override func setupSideMenuItemCell(indexPath: IndexPath, menuItem: SideMenuModel) -> UITableViewCell {
         let menuCell : SideMenuCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         menuCell.itemIcon.image = menuItem.icon
         menuCell.itemLabel.text = menuItem.itemName
@@ -58,10 +58,10 @@ class SideMenuViewController :
     override func setupSideMenuViewControllers() -> [UIViewController] {
         var menuViewControllers : [UIViewController] = []
         let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.menu)
-        let trendingMovies : TrendingMoviesViewController = storyboard.instantiateViewController()
-        menuViewControllers.append(UINavigationController(rootViewController: trendingMovies))
-        let javaViewController : JavaViewController = storyboard.instantiateViewController()
-        menuViewControllers.append(UINavigationController(rootViewController: javaViewController))
+        let trendingMoviesViewController : TrendingMoviesViewController = storyboard.instantiateViewController()
+        menuViewControllers.append(UINavigationController(rootViewController: trendingMoviesViewController))
+        let countriesListViewController : CountriesViewController = storyboard.instantiateViewController()
+        menuViewControllers.append(UINavigationController(rootViewController: countriesListViewController))
         let goViewController : GoViewController = storyboard.instantiateViewController()
         menuViewControllers.append(UINavigationController(rootViewController: goViewController))
         let nonMenuController : RubyViewController = storyboard.instantiateViewController()
@@ -72,7 +72,7 @@ class SideMenuViewController :
     // override func shouldBlurBackgroundItem() -> Bool { return true }
     
     //
-    override func menuItemDidSelected(menu: ExampleMenuModel, menuItemIndex: Int, viewControllerAtIndex: UIViewController) {
+    override func menuItemDidSelected(menu: SideMenuModel, menuItemIndex: Int, viewControllerAtIndex: UIViewController) {
         self.replaceVisableMenuViewControllerWith(menuItemViewController: viewControllerAtIndex, closeMenu: true)
     }
     

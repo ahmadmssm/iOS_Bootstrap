@@ -17,19 +17,11 @@ class CustomViewsViewController:
     private let picker = Picker()
 
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    override func viewDidLoad() { super.viewDidLoad() }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //
-        setContext(context: self)
-    }
+    override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated) }
     
-    override func initUI() {
-        self.title = "Custom views"
-    }
+    override func initUI() { self.title = "Custom views" }
     
     @IBAction func showProgress(_ sender: UIButton) {
         EZLoadingActivity.showWithDelay("Waiting...", disableUI: false, seconds: 2)

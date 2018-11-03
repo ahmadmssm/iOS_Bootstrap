@@ -10,9 +10,6 @@ import iOS_Bootstrap
 
 // The unified place where we state all the user default keys.
 enum UserDefaultKeys : String {
-    
-    case tmdbToken
-    case home
-    case menu
-    
+    case userName
+    case password
 }

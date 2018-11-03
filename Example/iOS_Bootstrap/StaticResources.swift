@@ -9,7 +9,6 @@
 import iOS_Bootstrap
 
 class StaticResources {
-    
     struct CustomColors {
         static let beautifulBlueColor : UIColor = UIColor.color(fromHexString: "3A77FF")
     }

@@ -1,5 +1,5 @@
 //
-//  GlobalKeys.swift
+//  Constants.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 8/2/18.
@@ -8,10 +8,12 @@
 
 import iOS_Bootstrap
 
-struct GlobalKeys : BuildVariantService {
+struct Constants : BaseConstants {
     
     static let getEnvironmentVariables: Environment = {
         return getEnvironment(Environment.self)
     }()
-  
+    
+    static let tmdbAuthKey = "22be16bc2f5eecf293aea95be4a83105"
+    
 }

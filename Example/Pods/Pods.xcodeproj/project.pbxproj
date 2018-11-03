@@ -1288,7 +1288,6 @@
 		04F9597FE0FF45D8A6D33B6FC7BFF787 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				0D1778160C13267B3CAB4F1A49E3EADA /* BuildVariantService.swift */,
 				1BA617773C143B6195B6D44D700DD777 /* KeyboardManager.swift */,
 				98F8C08AC451AEE8746BB1100E6897D5 /* UserDefaultsManager.swift */,
 				719F5220AD438704B75507BEFD561C6A /* StorageManager */,
@@ -2115,6 +2114,7 @@
 				C9250EE4215DA7A40086D2F8 /* IServices.swift */,
 				C9250EE5215DA7A40086D2F8 /* IServicesInstances.swift */,
 				C9250EE6215DA7A40086D2F8 /* ServicesInstances.swift */,
+				0D1778160C13267B3CAB4F1A49E3EADA /* BuildVariantService.swift */,
 			);
 			name = Services;
 			path = iOS_Bootstrap/Classes/Services;

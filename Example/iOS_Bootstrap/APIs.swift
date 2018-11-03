@@ -87,7 +87,7 @@ extension APIs : GenericAPIs {
             return nil
         case .getTrendingMovies(let page):
             return URLEncoding() => [
-                "api_key" : getUserDefaults().getStringWithKey(key: UserDefaultKeys.tmdbToken),
+                "api_key" : Constants.tmdbAuthKey,
                 "page": page
             ]
         }

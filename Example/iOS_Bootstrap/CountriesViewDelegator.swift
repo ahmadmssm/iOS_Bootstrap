@@ -1,5 +1,5 @@
 //
-//  JavaViewDelegator.swift
+//  CountriesViewDelegator.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 10/30/18.
@@ -8,4 +8,4 @@
 
 import iOS_Bootstrap
 
-protocol JavaViewDelegator : BaseViewDelegator {}
+protocol CountriesViewDelegator : BaseViewDelegator {}

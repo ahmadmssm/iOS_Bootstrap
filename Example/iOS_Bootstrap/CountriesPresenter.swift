@@ -1,5 +1,5 @@
 //
-//  JavaPresenter.swift
+//  CountriesPresenter.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 10/30/18.
@@ -8,9 +8,9 @@
 
 import iOS_Bootstrap
 
-class JavaPresenter : BasePresenter<JavaViewDelegator> {
+class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
     
-    required init(viewDelegator: JavaViewDelegator) {
+    required init(viewDelegator: CountriesViewDelegator) {
         super.init(viewDelegator: viewDelegator)
     }
     

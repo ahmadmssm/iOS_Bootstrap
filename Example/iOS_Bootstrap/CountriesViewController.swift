@@ -1,5 +1,5 @@
 //
-//  JavaViewController.swift
+//  CountriesViewController.swift
 //  SlideMenuControllerSwift
 //
 //  Created by Yuji Hato on 1/19/15.
@@ -9,12 +9,12 @@
 import UIKit
 import iOS_Bootstrap
 
-class JavaViewController: MyMenuItemViewController<JavaPresenter, JavaViewDelegator>, JavaViewDelegator {
+class CountriesViewController: MyMenuItemViewController<CountriesPresenter, CountriesViewDelegator>, CountriesViewDelegator {
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func initUI() {}
+    override func initUI() { self.title = "World countries" }
     
 }

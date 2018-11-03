@@ -17,8 +17,6 @@ class API_Connector : GenericConnector {
     required override init() {
         super.init()
         //
-        getUserDefaults().setStringWithKey(value: "22be16bc2f5eecf293aea95be4a83105", key: UserDefaultKeys.tmdbToken)
-        //
         GenericErrorConfigurator.defaultErrorHandler(HumanReadableErrorHandler())
         // With plugins
         let networkLogger = NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)

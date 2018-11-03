@@ -31,3 +31,6 @@ public extension ContextService {
     public static func getContext() -> UIViewController { return ServicesInstances.context! }
 }
 
+public protocol BaseConstants : BuildVariantService {}
+
+
