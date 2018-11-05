@@ -8,7 +8,8 @@
 
 import UIKit
 
-open class BaseViewController <T, V> : UIViewController where T : BasePresenter<V> {
+open class BaseViewController <T, V> :
+                            UIViewController, BaseViewDelegator where T : BasePresenter<V> {
 
     private var presenter : T!
     
@@ -39,7 +40,15 @@ open class BaseViewController <T, V> : UIViewController where T : BasePresenter<
     public final func getPresenter() -> T { return presenter }
 
     open func initUI () { fatalError("Must Override") }
+    
+    open func loadingDidStarted() {
+        showLoadingIndicator(message: "Loading..")
+    }
 
+    open func didFinishedLoading() {
+        hideLoadingIndicator()
+    }
+    
 }
 
 

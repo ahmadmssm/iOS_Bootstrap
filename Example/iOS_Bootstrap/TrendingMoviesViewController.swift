@@ -68,9 +68,9 @@ class TrendingMoviesViewController:
         getPresenter().getTrendingMovies(pageNumber: page)
     }
     
-    func loadingDidStarted() { self.showLoadingIndicator(message: "Loading..") }
+    override func loadingDidStarted() { EZLoadingActivity.show("Loading..", disableUI: true) }
     
-    func didFinishedLoading() { self.hideLoadingIndicator() }
+    override func didFinishedLoading() { EZLoadingActivity.hide(true, animated: true) }
     
     func didGetTrendingMoviesPage(page: MoviesPage) {
         // Configure pagination parameters

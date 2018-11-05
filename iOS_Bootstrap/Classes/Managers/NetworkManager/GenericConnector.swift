@@ -14,6 +14,7 @@ public typealias completionHandlerWithErrorModel<T, E> =
 public typealias completionHandlerWithError<T, Error> =
     (ConnectionResultWithError<T, Error>) -> ()
 
+
 open class GenericConnector: NSObject, SessionProtocol, UserDefaultsService {
     
     private final var sessionDelegate : SessionProtocol!

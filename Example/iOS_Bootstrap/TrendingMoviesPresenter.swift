@@ -18,7 +18,7 @@ class TrendingMoviesPresenter : BasePresenter<TrendingMoviesViewDelegator> {
     
     func getTrendingMovies(pageNumber : Int) {
         getViewDelegator().loadingDidStarted?()
-        API_Connector().getTrendingMovies(pageNo: pageNumber) { response in
+        APIsConnector.sharedInstance.getTrendingMovies(pageNo: pageNumber) { response in
             self.getViewDelegator().didFinishedLoading?()
             switch response {
             case .success(let moviesPage):

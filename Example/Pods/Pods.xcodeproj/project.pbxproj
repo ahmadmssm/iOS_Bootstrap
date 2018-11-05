@@ -353,6 +353,7 @@
 		C9250EE8215DA7A40086D2F8 /* IServicesInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9250EE5215DA7A40086D2F8 /* IServicesInstances.swift */; };
 		C9250EE9215DA7A40086D2F8 /* ServicesInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9250EE6215DA7A40086D2F8 /* ServicesInstances.swift */; };
 		C953267E218A2B4700105260 /* PresenterFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953267D218A2B4700105260 /* PresenterFunctions.swift */; };
+		C97CB3F7219096C900F396D3 /* BaseAPIsConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B5A21908DDA00A62059 /* BaseAPIsConnector.swift */; };
 		C97DB9B3218496E200D2C1EB /* ConnectionResultWithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DB9B2218496E200D2C1EB /* ConnectionResultWithError.swift */; };
 		C97DB9BB2184AF0100D2C1EB /* Bartinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DB9B52184AF0100D2C1EB /* Bartinter.swift */; };
 		C97DB9BC2184AF0100D2C1EB /* UIKitSwizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DB9B72184AF0100D2C1EB /* UIKitSwizzling.swift */; };
@@ -1004,6 +1005,7 @@
 		C9250EE4215DA7A40086D2F8 /* IServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IServices.swift; sourceTree = "<group>"; };
 		C9250EE5215DA7A40086D2F8 /* IServicesInstances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IServicesInstances.swift; sourceTree = "<group>"; };
 		C9250EE6215DA7A40086D2F8 /* ServicesInstances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesInstances.swift; sourceTree = "<group>"; };
+		C93E4B5A21908DDA00A62059 /* BaseAPIsConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIsConnector.swift; sourceTree = "<group>"; };
 		C953267D218A2B4700105260 /* PresenterFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterFunctions.swift; sourceTree = "<group>"; };
 		C959266821563F5B00775984 /* How to use.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "How to use.md"; sourceTree = "<group>"; };
 		C97DB9B2218496E200D2C1EB /* ConnectionResultWithError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionResultWithError.swift; sourceTree = "<group>"; };
@@ -2322,6 +2324,7 @@
 		F4672127BF562671EBD7044AF6BA98CD /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				C93E4B5A21908DDA00A62059 /* BaseAPIsConnector.swift */,
 				50D7E54C02E653CAEAD91CE5D010759A /* GenericConnector.swift */,
 				891030114747C5220B633FC7F700B6F0 /* Parser.swift */,
 				BF45235E820B47576D7DE997653F0695 /* Session.swift */,
@@ -2799,6 +2802,7 @@
 				63A3D3D3D8A94903F4FE2D154B64DFAF /* NetworkStatusListener.swift in Sources */,
 				F9A9CBE7A30439171DC0BBC54A423D02 /* NibLoadableView.swift in Sources */,
 				52095725C4E60551AA1991B8CC8F959A /* Parameters.swift in Sources */,
+				C97CB3F7219096C900F396D3 /* BaseAPIsConnector.swift in Sources */,
 				A42D5DD2C842474B503D8160C6043AB6 /* Parser.swift in Sources */,
 				C9250EE9215DA7A40086D2F8 /* ServicesInstances.swift in Sources */,
 				C99AA0552185EBB6001683B8 /* BaseSideMenuController.swift in Sources */,

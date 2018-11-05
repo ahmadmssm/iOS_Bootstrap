@@ -12,6 +12,12 @@ class GoPresenter : BasePresenter<GoViewDelegator> {
     
     required init(viewDelegator: GoViewDelegator) {
         super.init(viewDelegator: viewDelegator)
+        //
+        getViewDelegator().loadingDidStarted!()
+        APIsConnector.sharedInstance.getDaysWeatherForcastWithNetworkProvidedLocation(forcastDays: 10 ) { response in
+            self.getViewDelegator().didFinishedLoading?()
+        }
     }
+    
 }
 

@@ -9,14 +9,14 @@
 import iOS_Bootstrap
 
 enum APIs {
-    
     case getWorldCountries()
     case doRequestThatReturnsAnError()
     case getCountryDetailsByCountryName(countryName : String)
-    case getUsers(page : String)
     case refreshToken(token: String)
     case getTrendingMovies(page : Int)
-
+    case getDevicePublicIP()
+    case getLocationCoordinates(publicIP : String)
+    case getTenDaysWeatherForcast(lat : Double, longt : Double, days : Int)
 }
 
 extension APIs : GenericAPIs {
@@ -29,11 +29,15 @@ extension APIs : GenericAPIs {
         case .getWorldCountries(),
              .getCountryDetailsByCountryName ( _):
             return URL(string: "https://restcountries.eu/rest/v2")!
-        case .getUsers( _):
-            return URL(string: "https://reqres.in/api/users")!
         case .getTrendingMovies( _):
             return URL(string: "https://api.themoviedb.org/3/")!
-        default :
+        case .getDevicePublicIP():
+            return URL(string: "https://api.ipify.org?format=json")!
+        case .getLocationCoordinates( _):
+            return URL(string: "http://api.ipstack.com")!
+        case .getTenDaysWeatherForcast( _, _, _):
+            return URL(string: "http://api.openweathermap.org/data/2.5")!
+        default:
             return URL(string: "https://fcm.googleapis.com/fcm/send")!
         }
     }
@@ -46,14 +50,19 @@ extension APIs : GenericAPIs {
         case .getCountryDetailsByCountryName(let countryName):
             return .get("/all")
 //            return .get("/name/\(countryName)")
-        case .getUsers( _):
-            return .get("")
-        case .refreshToken(let token):
+        case .refreshToken( _):
             return .post("")
         case .doRequestThatReturnsAnError:
             return .get("//al")
         case .getTrendingMovies( _):
             return .get("movie/popular")
+        case .getDevicePublicIP:
+            return .get("")
+        case .getLocationCoordinates(let publicIP):
+            return .get("/" + publicIP)
+        case .getTenDaysWeatherForcast( _, _, _):
+            return .get("/forecast")
+
         }
     }
     
@@ -71,24 +80,30 @@ extension APIs : GenericAPIs {
     // Encoding + Parameters
     // Use `URLEncoding()` as default when not specified
     var parameters: Parameters? {
-        //
-            
-        //
         switch self {
         case .doRequestThatReturnsAnError():
             return JSONEncoding() => ["to": "chUJ_9nB_8k:APA91bH-Olg14cX82NpqANQKvIgWAet3O7c_4tuEmW7q1i-VE7PASsOwfqLyPpI3uZEuRCyg6zldof83N9JG9QuZ11GHIABPwLhMk45I4gb7sDnwsmNw-hcH_tAs4fmJkotowcIceTxm3DArq_-UHMk-ZB3FPydUKgQ"]
         case.getCountryDetailsByCountryName(_):
             return nil
-        case .getUsers(let page):
-            return URLEncoding() => ["page": page]
         case .getWorldCountries():
             return nil
-        case .refreshToken(let token):
+        case .refreshToken( _):
             return nil
         case .getTrendingMovies(let page):
             return URLEncoding() => [
                 "api_key" : Constants.tmdbAuthKey,
                 "page": page
+            ]
+        case .getDevicePublicIP:
+            return nil
+        case .getLocationCoordinates( _):
+            return URLEncoding() => ["access_key" : Constants.ipstackAuthKey]
+        case .getTenDaysWeatherForcast(let lat, let longt, let days):
+            return URLEncoding() => [
+                "lat" : lat,
+                "lon" : longt,
+                "cnt" : days,
+                "APPID" : Constants.openApiAuthKey
             ]
         }
     }
