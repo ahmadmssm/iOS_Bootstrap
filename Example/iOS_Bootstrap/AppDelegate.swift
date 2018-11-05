@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        //
         // Override point for customization after application launch.
         //
         let navigationBarTextStyle =
@@ -27,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .configureSessionService(context: self)
                 .configureNavigationBarApperance(barColor: StaticResources.CustomColors.beautifulBlueColor, backButtonColor: UIColor.white, textApperance: navigationBarTextStyle)
                 .configureAppWindowWithRootNavigationController(window: window!, navController: Navigator.navigationController!)
+                .disableNotchForIphoneX()
                 .build()
-        //
         Navigator.startInitialView()
         //
         return true

@@ -1,12 +1,12 @@
 //
-//  ReadableErrors.swift
+//  BaseNetworkErrorHandler.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 6/9/18.
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-open class GenericErrorHandler: LucidErrorMessageProvider {
+open class BaseNetworkErrorHandler: LucidErrorMessageProvider {
     
     open var errorMessage : String?
     

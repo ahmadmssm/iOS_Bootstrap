@@ -183,7 +183,7 @@
 		6105EBFC33DD7ECE4A98731A09620004 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C06C09468C290DAA5FB31FF654B52946 /* Kingfisher.framework */; };
 		6130CFD2ABF278044632B1D361DB2A0C /* ReusableCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37520F21B7233E23D7CDA8C0E5FE38 /* ReusableCollectionViewAdapter.swift */; };
 		6205C515B3226977A2CC73259BD2CAAF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEC21FE43AFD327106199903C7A7218 /* Result.framework */; };
-		6226C1771829E39E5D7B02C2E4E5FDBA /* GenericErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37315CA606159CD8B0873E1C5B9BFC78 /* GenericErrorHandler.swift */; };
+		6226C1771829E39E5D7B02C2E4E5FDBA /* BaseNetworkErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37315CA606159CD8B0873E1C5B9BFC78 /* BaseNetworkErrorHandler.swift */; };
 		62D27D1CE8A44C548E575E425EF5D8A9 /* Result-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CBB4A8F310A42A496F8ED06EEDE1E385 /* Result-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63A3D3D3D8A94903F4FE2D154B64DFAF /* NetworkStatusListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4DB489C6D27B6C52EF280CA36AA683 /* NetworkStatusListener.swift */; };
 		6475EA034A83B806D470E48398C3ED6A /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1251AF9B706E6694D5F7D3F31362EE3D /* DistancePickerView.m */; };
@@ -354,6 +354,8 @@
 		C9250EE9215DA7A40086D2F8 /* ServicesInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9250EE6215DA7A40086D2F8 /* ServicesInstances.swift */; };
 		C953267E218A2B4700105260 /* PresenterFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953267D218A2B4700105260 /* PresenterFunctions.swift */; };
 		C97CB3F7219096C900F396D3 /* BaseAPIsConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B5A21908DDA00A62059 /* BaseAPIsConnector.swift */; };
+		C97CB3FB2190A0F900F396D3 /* NotchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97CB3FA2190A0F900F396D3 /* NotchManager.swift */; };
+		C97CB4012190A5B600F396D3 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97CB4002190A5B600F396D3 /* EventBus.swift */; };
 		C97DB9B3218496E200D2C1EB /* ConnectionResultWithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DB9B2218496E200D2C1EB /* ConnectionResultWithError.swift */; };
 		C97DB9BB2184AF0100D2C1EB /* Bartinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DB9B52184AF0100D2C1EB /* Bartinter.swift */; };
 		C97DB9BC2184AF0100D2C1EB /* UIKitSwizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97DB9B72184AF0100D2C1EB /* UIKitSwizzling.swift */; };
@@ -729,7 +731,7 @@
 		353F7C5F4277BD05E3A3470374A52DF5 /* LocalizationHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocalizationHelpers.swift; sourceTree = "<group>"; };
 		3605DC8A54A09290D414DDFAD6BEE2F9 /* GenericAPIs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GenericAPIs.swift; sourceTree = "<group>"; };
 		36A9DB037EB27B0AD512758453068F13 /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
-		37315CA606159CD8B0873E1C5B9BFC78 /* GenericErrorHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GenericErrorHandler.swift; sourceTree = "<group>"; };
+		37315CA606159CD8B0873E1C5B9BFC78 /* BaseNetworkErrorHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseNetworkErrorHandler.swift; sourceTree = "<group>"; };
 		3740C1B94611289288FA63B46C27B2CE /* HistoricalSchedulerTimeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HistoricalSchedulerTimeConverter.swift; path = RxSwift/Schedulers/HistoricalSchedulerTimeConverter.swift; sourceTree = "<group>"; };
 		37FA4BDDDF98CF21CB3FDA879CEB229D /* HelpingMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HelpingMapper.swift; path = Source/HelpingMapper.swift; sourceTree = "<group>"; };
 		387AD81BDE842EA28EEC52FEC9FADE7B /* SCLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SCLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1008,6 +1010,8 @@
 		C93E4B5A21908DDA00A62059 /* BaseAPIsConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIsConnector.swift; sourceTree = "<group>"; };
 		C953267D218A2B4700105260 /* PresenterFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterFunctions.swift; sourceTree = "<group>"; };
 		C959266821563F5B00775984 /* How to use.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "How to use.md"; sourceTree = "<group>"; };
+		C97CB3FA2190A0F900F396D3 /* NotchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotchManager.swift; sourceTree = "<group>"; };
+		C97CB4002190A5B600F396D3 /* EventBus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
 		C97DB9B2218496E200D2C1EB /* ConnectionResultWithError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionResultWithError.swift; sourceTree = "<group>"; };
 		C97DB9B52184AF0100D2C1EB /* Bartinter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bartinter.swift; sourceTree = "<group>"; };
 		C97DB9B72184AF0100D2C1EB /* UIKitSwizzling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitSwizzling.swift; sourceTree = "<group>"; };
@@ -1292,6 +1296,7 @@
 			children = (
 				1BA617773C143B6195B6D44D700DD777 /* KeyboardManager.swift */,
 				98F8C08AC451AEE8746BB1100E6897D5 /* UserDefaultsManager.swift */,
+				C97CB3FA2190A0F900F396D3 /* NotchManager.swift */,
 				719F5220AD438704B75507BEFD561C6A /* StorageManager */,
 				C97DB9B42184AED200D2C1EB /* StatusBarManager */,
 				764E8EE1EBD1F0F89C85A5E27172F4E0 /* InternetConnectionManager */,
@@ -1664,7 +1669,7 @@
 			children = (
 				42D45BAD50701000D675FF04EC948108 /* Error+Extensions.swift */,
 				5606E66220DA5BFE6F4DAC4850535BEC /* GenericErrorConfigurator.swift */,
-				37315CA606159CD8B0873E1C5B9BFC78 /* GenericErrorHandler.swift */,
+				37315CA606159CD8B0873E1C5B9BFC78 /* BaseNetworkErrorHandler.swift */,
 				28B18200E327BEBDD9493ED4DE256230 /* LucidErrorMessageProvider.swift */,
 				68D6AEB10544B27EB38717A680D26A0C /* LucidMoyaError.swift */,
 				95485C03D474F858B9B3836054E3425E /* LucidMoyaNetworkingError.swift */,
@@ -2268,6 +2273,7 @@
 				E36FD966EA01DD012A4F3202FC7602FD /* StringableNames.swift */,
 				C9AF5B1A21599A5700C1FED3 /* JsonSerializer.swift */,
 				C9AF5B1C21599B1700C1FED3 /* StringConvertable.swift */,
+				C97CB4002190A5B600F396D3 /* EventBus.swift */,
 			);
 			name = Helpers;
 			path = iOS_Bootstrap/Classes/Helpers;
@@ -2726,6 +2732,7 @@
 				700B5E9D45A85A280FC60DF363230A23 /* ActionSheetDatePicker.m in Sources */,
 				4B98D1FB13904F84BB2E374FA4378798 /* ActionSheetDistancePicker.m in Sources */,
 				6BE4DE63C6B3E087C33BA7FE8F76CD47 /* ActionSheetLocalePicker.m in Sources */,
+				C97CB3FB2190A0F900F396D3 /* NotchManager.swift in Sources */,
 				790678E0FC3D7A8BB9741F7606975432 /* ActionSheetMultipleStringPicker.m in Sources */,
 				CE397F2ACE878B015A8F9B40874497FA /* ActionSheetStringPicker.m in Sources */,
 				5DEE3B41DDDDBCFDC0DA312E5EA69D6E /* APIsProvider.swift in Sources */,
@@ -2749,6 +2756,7 @@
 				CF38DDDA7F9814DDE74D82721E94410D /* BuildVariantService.swift in Sources */,
 				A1D8BB99F2CB846B94C94BF6B0BF573B /* CardView.swift in Sources */,
 				853FD5AC5B7CB941C1974382F00B732A /* Codable + dictionary.swift in Sources */,
+				C97CB4012190A5B600F396D3 /* EventBus.swift in Sources */,
 				7BD677ED006730E64CAA204AC48D985F /* Collectionview+Reusable.swift in Sources */,
 				C97DB9BE2184AF0100D2C1EB /* Throttler.swift in Sources */,
 				C9AF5B1B21599A5700C1FED3 /* JsonSerializer.swift in Sources */,
@@ -2778,7 +2786,7 @@
 				84AD0272CA3B972BBCA776BF441277A7 /* GenericAPIs.swift in Sources */,
 				CE450797F7500AFE557B603134E9C839 /* GenericConnector.swift in Sources */,
 				C688C5CC9649585A045B1F4BF0FE7FF4 /* GenericErrorConfigurator.swift in Sources */,
-				6226C1771829E39E5D7B02C2E4E5FDBA /* GenericErrorHandler.swift in Sources */,
+				6226C1771829E39E5D7B02C2E4E5FDBA /* BaseNetworkErrorHandler.swift in Sources */,
 				9C318B903B14914B685EC8D7C5BBD102 /* GenericTypesHelper.swift in Sources */,
 				024E0B911763B4E42B573F5811F54D69 /* GlobalModules.swift in Sources */,
 				59AC2B073DD96CCB1044E4B87C987909 /* How_to_use_toast.strings in Sources */,

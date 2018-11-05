@@ -78,6 +78,11 @@ open class DefaultConfigurations {
         DefaultConfigurations.snackBar = snacbBar
         return self
     }
+   
+    public func disableNotchForIphoneX() -> DefaultConfigurations  {
+        NotchManager.instance.spread()
+        return self
+    }
     
     public func build() -> DefaultConfigurations {
         return self

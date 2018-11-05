@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-class HumanReadableErrorHandler: GenericErrorHandler {
+class HumanReadableErrorHandler: BaseNetworkErrorHandler {
     
     override func statusCodeError(_ statusCode: Int, errorBody: String?, request: URLRequest?, response: URLResponse?) -> String {
         //
