@@ -14,4 +14,30 @@ class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
         super.init(viewDelegator: viewDelegator)
     }
     
+    func getWorldCountries() {
+        APIsConnector.sharedInstance.getAllCountries (completion: { response in
+                    switch response {
+                    case .success(let countries):
+                        self.getViewDelegator().didGetCountries(countries: countries)
+                        break
+                    case .failure(let errorMsg):
+                        self.getViewDelegator().didFailToGetCountries(error: errorMsg)
+                        print("Error : " + errorMsg)
+                        break
+                    }
+                })
+    }
+    
+    func getError () {
+        //        APIsConnector.sharedInstance.getErrorFromRequest (completion: { response in
+        //            switch response {
+        //            case .success( _):
+        //                break
+        //            case .failure(let errorMsg):
+        //                print("Error : " + errorMsg)
+        //                break
+        //            }
+        //        })
+    }
+    
 }

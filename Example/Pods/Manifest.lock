@@ -1,14 +1,20 @@
 PODS:
-  - Alamofire (4.7.2)
+  - Alamofire (4.7.3)
+  - CocoaLumberjack (3.4.2):
+    - CocoaLumberjack/Default (= 3.4.2)
+    - CocoaLumberjack/Extensions (= 3.4.2)
+  - CocoaLumberjack/Default (3.4.2)
+  - CocoaLumberjack/Extensions (3.4.2):
+    - CocoaLumberjack/Default
   - HandyJSON (4.1.1)
-  - iOS_Bootstrap (0.4.7):
-    - HandyJSON
-    - IQKeyboardManagerSwift
-    - Kingfisher (~> 4.0)
-    - Moya/RxSwift
+  - iOS_Bootstrap (0.7.3):
+    - HandyJSON (= 4.1.1)
+    - IQKeyboardManagerSwift (= 5.0.0)
+    - Kingfisher (= 4.9.0)
+    - Moya/RxSwift (~> 11.0)
     - SCLAlertView
   - IQKeyboardManagerSwift (5.0.0)
-  - Kingfisher (4.8.0)
+  - Kingfisher (4.9.0)
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
@@ -16,38 +22,49 @@ PODS:
     - Moya/Core
     - RxSwift (~> 4.0)
   - Result (3.2.4)
-  - RxSwift (4.2.0)
+  - RxAtomic (4.4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
   - SCLAlertView (0.8)
+  - SVGKit (2.1.0):
+    - CocoaLumberjack (~> 3.0)
 
 DEPENDENCIES:
   - iOS_Bootstrap (from `../`)
+  - SVGKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - CocoaLumberjack
     - HandyJSON
     - IQKeyboardManagerSwift
     - Kingfisher
     - Moya
     - Result
+    - RxAtomic
     - RxSwift
     - SCLAlertView
+    - SVGKit
 
 EXTERNAL SOURCES:
   iOS_Bootstrap:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
-  iOS_Bootstrap: 32ea5c7304e5966f4e96a49a57cda10676446f37
+  iOS_Bootstrap: 1ecd8e5b11fd75f44e91965553fc09add54938a7
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
-  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
 
-PODFILE CHECKSUM: cb44c343092e6478f0693afa79c63df570b7f1c0
+PODFILE CHECKSUM: 490f0eecbc052ec0c689dcef909bf9ee691fbd2f
 
 COCOAPODS: 1.5.3

@@ -26,56 +26,56 @@
                                 <rect key="frame" x="26" y="30" width="323" height="627"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzA-qF-acX">
-                                        <rect key="frame" x="0.0" y="0.0" width="323" height="39"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="48"/>
                                         <state key="normal" title="Network layer + reusable table view adapter"/>
                                         <connections>
                                             <segue destination="JoE-Pg-2nN" kind="show" id="D2A-Ko-frm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74S-GB-FaI">
-                                        <rect key="frame" x="0.0" y="98" width="323" height="39"/>
+                                        <rect key="frame" x="0.0" y="58" width="323" height="48"/>
                                         <state key="normal" title="Show progress dialog"/>
                                         <connections>
                                             <action selector="showProgress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QvB-OL-BF8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vl-tK-3cJ">
-                                        <rect key="frame" x="0.0" y="147" width="323" height="39"/>
+                                        <rect key="frame" x="0.0" y="116" width="323" height="47.5"/>
                                         <state key="normal" title="Show date picker"/>
                                         <connections>
                                             <action selector="showDatePicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mAY-YB-1jP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRy-pZ-k5s">
-                                        <rect key="frame" x="0.0" y="196" width="323" height="39"/>
+                                        <rect key="frame" x="0.0" y="173.5" width="323" height="48"/>
                                         <state key="normal" title="Show time picker"/>
                                         <connections>
                                             <action selector="showTimePicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mh7-ry-bFu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1K-70-M5C">
-                                        <rect key="frame" x="0.0" y="245" width="323" height="39"/>
+                                        <rect key="frame" x="0.0" y="231.5" width="323" height="48"/>
                                         <state key="normal" title="Show locale picker"/>
                                         <connections>
                                             <action selector="showLocalePicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="E6P-sf-Ff0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYA-Ub-nuv" customClass="CustomButton" customModule="iOS_Bootstrap">
-                                        <rect key="frame" x="0.0" y="294" width="323" height="39"/>
+                                        <rect key="frame" x="0.0" y="289.5" width="323" height="48"/>
                                         <state key="normal" title="Show array picker "/>
                                         <connections>
                                             <action selector="showArrayPicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WgI-se-mNO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chO-x2-mF4">
-                                        <rect key="frame" x="0.0" y="343" width="323" height="39"/>
+                                        <rect key="frame" x="0.0" y="347.5" width="323" height="48"/>
                                         <state key="normal" title="Show multi items picker"/>
                                         <connections>
                                             <action selector="showMultiArrayPicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Eo5-Z8-PAt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghE-xj-hXA" customClass="CustomButton" customModule="iOS_Bootstrap_Example">
-                                        <rect key="frame" x="0.0" y="392" width="323" height="39"/>
+                                        <rect key="frame" x="0.0" y="405.5" width="323" height="48"/>
                                         <state key="normal" title="Show date and time picker">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -84,21 +84,21 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fn-eB-MrZ" customClass="CustomButton" customModule="iOS_Bootstrap">
-                                        <rect key="frame" x="0.0" y="490" width="323" height="39"/>
+                                        <rect key="frame" x="0.0" y="463.5" width="323" height="47.5"/>
                                         <state key="normal" title="Show toast"/>
                                         <connections>
                                             <action selector="showToast:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VTP-qe-W2R"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yi8-CJ-NyV">
-                                        <rect key="frame" x="0.0" y="588" width="323" height="39"/>
+                                        <rect key="frame" x="0.0" y="521" width="323" height="48"/>
                                         <state key="normal" title="Loggers"/>
                                         <connections>
                                             <action selector="loggers:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Bp6-YB-Dby"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6j-Hu-us8" customClass="CustomButton" customModule="iOS_Bootstrap">
-                                        <rect key="frame" x="0.0" y="441" width="323" height="39"/>
+                                        <rect key="frame" x="0.0" y="579" width="323" height="48"/>
                                         <state key="normal" title="Gradient button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -202,7 +202,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="wyi-hT-WRa" customClass="TableViewCell" customModule="iOS_Bootstrap_Example" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="wyi-hT-WRa" customClass="CountriesCell" customModule="iOS_Bootstrap_Example" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wyi-hT-WRa" id="A3t-2l-KcN">

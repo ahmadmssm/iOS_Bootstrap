@@ -49,7 +49,7 @@ class APIsConnector : BaseAPIsConnector<APIs> {
             .request(.getWorldCountries())
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
             .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
-            .mapArray(Country.self)
+            .map([Country].self)
             .subscribe { event in
                 switch event {
                 case .success(let countries):
@@ -152,9 +152,9 @@ class APIsConnector : BaseAPIsConnector<APIs> {
             .mapString()
             .subscribe { event in
                 switch event {
-                case .success(let responseString):
-                    let countries : [Country] = Parser.arrayOfObjectsFromJSONstring(object: Country.self, JSONString: responseString)! as! [Country]
-                    completion(.success(countries))
+                case .success(let countries):
+                   // completion(.success(countries))
+                    break
                 case .error(let error):
                     print("Error string " + error.localizedDescription)
                     completion(.failure(error.localizedDescription))

@@ -9,9 +9,7 @@
 import iOS_Bootstrap
 
 protocol TrendingMoviesViewDelegator : BaseViewDelegator {
-    
     func didGetTrendingMoviesPage(page : MoviesPage)
     func didGetTrendingMoviesList(moviesList : [Movie])
     func didFailToGetTrendingMovies(error: String)
-    
 }

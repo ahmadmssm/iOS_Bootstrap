@@ -7,7 +7,8 @@
 
 import UIKit
 
-open class BaseTabBarController <T, V> : UITabBarController where T : BasePresenter<V> {
+open class BaseTabBarController <T, V> :
+                              UITabBarController, BaseViewDelegator where T : BasePresenter<V> {
 
     private var presenter : T!
     
@@ -37,6 +38,10 @@ open class BaseTabBarController <T, V> : UITabBarController where T : BasePresen
     public final func getPresenter() -> T { return presenter }
     
     open func initUI () { fatalError("Must Override") }
+    
+    open func loadingDidStarted() { showLoadingIndicator(message: "Loading..") }
+    
+    open func didFinishedLoading() { hideLoadingIndicator() }
 
 }
 

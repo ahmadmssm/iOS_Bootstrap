@@ -30,9 +30,9 @@ class Navigator: BaseNavigator {
         getContext().present(slidingMenu, animated: true, completion: nil)
     }
     //
-    static func goToExambleOfTableViewController() {
-        let vc = mainStoryboard.instantiateViewController() as TableExampleView
-        getContext().navigationController?.pushViewController(vc, animated: false)
+    static func goToCountryDetailsViewController(country : Country) {
+      //  let countryDetailsViewController = mainStoryboard.instantiateViewController() as TableExampleView
+      //  getContext().navigationController?.pushViewController(vc, animated: false)
     }
     
     static func goToViewController() {

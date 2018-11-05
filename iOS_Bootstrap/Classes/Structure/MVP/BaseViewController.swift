@@ -41,13 +41,9 @@ open class BaseViewController <T, V> :
 
     open func initUI () { fatalError("Must Override") }
     
-    open func loadingDidStarted() {
-        showLoadingIndicator(message: "Loading..")
-    }
-
-    open func didFinishedLoading() {
-        hideLoadingIndicator()
-    }
+    open func loadingDidStarted() { showLoadingIndicator(message: "Loading..") }
+    
+    open func didFinishedLoading() { hideLoadingIndicator() }
     
 }
 

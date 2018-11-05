@@ -3,6 +3,7 @@ use_frameworks!
 
 target 'iOS_Bootstrap_Example' do
   pod 'iOS_Bootstrap', :path => '../'
+  pod 'SVGKit'
  
   target 'iOS_Bootstrap_Tests' do
     inherit! :search_paths

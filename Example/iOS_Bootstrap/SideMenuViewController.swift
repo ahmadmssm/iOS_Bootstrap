@@ -9,9 +9,9 @@ import UIKit
 import iOS_Bootstrap
 
 class SideMenuViewController :
-               BaseSideMenuViewController<SideMenuPresenter,
-                            SideMenuViewDelegator,
-                            SideMenuModel>, SideMenuViewDelegator {
+            BaseSideMenuViewController
+                    <BasePresenter<BaseViewDelegator>, BaseViewDelegator, SideMenuModel> {
+
     //
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerViewContainer: UIView!
@@ -35,12 +35,12 @@ class SideMenuViewController :
         var menu : [SideMenuModel] = []
         let trendingMoviesMenuItem = SideMenuModel(itemName: "Trending Movies", itemId: 0, itemIcon: #imageLiteral(resourceName: "trending-movies"))
         let countriesListMenuItem = SideMenuModel(itemName: "World Countries", itemId: 1, itemIcon: #imageLiteral(resourceName: "bill"))
-        let goMenuItem = SideMenuModel(itemName: "Go", itemId: 2, itemIcon: #imageLiteral(resourceName: "bill"))
-        let noMenuItem = SideMenuModel(itemName: "Ruby", itemId: 3, itemIcon: #imageLiteral(resourceName: "bill"))
+        let networkProvidedWeatherMenuItem = SideMenuModel(itemName: "Network weather", itemId: 2, itemIcon: #imageLiteral(resourceName: "bill"))
+        let gpsProvidedWeatherMenuItem = SideMenuModel(itemName: "GPS weather", itemId: 3, itemIcon: #imageLiteral(resourceName: "bill"))
         menu.append(trendingMoviesMenuItem)
         menu.append(countriesListMenuItem)
-        menu.append(goMenuItem)
-        menu.append(noMenuItem)
+        menu.append(networkProvidedWeatherMenuItem)
+        menu.append(gpsProvidedWeatherMenuItem)
         return menu
     }
     
