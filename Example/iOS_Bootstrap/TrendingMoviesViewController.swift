@@ -21,10 +21,7 @@ class TrendingMoviesViewController:
     private var sclAlertViewAppearance : SCLAlertView.SCLAppearance!
     private var sclAlertView : SCLAlertView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        getPresenter().getTrendingMovies(pageNumber: 1)
-    }
+    override func viewDidLoad() { super.viewDidLoad() }
     
     override func initUI() {
         sclAlertViewAppearance =  SCLAlertView.SCLAppearance(

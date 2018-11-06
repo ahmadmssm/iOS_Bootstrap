@@ -8,4 +8,4 @@
 
 import iOS_Bootstrap
 
-protocol GPSWeatherViewDelegator : BaseViewDelegator {}
+protocol GPSWeatherViewDelegator : NetworkWeatherViewDelegator {}

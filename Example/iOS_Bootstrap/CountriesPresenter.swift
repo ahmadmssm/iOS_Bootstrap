@@ -14,6 +14,8 @@ class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
         super.init(viewDelegator: viewDelegator)
     }
     
+    override func viewControllerDidLoaded() { getWorldCountries() }
+    
     func getWorldCountries() {
         getViewDelegator().loadingDidStarted!()
         APIsConnector.sharedInstance.getAllCountries (completion: { response in

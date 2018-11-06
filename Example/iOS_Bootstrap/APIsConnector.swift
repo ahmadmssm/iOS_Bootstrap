@@ -31,17 +31,7 @@ class APIsConnector : BaseAPIsConnector<APIs> {
 
     // Write your network calls here
     override func getTokenRefreshService() -> Single<Response> {
-        //               return
-        //                    apisProvider.rx
-        //                        .request(.doRequestThatReturnsAnError())
-        //
-        //                return
-        //                    apisProvider.rx
-        //                        .request(.getWorldCountries())
-        //
-        return
-            apisProvider.rx
-                .request(.getCountryDetailsByCountryName(countryName: ""))
+        return apisProvider.rx.request(.getWorldCountries())
     }
     
     func getAllCountries (completion: @escaping completionHandler<[Country]>) {
@@ -90,11 +80,10 @@ class APIsConnector : BaseAPIsConnector<APIs> {
         }
     }
 
-    func getDaysWeatherForcastWithNetworkProvidedLocation(forcastDays : Int, completion: @escaping completionHandler<WeatherForcast>) {
+    func getFiveDaysWeatherForcastWithNetworkProvidedLocation(completion: @escaping completionHandler<WeatherForcast>) {
         subscriber = getPublicIP()
             .flatMap() { publicIP in self.getLocationCoordinates(publicIP: publicIP) }
-            .flatMap() { location in
-                self.apisProvider.rx.request(.getTenDaysWeatherForcast(lat: location.lat!, longt: location.lon!, days: forcastDays))
+            .flatMap() { location in                self.apisProvider.rx.request(.getFiveDaysWeatherForcast (lat: location.lat!, longt: location.lon!))
             }
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
             .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
@@ -110,9 +99,9 @@ class APIsConnector : BaseAPIsConnector<APIs> {
         }
     }
 
-    func getDaysWeatherForcastWithNetworkProvidedLocation(forcastDays : Int, lat : Double, longt : Double, completion: @escaping completionHandler<WeatherForcast>) {
+    func getFiveDaysWeatherForcastWithGPSprovidedLocation(forcastDays : Int, lat : Double, longt : Double, completion: @escaping completionHandler<WeatherForcast>) {
         subscriber = apisProvider.rx
-            .request(.getTenDaysWeatherForcast(lat: lat, longt: longt, days: forcastDays))
+            .request(.getFiveDaysWeatherForcast(lat: lat, longt: longt))
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
             .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
             .map(WeatherForcast.self)
@@ -137,24 +126,6 @@ class APIsConnector : BaseAPIsConnector<APIs> {
                 switch event {
                 case .success(let moviesPage):
                      completion(.success(moviesPage))
-                case .error(let error):
-                    print("Error string " + error.localizedDescription)
-                    completion(.failure(error.localizedDescription))
-                }
-        }
-    }
-
-    func getErrorFromRequest (completion: @escaping completionHandler<[Country]>) {
-        subscriber = apisProvider.rx
-            .request(.doRequestThatReturnsAnError())
-            .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-            .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self, refreshTokenStatusCode: 404)
-            .mapString()
-            .subscribe { event in
-                switch event {
-                case .success(let countries):
-                   // completion(.success(countries))
-                    break
                 case .error(let error):
                     print("Error string " + error.localizedDescription)
                     completion(.failure(error.localizedDescription))

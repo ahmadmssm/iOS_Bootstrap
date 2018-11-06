@@ -3223,6 +3223,14 @@
 			path = DataTypes;
 			sourceTree = "<group>";
 		};
+		C9CC0E542192443000AF9D62 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				FD775840DEE09CFF1DEDB33CF1B83597 /* BaseTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		CB0B140B30B84C32CB8AB0ADA9DA0593 /* Moya */ = {
 			isa = PBXGroup;
 			children = (
@@ -3269,13 +3277,13 @@
 		F05D8FDAE6DA49799B9CFF3B327AAD90 /* MVP */ = {
 			isa = PBXGroup;
 			children = (
-				63E113A88A5299A8789A11B9FC07CF1C /* BaseCollectionViewController.swift */,
-				C18543B1FBA104717CD5CE7C31E22D1F /* BasePresenter.swift */,
-				FD775840DEE09CFF1DEDB33CF1B83597 /* BaseTabBarController.swift */,
 				51693FFD50AEF01C4EB121F173E90288 /* BaseTableViewController.swift */,
+				63E113A88A5299A8789A11B9FC07CF1C /* BaseCollectionViewController.swift */,
 				C34A2C2548B673A33CB28F973C10EFC8 /* BaseViewController.swift */,
+				C18543B1FBA104717CD5CE7C31E22D1F /* BasePresenter.swift */,
 				C6919673BC1C55336D2BF0EB09E1CCC1 /* BaseViewDelegators.swift */,
 				E77B6A196102E091A8B4361FE2961FB2 /* PresenterFunctions.swift */,
+				C9CC0E542192443000AF9D62 /* TabBar */,
 				B7A9B42FC8041EBA17E37CB2C8F850A7 /* SideMenu */,
 			);
 			path = MVP;

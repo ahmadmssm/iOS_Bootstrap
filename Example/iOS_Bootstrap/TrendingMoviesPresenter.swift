@@ -16,6 +16,8 @@ class TrendingMoviesPresenter : BasePresenter<TrendingMoviesViewDelegator> {
         super.init(viewDelegator: viewDelegator)
     }
     
+    override func viewControllerDidLoaded() { getTrendingMovies(pageNumber: 1) }
+    
     func getTrendingMovies(pageNumber : Int) {
         getViewDelegator().loadingDidStarted?()
         APIsConnector.sharedInstance.getTrendingMovies(pageNo: pageNumber) { response in

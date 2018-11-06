@@ -1,15 +1,15 @@
 //
 //  NetworkWeatherViewController.swift
-//  SlideMenuControllerSwift
+//  iOS_Bootstrap_Example
 //
-//  Created by Yuji Hato on 1/19/15.
-//  Copyright (c) 2015 Yuji Hato. All rights reserved.
+//  Created by Ahmad Mahmoud on 11/6/18.
+//  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
 import UIKit
 import iOS_Bootstrap
 
-class NetworkWeatherViewController: MyMenuItemTableViewController<NetworkWeatherPresenter, NetworkWeatherViewDelegator, Forcast>, NetworkWeatherViewDelegator, BaseTableViewDelegates {
+class NetworkWeatherViewController: BaseTableViewController<NetworkWeatherPresenter, NetworkWeatherViewDelegator, Forcast>, NetworkWeatherViewDelegator, BaseTableViewDelegates {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -27,14 +27,15 @@ class NetworkWeatherViewController: MyMenuItemTableViewController<NetworkWeather
         let cell : WeatherCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         
         // let weatherObj = getTableViewDataSource[indexPath.row].main?.temp
-
-        cell.labelTemperature.text = getTableViewDataSource[indexPath.row].main?.temp?.toString()
-        cell.labelMaxTemp.text = getTableViewDataSource[indexPath.row].main?.tempMax?.toString()
-        cell.labelMinTemperature.text = getTableViewDataSource[indexPath.row].main?.tempMin?.toString()
-         cell.labelWindSpeed.text = getTableViewDataSource[indexPath.row].wind?.speed?.toString()
-        cell.labelDate.text = getTableViewDataSource[indexPath.row].date
-        cell.labelPressure.text = getTableViewDataSource[indexPath.row].main?.pressure?.toString()
-        cell.labelHumidity.text = getTableViewDataSource[indexPath.row].main?.humidity?.toString()
+        
+        cell.labelTemperature.text = "Temp. : " + (getTableViewDataSource[indexPath.row].main?.temp?.toString())! + " C"
+        cell.labelMaxTemp.text = "Max. temp. : " + (getTableViewDataSource[indexPath.row].main?.tempMax?.toString())! + " C"
+        cell.labelMinTemperature.text = "Min. temp. : " + (getTableViewDataSource[indexPath.row].main?.tempMin?.toString())! + " C"
+        cell.labelWindSpeed.text = "Wind speed : " + (getTableViewDataSource[indexPath.row].wind?.speed?.toString())! + " km/h"
+        cell.labelDate.text = "Date : " + getTableViewDataSource[indexPath.row].date!
+        cell.labelPressure.text = "Pressure : " + (getTableViewDataSource[indexPath.row].main?.pressure?.toString())!
+        cell.labelHumidity.text = "Humidity : " +
+            (getTableViewDataSource[indexPath.row].main?.humidity?.toString())!
         //
         let iconURL : String = (getTableViewDataSource[indexPath.row].additionalData?[0].icon)!
         let fullURL = URL(string: "http://openweathermap.org/img/w/" + iconURL + ".png")
@@ -51,4 +52,3 @@ class NetworkWeatherViewController: MyMenuItemTableViewController<NetworkWeather
     func didFailToGetTenDaysWeather(errorMessage: String) {}
     
 }
-

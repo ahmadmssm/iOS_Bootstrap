@@ -62,10 +62,8 @@ class SideMenuViewController :
         menuViewControllers.append(UINavigationController(rootViewController: trendingMoviesViewController))
         let countriesListViewController : CountriesViewController = storyboard.instantiateViewController()
         menuViewControllers.append(UINavigationController(rootViewController: countriesListViewController))
-        let goViewController : NetworkWeatherViewController = storyboard.instantiateViewController()
-        menuViewControllers.append(UINavigationController(rootViewController: goViewController))
-        let nonMenuController : GPSWeatherViewController = storyboard.instantiateViewController()
-        menuViewControllers.append(UINavigationController(rootViewController: nonMenuController))
+        let weatherViewController : WeatherMenuItemTabBarController = storyboard.instantiateViewController()
+        menuViewControllers.append(UINavigationController(rootViewController: weatherViewController))
         return menuViewControllers
     }
     

@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Basic MVP
 open class BaseTabBarController <T, V> :
                               UITabBarController, BaseViewDelegator where T : BasePresenter<V> {
 
@@ -44,6 +45,4 @@ open class BaseTabBarController <T, V> :
     open func didFinishedLoading() { hideLoadingIndicator() }
 
 }
-
-
 

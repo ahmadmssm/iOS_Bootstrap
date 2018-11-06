@@ -17,6 +17,14 @@ class MyMenuItemViewController <P, V> : BaseMenuItemViewController <P, V> where 
     }
 }
 
+class MyMenuItemTabBarController <P, V> : BaseMenuItemTabBarController <P, V> where P : BasePresenter<V> {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setLeftSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side-menu-icon"))
+    }
+}
+
 class MyMenuItemTableViewController <P, V, M> : BaseMenuItemTableViewController <P, V, M> where P : BasePresenter<V> {
     
     override func viewWillAppear(_ animated: Bool) {

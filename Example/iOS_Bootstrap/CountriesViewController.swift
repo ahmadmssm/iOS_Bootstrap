@@ -24,7 +24,6 @@ class CountriesViewController:
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
 //            self.controller.getWorldCountries()
 //        }
-        getPresenter().getWorldCountries()
     }
     
     override func initUI() { self.title = "World countries" }

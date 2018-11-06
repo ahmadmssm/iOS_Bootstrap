@@ -7,10 +7,12 @@
 
 import UIKit
 
-
-
 // Basic MVP
 open class BaseMenuItemViewController <T, V> : BaseViewController<T, V> where T : BasePresenter<V> {}
+
+// Basic MVP + TabBar
+open class BaseMenuItemTabBarController <T, V> : BaseTabBarController<T, V> where T : BasePresenter<V> {}
+
 
 // Base table view + MVP
 open class BaseMenuItemTableViewController <T, V, M> : BaseTableViewController<T, V, M> where T : BasePresenter<V> {}

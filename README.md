@@ -93,14 +93,18 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 47. Updated the default configurations Class to use builder design pattern instead of static methods.
 48. Added a new network gneric completion handler in addition to the older ones.
 49. Cancel any newtowrk request out of the box.
-50. How to use and documentation + references.
+50. Base side menu controller + Base tabbar controller + base table and collection view controller, all with MVP out of the box.
+51. You can hide the notch for iPhone X series 😁.
+52. Side menu out of the box.
+53. Event bus helper class.
+54. How to use, examples and documentation + references.
 
 
 ## Upcoming features
 
 1. Date and Time manager.
 2. Push notification manager.
-3. More extensions! Please if there is an extension you are constantly using, send a pull request now.
+3. More extensions! Please if there is an extension you are constantly using, send a PR now.
 
 
 ## Requirements
@@ -285,7 +289,7 @@ The following awesome libraries are used as dependancies in my pod :
 5. [Kingfisher](https://github.com/onevcat/Kingfisher)
 6. [SCLAlertView](https://github.com/vikmeup/SCLAlertView-Swift).
 
-In addition, the following Repos helped me alot either by including their code directly into my pod or using some portion of their codes to improve my things or to learn something new so __**thank you**__ for sharing your awesome codes for free to the community.
+In addition, the following Repos helped me alot either by including their codes directly into my pod or using some portion of their codes to improve my library or to learn something new so __**thank you**__ for sharing your awesome codes for free to the community.
 
 1. [EZLoadingActivity](https://github.com/goktugyil/EZLoadingActivity).
 2. [MoyaSugar](https://github.com/devxoul/MoyaSugar).
@@ -294,6 +298,8 @@ In addition, the following Repos helped me alot either by including their code d
 5. [ADTPagerController](https://github.com/tungvoduc/DTPagerController).
 6. [Bartinter](https://github.com/MaximKotliar/Bartinter).
 7. [SlideMenuControllerSwift](https://github.com/dekatotoro/SlideMenuControllerSwift).
+8. [HairPowder](https://github.com/intmain/HairPowder).
+9. [SwiftEventBus](https://github.com/cesarferreira/SwiftEventBus).
 
 
 ## Help me improve the documentation

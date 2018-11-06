@@ -10,13 +10,11 @@ import iOS_Bootstrap
 
 enum APIs {
     case getWorldCountries()
-    case doRequestThatReturnsAnError()
-    case getCountryDetailsByCountryName(countryName : String)
     case refreshToken(token: String)
     case getTrendingMovies(page : Int)
     case getDevicePublicIP()
     case getLocationCoordinates(publicIP : String)
-    case getTenDaysWeatherForcast(lat : Double, longt : Double, days : Int)
+    case getFiveDaysWeatherForcast(lat : Double, longt : Double)
 }
 
 extension APIs : GenericAPIs {
@@ -24,10 +22,7 @@ extension APIs : GenericAPIs {
     // override default url building behavior
     var baseURL: URL {
         switch self {
-        case .doRequestThatReturnsAnError():
-            return URL(string: "https://restcountries.eu/rest/v2")!
-        case .getWorldCountries(),
-             .getCountryDetailsByCountryName ( _):
+        case .getWorldCountries():
             return URL(string: "https://restcountries.eu/rest/v2")!
         case .getTrendingMovies( _):
             return URL(string: "https://api.themoviedb.org/3/")!
@@ -35,10 +30,10 @@ extension APIs : GenericAPIs {
             return URL(string: "https://api.ipify.org?format=json")!
         case .getLocationCoordinates( _):
             return URL(string: "http://api.ipstack.com")!
-        case .getTenDaysWeatherForcast( _, _, _):
+        case .getFiveDaysWeatherForcast( _, _):
             return URL(string: "http://api.openweathermap.org/data/2.5")!
         default:
-            return URL(string: "https://fcm.googleapis.com/fcm/send")!
+            return URL(string: "https://restcountries.eu/rest/v2")!
         }
     }
     
@@ -47,44 +42,26 @@ extension APIs : GenericAPIs {
         switch self {
         case .getWorldCountries():
             return .get("/all")
-        case .getCountryDetailsByCountryName(let countryName):
-            return .get("/all")
-//            return .get("/name/\(countryName)")
         case .refreshToken( _):
             return .post("")
-        case .doRequestThatReturnsAnError:
-            return .get("//al")
         case .getTrendingMovies( _):
             return .get("movie/popular")
         case .getDevicePublicIP:
             return .get("")
         case .getLocationCoordinates(let publicIP):
             return .get("/" + publicIP)
-        case .getTenDaysWeatherForcast( _, _, _):
+        case .getFiveDaysWeatherForcast( _, _):
             return .get("/forecast")
 
         }
     }
     
-    var headers: [String: String]? {
-        switch self {
-        case .doRequestThatReturnsAnError():
-            return [
-                "Content-Type": "application/json",
-                "Authorization": "key=AAAAF2vApGE:APA91bEV8Ao4LEX7fCu03ppNKMao6EOmeBOVLLxKv1gwte2-klmsT4BYwDaa-1NEt2eeo1avkqpXmvf4dJqR7nI5XNL8x6hU4DWXX9Q9Vl00uZLaYahtJKoqsZuhJblr7x3aPv060vkrCcC2Y7XY5VsQHv-KsziEe"]
-        default:
-            return nil
-        }
-    }
+    var headers: [String: String]? { return nil }
    
     // Encoding + Parameters
     // Use `URLEncoding()` as default when not specified
     var parameters: Parameters? {
         switch self {
-        case .doRequestThatReturnsAnError():
-            return JSONEncoding() => ["to": "chUJ_9nB_8k:APA91bH-Olg14cX82NpqANQKvIgWAet3O7c_4tuEmW7q1i-VE7PASsOwfqLyPpI3uZEuRCyg6zldof83N9JG9QuZ11GHIABPwLhMk45I4gb7sDnwsmNw-hcH_tAs4fmJkotowcIceTxm3DArq_-UHMk-ZB3FPydUKgQ"]
-        case.getCountryDetailsByCountryName(_):
-            return nil
         case .getWorldCountries():
             return nil
         case .refreshToken( _):
@@ -98,11 +75,10 @@ extension APIs : GenericAPIs {
             return nil
         case .getLocationCoordinates( _):
             return URLEncoding() => ["access_key" : Constants.ipstackAuthKey]
-        case .getTenDaysWeatherForcast(let lat, let longt, let days):
+        case .getFiveDaysWeatherForcast(let lat, let longt):
             return URLEncoding() => [
                 "lat" : lat,
                 "lon" : longt,
-                "cnt" : days,
                 "units" : "metric",
                 "APPID" : Constants.openApiAuthKey
             ]

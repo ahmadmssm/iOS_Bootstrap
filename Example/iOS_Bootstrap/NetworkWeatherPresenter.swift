@@ -14,14 +14,11 @@ class NetworkWeatherPresenter : BasePresenter<NetworkWeatherViewDelegator> {
         super.init(viewDelegator: viewDelegator)
     }
     
-    override func viewControllerWillRefresh() {
-        super.viewControllerWillRefresh()
-        getTenDaysWeather()
-    }
+    override func viewControllerDidLoaded() { getTenDaysWeather() }
     
     private func getTenDaysWeather() {
         getViewDelegator().loadingDidStarted!()
-        APIsConnector.sharedInstance.getDaysWeatherForcastWithNetworkProvidedLocation(forcastDays: 10 ) { response in
+        APIsConnector.sharedInstance.getFiveDaysWeatherForcastWithNetworkProvidedLocation() { response in
             self.getViewDelegator().didFinishedLoading?()
             switch response {
             case .success(let weatherFocast):
