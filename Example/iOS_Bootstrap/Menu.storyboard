@@ -180,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="-310.39999999999998" y="55.772113943028494"/>
         </scene>
-        <!--Go View Controller-->
+        <!--Network Weather View Controller-->
         <scene sceneID="QYV-Uu-Ksc">
             <objects>
-                <viewController storyboardIdentifier="GoViewController" id="zb2-ns-03k" customClass="GoViewController" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NetworkWeatherViewController" id="zb2-ns-03k" customClass="NetworkWeatherViewController" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pxp-j8-VFh"/>
                         <viewControllerLayoutGuide type="bottom" id="HWR-SQ-Rhg"/>
@@ -192,36 +192,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GoViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBW-dN-MlR">
-                                <rect key="frame" x="180" y="100" width="240" height="93"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="93" id="6BF-US-gY9"/>
-                                    <constraint firstAttribute="width" constant="240" id="YQ2-6C-2qF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Sq-OY-xeD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.89411764709999997" green="0.91764705879999997" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mBW-dN-MlR" firstAttribute="top" secondItem="pxp-j8-VFh" secondAttribute="bottom" constant="80" id="4nq-BU-mev"/>
-                            <constraint firstAttribute="centerX" secondItem="mBW-dN-MlR" secondAttribute="centerX" id="qLj-wf-b9k"/>
+                            <constraint firstItem="1Sq-OY-xeD" firstAttribute="top" secondItem="cLk-WZ-eoO" secondAttribute="top" id="1LN-X6-9c9"/>
+                            <constraint firstItem="HWR-SQ-Rhg" firstAttribute="top" secondItem="1Sq-OY-xeD" secondAttribute="bottom" id="8cW-gp-dqL"/>
+                            <constraint firstItem="1Sq-OY-xeD" firstAttribute="trailing" secondItem="ujb-AW-TBJ" secondAttribute="trailing" id="Aak-GQ-t7R"/>
+                            <constraint firstItem="1Sq-OY-xeD" firstAttribute="leading" secondItem="ujb-AW-TBJ" secondAttribute="leading" id="kbg-Zi-S3y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ujb-AW-TBJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="xD2-7Y-Adt"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="tableView" destination="1Sq-OY-xeD" id="4eD-iv-PWx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XlF-0x-dFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="56"/>
+            <point key="canvasLocation" x="820.79999999999995" y="55.772113943028494"/>
         </scene>
-        <!--Ruby View Controller-->
+        <!--Weather View Controller-->
         <scene sceneID="F3G-Er-aZq">
             <objects>
-                <viewController storyboardIdentifier="RubyViewController" id="B0H-6x-U4Z" customClass="RubyViewController" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GPSWeatherViewController" id="B0H-6x-U4Z" customClass="GPSWeatherViewController" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dhO-za-DEj"/>
                         <viewControllerLayoutGuide type="bottom" id="tZa-Zb-wVT"/>
@@ -230,28 +229,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RubyViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qem-xB-ncz">
-                                <rect key="frame" x="180" y="100" width="240" height="93"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="93" id="nLK-ZM-4EF"/>
-                                    <constraint firstAttribute="width" constant="240" id="qoe-Oh-B3m"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vpC-by-c3y">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Qem-xB-ncz" secondAttribute="centerX" id="GVd-U6-cuf"/>
-                            <constraint firstItem="Qem-xB-ncz" firstAttribute="top" secondItem="dhO-za-DEj" secondAttribute="bottom" constant="80" id="yt0-mo-QiR"/>
+                            <constraint firstItem="vpC-by-c3y" firstAttribute="top" secondItem="LZv-tA-uGf" secondAttribute="top" id="H54-MJ-8ps"/>
+                            <constraint firstItem="vpC-by-c3y" firstAttribute="leading" secondItem="gKb-MA-m1F" secondAttribute="leading" id="M8u-VT-vzj"/>
+                            <constraint firstItem="vpC-by-c3y" firstAttribute="trailing" secondItem="gKb-MA-m1F" secondAttribute="trailing" id="Rzt-w3-8x7"/>
+                            <constraint firstItem="tZa-Zb-wVT" firstAttribute="top" secondItem="vpC-by-c3y" secondAttribute="bottom" id="e6R-Wf-uBq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gKb-MA-m1F"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="tableView" destination="vpC-by-c3y" id="xCr-PG-Btd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bta-0d-NPE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1981" y="56"/>
+            <point key="canvasLocation" x="1980.8" y="55.772113943028494"/>
         </scene>
     </scenes>
     <resources>

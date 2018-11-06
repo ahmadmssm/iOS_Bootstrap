@@ -62,9 +62,9 @@ class SideMenuViewController :
         menuViewControllers.append(UINavigationController(rootViewController: trendingMoviesViewController))
         let countriesListViewController : CountriesViewController = storyboard.instantiateViewController()
         menuViewControllers.append(UINavigationController(rootViewController: countriesListViewController))
-        let goViewController : GoViewController = storyboard.instantiateViewController()
+        let goViewController : NetworkWeatherViewController = storyboard.instantiateViewController()
         menuViewControllers.append(UINavigationController(rootViewController: goViewController))
-        let nonMenuController : RubyViewController = storyboard.instantiateViewController()
+        let nonMenuController : GPSWeatherViewController = storyboard.instantiateViewController()
         menuViewControllers.append(UINavigationController(rootViewController: nonMenuController))
         return menuViewControllers
     }

@@ -42,7 +42,7 @@ class MainViewController: BaseCollectionViewController<MainPresenter, MainViewDe
         return getCollectionViewAdapter().configureNumberOfCollectionViewItemsPerRow(numberOfItemsPerRow: 2, padding: 25)
     }
     
-    func itemDidSelected(indexPath: IndexPath) {
+    func itemDidSelected(collectionView: UICollectionView, indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
             Navigator.goToSideMenuStoryboard()

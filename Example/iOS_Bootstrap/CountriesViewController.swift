@@ -47,7 +47,7 @@ class CountriesViewController:
         return cell
     }
     
-    func rowDidSelected(indexPath: IndexPath) {
+    func rowDidSelected(tableView: UITableView, indexPath: IndexPath) {
         Navigator.goToCountryDetailsViewController(country: getTableViewDataSource[indexPath.row])
     }
     

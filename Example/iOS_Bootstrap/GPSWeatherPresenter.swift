@@ -1,5 +1,5 @@
 //
-//  RubyPresenter.swift
+//  GPSWeatherPresenter.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 10/30/18.
@@ -8,9 +8,9 @@
 
 import iOS_Bootstrap
 
-class RubyPresenter : BasePresenter<RubyViewDelegator> {
+class GPSWeatherPresenter : BasePresenter<GPSWeatherViewDelegator> {
     
-    required init(viewDelegator: RubyViewDelegator) {
+    required init(viewDelegator: GPSWeatherViewDelegator) {
         super.init(viewDelegator: viewDelegator)
     }
 }

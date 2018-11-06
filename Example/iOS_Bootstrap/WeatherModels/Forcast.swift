@@ -8,12 +8,14 @@ struct Forcast : Decodable {
     let date : String?
     let main : Main?
     let wind : Wind?
+    let additionalData : [AdditionalData]?
     
     enum CodingKeys: String, CodingKey {
         case timeStamp = "dt"
         case date = "dt_txt"
         case main = "main"
         case wind = "wind"
+        case  additionalData = "weather"
     }
     
     init(from decoder: Decoder) throws {
@@ -22,6 +24,7 @@ struct Forcast : Decodable {
         date = try values.decodeIfPresent(String.self, forKey: .date)
         main = try values.decodeIfPresent(Main.self, forKey: .main)
         wind = try values.decodeIfPresent(Wind.self, forKey: .wind)
+        additionalData = try values.decodeIfPresent([AdditionalData].self, forKey: .additionalData)
     }
     
 }

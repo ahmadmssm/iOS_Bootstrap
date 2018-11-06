@@ -42,7 +42,7 @@ class TrendingMoviesViewController:
         let cell : TrendingMoviesCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.movieTitleLabel.text = getTableViewDataSource[indexPath.row].title!
         cell.releaseDateLabel.text = getTableViewDataSource[indexPath.row].releaseDate
-        cell.votingLabel.text = String(format:"%.2f", getTableViewDataSource[indexPath.row].voteAverage!) + "  \u{2B50}"
+        cell.votingLabel.text = getTableViewDataSource[indexPath.row].voteAverage!.toString(withDecimalPoints: 1) + "  \u{2B50}"
         cell.movieLanguage.text = getTableViewDataSource[indexPath.row].originalLanguage
         //
         if let imageURL = getTableViewDataSource[indexPath.row].posterPath {
@@ -54,7 +54,7 @@ class TrendingMoviesViewController:
         return cell
     }
     
-    func rowDidSelected(indexPath: IndexPath) {
+    func rowDidSelected(tableView: UITableView, indexPath: IndexPath) {
         if let moviewOverview = getTableViewDataSource[indexPath.row].overview {
             sclAlertView = SCLAlertView(appearance: sclAlertViewAppearance)
             sclAlertView.showEdit("Movie summary", subTitle: moviewOverview)
@@ -64,7 +64,7 @@ class TrendingMoviesViewController:
         }
     }
     
-    func loadMore(forPage page: Int, updatedDataSource: [Any]) {
+    func loadMore(tableView: UITableView, forPage page: Int, updatedDataSource: [Any]) {
         getPresenter().getTrendingMovies(pageNumber: page)
     }
     

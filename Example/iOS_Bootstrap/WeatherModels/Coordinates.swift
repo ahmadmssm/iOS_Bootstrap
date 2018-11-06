@@ -2,7 +2,7 @@
 //  Coordinates.swift
 //  Created on November 5, 2018
 
-struct Coordinates : Codable {
+struct Coordinates : Decodable {
     
     var lat : Double?
     var lon : Double?

@@ -1,5 +1,5 @@
 //
-//  RubyViewController.swift
+//  GPSWeatherViewController.swift
 //  SlideMenuControllerSwift
 //
 //  Created by Yuji Hato on 1/22/15.
@@ -9,8 +9,9 @@
 import UIKit
 import iOS_Bootstrap
 
-class RubyViewController: MyMenuItemViewController<RubyPresenter, RubyViewDelegator>, RubyViewDelegator {
+class GPSWeatherViewController: MyMenuItemViewController<GPSWeatherPresenter, GPSWeatherViewDelegator>, GPSWeatherViewDelegator {
     
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }

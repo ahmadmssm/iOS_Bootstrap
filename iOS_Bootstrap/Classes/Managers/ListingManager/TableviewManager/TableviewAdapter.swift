@@ -152,8 +152,8 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     //
     // Configure number of rows/sections
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (mDelegate?.configureNumberOfRowsPerSection?(section: section)) != nil {
-            return (mDelegate?.configureNumberOfRowsPerSection!(section: section))!
+        if (mDelegate?.configureNumberOfRowsPerSection?(tableView: tableView, section: section)) != nil {
+            return (mDelegate?.configureNumberOfRowsPerSection!(tableView: tableView, section: section))!
         }
         else if (tableViewDataSource != nil && (tableViewDataSource?.count)! > 0) {
             return (tableViewDataSource?.count)!
@@ -162,7 +162,7 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     }
     // Configure number of sections
     public func numberOfSections(in tableView: UITableView) -> Int {
-        return (mDelegate?.configureNumberOfSections?()) ?? 1
+        return (mDelegate?.configureNumberOfSections?(tableView: tableView)) ?? 1
     }
     // Configure cell
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -171,11 +171,11 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     }
     // cell did selected at index
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        mDelegate?.rowDidSelected?(indexPath: indexPath)
+        mDelegate?.rowDidSelected?(tableView: tableView, indexPath: indexPath)
     }
     //
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (mDelegate?.configureHeightForRowAt?(indexPath: indexPath)) ?? UITableViewAutomaticDimension
+        return (mDelegate?.configureHeightForRowAt?(tableView: tableView, indexPath: indexPath)) ?? UITableViewAutomaticDimension
     }
     // Pagination (Load more)
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -191,7 +191,7 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
                     //
                     hasMore = false
                   //  mDelegate?.loadMore?()
-                    mDelegate.loadMore?(forPage: mCurrentPage, updatedDataSource: tableViewDataSource)
+                    mDelegate.loadMore?(tableView: mTableview, forPage: mCurrentPage, updatedDataSource: tableViewDataSource)
                 }
             }
             else {

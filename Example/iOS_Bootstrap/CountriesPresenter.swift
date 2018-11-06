@@ -15,9 +15,11 @@ class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
     }
     
     func getWorldCountries() {
+        getViewDelegator().loadingDidStarted!()
         APIsConnector.sharedInstance.getAllCountries (completion: { response in
-                    switch response {
-                    case .success(let countries):
+            self.getViewDelegator().didFinishedLoading!()
+            switch response {
+            case .success(let countries):
                         self.getViewDelegator().didGetCountries(countries: countries)
                         break
                     case .failure(let errorMsg):
@@ -26,18 +28,6 @@ class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
                         break
                     }
                 })
-    }
-    
-    func getError () {
-        //        APIsConnector.sharedInstance.getErrorFromRequest (completion: { response in
-        //            switch response {
-        //            case .success( _):
-        //                break
-        //            case .failure(let errorMsg):
-        //                print("Error : " + errorMsg)
-        //                break
-        //            }
-        //        })
     }
     
 }

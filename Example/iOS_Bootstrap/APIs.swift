@@ -103,6 +103,7 @@ extension APIs : GenericAPIs {
                 "lat" : lat,
                 "lon" : longt,
                 "cnt" : days,
+                "units" : "metric",
                 "APPID" : Constants.openApiAuthKey
             ]
         }

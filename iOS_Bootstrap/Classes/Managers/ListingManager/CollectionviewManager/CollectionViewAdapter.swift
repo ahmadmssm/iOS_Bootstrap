@@ -159,8 +159,8 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
     //
     // Configure number of rows/sections
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if (mDelegate?.configureNumberOfItemsInSection?(section: section)) != nil {
-            return (mDelegate?.configureNumberOfItemsInSection!(section: section))!
+        if (mDelegate?.configureNumberOfItemsInSection?(collectionView: collectionView, section: section)) != nil {
+            return (mDelegate?.configureNumberOfItemsInSection!(collectionView: collectionView, section: section))!
         }
         else if (collectionViewDataSource != nil && (collectionViewDataSource?.count)! > 0) {
             return (collectionViewDataSource?.count)!
@@ -169,14 +169,14 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
     }
     // Configure number of sections
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return (mDelegate?.configureNumberOfSections?()) ?? 1
+        return (mDelegate?.configureNumberOfSections?(collectionView: collectionView)) ?? 1
     }
     // Configure cell dimensions (width & height)
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if (mDelegate?.sizeForItemAtIndexPath?(collectionViewLayout: collectionViewLayout)) != nil {
-            return(mDelegate?.sizeForItemAtIndexPath?(collectionViewLayout: collectionViewLayout))! }
+        if (mDelegate?.sizeForItemAtIndexPath?(collectionView: collectionView, collectionViewLayout: collectionViewLayout)) != nil {
+            return(mDelegate?.sizeForItemAtIndexPath?(collectionView: collectionView, collectionViewLayout: collectionViewLayout))! }
         // 2 cells per row
         //
         // let cellWidth = Float(UIScreen.main.bounds.size.width / 2.0)
@@ -188,11 +188,11 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
     }
     // Configure spacing between row items
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return (mDelegate?.spacingBetweenRowItems?(collectionViewLayout: collectionViewLayout, section: section)) ?? 1
+        return (mDelegate?.spacingBetweenRowItems?(collectionView: collectionView, collectionViewLayout: collectionViewLayout, section: section)) ?? 1
     }
     // Configure spacing between rows
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return (mDelegate?.spacingBetweenRows?(collectionViewLayout: collectionViewLayout, section: section)) ?? 1
+        return (mDelegate?.spacingBetweenRows?(collectionView: collectionView, collectionViewLayout: collectionViewLayout, section: section)) ?? 1
     }
     //
 //    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -234,7 +234,7 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
     }
     // item did selected at index
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        mDelegate?.itemDidSelected?(indexPath: indexPath)
+        mDelegate?.itemDidSelected?(collectionView: collectionView, indexPath: indexPath)
     }
     
     // Pagination
@@ -259,7 +259,7 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
                     //
                     hasMore = false
                    // mDelegate?.loadMore?()
-                    mDelegate?.loadMore?(forPage: mCurrentPage, updatedDataSource: collectionViewDataSource)
+                    mDelegate?.loadMore?(collectionView: mCollectionview, forPage: mCurrentPage, updatedDataSource: collectionViewDataSource)
                 }
             }
             else {

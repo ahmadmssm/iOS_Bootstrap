@@ -10,12 +10,15 @@ public protocol BaseCollectionViewDelegates : CollectionViewOptionalDelegates {
 }
 
 @objc public protocol  CollectionViewOptionalDelegates : CommonListingDelegates {
-    @objc optional func configureNumberOfItemsInSection(section : Int) -> Int
-    @objc optional func itemDidSelected(indexPath : IndexPath)
-    @objc optional func didHighlightItemAtIndexPath(indexPath : IndexPath)
-    @objc optional func didUnHighlightItemAtIndexPath(indexPath : IndexPath)
+    @objc optional func configureNumberOfItemsInSection(collectionView: UICollectionView, section : Int) -> Int
+    @objc optional func itemDidSelected(collectionView: UICollectionView, indexPath : IndexPath)
+    @objc optional func didHighlightItemAtIndexPath(collectionView: UICollectionView, indexPath : IndexPath)
+    @objc optional func didUnHighlightItemAtIndexPath(collectionView: UICollectionView, indexPath : IndexPath)
     @objc optional func configureAdditionalCollectionViewProperties (collectionView : UICollectionView)
-    @objc optional func sizeForItemAtIndexPath (collectionViewLayout: UICollectionViewLayout) -> CGSize
-    @objc optional func spacingBetweenRows (collectionViewLayout: UICollectionViewLayout, section: Int) -> CGFloat
-    @objc optional func spacingBetweenRowItems (collectionViewLayout: UICollectionViewLayout, section: Int) -> CGFloat
+    @objc optional func sizeForItemAtIndexPath (collectionView: UICollectionView, collectionViewLayout: UICollectionViewLayout) -> CGSize
+    @objc optional func spacingBetweenRows (collectionView: UICollectionView, collectionViewLayout: UICollectionViewLayout, section: Int) -> CGFloat
+    @objc optional func spacingBetweenRowItems (collectionView: UICollectionView, collectionViewLayout: UICollectionViewLayout, section: Int) -> CGFloat
+    
+    @objc optional func configureNumberOfSections(collectionView: UICollectionView) -> Int
+    @objc optional func loadMore (collectionView: UICollectionView, forPage page : Int, updatedDataSource : [Any])
 }

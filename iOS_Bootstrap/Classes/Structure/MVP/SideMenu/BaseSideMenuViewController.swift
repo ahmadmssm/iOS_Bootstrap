@@ -89,7 +89,7 @@ open class BaseSideMenuViewController<T, V, M> :
         return setupSideMenuItemCell(indexPath: indexPath, menuItem: menuItems![indexPath.row])
     }
     //
-    public func rowDidSelected(indexPath: IndexPath) {
+    public func rowDidSelected(tableView: UITableView, indexPath: IndexPath) {
         menuItemDidSelected(menu: menuItems![indexPath.row], menuItemIndex: indexPath.row, viewControllerAtIndex: menuViewControllers![indexPath.row])
     }
     
