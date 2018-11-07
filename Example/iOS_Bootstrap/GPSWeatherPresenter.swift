@@ -8,17 +8,15 @@
 
 import iOS_Bootstrap
 
-class GPSWeatherPresenter : BasePresenter<GPSWeatherViewDelegator> {
+class GPSWeatherPresenter : BasePresenter<WeatherViewDelegator> {
    
-    required init(viewDelegator: GPSWeatherViewDelegator) {
+    required init(viewDelegator: WeatherViewDelegator) {
         super.init(viewDelegator: viewDelegator)
     }
     
-    override func viewControllerDidLoaded() { getTenDaysWeather() }
-    
-    private func getTenDaysWeather() {
+    func getFiveDaysWeather(lat : Double, longt : Double) {
         getViewDelegator().loadingDidStarted!()
-        APIsConnector.sharedInstance.getFiveDaysWeatherForcastWithNetworkProvidedLocation() { response in
+        APIsConnector.sharedInstance.getFiveDaysWeatherForcastWithGPSprovidedLocation(lat: lat, longt: longt) { response in
             self.getViewDelegator().didFinishedLoading?()
             switch response {
             case .success(let weatherFocast):

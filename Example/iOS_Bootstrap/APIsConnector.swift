@@ -99,7 +99,7 @@ class APIsConnector : BaseAPIsConnector<APIs> {
         }
     }
 
-    func getFiveDaysWeatherForcastWithGPSprovidedLocation(forcastDays : Int, lat : Double, longt : Double, completion: @escaping completionHandler<WeatherForcast>) {
+    func getFiveDaysWeatherForcastWithGPSprovidedLocation(lat : Double, longt : Double, completion: @escaping completionHandler<WeatherForcast>) {
         subscriber = apisProvider.rx
             .request(.getFiveDaysWeatherForcast(lat: lat, longt: longt))
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()

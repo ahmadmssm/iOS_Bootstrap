@@ -80,7 +80,9 @@ class TrendingMoviesViewController:
         getTableViewAdapter().reloadTable(pageItems: moviesList)
     }
     
-    func didFailToGetTrendingMovies(error: String) {}
+    func didFailToGetTrendingMovies(error: String) {
+        SCLAlertView().showError("Error", subTitle: error)
+    }
 
 }
 

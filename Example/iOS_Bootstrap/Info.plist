@@ -37,10 +37,10 @@
 	</array>
 	<key>Configuration</key>
 	<string>$(CONFIGURATION)</string>
-    <key>UIStatusBarStyle</key>
-    <string>UIStatusBarStyleLightContent</string>
-    <key>UIViewControllerBasedStatusBarAppearance</key>
-    <false/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -56,5 +56,9 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Needed to get location latityde and longitude for testing purposes</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Needed to get location latityde and longitude for testing purposes</string>
 </dict>
 </plist>

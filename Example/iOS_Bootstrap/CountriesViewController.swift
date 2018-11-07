@@ -9,6 +9,7 @@
 import UIKit
 import iOS_Bootstrap
 import SVGKit
+import SCLAlertView
 
 class CountriesViewController:
     MyMenuItemTableViewController<CountriesPresenter,
@@ -71,6 +72,8 @@ class CountriesViewController:
         getTableViewAdapter().reloadTable(pageItems: countries)
     }
     
-    func didFailToGetCountries(error: String) {}
+    func didFailToGetCountries(error: String) {
+        SCLAlertView().showError("Error", subTitle: error)
+    }
     
 }
