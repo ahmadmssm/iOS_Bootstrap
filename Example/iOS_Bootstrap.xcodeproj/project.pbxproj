@@ -30,10 +30,10 @@
 		C91FFF592192F94B00DFC0CC /* WeatherViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FFF582192F94B00DFC0CC /* WeatherViewDelegator.swift */; };
 		C91FFF5B21930F7F00DFC0CC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FFF5A21930F7F00DFC0CC /* LocationManager.swift */; };
 		C91FFF6121972F0C00DFC0CC /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FFF6021972F0C00DFC0CC /* LanguageManager.swift */; };
+		C91FFF652197816A00DFC0CC /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B492190575200A62059 /* Coordinates.swift */; };
 		C93E4B3D218D23DA00A62059 /* CustomViewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B3C218D23DA00A62059 /* CustomViewsPresenter.swift */; };
 		C93E4B40218D245C00A62059 /* CustomViewsDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B3F218D245C00A62059 /* CustomViewsDelegator.swift */; };
 		C93E4B502190575300A62059 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B472190575200A62059 /* City.swift */; };
-		C93E4B522190575300A62059 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B492190575200A62059 /* Coordinates.swift */; };
 		C93E4B532190575300A62059 /* Forcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B4A2190575200A62059 /* Forcast.swift */; };
 		C93E4B542190575300A62059 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B4B2190575200A62059 /* Main.swift */; };
 		C93E4B552190575300A62059 /* WeatherForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B4C2190575200A62059 /* WeatherForcast.swift */; };
@@ -763,8 +763,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91FFF652197816A00DFC0CC /* Coordinates.swift in Sources */,
 				C915C59C20CAC1F10029F5D9 /* CountriesCell.swift in Sources */,
-				C93E4B522190575300A62059 /* Coordinates.swift in Sources */,
 				C9AF5B2221599F2A00C1FED3 /* ErrorModel.swift in Sources */,
 				C99AA06F218740CD001683B8 /* SideMenuCell.swift in Sources */,
 				C93E4B40218D245C00A62059 /* CustomViewsDelegator.swift in Sources */,

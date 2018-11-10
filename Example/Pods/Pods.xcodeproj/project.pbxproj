@@ -193,7 +193,6 @@
 		38A32E524621BC4D10291A761F279261 /* SVGStyleCatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 1087726D9B4FCC23A4BF8BB34378B3D0 /* SVGStyleCatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38FF326A0F387F57759C6289E0BA7026 /* CharacterData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3832451677DCBE1B96BB69AADE1C8D08 /* CharacterData.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		392F59FBA95DC065A45077EBA7D27F4C /* SVGEllipseElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 782AC0BA11DDD79EC0F28E44AE6686B6 /* SVGEllipseElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		39429EF482437BD80CE43F5E0DE81F02 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A2E8D5EE654DBF44BB24F15AACF1B /* NavigationCoordinator.swift */; };
 		394383C97D3FCCD4D2B3CE86657ECF72 /* Pods-iOS_Bootstrap_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F5749ED6EE41343BBDBDA0137242D06 /* Pods-iOS_Bootstrap_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A22EA2FEA2FCF4898C678ED37B230F7 /* DocumentType.h in Headers */ = {isa = PBXBuildFile; fileRef = D8023D247DDED1CDA8907F2B9F119098 /* DocumentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ABFADAD76C737E529FC88EABFF4D6E3 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6389D0BF0BE512AFEEE22519C8D939 /* Debug.swift */; };
@@ -613,6 +612,7 @@
 		C8E27E55BAD27B82E2A2278AD3C03B64 /* InfiniteSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2829C62B839CF9A6E57993946E7C2 /* InfiniteSequence.swift */; };
 		C91FFF5F219714CC00DFC0CC /* Disposable + cancel request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FFF5E219714CC00DFC0CC /* Disposable + cancel request.swift */; };
 		C91FFF632197719D00DFC0CC /* UIViewController + Navigation bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FFF622197719D00DFC0CC /* UIViewController + Navigation bar.swift */; };
+		C91FFF6421977E7500DFC0CC /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A2E8D5EE654DBF44BB24F15AACF1B /* NavigationCoordinator.swift */; };
 		C923373A2E06D8740647FFACB93FE79B /* Disposables.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA2881BCC31276269865A139E85125 /* Disposables.swift */; };
 		CA0256D0C1228F5192A51FFBC8421025 /* DDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = E62A5DCE70E464114E2E3BB147353F2D /* DDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA2D90B84138B537CDA7277E08C32537 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C5317B1B96806EA1047CDFC4C6913 /* Window.swift */; };
@@ -4313,6 +4313,7 @@
 				B5147CBD37C1FB6489C8C05151BCDD79 /* ActionSheetCustomPicker.m in Sources */,
 				1D331D2B98F0392CB4E4441C83A1A671 /* ActionSheetDatePicker.m in Sources */,
 				FB3E6999EFA5B3B1D914571558B4F744 /* ActionSheetDistancePicker.m in Sources */,
+				C91FFF6421977E7500DFC0CC /* NavigationCoordinator.swift in Sources */,
 				D82BFA646C09071120F7BC3C930FC5EC /* ActionSheetLocalePicker.m in Sources */,
 				5998225F12B864D58ADF17151B40B44D /* ActionSheetMultipleStringPicker.m in Sources */,
 				2D333DF223B7D938957AA63651A06D42 /* ActionSheetStringPicker.m in Sources */,
@@ -4352,7 +4353,6 @@
 				834EAEFC6FD923E54BA56E15E2D8ED16 /* ConnectionResult.swift in Sources */,
 				E5C2EEC7ABC55C3B8079C2D335AE9B26 /* ConnectionResultWithError.swift in Sources */,
 				7A80F7599A3100F55E7FB098E8479FCD /* ConnectionResultWithGenericError.swift in Sources */,
-				39429EF482437BD80CE43F5E0DE81F02 /* NavigationCoordinator.swift in Sources */,
 				D4091ADCE685FFA886039FB741C570D6 /* CustomButton.swift in Sources */,
 				63649056167C99A5DE495E59B1E4C64E /* CustomView.swift in Sources */,
 				B559B3B54D256299D03E6E0B6D00942A /* DefaultConfigurations.swift in Sources */,
