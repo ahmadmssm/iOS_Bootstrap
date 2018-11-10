@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 open class DefaultConfigurations {
     
     static var snackBar : TTGSnackbar?
