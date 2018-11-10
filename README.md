@@ -145,7 +145,7 @@ $ pod update
 
 ## Note
 
-There is a project generator to help you buld things faster at thils [Link](https://github.com/ahmadmssm/iOS_Bootstrap-generator/releases), Enjoy 😎.
+There is a project generator to help you build things faster at thils [Link](https://github.com/ahmadmssm/iOS_Bootstrap-generator/releases), Enjoy 😎.
 
 
 ## Quick start
