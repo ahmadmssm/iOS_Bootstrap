@@ -6,7 +6,6 @@
 //
 
 public extension GenericConnector {
-    
     public func JSONResponseDataFormatter(_ data: Data) -> Data {
         do {
             let dataAsJSON = try JSONSerialization.jsonObject(with: data)
@@ -16,5 +15,4 @@ public extension GenericConnector {
             return data // fallback to original data if it can't be serialized.
         }
     }
-    
 }

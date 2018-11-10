@@ -22,7 +22,7 @@ class NetworkConnectionConfiguration: Alamofire.SessionManager {
     
     private static let configuration = URLSessionConfiguration.default
     
-    public static func getDefaultConfiguration() -> Alamofire.SessionManager {
+    public static func setDefaultConfiguration() -> Alamofire.SessionManager {
         configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
         configuration.timeoutIntervalForRequest = 60
         configuration.timeoutIntervalForResource = 60
@@ -30,7 +30,7 @@ class NetworkConnectionConfiguration: Alamofire.SessionManager {
         return Alamofire.SessionManager(configuration: configuration)
     }
     
-    public static func getDefaultConfigurationWithTimeout(requestTimeOut : Double, responseTimeOut : Double) -> Alamofire.SessionManager {
+    public static func setDefaultConfigurationWithTimeout(requestTimeOut : Double, responseTimeOut : Double) -> Alamofire.SessionManager {
         configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
         configuration.timeoutIntervalForRequest = requestTimeOut
         configuration.timeoutIntervalForResource = responseTimeOut

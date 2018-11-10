@@ -35,7 +35,7 @@ class APIsConnector : BaseAPIsConnector<APIs> {
     }
     
     func getAllCountries (completion: @escaping completionHandler<[Country]>) {
-        subscriber = apisProvider.rx
+        networkRequest = apisProvider.rx
             .request(.getWorldCountries())
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
             .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
@@ -81,7 +81,7 @@ class APIsConnector : BaseAPIsConnector<APIs> {
     }
 
     func getFiveDaysWeatherForcastWithNetworkProvidedLocation(completion: @escaping completionHandler<WeatherForcast>) {
-        subscriber = getPublicIP()
+        networkRequest = getPublicIP()
             .flatMap() { publicIP in self.getLocationCoordinates(publicIP: publicIP) }
             .flatMap() { location in                self.apisProvider.rx.request(.getFiveDaysWeatherForcast (lat: location.lat!, longt: location.lon!))
             }
@@ -100,7 +100,7 @@ class APIsConnector : BaseAPIsConnector<APIs> {
     }
 
     func getFiveDaysWeatherForcastWithGPSprovidedLocation(lat : Double, longt : Double, completion: @escaping completionHandler<WeatherForcast>) {
-        subscriber = apisProvider.rx
+        networkRequest = apisProvider.rx
             .request(.getFiveDaysWeatherForcast(lat: lat, longt: longt))
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
             .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
@@ -117,7 +117,7 @@ class APIsConnector : BaseAPIsConnector<APIs> {
     }
 
     func getTrendingMovies (pageNo : Int, completion: @escaping completionHandler<MoviesPage>) {
-        subscriber = apisProvider.rx
+        networkRequest = apisProvider.rx
             .request(.getTrendingMovies(page: pageNo))
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
             .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
@@ -125,9 +125,8 @@ class APIsConnector : BaseAPIsConnector<APIs> {
             .subscribe { event in
                 switch event {
                 case .success(let moviesPage):
-                     completion(.success(moviesPage))
+                    completion(.success(moviesPage))
                 case .error(let error):
-                    print("Error string " + error.localizedDescription)
                     completion(.failure(error.localizedDescription))
                 }
         }

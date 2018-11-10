@@ -13,13 +13,11 @@ public extension Array where Element:Equatable {
     
     public func removeDuplicates() -> [Element] {
         var result = [Element]()
-        
         for value in self {
             if result.contains(value) == false {
                 result.append(value)
             }
         }
-        
         return result
     }
     

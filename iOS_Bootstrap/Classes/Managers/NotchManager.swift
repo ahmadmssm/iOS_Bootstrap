@@ -9,6 +9,7 @@
 import UIKit
 
 open class NotchManager {
+    
     public static let instance = NotchManager()
     
     private class HairPowderView: UIView {

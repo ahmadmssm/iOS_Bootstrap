@@ -7,7 +7,6 @@
 // Ref : https://gist.github.com/mhuusko5/2191f4054f22682f0af1
 
 open class GenericTypesHelper {
-    
     public static func ensureType<T>(type: T.Type = T.self, transform: (Any) -> T, _ any: Any) -> T {
         return ensureType(any: any, type: type, transform: transform)
     }

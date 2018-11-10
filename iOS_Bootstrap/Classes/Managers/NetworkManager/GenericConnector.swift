@@ -18,7 +18,7 @@ public typealias completionHandlerWithError<T, Error> =
 open class GenericConnector: NSObject, SessionProtocol, UserDefaultsService {
     
     private final var sessionDelegate : SessionProtocol!
-    public var subscriber: Disposable?
+    public var networkRequest: Disposable?
     
     public override init() {
         super.init()
@@ -29,17 +29,14 @@ open class GenericConnector: NSObject, SessionProtocol, UserDefaultsService {
         return Observable.empty().asSingle()
     }
     
-    public final func cancelRequest () {
-        if (subscriber != nil) { subscriber?.dispose() }
-    }
+    public final func cancelRequest () { networkRequest?.cancelRequest() }
     
-    // Override this function to handle token response
-    public func tokenDidRefresh(response: String) {
+    public final func tokenDidRefresh(response: String) {
         let dictionary = ["response" : response]
         NotificationCenter.default.post(name: .newAuthenticationToken, object: nil, userInfo: dictionary)
     }
     //
-    public func didFailedToRefreshToken() {
+    public final func didFailedToRefreshToken() {
         NotificationCenter.default.post(name: .expiredToken, object: nil)
     }
 
