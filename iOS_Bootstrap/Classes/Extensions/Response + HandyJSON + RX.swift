@@ -68,10 +68,10 @@ public extension ObservableType where E == Response {
 }
 
 public extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
-    public func map<T: HandyJSON>(_ type: T.Type) -> Single<T> {
+    public func mapToHandyJSON<T: HandyJSON>(_ type: T.Type) -> Single<T> {
         return flatMap({ Single.just(try $0.map(T.self)) })
     }
-    public func map<T: HandyJSON>(_ type: [T].Type) -> Single<[T]> {
+    public func mapToHandyJSON<T: HandyJSON>(_ type: [T].Type) -> Single<[T]> {
         return flatMap({ Single.just([try $0.map(T.self)]) })
     }
 }
