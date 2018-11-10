@@ -15,7 +15,16 @@ class Navigator: BaseNavigator {
     //
     static func startInitialView() {
         let mainViewController : MainViewController = mainStoryboard.instantiateViewController()
-        navigationController?.pushViewController(mainViewController, animated: false)
+        navigationController? = UINavigationController(rootViewController: mainViewController)
+        let window : UIWindow = AppDelegate.getAppWindow()
+        //
+        UIView.transition(
+            with: window,
+            duration: 0.3,
+            options: .transitionFlipFromLeft,
+            animations: {
+                window.rootViewController = navigationController
+        }, completion: nil)
     }
     //
     static func goToSideMenuStoryboard() {
@@ -27,6 +36,7 @@ class Navigator: BaseNavigator {
         sideMenuViewController.mainViewController = mainViewController
         // Add rignt and/or left menu (We can add 2 different menues for right and left sides).
         let slidingMenu = MySlidingMenu ( mainViewController:navigationController, leftMenuViewController: sideMenuViewController)
+        // getContext().navigationController?.pushViewController(slidingMenu, animated: true)
         getContext().present(slidingMenu, animated: true, completion: nil)
     }
     //

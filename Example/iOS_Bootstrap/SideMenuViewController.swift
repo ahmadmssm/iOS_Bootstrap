@@ -21,6 +21,8 @@ class SideMenuViewController :
     
     override func viewDidLoad() { super.viewDidLoad() }
     
+    override func viewWillDisappear(_ animated: Bool) { super.viewWillAppear(animated) }
+
     override func initUI() {
         headerViewContainer.backgroundColor = UIColor.color(fromHexString: "E0E0E0")
         profileImage.layoutIfNeeded()
@@ -72,6 +74,10 @@ class SideMenuViewController :
         self.replaceVisableMenuViewControllerWith(menuItemViewController: viewControllerAtIndex, closeMenu: true)
     }
     
+    open override func performBackAction() {
+        Navigator.startInitialView()
+    }
+
 }
 
 

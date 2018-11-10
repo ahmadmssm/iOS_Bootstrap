@@ -9,7 +9,18 @@
 import iOS_Bootstrap
 
 class MainPresenter: BasePresenter<MainViewDelegator> {
+    
+    private var languageManager : LanguageManager!
+    
+
     required init(viewDelegator: MainViewDelegator) {
         super.init(viewDelegator: viewDelegator)
+        languageManager = LanguageManager()
+    }
+    
+    func switchAppLanguage() {
+        languageManager.switchAppLanguage {
+            Navigator.startInitialView()
+        }
     }
 }

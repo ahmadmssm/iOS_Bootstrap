@@ -6,9 +6,7 @@
 //
 
 public enum Languages : String {
-    
     case English = "en"
     case Arabic = "ar"
     case Arabic_Egypt = "ar-EG"
-
 }

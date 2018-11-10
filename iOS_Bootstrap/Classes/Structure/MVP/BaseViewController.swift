@@ -28,7 +28,9 @@ open class BaseViewController <T, V> :
     //
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        getPresenter().viewControllerWillDisappear()
+        if (presenter != nil) {
+            getPresenter().viewControllerWillDisappear()
+        }
     }
     //
     override open func viewDidDisappear(_ animated: Bool) {

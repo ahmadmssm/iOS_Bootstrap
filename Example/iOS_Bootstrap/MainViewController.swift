@@ -11,13 +11,12 @@ import iOS_Bootstrap
 
 class MainViewController: BaseCollectionViewController<MainPresenter, MainViewDelegator, String>, MainViewDelegator, BaseCollectionViewDelegates {
     
-
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    //
     private var collectionViewItems : [String]?
     
     override func viewDidLoad() {
-        collectionViewItems = ["Side menu example", "Custom views examle", ""]
+        collectionViewItems = ["Side menu", "Custom views", "Switch language"]
         super.viewDidLoad()
     }
     
@@ -49,6 +48,9 @@ class MainViewController: BaseCollectionViewController<MainPresenter, MainViewDe
             break
         case 1:
             Navigator.goToViewController()
+            break
+        case 2:
+            getPresenter().switchAppLanguage()
             break
         default:
             break

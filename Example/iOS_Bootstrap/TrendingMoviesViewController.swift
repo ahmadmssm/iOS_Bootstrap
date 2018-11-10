@@ -20,6 +20,7 @@ class TrendingMoviesViewController:
     //
     private var sclAlertViewAppearance : SCLAlertView.SCLAppearance!
     private var sclAlertView : SCLAlertView!
+    private var floatingButton : UIButton!
     
     override func viewDidLoad() { super.viewDidLoad() }
     
@@ -29,8 +30,11 @@ class TrendingMoviesViewController:
             hideWhenBackgroundViewIsTapped: true
         )
         self.title = "Trending movies"
+        //
+        floatingButton = UIButton()
+        createFloatingButton()
     }
-    
+        
     override func initTableViewAdapterConfiguraton() {
         getTableViewAdapter().configureTableWithXibCell(tableView: tableView, nibClass: TrendingMoviesCell.self, delegate: self)
     }
@@ -84,5 +88,44 @@ class TrendingMoviesViewController:
         SCLAlertView().showError("Error", subTitle: error)
     }
 
+    private func createFloatingButton() {
+        floatingButton = UIButton(type: .custom)
+        floatingButton.translatesAutoresizingMaskIntoConstraints = false
+        floatingButton.backgroundColor = .white
+        floatingButton.setImage(#imageLiteral(resourceName: "bill"), for: .normal)
+        floatingButton.addTarget(self, action: #selector(buttonClick(_:)), for: UIControlEvents.touchUpInside)
+        // We're manipulating the UI, must be on the main thread:
+        DispatchQueue.main.async {
+            if let keyWindow = UIApplication.shared.keyWindow {
+                keyWindow.addSubview(self.floatingButton)
+                NSLayoutConstraint.activate([
+                    keyWindow.trailingAnchor.constraint(equalTo: self.floatingButton.trailingAnchor, constant: 15),
+                    keyWindow.bottomAnchor.constraint(equalTo: self.floatingButton.bottomAnchor, constant: 15),
+                    self.floatingButton.widthAnchor.constraint(equalToConstant: 75),
+                    self.floatingButton.heightAnchor.constraint(equalToConstant: 75)])
+            }
+            // Make the button round:
+            self.floatingButton.layer.cornerRadius = 37.5
+            self.floatingButton.layer.backgroundColor = StaticResources.CustomColors.beautifulBlueColor.cgColor
+            // Add a black shadow:
+            self.floatingButton.layer.shadowColor = UIColor.black.cgColor
+            self.floatingButton.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+            self.floatingButton.layer.masksToBounds = false
+            self.floatingButton.layer.shadowRadius = 2.0
+            self.floatingButton.layer.shadowOpacity = 0.5
+            // Add a pulsing animation to draw attention to button:
+            let scaleAnimation: CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
+            scaleAnimation.duration = 0.4
+            scaleAnimation.repeatCount = .greatestFiniteMagnitude
+            scaleAnimation.autoreverses = true
+            scaleAnimation.fromValue = 1.0;
+            scaleAnimation.toValue = 1.05;
+            self.floatingButton.layer.add(scaleAnimation, forKey: "scale")
+        }
+    }
+    
+    @objc func buttonClick(_ sender: UIButton) {
+        performBackAction()
+    }
+    
 }
-

@@ -13,29 +13,26 @@ open class MultiLanguageManager {
     
     public init() {
         defaults = UserDefaultsManager()
+        appleLanguagesKey = "AppleLanguages"
         //
-        #if swift(>=3.0)
-            // 3.0 < your swift version < 4.0
-            // Use this key instead
-            appleLanguagesKey = "AppleLanguages"
-        #endif
-        #if swift(>=4.0)
-            appleLanguagesKey = "i18n_language"
-        #endif
+//        #if swift(>=3.0)
+//            // 3.0 < your swift version < 4.0
+//            // Use this key instead
+//            appleLanguagesKey = "AppleLanguages"
+//        #endif
+//        #if swift(>=4.0)
+//            appleLanguagesKey = "i18n_language"
+//        #endif
     }
     
     public func getCurrentAppLanguage() -> String {
-       
         let langsArrary : NSArray = defaults.getArrayWithKey(key: appleLanguagesKey) as NSArray
-        
         let languageStr : String = langsArrary.firstObject as! String
         return languageStr
-        
     }
     
 //    public func getCurrentAppLanguage() -> String {
-//        let lang = Locale.preferredLanguages[0]
-//        return lang
+//        return Locale.preferredLanguages[0]
 //    }
     
     public func getDeviceLanguage() -> String {
@@ -66,10 +63,10 @@ open class MultiLanguageManager {
     
     private func setAppLanguage(languageKey: String) {
         let langsArray = [languageKey, getCurrentAppLanguage()]
-        if (!languageKey.isEqual("AppleLanguages")) {
-            defaults.setArrayWithKey(value: langsArray, key: "AppleLanguages")
+        let appleLanguage : String  = defaults.getArrayWithKey(key: appleLanguagesKey)[0]
+        if (!languageKey.isEqual(appleLanguage)) {
+            defaults.setArrayWithKey(value: langsArray, key: appleLanguagesKey)
         }
-        defaults.setArrayWithKey(value: langsArray, key: appleLanguagesKey)
         //
         if ((languageKey.range(of: "ar")) != nil) {
             UIView.appearance().semanticContentAttribute = .forceRightToLeft
@@ -77,6 +74,8 @@ open class MultiLanguageManager {
         else {
             UIView.appearance().semanticContentAttribute = .forceLeftToRight
         }
+        
+        
     }
     
     private func localizationSwizzler() {

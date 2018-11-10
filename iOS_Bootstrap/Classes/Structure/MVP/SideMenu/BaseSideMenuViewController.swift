@@ -21,12 +21,19 @@ open class BaseSideMenuViewController<T, V, M> :
         super.viewDidLoad()
         // if (shouldBlurBackgroundItem()) { addBlurEffect() }
         getTableViewAdapter().reloadTable()
+        // Listen for back button action from menu items if needed
+        EventBus.onMainThread(self, name: "com.iOS_Bootstrap.performBackAction") { result in
+            // UI thread
+            self.performBackAction()
+        }
     }
     
     override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
     }
     
+    open override func viewWillDisappear(_ animated: Bool) { EventBus.unregister(self) }
+
     open override func initUI() {}
 
     open override func initTableViewAdapterConfiguraton() {
@@ -93,6 +100,8 @@ open class BaseSideMenuViewController<T, V, M> :
         menuItemDidSelected(menu: menuItems![indexPath.row], menuItemIndex: indexPath.row, viewControllerAtIndex: menuViewControllers![indexPath.row])
     }
     
+    open func performBackAction() {}
+
     //
     open func leftWillOpen() {}
     open func leftDidOpen() {}
