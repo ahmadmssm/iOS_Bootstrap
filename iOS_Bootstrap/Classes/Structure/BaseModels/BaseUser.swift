@@ -16,7 +16,7 @@ open class BaseUser: Codable, HandyJSON, UserDefaultsService {
     public var isLoggedIn : Bool?
     public var hasValidSession : Bool?
     //
-    private let appId : String = Bundle.main.appId()()
+    private let appId : String = Bundle.main.appId()
 
     required public init() {}
     
@@ -29,7 +29,7 @@ open class BaseUser: Codable, HandyJSON, UserDefaultsService {
     }
     
     public final func getCachedUser() -> BaseUser? {
-        return getUserDefaults().getObjectWithKey(key: appName + "_UserProfile")
+        return getUserDefaults().getObjectWithKey(key: appIdf + "_UserProfile")
     }
     
     public final func getCachedUserWithKey(key : String) -> BaseUser? {
