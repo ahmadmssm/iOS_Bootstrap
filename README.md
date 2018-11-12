@@ -97,7 +97,8 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 51. You can hide the notch for iPhone X series 😁.
 52. Side menu out of the box.
 53. Event bus helper class.
-54. How to use, examples and documentation + references.
+54. Added Skeleton helper class to add skeleton effect to UIViews, table and collection views.
+55. How to use, examples and documentation + references.
 
 
 ## Upcoming features

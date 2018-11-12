@@ -8,7 +8,8 @@
 open class BaseCollectionViewController <T, V, D> : BaseViewController<T, V> where T : BasePresenter<V> {
         
     private let collectionViewAdapter : CollectionViewAdapter = CollectionViewAdapter()
-    
+    public var isEmptyDataSource : Bool = false
+
      public final func getCollectionViewAdapter() -> CollectionViewAdapter {
         return collectionViewAdapter
     }

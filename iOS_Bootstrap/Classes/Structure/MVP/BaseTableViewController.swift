@@ -10,8 +10,7 @@ open class BaseTableViewController <T, V, D> :
                             where T : BasePresenter<V> {
     
     private let tableViewAdapter : TableviewAdapter = TableviewAdapter()
-    
-    //
+    public var isEmptyDataSource : Bool = false
     
     public final func getTableViewAdapter() -> TableviewAdapter {
         return tableViewAdapter

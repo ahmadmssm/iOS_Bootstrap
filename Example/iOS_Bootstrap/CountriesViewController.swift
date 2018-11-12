@@ -19,31 +19,34 @@ class CountriesViewController:
     
     @IBOutlet weak var tableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        // Mock a network delay with 3 seconds
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            self.controller.getWorldCountries()
-//        }
-    }
+    override func viewDidLoad() { super.viewDidLoad() }
     
     override func initUI() { self.title = "World countries" }
     
     override func initTableViewAdapterConfiguraton() {
         getTableViewAdapter().configureTableWithXibCell(tableView: tableView, nibClass: CountriesCell.self, delegate: self)
+        //
+        getTableViewAdapter().reloadTable()
+        Skeleton.addTo(self.tableView)
+    }
+    
+    func configureNumberOfRowsForSection(tableView: UITableView, section: Int) -> Int {
+        if (getTableViewDataSource.count > 0) { return getTableViewDataSource.count }
+        return 4
     }
     
     func configureTableViewCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CountriesCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        cell.labelCountryName.text = getTableViewDataSource[indexPath.row].countryName!
-        cell.labelCapitalName.text = getTableViewDataSource[indexPath.row].capital
-        cell.labelRegion.text = getTableViewDataSource[indexPath.row].region
-        cell.labelTimeZone.text = getTableViewDataSource[indexPath.row].timeZones?[0]
-        //
-        let flagURL = URL(string: getTableViewDataSource[indexPath.row].flag!)
-        let flagImage: SVGKImage = SVGKImage(contentsOf: flagURL)
-        cell.imageViewFlag.image = flagImage.uiImage
-        //
+        if (getTableViewDataSource.count > 0) {
+            cell.labelCountryName.text = getTableViewDataSource[indexPath.row].countryName!
+            cell.labelCapitalName.text = getTableViewDataSource[indexPath.row].capital
+            cell.labelRegion.text = getTableViewDataSource[indexPath.row].region
+            cell.labelTimeZone.text = getTableViewDataSource[indexPath.row].timeZones?[0]
+            //
+            let flagURL = URL(string: getTableViewDataSource[indexPath.row].flag!)
+            let flagImage: SVGKImage = SVGKImage(contentsOf: flagURL)
+            cell.imageViewFlag.image = flagImage.uiImage
+        }
         return cell
     }
     
@@ -51,11 +54,7 @@ class CountriesViewController:
         Navigator.goToCountryDetailsViewController(country: getTableViewDataSource[indexPath.row])
     }
     
-    //
-    // Optional callbacks
-    func emptyDataSetShouldDisplay() -> Bool {
-        return true
-    }
+    func emptyDataSetShouldDisplay() -> Bool { return self.isEmptyDataSource }
     
     func emptyDataSetDescriptionText() -> NSAttributedString {
         let attributes: [NSAttributedStringKey : Any] = [
@@ -66,10 +65,14 @@ class CountriesViewController:
         ]
         return NSAttributedString(string: "No data !", attributes: attributes)
     }
-    //
-    
+
     func didGetCountries(countries: [Country]) {
         getTableViewAdapter().reloadTable(pageItems: countries)
+        Skeleton.removeFrom(self.tableView)
+        if (getTableViewDataSource.count == 0) {
+            self.isEmptyDataSource = true
+            getTableViewAdapter().reloadTable()
+        }
     }
     
     func didFailToGetCountries(error: String) {

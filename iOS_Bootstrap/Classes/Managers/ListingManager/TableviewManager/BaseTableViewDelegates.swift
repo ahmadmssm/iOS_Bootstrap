@@ -12,7 +12,7 @@ public protocol BaseTableViewDelegates : TableViewOptionalDelegates {
 }
 
 @objc public protocol TableViewOptionalDelegates : CommonListingDelegates {
-    @objc optional func configureNumberOfRowsPerSection(tableView: UITableView, section : Int) -> Int
+    @objc optional func configureNumberOfRowsForSection(tableView: UITableView, section : Int) -> Int
     @objc optional func rowDidSelected(tableView: UITableView, indexPath : IndexPath)
     @objc optional func configureAdditionalTableProperties (table : UITableView)
     @objc optional func configureHeightForRowAt (tableView: UITableView, indexPath: IndexPath) -> CGFloat

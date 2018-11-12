@@ -614,6 +614,7 @@
 		C91FFF632197719D00DFC0CC /* UIViewController + Navigation bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FFF622197719D00DFC0CC /* UIViewController + Navigation bar.swift */; };
 		C91FFF6421977E7500DFC0CC /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A2E8D5EE654DBF44BB24F15AACF1B /* NavigationCoordinator.swift */; };
 		C923373A2E06D8740647FFACB93FE79B /* Disposables.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA2881BCC31276269865A139E85125 /* Disposables.swift */; };
+		C9867F612199A95400FB7C30 /* Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9867F602199A95400FB7C30 /* Skeleton.swift */; };
 		CA0256D0C1228F5192A51FFBC8421025 /* DDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = E62A5DCE70E464114E2E3BB147353F2D /* DDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA2D90B84138B537CDA7277E08C32537 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C5317B1B96806EA1047CDFC4C6913 /* Window.swift */; };
 		CA7D02F16159FDD29DCC9BC38A730F43 /* Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6901EE2CA4DF0DE70BCE69346C78B8A /* Kingfisher.swift */; };
@@ -1599,6 +1600,7 @@
 		C91FFF5E219714CC00DFC0CC /* Disposable + cancel request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disposable + cancel request.swift"; sourceTree = "<group>"; };
 		C91FFF622197719D00DFC0CC /* UIViewController + Navigation bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Navigation bar.swift"; sourceTree = "<group>"; };
 		C981EAFA3F5ED8EFF91E61F275DBAD88 /* LucidMoyaError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LucidMoyaError.swift; sourceTree = "<group>"; };
+		C9867F602199A95400FB7C30 /* Skeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skeleton.swift; sourceTree = "<group>"; };
 		CAA73CE14CFCBD4BE9180822434F232C /* DTPagerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTPagerController.swift; sourceTree = "<group>"; };
 		CB414C4E75D8878DE0415029F0B237DE /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB57DDDAADC446FE64DDCE8B57C242B8 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
@@ -2707,6 +2709,7 @@
 			isa = PBXGroup;
 			children = (
 				41DC127154C590C593F9C1C6BBDBDA48 /* EventBus.swift */,
+				C9867F602199A95400FB7C30 /* Skeleton.swift */,
 				7B39463F1F4CD5828E324938A916A884 /* GenericTypesHelper.swift */,
 				FED8AC2A52EAF53EA235174968A7B408 /* JsonSerializer.swift */,
 				EC6EA26CBBBC3BBA72F4E9919F3BFAF7 /* PopUpProtocol.swift */,
@@ -3354,10 +3357,10 @@
 		E9531CD7744506695E2281EDBAA98F01 /* MVP */ = {
 			isa = PBXGroup;
 			children = (
+				64302B9F3BF02197D0B6A3DB93BAB560 /* BaseViewController.swift */,
+				EC82F18A44F57CC9B8B1DA0A1695C87B /* BaseTableViewController.swift */,
 				360E89F40F08EC6173CCA25470739431 /* BaseCollectionViewController.swift */,
 				0BFB7B259473C6200AEEEF260E67B247 /* BasePresenter.swift */,
-				EC82F18A44F57CC9B8B1DA0A1695C87B /* BaseTableViewController.swift */,
-				64302B9F3BF02197D0B6A3DB93BAB560 /* BaseViewController.swift */,
 				E84EFA74367920567D13D47F94DB7B4C /* BaseViewDelegators.swift */,
 				3C5E623537947BB8DB3AC3D659931D3B /* PresenterFunctions.swift */,
 				A92F9A30EFBD704A40B9D616682C4826 /* SideMenu */,
@@ -4321,6 +4324,7 @@
 				5946ECE25AF7A61A8D630B3719183588 /* Bartinter.swift in Sources */,
 				0158B734A78AFECCA1554A21C873B12F /* BaseAPIsConnector.swift in Sources */,
 				8CD52BB4B1380AF0129030F531D44703 /* BaseCollectionAdapterView.swift in Sources */,
+				C9867F612199A95400FB7C30 /* Skeleton.swift in Sources */,
 				AB6DA5EDD07E1AA3C3245AC0EED4B50F /* BaseCollectionViewCell.swift in Sources */,
 				5D04AE088A019122FD04642FBBFFBA49 /* BaseCollectionViewController.swift in Sources */,
 				23CB7F47E30B9388F9FDF7DEC6DAA7D2 /* BaseCollectionViewDelegates.swift in Sources */,

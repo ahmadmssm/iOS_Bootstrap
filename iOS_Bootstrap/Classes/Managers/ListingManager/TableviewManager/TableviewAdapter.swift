@@ -152,8 +152,8 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     //
     // Configure number of rows/sections
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (mDelegate?.configureNumberOfRowsPerSection?(tableView: tableView, section: section)) != nil {
-            return (mDelegate?.configureNumberOfRowsPerSection!(tableView: tableView, section: section))!
+        if (mDelegate?.configureNumberOfRowsForSection?(tableView: tableView, section: section)) != nil {
+            return (mDelegate?.configureNumberOfRowsForSection!(tableView: tableView, section: section))!
         }
         else if (tableViewDataSource != nil && (tableViewDataSource?.count)! > 0) {
             return (tableViewDataSource?.count)!
