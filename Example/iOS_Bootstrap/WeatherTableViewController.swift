@@ -6,7 +6,6 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-import UIKit
 import iOS_Bootstrap
 import SCLAlertView
 import AFDateHelper
@@ -52,11 +51,11 @@ class WeatherTableViewController <T, V>:
         return cell
     }
     
-    func didGetTenDaysWeather(weatherForcast: WeatherForcast) {
+    func didGetFiveDaysWeather(weatherForcast: WeatherForcast) {
         getTableViewAdapter().reloadTable(pageItems: weatherForcast.weatherForcastList!)
     }
     
-    func didFailToGetTenDaysWeather(errorMessage: String) {
+    func didFailToGetFiveDaysWeather(errorMessage: String) {
         SCLAlertView().showError("Error", subTitle: errorMessage)
     }
     

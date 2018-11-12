@@ -6,7 +6,6 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-import UIKit
 import iOS_Bootstrap
 
 class MainViewController: BaseCollectionViewController<MainPresenter, MainViewDelegator, String>, MainViewDelegator, BaseCollectionViewDelegates {
@@ -20,9 +19,7 @@ class MainViewController: BaseCollectionViewController<MainPresenter, MainViewDe
         super.viewDidLoad()
     }
     
-    override func initUI() {
-        self.title = "Home"
-    }
+    override func initUI() { self.title = "Home" }
     
     override func initCollectionViewAdapterConfiguraton() {
         getCollectionViewAdapter().configureCollectionviewWithXibCell(collectionView: collectionView, nibClass: MainViewCell.self, delegate: self)

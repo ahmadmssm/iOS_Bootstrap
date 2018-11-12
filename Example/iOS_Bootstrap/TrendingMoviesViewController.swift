@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Yuji Hato. All rights reserved.
 //
 
-import UIKit
 import iOS_Bootstrap
 import Kingfisher
 import SCLAlertView

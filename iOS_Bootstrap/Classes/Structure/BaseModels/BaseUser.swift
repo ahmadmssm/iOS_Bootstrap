@@ -15,12 +15,13 @@ open class BaseUser: Codable, HandyJSON, UserDefaultsService {
     public var updatedAt:String!
     public var isLoggedIn : Bool?
     public var hasValidSession : Bool?
+    //
+    private let appId : String = Bundle.main.appId()()
 
     required public init() {}
     
-    
     public final func cache() {
-        getUserDefaults().setObjectWithKey(value: self, key: "UserProfile_0")
+        getUserDefaults().setObjectWithKey(value: self, key: appId + "_UserProfile")
     }
     
     public final func cacheWithKey(key : String) {
@@ -28,7 +29,7 @@ open class BaseUser: Codable, HandyJSON, UserDefaultsService {
     }
     
     public final func getCachedUser() -> BaseUser? {
-        return getUserDefaults().getObjectWithKey(key: "UserProfile_0")
+        return getUserDefaults().getObjectWithKey(key: appName + "_UserProfile")
     }
     
     public final func getCachedUserWithKey(key : String) -> BaseUser? {

@@ -79,7 +79,7 @@ open class DefaultConfigurations {
     }
    
     public func disableNotchForIphoneX() -> DefaultConfigurations  {
-        NotchManager.instance.spread()
+        NotchArea.instance.spread()
         return self
     }
     

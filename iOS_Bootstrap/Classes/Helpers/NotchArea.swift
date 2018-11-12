@@ -1,5 +1,5 @@
 //
-//  NotchManager.swift
+//  NotchArea.swift
 //  iphonex
 //
 //  Created by Leonard on 2017. 9. 20..
@@ -8,43 +8,38 @@
 
 import UIKit
 
-open class NotchManager {
+open class NotchArea {
     
-    public static let instance = NotchManager()
+    public static let instance = NotchArea()
     
-    private class HairPowderView: UIView {
+    private class NotchView: UIView {
         static let cornerRadius: CGFloat = 40
         static let cornerY: CGFloat = 35
-        override func draw(_ rect: CGRect)
-        {
+        override func draw(_ rect: CGRect) {
             let width = frame.width > frame.height ? frame.height : frame.width
-            
             let rectPath = UIBezierPath()
             rectPath.move(to: CGPoint(x:0, y:0))
             rectPath.addLine(to: CGPoint(x: width, y: 0))
-            rectPath.addLine(to: CGPoint(x: width, y: HairPowderView.cornerY))
-            rectPath.addLine(to: CGPoint(x: 0, y: HairPowderView.cornerY))
+            rectPath.addLine(to: CGPoint(x: width, y: NotchView.cornerY))
+            rectPath.addLine(to: CGPoint(x: 0, y: NotchView.cornerY))
             rectPath.close()
             rectPath.fill()
-            
             let leftCornerPath = UIBezierPath()
-            leftCornerPath.move(to: CGPoint(x: 0, y: HairPowderView.cornerY + HairPowderView.cornerRadius))
-            leftCornerPath.addLine(to: CGPoint(x: 0, y: HairPowderView.cornerY))
-            leftCornerPath.addLine(to: CGPoint(x: HairPowderView.cornerRadius, y: HairPowderView.cornerY))
-            leftCornerPath.addQuadCurve(to:  CGPoint(x: 0, y: HairPowderView.cornerY+HairPowderView.cornerRadius), controlPoint: CGPoint(x: 0, y: HairPowderView.cornerY))
+            leftCornerPath.move(to: CGPoint(x: 0, y: NotchView.cornerY + NotchView.cornerRadius))
+            leftCornerPath.addLine(to: CGPoint(x: 0, y: NotchView.cornerY))
+            leftCornerPath.addLine(to: CGPoint(x: NotchView.cornerRadius, y: NotchView.cornerY))
+            leftCornerPath.addQuadCurve(to:  CGPoint(x: 0, y: NotchView.cornerY+NotchView.cornerRadius), controlPoint: CGPoint(x: 0, y: NotchView.cornerY))
             leftCornerPath.close()
             leftCornerPath.fill()
-            
             let rightCornerPath = UIBezierPath()
-            rightCornerPath.move(to: CGPoint(x: width, y: HairPowderView.cornerY+HairPowderView.cornerRadius))
-            rightCornerPath.addLine(to: CGPoint(x: width, y: HairPowderView.cornerY))
-            rightCornerPath.addLine(to: CGPoint(x: width-HairPowderView.cornerRadius, y: HairPowderView.cornerY))
-            rightCornerPath.addQuadCurve(to:  CGPoint(x: width, y: 35+HairPowderView.cornerRadius), controlPoint: CGPoint(x: width, y: HairPowderView.cornerY))
+            rightCornerPath.move(to: CGPoint(x: width, y: NotchView.cornerY+NotchView.cornerRadius))
+            rightCornerPath.addLine(to: CGPoint(x: width, y: NotchView.cornerY))
+            rightCornerPath.addLine(to: CGPoint(x: width-NotchView.cornerRadius, y: NotchView.cornerY))
+            rightCornerPath.addQuadCurve(to:  CGPoint(x: width, y: 35+NotchView.cornerRadius), controlPoint: CGPoint(x: width, y: NotchView.cornerY))
             rightCornerPath.close()
             rightCornerPath.fill()
         }
     }
-    
     
     private var statusWindow: UIWindow = {
         let width = UIApplication.shared.keyWindow?.frame.width ?? 0
@@ -53,7 +48,7 @@ open class NotchManager {
         let statusWindow = UIWindow(frame: CGRect(x: 0, y: 0, width: width, height: 0))
         statusWindow.windowLevel = UIWindowLevelStatusBar - 1
         
-        let hairPowderView = HairPowderView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        let hairPowderView = NotchView(frame: CGRect(x: 0, y: 0, width: width, height: height))
         hairPowderView.backgroundColor = UIColor.clear
         hairPowderView.clipsToBounds = true
         statusWindow.addSubview(hairPowderView)

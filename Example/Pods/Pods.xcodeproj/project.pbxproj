@@ -491,7 +491,7 @@
 		9EE1788B6CF746213D069FA4B7D67805 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538BB7D26CD5E0E479A34303F7CC45B /* Image.swift */; };
 		9F22227259D1FE3E206A9C47C1C96F3F /* String + phone number validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54E4A8F955A887626191CE9B445F8E7 /* String + phone number validator.swift */; };
 		9F5138910801EE8DEFE20656F073B7D0 /* DTSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8971F787ACB09FCD2A501575856997 /* DTSegmentedControl.swift */; };
-		9FF5DEE9DE2C60BFB14F888E697182B7 /* NotchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49202E995E69EE3DC3B523209994BA47 /* NotchManager.swift */; };
+		9FF5DEE9DE2C60BFB14F888E697182B7 /* NotchArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49202E995E69EE3DC3B523209994BA47 /* NotchArea.swift */; };
 		A0213FA092D8DA5F05DBAB6D4AF2EBF2 /* SingleAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73021F9BE3842882E52CE7561B04A641 /* SingleAsync.swift */; };
 		A0776B9701BC056A439B805203EFD4DB /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25491258C15EA122B956347C0E6BFA /* Buffer.swift */; };
 		A0B84018D3F213CE7D797ED411A3868E /* DDContextFilterLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D9260665E8C2F58515191421777C6D8 /* DDContextFilterLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -613,6 +613,7 @@
 		C91FFF5F219714CC00DFC0CC /* Disposable + cancel request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FFF5E219714CC00DFC0CC /* Disposable + cancel request.swift */; };
 		C91FFF632197719D00DFC0CC /* UIViewController + Navigation bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FFF622197719D00DFC0CC /* UIViewController + Navigation bar.swift */; };
 		C91FFF6421977E7500DFC0CC /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A2E8D5EE654DBF44BB24F15AACF1B /* NavigationCoordinator.swift */; };
+		C92218322199E35D00C03C57 /* Bundle + App name.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92218312199E35D00C03C57 /* Bundle + App name.swift */; };
 		C923373A2E06D8740647FFACB93FE79B /* Disposables.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA2881BCC31276269865A139E85125 /* Disposables.swift */; };
 		C9867F612199A95400FB7C30 /* Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9867F602199A95400FB7C30 /* Skeleton.swift */; };
 		CA0256D0C1228F5192A51FFBC8421025 /* DDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = E62A5DCE70E464114E2E3BB147353F2D /* DDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1198,7 +1199,7 @@
 		48694D2F1BC84FB5E40D5683C3220BBE /* SynchronizedOnType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedOnType.swift; path = RxSwift/Concurrency/SynchronizedOnType.swift; sourceTree = "<group>"; };
 		48806CB6B9EC4C325D420C5719DDAB8C /* CSSRule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSSRule.m; path = "Source/DOM classes/Core DOM/CSSRule.m"; sourceTree = "<group>"; };
 		48C7F95F39BDF24E85265C73637FEA12 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		49202E995E69EE3DC3B523209994BA47 /* NotchManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotchManager.swift; sourceTree = "<group>"; };
+		49202E995E69EE3DC3B523209994BA47 /* NotchArea.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotchArea.swift; sourceTree = "<group>"; };
 		49BD6B1CA3B4909894058E583629CDA4 /* SCLAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SCLAlertView.modulemap; sourceTree = "<group>"; };
 		49F87F7F9DAE08DB7811449CF980F5A8 /* Sink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sink.swift; path = RxSwift/Observables/Sink.swift; sourceTree = "<group>"; };
 		4A62E4DEBEB73CBA9380A7C84634D208 /* CredentialsPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CredentialsPlugin.swift; path = Sources/Moya/Plugins/CredentialsPlugin.swift; sourceTree = "<group>"; };
@@ -1599,6 +1600,7 @@
 		C8F0D887A64E422717B4783068D8D570 /* CharacterData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CharacterData.h; path = "Source/DOM classes/Core DOM/CharacterData.h"; sourceTree = "<group>"; };
 		C91FFF5E219714CC00DFC0CC /* Disposable + cancel request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disposable + cancel request.swift"; sourceTree = "<group>"; };
 		C91FFF622197719D00DFC0CC /* UIViewController + Navigation bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Navigation bar.swift"; sourceTree = "<group>"; };
+		C92218312199E35D00C03C57 /* Bundle + App name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle + App name.swift"; sourceTree = "<group>"; };
 		C981EAFA3F5ED8EFF91E61F275DBAD88 /* LucidMoyaError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LucidMoyaError.swift; sourceTree = "<group>"; };
 		C9867F602199A95400FB7C30 /* Skeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skeleton.swift; sourceTree = "<group>"; };
 		CAA73CE14CFCBD4BE9180822434F232C /* DTPagerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTPagerController.swift; sourceTree = "<group>"; };
@@ -2395,7 +2397,7 @@
 				E9FEEECA9634A052524368A26F39E30F /* NetworkLoggerDataFormatter.swift */,
 				DDFBA8B1B91F65BF13A2B58E5521B9C4 /* Remove duplicates + filter array.swift */,
 				58DA993316DCAC1D385CA1E3DD91B7F1 /* Response + HandyJSON + RX.swift */,
-				6BF4B6716294B8A0A7E0ECA785BACF4D /* UIView + load nib.swift */,
+				C92218312199E35D00C03C57 /* Bundle + App name.swift */,
 				C91FFF5D219714A700DFC0CC /* RX */,
 				C21DC6F0DC82821D03CD9905A3D96FC5 /* Codable */,
 				9281D7F1C9932741B39909D09CB3EE0A /* DataTypes */,
@@ -2560,7 +2562,6 @@
 			isa = PBXGroup;
 			children = (
 				EDDCE023152BCF3F16E41695C46D40F8 /* KeyboardManager.swift */,
-				49202E995E69EE3DC3B523209994BA47 /* NotchManager.swift */,
 				35F58C2B2FE03E22658FE3928DA0D62B /* UserDefaultsManager.swift */,
 				771E3182E3873076BEF8E8FCD5465AF5 /* InternetConnectionManager */,
 				9DD8D7FA63303698AFE594050C34044E /* ListingManager */,
@@ -2585,15 +2586,6 @@
 				0072AE3E846AB20BC52624C6D06724B4 /* Throttler */,
 			);
 			path = StatusBarManager;
-			sourceTree = "<group>";
-		};
-		725E49B61040E3EFB4E22E2316AFBB7F /* Logger */ = {
-			isa = PBXGroup;
-			children = (
-				B505DA8AA4E63212D65EFA8AB5B29587 /* Logger.swift */,
-			);
-			name = Logger;
-			path = iOS_Bootstrap/Classes/Logger;
 			sourceTree = "<group>";
 		};
 		771E3182E3873076BEF8E8FCD5465AF5 /* InternetConnectionManager */ = {
@@ -2668,6 +2660,7 @@
 			isa = PBXGroup;
 			children = (
 				C91FFF622197719D00DFC0CC /* UIViewController + Navigation bar.swift */,
+				6BF4B6716294B8A0A7E0ECA785BACF4D /* UIView + load nib.swift */,
 				3DD345C24CC9782D00FDE63E10CA8EC0 /* UIButton + ActivityIndicator.swift */,
 				5A92DFD71155069AA541CC93881787A1 /* UIColor + Hex.swift */,
 				D2E008B10D10F1139A642031E8F9176B /* UIImage + Gif.swift */,
@@ -2685,12 +2678,11 @@
 				93230A166F3C736E22EDC9AB366E6601 /* CustomComponents */,
 				2CA21B67A7513047FD1831A42C84B5D0 /* Extensions */,
 				8C09F0F65CDFCCD3C968906F43A2B93E /* Helpers */,
-				725E49B61040E3EFB4E22E2316AFBB7F /* Logger */,
 				6FB3A129EA44DF36EDF72BE22767EEF7 /* Managers */,
-				A88B8F20BFFE532FEAC9BD316B74F362 /* Pod */,
 				8EC317E607DC27D6A3008DBAD2FEB711 /* Services */,
 				18BC6A20F2DA11A10639564AAA2D497E /* Structure */,
 				2F45B9142FBACAF906A0BA3688C2E881 /* Support Files */,
+				A88B8F20BFFE532FEAC9BD316B74F362 /* Pod */,
 			);
 			name = iOS_Bootstrap;
 			path = ../..;
@@ -2710,11 +2702,13 @@
 			children = (
 				41DC127154C590C593F9C1C6BBDBDA48 /* EventBus.swift */,
 				C9867F602199A95400FB7C30 /* Skeleton.swift */,
+				49202E995E69EE3DC3B523209994BA47 /* NotchArea.swift */,
 				7B39463F1F4CD5828E324938A916A884 /* GenericTypesHelper.swift */,
 				FED8AC2A52EAF53EA235174968A7B408 /* JsonSerializer.swift */,
 				EC6EA26CBBBC3BBA72F4E9919F3BFAF7 /* PopUpProtocol.swift */,
 				861F8170A8B9F58C160F6C6DD19DD5CE /* StringableNames.swift */,
 				FC70B2C41D9B89DBEC4C5405A8749C30 /* StringConvertable.swift */,
+				B505DA8AA4E63212D65EFA8AB5B29587 /* Logger.swift */,
 			);
 			name = Helpers;
 			path = iOS_Bootstrap/Classes/Helpers;
@@ -4403,13 +4397,14 @@
 				CCC315B65BF913DABF1F193F0CB2D3CE /* NetworkLoggerDataFormatter.swift in Sources */,
 				D1321FA3B4321DC36D2CA1A190AA5D21 /* NetworkStatusListener.swift in Sources */,
 				9C1CAC08FBD867E535A8BC0FB6A5DC04 /* NibLoadableView.swift in Sources */,
-				9FF5DEE9DE2C60BFB14F888E697182B7 /* NotchManager.swift in Sources */,
+				9FF5DEE9DE2C60BFB14F888E697182B7 /* NotchArea.swift in Sources */,
 				129287F33268478890B4AD55DF7223D2 /* OverridableFunctions.swift in Sources */,
 				9AB00C7F5817BC14A9EEC1C9B1EA5EB1 /* Parameters.swift in Sources */,
 				071C785B675F67B6DF612CEED1E361B4 /* Parser.swift in Sources */,
 				772BBEC7781CA9F87EA87192F7648363 /* Picker.swift in Sources */,
 				7796CCD4949EBB3ABCC9217332D272BD /* PopUpProtocol.swift in Sources */,
 				56113A6911BF91B3B4D70BCF0EE35968 /* PresenterFunctions.swift in Sources */,
+				C92218322199E35D00C03C57 /* Bundle + App name.swift in Sources */,
 				F101E38D89CE09826D4652309683336C /* PushNotificationBaseModel.swift in Sources */,
 				4C4232DD135E332B6BC87E8CB6F67B7A /* PushNotificationManager.swift in Sources */,
 				E8674AC27DB113EAC2B2C3F4CB711B4C /* Remove duplicates + filter array.swift in Sources */,

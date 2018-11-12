@@ -9,6 +9,6 @@
 import iOS_Bootstrap
 
 protocol WeatherViewDelegator : BaseViewDelegator {
-    func didGetTenDaysWeather(weatherForcast : WeatherForcast)
-    func didFailToGetTenDaysWeather(errorMessage : String)
+    func didGetFiveDaysWeather(weatherForcast : WeatherForcast)
+    func didFailToGetFiveDaysWeather(errorMessage : String)
 }
