@@ -29,7 +29,7 @@ open class BaseUser: Codable, HandyJSON, UserDefaultsService {
     }
     
     public final func getCachedUser() -> BaseUser? {
-        return getUserDefaults().getObjectWithKey(key: appIdf + "_UserProfile")
+        return getUserDefaults().getObjectWithKey(key: appId + "_UserProfile")
     }
     
     public final func getCachedUserWithKey(key : String) -> BaseUser? {
