@@ -95,17 +95,19 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8j-CQ-egL">
                                 <rect key="frame" x="10" y="250" width="350" height="30"/>
-                                <state key="normal" title="Expandable tableview"/>
+                                <state key="normal" title="Expandable tableview">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3f7-Ho-zdR">
-                                <rect key="frame" x="10" y="325" width="350" height="21"/>
+                                <rect key="frame" x="10" y="309" width="350" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCt-Od-3GR">
                                 <rect key="frame" x="120" y="370" width="240" height="41"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="4zl-Xp-xBI"/>
                                 </constraints>
@@ -114,14 +116,14 @@
                         <color key="backgroundColor" red="0.26421716370558379" green="0.26421716370558379" blue="0.26421716370558379" alpha="0.4374197345890411" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="u8j-CQ-egL" firstAttribute="top" secondItem="Czu-al-vhQ" secondAttribute="top" constant="230" id="7iS-Xy-k58"/>
-                            <constraint firstItem="3f7-Ho-zdR" firstAttribute="top" secondItem="u8j-CQ-egL" secondAttribute="bottom" constant="45" id="Bn0-5V-Ipf"/>
+                            <constraint firstItem="3f7-Ho-zdR" firstAttribute="top" secondItem="u8j-CQ-egL" secondAttribute="bottom" constant="29" id="Bn0-5V-Ipf"/>
                             <constraint firstItem="mCt-Od-3GR" firstAttribute="leading" secondItem="Czu-al-vhQ" secondAttribute="leading" constant="120" id="Cdn-Ea-Ux5"/>
                             <constraint firstItem="Czu-al-vhQ" firstAttribute="trailing" secondItem="3f7-Ho-zdR" secondAttribute="trailing" constant="15" id="NS8-d3-l6Y"/>
                             <constraint firstItem="Czu-al-vhQ" firstAttribute="trailing" secondItem="u8j-CQ-egL" secondAttribute="trailing" constant="15" id="Rxk-Jd-wNY"/>
                             <constraint firstItem="3f7-Ho-zdR" firstAttribute="leading" secondItem="Czu-al-vhQ" secondAttribute="leading" constant="10" id="US2-Ha-BNx"/>
                             <constraint firstItem="Czu-al-vhQ" firstAttribute="trailing" secondItem="mCt-Od-3GR" secondAttribute="trailing" constant="15" id="iJH-Jp-HSZ"/>
                             <constraint firstItem="u8j-CQ-egL" firstAttribute="leading" secondItem="Czu-al-vhQ" secondAttribute="leading" constant="10" id="j9m-uO-oW3"/>
-                            <constraint firstItem="mCt-Od-3GR" firstAttribute="top" secondItem="3f7-Ho-zdR" secondAttribute="bottom" constant="24" id="rL5-Qi-Nka"/>
+                            <constraint firstItem="mCt-Od-3GR" firstAttribute="top" secondItem="3f7-Ho-zdR" secondAttribute="bottom" constant="40" id="rL5-Qi-Nka"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Czu-al-vhQ"/>
                     </view>
@@ -309,6 +311,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvY-jt-NMV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="822" y="86"/>
+        </scene>
+        <!--Expandable Cell Table View Controller-->
+        <scene sceneID="1Ic-X7-EOc">
+            <objects>
+                <viewController id="1t4-Lg-8V7" customClass="ExpandableCellTableViewController" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rKQ-Iu-Y6d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="03W-5p-dUG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="03W-5p-dUG" firstAttribute="top" secondItem="rKQ-Iu-Y6d" secondAttribute="top" id="2qL-ez-RGG"/>
+                            <constraint firstItem="03W-5p-dUG" firstAttribute="trailing" secondItem="WwL-bl-jni" secondAttribute="trailing" id="Dlp-rx-NcY"/>
+                            <constraint firstItem="03W-5p-dUG" firstAttribute="leading" secondItem="WwL-bl-jni" secondAttribute="leading" id="LpC-uu-OgY"/>
+                            <constraint firstItem="03W-5p-dUG" firstAttribute="bottom" secondItem="WwL-bl-jni" secondAttribute="bottom" id="sdC-Ps-dKP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WwL-bl-jni"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="03W-5p-dUG" id="w8V-lF-Jmt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4mH-yp-XLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1698.4000000000001" y="78.710644677661179"/>
         </scene>
     </scenes>
     <resources>

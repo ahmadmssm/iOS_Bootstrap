@@ -56,11 +56,11 @@ class LeftSideMenuViewController :
         var menuViewControllers : [UIViewController] = []
         let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.menu)
         let trendingMoviesViewController : TrendingMoviesViewController = storyboard.instantiateViewController()
-        menuViewControllers.append(UINavigationController(rootViewController: trendingMoviesViewController))
+        menuViewControllers.append(GradientNavigationController(rootViewController: trendingMoviesViewController))
         let countriesListViewController : CountriesViewController = storyboard.instantiateViewController()
-        menuViewControllers.append(UINavigationController(rootViewController: countriesListViewController))
+        menuViewControllers.append(GradientNavigationController(rootViewController: countriesListViewController))
         let weatherViewController : WeatherMenuItemTabBarController = storyboard.instantiateViewController()
-        menuViewControllers.append(UINavigationController(rootViewController: weatherViewController))
+        menuViewControllers.append(GradientNavigationController(rootViewController: weatherViewController))
         return menuViewControllers
     }
     

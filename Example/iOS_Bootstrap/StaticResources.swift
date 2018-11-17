@@ -12,4 +12,8 @@ class StaticResources {
     struct CustomColors {
         static let beautifulBlueColor : UIColor = UIColor.color(fromHexString: "3A77FF")
     }
+    struct CustomStyles {
+        static let navigationBarTextStyle =
+            [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.white]
+    }
 }

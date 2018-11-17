@@ -13,6 +13,8 @@ open class TableviewAdapter : NSObject {
     private final var mTableview : UITableView!
     fileprivate var tableViewDataSource: [Any]!
     private final var mNibClass : BaseTableViewCell.Type!
+    private final var mNibClasses : [BaseTableViewCell.Type]?
+
     fileprivate final var mDelegate : BaseTableViewDelegates!
     //
     fileprivate var mTotalNumberOfItems : Int?
@@ -44,7 +46,15 @@ open class TableviewAdapter : NSObject {
                                     delegate : BaseTableViewDelegates) {
         //
         self.mNibClass = nibClass
-        mTableview?.register(cellClass: mNibClass.self)
+        configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
+    }
+    
+    public final func configureTableWithMultiXibCell (tableView: UITableView,
+                                                 dataSource: [Any]!,
+                                                 nibClasses : [BaseTableViewCell.Type]?,
+                                                 delegate : BaseTableViewDelegates) {
+        //
+        self.mNibClasses = nibClasses
         configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
     }
     
@@ -53,7 +63,6 @@ open class TableviewAdapter : NSObject {
                                                  delegate : BaseTableViewDelegates) {
         //
         self.mNibClass = nibClass
-        mTableview?.register(cellClass: mNibClass.self)
         configureTable(tableView: tableView, dataSource: [], delegate: delegate)
     }
     
@@ -73,7 +82,14 @@ open class TableviewAdapter : NSObject {
         self.mTableview = tableView
         self.mDelegate = delegate
         //
-        mTableview?.register(cellClass: mNibClass.self)
+        if (mNibClass != nil) {
+            mTableview?.register(cellClass: mNibClass.self)
+        }
+        else if (mNibClasses != nil) {
+            for nibClass in mNibClasses! {
+                mTableview?.register(cellClass: nibClass.self)
+            }
+        }
         mTableview?.dataSource = self
         mTableview?.delegate = self
         //

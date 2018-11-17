@@ -615,6 +615,9 @@
 		C91FFF6421977E7500DFC0CC /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A2E8D5EE654DBF44BB24F15AACF1B /* NavigationCoordinator.swift */; };
 		C92218322199E35D00C03C57 /* Bundle + App name.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92218312199E35D00C03C57 /* Bundle + App name.swift */; };
 		C923373A2E06D8740647FFACB93FE79B /* Disposables.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA2881BCC31276269865A139E85125 /* Disposables.swift */; };
+		C970DD7C21A0CBCB0079B706 /* NavigationController + show and hide bottom line.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970DD7B21A0CBCB0079B706 /* NavigationController + show and hide bottom line.swift */; };
+		C970DD7F21A0CC3D0079B706 /* UIView + hairlineImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970DD7E21A0CC3D0079B706 /* UIView + hairlineImageView.swift */; };
+		C970DD8221A0CCE60079B706 /* UIImage + gradient color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970DD8121A0CCE60079B706 /* UIImage + gradient color.swift */; };
 		C9867F612199A95400FB7C30 /* Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9867F602199A95400FB7C30 /* Skeleton.swift */; };
 		C9C12082219AD7E3003227B7 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C12081219AD7E2003227B7 /* Banner.swift */; };
 		C9C12084219AD92D003227B7 /* SwiftyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C12083219AD92C003227B7 /* SwiftyImage.swift */; };
@@ -1604,6 +1607,9 @@
 		C91FFF5E219714CC00DFC0CC /* Disposable + cancel request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Disposable + cancel request.swift"; sourceTree = "<group>"; };
 		C91FFF622197719D00DFC0CC /* UIViewController + Navigation bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Navigation bar.swift"; sourceTree = "<group>"; };
 		C92218312199E35D00C03C57 /* Bundle + App name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle + App name.swift"; sourceTree = "<group>"; };
+		C970DD7B21A0CBCB0079B706 /* NavigationController + show and hide bottom line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController + show and hide bottom line.swift"; sourceTree = "<group>"; };
+		C970DD7E21A0CC3D0079B706 /* UIView + hairlineImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + hairlineImageView.swift"; sourceTree = "<group>"; };
+		C970DD8121A0CCE60079B706 /* UIImage + gradient color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + gradient color.swift"; sourceTree = "<group>"; };
 		C981EAFA3F5ED8EFF91E61F275DBAD88 /* LucidMoyaError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LucidMoyaError.swift; sourceTree = "<group>"; };
 		C9867F602199A95400FB7C30 /* Skeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skeleton.swift; sourceTree = "<group>"; };
 		C9C12081219AD7E2003227B7 /* Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
@@ -2666,12 +2672,12 @@
 			isa = PBXGroup;
 			children = (
 				C91FFF622197719D00DFC0CC /* UIViewController + Navigation bar.swift */,
-				6BF4B6716294B8A0A7E0ECA785BACF4D /* UIView + load nib.swift */,
+				C970DD7B21A0CBCB0079B706 /* NavigationController + show and hide bottom line.swift */,
 				3DD345C24CC9782D00FDE63E10CA8EC0 /* UIButton + ActivityIndicator.swift */,
 				5A92DFD71155069AA541CC93881787A1 /* UIColor + Hex.swift */,
-				D2E008B10D10F1139A642031E8F9176B /* UIImage + Gif.swift */,
-				C9C12083219AD92C003227B7 /* SwiftyImage.swift */,
 				F9ED1843C4700ACFDCF9B261B1C8B1DD /* UILabel + format part of the text.swift */,
+				C970DD7D21A0CC0C0079B706 /* UIVIew */,
+				C970DD8021A0CCC50079B706 /* UIImage */,
 				A2A5EF1BF8389DED8D2CA8FA433F3801 /* Toast */,
 			);
 			path = "UI components";
@@ -3262,6 +3268,25 @@
 				C91FFF5E219714CC00DFC0CC /* Disposable + cancel request.swift */,
 			);
 			path = RX;
+			sourceTree = "<group>";
+		};
+		C970DD7D21A0CC0C0079B706 /* UIVIew */ = {
+			isa = PBXGroup;
+			children = (
+				6BF4B6716294B8A0A7E0ECA785BACF4D /* UIView + load nib.swift */,
+				C970DD7E21A0CC3D0079B706 /* UIView + hairlineImageView.swift */,
+			);
+			path = UIVIew;
+			sourceTree = "<group>";
+		};
+		C970DD8021A0CCC50079B706 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				D2E008B10D10F1139A642031E8F9176B /* UIImage + Gif.swift */,
+				C9C12083219AD92C003227B7 /* SwiftyImage.swift */,
+				C970DD8121A0CCE60079B706 /* UIImage + gradient color.swift */,
+			);
+			path = UIImage;
 			sourceTree = "<group>";
 		};
 		D316105A5593172F705D3DD44E445031 /* Resources */ = {
@@ -4334,6 +4359,7 @@
 				3F0E05A4681690EADCE03B994F0EF4B8 /* BaseController.swift in Sources */,
 				01E12EDE7FA6FAFDCC51D9E9D04FA6C3 /* BaseModel.swift in Sources */,
 				8B916559DC2158A228017F42C0116B0C /* BaseNavigator.swift in Sources */,
+				C970DD7C21A0CBCB0079B706 /* NavigationController + show and hide bottom line.swift in Sources */,
 				1C8F38DDB5F38A092C9258E0EEE9973E /* BaseNetworkErrorHandler.swift in Sources */,
 				99BF0B1C38AD0914287FC695A55030EA /* BasePage.swift in Sources */,
 				3E32E85AFBB56C535EA10ED35BF9B556 /* BasePresenter.swift in Sources */,
@@ -4388,10 +4414,12 @@
 				2A8CD942F9BC89AF35A29205D927CCC9 /* How to use.md in Sources */,
 				D98280080A6BA3F0C0F3ECBBD8CEC3AD /* How_to_use.strings in Sources */,
 				C9C12084219AD92D003227B7 /* SwiftyImage.swift in Sources */,
+				C970DD7F21A0CC3D0079B706 /* UIView + hairlineImageView.swift in Sources */,
 				4738244375E12CFFAD3B7CFB31F07340 /* How_to_use_toast.strings in Sources */,
 				C91FFF5F219714CC00DFC0CC /* Disposable + cancel request.swift in Sources */,
 				F95A1ECEEBFF6CFF0E3B254074EF2FEC /* InternetConnectionManager.swift in Sources */,
 				26F217B644AF106FE90D33090CF14245 /* iOS_Bootstrap-dummy.m in Sources */,
+				C970DD8221A0CCE60079B706 /* UIImage + gradient color.swift in Sources */,
 				0E25141A66578E4D50E20645817625D7 /* IServices.swift in Sources */,
 				D12FEA855FBE472478809D62B3B1A6DB /* IServicesInstances.swift in Sources */,
 				169941701F5ADC85AF9DCA530F5842D6 /* JsonSerializer.swift in Sources */,

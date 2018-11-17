@@ -53,16 +53,18 @@ open class DefaultConfigurations {
         return self
     }
     
-    /**
-     You must call .configureNavigationBarApperance if you want to customize the app navigation bar apperance
-     */
-    public func configureNavigationBarApperance
-        (barColor : UIColor, backButtonColor : UIColor, textApperance : [NSAttributedStringKey : Any]!) -> DefaultConfigurations {
+    public func setNavigationBarColor (barColor : UIColor) -> DefaultConfigurations {
         UINavigationBar.appearance().barTintColor = barColor
+        return self
+    }
+    
+    public func setNavigationBarBackButtonColor (backButtonColor : UIColor) -> DefaultConfigurations {
         UINavigationBar.appearance().tintColor = backButtonColor
-        if (textApperance != nil) {
-            UINavigationBar.appearance().titleTextAttributes = textApperance
-        }
+        return self
+    }
+    
+    public func setNavigationBartextApperance (textApperance : [NSAttributedStringKey : Any]!) -> DefaultConfigurations {
+        UINavigationBar.appearance().titleTextAttributes = textApperance
         return self
     }
     

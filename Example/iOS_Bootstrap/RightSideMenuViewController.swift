@@ -24,7 +24,7 @@ class RightSideMenuViewController :
             Log.debug("Menu Button clicked")
             let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.menu)
             let countriesListViewController : CountriesViewController = storyboard.instantiateViewController()
-            let nc = UINavigationController(rootViewController: countriesListViewController)
+            let nc = GradientNavigationController(rootViewController: countriesListViewController)
             replaceVisableMenuViewControllerWith(menuItemViewController: nc, closeMenu: true)
         case menuItems[1]:
             Log.debug("Menu Label clicked")

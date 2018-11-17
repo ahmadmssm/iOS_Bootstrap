@@ -44,7 +44,7 @@ class MainViewController: BaseCollectionViewController<MainPresenter, MainViewDe
             Navigator.goToSideMenuStoryboard()
             break
         case 1:
-            Navigator.goToViewController()
+            Navigator.goToCustomViewsViewController()
             break
         case 2:
             getPresenter().switchAppLanguage()

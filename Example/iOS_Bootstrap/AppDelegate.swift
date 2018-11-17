@@ -18,17 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //
         // Override point for customization after application launch.
         //
-        let navigationBarTextStyle =
-            [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.white]
-        DefaultConfigurations
-                .init()
+        DefaultConfigurations()
                 .enableIQKeyboard()
                 .iqKeyboardCanGoBack()
                 .iqKeyboardCanGoNext()
                 .configureSessionService(context: self)
-                .configureNavigationBarApperance(barColor: StaticResources.CustomColors.beautifulBlueColor, backButtonColor: UIColor.white, textApperance: navigationBarTextStyle)
-                .configureAppWindowWithRootNavigationController(window: window!, navController: Navigator.navigationController!)
-                .disableNotchForIphoneX()
+                .setNavigationBartextApperance(textApperance: StaticResources.CustomStyles.navigationBarTextStyle)
+                .setNavigationBarBackButtonColor(backButtonColor: UIColor.white)
                 .build()
         Navigator.startInitialView()
         //

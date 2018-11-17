@@ -98,7 +98,8 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 52. Side menu out of the box.
 53. Event bus helper class.
 54. Added Skeleton helper class to add skeleton effect to UIViews, table and collection views.
-55. How to use, examples and documentation + references.
+55. Added dropdown banner component.
+56. How to use, examples and documentation + references.
 
 
 ## Upcoming features
@@ -301,6 +302,7 @@ In addition, the following Repos helped me alot either by including their codes 
 7. [SlideMenuControllerSwift](https://github.com/dekatotoro/SlideMenuControllerSwift).
 8. [HairPowder](https://github.com/intmain/HairPowder).
 9. [SwiftEventBus](https://github.com/cesarferreira/SwiftEventBus).
+10. [BRYXBanner](https://github.com/bryx-inc/BRYXBanner)
 
 
 ## Help me improve the documentation

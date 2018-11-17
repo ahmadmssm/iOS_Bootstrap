@@ -15,7 +15,7 @@ class Navigator: BaseNavigator {
     //
     static func startInitialView() {
         let mainViewController : MainViewController = mainStoryboard.instantiateViewController()
-        navigationController? = UINavigationController(rootViewController: mainViewController)
+        navigationController? = GradientNavigationController(rootViewController: mainViewController)
         let window : UIWindow = AppDelegate.getAppWindow()
         //
         UIView.transition(
@@ -24,6 +24,7 @@ class Navigator: BaseNavigator {
             options: .transitionFlipFromLeft,
             animations: {
                 window.rootViewController = navigationController
+                window.makeKeyAndVisible()
         }, completion: nil)
     }
     //
@@ -32,8 +33,7 @@ class Navigator: BaseNavigator {
         let mainViewController : TrendingMoviesViewController = storyboard.instantiateViewController()
         let leftSideMenuViewController : LeftSideMenuViewController = storyboard.instantiateViewController()
         let rightSideMenuViewController : RightSideMenuViewController = storyboard.instantiateViewController()
-        
-        let navigationController: UINavigationController = UINavigationController(rootViewController: mainViewController)
+        let navigationController: UINavigationController = GradientNavigationController(rootViewController: mainViewController)
         // Set the main menu view controller
         leftSideMenuViewController.mainViewController = mainViewController
         rightSideMenuViewController.mainViewController = mainViewController
@@ -49,9 +49,9 @@ class Navigator: BaseNavigator {
       //  getContext().navigationController?.pushViewController(vc, animated: false)
     }
     
-    static func goToViewController() {
+    static func goToCustomViewsViewController() {
         let viewController : CustomViewsViewController = mainStoryboard.instantiateViewController()
-        getContext().navigationController?.pushViewController(viewController, animated: false)
+        getContext().navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

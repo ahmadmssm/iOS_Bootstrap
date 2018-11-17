@@ -14,13 +14,64 @@ class CountriesViewController:
                         MyMenuItemTableViewController<CountriesPresenter,
                         CountriesViewDelegator, Country>,
                         CountriesViewDelegator,
-                        BaseTableViewDelegates {
+                        BaseTableViewDelegates,
+                        UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() { super.viewDidLoad() }
     
-    override func initUI() { self.title = "World countries" }
+    override func initUI() {
+//        let searchBar = UISearchBar()
+//        searchBar.sizeToFit()
+//        searchBar.placeholder = "World countries"
+//        navigationItem.titleView = searchBar
+        // Set view controller title
+        self.title = "World countries"
+        //
+        if #available(iOS 11.0, *) {
+            //
+            let searchController = UISearchController(searchResultsController: nil)
+            // Customise search controller
+            searchController.hidesNavigationBarDuringPresentation = false
+            navigationItem.searchController = searchController
+            navigationItem.hidesSearchBarWhenScrolling = false
+            navigationController?.hidesBarsWhenKeyboardAppears = false
+            // searchController.searchBar.setValue("Search", forKey: "cancelButtonText")
+            // Search bar
+            let searchBar = searchController.searchBar
+            searchBar.delegate = self
+            // This property is mandatory for the cncel button call back to work, otherwise it wont work.
+            // Ref : https://stackoverflow.com/questions/48090329/search-bar-cancel-button-delegate-not-called
+            self.definesPresentationContext = true
+            // Customise search bar
+            searchBar.tintColor = UIColor.white
+            searchBar.barTintColor = UIColor.white
+            if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+                textfield.textColor = UIColor.blue
+                if let backgroundview = textfield.subviews.first {
+                    // Background color
+                    backgroundview.backgroundColor = UIColor.white
+                    // Rounded corner
+                    backgroundview.layer.cornerRadius = 15
+                    backgroundview.clipsToBounds = true
+                }
+            }
+            //
+            let gradient : CAGradientLayer = CAGradientLayer()
+            gradient.frame = searchBar.bounds
+            gradient.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
+            gradient.startPoint = CGPoint(x: 0, y: 0)
+            gradient.endPoint = CGPoint(x: 1, y: 0)
+            if let gardientImage = UIImage.getGradientImageFrom(gradientLayer: gradient) {
+                navigationController?.navigationBar.barTintColor = UIColor(patternImage: gardientImage)
+            }
+            // Add search controller to navigation controller
+            navigationItem.searchController = searchController
+            // Customise navigation bar
+            navigationItem.hidesSearchBarWhenScrolling = false
+        }
+    }
     
     override func initTableViewAdapterConfiguraton() {
         getTableViewAdapter().configureTableWithXibCell(tableView: tableView, nibClass: CountriesCell.self, delegate: self)
@@ -53,9 +104,7 @@ class CountriesViewController:
         return cell
     }
     
-    func rowDidSelected(tableView: UITableView, indexPath: IndexPath) {
-       // Navigator.goToCountryDetailsViewController(country: getTableViewDataSource[indexPath.row])
-    }
+    func rowDidSelected(tableView: UITableView, indexPath: IndexPath) {}
     
     func emptyDataSetShouldDisplay() -> Bool { return self.isEmptyDataSource }
     
@@ -81,5 +130,7 @@ class CountriesViewController:
     func didFailToGetCountries(error: String) {
         SCLAlertView().showError("Error", subTitle: error)
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {}
     
 }
