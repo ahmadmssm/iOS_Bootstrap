@@ -1,14 +1,13 @@
 //
-//  SideMenuViewController.swift
-//  SlideMenuControllerSwift
+//  LeftSideMenuViewController.swift
 //
-//  Created by Yuji Hato on 12/3/14.
+//
 //
 
 import iOS_Bootstrap
 
-class SideMenuViewController :
-            BaseSideMenuViewController
+class LeftSideMenuViewController :
+            BaseSideMenuTableViewController
                     <BasePresenter<BaseViewDelegator>, BaseViewDelegator, SideMenuModel> {
 
     //
@@ -17,7 +16,6 @@ class SideMenuViewController :
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileTitle: UILabel!
 
-    
     override func viewDidLoad() { super.viewDidLoad() }
     
     override func viewWillDisappear(_ animated: Bool) { super.viewWillAppear(animated) }

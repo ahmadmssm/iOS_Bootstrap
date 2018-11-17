@@ -9,7 +9,9 @@ import UIKit
 
 // Basic MVP
 open class BaseTabBarController <T, V> :
-                              UITabBarController, BaseViewDelegator where T : BasePresenter<V> {
+                              UITabBarController,
+                              BaseViewDelegator
+                              where T : BasePresenter<V> {
 
     private var presenter : T!
     

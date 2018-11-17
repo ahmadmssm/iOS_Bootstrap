@@ -11,14 +11,9 @@ open class BaseTableViewController <T, V, D> :
     
     private let tableViewAdapter : TableviewAdapter = TableviewAdapter()
     public var isEmptyDataSource : Bool = false
+    //
     
-    public final func getTableViewAdapter() -> TableviewAdapter {
-        return tableViewAdapter
-    }
-    
-//    public final func getTableViewDataSource() -> [D] {
-//        return tableViewAdapter.getDataSource as! [D]
-//    }
+    public final func getTableViewAdapter() -> TableviewAdapter { return tableViewAdapter }
     
     public var getTableViewDataSource : [D] {
         get { return tableViewAdapter.getDataSource as! [D] }

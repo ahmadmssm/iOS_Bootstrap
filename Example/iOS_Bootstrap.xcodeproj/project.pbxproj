@@ -42,7 +42,7 @@
 		C966063E2114A04C00E2D38A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96606402114A04C00E2D38A /* Localizable.strings */; };
 		C97CB4032190E94A00F396D3 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97CB4022190E94A00F396D3 /* Currency.swift */; };
 		C99AA05A21871BBB001683B8 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99AA05921871BBB001683B8 /* Menu.storyboard */; };
-		C99AA05C21872013001683B8 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA05B21872013001683B8 /* SideMenuViewController.swift */; };
+		C99AA05C21872013001683B8 /* LeftSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA05B21872013001683B8 /* LeftSideMenuViewController.swift */; };
 		C99AA0622187388C001683B8 /* TrendingMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA05E2187388B001683B8 /* TrendingMoviesViewController.swift */; };
 		C99AA0632187388C001683B8 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA05F2187388B001683B8 /* CountriesViewController.swift */; };
 		C99AA0642187388C001683B8 /* GPSWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0602187388B001683B8 /* GPSWeatherViewController.swift */; };
@@ -73,6 +73,7 @@
 		C9CC0E4D2191997E00AF9D62 /* AdditionalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0E4C2191997E00AF9D62 /* AdditionalData.swift */; };
 		C9CC0E562192449000AF9D62 /* WeatherMenuItemTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0E552192449000AF9D62 /* WeatherMenuItemTabBarController.swift */; };
 		C9CC0E59219245D300AF9D62 /* NetworkWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0E58219245D300AF9D62 /* NetworkWeatherViewController.swift */; };
+		C9F0E25B21A034780038C194 /* RightSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0E25A21A034780038C194 /* RightSideMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,7 +135,7 @@
 		C97CB4022190E94A00F396D3 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C99A404D21163028007B88A4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C99AA05921871BBB001683B8 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
-		C99AA05B21872013001683B8 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		C99AA05B21872013001683B8 /* LeftSideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideMenuViewController.swift; sourceTree = "<group>"; };
 		C99AA05E2187388B001683B8 /* TrendingMoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingMoviesViewController.swift; sourceTree = "<group>"; };
 		C99AA05F2187388B001683B8 /* CountriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		C99AA0602187388B001683B8 /* GPSWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSWeatherViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +166,7 @@
 		C9CC0E4C2191997E00AF9D62 /* AdditionalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalData.swift; sourceTree = "<group>"; };
 		C9CC0E552192449000AF9D62 /* WeatherMenuItemTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMenuItemTabBarController.swift; sourceTree = "<group>"; };
 		C9CC0E58219245D300AF9D62 /* NetworkWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherViewController.swift; sourceTree = "<group>"; };
+		C9F0E25A21A034780038C194 /* RightSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuViewController.swift; sourceTree = "<group>"; };
 		E8BFEB017ECAAB4B900CC096 /* iOS_Bootstrap.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = iOS_Bootstrap.podspec; path = ../iOS_Bootstrap.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EA97E69C3092BBDE3AC0DD10 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		EE1D9FD411B4C49B117C5CCA /* Pods-iOS_Bootstrap_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Example/Pods-iOS_Bootstrap_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -398,8 +400,8 @@
 		C97CB4052190F69700F396D3 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
-				C915C59B20CAC1F10029F5D9 /* CountriesCell.xib */,
 				C915C59A20CAC1F10029F5D9 /* CountriesCell.swift */,
+				C915C59B20CAC1F10029F5D9 /* CountriesCell.xib */,
 			);
 			name = TableCell;
 			sourceTree = "<group>";
@@ -487,7 +489,8 @@
 		C99AA09D21884867001683B8 /* SideMenuViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C99AA05B21872013001683B8 /* SideMenuViewController.swift */,
+				C99AA05B21872013001683B8 /* LeftSideMenuViewController.swift */,
+				C9F0E25A21A034780038C194 /* RightSideMenuViewController.swift */,
 				C99AA09621884704001683B8 /* SideMenuCell */,
 			);
 			name = SideMenuViewController;
@@ -764,6 +767,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C91FFF652197816A00DFC0CC /* Coordinates.swift in Sources */,
+				C9F0E25B21A034780038C194 /* RightSideMenuViewController.swift in Sources */,
 				C915C59C20CAC1F10029F5D9 /* CountriesCell.swift in Sources */,
 				C9AF5B2221599F2A00C1FED3 /* ErrorModel.swift in Sources */,
 				C99AA06F218740CD001683B8 /* SideMenuCell.swift in Sources */,
@@ -801,7 +805,7 @@
 				C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */,
 				C91FFF592192F94B00DFC0CC /* WeatherViewDelegator.swift in Sources */,
 				C9B18B95218C6F6E004520F5 /* MoviesPage.swift in Sources */,
-				C99AA05C21872013001683B8 /* SideMenuViewController.swift in Sources */,
+				C99AA05C21872013001683B8 /* LeftSideMenuViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				C93E4B532190575300A62059 /* Forcast.swift in Sources */,
 				C99AA0842187D3D0001683B8 /* NetworkWeatherViewDelegator.swift in Sources */,

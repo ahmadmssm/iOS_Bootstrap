@@ -30,12 +30,16 @@ class Navigator: BaseNavigator {
     static func goToSideMenuStoryboard() {
         let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.menu)
         let mainViewController : TrendingMoviesViewController = storyboard.instantiateViewController()
-        let sideMenuViewController : SideMenuViewController = storyboard.instantiateViewController()
+        let leftSideMenuViewController : LeftSideMenuViewController = storyboard.instantiateViewController()
+        let rightSideMenuViewController : RightSideMenuViewController = storyboard.instantiateViewController()
+        
         let navigationController: UINavigationController = UINavigationController(rootViewController: mainViewController)
         // Set the main menu view controller
-        sideMenuViewController.mainViewController = mainViewController
+        leftSideMenuViewController.mainViewController = mainViewController
+        rightSideMenuViewController.mainViewController = mainViewController
         // Add rignt and/or left menu (We can add 2 different menues for right and left sides).
-        let slidingMenu = MySlidingMenu ( mainViewController:navigationController, leftMenuViewController: sideMenuViewController)
+//        let slidingMenu = MySlidingMenu (mainViewController:navigationController, leftMenuViewController: leftSideMenuViewController)
+        let slidingMenu = MySlidingMenu (mainViewController:navigationController, leftMenuViewController: leftSideMenuViewController, rightMenuViewController: rightSideMenuViewController)
         // getContext().navigationController?.pushViewController(slidingMenu, animated: true)
         getContext().present(slidingMenu, animated: true, completion: nil)
     }

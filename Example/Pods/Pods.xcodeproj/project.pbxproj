@@ -393,7 +393,7 @@
 		7EAB35D73F4BE8BFA9BEE455FEB14366 /* SVGKPointsAndPathsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8916FC8F8A86C5C33A330FD20808C091 /* SVGKPointsAndPathsParser.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		7F1EDFE8763C5CFFB7739184B470F44B /* ConnectableObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD754A5A2B3649197A4C35911727FEAF /* ConnectableObservableType.swift */; };
 		7F25F3DC76AEE5D7B655A3B7D65A3F99 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F6B4F319A650B7FBB845DEAA229F0 /* Configuration.swift */; };
-		7F2A7026B420DBD168F81F7F828EBF44 /* BaseSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96056EBE91D35DF73095F39562AA5 /* BaseSideMenuViewController.swift */; };
+		7F2A7026B420DBD168F81F7F828EBF44 /* BaseSideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF96056EBE91D35DF73095F39562AA5 /* BaseSideMenuTableViewController.swift */; };
 		7F3E50F236F5E3B91355131027121599 /* SVGElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C08A96EF776C13662AFF3D91B5E58C /* SVGElement.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		7FBE93A4916BAE76F95DFFEE3D2FF770 /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8DDAF9C7F289B66C4D41FF01211077 /* SWActionSheet.m */; };
 		7FDA0A50E41A8245F215BB08E151BCA7 /* SVGPathElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EC2560E72315D5F8C4AEBCD5DFD2F99 /* SVGPathElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -616,6 +616,9 @@
 		C92218322199E35D00C03C57 /* Bundle + App name.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92218312199E35D00C03C57 /* Bundle + App name.swift */; };
 		C923373A2E06D8740647FFACB93FE79B /* Disposables.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA2881BCC31276269865A139E85125 /* Disposables.swift */; };
 		C9867F612199A95400FB7C30 /* Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9867F602199A95400FB7C30 /* Skeleton.swift */; };
+		C9C12082219AD7E3003227B7 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C12081219AD7E2003227B7 /* Banner.swift */; };
+		C9C12084219AD92D003227B7 /* SwiftyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C12083219AD92C003227B7 /* SwiftyImage.swift */; };
+		C9F0E25D21A042550038C194 /* BaseSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0E25C21A042550038C194 /* BaseSideMenuViewController.swift */; };
 		CA0256D0C1228F5192A51FFBC8421025 /* DDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = E62A5DCE70E464114E2E3BB147353F2D /* DDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA2D90B84138B537CDA7277E08C32537 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C5317B1B96806EA1047CDFC4C6913 /* Window.swift */; };
 		CA7D02F16159FDD29DCC9BC38A730F43 /* Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6901EE2CA4DF0DE70BCE69346C78B8A /* Kingfisher.swift */; };
@@ -1052,7 +1055,7 @@
 		1DF0166EB73F65FEC4C3251566F70C2F /* SVGKParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVGKParser.h; path = Source/Parsers/SVGKParser.h; sourceTree = "<group>"; };
 		1EB35A2DC03B88EE81A7ECBCFE43A063 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
 		1EF670BDED0F6A792DF18552FD877241 /* Double + toString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Double + toString.swift"; sourceTree = "<group>"; };
-		1EF96056EBE91D35DF73095F39562AA5 /* BaseSideMenuViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseSideMenuViewController.swift; sourceTree = "<group>"; };
+		1EF96056EBE91D35DF73095F39562AA5 /* BaseSideMenuTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseSideMenuTableViewController.swift; sourceTree = "<group>"; };
 		1EFB971916BEEA757FE2282FA1CD5032 /* DateFormatterTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFormatterTransform.swift; path = Source/DateFormatterTransform.swift; sourceTree = "<group>"; };
 		1F34D5A8EA9033E6ACCEF7BB05393EA3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FD2BBBF251FAF5A983BB51EADCC5191 /* AFDateHelper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFDateHelper-umbrella.h"; sourceTree = "<group>"; };
@@ -1603,6 +1606,9 @@
 		C92218312199E35D00C03C57 /* Bundle + App name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle + App name.swift"; sourceTree = "<group>"; };
 		C981EAFA3F5ED8EFF91E61F275DBAD88 /* LucidMoyaError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LucidMoyaError.swift; sourceTree = "<group>"; };
 		C9867F602199A95400FB7C30 /* Skeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skeleton.swift; sourceTree = "<group>"; };
+		C9C12081219AD7E2003227B7 /* Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		C9C12083219AD92C003227B7 /* SwiftyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyImage.swift; sourceTree = "<group>"; };
+		C9F0E25C21A042550038C194 /* BaseSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSideMenuViewController.swift; sourceTree = "<group>"; };
 		CAA73CE14CFCBD4BE9180822434F232C /* DTPagerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTPagerController.swift; sourceTree = "<group>"; };
 		CB414C4E75D8878DE0415029F0B237DE /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB57DDDAADC446FE64DDCE8B57C242B8 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
@@ -2664,6 +2670,7 @@
 				3DD345C24CC9782D00FDE63E10CA8EC0 /* UIButton + ActivityIndicator.swift */,
 				5A92DFD71155069AA541CC93881787A1 /* UIColor + Hex.swift */,
 				D2E008B10D10F1139A642031E8F9176B /* UIImage + Gif.swift */,
+				C9C12083219AD92C003227B7 /* SwiftyImage.swift */,
 				F9ED1843C4700ACFDCF9B261B1C8B1DD /* UILabel + format part of the text.swift */,
 				A2A5EF1BF8389DED8D2CA8FA433F3801 /* Toast */,
 			);
@@ -2856,6 +2863,7 @@
 				772EF98F1D06D61963126A9C16E82A1F /* Picker.swift */,
 				D3A0453552BDD6746D454EEA8C0C0BEF /* SlideMenuController.swift */,
 				4AB7E6FA58E077664BB3BDBD12329696 /* TTGSnackbar.swift */,
+				C9C12081219AD7E2003227B7 /* Banner.swift */,
 				27A6BB7D8199A9A020F609C2D40D75E2 /* ActionSheetPicker */,
 				F6CE75BAC88706975FB8E229E48E012F /* DTPagerController */,
 				1863831A3B088C99B87D587C2CF8A8C8 /* ToogleButton */,
@@ -2953,7 +2961,8 @@
 			children = (
 				50196F7099AEB46B67BB13949CED6661 /* BaseSideMenuController.swift */,
 				0C133C81AF03D052AA6793D8A9157A49 /* BaseSideMenuModel.swift */,
-				1EF96056EBE91D35DF73095F39562AA5 /* BaseSideMenuViewController.swift */,
+				C9F0E25C21A042550038C194 /* BaseSideMenuViewController.swift */,
+				1EF96056EBE91D35DF73095F39562AA5 /* BaseSideMenuTableViewController.swift */,
 				447BD2192542719A33B6E84D87E03A89 /* MenuItemViewController base classes.swift */,
 				844826E14E2ED930D4CB8CB7DF340FE2 /* UIViewController + SideMenuIcon.swift */,
 			);
@@ -4330,15 +4339,17 @@
 				3E32E85AFBB56C535EA10ED35BF9B556 /* BasePresenter.swift in Sources */,
 				ACE5DDD52C822FF37014D32237AFFDC2 /* BaseSideMenuController.swift in Sources */,
 				63F6782CC07BBE5E1BA7F316BE0E96ED /* BaseSideMenuModel.swift in Sources */,
-				7F2A7026B420DBD168F81F7F828EBF44 /* BaseSideMenuViewController.swift in Sources */,
+				7F2A7026B420DBD168F81F7F828EBF44 /* BaseSideMenuTableViewController.swift in Sources */,
 				FA9008E70D8615075AC38019654879BC /* BaseTabBarController.swift in Sources */,
 				939742150AFFE0427DC5BB9274B9C72A /* BaseTableView.swift in Sources */,
 				594B7C7073F4259AD69A2D44BD7D4BBA /* BaseTableViewCell.swift in Sources */,
 				373859C5EAEF78E3FF037A33AFB1FA78 /* BaseTableViewController.swift in Sources */,
+				C9C12082219AD7E3003227B7 /* Banner.swift in Sources */,
 				32C8284227268D29520265571A219AFF /* BaseTableViewDelegates.swift in Sources */,
 				05128A10A4FF0E7FDF616C6C0DEEDFB3 /* BaseUser.swift in Sources */,
 				6EF164814DDFB8D62F2F631D6B39189A /* BaseView.swift in Sources */,
 				73DD4C815D361B1322FB896F5875317D /* BaseViewController.swift in Sources */,
+				C9F0E25D21A042550038C194 /* BaseSideMenuViewController.swift in Sources */,
 				B8342CE712127123740416CDBDBE91A3 /* BaseViewDelegators.swift in Sources */,
 				85C56145657EA632E416650101C01296 /* BuildVariantService.swift in Sources */,
 				7D7FB081A52CE8987B8C04AA58E53AED /* CardView.swift in Sources */,
@@ -4376,6 +4387,7 @@
 				A6162E839E76D4C6A15FB056F745E67F /* GlobalModules.swift in Sources */,
 				2A8CD942F9BC89AF35A29205D927CCC9 /* How to use.md in Sources */,
 				D98280080A6BA3F0C0F3ECBBD8CEC3AD /* How_to_use.strings in Sources */,
+				C9C12084219AD92D003227B7 /* SwiftyImage.swift in Sources */,
 				4738244375E12CFFAD3B7CFB31F07340 /* How_to_use_toast.strings in Sources */,
 				C91FFF5F219714CC00DFC0CC /* Disposable + cancel request.swift in Sources */,
 				F95A1ECEEBFF6CFF0E3B254074EF2FEC /* InternetConnectionManager.swift in Sources */,

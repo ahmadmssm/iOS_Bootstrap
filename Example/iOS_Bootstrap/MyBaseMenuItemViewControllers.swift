@@ -14,6 +14,7 @@ class MyMenuItemViewController <P, V> : BaseMenuItemViewController <P, V> where 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setLeftSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side-menu-icon"))
+        self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side-menu-icon"))
     }
 }
 
@@ -22,6 +23,7 @@ class MyMenuItemTabBarController <P, V> : BaseMenuItemTabBarController <P, V> wh
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setLeftSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side-menu-icon"))
+        self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side-menu-icon"))
     }
 }
 
@@ -30,5 +32,6 @@ class MyMenuItemTableViewController <P, V, M> : BaseMenuItemTableViewController 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setLeftSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side-menu-icon"))
+        self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side-menu-icon"))
     }
 }
