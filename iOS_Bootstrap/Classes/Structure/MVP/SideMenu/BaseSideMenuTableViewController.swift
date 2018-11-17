@@ -4,7 +4,7 @@
 //
 //  Created by Ahmad Mahmoud on 10/28/18.
 //
-
+    
 open class BaseSideMenuTableViewController<T, V, M> :
                                     BaseTableViewController<T, V, M>,
                                     BaseTableViewDelegates,
@@ -36,7 +36,7 @@ open class BaseSideMenuTableViewController<T, V, M> :
 
     open override func initUI() {}
 
-    open override func initTableViewAdapterConfiguraton() {
+    public final override func initTableViewAdapterConfiguraton() {
         getTableViewAdapter().configureTableWithXibCell(tableView: setupSideMenuTableView(), nibClass: setupMenuItemCell(), delegate: self)
         getTableViewAdapter().configurePaginationParameters(totalNumberOfItems: (menuItems?.count)!, itemsPerPage: (menuItems?.count)!)
         initDataSourceIfNeeded(tableViewDataSource: setupMenuItemsData())

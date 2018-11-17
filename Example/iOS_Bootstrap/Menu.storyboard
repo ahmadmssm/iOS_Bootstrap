@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Side Menu View Controller-->
+        <!--Left Side Menu View Controller-->
         <scene sceneID="ELk-hC-dVA">
             <objects>
-                <viewController storyboardIdentifier="SideMenuViewController" id="pg1-uK-cfI" customClass="SideMenuViewController" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LeftSideMenuViewController" id="pg1-uK-cfI" customClass="LeftSideMenuViewController" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="huz-Gn-nfV"/>
                         <viewControllerLayoutGuide type="bottom" id="gf2-ul-wTq"/>
@@ -84,6 +84,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vco-7N-fAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="260.80000000000001" y="-632.38380809595208"/>
+        </scene>
+        <!--Right Side Menu View Controller-->
+        <scene sceneID="T9S-sF-IFk">
+            <objects>
+                <viewController storyboardIdentifier="RightSideMenuViewController" id="SLv-Yf-cfd" customClass="RightSideMenuViewController" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jax-q9-4de">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8j-CQ-egL">
+                                <rect key="frame" x="10" y="250" width="350" height="30"/>
+                                <state key="normal" title="Expandable tableview"/>
+                            </button>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3f7-Ho-zdR">
+                                <rect key="frame" x="10" y="325" width="350" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCt-Od-3GR">
+                                <rect key="frame" x="120" y="370" width="240" height="41"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="4zl-Xp-xBI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.26421716370558379" green="0.26421716370558379" blue="0.26421716370558379" alpha="0.4374197345890411" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="u8j-CQ-egL" firstAttribute="top" secondItem="Czu-al-vhQ" secondAttribute="top" constant="230" id="7iS-Xy-k58"/>
+                            <constraint firstItem="3f7-Ho-zdR" firstAttribute="top" secondItem="u8j-CQ-egL" secondAttribute="bottom" constant="45" id="Bn0-5V-Ipf"/>
+                            <constraint firstItem="mCt-Od-3GR" firstAttribute="leading" secondItem="Czu-al-vhQ" secondAttribute="leading" constant="120" id="Cdn-Ea-Ux5"/>
+                            <constraint firstItem="Czu-al-vhQ" firstAttribute="trailing" secondItem="3f7-Ho-zdR" secondAttribute="trailing" constant="15" id="NS8-d3-l6Y"/>
+                            <constraint firstItem="Czu-al-vhQ" firstAttribute="trailing" secondItem="u8j-CQ-egL" secondAttribute="trailing" constant="15" id="Rxk-Jd-wNY"/>
+                            <constraint firstItem="3f7-Ho-zdR" firstAttribute="leading" secondItem="Czu-al-vhQ" secondAttribute="leading" constant="10" id="US2-Ha-BNx"/>
+                            <constraint firstItem="Czu-al-vhQ" firstAttribute="trailing" secondItem="mCt-Od-3GR" secondAttribute="trailing" constant="15" id="iJH-Jp-HSZ"/>
+                            <constraint firstItem="u8j-CQ-egL" firstAttribute="leading" secondItem="Czu-al-vhQ" secondAttribute="leading" constant="10" id="j9m-uO-oW3"/>
+                            <constraint firstItem="mCt-Od-3GR" firstAttribute="top" secondItem="3f7-Ho-zdR" secondAttribute="bottom" constant="24" id="rL5-Qi-Nka"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Czu-al-vhQ"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="menuItems" destination="u8j-CQ-egL" collectionClass="NSMutableArray" id="p8A-WO-1Nz"/>
+                        <outletCollection property="menuItems" destination="3f7-Ho-zdR" collectionClass="NSMutableArray" id="iaF-iJ-4YG"/>
+                        <outletCollection property="menuItems" destination="mCt-Od-3GR" collectionClass="NSMutableArray" id="hOr-9E-RMB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wVV-3C-ejR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1376.8" y="-602.24887556221893"/>
         </scene>
         <!--Trending Movies View Controller-->
         <scene sceneID="WrI-uT-kCq">

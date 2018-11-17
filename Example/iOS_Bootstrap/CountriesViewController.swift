@@ -11,10 +11,10 @@ import SVGKit
 import SCLAlertView
 
 class CountriesViewController:
-    MyMenuItemTableViewController<CountriesPresenter,
-    CountriesViewDelegator, Country>,
-    CountriesViewDelegator,
-    BaseTableViewDelegates {
+                        MyMenuItemTableViewController<CountriesPresenter,
+                        CountriesViewDelegator, Country>,
+                        CountriesViewDelegator,
+                        BaseTableViewDelegates {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,9 +30,13 @@ class CountriesViewController:
     }
     
     func configureNumberOfRowsForSection(tableView: UITableView, section: Int) -> Int {
-        if (getTableViewDataSource.count > 0) { return getTableViewDataSource.count }
+        if (getTableViewDataSource.count > 0) {
+            return getTableViewDataSource.count
+        }
         return 4
     }
+    
+    func withExpandableCell() -> Bool { return true }
     
     func configureTableViewCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CountriesCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
@@ -50,7 +54,7 @@ class CountriesViewController:
     }
     
     func rowDidSelected(tableView: UITableView, indexPath: IndexPath) {
-        Navigator.goToCountryDetailsViewController(country: getTableViewDataSource[indexPath.row])
+       // Navigator.goToCountryDetailsViewController(country: getTableViewDataSource[indexPath.row])
     }
     
     func emptyDataSetShouldDisplay() -> Bool { return self.isEmptyDataSource }

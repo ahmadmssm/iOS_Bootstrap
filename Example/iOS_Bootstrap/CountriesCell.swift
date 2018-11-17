@@ -10,7 +10,7 @@ import UIKit
 import iOS_Bootstrap
 
 class CountriesCell: BaseTableViewCell {
-
+    
     @IBOutlet weak var labelCountryName: UILabel!
     @IBOutlet weak var labelCapitalName: UILabel!
     @IBOutlet weak var labelRegion: UILabel!

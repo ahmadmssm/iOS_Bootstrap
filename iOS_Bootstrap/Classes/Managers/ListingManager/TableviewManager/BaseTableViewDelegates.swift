@@ -18,6 +18,6 @@ public protocol BaseTableViewDelegates : TableViewOptionalDelegates {
     @objc optional func configureHeightForRowAt (tableView: UITableView, indexPath: IndexPath) -> CGFloat
     @objc optional func configureNumberOfSections(tableView: UITableView) -> Int
     @objc optional func loadMore (tableView: UITableView, forPage page : Int, updatedDataSource : [Any])
-    
-
+    //
 }
+
