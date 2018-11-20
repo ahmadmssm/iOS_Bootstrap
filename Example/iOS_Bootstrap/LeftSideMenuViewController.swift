@@ -32,9 +32,9 @@ class LeftSideMenuViewController :
     
     override func setupMenuItemsData() -> [SideMenuModel] {
         var menu : [SideMenuModel] = []
-        let trendingMoviesMenuItem = SideMenuModel(itemName: "Trending Movies", itemId: 0, itemIcon: #imageLiteral(resourceName: "trending-movies"))
-        let countriesListMenuItem = SideMenuModel(itemName: "World Countries", itemId: 1, itemIcon: #imageLiteral(resourceName: "bill"))
-        let weatherProviderMenuItem = SideMenuModel(itemName: "Weather provider", itemId: 2, itemIcon: #imageLiteral(resourceName: "bill"))
+        let trendingMoviesMenuItem = SideMenuModel(itemName: "Trending Movies", itemId: 0, itemIcon: #imageLiteral(resourceName: "trending_movies"))
+        let countriesListMenuItem = SideMenuModel(itemName: "World Countries", itemId: 1, itemIcon: #imageLiteral(resourceName: "world_countries"))
+        let weatherProviderMenuItem = SideMenuModel(itemName: "Weather provider", itemId: 2, itemIcon: #imageLiteral(resourceName: "weather"))
         menu.append(trendingMoviesMenuItem)
         menu.append(countriesListMenuItem)
         menu.append(weatherProviderMenuItem)

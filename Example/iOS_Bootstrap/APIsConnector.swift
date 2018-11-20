@@ -20,8 +20,22 @@ class APIsConnector : BaseAPIsConnector<APIs> {
 
     override func configureNetworkPlugginsIfNeeded() -> [PluginType] {
         var plugins : [PluginType] = []
-        let networkLogger = NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)
-        plugins.append(networkLogger)
+        //
+        let networkLoggerPlugin = NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)
+        let networkActivityPlugin = NetworkActivityPlugin { change, _  -> () in
+            switch(change) {
+            case .began:
+                EZLoadingActivity.show("Loading..", disableUI: true)
+                break
+            case .ended:
+                EZLoadingActivity.hide()
+                break
+            }
+        }
+        //
+        plugins.append(networkLoggerPlugin)
+        plugins.append(networkActivityPlugin)
+        //
         return plugins
     }
 
@@ -133,3 +147,4 @@ class APIsConnector : BaseAPIsConnector<APIs> {
     }
 
 }
+

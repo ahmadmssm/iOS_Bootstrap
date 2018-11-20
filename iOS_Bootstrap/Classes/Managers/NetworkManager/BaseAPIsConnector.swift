@@ -21,8 +21,7 @@ open class BaseAPIsConnector<T : GenericAPIs> : GenericConnector {
     }
 
     open func configureNetworkPlugginsIfNeeded() -> [PluginType] { return [] }
-    open func enableNetworkPlugins() -> Bool { return true }
+    open func enableNetworkPlugins() -> Bool { return false }
     open func configureErrorHandle() { fatalError("Must Override") }
-
+    
 }
-

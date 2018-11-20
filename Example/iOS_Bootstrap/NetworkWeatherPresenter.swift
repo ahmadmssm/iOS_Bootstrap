@@ -17,9 +17,7 @@ class NetworkWeatherPresenter : BasePresenter<NetworkWeatherViewDelegator> {
     override func viewControllerDidLoaded() { getFiveDaysWeather() }
     
     private func getFiveDaysWeather() {
-        getViewDelegator().loadingDidStarted!()
         APIsConnector.sharedInstance.getFiveDaysWeatherForcastWithNetworkProvidedLocation() { response in
-            self.getViewDelegator().didFinishedLoading?()
             switch response {
             case .success(let weatherFocast):
                 self.getViewDelegator().didGetFiveDaysWeather(weatherForcast: weatherFocast)

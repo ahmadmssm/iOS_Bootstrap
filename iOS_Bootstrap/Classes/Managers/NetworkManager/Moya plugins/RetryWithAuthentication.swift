@@ -16,13 +16,6 @@ public extension Notification.Name {
     static let expiredToken = Notification.Name("expiredToken")
 }
 
-//public extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
-//    public func showLoading() -> Single<ElementType> {
-//        Log.debug("Hopa")
-//        return Observable.empty().asSingle()
-//    }
-//}
-
 public extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
     public func filterUnAuthorized() -> Single<ElementType> {
         return flatMap { response -> Single<ElementType> in

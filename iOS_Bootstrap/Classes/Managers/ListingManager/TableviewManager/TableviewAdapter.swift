@@ -26,11 +26,7 @@ open class TableviewAdapter : NSObject {
     private var firstTime : Bool = true
     //
     fileprivate var indicator : UIActivityIndicatorView?
-    //
-//    public fileprivate(set) var expandedSections: [Int: Bool] = [:]
-//    open var expandingAnimation: UITableViewRowAnimation = ExpandableTableViewDefaultValues.expandingAnimation
-//    open var collapsingAnimation: UITableViewRowAnimation = ExpandableTableViewDefaultValues.collapsingAnimation
-    //
+    
     
     public var getDataSource : [Any] {
         get { if (tableViewDataSource != nil) { return tableViewDataSource }; return [] }
@@ -134,12 +130,7 @@ open class TableviewAdapter : NSObject {
   //  public final func reloadTable(pageItems:[Any], currentPage : Int) {
     public final func reloadTable(pageItems:[Any]) {
         //
-       // self.mCurrentPage = currentPage
-       // self.mCurrentPage += 1
-//        if (currentPage < mNumberOfPages) { hasMore = true }
-        if (self.mCurrentPage < mNumberOfPages) {
-            hasMore = true
-        }
+        if (self.mCurrentPage < mNumberOfPages) { hasMore = true }
         //
         if (self.tableViewDataSource.isEmpty) { self.tableViewDataSource = pageItems }
         else {
@@ -170,85 +161,6 @@ open class TableviewAdapter : NSObject {
     
 }
 
-extension TableviewAdapter {
-//    public func expand(_ section: Int) {
-//        animate(with: .expand, forSection: section)
-//    }
-//
-//    public func collapse(_ section: Int) {
-//        animate(with: .collapse, forSection: section)
-//    }
-//
-//    private func animate(with type: ExpandableTableViewActionType, forSection section: Int) {
-//        guard canExpand(section) else { return }
-//        let sectionIsExpanded = didExpand(section)
-//        //If section is visible and action type is expand, OR, If section is not visible and action type is collapse, return.
-//        if ((type == .expand) && (sectionIsExpanded)) || ((type == .collapse) && (!sectionIsExpanded)) {
-//            return
-//        }
-//        assign(section, asExpanded: (type == .expand))
-//        startAnimating(self.mTableview, with: type, forSection: section)
-//    }
-//
-//    private func startAnimating(_ tableView: UITableView, with type: ExpandableTableViewActionType, forSection section: Int) {
-//
-//        let headerCell = (self.mTableview.cellForRow(at: IndexPath(row: 0, section: section)))
-//        let headerCellConformant = headerCell as? ExpyTableViewHeaderCell
-//
-//        CATransaction.begin()
-//        headerCell?.isUserInteractionEnabled = false
-//
-//        //Inform the delegates here.
-//        headerCellConformant?.changeState((type == .expand ? .willExpand : .willCollapse), cellReuseStatus: false)
-//        mDelegate?.tableView(tableView, expyState: (type == .expand ? .willExpand : .willCollapse), changeForSection: section)
-//
-//        CATransaction.setCompletionBlock {
-//            //Inform the delegates here.
-//            headerCellConformant?.changeState((type == .expand ? .didExpand : .didCollapse), cellReuseStatus: false)
-//
-//            self.mDelegate?.tableView(tableView, expyState: (type == .expand ? .didExpand : .didCollapse), changeForSection: section)
-//            headerCell?.isUserInteractionEnabled = true
-//        }
-//
-//        self.mTableview.beginUpdates()
-//
-//        //Don't insert or delete anything if section has only 1 cell.
-//        if let sectionRowCount = mTableview.dataSource?.tableView(tableView, numberOfRowsInSection: section), sectionRowCount > 1 {
-//
-//            var indexesToProcess: [IndexPath] = []
-//
-//            //Start from 1, because 0 is the header cell.
-//            for row in 1..<sectionRowCount {
-//                indexesToProcess.append(IndexPath(row: row, section: section))
-//            }
-//
-//            //Expand means inserting rows, collapse means deleting rows.
-//            if type == .expand {
-//                mTableview.insertRows(at: indexesToProcess, with: expandingAnimation)
-//            }
-//            else if type == .collapse {
-//                mTableview.deleteRows(at: indexesToProcess, with: collapsingAnimation)
-//            }
-//        }
-//        mTableview.endUpdates()
-//
-//        CATransaction.commit()
-//    }
-//
-//    private func canExpand(_ section: Int) -> Bool {
-//        //If canExpandSections delegate method is not implemented, it defaults to true.
-//        return mDelegate.tableView?(mTableview, canExpandSection: section) ?? ExpandableTableViewDefaultValues.expandableStatus
-//    }
-//
-//    private func didExpand(_ section: Int) -> Bool {
-//        return expandedSections[section] ?? false
-//    }
-//
-//    private func assign(_ section: Int, asExpanded: Bool) {
-//        expandedSections[section] = asExpanded
-//    }
-}
-
 extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     // TableView callbacks
     //
@@ -264,9 +176,6 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     }
     // Configure number of sections
     public func numberOfSections(in tableView: UITableView) -> Int {
-//        if (mDelegate?.withExpandableCell?() != nil && (mDelegate?.withExpandableCell?())!) {
-//            return (mDelegate?.configureNumberOfSections?(tableView: tableView)) ?? tableViewDataSource.count
-//        }
         return (mDelegate?.configureNumberOfSections?(tableView: tableView)) ?? 1
     }
     // Configure cell
@@ -295,7 +204,6 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
                     mTableview.tableFooterView?.isHidden = false
                     //
                     hasMore = false
-                  //  mDelegate?.loadMore?()
                     mDelegate.loadMore?(tableView: mTableview, forPage: mCurrentPage, updatedDataSource: tableViewDataSource)
                 }
             }

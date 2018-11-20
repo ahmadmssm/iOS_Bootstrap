@@ -9,29 +9,27 @@
 import iOS_Bootstrap
 import SVGKit
 import SCLAlertView
+import RxSwift
+import RxCocoa
 
 class CountriesViewController:
                         MyMenuItemTableViewController<CountriesPresenter,
                         CountriesViewDelegator, Country>,
                         CountriesViewDelegator,
-                        BaseTableViewDelegates,
-                        UISearchBarDelegate {
+                        BaseTableViewDelegates {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak private var tableView: UITableView!
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() { super.viewDidLoad() }
     
     override func initUI() {
-//        let searchBar = UISearchBar()
-//        searchBar.sizeToFit()
-//        searchBar.placeholder = "World countries"
-//        navigationItem.titleView = searchBar
-        // Set view controller title
+        //
         self.title = "World countries"
         //
         if #available(iOS 11.0, *) {
             //
-            let searchController = UISearchController(searchResultsController: nil)
+            let searchController = NoCancelButtonSearchController(searchResultsController: nil)
             // Customise search controller
             searchController.hidesNavigationBarDuringPresentation = false
             navigationItem.searchController = searchController
@@ -40,7 +38,6 @@ class CountriesViewController:
             // searchController.searchBar.setValue("Search", forKey: "cancelButtonText")
             // Search bar
             let searchBar = searchController.searchBar
-            searchBar.delegate = self
             // This property is mandatory for the cncel button call back to work, otherwise it wont work.
             // Ref : https://stackoverflow.com/questions/48090329/search-bar-cancel-button-delegate-not-called
             self.definesPresentationContext = true
@@ -70,6 +67,17 @@ class CountriesViewController:
             navigationItem.searchController = searchController
             // Customise navigation bar
             navigationItem.hidesSearchBarWhenScrolling = false
+            //
+            searchBar
+                .rx
+                .text // Observable propert
+                .orEmpty
+                .debounce(1.5, scheduler: MainScheduler.instance)
+                .subscribe(onNext: { [unowned self] searchText in
+                    // Here we will be notified of every new value
+                    self.getPresenter().findCountriesWithText(text: searchText, currentDataSource: self.getTableViewDataSource)
+                })
+                .disposed(by: disposeBag)
         }
     }
     
@@ -131,6 +139,14 @@ class CountriesViewController:
         SCLAlertView().showError("Error", subTitle: error)
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {}
+    func didGetSearchResults(filteredCountries: [Country]) {
+        getTableViewAdapter().setDataSource(dataSource: [])
+        getTableViewAdapter().setDataSource(dataSource: filteredCountries)
+        getTableViewAdapter().reloadTable()
+    }
+    
+    func didResetCountriesTable(countries: [Country]) {
+        getTableViewAdapter().reloadTable(pageItems: countries)
+    }
     
 }

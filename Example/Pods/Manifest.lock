@@ -8,14 +8,12 @@ PODS:
   - CocoaLumberjack/Extensions (3.4.2):
     - CocoaLumberjack/Default
   - HandyJSON (4.1.1)
-  - iOS_Bootstrap (0.7.3):
+  - iOS_Bootstrap (0.8.2):
     - HandyJSON (= 4.1.1)
     - IQKeyboardManagerSwift (= 5.0.0)
-    - Kingfisher (= 4.9.0)
     - Moya/RxSwift (~> 11.0)
     - SCLAlertView
   - IQKeyboardManagerSwift (5.0.0)
-  - Kingfisher (4.9.0)
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
@@ -24,6 +22,8 @@ PODS:
     - RxSwift (~> 4.0)
   - Result (3.2.4)
   - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
   - SCLAlertView (0.8)
@@ -33,6 +33,7 @@ PODS:
 DEPENDENCIES:
   - AFDateHelper (~> 4.2.2)
   - iOS_Bootstrap (from `../`)
+  - RxCocoa (~> 4.0)
   - SVGKit
 
 SPEC REPOS:
@@ -42,10 +43,10 @@ SPEC REPOS:
     - CocoaLumberjack
     - HandyJSON
     - IQKeyboardManagerSwift
-    - Kingfisher
     - Moya
     - Result
     - RxAtomic
+    - RxCocoa
     - RxSwift
     - SCLAlertView
     - SVGKit
@@ -59,16 +60,16 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
-  iOS_Bootstrap: 1ecd8e5b11fd75f44e91965553fc09add54938a7
+  iOS_Bootstrap: 5543324c619cacee4649cf74ed2b31c8b60afc8b
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
-  Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
 
-PODFILE CHECKSUM: a109c7a1606dd1fd71b3b92520d8f686a5097c53
+PODFILE CHECKSUM: 2bf9f5680b28f78b0e15c413b0186893eb40c029
 
 COCOAPODS: 1.5.3

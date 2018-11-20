@@ -37,6 +37,7 @@
 		C93E4B542190575300A62059 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B4B2190575200A62059 /* Main.swift */; };
 		C93E4B552190575300A62059 /* WeatherForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B4C2190575200A62059 /* WeatherForcast.swift */; };
 		C93E4B582190575300A62059 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B4F2190575200A62059 /* Wind.swift */; };
+		C946C12D21A3681100B0F553 /* NoCancelButtonSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946C12C21A3681100B0F553 /* NoCancelButtonSearchController.swift */; };
 		C953267C2189BE2500105260 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953267B2189BE2500105260 /* Movie.swift */; };
 		C966063E2114A04C00E2D38A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96606402114A04C00E2D38A /* Localizable.strings */; };
 		C970DD6B21A065FD0079B706 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970DD6A21A065FD0079B706 /* Section.swift */; };
@@ -133,6 +134,7 @@
 		C93E4B4B2190575200A62059 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		C93E4B4C2190575200A62059 /* WeatherForcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherForcast.swift; sourceTree = "<group>"; };
 		C93E4B4F2190575200A62059 /* Wind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
+		C946C12C21A3681100B0F553 /* NoCancelButtonSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCancelButtonSearchController.swift; sourceTree = "<group>"; };
 		C94D407021162AF4002E7623 /* ar-EG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "ar-EG"; path = "ar-EG.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C94D407821162C14002E7623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C953267B2189BE2500105260 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -401,6 +403,15 @@
 			path = MoviesModels;
 			sourceTree = "<group>";
 		};
+		C946C12B21A367F800B0F553 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				C970DD7821A07D280079B706 /* GradientNavigationController.swift */,
+				C946C12C21A3681100B0F553 /* NoCancelButtonSearchController.swift */,
+			);
+			name = CustomComponents;
+			sourceTree = "<group>";
+		};
 		C970DD7221A06F620079B706 /* ExpandableCellScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,7 +585,7 @@
 		C9C960F720FA8BA30023CDD7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C970DD7821A07D280079B706 /* GradientNavigationController.swift */,
+				C946C12B21A367F800B0F553 /* CustomComponents */,
 				C91FFF542192F17800DFC0CC /* BaseClasses */,
 				C99AA09E21885751001683B8 /* Storyboards + Xibs */,
 				C93E4B41218E232C00A62059 /* Scenes */,
@@ -746,10 +757,10 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
@@ -762,10 +773,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
@@ -837,6 +848,7 @@
 				C93E4B3D218D23DA00A62059 /* CustomViewsPresenter.swift in Sources */,
 				C99AA08B21884526001683B8 /* TrendingMoviesViewDelegator.swift in Sources */,
 				C99AA08F218845C9001683B8 /* CountriesViewDelegator.swift in Sources */,
+				C946C12D21A3681100B0F553 /* NoCancelButtonSearchController.swift in Sources */,
 				C91AF997218CCFAE00BB5559 /* StaticResources.swift in Sources */,
 				C953267C2189BE2500105260 /* Movie.swift in Sources */,
 				C93E4B542190575300A62059 /* Main.swift in Sources */,

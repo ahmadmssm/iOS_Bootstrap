@@ -69,7 +69,7 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 23. Collection view adapter.
 24. Reusable collection view adapter.
 25. Table and collection views pagination handler.
-26. Added Kingfisher  library.
+26. Image loading  ad caching from network out of the box.
 27. Coordinator design pattern + viewcontrollers naviagator base class + examples
 28. Simple depenfancy injection implementation.
 29. Refresh token plugin for moya.
@@ -99,7 +99,7 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 53. Event bus helper class.
 54. Added Skeleton helper class to add skeleton effect to UIViews, table and collection views.
 55. Added dropdown banner component.
-56. How to use, examples and documentation + references.
+56. How to use + examples + documentation + references.
 
 
 ## Upcoming features
@@ -161,19 +161,6 @@ Just import  `iOS_Bootstrap` and your are ready to go.
 
 ## How to use \(Highlights\)
 
-
-#### Table view adabter :
-Insetead of repeating tableview code every time you need a tableview, you can do the following :
-- First comfirm to the protocol named  `TableViewDelegates` and make your custom cell confirm to the `BaseTableViewCell`, then
-
-```swift
-let tableAdapter : TableviewAdapter = TableviewAdapter()
-tableAdapter.configureTableWithXibCell(tableView: tableview, dataSource: dataSource, nibClass: TableViewCell.self, delegate: self)
-```
-- Then all you have to do is to configure your cell and all the other delegates will be  handeled automatically, unless you want to handle it by yourself .
-
-> You can also use the `ReusableTableViewAdapter` if you have similar tableviews.
-
 #### Dequeuing cell simplified syntax :
 Ues this
 
@@ -191,7 +178,7 @@ Use this
 
 ```swift
 let storyboard = UIStoryboard.getStoryboardWithName(Storyboard.home.rawValue)
-let homeVC = storyboard.instantiateInitialViewController() as! HomeVC
+let homeVC : HomeVC = storyboard.instantiateInitialViewController()
 present(homeVC, animated: true, completion: nil)
 ```
 
@@ -209,34 +196,25 @@ When you use Alamofire, you get success and fail result and the failure closure 
 -  Your network request will be something simple like that (A request to get all the world countries) :
 
 ```swift
-func getAllCountries (completion: @escaping completionHandler) {
-    let _ = apiProvide.rx
-            .request(.getWorldCountries())
-            .filterSuccessfulStatusCodes()
-            .processErrors()
-            .mapString()
-            .subscribe { event in
-                switch event {
-                case .success(let responseString):
-                    let countries : [Country] = Parser.arrayOfObjectsFromJSONstring(object: Country.self, JSONString: responseString)! as! [Country]
-                    completion(.success(countries as AnyObject))
+func getAllCountries (completion: @escaping completionHandler<[Country]>) {
+    networkRequest = apisProvider.rx
+        .request(.getWorldCountries())
+        .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
+        .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
+        .map([Country].self)
+        .subscribe { event in
+            switch event {
+                case .success(let countries):
+                    completion(.success(countries))
                 case .error(let error):
                     completion(.failure(error.localizedDescription))
-                    }
-            }
+           }
+        }
 }
 ```
 
 #### Unified result closure :
 A close that returns a result of any type and an error string.
-
-#### Unified parser :
-
-Just make your model calss or strucut confirm to the `BaseModel` delegate the you can use the `Parser` class easily whiclh converts to the most wanted types.
-
-#### Keyboard handler :
-
-If you want the keyboard to automatically hide when you press outside the textfield, instead of handling it by yourself in almost every View, you can call `KeyboardManager.handleKeyboardManager()` in your app delegate function `didFinishLaunchingWithOptions` and that is it 😎.
 
 #### Loggers :
 
@@ -245,7 +223,7 @@ Instead of filling your code with statemetns which is not good plus it will affe
 `Log.error("There is an error ")`
 
 
->Many many more ( About 23 features ), you can find more details in the examples associated with the pod and if anything is not clear just contact me.
+>Many many more ( About 56 features ), you can find more details in the examples associated with the pod and if anything is not clear just contact me.
 
 
 
@@ -275,7 +253,7 @@ end
 No, you do not need to do so since Alamofire will be installed  once you add  the `iOS_Bootstrap` to your project.
 
 2. <b style='color:red'>__Waht if i need to use Alamofire or anyother dependacy from the `iOS_Bootstrap`, What i have to do ?__</b><br>
-All you have to do is to import the library to your view controller instead of importing `iOS_Bootstrap`.
+All you have to do is to import the library instead of importing `iOS_Bootstrap`.
 
 
 
@@ -288,7 +266,7 @@ The following awesome libraries are used as dependancies in my pod :
 2. [Moya](https://github.com/Moya/Moya).
 3. [HandyJSON](https://github.com/alibaba/HandyJSON).
 4. [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager).
-5. [Kingfisher](https://github.com/onevcat/Kingfisher)
+5. [Nuke](https://github.com/kean/Nuke)
 6. [SCLAlertView](https://github.com/vikmeup/SCLAlertView-Swift).
 
 In addition, the following Repos helped me alot either by including their codes directly into my pod or using some portion of their codes to improve my library or to learn something new so __**thank you**__ for sharing your awesome codes for free to the community.

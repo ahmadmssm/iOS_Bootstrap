@@ -11,4 +11,6 @@ import iOS_Bootstrap
 protocol CountriesViewDelegator : BaseViewDelegator {
     func didGetCountries(countries : [Country])
     func didFailToGetCountries(error : String)
+    func didGetSearchResults(filteredCountries : [Country])
+    func didResetCountriesTable(countries : [Country])
 }

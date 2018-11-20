@@ -46,7 +46,7 @@ class WeatherTableViewController <T, V>:
         let iconURL : String = (getTableViewDataSource[indexPath.row].additionalData?[0].icon)!
         let fullURL = URL(string: "http://openweathermap.org/img/w/" + iconURL + ".png")
         //
-        cell.imageViewWeather.kf.setImage(with: fullURL)
+        ImageLoader.loadImage(with: fullURL!, into: cell.imageViewWeather)
         //
         return cell
     }

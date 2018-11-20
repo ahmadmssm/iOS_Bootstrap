@@ -7,7 +7,6 @@
 //
 
 import iOS_Bootstrap
-import Kingfisher
 import SCLAlertView
 
 class TrendingMoviesViewController:
@@ -48,7 +47,7 @@ class TrendingMoviesViewController:
         if let imageURL = getTableViewDataSource[indexPath.row].posterPath {
             let baseImgURL = "https://image.tmdb.org/t/p/w92"
             let posterURL = URL(string: baseImgURL + imageURL)
-            cell.posterImage.kf.setImage(with: posterURL)
+            ImageLoader.loadImage(with: posterURL!, into: cell.posterImage)
         }
         //
         return cell
@@ -67,10 +66,6 @@ class TrendingMoviesViewController:
     func loadMore(tableView: UITableView, forPage page: Int, updatedDataSource: [Any]) {
         getPresenter().getTrendingMovies(pageNumber: page)
     }
-    
-    override func loadingDidStarted() { EZLoadingActivity.show("Loading..", disableUI: true) }
-    
-    override func didFinishedLoading() { EZLoadingActivity.hide(true, animated: true) }
     
     func didGetTrendingMoviesPage(page: MoviesPage) {
         // Configure pagination parameters
@@ -91,7 +86,7 @@ class TrendingMoviesViewController:
         floatingButton = UIButton(type: .custom)
         floatingButton.translatesAutoresizingMaskIntoConstraints = false
         floatingButton.backgroundColor = .white
-        floatingButton.setImage(#imageLiteral(resourceName: "bill"), for: .normal)
+        floatingButton.setImage(#imageLiteral(resourceName: "back"), for: .normal)
         floatingButton.addTarget(self, action: #selector(buttonClick(_:)), for: UIControlEvents.touchUpInside)
         // We're manipulating the UI, must be on the main thread:
         DispatchQueue.main.async {

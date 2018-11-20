@@ -15,9 +15,7 @@ class GPSWeatherPresenter : BasePresenter<WeatherViewDelegator> {
     }
     
     func getFiveDaysWeather(lat : Double, longt : Double) {
-        getViewDelegator().loadingDidStarted!()
         APIsConnector.sharedInstance.getFiveDaysWeatherForcastWithGPSprovidedLocation(lat: lat, longt: longt) { response in
-            self.getViewDelegator().didFinishedLoading?()
             switch response {
             case .success(let weatherFocast):
                 self.getViewDelegator().didGetFiveDaysWeather(weatherForcast: weatherFocast)
