@@ -8,7 +8,7 @@
 public final class ServicesInstances {
     
     let userDefaultsManagerInstance : UserDefaultsManager = UserDefaultsManager ()
-    
+    let sessionManagerInstance : SessionManager = SessionManager ()
     //
     static var context : UIViewController?
     

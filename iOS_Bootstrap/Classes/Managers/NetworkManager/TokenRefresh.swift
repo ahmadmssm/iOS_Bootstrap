@@ -1,5 +1,5 @@
 //
-//  Session.swift
+//  TokenRefresh.swift
 //  iOS_Bootstrap
 //
 //  Created by Ahmad Mahmoud on 7/26/18.
@@ -7,13 +7,13 @@
 
 import RxSwift
 
-public protocol SessionProtocol {
+public protocol TokenRefresh {
     func getTokenRefreshService() -> Single<Response>
     func didFailedToRefreshToken()
-    func tokenDidRefresh (response : String)
+    func tokenDidRefreshed (response : String)
 }
 
-@objc public protocol SessionService {
+@objc public protocol TokenRefreshService {
     @objc func didFailedToRefreshToken()
-    @objc func tokenDidRefresh (response : String)
+    @objc func tokenDidRefreshed (response : String)
 }

@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .enableIQKeyboard()
                 .iqKeyboardCanGoBack()
                 .iqKeyboardCanGoNext()
-                .configureSessionService(context: self)
+                .setTokenRefreshListener(self)
                 .setNavigationBartextApperance(textApperance: StaticResources.CustomStyles.navigationBarTextStyle)
                 .setNavigationBarBackButtonColor(backButtonColor: UIColor.white)
                 .build()
@@ -71,6 +71,6 @@ extension AppDelegate {
 extension AppDelegate: AppDelegateService {
     // Refresh token callbacks
     func didFailedToRefreshToken() {}
-    func tokenDidRefresh(response: String) { Log.debug("Refresh token response : " + response) }
+    func tokenDidRefreshed(response: String) { Log.debug("Refresh token response : " + response) }
 }
 

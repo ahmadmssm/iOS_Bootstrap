@@ -15,14 +15,14 @@ public typealias completionHandlerWithError<T, Error> =
     (ConnectionResultWithError<T, Error>) -> ()
 
 
-open class GenericConnector: NSObject, SessionProtocol, UserDefaultsService {
+open class GenericConnector: NSObject, TokenRefresh, UserDefaultsService {
     
-    private final var sessionDelegate : SessionProtocol!
+    private final var tokenRefreshDelegate : TokenRefresh!
     public var networkRequest: Disposable?
     
     public override init() {
         super.init()
-        sessionDelegate = self
+        tokenRefreshDelegate = self
     }
     
     open func getTokenRefreshService() -> Single<Response> {
@@ -31,7 +31,7 @@ open class GenericConnector: NSObject, SessionProtocol, UserDefaultsService {
     
     public final func cancelRequest () { networkRequest?.cancelRequest() }
     
-    public final func tokenDidRefresh(response: String) {
+    public final func tokenDidRefreshed(response: String) {
         let dictionary = ["response" : response]
         NotificationCenter.default.post(name: .newAuthenticationToken, object: nil, userInfo: dictionary)
     }

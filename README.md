@@ -200,7 +200,7 @@ func getAllCountries (completion: @escaping completionHandler<[Country]>) {
     networkRequest = apisProvider.rx
         .request(.getWorldCountries())
         .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-        .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
+        .refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate: self)
         .map([Country].self)
         .subscribe { event in
             switch event {

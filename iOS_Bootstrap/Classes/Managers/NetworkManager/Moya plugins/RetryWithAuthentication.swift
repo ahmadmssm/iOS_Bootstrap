@@ -38,7 +38,7 @@ public extension ObservableType where E == Response {
     
     // Tries to refresh auth token on 401 error and retry the request.
     // If the refresh fails it returns an error .
-    public func refreshAuthenticationTokenIfNeeded(sessionServiceDelegate : SessionProtocol) -> Observable<E> {
+    public func refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate : TokenRefresh) -> Observable<E> {
         return
             // Retry and process the request if any error occurred
             self.retryWhen { responseFromFirstRequest in
@@ -48,7 +48,7 @@ public extension ObservableType where E == Response {
                        // if statusCode == 401 || statusCode == 403 {
                         if statusCode == 401 {
                             // Token expired >> Call refresh token request
-                            return sessionServiceDelegate
+                            return tokenRefreshDelegate
                                 .getTokenRefreshService()
                                 .filterSuccessfulStatusCodesAndProcessErrors()
                                 .asObservable()
@@ -57,7 +57,7 @@ public extension ObservableType where E == Response {
                                     if let lucidErrorOfTokenRefreshRequest : LucidMoyaError = tokeRefreshRequestError as? LucidMoyaError {
                                         //
                                         // Logout or do any thing related
-                                        sessionServiceDelegate.didFailedToRefreshToken()
+                                        tokenRefreshDelegate.didFailedToRefreshToken()
                                         //
                                         return Observable.error(lucidErrorOfTokenRefreshRequest)
                                     }
@@ -66,7 +66,7 @@ public extension ObservableType where E == Response {
                                 .flatMapLatest { tokenRefreshResponseString -> Observable<Response> in
                                     // Refresh token response string
                                     // Save new token locally to use with any request from now on
-                                    sessionServiceDelegate.tokenDidRefresh(response: try! tokenRefreshResponseString.mapString())
+                                    tokenRefreshDelegate.tokenDidRefreshed(response: try! tokenRefreshResponseString.mapString())
                                     // Retry the original request one more time
                                     return self.retry(1)
                             }
@@ -89,7 +89,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
     
     // Tries to refresh auth token on 401 error and retry the request.
     // If the refresh fails it returns an error .
-    public func refreshAuthenticationTokenIfNeeded(sessionServiceDelegate : SessionProtocol) -> Single<Response> {
+    public func refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate : TokenRefresh) -> Single<Response> {
         return
             // Retry and process the request if any error occurred
             self.retryWhen { responseFromFirstRequest in
@@ -99,7 +99,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                        // if statusCode == 401 || statusCode == 403 {
                         if statusCode == 401 {
                             // Token expired >> Call refresh token request
-                            return sessionServiceDelegate
+                            return tokenRefreshDelegate
                                 .getTokenRefreshService()
                                 .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
                                 .catchError { tokeRefreshRequestError -> Single<Response> in
@@ -107,20 +107,20 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                                     if let lucidErrorOfTokenRefreshRequest : LucidMoyaError = tokeRefreshRequestError as? LucidMoyaError {
                                         //
                                         // Logout or do any thing related
-                                        sessionServiceDelegate.didFailedToRefreshToken()
+                                        tokenRefreshDelegate.didFailedToRefreshToken()
                                         //
                                         return Single.error(lucidErrorOfTokenRefreshRequest)
                                     }
                                     else {
                                         // Logout or do any thing related
-                                        sessionServiceDelegate.didFailedToRefreshToken()
+                                        tokenRefreshDelegate.didFailedToRefreshToken()
                                     }
                                     return Single.error(tokeRefreshRequestError)
                                 }
                                 .flatMap { tokenRefreshResponseString -> Single<Response> in
                                     // Refresh token response string
                                     // Save new token locally to use with any request from now on
-                                    sessionServiceDelegate.tokenDidRefresh(response: try! tokenRefreshResponseString.mapString())
+                                    tokenRefreshDelegate.tokenDidRefreshed(response: try! tokenRefreshResponseString.mapString())
                                     // Retry the original request one more time
                                     return self.retry(1)
                             }
@@ -136,7 +136,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
         }
     }
     
-    public func refreshAuthenticationTokenIfNeeded(sessionServiceDelegate : SessionProtocol, refreshTokenStatusCodes :ClosedRange<Int>) -> Single<Response> {
+    public func refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate : TokenRefresh, refreshTokenStatusCodes :ClosedRange<Int>) -> Single<Response> {
         return
             // Retry and process the request if any error occurred
             self.retryWhen { responseFromFirstRequest in
@@ -145,7 +145,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                         let statusCode : Int = lucidErrorOfOriginalRequest.statusCode!
                         if (refreshTokenStatusCodes.contains(statusCode)) {
                                 // Token expired >> Call refresh token request
-                                return sessionServiceDelegate
+                                return tokenRefreshDelegate
                                     .getTokenRefreshService()
                                     .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
                                     .catchError { tokeRefreshRequestError -> Single<Response> in
@@ -153,20 +153,20 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                                         if let lucidErrorOfTokenRefreshRequest : LucidMoyaError = tokeRefreshRequestError as? LucidMoyaError {
                                             //
                                             // Logout or do any thing related
-                                            sessionServiceDelegate.didFailedToRefreshToken()
+                                            tokenRefreshDelegate.didFailedToRefreshToken()
                                             //
                                             return Single.error(lucidErrorOfTokenRefreshRequest)
                                         }
                                         else {
                                             // Logout or do any thing related
-                                            sessionServiceDelegate.didFailedToRefreshToken()
+                                            tokenRefreshDelegate.didFailedToRefreshToken()
                                         }
                                         return Single.error(tokeRefreshRequestError)
                                     }
                                     .flatMap { tokenRefreshResponseString -> Single<Response> in
                                         // Refresh token response string
                                         // Save new token locally to use with any request from now on
-                                        sessionServiceDelegate.tokenDidRefresh(response: try! tokenRefreshResponseString.mapString())
+                                        tokenRefreshDelegate.tokenDidRefreshed(response: try! tokenRefreshResponseString.mapString())
                                         // Retry the original request one more time
                                         return self.retry(1)
                                 }
@@ -182,7 +182,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
         }
     }
     
-    public func refreshAuthenticationTokenIfNeeded(sessionServiceDelegate : SessionProtocol, refreshTokenStatusCodes : [Int]) -> Single<Response> {
+    public func refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate : TokenRefresh, refreshTokenStatusCodes : [Int]) -> Single<Response> {
         return
             // Retry and process the request if any error occurred
             self.retryWhen { responseFromFirstRequest in
@@ -191,7 +191,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                         let statusCode : Int = lucidErrorOfOriginalRequest.statusCode!
                         if (refreshTokenStatusCodes.contains(statusCode)) {
                             // Token expired >> Call refresh token request
-                            return sessionServiceDelegate
+                            return tokenRefreshDelegate
                                 .getTokenRefreshService()
                                 .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
                                 .catchError { tokeRefreshRequestError -> Single<Response> in
@@ -199,20 +199,20 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                                     if let lucidErrorOfTokenRefreshRequest : LucidMoyaError = tokeRefreshRequestError as? LucidMoyaError {
                                         //
                                         // Logout or do any thing related
-                                        sessionServiceDelegate.didFailedToRefreshToken()
+                                        tokenRefreshDelegate.didFailedToRefreshToken()
                                         //
                                         return Single.error(lucidErrorOfTokenRefreshRequest)
                                     }
                                     else {
                                         // Logout or do any thing related
-                                        sessionServiceDelegate.didFailedToRefreshToken()
+                                        tokenRefreshDelegate.didFailedToRefreshToken()
                                     }
                                     return Single.error(tokeRefreshRequestError)
                                 }
                                 .flatMap { tokenRefreshResponseString -> Single<Response> in
                                     // Refresh token response string
                                     // Save new token locally to use with any request from now on
-                                    sessionServiceDelegate.tokenDidRefresh(response: try! tokenRefreshResponseString.mapString())
+                                    tokenRefreshDelegate.tokenDidRefreshed(response: try! tokenRefreshResponseString.mapString())
                                     // Retry the original request one more time
                                     return self.retry(1)
                             }
@@ -228,8 +228,8 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
         }
     }
     
-    public func refreshAuthenticationTokenIfNeeded(sessionServiceDelegate : SessionProtocol, refreshTokenStatusCode : Int) -> Single<Response> {
-        return refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: sessionServiceDelegate, refreshTokenStatusCodes: refreshTokenStatusCode...refreshTokenStatusCode)
+    public func refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate : TokenRefresh, refreshTokenStatusCode : Int) -> Single<Response> {
+        return refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate: tokenRefreshDelegate, refreshTokenStatusCodes: refreshTokenStatusCode...refreshTokenStatusCode)
     }
 }
 

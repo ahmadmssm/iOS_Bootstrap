@@ -5,17 +5,19 @@
 //  Created by Ahmad Mahmoud on 9/28/18.
 //
 
-// Parent service
 public protocol UserDefaultsService : IServicesInstances {}
-
-// Child services
-public protocol AppDelegateService : SessionService, UserDefaultsService {}
-//
 public extension UserDefaultsService {
     public func getUserDefaults() -> UserDefaultsManager {
         return servicesInstaces.userDefaultsManagerInstance
     }
 }
+//
+public protocol SessionService : IServicesInstances {}
+public extension SessionService {
+    func getSession() -> SessionManager { return servicesInstaces.sessionManagerInstance }
+}
+//
+public protocol AppDelegateService : TokenRefreshService, UserDefaultsService {}
 //
 public protocol Injectable : IServicesInstances {
     func setContext(context : UIViewController)

@@ -52,7 +52,7 @@ class APIsConnector : BaseAPIsConnector<APIs> {
         networkRequest = apisProvider.rx
             .request(.getWorldCountries())
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-            .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
+            .refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate: self)
             .map([Country].self)
             .subscribe { event in
                 switch event {
@@ -68,7 +68,7 @@ class APIsConnector : BaseAPIsConnector<APIs> {
         return apisProvider.rx
                 .request(.getDevicePublicIP())
                 .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-                .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
+            .refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate: self)
                 .mapString()
                 .map { response in
                     let publicIP : String =  response.toDictionary()["ip"] as! String
@@ -81,7 +81,7 @@ class APIsConnector : BaseAPIsConnector<APIs> {
             .rx
             .request(.getLocationCoordinates(publicIP: publicIP))
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-            .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
+            .refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate: self)
             .mapString()
             .map { response in
                 let locationDetails = response.toDictionary()
@@ -100,7 +100,7 @@ class APIsConnector : BaseAPIsConnector<APIs> {
             .flatMap() { location in                self.apisProvider.rx.request(.getFiveDaysWeatherForcast (lat: location.lat!, longt: location.lon!))
             }
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-            .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
+            .refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate: self)
             .map(WeatherForcast.self)
             .subscribe { event in
                 switch event {
@@ -117,7 +117,7 @@ class APIsConnector : BaseAPIsConnector<APIs> {
         networkRequest = apisProvider.rx
             .request(.getFiveDaysWeatherForcast(lat: lat, longt: longt))
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-            .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
+            .refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate: self)
             .map(WeatherForcast.self)
             .subscribe { event in
                 switch event {
@@ -134,7 +134,7 @@ class APIsConnector : BaseAPIsConnector<APIs> {
         networkRequest = apisProvider.rx
             .request(.getTrendingMovies(page: pageNo))
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-            .refreshAuthenticationTokenIfNeeded(sessionServiceDelegate: self)
+            .refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate: self)
             .map(MoviesPage.self)
             .subscribe { event in
                 switch event {

@@ -8,157 +8,172 @@
 
 import Foundation
 
-open class UserDefaultsManager {
+public final class UserDefaultsManager {
     
     private let defaults : UserDefaults
     public init() { defaults = UserDefaults.standard }
     
-    public func setBooleanWithKey(value : Bool, key : String) {
+    public final func setBooleanWithKey(value : Bool, key : String) {
         defaults.set(value, forKey: key)
         defaults.synchronize()
     }
     
-    public func setBooleanWithKey<T: RawRepresentable>(value : Bool, key : T) where T.RawValue == String {
+    public final func setBooleanWithKey<T: RawRepresentable>(value : Bool, key : T) where T.RawValue == String {
         defaults.set(value, forKey: key.rawValue)
         defaults.synchronize()
     }
     
-    public func getBooleanWithKey(key : String) -> Bool {
+    public final func getBooleanWithKey(key : String) -> Bool {
         return defaults.bool(forKey: key)
     }
     
-    public func getBooleanWithKey<T: RawRepresentable>(key : T) -> Bool where T.RawValue == String {
+    public final func getBooleanWithKey<T: RawRepresentable>(key : T) -> Bool where T.RawValue == String {
         return defaults.bool(forKey: key.rawValue)
     }
     
-    public func setStringWithKey<T: RawRepresentable>(value : String, key : T) where T.RawValue == String {
+    public final func setStringWithKey<T: RawRepresentable>(value : String, key : T) where T.RawValue == String {
         defaults.set(value, forKey: key.rawValue)
         defaults.synchronize()
     }
     
-    public func setStringWithKey(value : String, key : String) {
+    public final func setStringWithKey(value : String, key : String) {
         defaults.set(value, forKey: key)
         defaults.synchronize()
     }
     
-    public func getStringWithKey(key : String) -> String {
+    public final func getStringWithKey(key : String) -> String {
         if let value : String = defaults.string(forKey: key) { return value }
         return ""
     }
    
-    public func getStringWithKey<T: RawRepresentable>(key : T) -> String where T.RawValue == String {
+    public final func getStringWithKey<T: RawRepresentable>(key : T) -> String where T.RawValue == String {
         if let value : String = defaults.string(forKey: key.rawValue) { return value }
         return ""
     }
     
-    public func setDoubleWithKey<T: RawRepresentable>(value : Double, key : T) where T.RawValue == String {
+    public final func setDoubleWithKey<T: RawRepresentable>(value : Double, key : T) where T.RawValue == String {
         defaults.set(value, forKey: key.rawValue)
         defaults.synchronize()
     }
     
-    public func setDoubleWithKey(value : Double, key : String) {
+    public final func setDoubleWithKey(value : Double, key : String) {
         defaults.set(value, forKey: key)
         defaults.synchronize()
     }
     
-    public func getDoubleWithKey(key : String) -> Double { return defaults.double(forKey: key) }
+    public final func getDoubleWithKey(key : String) -> Double { return defaults.double(forKey: key) }
     
-    public func getDoubleWithKey<T: RawRepresentable>(key : T) -> Double where T.RawValue == String { return defaults.double(forKey: key.rawValue) }
+    public final func getDoubleWithKey<T: RawRepresentable>(key : T) -> Double where T.RawValue == String { return defaults.double(forKey: key.rawValue) }
     
-    public func setIntegerWithKey(value : Int, key : String) {
+    public final func setIntegerWithKey(value : Int, key : String) {
         defaults.set(value, forKey: key)
         defaults.synchronize()
     }
     
-    public func setIntegerWithKey<T: RawRepresentable>(value : String, key : T) where T.RawValue == String {
+    public final func setIntegerWithKey<T: RawRepresentable>(value : String, key : T) where T.RawValue == String {
         defaults.set(value, forKey: key.rawValue)
         defaults.synchronize()
     }
     
-    public func getIntegerWithKey(key : String) -> Int { return defaults.integer(forKey: key) }
+    public final func getIntegerWithKey(key : String) -> Int { return defaults.integer(forKey: key) }
 
-    public func getIntegerWithKey <T: RawRepresentable>(key : T) -> Int where T.RawValue == String {
+    public final func getIntegerWithKey <T: RawRepresentable>(key : T) -> Int where T.RawValue == String {
         return defaults.integer(forKey: key.rawValue) }
     
     
-    public func setArrayWithKey<O, T: RawRepresentable>(value : [O], key : T) where T.RawValue == String {
+    public final func setArrayWithKey<O, T: RawRepresentable>(value : [O], key : T) where T.RawValue == String {
         defaults.set(value, forKey: key.rawValue)
         defaults.synchronize()
     }
     
-    public func setArrayWithKey<O>(value : [O], key : String) {
+    public final func setArrayWithKey<O>(value : [O], key : String) {
         defaults.set(value, forKey: key)
         defaults.synchronize()
     }
     
-    public func setArrayWithKey(value : [AnyObject], key : String) {
+    public final func setArrayWithKey(value : [AnyObject], key : String) {
         defaults.set(value, forKey: key)
         defaults.synchronize()
     }
     
-    public func setArrayWithKey<T: RawRepresentable>(value : [AnyObject], key : T) where T.RawValue == String {
+    public final func setArrayWithKey<T: RawRepresentable>(value : [AnyObject], key : T) where T.RawValue == String {
         defaults.set(value, forKey: key.rawValue)
         defaults.synchronize()
     }
     
-    public func getArrayWithKey(key : String) -> [AnyObject] {
+    public final func getArrayWithKey(key : String) -> [AnyObject] {
         if let value : [AnyObject] = defaults.array(forKey: key) as [AnyObject]? { return value }
         return [] as [AnyObject]
     }
     
-    public func getArrayWithKey <T: RawRepresentable>(key : T) -> [AnyObject] where T.RawValue == String {
+    public final func getArrayWithKey <T: RawRepresentable>(key : T) -> [AnyObject] where T.RawValue == String {
         if let value : [AnyObject] = defaults.array(forKey: key.rawValue) as [AnyObject]? { return value }
         return [] as [AnyObject]
     }
     
-    public func getArrayWithKey<T>(key : String) -> [T] {
+    public final func getArrayWithKey<T>(key : String) -> [T] {
         if let value : [T] = defaults.array(forKey: key)! as? [T] { return value }
         return [] as [T]
     }
     
-    public func getArrayWithKey <O, T: RawRepresentable>(key : T) -> [O] where T.RawValue == String {
+    public final func getArrayWithKey <O, T: RawRepresentable>(key : T) -> [O] where T.RawValue == String {
         if let value : [O] = defaults.array(forKey: key.rawValue)! as? [O] { return value }
         return [] as [O]
     }
     
-    public func setObjectWithKey<T: RawRepresentable>(value : AnyObject, key : T) where T.RawValue == String {
+    public final func setObjectWithKey<T: RawRepresentable>(value : AnyObject, key : T) where T.RawValue == String {
         defaults.set(value, forKey: key.rawValue)
         defaults.synchronize()
     }
     
-    public func setObjectWithKey(value : AnyObject, key : String) {
+    public final func setObjectWithKey(value : AnyObject, key : String) {
         defaults.set(value, forKey: key)
         defaults.synchronize()
     }
     
-    public func setObjectWithKey<O, T: RawRepresentable>(value : O, key : T) where T.RawValue == String {
+    public final func setObjectWithKey<O, T: RawRepresentable>(value : O, key : T) where T.RawValue == String {
         defaults.set(value, forKey: key.rawValue)
         defaults.synchronize()
     }
     
-    public func setObjectWithKey<T>(value : T, key : String) {
+    public final func setObjectWithKey<T>(value : T, key : String) {
         defaults.set(value, forKey: key)
         defaults.synchronize()
     }
     
-    public func getObjectWithKey(key : String) -> AnyObject? {
+    public final func getObjectWithKey(key : String) -> AnyObject? {
         if let value = defaults.object(forKey: key) { return value as AnyObject }
         return nil
     }
     
-    public func getObjectWithKey <T: RawRepresentable>(key : T) -> AnyObject? where T.RawValue == String {
+    public final func getObjectWithKey <T: RawRepresentable>(key : T) -> AnyObject? where T.RawValue == String {
         if let value = defaults.object(forKey: key.rawValue) { return value as AnyObject }
         return nil
     }
     
-    public func getObjectWithKey<T>(key : String) -> T? {
+    public final func getObjectWithKey<T>(key : String) -> T? {
         if let value = defaults.object(forKey: key) { return value as? T }
         return nil
     }
 
-    public func getObjectWithKey<O, T: RawRepresentable>(key : T) -> O? where T.RawValue == String {
+    public final func getObjectWithKey<O, T: RawRepresentable>(key : T) -> O? where T.RawValue == String {
         if let value = defaults.object(forKey: key.rawValue) { return value as? O }
         return nil
+    }
+    
+    public final func deleteSavedValueWithKey<T: RawRepresentable>(key : T) where T.RawValue == String {
+        defaults.removeObject(forKey: key.rawValue)
+        defaults.synchronize()
+    }
+    
+    public final func deleteSavedValueWithKey(key : String) {
+        defaults.removeObject(forKey: key)
+        defaults.synchronize()
+    }
+    
+    public final func resetUserDefaults() {
+        defaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        defaults.synchronize()
     }
     
 }

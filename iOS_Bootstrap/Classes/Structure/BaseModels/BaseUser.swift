@@ -7,32 +7,41 @@
 
 import HandyJSON
 
-open class BaseUser: Codable, HandyJSON, UserDefaultsService {
+open class BaseUser: Codable, HandyJSON {
     
     public var id : String?
     public var email:String!
     public var createdAt:String!
     public var updatedAt:String!
     public var isLoggedIn : Bool?
-    public var hasValidSession : Bool?
     //
-    private let appId : String = Bundle.main.appId()
+    private static let appId : String = Bundle.main.appId()
+    static let userDefaults : UserDefaultsManager = UserDefaultsManager()
 
     required public init() {}
     
-    public final func cache() {
-        getUserDefaults().setObjectWithKey(value: self, key: appId + "_UserProfile")
+    public final func cacheUser() {
+        BaseUser.userDefaults.setObjectWithKey(value: self, key: BaseUser.appId + "_UserProfile")
     }
     
-    public final func cacheWithKey(key : String) {
-        getUserDefaults().setObjectWithKey(value: self, key: key)
+    public final func cacheUserWithKey(key : String) {
+        BaseUser.userDefaults.setObjectWithKey(value: self, key: key)
     }
     
-    public final func getCachedUser() -> BaseUser? {
-        return getUserDefaults().getObjectWithKey(key: appId + "_UserProfile")
+    public static func getCachedUser() -> BaseUser.Type {
+        return userDefaults.getObjectWithKey(key: appId + "_UserProfile")!
     }
     
-    public final func getCachedUserWithKey(key : String) -> BaseUser? {
-        return getUserDefaults().getObjectWithKey(key: key)
+    public static func getCachedUserWithKey(key : String) -> BaseUser.Type? {
+        return userDefaults.getObjectWithKey(key: key)
     }
+    
+    public static func clearCachedUser() {
+        userDefaults.deleteSavedValueWithKey(key: appId + "_UserProfile")
+    }
+    
+    public static func clearCachedUserWithKey(key : String) {
+        userDefaults.deleteSavedValueWithKey(key: key)
+    }
+    
 }
