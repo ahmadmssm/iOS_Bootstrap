@@ -47,7 +47,7 @@ class TrendingMoviesViewController:
         if let imageURL = getTableViewDataSource[indexPath.row].posterPath {
             let baseImgURL = "https://image.tmdb.org/t/p/w92"
             let posterURL = URL(string: baseImgURL + imageURL)
-            ImageLoader.loadImage(with: posterURL!, into: cell.posterImage)
+            cell.posterImage.loadImage(with: posterURL!)
         }
         //
         return cell
