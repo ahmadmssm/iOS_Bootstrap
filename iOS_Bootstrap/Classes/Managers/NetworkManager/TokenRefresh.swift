@@ -8,7 +8,7 @@
 import RxSwift
 
 public protocol TokenRefresh {
-    func getTokenRefreshService() -> Single<Response>
+    func getTokenRefreshRequest() -> Single<Response>
     func didFailedToRefreshToken()
     func tokenDidRefreshed (response : String)
 }

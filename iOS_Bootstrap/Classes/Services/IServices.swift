@@ -33,6 +33,12 @@ public extension ContextService {
     public static func getContext() -> UIViewController { return ServicesInstances.context! }
 }
 
-public protocol BaseConstants : BuildVariantService {}
+public protocol BaseEnvironment: BuildVariantService {}
+public extension BaseEnvironment where
+    Self: Hashable & RawRepresentable,
+Self.RawValue : StringProtocol {
+    
+    public static func getEnvironmentVariables() -> Self { return getEnvironment(Self.self) }
+}
 
 

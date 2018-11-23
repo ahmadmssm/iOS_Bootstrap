@@ -17,7 +17,9 @@
 //  Ref : https://cocoacasts.com/switching-environments-with-configurations
 //
 
-public enum Environment: String {
+import iOS_Bootstrap
+
+public enum Environment: String, BaseEnvironment {
     
     // Modes
     case Debug
@@ -27,20 +29,18 @@ public enum Environment: String {
     // Variables
     var baseURL: String {
         switch self {
-        case .Debug:
-            return "https://debug-api.myservice.com"
-        case .Staging:
-            return "https://staging-api.myservice.com"
-        case .Release:
-            return "https://api.myservice.com"
+        case .Debug: return "https://debug-api.myservice.com"
+        case .Staging: return "https://staging-api.myservice.com"
+        case .Release: return "https://api.myservice.com"
         }
     }
     
-//    var token: String {
-//        switch self {
-//        case .Staging: return "lktopir156dsq16sbi8"
-//        case .Release: return "5zdsegr16ipsbi1lktp"
-//        }
-//    }
+    var token: String {
+        switch self {
+        case .Debug: return "lktopir156dsq16sbi8"
+        case .Staging: return "lktopir156dsq16sbi8"
+        case .Release: return "5zdsegr16ipsbi1lktp"
+        }
+    }
     
 }

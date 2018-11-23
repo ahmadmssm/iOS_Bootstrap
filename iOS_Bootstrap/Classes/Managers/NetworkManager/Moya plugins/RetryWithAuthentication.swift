@@ -49,7 +49,7 @@ public extension ObservableType where E == Response {
                         if statusCode == 401 {
                             // Token expired >> Call refresh token request
                             return tokenRefreshDelegate
-                                .getTokenRefreshService()
+                                .getTokenRefreshRequest()
                                 .filterSuccessfulStatusCodesAndProcessErrors()
                                 .asObservable()
                                 .catchError { tokeRefreshRequestError -> Observable<Response> in
@@ -100,7 +100,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                         if statusCode == 401 {
                             // Token expired >> Call refresh token request
                             return tokenRefreshDelegate
-                                .getTokenRefreshService()
+                                .getTokenRefreshRequest()
                                 .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
                                 .catchError { tokeRefreshRequestError -> Single<Response> in
                                     // Failed to refresh token
@@ -146,7 +146,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                         if (refreshTokenStatusCodes.contains(statusCode)) {
                                 // Token expired >> Call refresh token request
                                 return tokenRefreshDelegate
-                                    .getTokenRefreshService()
+                                    .getTokenRefreshRequest()
                                     .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
                                     .catchError { tokeRefreshRequestError -> Single<Response> in
                                         // Failed to refresh token
@@ -192,7 +192,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
                         if (refreshTokenStatusCodes.contains(statusCode)) {
                             // Token expired >> Call refresh token request
                             return tokenRefreshDelegate
-                                .getTokenRefreshService()
+                                .getTokenRefreshRequest()
                                 .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
                                 .catchError { tokeRefreshRequestError -> Single<Response> in
                                     // Failed to refresh token

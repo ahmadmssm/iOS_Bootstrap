@@ -25,7 +25,7 @@ open class GenericConnector: NSObject, TokenRefresh, UserDefaultsService {
         tokenRefreshDelegate = self
     }
     
-    open func getTokenRefreshService() -> Single<Response> {
+    open func getTokenRefreshRequest() -> Single<Response> {
         return Observable.empty().asSingle()
     }
     

@@ -9,8 +9,8 @@
 import iOS_Bootstrap
 
 enum APIs {
-    case getWorldCountries()
     case refreshToken(token: String)
+    case getWorldCountries()
     case getTrendingMovies(page : Int)
     case getDevicePublicIP()
     case getLocationCoordinates(publicIP : String)

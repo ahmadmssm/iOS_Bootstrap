@@ -27,7 +27,7 @@ public extension BuildVariantService {
     }
     //
     //
-    public static func getEnvironment<T: Hashable & RawRepresentable>(_: T.Type) -> T where T.RawValue : StringProtocol
+    internal static func getEnvironment<T: Hashable & RawRepresentable>(_: T.Type) -> T where T.RawValue : StringProtocol
             {
         if let configuration = Bundle.main.object(forInfoDictionaryKey: "Configuration") as? String {
             for environment in Enum(T.self) {

@@ -696,6 +696,7 @@
 		C9626C6AE0F19BF3DDD2D7C119C1007C /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA187E248D9A93FEB2B59B5075EB0C1 /* Timer.swift */; };
 		C99F9F5321A7486E006F9264 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F9F5221A7486E006F9264 /* SessionManager.swift */; };
 		C99F9F5521A756E5006F9264 /* BaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F9F5421A756E5006F9264 /* BaseSession.swift */; };
+		C99F9F6D21A8666E006F9264 /* CombinedOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99F9F6C21A8666D006F9264 /* CombinedOperators.swift */; };
 		C9CCC8B721A715B90008FF78 /* ImageLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCC8B621A715B90008FF78 /* ImageLoadingService.swift */; };
 		C9CCC8B921A716460008FF78 /* ImageView + ImageLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCC8B821A716460008FF78 /* ImageView + ImageLoadingService.swift */; };
 		CA0256D0C1228F5192A51FFBC8421025 /* DDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D3CFF992E89B5BA99A1DF2A321996A7 /* DDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1829,6 +1830,7 @@
 		C99E483C59DC21ADD3B9407AC96E40EE /* SVGClipPathElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVGClipPathElement.m; path = "Source/DOM classes/SVG-DOM/SVGClipPathElement.m"; sourceTree = "<group>"; };
 		C99F9F5221A7486E006F9264 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		C99F9F5421A756E5006F9264 /* BaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSession.swift; sourceTree = "<group>"; };
+		C99F9F6C21A8666D006F9264 /* CombinedOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedOperators.swift; sourceTree = "<group>"; };
 		C9C268F72E855979CC09C2E50219F144 /* ActionSheetPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
 		C9CCC8B621A715B90008FF78 /* ImageLoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingService.swift; sourceTree = "<group>"; };
 		C9CCC8B821A716460008FF78 /* ImageView + ImageLoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView + ImageLoadingService.swift"; sourceTree = "<group>"; };
@@ -2609,6 +2611,7 @@
 			children = (
 				FE84272DF71BE31AA2623A937B4A7B63 /* NetworkConnectionConfiguration.swift */,
 				04129C1EB73CC9940BBDC85FFA30B3A1 /* RetryWithAuthentication.swift */,
+				C99F9F6C21A8666D006F9264 /* CombinedOperators.swift */,
 			);
 			path = "Moya plugins";
 			sourceTree = "<group>";
@@ -4756,6 +4759,7 @@
 				D08957FED2715158353A767CCE908C2F /* Picker.swift in Sources */,
 				C613DA84910DB6CD19A91D7E6862F52C /* PopUpProtocol.swift in Sources */,
 				7ACE460C7438926B8B9203B45CFDAC92 /* PresenterFunctions.swift in Sources */,
+				C99F9F6D21A8666E006F9264 /* CombinedOperators.swift in Sources */,
 				7A07EB4E9C58B6E5480AE1E27A25D927 /* PushNotificationBaseModel.swift in Sources */,
 				AC80F0F40AF29CFEB9E2DBA8E9CF9BD2 /* PushNotificationManager.swift in Sources */,
 				C5FB63FA2BC5C8DE6544AC5B84928C30 /* Remove duplicates + filter array.swift in Sources */,
