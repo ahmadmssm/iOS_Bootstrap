@@ -275,6 +275,9 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
               //  mCollectionview.tableFooterView?.isHidden = true
             }
         }
+        DispatchQueue.main.async {
+            self.indicator?.stopAnimating()
+        }
     }
 }
 

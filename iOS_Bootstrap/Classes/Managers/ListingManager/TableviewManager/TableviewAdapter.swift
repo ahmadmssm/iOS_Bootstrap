@@ -219,6 +219,10 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
                 mTableview.tableFooterView?.isHidden = true
             }
         }
+        DispatchQueue.main.async {
+            self.indicator?.stopAnimating()
+            self.mTableview.tableFooterView?.isHidden = true
+        }
     }
     
 }
