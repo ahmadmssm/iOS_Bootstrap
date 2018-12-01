@@ -102,15 +102,22 @@ open class TableviewAdapter : NSObject {
             //
             self.mTotalNumberOfItems = totalNumberOfItems
             self.mItemsPerPage = itemsPerPage
+            
+            let tempTotalNumberOfItems : Double = Double(totalNumberOfItems)
+            let tempItemsPerPage : Double = Double(itemsPerPage)
+            
             // Calculte the total number of pages from the given parameters
-            var tempNumberOfPages : Double = Double(totalNumberOfItems/itemsPerPage)
-            if (tempNumberOfPages - round(tempNumberOfPages) < 0) {
-                tempNumberOfPages = round(tempNumberOfPages) + 1
-                self.mNumberOfPages = Int(tempNumberOfPages)
-            }
-            else {
-                self.mNumberOfPages = totalNumberOfItems/itemsPerPage
-            }
+            let tempNumberOfPages : Double = tempTotalNumberOfItems/tempItemsPerPage
+            //
+            self.mNumberOfPages = Int(round(tempNumberOfPages))
+            //
+            //            if (tempNumberOfPages - round(tempNumberOfPages) < 0) {
+            //                tempNumberOfPages = round(tempNumberOfPages) + 1
+            //                self.mNumberOfPages = Int(tempNumberOfPages)
+            //            }
+            //            else {
+            //                self.mNumberOfPages = totalNumberOfItems/itemsPerPage
+            //            }
         }
     }
     

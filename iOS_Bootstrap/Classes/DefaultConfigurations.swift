@@ -63,7 +63,7 @@ open class DefaultConfigurations {
         return self
     }
     
-    public func setNavigationBartextApperance (textApperance : [NSAttributedStringKey : Any]!) -> DefaultConfigurations {
+    public func setNavigationBarTextApperance (textApperance : [NSAttributedStringKey : Any]!) -> DefaultConfigurations {
         UINavigationBar.appearance().titleTextAttributes = textApperance
         return self
     }

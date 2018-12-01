@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .iqKeyboardCanGoBack()
                 .iqKeyboardCanGoNext()
                 .setTokenRefreshListener(self)
-                .setNavigationBartextApperance(textApperance: StaticResources.CustomStyles.navigationBarTextStyle)
+                .setNavigationBarTextApperance(textApperance: StaticResources.CustomStyles.navigationBarTextStyle)
                 .setNavigationBarBackButtonColor(backButtonColor: UIColor.white)
                 .build()
         Navigator.startInitialView()
