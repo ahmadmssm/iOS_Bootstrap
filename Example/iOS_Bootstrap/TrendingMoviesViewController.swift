@@ -45,7 +45,7 @@ class TrendingMoviesViewController: MyMenuItemLiveTableViewController
     }
 
     func rowDidSelected(tableView: UITableView, indexPath: IndexPath) {
-       getPresenter().getMoiveSummaryForMovieAt(index: indexPath.row)
+       getPresenter().getSummaryForMovieAt(index: indexPath.row)
     }
 
     func didGetMovieSummary(summary: String) {

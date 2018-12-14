@@ -9,8 +9,7 @@
 import iOS_Bootstrap
 
 class CustomViewsViewController:
-                    BaseViewController<CustomViewsPresenter, CustomViewsDelegator>,
-                    CustomViewsDelegator {
+                BaseViewController<BasePresenter<BaseViewDelegator>, BaseViewDelegator> {
 
     private let picker = Picker()
     
@@ -54,6 +53,10 @@ class CustomViewsViewController:
 
     @IBAction func loggers(_ sender: UIButton) {
         Log.info("Hi, I'm a logger that prints what you want in Xcode console and i work in debug mode only")
+    }
+    
+    @IBAction func onButtonClick(_ sender: UIButton) {
+        Navigator.goToValidatorsExampleViewController()
     }
     
     func openMultiDatasourcePicker(sender : UIButton) {

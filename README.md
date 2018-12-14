@@ -97,7 +97,9 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 51. Event bus helper class.
 52. Added Skeleton helper class to add skeleton effect to UIViews, table and collection views.
 53. Added dropdown banner component.
-54. How to use + examples + documentation + references.
+54. Includes RXvalidation.
+55. Out of the box table and collection view live data.
+56. How to use + examples + documentation + references.
 
 
 ## Upcoming features
@@ -277,6 +279,7 @@ In addition, the following Repos helped me alot either by including their codes 
 8. [HairPowder](https://github.com/intmain/HairPowder).
 9. [SwiftEventBus](https://github.com/cesarferreira/SwiftEventBus).
 10. [BRYXBanner](https://github.com/bryx-inc/BRYXBanner)
+11. [RxValidator](https://github.com/vbmania/RxValidator)
 
 
 ## Help me improve the documentation

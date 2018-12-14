@@ -26,49 +26,49 @@
                                 <rect key="frame" x="26" y="30" width="323" height="627"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74S-GB-FaI">
-                                        <rect key="frame" x="0.0" y="0.0" width="323" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="48"/>
                                         <state key="normal" title="Show progress dialog"/>
                                         <connections>
                                             <action selector="showProgress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QvB-OL-BF8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vl-tK-3cJ">
-                                        <rect key="frame" x="0.0" y="63.5" width="323" height="54"/>
+                                        <rect key="frame" x="0.0" y="58" width="323" height="48"/>
                                         <state key="normal" title="Show date picker"/>
                                         <connections>
                                             <action selector="showDatePicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mAY-YB-1jP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRy-pZ-k5s">
-                                        <rect key="frame" x="0.0" y="127.5" width="323" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="116" width="323" height="47.5"/>
                                         <state key="normal" title="Show time picker"/>
                                         <connections>
                                             <action selector="showTimePicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mh7-ry-bFu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1K-70-M5C">
-                                        <rect key="frame" x="0.0" y="191" width="323" height="54"/>
+                                        <rect key="frame" x="0.0" y="173.5" width="323" height="48"/>
                                         <state key="normal" title="Show locale picker"/>
                                         <connections>
                                             <action selector="showLocalePicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="E6P-sf-Ff0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYA-Ub-nuv" customClass="CustomButton" customModule="iOS_Bootstrap">
-                                        <rect key="frame" x="0.0" y="255" width="323" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="231.5" width="323" height="48"/>
                                         <state key="normal" title="Show array picker "/>
                                         <connections>
                                             <action selector="showArrayPicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WgI-se-mNO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chO-x2-mF4">
-                                        <rect key="frame" x="0.0" y="318.5" width="323" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="289.5" width="323" height="48"/>
                                         <state key="normal" title="Show multi items picker"/>
                                         <connections>
                                             <action selector="showMultiArrayPicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Eo5-Z8-PAt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghE-xj-hXA" customClass="CustomButton" customModule="iOS_Bootstrap_Example">
-                                        <rect key="frame" x="0.0" y="382" width="323" height="54"/>
+                                        <rect key="frame" x="0.0" y="347.5" width="323" height="48"/>
                                         <state key="normal" title="Show date and time picker">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -77,21 +77,21 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fn-eB-MrZ" customClass="CustomButton" customModule="iOS_Bootstrap">
-                                        <rect key="frame" x="0.0" y="446" width="323" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="405.5" width="323" height="48"/>
                                         <state key="normal" title="Show toast"/>
                                         <connections>
                                             <action selector="showToast:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VTP-qe-W2R"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yi8-CJ-NyV">
-                                        <rect key="frame" x="0.0" y="509.5" width="323" height="54"/>
+                                        <rect key="frame" x="0.0" y="463.5" width="323" height="47.5"/>
                                         <state key="normal" title="Loggers"/>
                                         <connections>
                                             <action selector="loggers:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Bp6-YB-Dby"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6j-Hu-us8" customClass="CustomButton" customModule="iOS_Bootstrap">
-                                        <rect key="frame" x="0.0" y="573.5" width="323" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="521" width="323" height="48"/>
                                         <state key="normal" title="Gradient button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -113,6 +113,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVV-js-CyU">
+                                        <rect key="frame" x="0.0" y="579" width="323" height="48"/>
+                                        <state key="normal" title="Show validation example"/>
+                                        <connections>
+                                            <action selector="onButtonClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ulw-V0-cjn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -129,6 +136,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1348" y="63.418290854572717"/>
+        </scene>
+        <!--Validators Example View Controller-->
+        <scene sceneID="6WO-tf-RDj">
+            <objects>
+                <viewController storyboardIdentifier="ValidatorsExampleViewController" id="B6r-sH-2ik" customClass="ValidatorsExampleViewController" customModule="iOS_Bootstrap_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KIm-hl-qUj"/>
+                        <viewControllerLayoutGuide type="bottom" id="pQT-2d-Jn2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CvQ-YG-KeJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QAZ-TX-Mup">
+                                <rect key="frame" x="36" y="109" width="303" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hPG-Qf-T3H"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEndTyping:" destination="B6r-sH-2ik" eventType="editingDidEnd" id="6ut-dx-DTR"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SvH-sS-tZX">
+                                <rect key="frame" x="36" y="192" width="303" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LyY-HV-a9a"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEndTyping:" destination="B6r-sH-2ik" eventType="editingDidEnd" id="d6h-Pd-IuX"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlK-04-hV0">
+                                <rect key="frame" x="140" y="332" width="95" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AyM-Cu-Ftc"/>
+                                </constraints>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButton:" destination="B6r-sH-2ik" eventType="touchUpInside" id="mXR-Sx-2oo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="QAZ-TX-Mup" secondAttribute="trailing" constant="20" id="3Oc-T7-SdD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BlK-04-hV0" secondAttribute="trailing" constant="124" id="8mi-Xu-jIv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SvH-sS-tZX" secondAttribute="trailing" constant="20" id="Coi-xN-Xb4"/>
+                            <constraint firstItem="BlK-04-hV0" firstAttribute="top" secondItem="SvH-sS-tZX" secondAttribute="bottom" constant="110" id="DRX-h7-OYg"/>
+                            <constraint firstItem="SvH-sS-tZX" firstAttribute="leading" secondItem="CvQ-YG-KeJ" secondAttribute="leadingMargin" constant="20" id="F7p-zl-FJ4"/>
+                            <constraint firstItem="QAZ-TX-Mup" firstAttribute="top" secondItem="KIm-hl-qUj" secondAttribute="bottom" constant="89" id="HQf-3C-ncM"/>
+                            <constraint firstItem="SvH-sS-tZX" firstAttribute="top" secondItem="QAZ-TX-Mup" secondAttribute="bottom" constant="53" id="U4m-Mz-Sas"/>
+                            <constraint firstItem="QAZ-TX-Mup" firstAttribute="leading" secondItem="CvQ-YG-KeJ" secondAttribute="leadingMargin" constant="20" id="aCc-en-kuh"/>
+                            <constraint firstItem="BlK-04-hV0" firstAttribute="leading" secondItem="CvQ-YG-KeJ" secondAttribute="leadingMargin" constant="124" id="qjh-wt-CZX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="QAZ-TX-Mup" id="KUh-Cu-fNp"/>
+                        <outlet property="passwordTextField" destination="SvH-sS-tZX" id="N1F-EE-M0p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yVI-fE-9a4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2269.5999999999999" y="62.518740629685162"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="Sup-tI-ihb">

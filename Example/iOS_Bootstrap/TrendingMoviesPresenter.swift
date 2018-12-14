@@ -34,7 +34,6 @@ class TrendingMoviesPresenter :
                     trendingMovie.voting = movie.voteAverage
                     trendingMovie.originalLanguage = movie.originalLanguage
                     if let posterURL = movie.posterPath { trendingMovie.imageURL = posterURL }
-                    //
                     movies.append(trendingMovie)
                 }
                 self.moviesArray += moviesPage.moviesList!
@@ -47,11 +46,9 @@ class TrendingMoviesPresenter :
         }
     }
     
-    func getMoiveSummaryForMovieAt(index: Int) {
+    func getSummaryForMovieAt(index: Int) {
         var summary: String
-        if let moviewOverview = moviesArray[index].overview {
-            summary = moviewOverview
-        }
+        if let moviewOverview = moviesArray[index].overview { summary = moviewOverview }
         else { summary = "Sorry, There is no summary for this movie!" }
         getViewDelegator().didGetMovieSummary(summary: summary)
     }
