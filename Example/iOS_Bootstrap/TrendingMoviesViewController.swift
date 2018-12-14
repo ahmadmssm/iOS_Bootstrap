@@ -9,19 +9,20 @@
 import iOS_Bootstrap
 import SCLAlertView
 
-class TrendingMoviesViewController:
-    MyMenuItemTableViewController<TrendingMoviesPresenter, TrendingMoviesViewDelegator, Movie>,
-    TrendingMoviesViewDelegator,
-    BaseTableViewDelegates {
+class TrendingMoviesViewController: MyMenuItemLiveTableViewController
+            <TrendingMoviesPresenter, TrendingMoviesViewDelegator, TrendingMovieCellModel>,
+            TrendingMoviesViewDelegator,
+            BaseTableViewDelegates {
     
-    @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet private weak var tableView: UITableView!
     //
     private var sclAlertViewAppearance : SCLAlertView.SCLAppearance!
     private var sclAlertView : SCLAlertView!
     private var floatingButton : UIButton!
     
     override func viewDidLoad() { super.viewDidLoad() }
-    
+
     override func initUI() {
         sclAlertViewAppearance =  SCLAlertView.SCLAppearance(
             showCloseButton: false,
@@ -29,60 +30,43 @@ class TrendingMoviesViewController:
         )
         self.title = "Trending movies"
         //
-        floatingButton = UIButton()
         createFloatingButton()
     }
-        
+
     override func initTableViewAdapterConfiguraton() {
         getTableViewAdapter().configureTableWithXibCell(tableView: tableView, nibClass: TrendingMoviesCell.self, delegate: self)
     }
-    
-    func configureTableViewCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : TrendingMoviesCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        cell.movieTitleLabel.text = getTableViewDataSource[indexPath.row].title!
-        cell.releaseDateLabel.text = getTableViewDataSource[indexPath.row].releaseDate
-        cell.votingLabel.text = getTableViewDataSource[indexPath.row].voteAverage!.toString(withDecimalPoints: 1) + "  \u{2B50}"
-        cell.movieLanguage.text = getTableViewDataSource[indexPath.row].originalLanguage
-        //
-        if let imageURL = getTableViewDataSource[indexPath.row].posterPath {
-            let baseImgURL = "https://image.tmdb.org/t/p/w92"
-            let posterURL = URL(string: baseImgURL + imageURL)
-            cell.posterImage.loadImage(with: posterURL!)
-        }
-        //
+
+    func configureCellForRow(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: TrendingMoviesCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        let cellModel = self.getTableViewDataSource[indexPath.row]
+        cell.cellMode = cellModel
         return cell
     }
-    
+
     func rowDidSelected(tableView: UITableView, indexPath: IndexPath) {
-        if let moviewOverview = getTableViewDataSource[indexPath.row].overview {
-            sclAlertView = SCLAlertView(appearance: sclAlertViewAppearance)
-            sclAlertView.showEdit("Movie summary", subTitle: moviewOverview)
-        }
-        else {
-            self.view.makeToast("Sorry, There is no summary for this movie!", duration: 3.0, position: .center)
-        }
+       getPresenter().getMoiveSummaryForMovieAt(index: indexPath.row)
+    }
+
+    func didGetMovieSummary(summary: String) {
+        sclAlertView = SCLAlertView(appearance: sclAlertViewAppearance)
+        sclAlertView.showEdit("Movie summary", subTitle: summary)
     }
     
     func loadMore(tableView: UITableView, forPage page: Int, updatedDataSource: [Any]) {
         getPresenter().getTrendingMovies(pageNumber: page)
     }
-    
-    func didGetTrendingMoviesPage(page: MoviesPage) {
-        // Configure pagination parameters
-        getTableViewAdapter().configurePaginationParameters(totalNumberOfItems: page.totalNumberOfItems!, itemsPerPage: page.itemsPerPage!)
-        // Reload table with new page items only (Not the whole data source)
-        getTableViewAdapter().reloadTable(pageItems: page.moviesList!)
-    }
-    
-    func didGetTrendingMoviesList(moviesList: [Movie]) {
-        getTableViewAdapter().reloadTable(pageItems: moviesList)
-    }
-    
+
+
     func didFailToGetTrendingMovies(error: String) {
         SCLAlertView().showError("Error", subTitle: error)
     }
 
+    @objc func buttonClick(_ sender: UIButton) { performBackAction() }
+    
+    // Floating button
     private func createFloatingButton() {
+        floatingButton = UIButton()
         floatingButton = UIButton(type: .custom)
         floatingButton.translatesAutoresizingMaskIntoConstraints = false
         floatingButton.backgroundColor = .white
@@ -116,10 +100,6 @@ class TrendingMoviesViewController:
             scaleAnimation.toValue = 1.05;
             self.floatingButton.layer.add(scaleAnimation, forKey: "scale")
         }
-    }
-    
-    @objc func buttonClick(_ sender: UIButton) {
-        performBackAction()
     }
     
 }

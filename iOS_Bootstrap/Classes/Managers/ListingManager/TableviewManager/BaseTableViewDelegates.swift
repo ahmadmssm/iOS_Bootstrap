@@ -8,7 +8,7 @@
 
 
 public protocol BaseTableViewDelegates : TableViewOptionalDelegates {
-    func configureTableViewCell (tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func configureCellForRow (tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
 }
 
 @objc public protocol TableViewOptionalDelegates : CommonListingDelegates {

@@ -29,7 +29,7 @@ public protocol ImageLoadingService {
                     completion: ImageTask.Completion?)
 }
 
-public extension ImageLoadingService where Self : UIImageView {
+public extension ImageLoadingService where Self: UIImageView {
     
     public func loadImage(with url: URL) {
         ImageLoader.loadImage(with: url, into: self)

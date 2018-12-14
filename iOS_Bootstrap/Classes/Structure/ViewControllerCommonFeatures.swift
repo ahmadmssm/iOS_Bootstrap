@@ -6,7 +6,9 @@
 //
 
 public protocol ViewControllerCommonFeatures :
-                                              NetworkStatusListener,
+                                              InternetConnectionService,
                                               PopUpProtocol,
                                               Injectable,
                                               OverridableFunctions {}
+
+

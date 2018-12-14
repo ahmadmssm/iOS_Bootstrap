@@ -26,7 +26,7 @@ class WeatherTableViewController <T, V>:
         fatalError("Must Override")
     }
     
-    func configureTableViewCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func configureCellForRow(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : WeatherCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.labelTemperature.text = "Temp. : " + (getTableViewDataSource[indexPath.row].main?.temp?.toString())! + " C"
         cell.labelMaxTemp.text = "Max. temp. : " + (getTableViewDataSource[indexPath.row].main?.tempMax?.toString())! + " C"

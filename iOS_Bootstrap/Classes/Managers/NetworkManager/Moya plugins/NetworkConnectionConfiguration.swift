@@ -8,13 +8,6 @@
 // https://stackoverflow.com/questions/40116000/how-can-i-set-timeout-for-requests-using-moya-pod
 // https://medium.com/bobo-shone/how-to-set-timeout-or-http-header-in-moya-a5f6b1cb8ef2
 //
-/* How to use :
- 
- let Provider = MoyaProvider<GithubAPI>(endpointClosure: endpointClosure,
- manager: DefaultAlamofireManager.sharedManager,
- plugins: [NetworkActivityPlugin(networkActivityClosure: networkActivityClosure)])
- 
- */
 
 import Alamofire
 

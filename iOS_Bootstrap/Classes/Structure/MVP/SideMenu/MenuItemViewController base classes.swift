@@ -32,6 +32,12 @@ open class BaseMenuItemTableViewController <T, V, M> :
                     BaseTableViewController<T, V, M>,
                     SideMenuItemCommonFunctions
                     where T : BasePresenter<V> {}
+//
+// Base live table view + MVP
+open class BaseMenuItemLiveTableViewController <T, V, M> :
+                    BaseLiveTableViewController<T, V, M>,
+                    SideMenuItemCommonFunctions
+                    where T : BaseLiveListingPresenter<V, M> {}
 
 // Base collection view + MVP
 open class BaseMenuItemCollectionViewController <T, V, M> :
@@ -39,4 +45,8 @@ open class BaseMenuItemCollectionViewController <T, V, M> :
                     SideMenuItemCommonFunctions
                     where T : BasePresenter<V> {}
 
-
+// Base live collection view + MVP
+open class BaseMenuItemLiveCollectionViewController <T, V, M> :
+                    BaseLiveCollectionViewController<T, V, M>,
+                    SideMenuItemCommonFunctions
+                    where T : BaseLiveListingPresenter<V, M> {}

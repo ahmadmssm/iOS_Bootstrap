@@ -8,27 +8,37 @@
 
 import iOS_Bootstrap
 
-class TrendingMoviesPresenter : BasePresenter<TrendingMoviesViewDelegator> {
-   
-    private var isListLoadingForTheFirstTime : Bool = true
+class TrendingMoviesPresenter :
+             BaseLiveListingPresenter<TrendingMoviesViewDelegator, TrendingMovieCellModel> {
+    
+    private var moviesArray: [Movie]  = []
     
     required init(viewDelegator: TrendingMoviesViewDelegator) {
         super.init(viewDelegator: viewDelegator)
     }
     
     override func viewControllerDidLoaded() { getTrendingMovies(pageNumber: 1) }
-    
+
     func getTrendingMovies(pageNumber : Int) {
         APIsConnector.sharedInstance.getTrendingMovies(pageNo: pageNumber) { response in
             switch response {
             case .success(let moviesPage):
-                if (self.isListLoadingForTheFirstTime) {
-                    self.isListLoadingForTheFirstTime = false
-                    self.getViewDelegator().didGetTrendingMoviesPage(page: moviesPage)
+                // The page params setted one time only, the hadling is done by the boot strap
+                self.setPaginationParams(totalNumberOfItems: moviesPage.totalNumberOfItems!, itemsPerPage: moviesPage.itemsPerPage!)
+                var movies: [TrendingMovieCellModel] = []
+                for movie in moviesPage.moviesList! {
+                    var trendingMovie = TrendingMovieCellModel()
+                    //
+                    trendingMovie.movieTitle = movie.title
+                    trendingMovie.releaseDate = movie.releaseDate
+                    trendingMovie.voting = movie.voteAverage
+                    trendingMovie.originalLanguage = movie.originalLanguage
+                    if let posterURL = movie.posterPath { trendingMovie.imageURL = posterURL }
+                    //
+                    movies.append(trendingMovie)
                 }
-                else {
-                    self.getViewDelegator().didGetTrendingMoviesList(moviesList: moviesPage.moviesList!)
-                }
+                self.moviesArray += moviesPage.moviesList!
+                self.dataSource = movies
                 break
             case .failure(let errorMsg):
                 self.getViewDelegator().didFailToGetTrendingMovies(error: errorMsg)
@@ -36,4 +46,14 @@ class TrendingMoviesPresenter : BasePresenter<TrendingMoviesViewDelegator> {
             }
         }
     }
+    
+    func getMoiveSummaryForMovieAt(index: Int) {
+        var summary: String
+        if let moviewOverview = moviesArray[index].overview {
+            summary = moviewOverview
+        }
+        else { summary = "Sorry, There is no summary for this movie!" }
+        getViewDelegator().didGetMovieSummary(summary: summary)
+    }
+    
 }

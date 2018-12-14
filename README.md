@@ -75,38 +75,35 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 29. Refresh token plugin for moya.
 30. Refresh token RX Swift plugin.
 31. Real time listeners for token update/expire event ( Work with 29 or 30 but not alone ).
-32. HandyJSON Moya plugin.
-33. HandyJSON RX Swift plugin.
-34. Out of the box build variants ( Debug - Staging - Release ) auto handler.
-35. Read/Write Files/Folder managers.
-36. In app localization manager ( No need tor restart your app 😉 ).
-37. Cleaner localization syntax.
-38. UI button show/hide loading extension.
-39. Show/hode loading in any vew controller
-40. BaseTableAdapterController,  BaseTableAdapterPresenter, BaseCollectionAdapterController,  BaseCollectionAdapterPresenter to save you somtime and code when you implement table or collection view.
-41. You can call getUserDefaults from BaseController and BasePresenter by default.
-42. Phone number validator string extension.
-43. Includes **SCLAlertView** awesone swift library.
-44. ViewPager (AKA : Segmented controller) as the one in Android 😁.
-45. Automated Contexts injection.
-46. Added UITabBar controller MVP base class.
-47. Updated the default configurations Class to use builder design pattern instead of static methods.
-48. Added a new network gneric completion handler in addition to the older ones.
-49. Cancel any newtowrk request out of the box.
-50. Base side menu controller + Base tabbar controller + base table and collection view controller, all with MVP out of the box.
-51. You can hide the notch for iPhone X series 😁.
-52. Side menu out of the box.
-53. Event bus helper class.
-54. Added Skeleton helper class to add skeleton effect to UIViews, table and collection views.
-55. Added dropdown banner component.
-56. How to use + examples + documentation + references.
+32. Out of the box build variants ( Debug - Staging - Release ) auto handler.
+33. Read/Write Files/Folder managers.
+34. In app localization manager ( No need tor restart your app 😉 ).
+35. Cleaner localization syntax.
+36. UI button show/hide loading extension.
+37. Show/hode loading in any vew controller
+38. BaseTableAdapterController,  BaseTableAdapterPresenter, BaseCollectionAdapterController,  BaseCollectionAdapterPresenter to save you somtime and code when you implement table or collection view.
+39. You can call getUserDefaults from BaseController and BasePresenter by default.
+40. Phone number validator string extension.
+41. Includes **SCLAlertView** awesone swift library.
+42. ViewPager (AKA : Segmented controller) as the one in Android 😁.
+43. Automated Contexts injection.
+44. Added UITabBar controller MVP base class.
+45. Updated the default configurations Class to use builder design pattern instead of static methods.
+46. Added a new network gneric completion handler in addition to the older ones.
+47. Cancel any newtowrk request out of the box.
+48. Base side menu controller + Base tabbar controller + base table and collection view controller, all with MVP out of the box.
+49. You can hide the notch for iPhone X series 😁.
+50. Side menu out of the box.
+51. Event bus helper class.
+52. Added Skeleton helper class to add skeleton effect to UIViews, table and collection views.
+53. Added dropdown banner component.
+54. How to use + examples + documentation + references.
 
 
 ## Upcoming features
 
-1. Date and Time manager.
-2. Push notification manager.
-3. More extensions! Please if there is an extension you are constantly using, send a PR now.
+1. Push notification manager.
+2. More extensions! Please if there is an extension you are constantly using, send a PR now.
 
 
 ## Requirements
@@ -264,10 +261,9 @@ The following awesome libraries are used as dependancies in my pod :
 
 1. [Alamofire](https://github.com/Alamofire/Foundation).
 2. [Moya](https://github.com/Moya/Moya).
-3. [HandyJSON](https://github.com/alibaba/HandyJSON).
-4. [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager).
-5. [Nuke](https://github.com/kean/Nuke)
-6. [SCLAlertView](https://github.com/vikmeup/SCLAlertView-Swift).
+3. [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager).
+4. [Nuke](https://github.com/kean/Nuke)
+5. [SCLAlertView](https://github.com/vikmeup/SCLAlertView-Swift).
 
 In addition, the following Repos helped me alot either by including their codes directly into my pod or using some portion of their codes to improve my library or to learn something new so __**thank you**__ for sharing your awesome codes for free to the community.
 

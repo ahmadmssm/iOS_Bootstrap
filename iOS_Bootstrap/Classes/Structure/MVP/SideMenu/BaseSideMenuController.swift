@@ -46,7 +46,6 @@ open class BaseSideMenuController : SlideMenuController {
 //    //
 //    override open func viewDidDisappear(_ animated: Bool) {
 //        super.viewDidDisappear(animated)
-//        InternetConnectionManager.getInstance.removeListener(listener: self)
 //        setupViewDidDisappearEssentials()
 //    }
 //    

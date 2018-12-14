@@ -34,10 +34,9 @@ open class BaseTabBarController <T, V> :
     //
     override open func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        InternetConnectionManager.getInstance.removeListener(listener: self)
         setupViewDidDisappearEssentials()
     }
-    
+    //
     public final func getPresenter() -> T { return presenter }
     
     open func initUI () { fatalError("Must Override") }

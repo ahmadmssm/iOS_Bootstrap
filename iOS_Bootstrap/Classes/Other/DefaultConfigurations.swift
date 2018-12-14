@@ -75,7 +75,7 @@ open class DefaultConfigurations {
         return self
     }
     
-    public func configureGlobalSnackBar(snacbBar : TTGSnackbar) -> DefaultConfigurations {
+    public func configureAppSnackBar(snacbBar : TTGSnackbar) -> DefaultConfigurations {
         DefaultConfigurations.snackBar = snacbBar
         return self
     }

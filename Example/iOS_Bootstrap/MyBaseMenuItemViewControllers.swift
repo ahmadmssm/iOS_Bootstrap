@@ -28,7 +28,15 @@ class MyMenuItemTabBarController <P, V> : BaseMenuItemTabBarController <P, V> wh
 }
 
 class MyMenuItemTableViewController <P, V, M> : BaseMenuItemTableViewController <P, V, M> where P : BasePresenter<V> {
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addCustomLeftMenuItemViewController()
+        self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side_menu"))
+    }
+}
+
+class MyMenuItemLiveTableViewController <P, V, M>:
+    BaseMenuItemLiveTableViewController <P, V, M> where P : BaseLiveListingPresenter<V, M> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         addCustomLeftMenuItemViewController()

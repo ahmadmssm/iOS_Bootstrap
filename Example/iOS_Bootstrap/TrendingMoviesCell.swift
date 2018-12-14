@@ -11,11 +11,25 @@ import iOS_Bootstrap
 
 class TrendingMoviesCell: BaseTableViewCell {
     
-    @IBOutlet weak var posterImage: UIImageView!
-    @IBOutlet weak var movieTitleLabel: UILabel!
-    @IBOutlet weak var releaseDateLabel: UILabel!
-    @IBOutlet weak var votingLabel: UILabel!
-    @IBOutlet weak var movieLanguage: UILabel!
+    @IBOutlet private weak var posterImage: UIImageView!
+    @IBOutlet private weak var movieTitleLabel: UILabel!
+    @IBOutlet private weak var releaseDateLabel: UILabel!
+    @IBOutlet private weak var votingLabel: UILabel!
+    @IBOutlet private weak var movieLanguage: UILabel!
+    
+    var cellMode: TrendingMovieCellModel? {
+        didSet {
+            movieTitleLabel.text = cellMode?.movieTitle
+            releaseDateLabel.text = cellMode?.releaseDate
+            votingLabel.text = (cellMode?.voting?.toString(withDecimalPoints: 1))! + "  \u{2B50}"
+            movieLanguage.text = cellMode?.originalLanguage
+            //
+            if let imageURL = cellMode?.imageURL {
+                let posterURL = URL(string: imageURL)
+                posterImage.loadImage(with: posterURL!)
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

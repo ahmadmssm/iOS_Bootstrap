@@ -31,8 +31,8 @@ class GPSWeatherViewController:
 
     override func getTableView() -> UITableView { return tableView }
 
-    override func configureTableViewCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return super.configureTableViewCell(tableView: tableView, cellForRowAt: indexPath)
+    override func configureCellForRow(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return super.configureCellForRow(tableView: tableView, cellForRowAt: indexPath)
     }
     
 }

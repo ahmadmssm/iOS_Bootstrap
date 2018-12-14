@@ -92,7 +92,7 @@ open class BaseSideMenuTableViewController<T, V, M> :
     
     // Base tableview adapter delegates
     //
-    public func configureTableViewCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func configureCellForRow(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return setupSideMenuItemCell(indexPath: indexPath, menuItem: menuItems![indexPath.row])
     }
     //

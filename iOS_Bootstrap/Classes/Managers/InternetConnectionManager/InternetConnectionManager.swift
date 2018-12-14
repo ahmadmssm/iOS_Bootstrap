@@ -346,7 +346,6 @@ extension InternetConnectionManager {
             listener.networkStatusDidChanged(status: network.connection)
         }
     }
-    
     //
     public func addListener(listener: NetworkStatusListener){
         listeners.append(listener)

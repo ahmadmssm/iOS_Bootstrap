@@ -10,7 +10,5 @@ public protocol IServicesInstances {
 }
 
 public extension IServicesInstances {
-    var servicesInstaces : ServicesInstances {
-        return ServicesInstances ()
-    }
+    var servicesInstaces : ServicesInstances { return ServicesInstances () }
 }

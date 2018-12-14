@@ -97,7 +97,7 @@ class CountriesViewController:
     
     func withExpandableCell() -> Bool { return true }
     
-    func configureTableViewCell(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func configureCellForRow(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CountriesCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         if (getTableViewDataSource.count > 0) {
             cell.labelCountryName.text = getTableViewDataSource[indexPath.row].countryName!

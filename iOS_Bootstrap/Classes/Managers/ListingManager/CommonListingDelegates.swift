@@ -6,8 +6,9 @@
 //
 
 @objc public protocol CommonListingDelegates {
+    @objc optional func noMoreResutlsToLoad () 
     @objc optional func configurePullToRefresh (refreshcontrole : UIRefreshControl)
-    @objc optional func pullToRefresh (refreshcontrole : UIRefreshControl)
+    @objc optional func pullToRefresh ()
     // Empty dataset callbacks
     @objc optional func emptyDataSetShouldDisplay () -> Bool
     @objc optional func emptyDataSetTitleText () -> NSAttributedString
