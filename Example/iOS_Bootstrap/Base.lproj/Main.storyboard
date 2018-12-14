@@ -26,49 +26,49 @@
                                 <rect key="frame" x="26" y="30" width="323" height="627"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74S-GB-FaI">
-                                        <rect key="frame" x="0.0" y="0.0" width="323" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="53.5"/>
                                         <state key="normal" title="Show progress dialog"/>
                                         <connections>
                                             <action selector="showProgress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QvB-OL-BF8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vl-tK-3cJ">
-                                        <rect key="frame" x="0.0" y="58" width="323" height="48"/>
+                                        <rect key="frame" x="0.0" y="63.5" width="323" height="54"/>
                                         <state key="normal" title="Show date picker"/>
                                         <connections>
                                             <action selector="showDatePicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mAY-YB-1jP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRy-pZ-k5s">
-                                        <rect key="frame" x="0.0" y="116" width="323" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="127.5" width="323" height="53.5"/>
                                         <state key="normal" title="Show time picker"/>
                                         <connections>
                                             <action selector="showTimePicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mh7-ry-bFu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1K-70-M5C">
-                                        <rect key="frame" x="0.0" y="173.5" width="323" height="48"/>
+                                        <rect key="frame" x="0.0" y="191" width="323" height="54"/>
                                         <state key="normal" title="Show locale picker"/>
                                         <connections>
                                             <action selector="showLocalePicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="E6P-sf-Ff0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYA-Ub-nuv" customClass="CustomButton" customModule="iOS_Bootstrap">
-                                        <rect key="frame" x="0.0" y="231.5" width="323" height="48"/>
+                                        <rect key="frame" x="0.0" y="255" width="323" height="53.5"/>
                                         <state key="normal" title="Show array picker "/>
                                         <connections>
                                             <action selector="showArrayPicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WgI-se-mNO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chO-x2-mF4">
-                                        <rect key="frame" x="0.0" y="289.5" width="323" height="48"/>
+                                        <rect key="frame" x="0.0" y="318.5" width="323" height="53.5"/>
                                         <state key="normal" title="Show multi items picker"/>
                                         <connections>
                                             <action selector="showMultiArrayPicker:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Eo5-Z8-PAt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghE-xj-hXA" customClass="CustomButton" customModule="iOS_Bootstrap_Example">
-                                        <rect key="frame" x="0.0" y="347.5" width="323" height="48"/>
+                                        <rect key="frame" x="0.0" y="382" width="323" height="54"/>
                                         <state key="normal" title="Show date and time picker">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -77,21 +77,21 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fn-eB-MrZ" customClass="CustomButton" customModule="iOS_Bootstrap">
-                                        <rect key="frame" x="0.0" y="405.5" width="323" height="48"/>
+                                        <rect key="frame" x="0.0" y="446" width="323" height="53.5"/>
                                         <state key="normal" title="Show toast"/>
                                         <connections>
                                             <action selector="showToast:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VTP-qe-W2R"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yi8-CJ-NyV">
-                                        <rect key="frame" x="0.0" y="463.5" width="323" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="509.5" width="323" height="54"/>
                                         <state key="normal" title="Loggers"/>
                                         <connections>
                                             <action selector="loggers:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Bp6-YB-Dby"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6j-Hu-us8" customClass="CustomButton" customModule="iOS_Bootstrap">
-                                        <rect key="frame" x="0.0" y="521" width="323" height="48"/>
+                                        <rect key="frame" x="0.0" y="573.5" width="323" height="53.5"/>
                                         <state key="normal" title="Gradient button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -112,13 +112,6 @@
                                                 <color key="value" red="0.26062288420000002" green="0.53508837119999997" blue="0.89920660620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVV-js-CyU">
-                                        <rect key="frame" x="0.0" y="579" width="323" height="48"/>
-                                        <state key="normal" title="Show validation example"/>
-                                        <connections>
-                                            <action selector="onButtonClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ulw-V0-cjn"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

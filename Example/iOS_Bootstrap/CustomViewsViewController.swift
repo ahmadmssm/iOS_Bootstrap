@@ -55,10 +55,6 @@ class CustomViewsViewController:
         Log.info("Hi, I'm a logger that prints what you want in Xcode console and i work in debug mode only")
     }
     
-    @IBAction func onButtonClick(_ sender: UIButton) {
-        Navigator.goToValidatorsExampleViewController()
-    }
-    
     func openMultiDatasourcePicker(sender : UIButton) {
         let dataSource : [[String]] = [["One", "Two", "A lot"], ["Many", "Many more", "Infinite"],["One", "Two", "A lot"]]
         picker.showMutiDataSelectionPicker(sender: sender, title: "", dataSource: dataSource, initislSelection: [0,0,0], okButton: nil, cancelButton: nil) { (position, result) in

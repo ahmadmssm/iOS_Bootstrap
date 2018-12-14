@@ -15,7 +15,7 @@ class MainViewController: BaseCollectionViewController<MainPresenter, MainViewDe
     private var collectionViewItems : [String]?
     
     override func viewDidLoad() {
-        collectionViewItems = ["Side menu", "Custom views", "Switch language"]
+        collectionViewItems = ["Side menu", "Custom views", "Switch language", "Validatiors"]
         super.viewDidLoad()
     }
     
@@ -48,6 +48,9 @@ class MainViewController: BaseCollectionViewController<MainPresenter, MainViewDe
             break
         case 2:
             getPresenter().switchAppLanguage()
+            break
+        case 3:
+            Navigator.goToValidatorsExampleViewController()
             break
         default:
             break
