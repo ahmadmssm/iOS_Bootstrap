@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .setTokenRefreshListener(self)
                 .setNavigationBarTextApperance(textApperance: StaticResources.CustomStyles.navigationBarTextStyle)
                 .setNavigationBarBackButtonColor(backButtonColor: UIColor.white)
+                .setCoreDataModelName(modelName: Constants.coreDataModelName)
                 .build()
         Navigator.startInitialView()
         //

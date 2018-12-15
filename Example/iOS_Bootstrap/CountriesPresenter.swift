@@ -7,29 +7,28 @@
 //
 
 import iOS_Bootstrap
+import RxSwift
 
+@available(iOS 10.0, *)
 class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
     
-    private var countriesArray : [Country]!
-    private var filteredCountriesArray : [Country]!
+    private var countriesArray : [CountryEntity]!
+    private var filteredCountriesArray : [CountryEntity]!
     private var isFirstTimeLoading : Bool = true
 
     required init(viewDelegator: CountriesViewDelegator) {
         super.init(viewDelegator: viewDelegator)
-        //
         countriesArray = []
         filteredCountriesArray = []
     }
     
     override func viewControllerDidLoaded() { getWorldCountries() }
     
-    func getWorldCountries() {
+    private func getWorldCountries() {
         APIsConnector.sharedInstance.getAllCountries (completion: { response in
             switch response {
             case .success(let countries):
-                self.countriesArray.removeAll()
-                self.countriesArray = countries
-                self.getViewDelegator().didGetCountries(countries: countries)
+                self.processCountriesList(countries: countries)
                 break
             case .failure(let errorMsg):
                 self.getViewDelegator().didFailToGetCountries(error: errorMsg)
@@ -39,10 +38,48 @@ class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
                 })
     }
     
-    func findCountriesWithText(text : String, currentDataSource : [Country]) {
+    private func processCountriesList(countries: [Country]) {
+        // Flush search array
+        self.countriesArray.removeAll()
+        // Flush previously saved countries
+        CountriesCachingManager
+            .instance.deleteAllRecords()
+            .andThen(insertCountriesToCoreData(countries: countries))
+            .andThen(CountriesCachingManager.instance.fetchAll())
+            .asObservable()
+            .subscribe(onNext: { savedCountries in
+                self.countriesArray = savedCountries
+                // Sort countries array alphabetically
+                self.countriesArray = self.countriesArray.sorted(by: { $0.name! < $1.name! })
+                self.getViewDelegator().didGetCountries(countries: self.countriesArray)
+            }, onError: { error in
+                self.getViewDelegator().didFailToSaveCountriesInCoreData(error: error.localizedDescription)
+            }, onCompleted: {}, onDisposed: {
+                
+            })
+    }
+    
+    private func insertCountriesToCoreData(countries: [Country]) -> Completable {
+        return Completable.create { completable in
+            countries.forEach({ country in
+                let countryEntity = CountryEntity(context: CountriesCachingManager.instance.context)
+                countryEntity.name = country.countryName!
+                countryEntity.capital = country.capital!
+                countryEntity.continental = country.region!
+                countryEntity.flagURL = country.flag!
+                countryEntity.timeZone = country.timeZones![0]
+                CountriesCachingManager.instance.insertRecord(record: countryEntity)
+            })
+            completable(.completed)
+            return Disposables.create {}
+        }
+    }
+    
+    func findCountriesWith(name : String, currentDataSource : [CountryEntity]) {
         if (!isFirstTimeLoading) {
-            if (text == "") {
+            if (name == "") {
                 if (currentDataSource != countriesArray) {
+                    
                     getViewDelegator().loadingDidStarted!()
                     getViewDelegator().didResetCountriesTable(countries: countriesArray)
                 }
@@ -52,7 +89,7 @@ class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
                 getViewDelegator().loadingDidStarted!()
                 filteredCountriesArray.removeAll()
                 for country in countriesArray {
-                    if (country.countryName?.range(of:text) != nil) {
+                    if (country.name?.range(of:name) != nil) {
                         filteredCountriesArray.append(country)
                     }
                 }

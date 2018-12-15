@@ -11,17 +11,17 @@ import UIKit
 open class TableviewAdapter : NSObject {
     
     private final var mTableview : UITableView!
-    fileprivate var tableViewDataSource: [Any]!
+    private var tableViewDataSource: [Any]!
     private final var mNibClass : BaseTableViewCell.Type!
     private final var mNibClasses : [BaseTableViewCell.Type]?
-    fileprivate final var mDelegate : BaseTableViewDelegates!
-    fileprivate var mTotalNumberOfItems : Int?
-    fileprivate var mItemsPerPage : Int?
-    fileprivate var mNumberOfPages : Int = 0
-    fileprivate var mCurrentPage : Int = 1
-    fileprivate var hasMore : Bool = false
+    private final var mDelegate : BaseTableViewDelegates!
+    private var mTotalNumberOfItems : Int?
+    private var mItemsPerPage : Int?
+    private var mNumberOfPages : Int = 0
+    private var mCurrentPage : Int = 1
+    private var hasMore : Bool = false
     private var firstTime : Bool = true
-    fileprivate var indicator : UIActivityIndicatorView?
+    private var indicator : UIActivityIndicatorView?
     
     public var getDataSource : [Any] {
         get { if (tableViewDataSource != nil) { return tableViewDataSource }; return [] }
@@ -115,6 +115,18 @@ open class TableviewAdapter : NSObject {
         indicator?.stopAnimating()
         mTableview.tableFooterView?.isHidden = true
         self.mCurrentPage += 1
+    }
+    
+    public final func reloadSinglePageTable(items:[Any]) {
+        hasMore = false
+        if (self.tableViewDataSource.isEmpty) { self.tableViewDataSource = items }
+        else {
+            self.tableViewDataSource.removeAll()
+            self.tableViewDataSource = items
+        }
+        mTableview?.reloadData()
+        indicator?.stopAnimating()
+        mTableview.tableFooterView?.isHidden = true
     }
     
     public final func reloadTable() { mTableview?.reloadData() }

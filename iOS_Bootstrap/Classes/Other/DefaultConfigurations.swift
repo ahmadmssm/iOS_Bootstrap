@@ -11,9 +11,10 @@ import UIKit
 
 open class DefaultConfigurations {
     
-    static var snackBar : TTGSnackbar?
-
-    private var notificationContext : Any?
+    // Helper variables
+    static var snackBar: TTGSnackbar?
+    private var notificationContext: Any?
+    static var coreDataModelName: String?
 
     public init() {}
 
@@ -80,8 +81,13 @@ open class DefaultConfigurations {
         return self
     }
    
-    public func disableNotchForIphoneX() -> DefaultConfigurations  {
+    public func disableNotchForIphoneX() -> DefaultConfigurations {
         NotchArea.instance.spread()
+        return self
+    }
+    
+    public func setCoreDataModelName(modelName: String) -> DefaultConfigurations {
+        DefaultConfigurations.coreDataModelName = modelName
         return self
     }
     

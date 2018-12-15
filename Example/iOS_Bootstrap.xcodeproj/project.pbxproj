@@ -39,6 +39,7 @@
 		C946C12D21A3681100B0F553 /* NoCancelButtonSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946C12C21A3681100B0F553 /* NoCancelButtonSearchController.swift */; };
 		C953267C2189BE2500105260 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953267B2189BE2500105260 /* Movie.swift */; };
 		C966063E2114A04C00E2D38A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96606402114A04C00E2D38A /* Localizable.strings */; };
+		C96629E221C5415200961750 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C96629E021C5415200961750 /* DataBase.xcdatamodeld */; };
 		C970DD6B21A065FD0079B706 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970DD6A21A065FD0079B706 /* Section.swift */; };
 		C970DD6D21A0669E0079B706 /* ExpandableCellTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970DD6C21A0669E0079B706 /* ExpandableCellTableViewController.swift */; };
 		C970DD7021A0688A0079B706 /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970DD6E21A0688A0079B706 /* ExpandableTableViewCell.swift */; };
@@ -49,6 +50,8 @@
 		C973B7B921C436C100B63A69 /* ValidatorsExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973B7B821C436C100B63A69 /* ValidatorsExampleViewController.swift */; };
 		C973B7BB21C436D400B63A69 /* ValidatorsExamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973B7BA21C436D400B63A69 /* ValidatorsExamplePresenter.swift */; };
 		C973B7BD21C436E500B63A69 /* ValidatorsExampleViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973B7BC21C436E500B63A69 /* ValidatorsExampleViewDelegator.swift */; };
+		C973B7CE21C5216000B63A69 /* CountriesCachingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973B7CD21C5216000B63A69 /* CountriesCachingManager.swift */; };
+		C973B7D321C524FD00B63A69 /* CountryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973B7D221C524FD00B63A69 /* CountryEntity.swift */; };
 		C97CB4032190E94A00F396D3 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97CB4022190E94A00F396D3 /* Currency.swift */; };
 		C99AA05A21871BBB001683B8 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99AA05921871BBB001683B8 /* Menu.storyboard */; };
 		C99AA05C21872013001683B8 /* LeftSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA05B21872013001683B8 /* LeftSideMenuViewController.swift */; };
@@ -141,6 +144,7 @@
 		C94D407821162C14002E7623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C953267B2189BE2500105260 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C96606432114A0D000E2D38A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C96629E121C5415200961750 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		C970DD6A21A065FD0079B706 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		C970DD6C21A0669E0079B706 /* ExpandableCellTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCellTableViewController.swift; sourceTree = "<group>"; };
 		C970DD6E21A0688A0079B706 /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 		C973B7B821C436C100B63A69 /* ValidatorsExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorsExampleViewController.swift; sourceTree = "<group>"; };
 		C973B7BA21C436D400B63A69 /* ValidatorsExamplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorsExamplePresenter.swift; sourceTree = "<group>"; };
 		C973B7BC21C436E500B63A69 /* ValidatorsExampleViewDelegator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorsExampleViewDelegator.swift; sourceTree = "<group>"; };
+		C973B7CD21C5216000B63A69 /* CountriesCachingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCachingManager.swift; sourceTree = "<group>"; };
+		C973B7D221C524FD00B63A69 /* CountryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryEntity.swift; sourceTree = "<group>"; };
 		C97CB4022190E94A00F396D3 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C99A404D21163028007B88A4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C99AA05921871BBB001683B8 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
@@ -245,6 +251,7 @@
 		607FACD21AFB9204008FA782 /* Example for iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
+				C973B7CA21C51DA400B63A69 /* CoreData */,
 				C902036E20F571C100A63492 /* Navigator.swift */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				C99A405121186C3F007B88A4 /* Resources */,
@@ -447,6 +454,43 @@
 			name = ValidatorsExampleScene;
 			sourceTree = "<group>";
 		};
+		C973B7CA21C51DA400B63A69 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C973B7CD21C5216000B63A69 /* CountriesCachingManager.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		C973B7CF21C5234B00B63A69 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C973B7D221C524FD00B63A69 /* CountryEntity.swift */,
+				C96629E021C5415200961750 /* DataBase.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		C973B7D021C5235F00B63A69 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				C93E4B5921905DF400A62059 /* MoviesModels */,
+				C93E4B462190575200A62059 /* WeatherModels */,
+				C97CB4042190F04400F396D3 /* CountryModels */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		C973B7D121C5238600B63A69 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C99AA09B21884824001683B8 /* SideMenuModel.swift */,
+				C9AF5B2121599F2A00C1FED3 /* ErrorModel.swift */,
+				C970DD6A21A065FD0079B706 /* Section.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		C97CB4042190F04400F396D3 /* CountryModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,12 +622,9 @@
 		C99EA61D20CB461B00D7C158 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C99AA09B21884824001683B8 /* SideMenuModel.swift */,
-				C9AF5B2121599F2A00C1FED3 /* ErrorModel.swift */,
-				C970DD6A21A065FD0079B706 /* Section.swift */,
-				C93E4B5921905DF400A62059 /* MoviesModels */,
-				C93E4B462190575200A62059 /* WeatherModels */,
-				C97CB4042190F04400F396D3 /* CountryModels */,
+				C973B7CF21C5234B00B63A69 /* CoreData */,
+				C973B7D021C5235F00B63A69 /* JSON */,
+				C973B7D121C5238600B63A69 /* Other */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -846,6 +887,7 @@
 				C97CB4032190E94A00F396D3 /* Currency.swift in Sources */,
 				C9CC0E4D2191997E00AF9D62 /* AdditionalData.swift in Sources */,
 				C902036F20F571C100A63492 /* Navigator.swift in Sources */,
+				C973B7D321C524FD00B63A69 /* CountryEntity.swift in Sources */,
 				C91FFF562192F22200DFC0CC /* WeatherTableViewController.swift in Sources */,
 				C92E4B0321C31A2F00B76B6C /* TrendingMovieCellModel.swift in Sources */,
 				C970DD7921A07D280079B706 /* GradientNavigationController.swift in Sources */,
@@ -874,6 +916,7 @@
 				C946C12D21A3681100B0F553 /* NoCancelButtonSearchController.swift in Sources */,
 				C91AF997218CCFAE00BB5559 /* StaticResources.swift in Sources */,
 				C953267C2189BE2500105260 /* Movie.swift in Sources */,
+				C973B7CE21C5216000B63A69 /* CountriesCachingManager.swift in Sources */,
 				C93E4B542190575300A62059 /* Main.swift in Sources */,
 				C91FC7192113092600A199F0 /* Constants.swift in Sources */,
 				C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */,
@@ -892,6 +935,7 @@
 				C91FC7172112FE8800A199F0 /* Environment.swift in Sources */,
 				C9CC0E562192449000AF9D62 /* WeatherMenuItemTabBarController.swift in Sources */,
 				C99AA09C21884824001683B8 /* SideMenuModel.swift in Sources */,
+				C96629E221C5415200961750 /* DataBase.xcdatamodeld in Sources */,
 				C973B7B921C436C100B63A69 /* ValidatorsExampleViewController.swift in Sources */,
 				C99EA60520CB3D7900D7C158 /* Configurations.swift in Sources */,
 				C9CC0E49219100F500AF9D62 /* WeatherCell.swift in Sources */,
@@ -1250,6 +1294,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C96629E021C5415200961750 /* DataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C96629E121C5415200961750 /* DataBase.xcdatamodel */,
+			);
+			currentVersion = C96629E121C5415200961750 /* DataBase.xcdatamodel */;
+			path = DataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
 }

@@ -6,6 +6,7 @@
 
 import iOS_Bootstrap
 
+@available(iOS 10.0, *)
 class LeftSideMenuViewController :
             BaseSideMenuTableViewController
                     <BasePresenter<BaseViewDelegator>, BaseViewDelegator, SideMenuModel> {

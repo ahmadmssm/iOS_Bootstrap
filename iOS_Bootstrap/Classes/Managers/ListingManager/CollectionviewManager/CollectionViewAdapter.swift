@@ -114,6 +114,17 @@ open class CollectionViewAdapter : NSObject {
         self.mCurrentPage += 1
     }
     
+    public final func reloadSinglePageCollectionView(items:[Any]) {
+        hasMore = false
+        if (self.collectionViewDataSource.isEmpty) { self.collectionViewDataSource = items }
+        else {
+            self.collectionViewDataSource.removeAll()
+            self.collectionViewDataSource = items
+        }
+        mCollectionview?.reloadData()
+        indicator?.stopAnimating()
+    }
+    
     public final func reloadCollectionView() {
         mCollectionview?.reloadData()
     }

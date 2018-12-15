@@ -28,6 +28,7 @@ class Navigator: BaseNavigator {
         }, completion: nil)
     }
     //
+    @available(iOS 10.0, *)
     static func goToSideMenuStoryboard() {
         let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.menu)
         let mainViewController : TrendingMoviesViewController = storyboard.instantiateViewController()

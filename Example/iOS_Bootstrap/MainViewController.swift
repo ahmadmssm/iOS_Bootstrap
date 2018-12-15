@@ -41,7 +41,7 @@ class MainViewController: BaseCollectionViewController<MainPresenter, MainViewDe
     func itemDidSelected(collectionView: UICollectionView, indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            Navigator.goToSideMenuStoryboard()
+            if #available(iOS 10.0, *) { Navigator.goToSideMenuStoryboard() } 
             break
         case 1:
             Navigator.goToCustomViewsViewController()

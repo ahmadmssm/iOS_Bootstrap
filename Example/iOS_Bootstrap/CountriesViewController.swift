@@ -12,9 +12,10 @@ import SCLAlertView
 import RxSwift
 import RxCocoa
 
+@available(iOS 10.0, *)
 class CountriesViewController:
                         MyMenuItemTableViewController<CountriesPresenter,
-                        CountriesViewDelegator, Country>,
+                        CountriesViewDelegator, CountryEntity>,
                         CountriesViewDelegator,
                         BaseTableViewDelegates {
     
@@ -75,7 +76,7 @@ class CountriesViewController:
                 .debounce(1.5, scheduler: MainScheduler.instance)
                 .subscribe(onNext: { [unowned self] searchText in
                     // Here we will be notified of every new value
-                    self.getPresenter().findCountriesWithText(text: searchText, currentDataSource: self.getTableViewDataSource)
+                    self.getPresenter().findCountriesWith(name: searchText, currentDataSource: self.getTableViewDataSource)
                 })
                 .disposed(by: disposeBag)
         }
@@ -100,12 +101,12 @@ class CountriesViewController:
     func configureCellForRow(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CountriesCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         if (getTableViewDataSource.count > 0) {
-            cell.labelCountryName.text = getTableViewDataSource[indexPath.row].countryName!
+            cell.labelCountryName.text = getTableViewDataSource[indexPath.row].name!
             cell.labelCapitalName.text = getTableViewDataSource[indexPath.row].capital
-            cell.labelRegion.text = getTableViewDataSource[indexPath.row].region
-            cell.labelTimeZone.text = getTableViewDataSource[indexPath.row].timeZones?[0]
+            cell.labelRegion.text = getTableViewDataSource[indexPath.row].continental
+            cell.labelTimeZone.text = getTableViewDataSource[indexPath.row].timeZone
             //
-            let flagURL = URL(string: getTableViewDataSource[indexPath.row].flag!)
+            let flagURL = URL(string: getTableViewDataSource[indexPath.row].flagURL!)
             let flagImage: SVGKImage = SVGKImage(contentsOf: flagURL)
             cell.imageViewFlag.image = flagImage.uiImage
         }
@@ -126,7 +127,7 @@ class CountriesViewController:
         return NSAttributedString(string: "No data !", attributes: attributes)
     }
 
-    func didGetCountries(countries: [Country]) {
+    func didGetCountries(countries: [CountryEntity]) {
         getTableViewAdapter().reloadTable(pageItems: countries)
         Skeleton.removeFrom(self.tableView)
         if (getTableViewDataSource.count == 0) {
@@ -139,14 +140,19 @@ class CountriesViewController:
         SCLAlertView().showError("Error", subTitle: error)
     }
     
-    func didGetSearchResults(filteredCountries: [Country]) {
+    func didFailToSaveCountriesInCoreData(error: String) {
+        
+    }
+    
+    func didGetSearchResults(filteredCountries: [CountryEntity]) {
         getTableViewAdapter().setDataSource(dataSource: [])
         getTableViewAdapter().setDataSource(dataSource: filteredCountries)
         getTableViewAdapter().reloadTable()
     }
     
-    func didResetCountriesTable(countries: [Country]) {
-        getTableViewAdapter().reloadTable(pageItems: countries)
+    func didResetCountriesTable(countries: [CountryEntity]) {
+//        getTableViewAdapter().reloadTable(pageItems: countries)
+        getTableViewAdapter().reloadSinglePageTable(items: countries)
     }
     
 }

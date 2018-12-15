@@ -647,6 +647,8 @@
 		C8EBA0923911EE1F7308167B1EC4024E /* RxTextStorageDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EF8354E514623A43FC4B0BB1B15FF6 /* RxTextStorageDelegateProxy.swift */; };
 		C8F8150B0BA52283DE2F2DF5AE24BAF2 /* UIGestureRecognizer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B039846B9FB77BC440044404CE8D070 /* UIGestureRecognizer+Rx.swift */; };
 		C964A56A3B313F50BF29849E31296452 /* BaseTableViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9854131442BC959919AFA19A0D958E /* BaseTableViewDelegates.swift */; };
+		C96629E521C57CFD00961750 /* CoreDataConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96629E421C57CFD00961750 /* CoreDataConfigurations.swift */; };
+		C96629E721C57DA800961750 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96629E621C57DA800961750 /* CoreDataManager.swift */; };
 		C973B77621C4311E00B63A69 /* RegEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973B77521C4311D00B63A69 /* RegEx.swift */; };
 		C973B79B21C4313B00B63A69 /* Observable+Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973B77821C4313900B63A69 /* Observable+Date+Extension.swift */; };
 		C973B79C21C4313B00B63A69 /* Observable+Number+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973B77921C4313900B63A69 /* Observable+Number+Extension.swift */; };
@@ -1781,6 +1783,8 @@
 		C7B7BBA69CAA7EC50D92308FCCA836F0 /* AFDateHelper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFDateHelper-dummy.m"; sourceTree = "<group>"; };
 		C7B953A864B930F22E41350D8BEE2E6A /* RxSearchBarDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxSearchBarDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxSearchBarDelegateProxy.swift; sourceTree = "<group>"; };
 		C93266A9E8A7329B1074A32157EBB2AC /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
+		C96629E421C57CFD00961750 /* CoreDataConfigurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataConfigurations.swift; sourceTree = "<group>"; };
+		C96629E621C57DA800961750 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C973B77521C4311D00B63A69 /* RegEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegEx.swift; sourceTree = "<group>"; };
 		C973B77821C4313900B63A69 /* Observable+Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Date+Extension.swift"; sourceTree = "<group>"; };
 		C973B77921C4313900B63A69 /* Observable+Number+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Number+Extension.swift"; sourceTree = "<group>"; };
@@ -3422,6 +3426,15 @@
 			path = "../Target Support Files/Result";
 			sourceTree = "<group>";
 		};
+		C96629E321C57CDB00961750 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				C96629E421C57CFD00961750 /* CoreDataConfigurations.swift */,
+				C96629E621C57DA800961750 /* CoreDataManager.swift */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
 		C973B76A21C42A2600B63A69 /* ValidationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -3690,10 +3703,11 @@
 		EE06E42D70D7305153043D103FECC60D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				C973B76A21C42A2600B63A69 /* ValidationManager */,
 				E25AB2F4EC80A7F244E7A1C2C0E9C1FE /* KeyboardManager.swift */,
 				E400C243F93023FE7F11591CE6DB9D42 /* SessionManager.swift */,
 				4976B1AD5E23C23099C16AD08C1FA6C3 /* UserDefaultsManager.swift */,
+				C96629E321C57CDB00961750 /* CoreDataManager */,
+				C973B76A21C42A2600B63A69 /* ValidationManager */,
 				6355E06BE8F6D1A1395B27C90B6EC58D /* Image loading + caching Manager */,
 				4CA505469141753CD7815216D511CFC7 /* InternetConnectionManager */,
 				9A572A46B478FDD0BC09751A9B1F428F /* ListingManager */,
@@ -4661,6 +4675,7 @@
 				5AA76D1B4F08A7D57BA7973F4607A40D /* BaseSideMenuModel.swift in Sources */,
 				5CA359E352EFAF1D37E48697E7B92A3F /* BaseSideMenuTableViewController.swift in Sources */,
 				B48391DAF7DA2E719EA0BAEDA0E14D7C /* BaseSideMenuViewController.swift in Sources */,
+				C96629E721C57DA800961750 /* CoreDataManager.swift in Sources */,
 				26805F8440F902D3313347D8D1516B11 /* BaseTabBarController.swift in Sources */,
 				DAEFF3F3400521DA883C76A4C4FC2DD8 /* BaseTableView.swift in Sources */,
 				B86FC2581D4760B53BCC2595E1D4D893 /* BaseTableViewCell.swift in Sources */,
@@ -4807,6 +4822,7 @@
 				86B5850E8A776FA92B54E5A6B34BDBAB /* UIImage + gradient color.swift in Sources */,
 				647453B9D44E57586FACB39999332717 /* UIKitSwizzling.swift in Sources */,
 				C973B7B021C4313B00B63A69 /* StringIsAlwaysPass.swift in Sources */,
+				C96629E521C57CFD00961750 /* CoreDataConfigurations.swift in Sources */,
 				7D0F4F94F36DC37E5027F392BB622D22 /* UILabel + format part of the text.swift in Sources */,
 				64F3C74EC248C201F686391E19BED956 /* UIView + hairlineImageView.swift in Sources */,
 				4CBE056B789F6FBFB228B786AEE852D9 /* UIView + load nib.swift in Sources */,

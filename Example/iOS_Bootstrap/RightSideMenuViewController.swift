@@ -8,6 +8,7 @@
 
 import iOS_Bootstrap
 
+@available(iOS 10.0, *)
 class RightSideMenuViewController :
         BaseSideMenuViewController <BasePresenter<BaseViewDelegator>, BaseViewDelegator> {
 
