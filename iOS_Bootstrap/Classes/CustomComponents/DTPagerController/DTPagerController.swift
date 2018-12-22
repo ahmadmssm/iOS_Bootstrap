@@ -9,17 +9,29 @@
 import Foundation
 
 /// PagerViewControllerDelegate
-@objc public protocol DTPagerControllerDelegate: NSObjectProtocol {
-    @objc optional func pagerController(_ pagerController: DTPagerController, didChangeSelectedPageIndex index: Int)
-    @objc optional func pagerController(_ pagerController: DTPagerController, willChangeSelectedPageIndex index: Int, fromPageIndex oldIndex: Int)
-    @objc optional func pagerController(_ pagerController: DTPagerController, pageScrollViewDidScroll: UIScrollView)
+public protocol DTPagerControllerDelegate: NSObjectProtocol {
+    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegator>,
+        BaseViewDelegator>, didChangeSelectedPageIndex index: Int)
+    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegator>,
+        BaseViewDelegator>, willChangeSelectedPageIndex index: Int, fromPageIndex oldIndex: Int)
+    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegator>,
+        BaseViewDelegator>, pageScrollViewDidScroll: UIScrollView)
 }
 
+public extension DTPagerControllerDelegate {
+    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegator>,
+        BaseViewDelegator>, didChangeSelectedPageIndex index: Int) {}
+    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegator>,
+        BaseViewDelegator>, willChangeSelectedPageIndex index: Int, fromPageIndex oldIndex: Int) {}
+    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegator>,
+        BaseViewDelegator>, pageScrollViewDidScroll: UIScrollView) {}
+}
 
 /// DTPagerController
 /// Used to create a pager controller of multiple view controllers.
-open class DTPagerController: UIViewController, UIScrollViewDelegate {
-    
+// open class DTPagerController: UIViewController, UIScrollViewDelegate {
+open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelegate where T: BasePresenter<V> {
+
     /// scrollIndicator below the segmented control bar.
     /// Default background color is blue.
     open fileprivate(set) lazy var scrollIndicator: UIView = {
@@ -29,7 +41,7 @@ open class DTPagerController: UIViewController, UIScrollViewDelegate {
     }()
     
     /// Delegate
-    @objc open weak var delegate: DTPagerControllerDelegate?
+    open weak var delegate: DTPagerControllerDelegate?
     
     /// Preferred height of segmented control bar.
     /// Default value is 44.
@@ -173,6 +185,12 @@ open class DTPagerController: UIViewController, UIScrollViewDelegate {
         super.init(nibName: nil, bundle: nil)
     }
     
+    public init() {
+        viewControllers = []
+        pageSegmentedControl = DTSegmentedControl(items: [])
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         viewControllers = []
         pageSegmentedControl = DTSegmentedControl(items: [])
@@ -234,7 +252,8 @@ open class DTPagerController: UIViewController, UIScrollViewDelegate {
     //MARK: Segmented control action
     @objc func pageSegmentedControlValueChanged() {
         //Call delegate method before changing value
-        delegate?.pagerController?(self, willChangeSelectedPageIndex: selectedPageIndex, fromPageIndex: previousPageIndex)
+        delegate?.pagerController(self as! DTPagerController<BasePresenter<BaseViewDelegator>,
+            BaseViewDelegator>, willChangeSelectedPageIndex: selectedPageIndex, fromPageIndex: previousPageIndex)
         
         let oldViewController = viewControllers[previousPageIndex]
         let newViewController = viewControllers[selectedPageIndex]
@@ -270,7 +289,8 @@ open class DTPagerController: UIViewController, UIScrollViewDelegate {
             }
             
             //Call delegate method after changing value
-            self.delegate?.pagerController?(self, didChangeSelectedPageIndex: self.selectedPageIndex)
+            self.delegate?.pagerController(self as! DTPagerController<BasePresenter<BaseViewDelegator>,
+                BaseViewDelegator>, didChangeSelectedPageIndex: self.selectedPageIndex)
         })
         
         //Setting up new previousPageIndex for next change
@@ -407,7 +427,9 @@ open class DTPagerController: UIViewController, UIScrollViewDelegate {
         UIView.setAnimationsEnabled(false)
         
         // Delegate
-        delegate?.pagerController?(self, pageScrollViewDidScroll: scrollView)
+        delegate?.pagerController(self as! DTPagerController<BasePresenter<BaseViewDelegator>,
+            BaseViewDelegator>, pageScrollViewDidScroll: scrollView)
+
         
         // Add child view controller's view if needed
         let indexes = self.visiblePageIndexes()

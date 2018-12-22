@@ -1,20 +1,19 @@
 //
 //  TrendingMoviesViewController.swift
-//  SlideMenuControllerSwift
+//  iOS_Bootstrap_Example
 //
-//  Created by Yuji Hato on 1/19/15.
-//  Copyright (c) 2015 Yuji Hato. All rights reserved.
+//  Created by Ahmad Mahmoud on 12/21/18.
+//  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
 import iOS_Bootstrap
 import SCLAlertView
 
 class TrendingMoviesViewController: MyMenuItemLiveTableViewController
-            <TrendingMoviesPresenter, TrendingMoviesViewDelegator, TrendingMovieCellModel>,
-            TrendingMoviesViewDelegator,
-            BaseTableViewDelegates {
+<TrendingMoviesPresenter, TrendingMoviesViewDelegator, TrendingMovieCellModel>,
+TrendingMoviesViewDelegator,
+BaseTableViewDelegates {
     
-
     @IBOutlet private weak var tableView: UITableView!
     //
     private var sclAlertViewAppearance : SCLAlertView.SCLAppearance!
@@ -22,32 +21,31 @@ class TrendingMoviesViewController: MyMenuItemLiveTableViewController
     private var floatingButton : UIButton!
     
     override func viewDidLoad() { super.viewDidLoad() }
-
+    
     override func initUI() {
+        self.title = "Trending movies"
         sclAlertViewAppearance =  SCLAlertView.SCLAppearance(
             showCloseButton: false,
             hideWhenBackgroundViewIsTapped: true
         )
-        self.title = "Trending movies"
-        //
         createFloatingButton()
     }
-
+    
     override func initTableViewAdapterConfiguraton() {
         getTableViewAdapter().configureTableWithXibCell(tableView: tableView, nibClass: TrendingMoviesCell.self, delegate: self)
     }
-
+    
     func configureCellForRow(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TrendingMoviesCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         let cellModel = self.getTableViewDataSource[indexPath.row]
         cell.cellMode = cellModel
         return cell
     }
-
+    
     func rowDidSelected(tableView: UITableView, indexPath: IndexPath) {
-       getPresenter().getSummaryForMovieAt(index: indexPath.row)
+        getPresenter().getSummaryForMovieAt(index: indexPath.row)
     }
-
+    
     func didGetMovieSummary(summary: String) {
         sclAlertView = SCLAlertView(appearance: sclAlertViewAppearance)
         sclAlertView.showEdit("Movie summary", subTitle: summary)
@@ -56,12 +54,12 @@ class TrendingMoviesViewController: MyMenuItemLiveTableViewController
     func loadMore(tableView: UITableView, forPage page: Int, updatedDataSource: [Any]) {
         getPresenter().getTrendingMovies(pageNumber: page)
     }
-
-
+    
+    
     func didFailToGetTrendingMovies(error: String) {
         SCLAlertView().showError("Error", subTitle: error)
     }
-
+    
     @objc func buttonClick(_ sender: UIButton) { performBackAction() }
     
     // Floating button
@@ -103,3 +101,4 @@ class TrendingMoviesViewController: MyMenuItemLiveTableViewController
     }
     
 }
+

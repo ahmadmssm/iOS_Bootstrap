@@ -8,12 +8,13 @@
 
 import UIKit
 
-open class BaseViewController <T, V> :
+open class BaseViewController<T, V> :
                             UIViewController, BaseViewDelegator where T : BasePresenter<V> {
 
-    private var presenter : T!
+    private var presenter: T!
     
     override open func viewDidLoad() {
+        super.viewDidLoad()
         self.presenter = T.init(viewDelegator: self as! V)
         getPresenter().viewControllerDidLoaded()
         initUI()

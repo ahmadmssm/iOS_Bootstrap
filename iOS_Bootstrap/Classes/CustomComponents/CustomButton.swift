@@ -13,9 +13,7 @@ import UIKit
 open class CustomButton: UIButton {
    
     @IBInspectable var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
+        get { return layer.cornerRadius }
         set {
             layer.cornerRadius = newValue
             layer.masksToBounds = newValue > 0
@@ -23,21 +21,13 @@ open class CustomButton: UIButton {
     }
     
     @IBInspectable var borderWidth: CGFloat {
-        get {
-            return layer.borderWidth
-        }
-        set {
-            layer.borderWidth = newValue
-        }
+        get { return layer.borderWidth }
+        set { layer.borderWidth = newValue }
     }
     
     @IBInspectable var borderColor: UIColor? {
-        get {
-            return UIColor(cgColor: layer.borderColor!)
-        }
-        set {
-            layer.borderColor = newValue?.cgColor
-        }
+        get { return UIColor(cgColor: layer.borderColor!) }
+        set { layer.borderColor = newValue?.cgColor }
     }
 
     @IBInspectable public var topGradientColor: UIColor? = .clear {
@@ -52,11 +42,7 @@ open class CustomButton: UIButton {
         }
     }
     
-    override open class var layerClass : AnyClass {
-        get {
-            return CAGradientLayer.self
-        }
-    }
+    override open class var layerClass : AnyClass { return CAGradientLayer.self }
     
     private func setGradient(topGradientColor: UIColor?, bottomGradientColor: UIColor?) {
         if let topGradientColor = topGradientColor, let bottomGradientColor = bottomGradientColor {

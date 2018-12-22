@@ -33,12 +33,7 @@ open class CoreDataManager<T: NSManagedObject> {
                 observer.onNext(items)
                 observer.on(.completed)
             }
-            catch {
-                let error = NSError(domain:"",
-                                    code:0,
-                                    userInfo:[ NSLocalizedDescriptionKey: "Error loading items from core data !"])
-                observer.onError(error)
-            }
+            catch let error { observer.onError(error) }
             return Disposables.create()
         }
     }
@@ -56,7 +51,8 @@ open class CoreDataManager<T: NSManagedObject> {
     }
     
     public func deleteAllRecords() -> Completable {
-        return self.fetchAll().flatMap({ records -> Completable in
+        return self.fetchAll()
+            .flatMap({ records -> Completable in
             do {
                 for record in records {
                     let managedObjectData: NSManagedObject = record as NSManagedObject
@@ -67,28 +63,6 @@ open class CoreDataManager<T: NSManagedObject> {
             }
             catch { return Completable.error(error) }
         }).asCompletable()
-        
-//        return Completable.create { _ in
-////            let fetchRequest = self.getFetchReuest()
-////            fetchRequest.includesPropertyValues = false
-//            do {
-//                // Not workinging
-//                // try context.execute(getDeleteRequest())
-//                // Work around : delete record by record
-//                self.fetchAll().flatMap({ records -> Completable in
-//                    do {
-//                        for record in records {
-//                            let managedObjectData: NSManagedObject = record as NSManagedObject
-//                            self.context.delete(managedObjectData)
-//                        }
-//                        try self.context.save()
-//                        return Completable.empty()
-//                    }
-//                    catch { return Completable.error(error) }
-//                })
-//            }
-//            return Disposables.create {}
-//        }
     }
     
     public final func getFetchReuest() -> NSFetchRequest<NSFetchRequestResult> {

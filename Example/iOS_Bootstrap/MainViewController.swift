@@ -8,23 +8,21 @@
 
 import iOS_Bootstrap
 
-class MainViewController: BaseCollectionViewController<MainPresenter, MainViewDelegator, String>, MainViewDelegator, BaseCollectionViewDelegates {
+class MainViewController:
+            BaseCollectionViewController<MainPresenter, MainViewDelegator, String>,
+            MainViewDelegator, BaseCollectionViewDelegates {
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    //
-    private var collectionViewItems : [String]?
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
-        collectionViewItems = ["Side menu", "Custom views", "Switch language", "Validatiors"]
         super.viewDidLoad()
+        getPresenter().setDataSource()
     }
     
     override func initUI() { self.title = "Home" }
     
     override func initCollectionViewAdapterConfiguraton() {
         getCollectionViewAdapter().configureCollectionviewWithXibCell(collectionView: collectionView, nibClass: MainViewCell.self, delegate: self)
-        getCollectionViewAdapter().setDataSource(dataSource: collectionViewItems!)
-        getCollectionViewAdapter().reloadCollectionView()
     }
     
     func configureCollectionViewCell(collectionView: UICollectionView, cellForRowAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -41,7 +39,7 @@ class MainViewController: BaseCollectionViewController<MainPresenter, MainViewDe
     func itemDidSelected(collectionView: UICollectionView, indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            if #available(iOS 10.0, *) { Navigator.goToSideMenuStoryboard() } 
+            if #available(iOS 10.0, *) { Navigator.goToSideMenuStoryboard() }
             break
         case 1:
             Navigator.goToCustomViewsViewController()
@@ -55,6 +53,11 @@ class MainViewController: BaseCollectionViewController<MainPresenter, MainViewDe
         default:
             break
         }
+    }
+    
+    func didGetCollectioViewItems(items: [String]) {
+        getCollectionViewAdapter().setDataSource(dataSource: items)
+        getCollectionViewAdapter().reloadCollectionView()
     }
     
 }

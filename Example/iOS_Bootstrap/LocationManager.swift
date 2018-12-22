@@ -26,7 +26,6 @@ class LocationManager {
     func getCurrentLocationCoordiantes() {
         if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
             CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways) {
-            
             guard let currentLocation = locationManager.location else {
                 delegate!.didFailtToGetLocationCoordinates()
                 return

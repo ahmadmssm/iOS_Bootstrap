@@ -42,11 +42,13 @@ class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
         // Flush search array
         self.countriesArray.removeAll()
         // Flush previously saved countries
-        CountriesCachingManager
+        _ = CountriesCachingManager
             .instance.deleteAllRecords()
             .andThen(insertCountriesToCoreData(countries: countries))
             .andThen(CountriesCachingManager.instance.fetchAll())
             .asObservable()
+            .subscribeOn(Schedulers.backgroundConcurrentScheduler)
+            .observeOn(Schedulers.uiScheduler)
             .subscribe(onNext: { savedCountries in
                 self.countriesArray = savedCountries
                 // Sort countries array alphabetically
@@ -54,9 +56,7 @@ class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
                 self.getViewDelegator().didGetCountries(countries: self.countriesArray)
             }, onError: { error in
                 self.getViewDelegator().didFailToSaveCountriesInCoreData(error: error.localizedDescription)
-            }, onCompleted: {}, onDisposed: {
-                
-            })
+            }, onCompleted: {}, onDisposed: {})
     }
     
     private func insertCountriesToCoreData(countries: [Country]) -> Completable {

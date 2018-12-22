@@ -7,7 +7,7 @@
 import iOS_Bootstrap
 
 @available(iOS 10.0, *)
-class LeftSideMenuViewController :
+class LeftSideMenuViewController:
             BaseSideMenuTableViewController
                     <BasePresenter<BaseViewDelegator>, BaseViewDelegator, SideMenuModel> {
 
@@ -32,12 +32,14 @@ class LeftSideMenuViewController :
     }
     
     override func setupMenuItemsData() -> [SideMenuModel] {
-        var menu : [SideMenuModel] = []
+        var menu: [SideMenuModel] = []
         let trendingMoviesMenuItem = SideMenuModel(itemName: "Trending Movies", itemId: 0, itemIcon: #imageLiteral(resourceName: "trending_movies"))
         let countriesListMenuItem = SideMenuModel(itemName: "World Countries", itemId: 1, itemIcon: #imageLiteral(resourceName: "world_countries"))
+        let toDoListMenuItem = SideMenuModel(itemName: "Todo", itemId: 1, itemIcon: #imageLiteral(resourceName: "world_countries"))
         let weatherProviderMenuItem = SideMenuModel(itemName: "Weather provider", itemId: 2, itemIcon: #imageLiteral(resourceName: "weather"))
         menu.append(trendingMoviesMenuItem)
         menu.append(countriesListMenuItem)
+        menu.append(toDoListMenuItem)
         menu.append(weatherProviderMenuItem)
         return menu
     }
@@ -54,13 +56,15 @@ class LeftSideMenuViewController :
     }
     
     override func setupSideMenuViewControllers() -> [UIViewController] {
-        var menuViewControllers : [UIViewController] = []
+        var menuViewControllers: [UIViewController] = []
         let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.menu)
-        let trendingMoviesViewController : TrendingMoviesViewController = storyboard.instantiateViewController()
+        let trendingMoviesViewController = TrendingMoviesViewController()
         menuViewControllers.append(GradientNavigationController(rootViewController: trendingMoviesViewController))
-        let countriesListViewController : CountriesViewController = storyboard.instantiateViewController()
+        let countriesListViewController: CountriesViewController = storyboard.instantiateViewController()
         menuViewControllers.append(GradientNavigationController(rootViewController: countriesListViewController))
-        let weatherViewController : WeatherMenuItemTabBarController = storyboard.instantiateViewController()
+        let toDoListMenuItemViewController: ToDoViewPagerController = ToDoViewPagerController()
+        menuViewControllers.append(GradientNavigationController(rootViewController: toDoListMenuItemViewController))
+        let weatherViewController: WeatherMenuItemTabBarController = storyboard.instantiateViewController()
         menuViewControllers.append(GradientNavigationController(rootViewController: weatherViewController))
         return menuViewControllers
     }

@@ -8,4 +8,6 @@
 
 import iOS_Bootstrap
 
-protocol MainViewDelegator : BaseViewDelegator {}
+protocol MainViewDelegator : BaseViewDelegator {
+    func didGetCollectioViewItems(items: [String])
+}

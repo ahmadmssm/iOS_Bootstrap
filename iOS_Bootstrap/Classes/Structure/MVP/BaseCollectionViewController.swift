@@ -5,16 +5,16 @@
 //  Created by Ahmad Mahmoud on 8/30/18.
 //
 
-open class BaseCollectionViewController <T, V, D> : BaseViewController<T, V> where T : BasePresenter<V> {
+open class BaseCollectionViewController <T, V, D>: BaseViewController<T, V> where T: BasePresenter<V> {
         
-    private let collectionViewAdapter : CollectionViewAdapter = CollectionViewAdapter()
+    private let collectionViewAdapter: CollectionViewAdapter = CollectionViewAdapter()
     public var isEmptyDataSource : Bool = false
 
      public final func getCollectionViewAdapter() -> CollectionViewAdapter {
         return collectionViewAdapter
     }
 
-    public final var getCollectionViewDataSource : [D] {
+    public final var getCollectionViewDataSource: [D] {
         get { return collectionViewAdapter.getDataSource() as! [D] }
     }
     

@@ -9,7 +9,6 @@
 import Foundation
 
 struct TrendingMovieCellModel: Codable {
-    
     private let baseImgURL = "https://image.tmdb.org/t/p/w92"
     private var posterURL: String?
     //
@@ -21,5 +20,4 @@ struct TrendingMovieCellModel: Codable {
         set(url) { posterURL = baseImgURL + url! }
         get { return self.posterURL }
     }
-    
 }

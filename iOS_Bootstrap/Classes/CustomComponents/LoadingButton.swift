@@ -46,9 +46,7 @@ open class LoadingButton: UIButton {
     
     /** Loading Alingment */
     public var activityIndicatorAlignment = ActivityIndicatorAlignment.center {
-        didSet {
-            self.setNeedsLayout()
-        }
+        didSet { self.setNeedsLayout() }
     }
     
     public let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
@@ -61,9 +59,7 @@ open class LoadingButton: UIButton {
     // Static
     let defaultActivityStyle = UIActivityIndicatorViewStyle.gray
     
-    
     // MARK: - Initializers
-    
     deinit {
         self.removeObserver(forKeyPath: "self.state")
         self.removeObserver(forKeyPath: "self.selected")

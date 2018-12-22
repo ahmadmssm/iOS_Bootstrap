@@ -20,7 +20,15 @@ class CountriesViewController:
                         BaseTableViewDelegates {
     
     @IBOutlet weak private var tableView: UITableView!
-    private let disposeBag = DisposeBag()
+    //
+    private let disposeBag: DisposeBag!
+    private let svgImageHelper: SVGimageHelper!
+  
+    required init?(coder aDecoder: NSCoder) {
+        disposeBag = DisposeBag()
+        svgImageHelper = SVGimageHelper()
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() { super.viewDidLoad() }
     
@@ -71,10 +79,12 @@ class CountriesViewController:
             //
             searchBar
                 .rx
-                .text // Observable propert
+                .text
                 .orEmpty
-                .debounce(1.5, scheduler: MainScheduler.instance)
-                .subscribe(onNext: { [unowned self] searchText in
+                .debounce(1.5, scheduler: Schedulers.uiScheduler)
+                // Only emits if the current value is different than the last one
+                .distinctUntilChanged()
+                .subscribe(onNext: { searchText in
                     // Here we will be notified of every new value
                     self.getPresenter().findCountriesWith(name: searchText, currentDataSource: self.getTableViewDataSource)
                 })
@@ -100,15 +110,28 @@ class CountriesViewController:
     
     func configureCellForRow(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CountriesCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        //
         if (getTableViewDataSource.count > 0) {
             cell.labelCountryName.text = getTableViewDataSource[indexPath.row].name!
             cell.labelCapitalName.text = getTableViewDataSource[indexPath.row].capital
             cell.labelRegion.text = getTableViewDataSource[indexPath.row].continental
             cell.labelTimeZone.text = getTableViewDataSource[indexPath.row].timeZone
             //
-            let flagURL = URL(string: getTableViewDataSource[indexPath.row].flagURL!)
-            let flagImage: SVGKImage = SVGKImage(contentsOf: flagURL)
-            cell.imageViewFlag.image = flagImage.uiImage
+            // let flagURL = URL(string: getTableViewDataSource[indexPath.row].flagURL!)
+            // let flagImage: SVGKImage = SVGKImage(contentsOf: flagURL)
+            // cell.imageViewFlag.image = flagImage.uiImage
+            
+            
+//            _ = svgImageHelper.loadFrom(svgImageURL: getTableViewDataSource[indexPath.row].flagURL!)
+//                .do(onNext: { image in cell.imageViewFlag.image = image },
+//                    onError: { error in cell.imageViewFlag.image = #imageLiteral(resourceName: "image_not_found")}, onCompleted: {},
+//                    onSubscribe: {}, onSubscribed: {}, onDispose: {})
+//                .subscribe()
+//                .disposed(by: disposeBag)
+            
+            let flagURL: String = getTableViewDataSource[indexPath.row].flagURL!
+            cell.imageViewFlag.loadSVGfrom(url: flagURL, disposeBag: disposeBag)
+            
         }
         return cell
     }

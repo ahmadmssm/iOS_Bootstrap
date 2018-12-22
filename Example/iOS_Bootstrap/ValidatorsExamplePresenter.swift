@@ -32,14 +32,14 @@ class ValidatorsExamplePresenter: BasePresenter<ValidatorsExampleViewDelegator> 
             .validate(StringShouldNotBeEmpty())
             .validate(StringShouldBeMatch(RegEx.email.rawValue))
             .asObservable()
-            .subscribe(onNext: { emailString in
-                self.isValidMail = true
-                self.email = emailString
+            .subscribe(onNext: { [weak self] emailString in
+                self?.isValidMail = true
+                self?.email = emailString
             },
-                       onError: { error in
-                        self.isValidMail = false
-                        self.getViewDelegator().onInvalidEmail(
-                            errorMessage: self.handleValidationError(error: error))
+                       onError: { [weak self] error in
+                        self!.isValidMail = false
+                        self!.getViewDelegator().onInvalidEmail(
+                            errorMessage: self!.handleValidationError(error: error))
             })
             .disposed(by: disposeBag)
     }
@@ -49,14 +49,14 @@ class ValidatorsExamplePresenter: BasePresenter<ValidatorsExampleViewDelegator> 
             .validate(StringShouldNotBeEmpty())
             .validate(StringIsNotUnderflowThen(minLength: 8))
             .asObservable()
-            .subscribe(onNext: { passwordString in
-                self.isValidPassword = true
-                self.password = passwordString
+            .subscribe(onNext: { [weak self] passwordString in
+                self?.isValidPassword = true
+                self?.password = passwordString
             },
-                       onError: { error in
-                        self.isValidPassword = false
-                        self.getViewDelegator().onInvalidPassword(
-                                errorMessage: self.handleValidationError(error: error))
+                       onError: { [weak self] error in
+                        self!.isValidPassword = false
+                        self!.getViewDelegator().onInvalidPassword(
+                                errorMessage: self!.handleValidationError(error: error))
             })
             .disposed(by: disposeBag)
     }

@@ -17,14 +17,3 @@ final class CountryEntity: NSManagedObject {
     @NSManaged var flagURL: String?
 }
 
-extension CountryEntity {
-    @nonobjc class func fetch() -> NSFetchRequest<CountryEntity> {
-        return NSFetchRequest<CountryEntity>(entityName: "CountryEntity")
-    }
-   
-    @nonobjc class func delete() -> NSBatchDeleteRequest {
-        return NSBatchDeleteRequest(fetchRequest: fetch() as! NSFetchRequest<NSFetchRequestResult>)
-    }
-    
-}
-

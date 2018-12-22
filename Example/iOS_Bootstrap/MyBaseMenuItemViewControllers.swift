@@ -9,8 +9,7 @@
 import UIKit
 import iOS_Bootstrap
 
-class MyMenuItemViewController <P, V> : BaseMenuItemViewController <P, V> where P : BasePresenter<V> {
-    
+class MyMenuItemViewController <P, V>: BaseMenuItemViewController <P, V> where P: BasePresenter<V> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         addCustomLeftMenuItemViewController()
@@ -18,8 +17,7 @@ class MyMenuItemViewController <P, V> : BaseMenuItemViewController <P, V> where 
     }
 }
 
-class MyMenuItemTabBarController <P, V> : BaseMenuItemTabBarController <P, V> where P : BasePresenter<V> {
-    
+class MyMenuItemTabBarController <P, V>: BaseMenuItemTabBarController <P, V> where P: BasePresenter<V> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         addCustomLeftMenuItemViewController()
@@ -27,7 +25,15 @@ class MyMenuItemTabBarController <P, V> : BaseMenuItemTabBarController <P, V> wh
     }
 }
 
-class MyMenuItemTableViewController <P, V, M> : BaseMenuItemTableViewController <P, V, M> where P : BasePresenter<V> {
+class MyMenuItemViewPagerController <P, V>: BaseMenuItemViewPagerController <P, V> where P: BasePresenter<V> {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addCustomLeftMenuItemViewController()
+        self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side_menu"))
+    }
+}
+
+class MyMenuItemTableViewController <P, V, M>: BaseMenuItemTableViewController <P, V, M> where P: BasePresenter<V> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         addCustomLeftMenuItemViewController()
@@ -36,7 +42,7 @@ class MyMenuItemTableViewController <P, V, M> : BaseMenuItemTableViewController 
 }
 
 class MyMenuItemLiveTableViewController <P, V, M>:
-    BaseMenuItemLiveTableViewController <P, V, M> where P : BaseLiveListingPresenter<V, M> {
+    BaseMenuItemLiveTableViewController <P, V, M> where P: BaseLiveListingPresenter<V, M> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         addCustomLeftMenuItemViewController()

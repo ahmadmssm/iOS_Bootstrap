@@ -26,6 +26,11 @@ open class BaseMenuItemTabBarController <T, V> :
                     SideMenuItemCommonFunctions
                     where T : BasePresenter<V> {}
 
+// Basic MVP + View pager
+open class BaseMenuItemViewPagerController <T, V> :
+    DTPagerController<T, V>,
+    SideMenuItemCommonFunctions
+    where T : BasePresenter<V> {}
 
 // Base table view + MVP
 open class BaseMenuItemTableViewController <T, V, M> :

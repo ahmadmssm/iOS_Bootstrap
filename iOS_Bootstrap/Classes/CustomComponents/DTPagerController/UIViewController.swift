@@ -7,14 +7,14 @@
 
 import Foundation
 
-public extension UIViewController {
-    var pagerController : DTPagerController? {
+public extension BaseViewController {
+    var pagerController : DTPagerController<BasePresenter<Any>, Any>? {
         get {
             var viewController : UIViewController?
             viewController = self
             
             while viewController != nil {
-                if let containerViewController = viewController?.parent as? DTPagerController {
+                if let containerViewController = viewController?.parent as? DTPagerController<BasePresenter<Any>, Any> {
                     return containerViewController
                 }
                 else {

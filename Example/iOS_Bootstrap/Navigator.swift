@@ -31,7 +31,7 @@ class Navigator: BaseNavigator {
     @available(iOS 10.0, *)
     static func goToSideMenuStoryboard() {
         let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.menu)
-        let mainViewController : TrendingMoviesViewController = storyboard.instantiateViewController()
+        let mainViewController = TrendingMoviesViewController()
         let leftSideMenuViewController : LeftSideMenuViewController = storyboard.instantiateViewController()
         let rightSideMenuViewController : RightSideMenuViewController = storyboard.instantiateViewController()
         let navigationController: UINavigationController = GradientNavigationController(rootViewController: mainViewController)

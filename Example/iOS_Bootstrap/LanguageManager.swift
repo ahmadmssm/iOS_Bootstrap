@@ -24,16 +24,13 @@ class LanguageManager {
         if (lngMngr.getCurrentAppLanguage() == Languages.Arabic.rawValue) {
             lngMngr.switchAppLanguageInstantly(language: Languages.English)
         }
-        else {
-            lngMngr.switchAppLanguageInstantly(language: Languages.Arabic)
-        }
+        else { lngMngr.switchAppLanguageInstantly(language: Languages.Arabic) }
         completion()
     }
     
     func switchToArabicLanguage(completion: completionHandler) {
         lngMngr.switchAppLanguageInstantly(language: Languages.Arabic)
         completion()
-
     }
     
     func switchToEnglishLanguage(completion: completionHandler) {

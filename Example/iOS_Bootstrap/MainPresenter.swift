@@ -10,17 +10,18 @@ import iOS_Bootstrap
 
 class MainPresenter: BasePresenter<MainViewDelegator> {
     
-    private var languageManager : LanguageManager!
-    
+    private var langMngr : LanguageManager!
 
     required init(viewDelegator: MainViewDelegator) {
         super.init(viewDelegator: viewDelegator)
-        languageManager = LanguageManager()
+        langMngr = LanguageManager()
     }
     
-    func switchAppLanguage() {
-        languageManager.switchAppLanguage {
-            Navigator.startInitialView()
-        }
+    func setDataSource() {
+        let collectionViewItems : [String] = ["Side menu", "Custom views", "Switch language", "Validatiors"]
+        getViewDelegator().didGetCollectioViewItems(items: collectionViewItems)
     }
+    
+    func switchAppLanguage() { langMngr.switchAppLanguage { Navigator.startInitialView() } }
+    
 }
