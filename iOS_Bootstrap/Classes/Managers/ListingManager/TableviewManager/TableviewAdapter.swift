@@ -27,10 +27,10 @@ open class TableviewAdapter : NSObject {
         get { if (tableViewDataSource != nil) { return tableViewDataSource }; return [] }
     }
     
-    func getTableView() -> UITableView { return mTableview }
-
     public final func setDataSource (dataSource : [Any]) { tableViewDataSource = dataSource }
-        
+    
+    public final func getTableView() -> UITableView { return mTableview }
+
     public final func configureTableWithXibCell (tableView: UITableView,
                                     dataSource: [Any]!,
                                     nibClass : BaseTableViewCell.Type!,

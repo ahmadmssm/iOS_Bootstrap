@@ -15,11 +15,11 @@ open class BaseTableViewController <T, V, D> :
     
     public final func getTableViewAdapter() -> TableviewAdapter { return tableViewAdapter }
     
-    public var getTableViewDataSource : [D] {
-        get { return tableViewAdapter.getDataSource as! [D] }
-    }
+    public var getTableViewDataSource : [D] { return tableViewAdapter.getDataSource as! [D] }
     
-    public final func setTableViewDataSource(tableViewDataSource : [D])  { tableViewAdapter.setDataSource(dataSource: tableViewDataSource) }
+    public final func setTableViewDataSource(tableViewDataSource : [D])  {
+        tableViewAdapter.setDataSource(dataSource: tableViewDataSource)
+    }
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,19 @@ open class BaseTableViewController <T, V, D> :
 
     public final func initDataSourceIfNeeded(tableViewDataSource : [D]) {
         setTableViewDataSource(tableViewDataSource: tableViewDataSource)
+    }
+    
+    public final func initCell <T: BaseReusableTableViewCell<D>>(cell: T.Type, indexPath: IndexPath) -> T {
+        let cell: T = getTableViewAdapter().getTableView().dequeueReusableCell(forIndexPath: indexPath)
+        if (getCellModel(indexPath: indexPath) != nil) {
+            cell.cellModel = getCellModel(indexPath: indexPath)
+        }
+        return cell
+    }
+    
+    private final func getCellModel(indexPath: IndexPath) -> D? {
+        if let cellModel = getTableViewDataSource[exist: indexPath.row] { return cellModel }
+        return nil
     }
     
 }

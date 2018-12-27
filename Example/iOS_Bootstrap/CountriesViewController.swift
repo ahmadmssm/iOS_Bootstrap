@@ -33,7 +33,6 @@ class CountriesViewController:
     override func viewDidLoad() { super.viewDidLoad() }
     
     override func initUI() {
-        //
         self.title = "World countries"
         //
         if #available(iOS 11.0, *) {
@@ -109,30 +108,7 @@ class CountriesViewController:
     func withExpandableCell() -> Bool { return true }
     
     func configureCellForRow(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : CountriesCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        //
-        if (getTableViewDataSource.count > 0) {
-            cell.labelCountryName.text = getTableViewDataSource[indexPath.row].name!
-            cell.labelCapitalName.text = getTableViewDataSource[indexPath.row].capital
-            cell.labelRegion.text = getTableViewDataSource[indexPath.row].continental
-            cell.labelTimeZone.text = getTableViewDataSource[indexPath.row].timeZone
-            //
-            // let flagURL = URL(string: getTableViewDataSource[indexPath.row].flagURL!)
-            // let flagImage: SVGKImage = SVGKImage(contentsOf: flagURL)
-            // cell.imageViewFlag.image = flagImage.uiImage
-            
-            
-//            _ = svgImageHelper.loadFrom(svgImageURL: getTableViewDataSource[indexPath.row].flagURL!)
-//                .do(onNext: { image in cell.imageViewFlag.image = image },
-//                    onError: { error in cell.imageViewFlag.image = #imageLiteral(resourceName: "image_not_found")}, onCompleted: {},
-//                    onSubscribe: {}, onSubscribed: {}, onDispose: {})
-//                .subscribe()
-//                .disposed(by: disposeBag)
-            
-            let flagURL: String = getTableViewDataSource[indexPath.row].flagURL!
-            cell.imageViewFlag.loadSVGfrom(url: flagURL, disposeBag: disposeBag)
-            
-        }
+        let cell: CountriesCell = self.initCell(cell: CountriesCell.self, indexPath: indexPath)
         return cell
     }
     

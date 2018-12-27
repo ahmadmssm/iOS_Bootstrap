@@ -29,6 +29,9 @@ open class CollectionViewAdapter : NSObject {
     public final func setDataSource (dataSource: [Any]) {
         self.collectionViewDataSource = dataSource
     }
+    
+    public final func getTCollectionView() -> UICollectionView { return mCollectionview }
+
     //
     public final func configureCollectionviewWithXibCell (collectionView: UICollectionView,
                                                  dataSource: [Any]!,
