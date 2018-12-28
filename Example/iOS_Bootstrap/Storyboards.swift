@@ -10,7 +10,6 @@ import iOS_Bootstrap
 
 // The unified place where we state all the storyboard we have in our application
 enum Storyboards : String {
-    case main
-    case menu
+    case sideMenuTabBar
 }
 

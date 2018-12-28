@@ -4,14 +4,14 @@
 //
 //  Created by Ahmad Mahmoud on 10/28/18.
 //
-    
-open class BaseSideMenuTableViewController<T, V, M> :
+
+open class BaseSideMenuTableViewController<T, V, M>:
                                     BaseTableViewController<T, V, M>,
                                     BaseTableViewDelegates,
                                     SlideMenuControllerDelegate
-                                    where T : BasePresenter<V>, M : BaseSideMenuModel {
+                                    where T: BasePresenter<V>, M: BaseSideMenuModel {
     
-    private var menuItems : [M]?
+    var menuItems : [M]?
     private var menuViewControllers : [UIViewController]?
     public var mainViewController: UIViewController!
     // Life cycle functions
@@ -36,7 +36,7 @@ open class BaseSideMenuTableViewController<T, V, M> :
 
     open override func initUI() {}
 
-    public final override func initTableViewAdapterConfiguraton() {
+    open override func initTableViewAdapterConfiguraton() {
         getTableViewAdapter().configureTableWithXibCell(tableView: setupSideMenuTableView(), nibClass: setupMenuItemCell(), delegate: self)
         getTableViewAdapter().configurePaginationParameters(totalNumberOfItems: (menuItems?.count)!, itemsPerPage: (menuItems?.count)!)
         initDataSourceIfNeeded(tableViewDataSource: setupMenuItemsData())

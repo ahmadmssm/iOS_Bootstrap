@@ -9,8 +9,7 @@
 import iOS_Bootstrap
 
 class ValidatorsExampleViewController:
-            BaseViewController<ValidatorsExamplePresenter, ValidatorsExampleViewDelegator>,
-ValidatorsExampleViewDelegator {
+    BaseViewController<ValidatorsExamplePresenter, ValidatorsExampleViewDelegator> {
     
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
@@ -35,6 +34,10 @@ ValidatorsExampleViewDelegator {
     }
     
     @IBAction func submitButton(_ sender: UIButton) { getPresenter().submit() }
+    
+}
+
+extension ValidatorsExampleViewController: ValidatorsExampleViewDelegator {
     
     func onInvalidEmail(errorMessage: String) {
         showAlert(title: "Error", message: errorMessage, actions: [okAction])

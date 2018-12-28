@@ -8,19 +8,18 @@ import iOS_Bootstrap
 
 @available(iOS 10.0, *)
 class LeftSideMenuViewController:
-            BaseSideMenuTableViewController
-                    <BasePresenter<BaseViewDelegator>, BaseViewDelegator, SideMenuModel> {
+     BaseSideMenuTableViewControllerV2
+         <BasePresenter<BaseViewDelegator>, BaseViewDelegator, SideMenuModel, SideMenuCell> {
 
-    //
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var headerViewContainer: UIView!
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var profileTitle: UILabel!
-
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var headerViewContainer: UIView!
+    @IBOutlet private weak var profileImage: UIImageView!
+    @IBOutlet private weak var profileTitle: UILabel!
+    
     override func viewDidLoad() { super.viewDidLoad() }
     
     override func viewWillDisappear(_ animated: Bool) { super.viewWillAppear(animated) }
-
+    
     override func initUI() {
         headerViewContainer.backgroundColor = UIColor.color(fromHexString: "E0E0E0")
         profileImage.layoutIfNeeded()
@@ -46,22 +45,20 @@ class LeftSideMenuViewController:
     
     override func setupSideMenuTableView() -> UITableView { return tableView }
     
-    override func setupMenuItemCell() -> BaseTableViewCell.Type { return SideMenuCell.self }
-    
     override func setupSideMenuItemCell(indexPath: IndexPath, menuItem: SideMenuModel) -> UITableViewCell {
-        let menuCell : SideMenuCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        menuCell.itemIcon.image = menuItem.icon
-        menuCell.itemLabel.text = menuItem.itemName
+        let menuCell: SideMenuCell = self.initCell(indexPath: indexPath)
         return menuCell
     }
     
     override func setupSideMenuViewControllers() -> [UIViewController] {
         var menuViewControllers: [UIViewController] = []
-        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.menu)
+        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.sideMenuTabBar)
         let trendingMoviesViewController = TrendingMoviesViewController()
         menuViewControllers.append(GradientNavigationController(rootViewController: trendingMoviesViewController))
-        let countriesListViewController: CountriesViewController = storyboard.instantiateViewController()
-        menuViewControllers.append(GradientNavigationController(rootViewController: countriesListViewController))
+        if #available(iOS 11.0, *) {
+            let countriesListViewController: CountriesViewController = CountriesViewController()
+            menuViewControllers.append(GradientNavigationController(rootViewController: countriesListViewController))
+        }
         let toDoListMenuItemViewController: ToDoViewPagerController = ToDoViewPagerController()
         menuViewControllers.append(GradientNavigationController(rootViewController: toDoListMenuItemViewController))
         let weatherViewController: WeatherMenuItemTabBarController = storyboard.instantiateViewController()
@@ -69,9 +66,6 @@ class LeftSideMenuViewController:
         return menuViewControllers
     }
     
-    // override func shouldBlurBackgroundItem() -> Bool { return true }
-    
-    //
     override func menuItemDidSelected(menu: SideMenuModel, menuItemIndex: Int, viewControllerAtIndex: UIViewController) {
         self.replaceVisableMenuViewControllerWith(menuItemViewController: viewControllerAtIndex, closeMenu: true)
     }
@@ -79,7 +73,8 @@ class LeftSideMenuViewController:
     open override func performBackAction() {
         Navigator.startInitialView()
     }
-
+    
 }
+
 
 

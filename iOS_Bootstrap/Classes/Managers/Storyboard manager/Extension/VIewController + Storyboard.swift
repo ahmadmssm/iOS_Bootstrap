@@ -31,15 +31,24 @@ extension UIViewController {
 
 extension UIStoryboard {
     
+//    // MARK: - Convenience Initializers
+//    convenience init(storyboard: String, bundle: Bundle? = nil) {
+//        self.init(name: storyboard.capitalized, bundle: bundle)
+//    }
+    
     // MARK: - Convenience Initializers
     convenience init(storyboard: String, bundle: Bundle? = nil) {
-        self.init(name: storyboard.capitalized, bundle: bundle)
+        self.init(name: storyboard.capitalizingFirstLetter(), bundle: bundle)
     }
     
+//    // MARK: - Class Functions
+//    open class func getStoryboardWithName <T: RawRepresentable>(_ storyboard: T, bundle: Bundle? = nil) -> UIStoryboard where T.RawValue == String {
+//        return UIStoryboard(name: storyboard.rawValue.capitalized, bundle: bundle)
+//    }
+    
     // MARK: - Class Functions
-   
     open class func getStoryboardWithName <T: RawRepresentable>(_ storyboard: T, bundle: Bundle? = nil) -> UIStoryboard where T.RawValue == String {
-        return UIStoryboard(name: storyboard.rawValue.capitalized, bundle: bundle)
+        return UIStoryboard(name: storyboard.rawValue.capitalizingFirstLetter(), bundle: bundle)
     }
     
     // MARK: - View Controller Instantiation from Generics
@@ -50,5 +59,6 @@ extension UIStoryboard {
         }
         return viewController
     }
+    
 }
 

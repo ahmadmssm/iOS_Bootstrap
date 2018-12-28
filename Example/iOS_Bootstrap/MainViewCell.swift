@@ -9,9 +9,17 @@
 import UIKit
 import iOS_Bootstrap
 
-class MainViewCell: BaseCollectionViewCell {
+class MainViewCell: BaseCollectionViewCellV2<String> {
 
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet private weak var image: UIImageView!
+    @IBOutlet private weak var label: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Same image for all cells, That is why it is placed here
+        image.image = #imageLiteral(resourceName: "example")
+    }
+    
+    override func initCellFrom(cellModel: String) { label.text = cellModel }
+
 }

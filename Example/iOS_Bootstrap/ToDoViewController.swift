@@ -8,12 +8,12 @@
 
 import iOS_Bootstrap
 
-class ToDoViewController: MyMenuItemLiveTableViewController
-                            <ToDoPresenter, ToDoViewDelegator, ToDoCellModel>,
-                          ToDoViewDelegator, BaseTableViewDelegates {
+class ToDoViewController:
+            MyMenuItemLiveTableViewControllerV2
+                   <ToDoPresenter, ToDoViewDelegator,
+                    ToDoCellModel, ToDoCell>, ToDoViewDelegator, BaseTableViewDelegates {
     
     @IBOutlet private weak var tableView: UITableView!
-
     private var mode: ToDoMode!
     
     convenience init(mode: ToDoMode) {
@@ -36,12 +36,11 @@ class ToDoViewController: MyMenuItemLiveTableViewController
     }
     
     override func initTableViewAdapterConfiguraton() {
-        getTableViewAdapter().configureTableWithXibCell(tableView: tableView, nibClass: ToDoCell.self, delegate: self)
+        super.initTableViewAdapterConfiguraton(tableView: tableView, delegate: self)
     }
     
     func configureCellForRow(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ToDoCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        
+        let cell: ToDoCell = initCell(indexPath: indexPath)
         return cell
     }
  

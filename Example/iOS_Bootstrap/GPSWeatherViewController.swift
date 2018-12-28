@@ -11,14 +11,17 @@ import UIKit
 class GPSWeatherViewController:
                     WeatherTableViewController<GPSWeatherPresenter, WeatherViewDelegator> {
     
-    @IBOutlet weak var tableView: UITableView!
-    let location = LocationManager()
+    private var locationManager: LocationManager!
+    
+    override func loadView() {
+        Bundle.main.loadNibNamed("WeatherTableView", owner: self, options: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //
-        location.delegate = self
-        location.requestLocationPermission()
+        locationManager = LocationManager()
+        locationManager.delegate = self
+        locationManager.requestLocationPermission()
     }
 
     override func initUI() {}
@@ -26,13 +29,7 @@ class GPSWeatherViewController:
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.navigationItem.title = "GPS weather"
-        location.getCurrentLocationCoordiantes()
-    }
-
-    override func getTableView() -> UITableView { return tableView }
-
-    override func configureCellForRow(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return super.configureCellForRow(tableView: tableView, cellForRowAt: indexPath)
+        locationManager.getCurrentLocationCoordiantes()
     }
     
 }
@@ -44,7 +41,7 @@ extension GPSWeatherViewController: LocationManagerDelegate {
     }
     
     func didFailtToGetLocationCoordinates() {
-        location.getCurrentLocationCoordiantes()
+        locationManager.getCurrentLocationCoordiantes()
     }
     
 }

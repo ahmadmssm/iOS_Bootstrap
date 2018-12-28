@@ -11,9 +11,9 @@ import iOS_Bootstrap
 import SVGKit
 
 public final class SVGimageHelper {
-    //
+
     private static let imageCache = NSCache<NSString, UIImage>()
-    //
+
     public func loadFrom(svgImageURL: String) -> Observable<UIImage?> {
         return Observable.create { observer in
             let url = URL(string: svgImageURL)

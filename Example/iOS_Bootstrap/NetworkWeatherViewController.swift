@@ -9,10 +9,11 @@
 import UIKit
 
 class NetworkWeatherViewController:
-            WeatherTableViewController<NetworkWeatherPresenter, NetworkWeatherViewDelegator>,
-            NetworkWeatherViewDelegator {
+                WeatherTableViewController<NetworkWeatherPresenter, WeatherViewDelegator> {
     
-    @IBOutlet weak var tableView: UITableView!
+    override func loadView() {
+        Bundle.main.loadNibNamed("WeatherTableView", owner: self, options: nil)
+    }
     
     override func viewDidLoad() { super.viewDidLoad() }
     
@@ -22,13 +23,5 @@ class NetworkWeatherViewController:
         super.viewWillAppear(animated)
         self.tabBarController?.navigationItem.title = "Network weather"
     }
-    
-    override func getTableView() -> UITableView { return tableView }
-    
-    override func configureCellForRow(tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return super.configureCellForRow(tableView: tableView, cellForRowAt: indexPath)
-    }
-    
+        
 }
-
-

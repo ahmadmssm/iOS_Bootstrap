@@ -1,11 +1,11 @@
 //
-//  BaseReusableCollectionViewCell.swift
+//  BaseTableViewCellV2.swift
 //  iOS_Bootstrap
 //
-//  Created by Ahmad Mahmoud on 12/27/18.
+//  Created by Ahmad Mahmoud on 12/26/18.
 //
 
-open class BaseReusableCollectionViewCell<M>: BaseCollectionViewCell {
+open class BaseTableViewCellV2 <M>: BaseTableViewCell {
     
     var cellModel: M? { didSet { initCellFrom(cellModel: cellModel!) } }
     

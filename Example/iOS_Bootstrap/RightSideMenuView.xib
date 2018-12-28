@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RightSideMenuViewController" customModule="iOS_Bootstrap_Example" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="menuItems" destination="b49-aA-6nj" collectionClass="NSMutableArray" id="z8P-Mp-JGg"/>
+                <outletCollection property="menuItems" destination="lay-VV-P8k" collectionClass="NSMutableArray" id="HzF-fp-cw2"/>
+                <outletCollection property="menuItems" destination="bIP-RS-hqA" collectionClass="NSMutableArray" id="b5U-RF-HII"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lay-VV-P8k">
+                    <rect key="frame" x="10" y="209" width="349" height="30"/>
+                    <state key="normal" title="Home">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIP-RS-hqA">
+                    <rect key="frame" x="114" y="282" width="240" height="30"/>
+                    <color key="backgroundColor" red="0.37672291260000002" green="0.56552963850000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="GK7-UW-6Ji"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b49-aA-6nj">
+                    <rect key="frame" x="10" y="141" width="349" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.37672291260000002" green="0.56552963850000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.26421716369999998" green="0.26421716369999998" blue="0.26421716369999998" alpha="0.4374197346" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bIP-RS-hqA" firstAttribute="top" secondItem="lay-VV-P8k" secondAttribute="bottom" constant="43" id="4NC-mQ-x8Y"/>
+                <constraint firstItem="b49-aA-6nj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="121" id="FIl-hx-aL2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bIP-RS-hqA" secondAttribute="trailing" constant="21" id="Ppa-d5-YbF"/>
+                <constraint firstItem="lay-VV-P8k" firstAttribute="top" secondItem="b49-aA-6nj" secondAttribute="bottom" constant="47" id="Qyc-8b-tRn"/>
+                <constraint firstItem="bIP-RS-hqA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="114" id="S9V-Xs-Xnr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bIP-RS-hqA" secondAttribute="bottom" constant="355" id="dW5-R8-Elt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b49-aA-6nj" secondAttribute="trailing" constant="16" id="hGL-hC-XKY"/>
+                <constraint firstItem="b49-aA-6nj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="heo-QN-18d"/>
+                <constraint firstItem="lay-VV-P8k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="oMA-yg-7P0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lay-VV-P8k" secondAttribute="trailing" constant="16" id="zj8-qg-5aG"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="69.5" y="123.5"/>
+        </view>
+    </objects>
+</document>

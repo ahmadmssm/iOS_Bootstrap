@@ -46,7 +46,7 @@ open class TableviewAdapter : NSObject {
         self.mNibClasses = nibClasses
         configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
     }
-    
+
     public final func configureTableWithXibCell (tableView: UITableView,
                                                  nibClass : BaseTableViewCell.Type!,
                                                  delegate : BaseTableViewDelegates) {

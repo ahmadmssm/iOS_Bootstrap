@@ -9,8 +9,8 @@
 import iOS_Bootstrap
 
 class MainViewController:
-            BaseCollectionViewController<MainPresenter, MainViewDelegator, String>,
-            MainViewDelegator, BaseCollectionViewDelegates {
+    BaseCollectionViewControllerV2 <MainPresenter, MainViewDelegator, String, MainViewCell>,
+    MainViewDelegator, BaseCollectionViewDelegates {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
@@ -22,13 +22,11 @@ class MainViewController:
     override func initUI() { self.title = "Home" }
     
     override func initCollectionViewAdapterConfiguraton() {
-        getCollectionViewAdapter().configureCollectionviewWithXibCell(collectionView: collectionView, nibClass: MainViewCell.self, delegate: self)
+        super.initCollectionViewAdapterConfiguraton(collectionView: collectionView, delegate: self)
     }
     
     func configureCollectionViewCell(collectionView: UICollectionView, cellForRowAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : MainViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
-        cell.label.text = getCollectionViewDataSource[indexPath.row]
-        cell.image.image = #imageLiteral(resourceName: "example")
+        let cell : MainViewCell = self.initCell(indexPath: indexPath)
         return cell
     }
     

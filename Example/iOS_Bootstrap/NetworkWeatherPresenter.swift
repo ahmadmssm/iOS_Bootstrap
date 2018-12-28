@@ -8,9 +8,9 @@
 
 import iOS_Bootstrap
 
-class NetworkWeatherPresenter : BasePresenter<NetworkWeatherViewDelegator> {
+class NetworkWeatherPresenter : BasePresenter<WeatherViewDelegator> {
     
-    required init(viewDelegator: NetworkWeatherViewDelegator) {
+    required init(viewDelegator: WeatherViewDelegator) {
         super.init(viewDelegator: viewDelegator)
     }
     

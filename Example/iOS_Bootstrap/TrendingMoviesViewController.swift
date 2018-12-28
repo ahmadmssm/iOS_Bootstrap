@@ -9,10 +9,10 @@
 import iOS_Bootstrap
 import SCLAlertView
 
-class TrendingMoviesViewController: MyMenuItemLiveTableViewController
-<TrendingMoviesPresenter, TrendingMoviesViewDelegator, TrendingMovieCellModel>,
-TrendingMoviesViewDelegator,
-BaseTableViewDelegates {
+class TrendingMoviesViewController:
+    MyMenuItemLiveTableViewController
+                <TrendingMoviesPresenter, TrendingMoviesViewDelegator, TrendingMovieCellModel>,
+    BaseTableViewDelegates {
     
     @IBOutlet private weak var tableView: UITableView!
     //
@@ -46,21 +46,28 @@ BaseTableViewDelegates {
         getPresenter().getSummaryForMovieAt(index: indexPath.row)
     }
     
+    func loadMore(tableView: UITableView, forPage page: Int, updatedDataSource: [Any]) {
+        getPresenter().getTrendingMovies(pageNumber: page)
+    }
+    
+    @objc func buttonClick(_ sender: UIButton) { performBackAction() }
+    
+}
+
+extension TrendingMoviesViewController: TrendingMoviesViewDelegator {
+    
     func didGetMovieSummary(summary: String) {
         sclAlertView = SCLAlertView(appearance: sclAlertViewAppearance)
         sclAlertView.showEdit("Movie summary", subTitle: summary)
     }
     
-    func loadMore(tableView: UITableView, forPage page: Int, updatedDataSource: [Any]) {
-        getPresenter().getTrendingMovies(pageNumber: page)
-    }
-    
-    
     func didFailToGetTrendingMovies(error: String) {
         SCLAlertView().showError("Error", subTitle: error)
     }
     
-    @objc func buttonClick(_ sender: UIButton) { performBackAction() }
+}
+
+extension TrendingMoviesViewController {
     
     // Floating button
     private func createFloatingButton() {
@@ -101,4 +108,3 @@ BaseTableViewDelegates {
     }
     
 }
-

@@ -34,7 +34,7 @@ open class BaseCollectionViewController <T, V, D>: BaseViewController<T, V> wher
         setDataSource(datasource: collectionViewDataSource)
     }
     
-    public final func initCell <T: BaseReusableCollectionViewCell<D>>(cell: T.Type, indexPath: IndexPath) -> T {
+    public final func initCell <T: BaseCollectionViewCellV2<D>>(cell: T.Type, indexPath: IndexPath) -> T {
         let cell: T = getCollectionViewAdapter().getTCollectionView().dequeueReusableCell(forIndexPath: indexPath)
         if (getCellModel(indexPath: indexPath) != nil) {
             cell.cellModel = getCellModel(indexPath: indexPath)

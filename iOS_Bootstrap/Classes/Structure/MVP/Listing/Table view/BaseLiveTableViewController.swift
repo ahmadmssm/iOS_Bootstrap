@@ -5,7 +5,6 @@
 //  Created by Ahmad Mahmoud on 12/13/18.
 //
 
-
 open class BaseLiveTableViewController<T, V, D>:
                                 BaseTableViewController <T, V, D>,
                                 LiveDataProtocol

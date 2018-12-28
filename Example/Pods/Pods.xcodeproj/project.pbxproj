@@ -854,9 +854,15 @@
 		C8296705CB9B73C53E081E21F9F9F5FE /* SVGKSourceString.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BFB152C6A8A58AC6B9B108C86774852 /* SVGKSourceString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8C8155906B521BBC978C5A3D89834CE /* UITextView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4499FCE005C470390917FB9F80D941 /* UITextView+Rx.swift */; };
 		C8D1574153EDFA553FAB3BA8672E014F /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D6DE43233DA7A5C11F39237432F31E /* BaseController.swift */; };
-		C9221AA121D4D783007D3766 /* BaseReusableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9221AA021D4D783007D3766 /* BaseReusableCollectionViewCell.swift */; };
+		C90BBE3821D68E000065FF43 /* BaseSideMenuTableViewControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BBE3721D68E000065FF43 /* BaseSideMenuTableViewControllerV2.swift */; };
+		C90BBE4321D6C4200065FF43 /* String + Capitalize first letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BBE4221D6C4200065FF43 /* String + Capitalize first letter.swift */; };
+		C9221AA121D4D783007D3766 /* BaseCollectionViewCellV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9221AA021D4D783007D3766 /* BaseCollectionViewCellV2.swift */; };
+		C9221AA621D62944007D3766 /* BaseTableViewControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9221AA521D62944007D3766 /* BaseTableViewControllerV2.swift */; };
+		C9221AA821D63BDE007D3766 /* BaseLiveTableViewControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9221AA721D63BDE007D3766 /* BaseLiveTableViewControllerV2.swift */; };
+		C9221AAA21D648E9007D3766 /* BaseLiveCollectionViewControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9221AA921D648E9007D3766 /* BaseLiveCollectionViewControllerV2.swift */; };
+		C9221AAC21D648F6007D3766 /* BaseCollectionViewControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9221AAB21D648F6007D3766 /* BaseCollectionViewControllerV2.swift */; };
 		C95EF5C299D55ED719F88B25DC4CCA24 /* String + class name.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699A8CF9E4B222FC434BDA704E19A04 /* String + class name.swift */; };
-		C970CD6421D38B77001B79B9 /* BaseReusableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970CD6321D38B77001B79B9 /* BaseReusableTableViewCell.swift */; };
+		C970CD6421D38B77001B79B9 /* BaseTableViewCellV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970CD6321D38B77001B79B9 /* BaseTableViewCellV2.swift */; };
 		C9AEBDAE2912E3E6F7815C576731A8F0 /* SVGEllipseElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C2D2FC2D6C7008D64ABB22BA57DD57 /* SVGEllipseElement.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		C9B254591C33AE4F48288BC02B41323E /* String + Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A0DFBDCE361FC96F6B39AD4DF8DA36 /* String + Localizable.swift */; };
 		C9D83A7DCF36CA76A6DAA42B0FBE124F /* ScheduledItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D2E6186F44D2CE82F2090CD46AD5D4 /* ScheduledItem.swift */; };
@@ -2204,8 +2210,14 @@
 		C8928F36D510E524778F0A845B2B65EE /* _RXObjCRuntime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _RXObjCRuntime.m; path = RxCocoa/Runtime/_RXObjCRuntime.m; sourceTree = "<group>"; };
 		C8E680677C5337E82A156801B3030E20 /* RLMSchema.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSchema.mm; path = Realm/RLMSchema.mm; sourceTree = "<group>"; };
 		C8F496012E2F0ABC863B7F167FF9F4CF /* Result.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Result.xcconfig; sourceTree = "<group>"; };
-		C9221AA021D4D783007D3766 /* BaseReusableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseReusableCollectionViewCell.swift; sourceTree = "<group>"; };
-		C970CD6321D38B77001B79B9 /* BaseReusableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseReusableTableViewCell.swift; sourceTree = "<group>"; };
+		C90BBE3721D68E000065FF43 /* BaseSideMenuTableViewControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSideMenuTableViewControllerV2.swift; sourceTree = "<group>"; };
+		C90BBE4221D6C4200065FF43 /* String + Capitalize first letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Capitalize first letter.swift"; sourceTree = "<group>"; };
+		C9221AA021D4D783007D3766 /* BaseCollectionViewCellV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCellV2.swift; sourceTree = "<group>"; };
+		C9221AA521D62944007D3766 /* BaseTableViewControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewControllerV2.swift; sourceTree = "<group>"; };
+		C9221AA721D63BDE007D3766 /* BaseLiveTableViewControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLiveTableViewControllerV2.swift; sourceTree = "<group>"; };
+		C9221AA921D648E9007D3766 /* BaseLiveCollectionViewControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLiveCollectionViewControllerV2.swift; sourceTree = "<group>"; };
+		C9221AAB21D648F6007D3766 /* BaseCollectionViewControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewControllerV2.swift; sourceTree = "<group>"; };
+		C970CD6321D38B77001B79B9 /* BaseTableViewCellV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCellV2.swift; sourceTree = "<group>"; };
 		C97FC51F33C9E3D9C470BAFAF60E4067 /* ItemEvents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItemEvents.swift; path = RxCocoa/iOS/Events/ItemEvents.swift; sourceTree = "<group>"; };
 		C9C8A5A6990D45A4F79E1A9C8C66EBEE /* NSView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSView+Rx.swift"; path = "RxCocoa/macOS/NSView+Rx.swift"; sourceTree = "<group>"; };
 		CAABBB46DC2140D1340666E07CD866E5 /* UIViewController + SideMenuIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController + SideMenuIcon.swift"; sourceTree = "<group>"; };
@@ -2666,6 +2678,7 @@
 				8ACDFD9217BE87337917F5170A13DF05 /* String + phone number validator.swift */,
 				17192F9A59012592046A9951E4049D01 /* String to Codable object.swift */,
 				DFADC3915C2FA54846420DB581CF3912 /* String to dicrionary.swift */,
+				C90BBE4221D6C4200065FF43 /* String + Capitalize first letter.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -3570,8 +3583,9 @@
 			children = (
 				0F7D8AAC310FB1EC05C50BAC5A4A71A2 /* BaseSideMenuController.swift */,
 				BCE0EA0549D38899FCCED2D692995352 /* BaseSideMenuModel.swift */,
-				EB865C3D84900333F3F724D4B7D7CE05 /* BaseSideMenuTableViewController.swift */,
 				0402548673F807EFFBF48993F9C3BE55 /* BaseSideMenuViewController.swift */,
+				EB865C3D84900333F3F724D4B7D7CE05 /* BaseSideMenuTableViewController.swift */,
+				C90BBE3721D68E000065FF43 /* BaseSideMenuTableViewControllerV2.swift */,
 				DE9E4AA9553647D7079077835A1D4001 /* MenuItemViewController base classes.swift */,
 				CAABBB46DC2140D1340666E07CD866E5 /* UIViewController + SideMenuIcon.swift */,
 			);
@@ -4220,8 +4234,10 @@
 			isa = PBXGroup;
 			children = (
 				DB60F1433631A89D5DC0E469AF3CF3BA /* BaseCollectionViewController.swift */,
+				C9221AAB21D648F6007D3766 /* BaseCollectionViewControllerV2.swift */,
 				4601684436116079DC79119C4429E3B9 /* BaseLiveCollectionViewController.swift */,
-				C9221AA021D4D783007D3766 /* BaseReusableCollectionViewCell.swift */,
+				C9221AA921D648E9007D3766 /* BaseLiveCollectionViewControllerV2.swift */,
+				C9221AA021D4D783007D3766 /* BaseCollectionViewCellV2.swift */,
 			);
 			path = "Collection view";
 			sourceTree = "<group>";
@@ -4230,8 +4246,10 @@
 			isa = PBXGroup;
 			children = (
 				1EEA90562927FDFC961919BF334D04B4 /* BaseTableViewController.swift */,
+				C9221AA521D62944007D3766 /* BaseTableViewControllerV2.swift */,
 				88238C961D9142F60C38CD620A8B2968 /* BaseLiveTableViewController.swift */,
-				C970CD6321D38B77001B79B9 /* BaseReusableTableViewCell.swift */,
+				C9221AA721D63BDE007D3766 /* BaseLiveTableViewControllerV2.swift */,
+				C970CD6321D38B77001B79B9 /* BaseTableViewCellV2.swift */,
 			);
 			path = "Table view";
 			sourceTree = "<group>";
@@ -5727,6 +5745,7 @@
 				BFC1DC108C31AB408257CE1A121AF18D /* BaseNetworkErrorHandler.swift in Sources */,
 				C45E673A62735AFEEACAEA4BC8B096AE /* BasePage.swift in Sources */,
 				D32EBFF58A21184C6FC0D6B20357CB36 /* BasePresenter.swift in Sources */,
+				C90BBE4321D6C4200065FF43 /* String + Capitalize first letter.swift in Sources */,
 				036DAA974AFFC7C68817F0D42F0E8D31 /* BaseSession.swift in Sources */,
 				DC7BDF049CEB60A004BFAA543BE0816F /* BaseSideMenuController.swift in Sources */,
 				DDFBB629E140EA9B6A3C76FC5811A971 /* BaseSideMenuModel.swift in Sources */,
@@ -5746,6 +5765,7 @@
 				10DF08ED6197468855A1471D3DEC7E2C /* CardView.swift in Sources */,
 				7940BEAC0CA71F824BD01C903116F793 /* Codable + dictionary.swift in Sources */,
 				92C382C1240962F613AB29718F68E13A /* Codable + String.swift in Sources */,
+				C9221AAC21D648F6007D3766 /* BaseCollectionViewControllerV2.swift in Sources */,
 				214D661125011CEA81367F06297DFFFB /* Collection + nilable values.swift in Sources */,
 				305225505B7FCE564E2658CB0564087A /* Collectionview+Reusable.swift in Sources */,
 				4BAF195E816586B2A15FA9DF487FA0EA /* CollectionViewAdapter.swift in Sources */,
@@ -5804,11 +5824,13 @@
 				A145022CE1124470B5DB80771250982F /* ImageTaskMetrics.swift in Sources */,
 				75BD5D4121DD449BFA3E592C5F239A2B /* ImageView + ImageLoadingService.swift in Sources */,
 				E690E90AFFEEFF6DF9C839EF552D43BB /* ImageView.swift in Sources */,
+				C9221AA621D62944007D3766 /* BaseTableViewControllerV2.swift in Sources */,
 				81E567C77F8317B291ADB2FF92AF0CB7 /* Internal.swift in Sources */,
 				7058C867C1AEFD82D747D3F2658964D5 /* InternetConnectionManager.swift in Sources */,
 				1A2CA1B1CB98091C05B5ED9738FE546F /* IntShouldBeEven.swift in Sources */,
 				B76D7E98091C27D968BBF64F2DDFAE24 /* iOS_Bootstrap-dummy.m in Sources */,
 				27E7A7BE340C39828B8A447C27205DCA /* IServices.swift in Sources */,
+				C9221AA821D63BDE007D3766 /* BaseLiveTableViewControllerV2.swift in Sources */,
 				741A47E12DBC9BA7C854DA52ECDD2B6F /* IServicesInstances.swift in Sources */,
 				8C5FA51787D532D31508CF9FC0D347CE /* JsonSerializer.swift in Sources */,
 				2A97878AC2C1F763FD74607533B28127 /* KeyboardManager.swift in Sources */,
@@ -5853,7 +5875,7 @@
 				62B025C2806E8937629E462C32ED8233 /* RxValidatorResult.swift in Sources */,
 				6A1B3466E7CA53097858BC6100AC6723 /* Schedulers.swift in Sources */,
 				05FEAD6A262CA922FDB8B4A08F8B2095 /* ServicesInstances.swift in Sources */,
-				C970CD6421D38B77001B79B9 /* BaseReusableTableViewCell.swift in Sources */,
+				C970CD6421D38B77001B79B9 /* BaseTableViewCellV2.swift in Sources */,
 				33BA120734BE117B421B1C8CA82A052E /* SessionManager.swift in Sources */,
 				5001E409F81E5D7C4DA0EC002BF4B158 /* Single+Extensions.swift in Sources */,
 				60C4389EBDDD2C0E163FF1A08D95B5E0 /* Skeleton.swift in Sources */,
@@ -5871,7 +5893,7 @@
 				A9AB426016F7C066AB416EC9B4A3E6B6 /* StringIsNotUnderflowThen.swift in Sources */,
 				161EA330157CBD4CAA232D03719C5A0D /* StringShouldBeMatch.swift in Sources */,
 				540730C9D2C935F65B41559C846BA65B /* StringShouldEqualTo.swift in Sources */,
-				C9221AA121D4D783007D3766 /* BaseReusableCollectionViewCell.swift in Sources */,
+				C9221AA121D4D783007D3766 /* BaseCollectionViewCellV2.swift in Sources */,
 				4FE9BE976D425C545EED47DEC9186432 /* StringShouldNotBeEmpty.swift in Sources */,
 				C081DA48BD7640098A04627C0F636981 /* StringValidationTarget.swift in Sources */,
 				25D301352287CCAD6D20E5C521569F12 /* StringValidator.swift in Sources */,
@@ -5879,6 +5901,7 @@
 				CFC12337DA5EAA67CE98C5C37A504EC2 /* SwiftyImage.swift in Sources */,
 				ABB4E0D8A51BF20739AE66B2F21729BB /* Tableview + Reusablel.swift in Sources */,
 				18D85E14DEEC65843B2F82CB6DAEC376 /* TableviewAdapter.swift in Sources */,
+				C90BBE3821D68E000065FF43 /* BaseSideMenuTableViewControllerV2.swift in Sources */,
 				690392B6D02B14F0E1DA56681F93A83E /* Throttler.swift in Sources */,
 				59CC02FD2672948D712488766C0D5DFF /* ToggleButton.m in Sources */,
 				C1B206EE5F1E24F5D64D4ADF0B55D656 /* TokenRefresh.swift in Sources */,
@@ -5895,6 +5918,7 @@
 				132A069D353ADC74253644C34F46A0DB /* UIView + Toast.swift in Sources */,
 				7C172A2C22C86E02E95763814217C714 /* UIViewController + Navigation bar.swift in Sources */,
 				E623156295D5B195A2CF0171240EEFAA /* UIViewController + SideMenuIcon.swift in Sources */,
+				C9221AAA21D648E9007D3766 /* BaseLiveCollectionViewControllerV2.swift in Sources */,
 				F8548154952912B4E299EA9F9EDB4248 /* UIViewController+Bartinter.swift in Sources */,
 				0A3AA0E7A04CCB1EF1C2FCF5FDBF9C7D /* UIViewController.swift in Sources */,
 				C0F83AC919DAAF1BF1E5CD94C7C5D8AD /* UIViewControllerEnvironment.swift in Sources */,

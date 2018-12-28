@@ -11,5 +11,7 @@ import iOS_Bootstrap
 class WeatherMenuItemTabBarController:
                 MyMenuItemTabBarController<BasePresenter<BaseViewDelegator>,
                 BaseViewDelegator> {
+    
     override func initUI() { self.title = "Weather provider" }
+    
 }

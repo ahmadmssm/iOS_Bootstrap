@@ -7,7 +7,7 @@
 
 open class BaseTableViewController <T, V, D> :
                             BaseViewController<T, V>
-                            where T : BasePresenter<V> {
+                            where T: BasePresenter<V> {
     
     private let tableViewAdapter : TableviewAdapter = TableviewAdapter()
     public var isEmptyDataSource : Bool = false
@@ -15,9 +15,9 @@ open class BaseTableViewController <T, V, D> :
     
     public final func getTableViewAdapter() -> TableviewAdapter { return tableViewAdapter }
     
-    public var getTableViewDataSource : [D] { return tableViewAdapter.getDataSource as! [D] }
+    public var getTableViewDataSource: [D] { return tableViewAdapter.getDataSource as! [D] }
     
-    public final func setTableViewDataSource(tableViewDataSource : [D])  {
+    public final func setTableViewDataSource(tableViewDataSource: [D])  {
         tableViewAdapter.setDataSource(dataSource: tableViewDataSource)
     }
     
@@ -34,8 +34,8 @@ open class BaseTableViewController <T, V, D> :
         setTableViewDataSource(tableViewDataSource: tableViewDataSource)
     }
     
-    public final func initCell <T: BaseReusableTableViewCell<D>>(cell: T.Type, indexPath: IndexPath) -> T {
-        let cell: T = getTableViewAdapter().getTableView().dequeueReusableCell(forIndexPath: indexPath)
+    public final func initCell <C: BaseTableViewCellV2<D>>(cell: C.Type, indexPath: IndexPath) -> C {
+        let cell: C = getTableViewAdapter().getTableView().dequeueReusableCell(forIndexPath: indexPath)
         if (getCellModel(indexPath: indexPath) != nil) {
             cell.cellModel = getCellModel(indexPath: indexPath)
         }

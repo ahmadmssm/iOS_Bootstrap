@@ -8,8 +8,14 @@
 
 import iOS_Bootstrap
 
-class ToDoCell: BaseTableViewCell {
-    @IBOutlet weak var todoNameLabel: UILabel!
-    @IBOutlet weak var toDoDate: UILabel!
-    @IBOutlet weak var markAsDoneSwitch: UISwitch!
+class ToDoCell: BaseTableViewCellV2<ToDoCellModel> {
+    
+    @IBOutlet private weak var todoNameLabel: UILabel!
+    @IBOutlet private weak var toDoDate: UILabel!
+    @IBOutlet private weak var markAsDoneSwitch: UISwitch!
+    
+    override func initCellFrom(cellModel: ToDoCellModel) {
+        
+    }
+    
 }

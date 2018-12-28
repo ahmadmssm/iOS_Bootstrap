@@ -9,8 +9,8 @@
 import iOS_Bootstrap
 
 class CustomViewsViewController:
-                BaseViewController<BasePresenter<BaseViewDelegator>, BaseViewDelegator> {
-
+              BaseViewController<BasePresenter<BaseViewDelegator>, BaseViewDelegator> {
+    
     private let picker = Picker()
     
     override func viewDidLoad() { super.viewDidLoad() }
@@ -24,7 +24,7 @@ class CustomViewsViewController:
     }
     
     @IBAction func showDatePicker(_ sender: UIButton) {
-       openDatePicker(sender: sender)
+        openDatePicker(sender: sender)
     }
     
     @IBAction func showTimePicker(_ sender: UIButton) {
@@ -50,10 +50,14 @@ class CustomViewsViewController:
     @IBAction func showToast(_ sender: UIButton) {
         self.view.makeToast("This is a piece of toast", duration: 3.0, position: .center)
     }
-
+    
     @IBAction func loggers(_ sender: UIButton) {
         Log.info("Hi, I'm a logger that prints what you want in Xcode console and i work in debug mode only")
     }
+    
+}
+
+extension CustomViewsViewController {
     
     func openMultiDatasourcePicker(sender : UIButton) {
         let dataSource : [[String]] = [["One", "Two", "A lot"], ["Many", "Many more", "Infinite"],["One", "Two", "A lot"]]
@@ -72,9 +76,7 @@ class CustomViewsViewController:
         rightButton.titleLabel?.font.withSize(22)
         rightButton.setTitle("Cancel", for: .normal)
         rightButton.setTitleColor(UIColor.red, for: .normal)
-        
         let dataSource : [String] = ["One", "Two", "A lot"]
-        
         picker.showDataSelectionPicker(sender: sender, title: "Dropdown", dataSource: dataSource, initislSelection: 0, okButton: nil, cancelButton: rightButton) { (data) in
         }
     }
@@ -90,20 +92,16 @@ class CustomViewsViewController:
             Log.info(date)
         }
     }
-
+    
     func openDatePicker(sender : UIButton) {
         let rightButton = UIButton(frame: CGRect(x:0,y:0,width:30,height:30))
         rightButton.titleLabel?.font.withSize(22)
         rightButton.setTitle("Ok", for: .normal)
         rightButton.setTitleColor(UIColor.blue, for: .normal)
-        //
         picker.showDatePicker(sender: sender, title: "", minimumDate: nil, maximumDate: nil, currentLocaleButtonTitle: nil, okButton: rightButton, cancelButton: nil) { (date) in
             Log.info(date)
         }
     }
     
 }
-
-
-
 

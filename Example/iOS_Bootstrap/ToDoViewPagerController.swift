@@ -9,12 +9,13 @@
 import iOS_Bootstrap
 
 class ToDoViewPagerController:
-                        MyMenuItemViewPagerController <BasePresenter<BaseViewDelegator>,
-                        BaseViewDelegator> {
+                        MyMenuItemViewPagerController
+                                    <BasePresenter<BaseViewDelegator>, BaseViewDelegator> {
 
     override func viewDidLoad() { super.viewDidLoad() }
     
     override func initUI() {
+        self.title = "ToDo list"
         // Setup view pager
         let activeTodos = ToDoViewController(mode: ToDoMode.Active)
         activeTodos.title = "Active todos"

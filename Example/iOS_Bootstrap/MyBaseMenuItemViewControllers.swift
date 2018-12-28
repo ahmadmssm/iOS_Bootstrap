@@ -6,7 +6,6 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-import UIKit
 import iOS_Bootstrap
 
 class MyMenuItemViewController <P, V>: BaseMenuItemViewController <P, V> where P: BasePresenter<V> {
@@ -41,8 +40,28 @@ class MyMenuItemTableViewController <P, V, M>: BaseMenuItemTableViewController <
     }
 }
 
+class MyMenuItemTableViewControllerV2 <P, V, M, C>:
+                 BaseMenuItemTableViewControllerV2 <P, V, M, C>
+                 where P: BasePresenter<V>, C: BaseTableViewCellV2<M>  {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addCustomLeftMenuItemViewController()
+        self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side_menu"))
+    }
+}
+
 class MyMenuItemLiveTableViewController <P, V, M>:
     BaseMenuItemLiveTableViewController <P, V, M> where P: BaseLiveListingPresenter<V, M> {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addCustomLeftMenuItemViewController()
+        self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side_menu"))
+    }
+}
+
+class MyMenuItemLiveTableViewControllerV2 <P, V, M, C>:
+                    BaseMenuItemLiveTableViewControllerV2 <P, V, M, C>
+                    where P: BaseLiveListingPresenter<V, M> , C: BaseTableViewCellV2<M>  {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         addCustomLeftMenuItemViewController()

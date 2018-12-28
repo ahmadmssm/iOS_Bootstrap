@@ -11,10 +11,8 @@ import iOS_Bootstrap
 
 class Navigator: BaseNavigator {
     //
-    private static let mainStoryboard = UIStoryboard.getStoryboardWithName(Storyboards.main)
-    //
     static func startInitialView() {
-        let mainViewController : MainViewController = mainStoryboard.instantiateViewController()
+        let mainViewController: MainViewController = MainViewController()
         navigationController? = GradientNavigationController(rootViewController: mainViewController)
         let window : UIWindow = AppDelegate.getAppWindow()
         //
@@ -30,10 +28,9 @@ class Navigator: BaseNavigator {
     //
     @available(iOS 10.0, *)
     static func goToSideMenuStoryboard() {
-        let storyboard = UIStoryboard.getStoryboardWithName(Storyboards.menu)
         let mainViewController = TrendingMoviesViewController()
-        let leftSideMenuViewController : LeftSideMenuViewController = storyboard.instantiateViewController()
-        let rightSideMenuViewController : RightSideMenuViewController = storyboard.instantiateViewController()
+        let leftSideMenuViewController: LeftSideMenuViewController = LeftSideMenuViewController()
+        let rightSideMenuViewController: RightSideMenuViewController = RightSideMenuViewController()
         let navigationController: UINavigationController = GradientNavigationController(rootViewController: mainViewController)
         // Set the main menu view controller
         leftSideMenuViewController.mainViewController = mainViewController
@@ -51,12 +48,12 @@ class Navigator: BaseNavigator {
     }
     
     static func goToCustomViewsViewController() {
-        let viewController : CustomViewsViewController = mainStoryboard.instantiateViewController()
+        let viewController: CustomViewsViewController = CustomViewsViewController()
         getContext().navigationController?.pushViewController(viewController, animated: true)
     }
     
     static func goToValidatorsExampleViewController() {
-        let viewController : ValidatorsExampleViewController = mainStoryboard.instantiateViewController()
+        let viewController: ValidatorsExampleViewController = ValidatorsExampleViewController()
         getContext().navigationController?.pushViewController(viewController, animated: true)
     }
     

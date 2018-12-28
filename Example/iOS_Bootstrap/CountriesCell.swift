@@ -10,16 +10,15 @@ import UIKit
 import iOS_Bootstrap
 import RxSwift
 
-class CountriesCell: BaseReusableTableViewCell<CountryEntity> {
+class CountriesCell: BaseTableViewCellV2<CountryEntity> {
     
-    @IBOutlet weak var labelCountryName: UILabel!
-    @IBOutlet weak var labelCapitalName: UILabel!
-    @IBOutlet weak var labelRegion: UILabel!
-    @IBOutlet weak var labelTimeZone: UILabel!
-    @IBOutlet weak var imageViewFlag: UIImageView!
+    @IBOutlet private weak var labelCountryName: UILabel!
+    @IBOutlet private weak var labelCapitalName: UILabel!
+    @IBOutlet private weak var labelRegion: UILabel!
+    @IBOutlet private weak var labelTimeZone: UILabel!
+    @IBOutlet private weak var imageViewFlag: UIImageView!
     
     private var disposeBag: DisposeBag!
-    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -32,7 +31,7 @@ class CountriesCell: BaseReusableTableViewCell<CountryEntity> {
         if let countryName = cellModel.name { labelCountryName.text = countryName }
         if let capitalName = cellModel.capital { labelCapitalName.text = capitalName }
         if let continental = cellModel.continental { labelRegion.text = continental }
-        if let timeZone = labelTimeZone.text { labelTimeZone.text = timeZone }
+        if let timeZone = cellModel.timeZone { labelTimeZone.text = timeZone }
         if let flagURL = cellModel.flagURL {
             imageViewFlag.loadSVGfrom(url: flagURL, disposeBag: disposeBag)
         }
