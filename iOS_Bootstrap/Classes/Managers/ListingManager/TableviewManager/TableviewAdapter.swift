@@ -135,6 +135,13 @@ open class TableviewAdapter : NSObject {
         mTableview.reloadRows(at: indexPaths, with: animation)
     }
     
+    public final func resetTable() {
+        self.tableViewDataSource.removeAll()
+        mTableview?.reloadData()
+        indicator?.stopAnimating()
+        mTableview.tableFooterView?.isHidden = true
+    }
+    
 }
 
 extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {

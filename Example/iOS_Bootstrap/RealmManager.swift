@@ -14,7 +14,16 @@ class RealmManager<T: Object> {
     
     private let realm: Realm!
     
-    required init() { realm = try! Realm() }
+    private let config = Realm.Configuration(
+        // Set the new schema version. This must be greater than the previously used
+        // version (if you've never set a schema version before, the version is 0).
+        schemaVersion: UInt64(Constants.realmDatabaseVersion)
+    )
+    
+    required init() {
+        Realm.Configuration.defaultConfiguration = config   
+        realm = try! Realm()
+    }
     
     final func getRealm() -> Realm { return realm }
     

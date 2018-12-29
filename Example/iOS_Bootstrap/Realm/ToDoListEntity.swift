@@ -10,11 +10,12 @@ import RealmSwift
 
 class ToDoListEntity: Object {
     @objc dynamic var id = 0
-    @objc dynamic var name = ""
-    @objc dynamic var createdAt = NSDate()
-    @objc dynamic var isDone = false
-    // List<T> is generic data type, that’s why i didn’t add dynamic before declaring tasks property as generic properties can’t be represented in Objective-C runtime.
+    @objc dynamic var name: String = ""
+    @objc dynamic var createdAt: Date = Date()
+    @objc dynamic var isDone: Bool = false
+    // List<T> is a generic data type, that’s why i didn’t add dynamic before declaring tasks property as generic properties can’t be represented in Objective-C runtime.
     let tasks = List<TaskEntity>()
     
     override static func primaryKey() -> String? { return "id" }
+    
 }

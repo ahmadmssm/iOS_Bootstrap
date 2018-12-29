@@ -37,6 +37,7 @@ open class BaseLiveListingPresenter<T, M>: BasePresenter <T>
     open func reloadFromScratch() {
         liveDataSource.removeAll()
         dataSource.removeAll()
+        binder.dataSourceDidReset()
     }
     
     public final func resetPagination() { isListLoadingForTheFirstTime = true }

@@ -12,4 +12,6 @@ struct Constants {
     static let ipstackAuthKey: String = "45399d5079fd9249fc1f8c94ad33c200"
     static let openApiAuthKey: String = "c4ce55f864d8eb32d003dc283f6a8119"
     static let coreDataModelName: String = "DataBase"
+    static let realmDatabaseVersion: Int = 2
+
 }

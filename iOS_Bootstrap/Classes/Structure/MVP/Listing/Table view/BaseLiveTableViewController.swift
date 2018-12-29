@@ -19,6 +19,8 @@ open class BaseLiveTableViewController<T, V, D>:
         getTableViewAdapter().reloadTable(pageItems: dataSource as! [D])
     }
     
+    func dataSourceDidReset() { getTableViewAdapter().resetTable() }
+    
     func didGetPageParams(totalNumberOfItems: Int, itemsPerPage: Int) {
         // Configure pagination parameters
         getTableViewAdapter().configurePaginationParameters(totalNumberOfItems: totalNumberOfItems, itemsPerPage: itemsPerPage)

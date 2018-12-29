@@ -8,4 +8,9 @@
 
 struct ToDoCellModel: Codable {
     
+    var id: Int?
+    var name: String?
+    var createdAt: String?
+    var isDone: Bool?
+   // var tasks: [TaskEntity]?
 }

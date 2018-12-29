@@ -7,6 +7,7 @@
 //
 
 import iOS_Bootstrap
+import SCLAlertView
 
 class ToDoViewController:
             MyMenuItemLiveTableViewControllerV2
@@ -14,7 +15,9 @@ class ToDoViewController:
                     ToDoCellModel, ToDoCell>, ToDoViewDelegator, BaseTableViewDelegates {
     
     @IBOutlet private weak var tableView: UITableView!
+   
     private var mode: ToDoMode!
+    private var alert: SCLAlertView!
     
     convenience init(mode: ToDoMode) {
         self.init()
@@ -24,12 +27,34 @@ class ToDoViewController:
     override func viewDidLoad() { super.viewDidLoad() }
     
     override func initUI() {
+        alert = SCLAlertView()
+    }
+    
+    private func getCreateNewToDoPopUp() -> SCLAlertView {
+        let poUpAppearance = SCLAlertView.SCLAppearance (showCloseButton: false, shouldAutoDismiss: false)
+        let popUp = SCLAlertView(appearance: poUpAppearance)
+        let toDoNameField = popUp.addTextField("Enter your ToDo name")
+        popUp.addButton("Create") {
+            if (toDoNameField.text?.isEmpty)! {
+                self.view.makeToast("To do name can not be empty!", duration: 3.0, position: .top)
+            }
+            else {
+                self.getPresenter().createNewToDo(name: toDoNameField.text!)
+                popUp.hideView()
+            }
+        }
+        popUp.addButton("close") { popUp.hideView() }
+        return popUp
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         switch mode {
         case .Active:
-            
+            getPresenter().getActiveTodos()
             break
         case .Done:
-            
+            getPresenter().getFinishedTodos()
             break
         default: break
         }
@@ -45,21 +70,19 @@ class ToDoViewController:
     }
  
     func rowDidSelected(tableView: UITableView, indexPath: IndexPath) {
-      //  getPresenter().getSummaryForMovieAt(index: indexPath.row)
+        getPresenter().getToDoWithIndex(index: indexPath.row)
+    }
+
+    @IBAction func createNewListButton(_ sender: CustomButton) {
+        getCreateNewToDoPopUp().showEdit("Create new todo", subTitle: "")
     }
     
-//    func didGetMovieSummary(summary: String) {
-//        sclAlertView = SCLAlertView(appearance: sclAlertViewAppearance)
-//        sclAlertView.showEdit("Movie summary", subTitle: summary)
-//    }
-//
-//    func loadMore(tableView: UITableView, forPage page: Int, updatedDataSource: [Any]) {
-//        getPresenter().getTrendingMovies(pageNumber: page)
-//    }
-//
-//
-//    func didFailToGetTrendingMovies(error: String) {
-//        SCLAlertView().showError("Error", subTitle: error)
-//    }
-
+    func newToDoDidCreated() { alert.showSuccess("", subTitle: "ToDo created successfully") }
+    
+    func didGetSavedToDo(toDo: ToDoCellModel) {
+        
+    }
+    
+    func onError(error: String) { alert.showError("Error", subTitle: error) }
+    
 }

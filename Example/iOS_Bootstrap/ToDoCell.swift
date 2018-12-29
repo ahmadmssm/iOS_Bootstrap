@@ -15,7 +15,9 @@ class ToDoCell: BaseTableViewCellV2<ToDoCellModel> {
     @IBOutlet private weak var markAsDoneSwitch: UISwitch!
     
     override func initCellFrom(cellModel: ToDoCellModel) {
-        
+        if let title = cellModel.name { todoNameLabel.text = title }
+        if let date = cellModel.createdAt { toDoDate.text = date }
+        if let isActive = cellModel.isDone { markAsDoneSwitch.isOn = !isActive }
     }
     
 }

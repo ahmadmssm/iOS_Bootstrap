@@ -24,7 +24,7 @@ class TrendingMoviesViewController:
     
     override func initUI() {
         self.title = "Trending movies"
-        sclAlertViewAppearance =  SCLAlertView.SCLAppearance(
+        sclAlertViewAppearance =  SCLAlertView.SCLAppearance (
             showCloseButton: false,
             hideWhenBackgroundViewIsTapped: true
         )

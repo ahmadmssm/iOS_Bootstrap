@@ -18,6 +18,10 @@ open class BaseLiveCollectionViewController<T, V, D>:
     func dataSourceDidChanged(dataSource: [Any]) {
         getCollectionViewAdapter().reloadCollectionView(pageItems: dataSource as! [D])
     }
+    
+    func dataSourceDidReset() {
+        getCollectionViewAdapter().resetCollectionView()
+    }
 
     func didGetPageParams(totalNumberOfItems: Int, itemsPerPage: Int) {
         // Configure pagination parameters

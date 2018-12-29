@@ -8,6 +8,7 @@
 protocol LiveDataProtocol {
     func didGetPageParams(totalNumberOfItems: Int, itemsPerPage: Int)
     func dataSourceDidChanged(dataSource : [Any])
+    func dataSourceDidReset()
 }
 
 

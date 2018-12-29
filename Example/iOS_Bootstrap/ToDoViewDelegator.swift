@@ -9,5 +9,7 @@
 import iOS_Bootstrap
 
 protocol ToDoViewDelegator: BaseViewDelegator {
-    
+    func newToDoDidCreated()
+    func didGetSavedToDo(toDo: ToDoCellModel)
+    func onError(error: String)
 }

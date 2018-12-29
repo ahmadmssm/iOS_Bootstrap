@@ -132,6 +132,12 @@ open class CollectionViewAdapter : NSObject {
         mCollectionview?.reloadData()
     }
     
+    public final func resetCollectionView() {
+        self.collectionViewDataSource.removeAll()
+        mCollectionview?.reloadData()
+        indicator?.stopAnimating()
+    }
+    
     // return cells that are square sized
     public func configurePaddingForSquareSizedCells (padding : CGFloat) -> CGSize {
         let collectionViewSize = mCollectionview.frame.size.width - padding
