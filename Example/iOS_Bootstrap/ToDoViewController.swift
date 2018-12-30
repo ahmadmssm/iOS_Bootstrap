@@ -22,13 +22,33 @@ class ToDoViewController:
     convenience init(mode: ToDoMode) {
         self.init()
         self.mode = mode
+        listenForToDoCellEvent(forMode: mode)
     }
-        
+    
+    private func listenForToDoCellEvent(forMode: ToDoMode) {
+        var event: String!
+        switch self.mode {
+        case .Active:
+            event = Constants.activeToDoEvent
+            break
+        case .Done:
+            event = Constants.doneToDoEvent
+            break
+        default: break
+        }
+        EventBus.onMainThread(self, name: event) { result in
+            let toDo: ToDoCellModel = result!.object as! ToDoCellModel
+            self.getPresenter().updateToDo(toDo: toDo, forMode: self.mode)
+        }
+    }
+    
     override func viewDidLoad() { super.viewDidLoad() }
     
     override func initUI() {
         alert = SCLAlertView()
     }
+    
+    deinit { EventBus.unregister(self) }
     
     private func getCreateNewToDoPopUp() -> SCLAlertView {
         let poUpAppearance = SCLAlertView.SCLAppearance (showCloseButton: false, shouldAutoDismiss: false)
@@ -49,15 +69,7 @@ class ToDoViewController:
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        switch mode {
-        case .Active:
-            getPresenter().getActiveTodos()
-            break
-        case .Done:
-            getPresenter().getFinishedTodos()
-            break
-        default: break
-        }
+        getPresenter().getToDos(mode: mode)
     }
     
     override func initTableViewAdapterConfiguraton() {
@@ -69,15 +81,31 @@ class ToDoViewController:
         return cell
     }
  
-    func rowDidSelected(tableView: UITableView, indexPath: IndexPath) {
-        getPresenter().getToDoWithIndex(index: indexPath.row)
+    func emptyDataSetShouldDisplay() -> Bool { return self.isEmptyDataSource }
+    
+    func emptyDataSetDescriptionText() -> NSAttributedString {
+        let attributes: [NSAttributedStringKey : Any] = [
+            NSAttributedStringKey.strokeColor : UIColor.black,
+            NSAttributedStringKey.foregroundColor : UIColor.blue,
+            NSAttributedStringKey.strokeWidth : -2.0,
+            NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18)
+        ]
+        return NSAttributedString(string: "No data !", attributes: attributes)
     }
-
+    
     @IBAction func createNewListButton(_ sender: CustomButton) {
         getCreateNewToDoPopUp().showEdit("Create new todo", subTitle: "")
     }
     
     func newToDoDidCreated() { alert.showSuccess("", subTitle: "ToDo created successfully") }
+    
+    func toDoDidUpdated() {
+        
+    }
+    
+    func toDoDidDeleted() {
+        
+    }
     
     func didGetSavedToDo(toDo: ToDoCellModel) {
         

@@ -7,7 +7,12 @@
 
 open class BaseTableViewCellV2 <M>: BaseTableViewCell {
     
-    var cellModel: M? { didSet { initCellFrom(cellModel: cellModel!) } }
+    var mCellModel: M? { didSet { initCellFrom(cellModel: mCellModel!) } }
+    
+    public var cellModel: M? {
+        set { mCellModel = newValue }
+        get { return mCellModel }
+    }
     
     open func initCellFrom(cellModel: M) { fatalError("Must Override") }
     

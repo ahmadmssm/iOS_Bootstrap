@@ -67,18 +67,6 @@ class CountriesViewController:
 
     func rowDidSelected(tableView: UITableView, indexPath: IndexPath) {}
 
-    func emptyDataSetShouldDisplay() -> Bool { return self.isEmptyDataSource }
-
-    func emptyDataSetDescriptionText() -> NSAttributedString {
-        let attributes: [NSAttributedStringKey : Any] = [
-            NSAttributedStringKey.strokeColor : UIColor.black,
-            NSAttributedStringKey.foregroundColor : UIColor.blue,
-            NSAttributedStringKey.strokeWidth : -2.0,
-            NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18)
-        ]
-        return NSAttributedString(string: "No data !", attributes: attributes)
-    }
-
 }
 
 // UI releated functions
@@ -150,7 +138,6 @@ extension CountriesViewController: CountriesViewDelegator {
         getTableViewAdapter().reloadTable(pageItems: countries)
         Skeleton.removeFrom(self.tableView)
         if (getTableViewDataSource.count == 0) {
-            self.isEmptyDataSource = true
             getTableViewAdapter().reloadTable()
         }
     }

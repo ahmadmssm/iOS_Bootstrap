@@ -17,7 +17,20 @@ class ToDoCell: BaseTableViewCellV2<ToDoCellModel> {
     override func initCellFrom(cellModel: ToDoCellModel) {
         if let title = cellModel.name { todoNameLabel.text = title }
         if let date = cellModel.createdAt { toDoDate.text = date }
-        if let isActive = cellModel.isDone { markAsDoneSwitch.isOn = !isActive }
+        if let isDone = cellModel.isDone {
+            markAsDoneSwitch.addTarget(self, action: #selector(switchValueDidChange(_:)), for: .valueChanged)
+            markAsDoneSwitch.isOn = isDone
+        }
     }
+    
+    @objc private func switchValueDidChange(_ sender: UISwitch) {
+        cellModel?.isDone = sender.isOn
+        var event: String = Constants.doneToDoEvent
+        if (sender.isOn) { event = Constants.activeToDoEvent }
+        EventBus.post(event, sender: cellModel)
+    }
+    
+    deinit { EventBus.unregister(self) }
+
     
 }

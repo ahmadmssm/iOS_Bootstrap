@@ -13,5 +13,7 @@ struct Constants {
     static let openApiAuthKey: String = "c4ce55f864d8eb32d003dc283f6a8119"
     static let coreDataModelName: String = "DataBase"
     static let realmDatabaseVersion: Int = 2
+    static let activeToDoEvent = "activeToDoEvent"
+    static let doneToDoEvent = "doneToDoEvent"
 
 }

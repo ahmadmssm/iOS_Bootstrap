@@ -10,7 +10,9 @@ open class BaseTableViewController <T, V, D> :
                             where T: BasePresenter<V> {
     
     private let tableViewAdapter : TableviewAdapter = TableviewAdapter()
-    public var isEmptyDataSource : Bool = false
+    public var isEmptyDataSource : Bool {
+        return getTableViewDataSource.count == 0 ? true : false
+    }
     //
     
     public final func getTableViewAdapter() -> TableviewAdapter { return tableViewAdapter }
@@ -37,7 +39,7 @@ open class BaseTableViewController <T, V, D> :
     public final func initCell <C: BaseTableViewCellV2<D>>(cell: C.Type, indexPath: IndexPath) -> C {
         let cell: C = getTableViewAdapter().getTableView().dequeueReusableCell(forIndexPath: indexPath)
         if (getCellModel(indexPath: indexPath) != nil) {
-            cell.cellModel = getCellModel(indexPath: indexPath)
+            cell.mCellModel = getCellModel(indexPath: indexPath)
         }
         return cell
     }

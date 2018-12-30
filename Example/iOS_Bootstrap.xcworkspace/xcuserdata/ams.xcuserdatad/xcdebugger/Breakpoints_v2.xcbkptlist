@@ -618,11 +618,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../iOS_Bootstrap/Classes/Structure/MVP/Listing/Table view/BaseTableViewController.swift"
-            timestampString = "567781026.964124"
+            timestampString = "567822212.095084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "initCell(cell:indexPath:)"
             landmarkType = "7">
          </BreakpointContent>

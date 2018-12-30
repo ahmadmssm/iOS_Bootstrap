@@ -10,6 +10,8 @@ import iOS_Bootstrap
 
 protocol ToDoViewDelegator: BaseViewDelegator {
     func newToDoDidCreated()
+    func toDoDidUpdated()
+    func toDoDidDeleted()
     func didGetSavedToDo(toDo: ToDoCellModel)
     func onError(error: String)
 }

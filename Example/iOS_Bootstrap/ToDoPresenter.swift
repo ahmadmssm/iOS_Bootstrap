@@ -23,14 +23,52 @@ class ToDoPresenter: BaseLiveListingPresenter<ToDoViewDelegator, ToDoCellModel> 
     
     override func viewControllerWillRefresh() { self.reloadFromScratch() }
     
-    private func getActiveTodosObservable() -> Observable<[ToDoCellModel]> {
-        return toDoListManager.getActiveToDos()
-            .map({ toDoEntityList -> [ToDoCellModel] in
-                return self.transformToDoEntityListToToDoCellModelList(toDoEntites: toDoEntityList)
-            })
+    func getToDos(mode: ToDoMode) {
+        getToDosCompletable(mode: mode)
+            .subscribe()
+            .disposed(by: disposeBag)
     }
     
-    func getActiveTodos() {
+    // Create new toDo and get all active toDos
+    func createNewToDo(name: String) {
+        createNewToDoCompletable(name: name)
+            .andThen(getActiveTodosObservable())
+            .subscribe(onNext: { toDos in
+                self.getViewDelegator().newToDoDidCreated()
+                self.reloadFromScratch()
+                self.dataSource = toDos
+            }, onError: { error in
+            self.getViewDelegator().onError(error: error.localizedDescription)
+        }, onCompleted: {}) {}
+            .disposed(by: disposeBag)
+    }
+    
+    func updateToDo(toDo: ToDoCellModel, forMode: ToDoMode) {
+        switch forMode {
+        case .Active:
+            markToDoAsDone(toDo: toDo)
+            break
+        case .Done:
+            markToDoAsActive(toDo: toDo)
+            break
+        }
+    }
+    
+    func deleteToDo(toDo: ToDoCellModel, forMode: ToDoMode) {
+        toDoListManager
+            .deleteToDo(toDo: transformToDoCellModelToToDoCellEntity(toDo: toDo))
+            .andThen(getToDosCompletable(mode: forMode))
+            .subscribe(onCompleted: { self.getViewDelegator().toDoDidDeleted() })
+             { error in self.getViewDelegator().onError(error: error.localizedDescription) }
+            .disposed(by: disposeBag)
+    }
+    
+    deinit { disposeBag = nil }
+
+}
+
+extension ToDoPresenter {
+    private func getActiveTodos() {
         getActiveTodosObservable()
             .subscribe(onNext: { toDos in self.dataSource = toDos },
                        onError: { error in
@@ -38,8 +76,7 @@ class ToDoPresenter: BaseLiveListingPresenter<ToDoViewDelegator, ToDoCellModel> 
             }, onCompleted: {}, onDisposed: {})
             .disposed(by: disposeBag)
     }
-    
-    func getFinishedTodos() {
+    private func getDoneTodos() {
         toDoListManager.getFinishedToDos()
             .map({ toDoEntityList -> [ToDoCellModel] in
                 return self.transformToDoEntityListToToDoCellModelList(toDoEntites: toDoEntityList)
@@ -50,22 +87,77 @@ class ToDoPresenter: BaseLiveListingPresenter<ToDoViewDelegator, ToDoCellModel> 
             }, onCompleted: {}, onDisposed: {})
             .disposed(by: disposeBag)
     }
-    
-    // Create new toDo and get all active todos
-    func createNewToDo(name: String) {
-        createNewToDoCompletable(name: name)
-            .andThen(getActiveTodosObservable()).subscribe(onNext: { toDos in
-                self.getViewDelegator().newToDoDidCreated()
+    private func markToDoAsDone(toDo: ToDoCellModel) {
+        toDoListManager
+            .updateToDo(toDo: transformToDoCellModelToToDoCellEntity(toDo: toDo))
+            .andThen(getActiveTodosObservable())
+            .subscribe(onNext: { toDos in
+                self.getViewDelegator().toDoDidUpdated()
                 self.reloadFromScratch()
                 self.dataSource = toDos
             }, onError: { error in
-            self.getViewDelegator().onError(error: error.localizedDescription)
-        }, onCompleted: {}) {}
+                self.getViewDelegator().onError(error: error.localizedDescription)
+            }, onCompleted: {}) {}
             .disposed(by: disposeBag)
     }
+    private func markToDoAsActive(toDo: ToDoCellModel) {
+        toDoListManager
+            .updateToDo(toDo: transformToDoCellModelToToDoCellEntity(toDo: toDo))
+            .andThen(getDoneTodosObservable())
+            .subscribe(onNext: { toDos in
+                self.getViewDelegator().toDoDidUpdated()
+                self.reloadFromScratch()
+                self.dataSource = toDos
+            }, onError: { error in
+                self.getViewDelegator().onError(error: error.localizedDescription)
+            }, onCompleted: {}) {}
+            .disposed(by: disposeBag)
+    }
+}
+
+extension ToDoPresenter {
+    private func transformToDoEntityListToToDoCellModelList(toDoEntites : [ToDoListEntity]) -> [ToDoCellModel] {
+        var toDos: [ToDoCellModel] = [ToDoCellModel] ()
+        toDoEntites.forEach({ toDoEntity in
+            var toDo: ToDoCellModel = ToDoCellModel ()
+            toDo.id = toDoEntity.id
+            toDo.name = toDoEntity.name
+            toDo.createdAt = toDoEntity.createdAt.toString(format: .custom("EEE dd, yyyy h:mm:ss a"))
+            toDo.isDone = toDoEntity.isDone
+            toDos.append(toDo)
+        })
+        return toDos
+    }
+    private func transformToDoCellModelToToDoCellEntity(toDo: ToDoCellModel) -> ToDoListEntity {
+        let toDoEntity: ToDoListEntity = ToDoListEntity()
+        toDoEntity.id = toDo.id!
+        toDoEntity.name = toDo.name!
+        if let date = Date(fromString: toDo.createdAt!, format: .custom("EEE dd, yyyy h:mm:ss a")) {
+            toDoEntity.createdAt = date
+        }
+        toDoEntity.isDone = toDo.isDone!
+        return toDoEntity
+    }
+}
+
+// Observables
+extension ToDoPresenter {
+    private func getActiveTodosObservable() -> Observable<[ToDoCellModel]> {
+        return toDoListManager.getActiveToDos()
+            .map({ toDoEntityList -> [ToDoCellModel] in
+                return self.transformToDoEntityListToToDoCellModelList(toDoEntites: toDoEntityList)
+            })
+    }
     
+    private func getDoneTodosObservable() -> Observable<[ToDoCellModel]> {
+        return toDoListManager.getFinishedToDos()
+            .map({ toDoEntityList -> [ToDoCellModel] in
+                return self.transformToDoEntityListToToDoCellModelList(toDoEntites: toDoEntityList)
+            })
+    }
     private func createNewToDoCompletable(name: String) -> Completable {
-        return toDoListManager.getLatestToDoId()
+        return toDoListManager
+            .getLatestToDoId()
             .map { id -> ToDoListEntity in
                 let toDoEntity: ToDoListEntity = ToDoListEntity()
                 toDoEntity.name = name
@@ -77,25 +169,18 @@ class ToDoPresenter: BaseLiveListingPresenter<ToDoViewDelegator, ToDoCellModel> 
             .flatMap { newToDo in self.toDoListManager.addNewToDo(toDo: newToDo) }
             .asCompletable()
     }
-    
-    private func transformToDoEntityListToToDoCellModelList(toDoEntites : [ToDoListEntity]) -> [ToDoCellModel] {
-        var toDos: [ToDoCellModel] = [ToDoCellModel] ()
-        toDoEntites.forEach({ toDoEntity in
-            var toDo: ToDoCellModel = ToDoCellModel ()
-            toDo.name = toDoEntity.name
-            toDo.createdAt = toDoEntity.createdAt.toString(style: .medium)
-            toDo.isDone = toDoEntity.isDone
-            toDos.append(toDo)
-        })
-        return toDos
+    func getToDosCompletable(mode: ToDoMode) -> Completable {
+        return Completable.create { completable in
+            switch mode {
+            case .Active:
+                self.getActiveTodos()
+                break
+            case .Done:
+                self.getDoneTodos()
+                break
+            }
+            completable(.completed)
+            return Disposables.create()
+        }
     }
-    
-    func getToDoWithIndex(index: Int) {
-        getViewDelegator().didGetSavedToDo(toDo: self.dataSource[index])
-    }
-    
-    
-    deinit { disposeBag = nil }
-
 }
-
