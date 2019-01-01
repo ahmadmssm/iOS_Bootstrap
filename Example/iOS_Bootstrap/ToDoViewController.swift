@@ -15,9 +15,8 @@ class ToDoViewController:
                     ToDoCellModel, ToDoCell>, ToDoViewDelegator, BaseTableViewDelegates {
     
     @IBOutlet private weak var tableView: UITableView!
-   
+    
     private var mode: ToDoMode!
-    private var alert: SCLAlertView!
     
     convenience init(mode: ToDoMode) {
         self.init()
@@ -44,9 +43,7 @@ class ToDoViewController:
     
     override func viewDidLoad() { super.viewDidLoad() }
     
-    override func initUI() {
-        alert = SCLAlertView()
-    }
+    override func initUI() {}
     
     deinit { EventBus.unregister(self) }
     
@@ -81,6 +78,18 @@ class ToDoViewController:
         return cell
     }
  
+    func canEditRow() -> Bool { return true }
+    
+    @available(iOS 11.0, *)
+    func configureSwipAction(tableView: UITableView, indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, nil) in
+            self.removeToDoAtRow(index: indexPath.row)
+        }
+        let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
+        swipeActionConfig.performsFirstActionWithFullSwipe = false
+        return swipeActionConfig
+    }
+    
     func emptyDataSetShouldDisplay() -> Bool { return self.isEmptyDataSource }
     
     func emptyDataSetDescriptionText() -> NSAttributedString {
@@ -97,20 +106,22 @@ class ToDoViewController:
         getCreateNewToDoPopUp().showEdit("Create new todo", subTitle: "")
     }
     
-    func newToDoDidCreated() { alert.showSuccess("", subTitle: "ToDo created successfully") }
+    func newToDoDidCreated() {
+        SCLAlertView().showSuccess("", subTitle: "ToDo created successfully")
+    }
     
     func toDoDidUpdated() {
-        
+        SCLAlertView().showSuccess("", subTitle: "ToDo updated successfully")
     }
     
     func toDoDidDeleted() {
-        
+        SCLAlertView().showSuccess("", subTitle: "ToDo deleted successfully")
     }
     
-    func didGetSavedToDo(toDo: ToDoCellModel) {
-        
+    func onError(error: String) {
+        SCLAlertView().showError("Error", subTitle: error)
     }
     
-    func onError(error: String) { alert.showError("Error", subTitle: error) }
+    func removeToDoAtRow(index: Int) { getPresenter().deleteToDoByIndex(index, mode) }
     
 }

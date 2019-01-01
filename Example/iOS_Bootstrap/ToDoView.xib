@@ -48,7 +48,7 @@
             <constraints>
                 <constraint firstItem="GhF-Zm-WrJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3Aj-zM-ymu"/>
                 <constraint firstItem="GhF-Zm-WrJ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="7Pb-Cb-xdA"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="drF-hq-CGy" secondAttribute="bottom" constant="25" id="Bu9-wu-UK5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="drF-hq-CGy" secondAttribute="bottom" constant="10" id="Bu9-wu-UK5"/>
                 <constraint firstItem="GhF-Zm-WrJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="a5R-fh-Ax3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="drF-hq-CGy" secondAttribute="trailing" constant="100" id="cJE-Rm-6OG"/>
                 <constraint firstItem="drF-hq-CGy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="oF1-YN-IBd"/>

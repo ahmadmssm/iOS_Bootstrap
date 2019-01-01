@@ -15,5 +15,6 @@ struct Constants {
     static let realmDatabaseVersion: Int = 2
     static let activeToDoEvent = "activeToDoEvent"
     static let doneToDoEvent = "doneToDoEvent"
-
+    static let serverDateFormat = "yyyy-MM-dd HH:mm:ss"
+    static let targetDateForamt = "EEE, dd/MM/yyyy h:mm:ss a"
 }

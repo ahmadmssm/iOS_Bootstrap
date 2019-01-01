@@ -16,6 +16,7 @@ class ToDoViewPagerController:
     
     override func initUI() {
         self.title = "ToDo list"
+        
         // Setup view pager
         let activeTodos = ToDoViewController(mode: ToDoMode.Active)
         activeTodos.title = "Active todos"

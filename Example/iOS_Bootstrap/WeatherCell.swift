@@ -34,9 +34,7 @@ class WeatherCell: BaseTableViewCellV2<Forcast> {
             labelWindSpeed.text = "Wind speed : " + windSpeed + " km/h"
         }
         if let dateString = cellModel.date {
-            let date = Date(fromString: dateString, format: .custom("yyyy-MM-dd HH:mm:ss"))
-            let dateFormat : String = "EEE, dd MMM yyyy hh:mm a"
-            labelDate.text = "Date : " + (date?.toString(format: .custom(dateFormat)))!
+            labelDate.text = "Date : " + DateTimeHelpers.formatDateString(dateString: dateString)!
         }
         if let pressure = cellModel.main?.pressure?.toString() {
             labelPressure.text = "Pressure : " + pressure

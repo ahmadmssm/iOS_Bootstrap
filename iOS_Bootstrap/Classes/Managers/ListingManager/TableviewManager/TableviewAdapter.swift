@@ -5,6 +5,7 @@
 //  Created by Ahmad Mahmoud on 5/20/18.
 //  Copyright © 2018 Ahmad Mahmoud. All rights reserved.
 //
+//  Ref: https://stackoverflow.com/questions/24103069/add-swipe-to-delete-uitableviewcell
 
 import UIKit
 
@@ -199,6 +200,33 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
             self.indicator?.stopAnimating()
             self.mTableview.tableFooterView?.isHidden = true
         }
+    }
+
+    public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return (mDelegate?.canEditRow?()) ?? false
+    }
+    
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (mDelegate?.canEditRow!())! {
+            mDelegate.editRowAtIndexPath?(tableView: tableView, commit: editingStyle, forRowAt: indexPath)
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if (mDelegate?.canEditRow!())! {
+            return mDelegate?.editActionsRowAtIndexPath!(tableView: tableView, indexPath: indexPath)
+        }
+        // Must enable canEditRow to use this feature
+        return [UITableViewRowAction]()
+    }
+    
+    @available(iOS 11.0, *)
+    public func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if (mDelegate?.canEditRow!())! {
+            return mDelegate.configureSwipAction?(tableView: tableView, indexPath: indexPath)
+        }
+        // Must enable canEditRow to use this feature
+        return UISwipeActionsConfiguration()
     }
     
 }

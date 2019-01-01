@@ -20,7 +20,7 @@
 		C90BBE3D21D697B60065FF43 /* RightSideMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90BBE3B21D697B60065FF43 /* RightSideMenuView.xib */; };
 		C90BBE4021D69B570065FF43 /* WeatherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BBE3E21D69B570065FF43 /* WeatherTableViewController.swift */; };
 		C90BBE4121D69B570065FF43 /* WeatherTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90BBE3F21D69B570065FF43 /* WeatherTableView.xib */; };
-		C90BBE4721D77E1F0065FF43 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BBE4621D77E1F0065FF43 /* Helpers.swift */; };
+		C90BBE4721D77E1F0065FF43 /* DateTimeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BBE4621D77E1F0065FF43 /* DateTimeHelpers.swift */; };
 		C915C59C20CAC1F10029F5D9 /* CountriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915C59A20CAC1F10029F5D9 /* CountriesCell.swift */; };
 		C915C59D20CAC1F10029F5D9 /* CountriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C915C59B20CAC1F10029F5D9 /* CountriesCell.xib */; };
 		C91AF997218CCFAE00BB5559 /* StaticResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91AF996218CCFAE00BB5559 /* StaticResources.swift */; };
@@ -145,7 +145,7 @@
 		C90BBE3B21D697B60065FF43 /* RightSideMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightSideMenuView.xib; sourceTree = "<group>"; };
 		C90BBE3E21D69B570065FF43 /* WeatherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewController.swift; sourceTree = "<group>"; };
 		C90BBE3F21D69B570065FF43 /* WeatherTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableView.xib; sourceTree = "<group>"; };
-		C90BBE4621D77E1F0065FF43 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		C90BBE4621D77E1F0065FF43 /* DateTimeHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeHelpers.swift; sourceTree = "<group>"; };
 		C915C59A20CAC1F10029F5D9 /* CountriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCell.swift; sourceTree = "<group>"; };
 		C915C59B20CAC1F10029F5D9 /* CountriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountriesCell.xib; sourceTree = "<group>"; };
 		C91AF996218CCFAE00BB5559 /* StaticResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticResources.swift; sourceTree = "<group>"; };
@@ -449,7 +449,7 @@
 			children = (
 				C930E1DB21CD1EC500809FB2 /* SVG Image */,
 				C930E1D321CD165000809FB2 /* Realm */,
-				C90BBE4621D77E1F0065FF43 /* Helpers.swift */,
+				C90BBE4621D77E1F0065FF43 /* DateTimeHelpers.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1085,7 +1085,7 @@
 				C93E4B582190575300A62059 /* Wind.swift in Sources */,
 				C99EA60420CB3D7900D7C158 /* APIs.swift in Sources */,
 				C930E1CD21CC4F4300809FB2 /* SVGimageHelper.swift in Sources */,
-				C90BBE4721D77E1F0065FF43 /* Helpers.swift in Sources */,
+				C90BBE4721D77E1F0065FF43 /* DateTimeHelpers.swift in Sources */,
 				C99AA08B21884526001683B8 /* TrendingMoviesViewDelegator.swift in Sources */,
 				C99AA08F218845C9001683B8 /* CountriesViewDelegator.swift in Sources */,
 				C946C12D21A3681100B0F553 /* NoCancelButtonSearchController.swift in Sources */,

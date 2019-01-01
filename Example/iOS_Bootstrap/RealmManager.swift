@@ -206,4 +206,10 @@ class RealmManager<T: Object> {
         }
     }
     
+    func getRecordAtIndex(index: Int) -> Single<T> {
+        return getAllRecords().flatMap { selector -> Observable<T> in
+            return Observable.just(selector[index])
+        }.asSingle()
+    }
+    
 }
