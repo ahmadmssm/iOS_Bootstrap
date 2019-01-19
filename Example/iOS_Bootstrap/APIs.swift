@@ -23,7 +23,7 @@ extension APIs : GenericAPIs {
     var baseURL: URL {
         switch self {
         case .getWorldCountries():
-            return URL(string: "https://restcountries.eu/rest/v2")!
+            return URL(string: Environment.getEnvironmentVariables().baseURL)!
         case .getTrendingMovies( _):
             return URL(string: "https://api.themoviedb.org/3/")!
         case .getDevicePublicIP():

@@ -17,13 +17,15 @@ protocol LocationManagerDelegate {
 class LocationManager {
     
     private let locationManager = CLLocationManager()
-    var delegate : LocationManagerDelegate!
+    var delegate: LocationManagerDelegate!
     
-    func requestLocationPermission() {
+    final func requestLocationPermission() {
         locationManager.requestWhenInUseAuthorization()
     }
     
-    func getCurrentLocationCoordiantes() {
+    final func requestLocationUpdate() { locationManager.startUpdatingLocation() }
+    
+    final func getCurrentLocationCoordiantes() {
         if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
             CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways) {
             guard let currentLocation = locationManager.location else {

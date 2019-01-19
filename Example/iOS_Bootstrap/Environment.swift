@@ -19,9 +19,9 @@
 
 import iOS_Bootstrap
 
-public enum Environment: String, BaseEnvironment {
+public enum Environment: String, BaseEnvironment {    
     
-    // Modes
+    // Build variants
     case Debug
     case Staging
     case Release
@@ -29,9 +29,9 @@ public enum Environment: String, BaseEnvironment {
     // Variables
     var baseURL: String {
         switch self {
-        case .Debug: return "https://debug-api.myservice.com"
-        case .Staging: return "https://staging-api.myservice.com"
-        case .Release: return "https://api.myservice.com"
+        case .Debug: return "https://restcountries.eu/rest/v2"
+        case .Staging: return "https://restcountries.eu/rest/v2"
+        case .Release: return "https://restcountries.eu/rest/v2"
         }
     }
     

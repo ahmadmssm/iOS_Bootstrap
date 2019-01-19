@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import iOS_Bootstrap
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,22 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        //
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        //
-        // Override point for customization after application launch.
-        //
-        DefaultConfigurations()
-                .enableIQKeyboard()
-                .iqKeyboardCanGoBack()
-                .iqKeyboardCanGoNext()
-                .setTokenRefreshListener(self)
-                .setNavigationBarTextApperance(textApperance: StaticResources.CustomStyles.navigationBarTextStyle)
-                .setNavigationBarBackButtonColor(backButtonColor: UIColor.white)
-                .setCoreDataModelName(modelName: Constants.coreDataModelName)
-                .build()
+        initEssentialAppConfigurations()
         Navigator.startInitialView()
-        //
         return true
     }
     
@@ -47,15 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
         //
-        // Stops monitoring network reachability status changes
-        InternetConnectionManager.getInstance.stopMonitoring()
+        stopListeningForNetworkConnectionChanges()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         //
-        // Starts monitoring network reachability status changes
-        InternetConnectionManager.getInstance.startMonitoring()
+        listenForNetworkConnectionChanges()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -63,17 +46,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
-extension AppDelegate {
-    static func getAppWindow() -> UIWindow {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.window!
-    }
-}
-
-extension AppDelegate: AppDelegateService {
-    // Refresh token callbacks
-    func didFailedToRefreshToken() {}
-    func tokenDidRefreshed(response: String) { Log.debug("Refresh token response : " + response) }
-}
-

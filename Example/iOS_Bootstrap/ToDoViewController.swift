@@ -27,10 +27,10 @@ class ToDoViewController:
     private func listenForToDoCellEvent(forMode: ToDoMode) {
         var event: String!
         switch self.mode {
-        case .Active:
+        case .Active?:
             event = Constants.activeToDoEvent
             break
-        case .Done:
+        case .Done?:
             event = Constants.doneToDoEvent
             break
         default: break

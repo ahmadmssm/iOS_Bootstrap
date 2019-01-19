@@ -13,10 +13,9 @@ extension UIImageView {
     private static var svgImageHelper: SVGimageHelper = SVGimageHelper()
     func loadSVGfrom(url: String, disposeBag: DisposeBag) {
         _ = UIImageView.svgImageHelper.loadFrom(svgImageURL: url)
-            .do(onNext: { image in self.image = image },
-                onError: { error in self.image = #imageLiteral(resourceName: "image_not_found")}, onCompleted: {},
-                onSubscribe: {}, onSubscribed: {},
-                onDispose: {})
+            .do(onSuccess: { img in self.image = img },
+                onError: { error in self.image = #imageLiteral(resourceName: "image_not_found") },
+                onSubscribe: {}, onSubscribed: {}, onDispose: {})
             .subscribe()
             .disposed(by: disposeBag)
     }

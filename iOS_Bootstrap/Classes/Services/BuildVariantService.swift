@@ -10,8 +10,8 @@
 //
 
 public protocol BuildVariantService {}
-
 public extension BuildVariantService {
+    
     //
     // Enum looping helper function
     private static func Enum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
@@ -25,17 +25,28 @@ public extension BuildVariantService {
             return next
         }
     }
-    //
-    //
-    internal static func getEnvironment<T: Hashable & RawRepresentable>(_: T.Type) -> T where T.RawValue : StringProtocol
-            {
+    
+    internal static func getEnvironment<T: CaseIterable & Hashable & RawRepresentable>(_: T.Type) -> T where T.RawValue : StringProtocol {
         if let configuration = Bundle.main.object(forInfoDictionaryKey: "Configuration") as? String {
+            //
+            #if swift(>=4)
+            print("Running Swift 4.0 or later")
+            for environment in T.allCases {
+            if (configuration.range(of: (environment.rawValue)) != nil) {
+            return environment
+            }
+            }
+            #else
+            print("Running old Swift")
             for environment in Enum(T.self) {
                 if (configuration.range(of: (environment.rawValue)) != nil) {
                     return environment
                 }
             }
+            #endif
+            //
         }
         return T.self as! T
     }
+    
 }

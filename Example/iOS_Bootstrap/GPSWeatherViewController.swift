@@ -9,7 +9,8 @@
 import UIKit
 
 class GPSWeatherViewController:
-                    WeatherTableViewController<GPSWeatherPresenter, WeatherViewDelegator> {
+                    WeatherTableViewController<GPSWeatherPresenter,
+                    WeatherViewDelegator> {
     
     private var locationManager: LocationManager!
     
@@ -22,6 +23,7 @@ class GPSWeatherViewController:
         locationManager = LocationManager()
         locationManager.delegate = self
         locationManager.requestLocationPermission()
+        locationManager.requestLocationUpdate()
     }
 
     override func initUI() {}
@@ -41,7 +43,7 @@ extension GPSWeatherViewController: LocationManagerDelegate {
     }
     
     func didFailtToGetLocationCoordinates() {
-        locationManager.getCurrentLocationCoordiantes()
+        self.view.makeToast("Failed to get current location !", duration: 3.0, position: .center)
     }
     
 }

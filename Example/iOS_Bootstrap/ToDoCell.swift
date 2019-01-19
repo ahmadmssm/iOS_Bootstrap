@@ -15,7 +15,7 @@ class ToDoCell: BaseTableViewCellV2<ToDoCellModel> {
     @IBOutlet private weak var markAsDoneSwitch: UISwitch!
     
     override func initCellFrom(cellModel: ToDoCellModel) {
-        if let title = cellModel.name { todoNameLabel.text = title }
+        if let title = cellModel.name { todoNameLabel.text = "Todo name " + title }
         if let date = cellModel.createdAt { toDoDate.text = date }
         if let isDone = cellModel.isDone {
             markAsDoneSwitch.addTarget(self, action: #selector(switchValueDidChange(_:)), for: .valueChanged)

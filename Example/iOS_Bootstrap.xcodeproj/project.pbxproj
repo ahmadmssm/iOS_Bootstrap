@@ -12,6 +12,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9CFC36298DCEDAF62396EF16 /* Pods_iOS_Bootstrap_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D137F84A69B1F899F3E224 /* Pods_iOS_Bootstrap_Example.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		C901192B21F342D30061B593 /* EssentialAppConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C901192A21F342D30061B593 /* EssentialAppConfigs.swift */; };
 		C902036F20F571C100A63492 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902036E20F571C100A63492 /* Navigator.swift */; };
 		C90BBE3121D682C00065FF43 /* SplashScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90BBE3021D682C00065FF43 /* SplashScreen.xib */; };
 		C90BBE3421D685610065FF43 /* LeftSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90BBE3221D685610065FF43 /* LeftSideMenuViewController.swift */; };
@@ -104,6 +105,8 @@
 		C9B18B95218C6F6E004520F5 /* MoviesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B18B94218C6F6E004520F5 /* MoviesPage.swift */; };
 		C9B18B98218C99C4004520F5 /* TrendingMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B18B96218C99C4004520F5 /* TrendingMoviesCell.swift */; };
 		C9B18B99218C99C4004520F5 /* TrendingMoviesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B18B97218C99C4004520F5 /* TrendingMoviesCell.xib */; };
+		C9B7E2C821EF4C8B00DF4751 /* RefreshTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7E2C721EF4C8B00DF4751 /* RefreshTokenService.swift */; };
+		C9B7E2CA21EF4CD100DF4751 /* AppWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7E2C921EF4CD100DF4751 /* AppWindow.swift */; };
 		C9CC0E49219100F500AF9D62 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0E47219100F500AF9D62 /* WeatherCell.swift */; };
 		C9CC0E4A219100F500AF9D62 /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CC0E48219100F500AF9D62 /* WeatherCell.xib */; };
 		C9CC0E4D2191997E00AF9D62 /* AdditionalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0E4C2191997E00AF9D62 /* AdditionalData.swift */; };
@@ -137,6 +140,7 @@
 		876F4E4DF9532FA87A402CC4 /* Pods-iOS_Bootstrap_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Tests/Pods-iOS_Bootstrap_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9CCFB36A3BA0ACD17B0068E4 /* Pods-iOS_Bootstrap_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Tests/Pods-iOS_Bootstrap_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9CD613CB2DA2C8BEF5721F8D /* Pods-iOS_Bootstrap_Tests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Tests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Tests/Pods-iOS_Bootstrap_Tests.staging.xcconfig"; sourceTree = "<group>"; };
+		C901192A21F342D30061B593 /* EssentialAppConfigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialAppConfigs.swift; sourceTree = "<group>"; };
 		C902036E20F571C100A63492 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		C90BBE3021D682C00065FF43 /* SplashScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreen.xib; sourceTree = "<group>"; };
 		C90BBE3221D685610065FF43 /* LeftSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 		C9B18B94218C6F6E004520F5 /* MoviesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesPage.swift; sourceTree = "<group>"; };
 		C9B18B96218C99C4004520F5 /* TrendingMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesCell.swift; sourceTree = "<group>"; };
 		C9B18B97218C99C4004520F5 /* TrendingMoviesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingMoviesCell.xib; sourceTree = "<group>"; };
+		C9B7E2C721EF4C8B00DF4751 /* RefreshTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenService.swift; sourceTree = "<group>"; };
+		C9B7E2C921EF4CD100DF4751 /* AppWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindow.swift; sourceTree = "<group>"; };
 		C9CC0E47219100F500AF9D62 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		C9CC0E48219100F500AF9D62 /* WeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
 		C9CC0E4C2191997E00AF9D62 /* AdditionalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalData.swift; sourceTree = "<group>"; };
@@ -310,7 +316,7 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				C9B7E2C621EF4C6900DF4751 /* AppDelegate */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -802,6 +808,17 @@
 			name = TableCell;
 			sourceTree = "<group>";
 		};
+		C9B7E2C621EF4C6900DF4751 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				C9B7E2C721EF4C8B00DF4751 /* RefreshTokenService.swift */,
+				C9B7E2C921EF4CD100DF4751 /* AppWindow.swift */,
+				C901192A21F342D30061B593 /* EssentialAppConfigs.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
 		C9C960F720FA8BA30023CDD7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1061,6 +1078,7 @@
 				C99AA0642187388C001683B8 /* GPSWeatherViewController.swift in Sources */,
 				C930E1D621CD172C00809FB2 /* RxRealm.swift in Sources */,
 				C930E1DD21CD2AAB00809FB2 /* Results + To array.swift in Sources */,
+				C901192B21F342D30061B593 /* EssentialAppConfigs.swift in Sources */,
 				C99EA60320CB3D7900D7C158 /* HumanReadableErrorHandler.swift in Sources */,
 				C91FFF5B21930F7F00DFC0CC /* LocationManager.swift in Sources */,
 				C91FFF6121972F0C00DFC0CC /* LanguageManager.swift in Sources */,
@@ -1112,6 +1130,7 @@
 				C93E4B552190575300A62059 /* WeatherForcast.swift in Sources */,
 				C99AA0812187D360001683B8 /* MyBaseMenuItemViewControllers.swift in Sources */,
 				C91FC7172112FE8800A199F0 /* Environment.swift in Sources */,
+				C9B7E2CA21EF4CD100DF4751 /* AppWindow.swift in Sources */,
 				C9CC0E562192449000AF9D62 /* WeatherMenuItemTabBarController.swift in Sources */,
 				C99AA09C21884824001683B8 /* SideMenuModel.swift in Sources */,
 				C930E1ED21CD3E3C00809FB2 /* ToDoCellModell.swift in Sources */,
@@ -1122,6 +1141,7 @@
 				C90BBE3421D685610065FF43 /* LeftSideMenuViewController.swift in Sources */,
 				C91AF99F218CE93D00BB5559 /* MainViewCell.swift in Sources */,
 				C99AA09521884652001683B8 /* GPSWeatherPresenter.swift in Sources */,
+				C9B7E2C821EF4C8B00DF4751 /* RefreshTokenService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
