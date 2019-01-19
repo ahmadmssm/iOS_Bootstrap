@@ -22,12 +22,12 @@ extension AppDelegate {
             .setCoreDataModelName(modelName: Constants.coreDataModelName)
         //
     }
-    
+    // Call in applicationDidBecomeActive
     func listenForNetworkConnectionChanges() {
         // Start monitoring network reachability status changes
         InternetConnectionManager.getInstance.startMonitoring()
     }
-    
+    // Call in applicationWillEnterForeground
     func stopListeningForNetworkConnectionChanges() {
         // Stop monitoring network reachability status changes
         InternetConnectionManager.getInstance.stopMonitoring()

@@ -14,7 +14,8 @@ extension APIsConnector {
     // Write network calls here
     
     func getAllCountries (completion: @escaping completionHandler<[Country]>) {
-        networkRequest = request(api: .getWorldCountries()).map([Country].self)
+        networkRequest = request(api: .getWorldCountries())
+            .map([Country].self)
             .subscribe { event in
                 switch event {
                 case .success(let countries):

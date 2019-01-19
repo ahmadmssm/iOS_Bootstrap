@@ -1,20 +1,15 @@
+//
+//  StuppedAPIsConnector.swift
+//  iOS_Bootstrap
+//
+//  Created by Ahmad Mahmoud on 1/19/19.
+//  Copyright © 2019 CocoaPods. All rights reserved.
+//
 
-//
-//  APIsConnector.swift
-//  NetworkAbstractLayer_sample
-//
-//  Created by Ahmad Mahmoud on 4/7var.
-//  Copyright © 2018varmad Mahmoud. All rights reserved.
-//
-
-import iOS_Bootstrap
 import RxSwift
+import iOS_Bootstrap
 
-class APIsConnector: BaseAPIsConnector<APIs> {
-    
-    static let sharedInstance: APIsConnector = APIsConnector()
-    
-    override private init() { super.init() }
+class StuppedAPIsConnector: BaseStuppedAPIsConnector<APIs> {
 
     override func enableNetworkPlugins() -> Bool { return true }
 
@@ -46,5 +41,5 @@ class APIsConnector: BaseAPIsConnector<APIs> {
     override func getTokenRefreshRequest() -> Single<Response> {
         return requestTokenRefresh(api: .refreshToken(token: "oldToken"))
     }
-
+    
 }
