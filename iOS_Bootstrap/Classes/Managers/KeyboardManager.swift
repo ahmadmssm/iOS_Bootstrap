@@ -6,12 +6,11 @@
 //  Ref :
 // Call the static function in AppDelegate class in the didFinishLaunchingWithOptions function
 
-
 import IQKeyboardManagerSwift
 
 open class KeyboardManager {
     
-    private static let iqKeyboardManagerInstanace = IQKeyboardManager.sharedManager()
+    private static let iqKeyboardManagerInstanace = IQKeyboardManager.shared
     
     static func setupKeyboardManager() {
         iqKeyboardManagerInstanace.enable = true

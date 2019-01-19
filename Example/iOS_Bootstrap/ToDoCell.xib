@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todo name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjJ-mD-s4H">
-                                <rect key="frame" x="9" y="9" width="120" height="27"/>
+                                <rect key="frame" x="9" y="9" width="218" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="RsL-2P-YsN"/>
                                 </constraints>
