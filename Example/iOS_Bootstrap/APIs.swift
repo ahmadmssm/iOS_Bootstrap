@@ -85,14 +85,4 @@ extension APIs : GenericAPIs {
         }
     }
     
-    var sampleData: Data {
-        switch self {
-        case .getWorldCountries():
-            return TestingHelpers.getDataFromJsonFileWith(name: "Countries")!
-            break
-        default: return Data()
-        }
-        return Data()
-    }
-    
 }

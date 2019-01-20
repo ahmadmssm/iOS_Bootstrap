@@ -1,5 +1,5 @@
 //
-//  StuppedAPIsConnector.swift
+//  StubedAPIsConnector.swift
 //  iOS_Bootstrap
 //
 //  Created by Ahmad Mahmoud on 1/19/19.
@@ -9,7 +9,7 @@
 import RxSwift
 import iOS_Bootstrap
 
-class StuppedAPIsConnector: BaseStuppedAPIsConnector<APIs> {
+class StubedAPIsConnector: BaseStubedAPIsConnector<APIs> {
 
     override func enableNetworkPlugins() -> Bool { return true }
 

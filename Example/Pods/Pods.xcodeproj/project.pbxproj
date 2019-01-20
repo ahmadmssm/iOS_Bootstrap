@@ -856,7 +856,7 @@
 		C90D8410BCD5F2B8C95D2748DE6BA02E /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FB40C948F1C26D09864FDECCFE4B67 /* IQUIViewController+Additions.swift */; };
 		C92681A74DC2E9109A38D0733616659F /* NumberValidationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30944BE51B994B7071C465A662D4 /* NumberValidationTarget.swift */; };
 		C92BC40F21F3D261006A0072 /* TestingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BC40E21F3D261006A0072 /* TestingHelpers.swift */; };
-		C92BC41521F3D40C006A0072 /* BaseStuppedAPIsConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BC41421F3D40C006A0072 /* BaseStuppedAPIsConnector.swift */; };
+		C92BC41521F3D40C006A0072 /* BaseStubedAPIsConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BC41421F3D40C006A0072 /* BaseStubedAPIsConnector.swift */; };
 		C92BC41821F3D494006A0072 /* AZDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BC41621F3D494006A0072 /* AZDialogViewController.swift */; };
 		C92BC41921F3D494006A0072 /* EZAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BC41721F3D494006A0072 /* EZAlertController.swift */; };
 		C92BC41B21F3D9FD006A0072 /* String + URLHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BC41A21F3D9FD006A0072 /* String + URLHelpers.swift */; };
@@ -2230,7 +2230,7 @@
 		C8E680677C5337E82A156801B3030E20 /* RLMSchema.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSchema.mm; path = Realm/RLMSchema.mm; sourceTree = "<group>"; };
 		C8F496012E2F0ABC863B7F167FF9F4CF /* Result.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Result.xcconfig; sourceTree = "<group>"; };
 		C92BC40E21F3D261006A0072 /* TestingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingHelpers.swift; sourceTree = "<group>"; };
-		C92BC41421F3D40C006A0072 /* BaseStuppedAPIsConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStuppedAPIsConnector.swift; sourceTree = "<group>"; };
+		C92BC41421F3D40C006A0072 /* BaseStubedAPIsConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStubedAPIsConnector.swift; sourceTree = "<group>"; };
 		C92BC41621F3D494006A0072 /* AZDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDialogViewController.swift; sourceTree = "<group>"; };
 		C92BC41721F3D494006A0072 /* EZAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZAlertController.swift; sourceTree = "<group>"; };
 		C92BC41A21F3D9FD006A0072 /* String + URLHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + URLHelpers.swift"; sourceTree = "<group>"; };
@@ -2976,7 +2976,7 @@
 			isa = PBXGroup;
 			children = (
 				56B733D1336D405285AE5EB0F5DFB111 /* BaseAPIsConnector.swift */,
-				C92BC41421F3D40C006A0072 /* BaseStuppedAPIsConnector.swift */,
+				C92BC41421F3D40C006A0072 /* BaseStubedAPIsConnector.swift */,
 				5115CB4AD8A63B85C6DE6C3FD68B4AA8 /* GenericConnector.swift */,
 				71C892600E12DBBD309C43CF8B7C4207 /* TokenRefresh.swift */,
 				2E8A2CE4830E02DF09933BE8B8ED04C0 /* ConnectionResultClosures */,
@@ -5950,7 +5950,7 @@
 				06CC0E0DE8FDDFF0D57F513C69C6ACBB /* LucidErrorMessageProvider.swift in Sources */,
 				EE743FA97E267A7CCA9911BE21475779 /* LucidMoyaError.swift in Sources */,
 				0E1935D2D116FEB085FE2FD6E8A62711 /* LucidMoyaNetworkingError.swift in Sources */,
-				C92BC41521F3D40C006A0072 /* BaseStuppedAPIsConnector.swift in Sources */,
+				C92BC41521F3D40C006A0072 /* BaseStubedAPIsConnector.swift in Sources */,
 				EF7E5500301EAB25A23A0D6159C4F3BC /* MenuItemViewController base classes.swift in Sources */,
 				95C95A8D18792B40524B87804C6D324F /* MultiLanguageManager.swift in Sources */,
 				C80CE11EC12109DDE1258CF382EB7E92 /* NavigationController + show and hide bottom line.swift in Sources */,

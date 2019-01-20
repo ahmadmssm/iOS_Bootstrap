@@ -11,18 +11,18 @@ import iOS_Bootstrap
 
 class APIsTests: XCTestCase {
 
-    private var networkingProvider: StuppedAPIsConnector!
+    private var networkingProvider: StubedAPIsConnector!
 
     override func setUp() {
         super.setUp()
-        networkingProvider = StuppedAPIsConnector()
+        networkingProvider = StubedAPIsConnector()
     }
     
     func testGetCountries() {
         let expectation = self.expectation(description: "Execute")
         let expectedResult = TestingHelpers.getbjectsFromData(type: Country.self, fileName: "Countries")! as! [Country]
         _ = networkingProvider
-            .stuppedRequest(api: .getWorldCountries())
+            .stubbedRequest(api: .getWorldCountries())
             .map([Country].self)
             .subscribe({ result in
                 switch result {
