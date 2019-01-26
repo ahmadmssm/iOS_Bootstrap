@@ -1,5 +1,5 @@
 //
-//  App window.swift
+//  AppWindow.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 1/16/19.

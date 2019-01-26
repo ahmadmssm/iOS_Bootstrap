@@ -86,12 +86,12 @@ open class DefaultConfigurations {
         return self
     }
     
-    public func setCoreDataModelName(modelName: String) -> DefaultConfigurations {
+    open func setCoreDataModelName(modelName: String) -> DefaultConfigurations {
         DefaultConfigurations.coreDataModelName = modelName
         return self
     }
     
-    public func build() -> DefaultConfigurations {
+    open func build() -> DefaultConfigurations {
         return self
     }
     

@@ -162,6 +162,14 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     public func numberOfSections(in tableView: UITableView) -> Int {
         return (mDelegate?.configureNumberOfSections?(tableView: tableView)) ?? 1
     }
+    // Configure sections header if needed
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return mDelegate?.configureSectionHeaderView?(tableView: tableView, sectionNumber: section)
+    }
+    // Configure height of section header if needed
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+         return (mDelegate?.configureHeightForSection?(tableView: tableView, sectionNumber: section)) ?? UITableViewAutomaticDimension
+    }
     // Configure cell
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       //  indicator?.stopAnimating()

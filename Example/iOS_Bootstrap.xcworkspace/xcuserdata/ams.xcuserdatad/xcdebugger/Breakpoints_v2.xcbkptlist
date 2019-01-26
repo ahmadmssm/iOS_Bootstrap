@@ -575,8 +575,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
             endingLineNumber = "35"
-            landmarkName = "TableviewAdapter"
-            landmarkType = "3">
+            landmarkName = "configureTableWithXibCell(tableView:dataSource:nibClass:delegate:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
