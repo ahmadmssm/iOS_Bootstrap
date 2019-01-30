@@ -21,4 +21,6 @@ public protocol BaseCollectionViewDelegates : CollectionViewOptionalDelegates {
     
     @objc optional func configureNumberOfSections(collectionView: UICollectionView) -> Int
     @objc optional func loadMore (collectionView: UICollectionView, forPage page : Int, updatedDataSource : [Any])
+    
+    @objc optional func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
 }

@@ -203,6 +203,10 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
         mDelegate?.itemDidSelected?(collectionView: collectionView, indexPath: indexPath)
     }
     
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        mDelegate?.scrollViewWillEndDragging?(scrollView: scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
+    }
+    
     // Pagination (Load more)
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if (scrollView == mCollectionview) {

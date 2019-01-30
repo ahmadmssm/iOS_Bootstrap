@@ -84,6 +84,9 @@
 		C95D788421D6718F00D25B77 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95D788221D6718F00D25B77 /* MainView.xib */; };
 		C95D788721D6753F00D25B77 /* ValidatorsExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D788521D6753F00D25B77 /* ValidatorsExampleViewController.swift */; };
 		C95D788821D6753F00D25B77 /* ValidatorsExampleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95D788621D6753F00D25B77 /* ValidatorsExampleView.xib */; };
+		C95E24DF21FE5A8300621645 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E24DC21FE5A8200621645 /* CloseButton.swift */; };
+		C95E24E021FE5A8300621645 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E24DD21FE5A8200621645 /* TagListView.swift */; };
+		C95E24E121FE5A8300621645 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E24DE21FE5A8200621645 /* TagView.swift */; };
 		C966063E2114A04C00E2D38A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96606402114A04C00E2D38A /* Localizable.strings */; };
 		C96629E221C5415200961750 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C96629E021C5415200961750 /* DataBase.xcdatamodeld */; };
 		C970DD6B21A065FD0079B706 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970DD6A21A065FD0079B706 /* Section.swift */; };
@@ -218,6 +221,9 @@
 		C95D788221D6718F00D25B77 /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		C95D788521D6753F00D25B77 /* ValidatorsExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorsExampleViewController.swift; sourceTree = "<group>"; };
 		C95D788621D6753F00D25B77 /* ValidatorsExampleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidatorsExampleView.xib; sourceTree = "<group>"; };
+		C95E24DC21FE5A8200621645 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		C95E24DD21FE5A8200621645 /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
+		C95E24DE21FE5A8200621645 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		C96606432114A0D000E2D38A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C96629E121C5415200961750 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		C970DD6A21A065FD0079B706 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -623,6 +629,8 @@
 		C946C12B21A367F800B0F553 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
+				C95E24E221FE5C1D00621645 /* FloatingButton */,
+				C95E24DB21FE5A5900621645 /* TagListView  */,
 				C970DD7821A07D280079B706 /* GradientNavigationController.swift */,
 				C946C12C21A3681100B0F553 /* NoCancelButtonSearchController.swift */,
 			);
@@ -636,6 +644,23 @@
 				C92E4B0221C31A2F00B76B6C /* TrendingMovieCellModel.swift */,
 			);
 			path = CellModels;
+			sourceTree = "<group>";
+		};
+		C95E24DB21FE5A5900621645 /* TagListView  */ = {
+			isa = PBXGroup;
+			children = (
+				C95E24DC21FE5A8200621645 /* CloseButton.swift */,
+				C95E24DD21FE5A8200621645 /* TagListView.swift */,
+				C95E24DE21FE5A8200621645 /* TagView.swift */,
+			);
+			name = "TagListView ";
+			sourceTree = "<group>";
+		};
+		C95E24E221FE5C1D00621645 /* FloatingButton */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FloatingButton;
 			sourceTree = "<group>";
 		};
 		C973B7B721C4367700B63A69 /* ValidatorsExampleScene */ = {
@@ -1130,6 +1155,7 @@
 				C99AA0A121886120001683B8 /* MySlidingMenu.swift in Sources */,
 				C93E4B502190575300A62059 /* City.swift in Sources */,
 				C9B18B93218C6DE5004520F5 /* UserDefaultKeys.swift in Sources */,
+				C95E24E021FE5A8300621645 /* TagListView.swift in Sources */,
 				C9B18B98218C99C4004520F5 /* TrendingMoviesCell.swift in Sources */,
 				C930E1FC21CD644600809FB2 /* TrendingMoviesViewController.swift in Sources */,
 				C973B7BD21C436E500B63A69 /* ValidatorsExampleViewDelegator.swift in Sources */,
@@ -1137,6 +1163,7 @@
 				C91AF9A3218CE9CF00BB5559 /* MainPresenter.swift in Sources */,
 				C99AA091218845E7001683B8 /* CountriesPresenter.swift in Sources */,
 				C930E1DA21CD1E8600809FB2 /* UIImageView + SVG extension.swift in Sources */,
+				C95E24DF21FE5A8300621645 /* CloseButton.swift in Sources */,
 				C930E1E421CD3BB600809FB2 /* ToDoPresenter.swift in Sources */,
 				C93E4B582190575300A62059 /* Wind.swift in Sources */,
 				C99EA60420CB3D7900D7C158 /* APIs.swift in Sources */,
@@ -1166,6 +1193,7 @@
 				C99F9F6B21A8652E006F9264 /* NetworkRequests.swift in Sources */,
 				C930E1F521CD487400809FB2 /* ToDoViewPagerController.swift in Sources */,
 				C93E4B552190575300A62059 /* WeatherForcast.swift in Sources */,
+				C95E24E121FE5A8300621645 /* TagView.swift in Sources */,
 				C99AA0812187D360001683B8 /* MyBaseMenuItemViewControllers.swift in Sources */,
 				C91FC7172112FE8800A199F0 /* Environment.swift in Sources */,
 				C9B7E2CA21EF4CD100DF4751 /* AppWindow.swift in Sources */,

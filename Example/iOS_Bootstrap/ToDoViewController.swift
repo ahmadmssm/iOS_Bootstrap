@@ -45,8 +45,6 @@ class ToDoViewController:
     
     override func initUI() {}
     
-    deinit { EventBus.unregister(self) }
-    
     private func getCreateNewToDoPopUp() -> SCLAlertView {
         let poUpAppearance = SCLAlertView.SCLAppearance (showCloseButton: false, shouldAutoDismiss: false)
         let popUp = SCLAlertView(appearance: poUpAppearance)
@@ -123,5 +121,7 @@ class ToDoViewController:
     }
     
     func removeToDoAtRow(index: Int) { getPresenter().deleteToDoByIndex(index, mode) }
+    
+    deinit { EventBus.unregister(self) }
     
 }
