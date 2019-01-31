@@ -34,7 +34,8 @@ extension APIsConnector {
     
     private func getLocationCoordinates(publicIP : String) -> Single<Coordinates> {
         return request(api: .getLocationCoordinates(publicIP: publicIP))
-                .mapString().map { response in
+            .mapString()
+            .map { response in
                     let locationDetails = response.toDictionary()
                     let latitude: Double = locationDetails["latitude"] as! Double
                     let longitude: Double = locationDetails["longitude"] as! Double
