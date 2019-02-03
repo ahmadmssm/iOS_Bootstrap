@@ -15,7 +15,7 @@ open class TableviewAdapter : NSObject {
     private var tableViewDataSource: [Any]!
     private final var mNibClass : BaseTableViewCell.Type!
     private final var mNibClasses : [BaseTableViewCell.Type]?
-    private final var mDelegate : BaseTableViewDelegates!
+    public var mDelegate : BaseTableViewDelegates!
     private var mTotalNumberOfItems : Int?
     private var mItemsPerPage : Int?
     private var mNumberOfPages : Int = 0
