@@ -14,7 +14,7 @@ public final class DateValidationTarget: ValidationTarget {
     
     private let granularity: Calendar.Component
     
-    public let value: Date
+    public let value: Date?
     public var result: Observable<Date>?
     
     required public init(_ value: Date) {
@@ -27,13 +27,13 @@ public final class DateValidationTarget: ValidationTarget {
         self.granularity = granularity
     }
     
-    public func validate(_ validator: DateValidator) -> Self {
+    public func validate(_ validator: DateValidator?) -> Self {
         guard self.result == nil else {
             return self
         }
         
         do {
-            try validator.validate(value, granularity: granularity)
+            try validator?.validate(value!, granularity: granularity)
         } catch {
             result = Observable.error(error)
         }
@@ -46,7 +46,7 @@ public final class DateValidationTarget: ValidationTarget {
             return self
         }
         
-        if !condition(value) {
+        if !condition(value!) {
             if let msg = message {
                 self.result = Observable.error(RxValidatorResult.notValidWithMessage(message: msg))
             } else {

@@ -856,6 +856,7 @@
 		C90D8410BCD5F2B8C95D2748DE6BA02E /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FB40C948F1C26D09864FDECCFE4B67 /* IQUIViewController+Additions.swift */; };
 		C91B41E7220F229100FBC680 /* CustomObjectValidationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B41E5220F1FF200FBC680 /* CustomObjectValidationTarget.swift */; };
 		C91B41E8220F229C00FBC680 /* ObjectValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B41E3220F1EA700FBC680 /* ObjectValidator.swift */; };
+		C91B41EB220F33FB00FBC680 /* ObjectShouldBeNotNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B41EA220F33FB00FBC680 /* ObjectShouldBeNotNil.swift */; };
 		C92681A74DC2E9109A38D0733616659F /* NumberValidationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30944BE51B994B7071C465A662D4 /* NumberValidationTarget.swift */; };
 		C92BC40F21F3D261006A0072 /* TestingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BC40E21F3D261006A0072 /* TestingHelpers.swift */; };
 		C92BC41521F3D40C006A0072 /* BaseStubedAPIsConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BC41421F3D40C006A0072 /* BaseStubedAPIsConnector.swift */; };
@@ -2233,6 +2234,7 @@
 		C8F496012E2F0ABC863B7F167FF9F4CF /* Result.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Result.xcconfig; sourceTree = "<group>"; };
 		C91B41E3220F1EA700FBC680 /* ObjectValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectValidator.swift; sourceTree = "<group>"; };
 		C91B41E5220F1FF200FBC680 /* CustomObjectValidationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomObjectValidationTarget.swift; sourceTree = "<group>"; };
+		C91B41EA220F33FB00FBC680 /* ObjectShouldBeNotNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectShouldBeNotNil.swift; sourceTree = "<group>"; };
 		C92BC40E21F3D261006A0072 /* TestingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingHelpers.swift; sourceTree = "<group>"; };
 		C92BC41421F3D40C006A0072 /* BaseStubedAPIsConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStubedAPIsConnector.swift; sourceTree = "<group>"; };
 		C92BC41621F3D494006A0072 /* AZDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDialogViewController.swift; sourceTree = "<group>"; };
@@ -2659,6 +2661,7 @@
 				D0FF696CA2F34B914FEF545429EDCC3F /* Date */,
 				8F549FE8F63B83ECFDCF4EC2CF86D7AC /* Number */,
 				6E98608600E401A89D6B18DDEC8860EF /* String */,
+				C91B41E9220F33CE00FBC680 /* object */,
 			);
 			path = rules;
 			sourceTree = "<group>";
@@ -4243,6 +4246,14 @@
 				9A80DD4302479E86E33A328C632F0265 /* Support Files */,
 			);
 			path = AFDateHelper;
+			sourceTree = "<group>";
+		};
+		C91B41E9220F33CE00FBC680 /* object */ = {
+			isa = PBXGroup;
+			children = (
+				C91B41EA220F33FB00FBC680 /* ObjectShouldBeNotNil.swift */,
+			);
+			path = object;
 			sourceTree = "<group>";
 		};
 		CC844706F20C9EEE718D690F1A8E125B /* Extensions */ = {
@@ -6015,6 +6026,7 @@
 				014653C6021CAE003B2142286DC6488C /* StringValidator.swift in Sources */,
 				827F9110302A6BD4254BF6F2F7752F4A /* SWActionSheet.m in Sources */,
 				F360EC9C18D42C32C5CACD8D7DDEFE49 /* SwiftyImage.swift in Sources */,
+				C91B41EB220F33FB00FBC680 /* ObjectShouldBeNotNil.swift in Sources */,
 				F5F0D988E8B9C3C7717482BFD09CADAE /* Tableview + Reusablel.swift in Sources */,
 				C92BC40F21F3D261006A0072 /* TestingHelpers.swift in Sources */,
 				E9B86020669FD6216C5F370825C63397 /* TableviewAdapter.swift in Sources */,

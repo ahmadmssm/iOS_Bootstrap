@@ -9,15 +9,16 @@ import Foundation
 import RxSwift
 
 public protocol ValidationTarget {
+    
     associatedtype TargetType
     associatedtype ValidatorType
     
     typealias ValidatorInstanceCondition = (TargetType) -> Bool
     
-    var value: TargetType { get }
+    var value: TargetType? { get }
     var result: Observable<TargetType>? { get }
     
-    func validate(_ validator: ValidatorType) -> Self
+    func validate(_ validator: ValidatorType?) -> Self
     func validate(_ condition: ValidatorInstanceCondition, message: String?) -> Self
     func asObservable() -> Observable<TargetType>
     func check() -> RxValidatorResult
@@ -26,10 +27,15 @@ public protocol ValidationTarget {
 extension ValidationTarget {
     
     public func asObservable() -> Observable<TargetType> {
-        if let result = self.result {
-            return result
+        if (self.result != nil) {
+            return result!
         }
-        return Observable.just(value)
+        else if (self.value != nil) {
+            return Observable.just(value!)
+        }
+        else {
+            return Observable.empty()
+        }
     }
     
     public func check() -> RxValidatorResult {

@@ -6,7 +6,7 @@
 //
 
 open class ObjectValidator<T: Any> {
-    public func validate(_ value: T) throws {}
+    public func validate(_ value: T?) throws {}
     
     init() {}
 }

@@ -24,4 +24,8 @@ public final class Validate {
     public static func to(_ value: Date) -> DateValidationTarget {
         return DateValidationTarget(value)
     }
+    
+    public static func to<T: Any>(_ value: T?) -> CustomObjectValidationTarget<T> {
+        return CustomObjectValidationTarget(value)
+    }
 }
