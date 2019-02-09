@@ -854,6 +854,8 @@
 		C8BB67664B2DE84C611983E3CCA5B963 /* Collectionview+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C4CDBD8DC3782F8F61A508B5C098A0 /* Collectionview+Reusable.swift */; };
 		C8C8155906B521BBC978C5A3D89834CE /* UITextView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4499FCE005C470390917FB9F80D941 /* UITextView+Rx.swift */; };
 		C90D8410BCD5F2B8C95D2748DE6BA02E /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FB40C948F1C26D09864FDECCFE4B67 /* IQUIViewController+Additions.swift */; };
+		C91B41E7220F229100FBC680 /* CustomObjectValidationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B41E5220F1FF200FBC680 /* CustomObjectValidationTarget.swift */; };
+		C91B41E8220F229C00FBC680 /* ObjectValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B41E3220F1EA700FBC680 /* ObjectValidator.swift */; };
 		C92681A74DC2E9109A38D0733616659F /* NumberValidationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30944BE51B994B7071C465A662D4 /* NumberValidationTarget.swift */; };
 		C92BC40F21F3D261006A0072 /* TestingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BC40E21F3D261006A0072 /* TestingHelpers.swift */; };
 		C92BC41521F3D40C006A0072 /* BaseStubedAPIsConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BC41421F3D40C006A0072 /* BaseStubedAPIsConnector.swift */; };
@@ -2229,6 +2231,8 @@
 		C8928F36D510E524778F0A845B2B65EE /* _RXObjCRuntime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _RXObjCRuntime.m; path = RxCocoa/Runtime/_RXObjCRuntime.m; sourceTree = "<group>"; };
 		C8E680677C5337E82A156801B3030E20 /* RLMSchema.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSchema.mm; path = Realm/RLMSchema.mm; sourceTree = "<group>"; };
 		C8F496012E2F0ABC863B7F167FF9F4CF /* Result.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Result.xcconfig; sourceTree = "<group>"; };
+		C91B41E3220F1EA700FBC680 /* ObjectValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectValidator.swift; sourceTree = "<group>"; };
+		C91B41E5220F1FF200FBC680 /* CustomObjectValidationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomObjectValidationTarget.swift; sourceTree = "<group>"; };
 		C92BC40E21F3D261006A0072 /* TestingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingHelpers.swift; sourceTree = "<group>"; };
 		C92BC41421F3D40C006A0072 /* BaseStubedAPIsConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStubedAPIsConnector.swift; sourceTree = "<group>"; };
 		C92BC41621F3D494006A0072 /* AZDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDialogViewController.swift; sourceTree = "<group>"; };
@@ -2651,6 +2655,7 @@
 				F8BA8BA57EA7484FE9B2B8E0BA165A69 /* DateValidator.swift */,
 				8D49B3BB2310FD61F2DE42C231F8D943 /* NumberValidator.swift */,
 				FE4C7CA9807D674FF5123681640BD331 /* StringValidator.swift */,
+				C91B41E3220F1EA700FBC680 /* ObjectValidator.swift */,
 				D0FF696CA2F34B914FEF545429EDCC3F /* Date */,
 				8F549FE8F63B83ECFDCF4EC2CF86D7AC /* Number */,
 				6E98608600E401A89D6B18DDEC8860EF /* String */,
@@ -4226,6 +4231,7 @@
 				5AE8E6E977D07A1C7B5504CD4C95B145 /* DateValidationTarget.swift */,
 				79CC30944BE51B994B7071C465A662D4 /* NumberValidationTarget.swift */,
 				D70B47708B63FE2E263266997EC0E9E4 /* StringValidationTarget.swift */,
+				C91B41E5220F1FF200FBC680 /* CustomObjectValidationTarget.swift */,
 			);
 			path = ValidationTarget;
 			sourceTree = "<group>";
@@ -5917,6 +5923,7 @@
 				35DCB2A096110CC04E653A956613B433 /* Float + toString.swift in Sources */,
 				3EF56DABF88EBF0B7B18A1FA81A9AC1E /* GenericAPIs.swift in Sources */,
 				E0AC46C3879504FFBDE5D55782FF29F7 /* GenericConnector.swift in Sources */,
+				C91B41E8220F229C00FBC680 /* ObjectValidator.swift in Sources */,
 				44AF065AC3B2CAF2CF1AAEDF066B3C79 /* GenericErrorConfigurator.swift in Sources */,
 				06456FC6E758493F379C2A80CF84B629 /* GenericTypesHelper.swift in Sources */,
 				FDB247DA8DC87103B53FEFC6A71DF888 /* GlobalModules.swift in Sources */,
@@ -5928,6 +5935,7 @@
 				B8338E41E532D0F9ADE52A4652CAC839 /* ImageLoader.swift in Sources */,
 				C304402CE70692285D48CCEC24D7EC0C /* ImageLoadingService.swift in Sources */,
 				7981F1257292BCA3F47B41F4BF72B55F /* ImagePipeline.swift in Sources */,
+				C91B41E7220F229100FBC680 /* CustomObjectValidationTarget.swift in Sources */,
 				59EA11E113EA43CDB19B1D8541370D53 /* ImagePreheater.swift in Sources */,
 				27EC66E32F44A579C57307BE9E74F8F5 /* ImageProcessing.swift in Sources */,
 				614D4CBC9C8CAC0BF3B000D0B0EFCBC0 /* ImageRequest.swift in Sources */,

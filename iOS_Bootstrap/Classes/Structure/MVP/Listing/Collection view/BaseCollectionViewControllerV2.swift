@@ -14,7 +14,7 @@ open class BaseCollectionViewControllerV2 <T, V, D, C>:
         getCollectionViewAdapter().configureCollectionviewWithXibCell(collectionView: collectionView, nibClass: C.self, delegate: delegate)
     }
     
-    public final func initCell (indexPath: IndexPath) -> C {
+    open func initCell (indexPath: IndexPath) -> C {
         return initCell(cell: C.self, indexPath: indexPath)
     }
     

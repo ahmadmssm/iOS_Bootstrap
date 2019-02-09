@@ -18,7 +18,7 @@ open class BaseSideMenuTableViewControllerV2<T, V, M, C>:
         initDataSourceIfNeeded(tableViewDataSource: setupMenuItemsData())
     }
     
-    public final func initCell (indexPath: IndexPath) -> C {
+    open func initCell (indexPath: IndexPath) -> C {
         return initCell(cell: C.self, indexPath: indexPath)
     }
     

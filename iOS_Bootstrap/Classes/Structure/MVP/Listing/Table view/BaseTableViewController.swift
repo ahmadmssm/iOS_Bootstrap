@@ -36,7 +36,7 @@ open class BaseTableViewController <T, V, D> :
         setTableViewDataSource(tableViewDataSource: tableViewDataSource)
     }
     
-    public final func initCell <C: BaseTableViewCellV2<D>>(cell: C.Type, indexPath: IndexPath) -> C {
+    open func initCell <C: BaseTableViewCellV2<D>>(cell: C.Type, indexPath: IndexPath) -> C {
         let cell: C = getTableViewAdapter().getTableView().dequeueReusableCell(forIndexPath: indexPath)
         if (getCellModel(indexPath: indexPath) != nil) {
             cell.mCellModel = getCellModel(indexPath: indexPath)

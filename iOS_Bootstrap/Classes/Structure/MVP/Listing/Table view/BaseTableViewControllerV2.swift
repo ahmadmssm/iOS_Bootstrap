@@ -14,7 +14,7 @@ open class BaseTableViewControllerV2 <T, V, D, C>: BaseTableViewController<T, V,
         getTableViewAdapter().configureTableWithXibCell(tableView: tableView, nibClass: C.self, delegate: delegate)
     }
     
-    public final func initCell (indexPath: IndexPath) -> C {
+    open func initCell (indexPath: IndexPath) -> C {
         return initCell(cell: C.self, indexPath: indexPath)
     }
     

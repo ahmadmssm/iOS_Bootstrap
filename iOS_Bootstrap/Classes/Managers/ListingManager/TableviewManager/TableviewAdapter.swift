@@ -168,7 +168,7 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     }
     // Configure height of section header if needed
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-         return (mDelegate?.configureHeightForSection?(tableView: tableView, sectionNumber: section)) ?? UITableViewAutomaticDimension
+         return (mDelegate?.configureHeightForSectionHeader?(tableView: tableView, sectionNumber: section)) ?? UITableViewAutomaticDimension
     }
     // Configure cell
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -185,6 +185,7 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     }
     // Pagination (Load more)
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        mDelegate.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
         if (scrollView == mTableview) {
             if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= (scrollView.contentSize.height)) {
                 if (hasMore) {

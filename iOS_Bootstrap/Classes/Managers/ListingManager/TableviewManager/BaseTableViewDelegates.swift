@@ -17,7 +17,7 @@ public protocol BaseTableViewDelegates : TableViewOptionalDelegates {
     @objc optional func rowDidSelected(tableView: UITableView, indexPath : IndexPath)
     @objc optional func configureAdditionalTableProperties (table : UITableView)
     @objc optional func configureHeightForRowAt (tableView: UITableView, indexPath: IndexPath) -> CGFloat
-    @objc optional func configureHeightForSection (tableView: UITableView, sectionNumber: Int) -> CGFloat
+    @objc optional func configureHeightForSectionHeader (tableView: UITableView, sectionNumber: Int) -> CGFloat
     @objc optional func configureNumberOfSections(tableView: UITableView) -> Int
     @objc optional func loadMore (tableView: UITableView, forPage page : Int, updatedDataSource : [Any])
     @objc optional func canEditRow () -> Bool
@@ -25,5 +25,6 @@ public protocol BaseTableViewDelegates : TableViewOptionalDelegates {
     @objc optional func editActionsRowAtIndexPath(tableView: UITableView, indexPath: IndexPath) -> [UITableViewRowAction]?
     @available(iOS 11.0, *)
     @objc optional func configureSwipAction(tableView: UITableView, indexPath: IndexPath) -> UISwipeActionsConfiguration?
+    @objc optional func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
 }
 
