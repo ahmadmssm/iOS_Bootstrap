@@ -20,18 +20,13 @@ public final class NumberValidationTarget<T: Numeric>: ValidationTarget {
     }
     
     public func validate(_ validator: NumberValidator<T>?) -> Self {
-        guard self.result == nil else {
-            return self
-        }
-        
         do {
-            try validator?.validate(value!)
+            try validator?.validate(value)
         } catch {
-            result = Observable.error(error)            
+            result = Observable.error(error)
         }
-        
         return self
-    }   
+    }
     
     public func validate(_ condition: ValidatorInstanceCondition, message: String? = nil) -> Self {
         guard self.result == nil else {

@@ -7,7 +7,7 @@
 
 open class BaseTableViewCellV2 <M>: BaseTableViewCell {
     
-    var mCellModel: M? { didSet { initCellFrom(cellModel: mCellModel!) } }
+    public var mCellModel: M? { didSet { initCellFrom(cellModel: mCellModel!) } }
     
     public var cellModel: M? {
         set { mCellModel = newValue }

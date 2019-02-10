@@ -6,8 +6,11 @@
 //
 
 public final class IntShouldBeEven: NumberValidator<Int> {
-    override public func validate(_ value: Int) throws {
-        if (value % 2) != 0 {
+    override public func validate(_ value: Int?) throws {
+        if (value == nil) {
+            throw RxValidatorResult.nilObject
+        }
+        else if (value! % 2) != 0 {
             throw RxValidatorResult.notEvenNumber
         }
     }

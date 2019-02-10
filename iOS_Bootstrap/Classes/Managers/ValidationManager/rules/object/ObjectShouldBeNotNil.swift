@@ -5,7 +5,7 @@
 //  Created by Ahmad Mahmoud on 2/9/19.
 //
 
-public class ObjectShouldBeNotNil<T: Any>: ObjectValidator<T> {
+public class ObjectShouldBeNotNil<T>: ObjectValidator<T> {
    
     override public init() {}
 
@@ -18,7 +18,7 @@ public class ObjectShouldBeNotNil<T: Any>: ObjectValidator<T> {
 }
 
 public extension ObjectValidator {
-    public static func shouldBeNotNil(_ value: T) -> ObjectValidator<T> {
+    public static func shouldBeNotNil(_ value: T?) -> ObjectValidator<T> {
         return ObjectShouldBeNotNil()
     }
 }

@@ -13,7 +13,7 @@ public final class Validate {
         return StringValidationTarget(value)
     }
     
-    public static func to<T: Numeric>(_ value: T) -> NumberValidationTarget<T> {
+    public static func to<T: Numeric>(_ value: T?) -> NumberValidationTarget<T> {
         return NumberValidationTarget(value)
     }
     
@@ -25,7 +25,7 @@ public final class Validate {
         return DateValidationTarget(value)
     }
     
-    public static func to<T: Any>(_ value: T?) -> CustomObjectValidationTarget<T> {
+    public static func to<T>(_ value: T?) -> CustomObjectValidationTarget<T> {
         return CustomObjectValidationTarget(value)
     }
 }

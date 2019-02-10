@@ -11,8 +11,11 @@ public final class NumberShouldLessThan<T: Numeric & Comparable>: NumberValidato
     public init(_ number: T) {
         self.number = number
     }
-    override public func validate(_ value: T) throws {
-        if value >= number {
+    override public func validate(_ value: T?) throws {
+        if (value == nil) {
+            throw RxValidatorResult.nilObject
+        }
+        else if value! >= number {
             throw RxValidatorResult.notLessThenNumber
         }
     }

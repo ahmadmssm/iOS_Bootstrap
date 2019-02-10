@@ -7,12 +7,15 @@
 
 public final class NumberShouldGreaterThan<T: Numeric & Comparable>: NumberValidator<T> {
     let number: T
-
+    
     init(_ number: T) {
         self.number = number
     }
-    override public func validate(_ value: T) throws {
-        if value <= number {
+    override public func validate(_ value: T?) throws {
+        if (value == nil) {
+            throw RxValidatorResult.nilObject
+        }
+        else if value! <= number {
             throw RxValidatorResult.notGreaterThanNumber
         }
     }

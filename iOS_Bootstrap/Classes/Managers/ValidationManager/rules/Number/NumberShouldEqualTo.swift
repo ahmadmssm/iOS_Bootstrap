@@ -11,8 +11,11 @@ public final class NumberShouldEqualTo<T: Numeric>: NumberValidator<T> {
     public init(_ number: T) {
         self.number = number
     }
-    override public func validate(_ value: T) throws {
-        if value != number {
+    override public func validate(_ value: T?) throws {
+        if (value == nil) {
+            throw RxValidatorResult.nilObject
+        }
+        else if value! != number {
             throw RxValidatorResult.notEqualNumber
         }
     }
