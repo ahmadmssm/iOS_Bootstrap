@@ -16,7 +16,7 @@ public final class StringValidationTarget: ValidationTarget {
     public let value: TargetType?
     public var result: Observable<TargetType>?
     
-    required public init(_ value: TargetType) {
+    required public init(_ value: TargetType?) {
         self.value = value
     }
     

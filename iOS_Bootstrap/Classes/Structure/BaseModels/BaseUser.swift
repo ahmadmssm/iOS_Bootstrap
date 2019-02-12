@@ -27,12 +27,12 @@ open class BaseUser: Codable {
         BaseUser.userDefaults.setObjectWithKey(value: self, key: key)
     }
     
-    public static func getCachedUser() -> BaseUser.Type {
-        return userDefaults.getObjectWithKey(key: appId + "_UserProfile")!
+    public static func getCachedUser() -> Self? {
+         return userDefaults.getObjectWithKey(object: self.self, key: appId + "_UserProfile")
     }
     
-    public static func getCachedUserWithKey(key : String) -> BaseUser.Type? {
-        return userDefaults.getObjectWithKey(key: key)
+    public static func getCachedUserWithKey(key : String) -> Self? {
+         return userDefaults.getObjectWithKey(object: self.self, key: key)
     }
     
     public static func clearCachedUser() {

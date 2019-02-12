@@ -131,17 +131,7 @@ public final class UserDefaultsManager {
         defaults.synchronize()
     }
     
-//    public final func setObjectWithKey<O, T: RawRepresentable>(value : O, key : T) where T.RawValue == String {
-//        defaults.set(value, forKey: key.rawValue)
-//        defaults.synchronize()
-//    }
-//
-//    public final func setObjectWithKey<T>(value : T, key : String) {
-//        defaults.set(value, forKey: key)
-//        defaults.synchronize()
-//    }
-    
-    public final func getObjectWithKey<O: Codable>(key : String) -> O? {
+    public final func getObjectWithKey<O: Codable>(object type: O.Type, key : String) -> O? {
         do {
             let data = defaults.object(forKey: key) as! Data
             let decoder = PropertyListDecoder()
@@ -151,23 +141,13 @@ public final class UserDefaultsManager {
         return nil
     }
     
-    public final func getObjectWithKey <O: Codable, T: RawRepresentable>(key : T) -> O? where T.RawValue == String {
+    public final func getObjectWithKey <O: Codable, T: RawRepresentable>(object type: O.Type, key : T) -> O? where T.RawValue == String {
         do {
             let data = defaults.object(forKey: key.rawValue) as! Data
             let decoder = PropertyListDecoder()
             return try decoder.decode(O.self, from: data)
         }
         catch { print(error) }
-        return nil
-    }
-    
-    public final func getObjectWithKey<T>(key : String) -> T? {
-        if let value = defaults.object(forKey: key) { return value as? T }
-        return nil
-    }
-
-    public final func getObjectWithKey<O, T: RawRepresentable>(key : T) -> O? where T.RawValue == String {
-        if let value = defaults.object(forKey: key.rawValue) { return value as? O }
         return nil
     }
     

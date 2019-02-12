@@ -6,7 +6,7 @@
 //
 
 public class StringValidator {
-    public func validate(_ value: String) throws {}
+    public func validate(_ value: String?) throws {}
 
     init() {}
 }

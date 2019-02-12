@@ -13,8 +13,11 @@ private final class StringShouldEqualTo: StringValidator {
     init(_ string: String) {
         self.string = string
     }
-    override func validate(_ value: String) throws {
-        if value != string {
+    override func validate(_ value: String?) throws {
+        if (value == nil) {
+            throw RxValidatorResult.nilObject
+        }
+        else if value! != string {
             throw RxValidatorResult.notEqualString
         }
     }

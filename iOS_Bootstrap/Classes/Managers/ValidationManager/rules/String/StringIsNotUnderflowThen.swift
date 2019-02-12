@@ -12,8 +12,11 @@ public final class StringIsNotUnderflowThen: StringValidator {
         self.minLength = minLength
     }
 
-    override public func validate(_ value: String) throws {
-        if value.count < minLength {
+    override public func validate(_ value: String?) throws {
+        if (value == nil) {
+            throw RxValidatorResult.nilObject
+        }
+        else if value!.count < minLength {
             throw RxValidatorResult.stringIsUnderflow
         }
     }

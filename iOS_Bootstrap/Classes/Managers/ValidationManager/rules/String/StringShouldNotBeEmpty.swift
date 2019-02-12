@@ -7,8 +7,11 @@
 
 public final class StringShouldNotBeEmpty: StringValidator {
     override public init() {}
-    override public func validate(_ value: String) throws {
-        if value.isEmpty || value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+    override public func validate(_ value: String?) throws {
+        if (value == nil) {
+            throw RxValidatorResult.nilObject
+        }
+        else if value!.isEmpty || value!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             throw RxValidatorResult.stringIsEmpty
         }
     }

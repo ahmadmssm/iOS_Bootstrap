@@ -24,8 +24,9 @@ public final class SessionManager : BaseSessionManager {
         getUserDefaults().setBooleanWithKey(value: true, key: hasValidSessionKey)
     }
     
-    public final func getSavedSession<T: BaseSession>(session : T) -> T {
-        return getUserDefaults().getObjectWithKey(key: sessionKey)!
+    public final func getSavedSession<T: BaseSession>(session : T.Type) -> T? {
+        return getUserDefaults().getObjectWithKey(object: session, key: sessionKey)
+
     }
     
     public final func hasValidSession() -> Bool {

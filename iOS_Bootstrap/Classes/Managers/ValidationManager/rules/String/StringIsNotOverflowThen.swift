@@ -12,8 +12,11 @@ public final class StringIsNotOverflowThen: StringValidator {
         self.maxLength = maxLength
     }
     
-    override public func validate(_ value: String) throws {
-        if value.count > maxLength {
+    override public func validate(_ value: String?) throws {
+        if (value == nil) {
+            throw RxValidatorResult.nilObject
+        }
+        else if value!.count > maxLength {
             throw RxValidatorResult.stringIsOverflow
         }
     }

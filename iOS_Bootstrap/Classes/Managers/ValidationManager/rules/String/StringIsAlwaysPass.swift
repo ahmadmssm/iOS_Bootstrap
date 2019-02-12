@@ -7,7 +7,7 @@
 
 public final class StringIsAlwaysPass: StringValidator {
     
-    override public func validate(_ value: String) throws {
+    override public func validate(_ value: String?) throws {
         //do nothing..
     }
 }
