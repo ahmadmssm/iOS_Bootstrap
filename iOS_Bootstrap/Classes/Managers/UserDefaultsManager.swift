@@ -133,9 +133,11 @@ public final class UserDefaultsManager {
     
     public final func getObjectWithKey<O: Codable>(object type: O.Type, key : String) -> O? {
         do {
-            let data = defaults.object(forKey: key) as! Data
-            let decoder = PropertyListDecoder()
-            return try decoder.decode(O.self, from: data)
+            if let data = defaults.object(forKey: key) {
+                let decoder = PropertyListDecoder()
+                return try decoder.decode(O.self, from: data as! Data)
+            }
+            return nil
         }
         catch { print(error) }
         return nil
@@ -143,9 +145,11 @@ public final class UserDefaultsManager {
     
     public final func getObjectWithKey <O: Codable, T: RawRepresentable>(object type: O.Type, key : T) -> O? where T.RawValue == String {
         do {
-            let data = defaults.object(forKey: key.rawValue) as! Data
-            let decoder = PropertyListDecoder()
-            return try decoder.decode(O.self, from: data)
+            if let data = defaults.object(forKey: key.rawValue) {
+                let decoder = PropertyListDecoder()
+                return try decoder.decode(O.self, from: data as! Data)
+            }
+            return nil
         }
         catch { print(error) }
         return nil
