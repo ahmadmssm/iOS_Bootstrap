@@ -121,33 +121,43 @@ public final class UserDefaultsManager {
         return [] as [O]
     }
     
-    public final func setObjectWithKey<T: RawRepresentable>(value : AnyObject, key : T) where T.RawValue == String {
-        defaults.set(value, forKey: key.rawValue)
+    public final func setObjectWithKey<O: Codable, T: RawRepresentable>(value : O, key : T) where T.RawValue == String {
+        defaults.set(try? PropertyListEncoder().encode(value), forKey: key.rawValue)
         defaults.synchronize()
     }
     
-    public final func setObjectWithKey(value : AnyObject, key : String) {
-        defaults.set(value, forKey: key)
+    public final func setObjectWithKey<O: Codable>(value : O, key : String) {
+        defaults.set(try? PropertyListEncoder().encode(value), forKey: key)
         defaults.synchronize()
     }
     
-    public final func setObjectWithKey<O, T: RawRepresentable>(value : O, key : T) where T.RawValue == String {
-        defaults.set(value, forKey: key.rawValue)
-        defaults.synchronize()
-    }
+//    public final func setObjectWithKey<O, T: RawRepresentable>(value : O, key : T) where T.RawValue == String {
+//        defaults.set(value, forKey: key.rawValue)
+//        defaults.synchronize()
+//    }
+//
+//    public final func setObjectWithKey<T>(value : T, key : String) {
+//        defaults.set(value, forKey: key)
+//        defaults.synchronize()
+//    }
     
-    public final func setObjectWithKey<T>(value : T, key : String) {
-        defaults.set(value, forKey: key)
-        defaults.synchronize()
-    }
-    
-    public final func getObjectWithKey(key : String) -> AnyObject? {
-        if let value = defaults.object(forKey: key) { return value as AnyObject }
+    public final func getObjectWithKey<O: Codable>(key : String) -> O? {
+        do {
+            let data = defaults.object(forKey: key) as! Data
+            let decoder = PropertyListDecoder()
+            return try decoder.decode(O.self, from: data)
+        }
+        catch { print(error) }
         return nil
     }
     
-    public final func getObjectWithKey <T: RawRepresentable>(key : T) -> AnyObject? where T.RawValue == String {
-        if let value = defaults.object(forKey: key.rawValue) { return value as AnyObject }
+    public final func getObjectWithKey <O: Codable, T: RawRepresentable>(key : T) -> O? where T.RawValue == String {
+        do {
+            let data = defaults.object(forKey: key.rawValue) as! Data
+            let decoder = PropertyListDecoder()
+            return try decoder.decode(O.self, from: data)
+        }
+        catch { print(error) }
         return nil
     }
     

@@ -185,7 +185,7 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     }
     // Pagination (Load more)
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        mDelegate.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
+        mDelegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
         if (scrollView == mTableview) {
             if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= (scrollView.contentSize.height)) {
                 if (hasMore) {

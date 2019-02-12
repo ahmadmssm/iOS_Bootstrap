@@ -25,6 +25,5 @@ public protocol BaseTableViewDelegates : TableViewOptionalDelegates {
     @objc optional func editActionsRowAtIndexPath(tableView: UITableView, indexPath: IndexPath) -> [UITableViewRowAction]?
     @available(iOS 11.0, *)
     @objc optional func configureSwipAction(tableView: UITableView, indexPath: IndexPath) -> UISwipeActionsConfiguration?
-    @objc optional func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
 }
 

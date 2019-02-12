@@ -20,7 +20,7 @@ public final class SessionManager : BaseSessionManager {
     private var hasValidSessionKey : String = "com.iOS_Bootstrap.HasValidSessionKey"
     
     public final func saveSession<T: BaseSession>(session : T) {
-        getUserDefaults().setObjectWithKey(value: session as AnyObject, key: sessionKey)
+        getUserDefaults().setObjectWithKey(value: session, key: sessionKey)
         getUserDefaults().setBooleanWithKey(value: true, key: hasValidSessionKey)
     }
     
