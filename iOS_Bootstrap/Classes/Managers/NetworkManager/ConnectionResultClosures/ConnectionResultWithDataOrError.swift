@@ -7,5 +7,5 @@
 
 public enum ConnectionResultWithDataOrError {
     case success(Data)
-    case failure(Error)
+    case failure(Error?)
 }

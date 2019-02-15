@@ -28,11 +28,11 @@ class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
         APIsConnector.sharedInstance.getAllCountries (completion: { response in
             switch response {
             case .success(let countries):
-                self.processCountriesList(countries: countries)
+                self.processCountriesList(countries: countries!)
                 break
             case .failure(let errorMsg):
-                self.getViewDelegator().didFailToGetCountries(error: errorMsg)
-                print("Error : " + errorMsg)
+                self.getViewDelegator().didFailToGetCountries(error: errorMsg!)
+                print("Error : " + errorMsg!)
                 break
                     }
                 })

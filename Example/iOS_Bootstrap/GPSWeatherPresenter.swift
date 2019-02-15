@@ -18,10 +18,10 @@ class GPSWeatherPresenter : BasePresenter<WeatherViewDelegator> {
         APIsConnector.sharedInstance.getFiveDaysWeatherForcastWithGPSprovidedLocation(lat: lat, longt: longt) { response in
             switch response {
             case .success(let weatherFocast):
-                self.getViewDelegator().didGetFiveDaysWeather(weatherForcast: weatherFocast)
+                self.getViewDelegator().didGetFiveDaysWeather(weatherForcast: weatherFocast!)
                 break
             case .failure(let errorMessage):
-                self.getViewDelegator().didFailToGetFiveDaysWeather(errorMessage: errorMessage)
+                self.getViewDelegator().didFailToGetFiveDaysWeather(errorMessage: errorMessage!)
                 break
             }
         }

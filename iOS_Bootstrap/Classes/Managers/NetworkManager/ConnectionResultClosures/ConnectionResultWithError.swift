@@ -6,6 +6,6 @@
 //
 
 public enum ConnectionResultWithError<T, Error> {
-    case success(T)
-    case failure(Error)
+    case success(T?)
+    case failure(Error?)
 }

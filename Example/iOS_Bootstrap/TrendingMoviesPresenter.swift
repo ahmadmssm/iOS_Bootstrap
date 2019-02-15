@@ -24,9 +24,9 @@ class TrendingMoviesPresenter :
             switch response {
             case .success(let moviesPage):
                 // The page params setted one time only, the hadling is done by the boot strap
-                self.setPaginationParams(totalNumberOfItems: moviesPage.totalNumberOfItems!, itemsPerPage: moviesPage.itemsPerPage!)
+                self.setPaginationParams(totalNumberOfItems: moviesPage!.totalNumberOfItems!, itemsPerPage: moviesPage!.itemsPerPage!)
                 var movies: [TrendingMovieCellModel] = []
-                for movie in moviesPage.moviesList! {
+                for movie in moviesPage!.moviesList! {
                     var trendingMovie = TrendingMovieCellModel()
                     //
                     trendingMovie.movieTitle = movie.title
@@ -36,11 +36,11 @@ class TrendingMoviesPresenter :
                     if let posterURL = movie.posterPath { trendingMovie.imageURL = posterURL }
                     movies.append(trendingMovie)
                 }
-                self.moviesArray += moviesPage.moviesList!
+                self.moviesArray += moviesPage!.moviesList!
                 self.dataSource = movies
                 break
             case .failure(let errorMsg):
-                self.getViewDelegator().didFailToGetTrendingMovies(error: errorMsg)
+                self.getViewDelegator().didFailToGetTrendingMovies(error: errorMsg!)
                 break
             }
         }

@@ -20,10 +20,10 @@ class NetworkWeatherPresenter : BasePresenter<WeatherViewDelegator> {
         APIsConnector.sharedInstance.getFiveDaysWeatherForcastWithNetworkProvidedLocation() { response in
             switch response {
             case .success(let weatherFocast):
-                self.getViewDelegator().didGetFiveDaysWeather(weatherForcast: weatherFocast)
+                self.getViewDelegator().didGetFiveDaysWeather(weatherForcast: weatherFocast!)
                 break
             case .failure(let errorMessage):
-                self.getViewDelegator().didFailToGetFiveDaysWeather(errorMessage: errorMessage)
+                self.getViewDelegator().didFailToGetFiveDaysWeather(errorMessage: errorMessage!)
                 break
             }
         }

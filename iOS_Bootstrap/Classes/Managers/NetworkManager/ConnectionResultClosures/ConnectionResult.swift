@@ -6,7 +6,7 @@
 //
 
 public enum ConnectionResult<T> {
-    case success(T)
-    case failure(String)
+    case success(T?)
+    case failure(String?)
 }
 
