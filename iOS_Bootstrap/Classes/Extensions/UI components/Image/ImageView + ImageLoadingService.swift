@@ -7,5 +7,5 @@
 
 import UIKit
 
-extension UIImageView : ImageLoadingService {}
+extension UIImageView: ImageLoadingService {}
 

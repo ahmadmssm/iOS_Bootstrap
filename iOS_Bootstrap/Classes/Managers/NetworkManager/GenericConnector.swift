@@ -13,7 +13,8 @@ public typealias completionHandlerWithErrorModel<T, E> =
     (ConnectionResultWithGenericError<T, E>) -> ()
 public typealias completionHandlerWithError<T, Error> =
     (ConnectionResultWithError<T, Error>) -> ()
-
+public typealias completionHandlerWithDataOrError<T, Error> =
+    (ConnectionResultWithDataOrError) -> ()
 
 open class GenericConnector: NSObject, TokenRefresh, UserDefaultsService {
     

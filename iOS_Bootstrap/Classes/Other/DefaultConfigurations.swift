@@ -95,4 +95,24 @@ open class DefaultConfigurations {
         return self
     }
     
+    open func setTabBarSelectedItemCustomColor(_ color: UIColor) -> DefaultConfigurations {
+        UITabBar.appearance().tintColor =  color
+        return self
+    }
+    
+    open func removeNavigationBackButtonLabel() -> DefaultConfigurations {
+        UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.clear], for: .normal)
+        return self
+    }
+    
+    open func hideKeyboardToolBar() -> DefaultConfigurations {
+        KeyboardManager.disableKeyboardToolBar()
+        return self
+    }
+   
+    open func showTextFieldPlaceholder(enable: Bool) -> DefaultConfigurations {
+        KeyboardManager.showTextFieldPlaceholder(enable: enable)
+        return self
+    }
+    
 }

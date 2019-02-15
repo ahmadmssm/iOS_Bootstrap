@@ -32,4 +32,13 @@ open class KeyboardManager {
     public static func disableInViewController(viewController : UIViewController.Type) {
         iqKeyboardManagerInstanace.disabledDistanceHandlingClasses.append(viewController.self)
     }
+    
+    public static func disableKeyboardToolBar() {
+        iqKeyboardManagerInstanace.enableAutoToolbar = false
+    }
+    
+    public static func showTextFieldPlaceholder(enable: Bool) {
+        iqKeyboardManagerInstanace.shouldShowTextFieldPlaceholder = enable
+    }
+    
 }
