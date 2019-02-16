@@ -11,8 +11,8 @@ import RxSwift
 public typealias completionHandler<T> = (ConnectionResult<T>) -> ()
 public typealias completionHandlerWithErrorModel<T, E> =
     (ConnectionResultWithGenericError<T, E>) -> ()
-public typealias completionHandlerWithError<T, Error> =
-    (ConnectionResultWithError<T, Error>) -> ()
+public typealias completionHandlerWithError<T> =
+    (ConnectionResultWithError<T>) -> ()
 public typealias completionHandlerWithDataOrError<T, Error> =
     (ConnectionResultWithDataOrError) -> ()
 
