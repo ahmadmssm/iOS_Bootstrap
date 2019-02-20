@@ -15,9 +15,11 @@ open class BaseViewController<T, V> :
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter = T.init(viewDelegator: self as! V)
+       // self.presenter = T.init(viewDelegator: self as! V)
+        initPresenter()
         getPresenter().viewControllerDidLoaded()
         initUI()
+        localizeStrings()
         getPresenter().viewControllerDidFinishedSettingUpUI()
     }
     //
@@ -51,20 +53,19 @@ open class BaseViewController<T, V> :
         return presenter
     }
 
-    open func initUI () {
-        localizeStrings()
-        fatalError("Must Override")
-    }
+    open func initUI () { fatalError("Must Override") }
+    
+    open func localizeStrings () { fatalError("Must Override") }
+
+    open func initPresenter () { fatalError("Must Override") }
+
+    open func loadingDidStarted() { showLoadingIndicator(message: "Loading..") }
+    
+    open func didFinishedLoading() { hideLoadingIndicator() }
     
     open func showToast(toastMessage: String, duration: Double, position: ToastPosition) {
         self.view.makeToast(toastMessage, duration: duration, position: position)
     }
-    
-    open func localizeStrings () { fatalError("Must Override") }
-    
-    open func loadingDidStarted() { showLoadingIndicator(message: "Loading..") }
-    
-    open func didFinishedLoading() { hideLoadingIndicator() }
     
 }
 

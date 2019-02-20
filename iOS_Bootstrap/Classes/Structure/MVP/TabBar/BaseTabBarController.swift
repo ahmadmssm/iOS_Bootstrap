@@ -19,7 +19,9 @@ open class BaseTabBarController <T, V> :
         self.presenter = T.init(viewDelegator: self as! V)
         getPresenter().viewControllerDidLoaded()
         initUI()
-        getPresenter().viewControllerDidFinishedSettingUpUI()    }
+        localizeStrings()
+        getPresenter().viewControllerDidFinishedSettingUpUI()
+    }
     //
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,22 +39,26 @@ open class BaseTabBarController <T, V> :
         setupViewDidDisappearEssentials()
     }
     //
-    public final func getPresenter() -> T { return presenter }
-    
-    open func initUI () {
-        localizeStrings()
-        fatalError("Must Override")
-    }
-    
-    open func showToast(toastMessage: String, duration: Double, position: ToastPosition) {
-        self.view.makeToast(toastMessage, duration: duration, position: position)
-    }
+    open func initUI () { fatalError("Must Override") }
     
     open func localizeStrings () { fatalError("Must Override") }
-
+    
+    open func initPresenter () { fatalError("Must Override") }
+    
     open func loadingDidStarted() { showLoadingIndicator(message: "Loading..") }
     
     open func didFinishedLoading() { hideLoadingIndicator() }
+    
+    public final func getPresenter() -> T {
+        if (presenter == nil) {
+            self.presenter = T.init(viewDelegator: self as! V)
+        }
+        return presenter
+    }
+
+    open func showToast(toastMessage: String, duration: Double, position: ToastPosition) {
+        self.view.makeToast(toastMessage, duration: duration, position: position)
+    }
     
 }
 
