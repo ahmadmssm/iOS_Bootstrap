@@ -856,6 +856,10 @@
 		C91B41E7220F229100FBC680 /* CustomObjectValidationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B41E5220F1FF200FBC680 /* CustomObjectValidationTarget.swift */; };
 		C91B41E8220F229C00FBC680 /* ObjectValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B41E3220F1EA700FBC680 /* ObjectValidator.swift */; };
 		C91B41EB220F33FB00FBC680 /* ObjectShouldBeNotNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B41EA220F33FB00FBC680 /* ObjectShouldBeNotNil.swift */; };
+		C91B4544221D960D00F73884 /* UITextField + Connect next field.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B4543221D960C00F73884 /* UITextField + Connect next field.swift */; };
+		C91B4546221D965000F73884 /* UIViewController + Connect next field.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B4545221D965000F73884 /* UIViewController + Connect next field.swift */; };
+		C91B4548221D98A700F73884 /* String + Replace character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B4547221D98A500F73884 /* String + Replace character.swift */; };
+		C91B454A221D996200F73884 /* UIViewController + Classs name.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B4549221D996200F73884 /* UIViewController + Classs name.swift */; };
 		C92681A74DC2E9109A38D0733616659F /* NumberValidationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30944BE51B994B7071C465A662D4 /* NumberValidationTarget.swift */; };
 		C92BC40F21F3D261006A0072 /* TestingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BC40E21F3D261006A0072 /* TestingHelpers.swift */; };
 		C92BC41521F3D40C006A0072 /* BaseStubedAPIsConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BC41421F3D40C006A0072 /* BaseStubedAPIsConnector.swift */; };
@@ -2241,6 +2245,10 @@
 		C91B41E3220F1EA700FBC680 /* ObjectValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectValidator.swift; sourceTree = "<group>"; };
 		C91B41E5220F1FF200FBC680 /* CustomObjectValidationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomObjectValidationTarget.swift; sourceTree = "<group>"; };
 		C91B41EA220F33FB00FBC680 /* ObjectShouldBeNotNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectShouldBeNotNil.swift; sourceTree = "<group>"; };
+		C91B4543221D960C00F73884 /* UITextField + Connect next field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField + Connect next field.swift"; sourceTree = "<group>"; };
+		C91B4545221D965000F73884 /* UIViewController + Connect next field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Connect next field.swift"; sourceTree = "<group>"; };
+		C91B4547221D98A500F73884 /* String + Replace character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + Replace character.swift"; sourceTree = "<group>"; };
+		C91B4549221D996200F73884 /* UIViewController + Classs name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + Classs name.swift"; sourceTree = "<group>"; };
 		C92BC40E21F3D261006A0072 /* TestingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingHelpers.swift; sourceTree = "<group>"; };
 		C92BC41421F3D40C006A0072 /* BaseStubedAPIsConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStubedAPIsConnector.swift; sourceTree = "<group>"; };
 		C92BC41621F3D494006A0072 /* AZDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDialogViewController.swift; sourceTree = "<group>"; };
@@ -2884,17 +2892,16 @@
 		4C32F12F919BDC2F1746A033CA8200D1 /* UI components */ = {
 			isa = PBXGroup;
 			children = (
+				C91B4541221D95A100F73884 /* UIViewController */,
+				C91B4542221D95D900F73884 /* UITextField */,
 				7769BC7C501C48D6E6771F6DF29772E3 /* UIVIew */,
 				19AE596E4A4E80C77978F92F15CB9A35 /* Image */,
 				E782FFA73D9312C09E62CF73BA19E4A7 /* NavigationController + show and hide bottom line.swift */,
 				75184AA0E68A94177B13697A3D6E0709 /* UIButton + ActivityIndicator.swift */,
 				1789F77EA26B68020D417CB0A561C237 /* UIColor + Hex.swift */,
 				A561FFEF4AD47B7A535F00BD3F0AEA4F /* UILabel + format part of the text.swift */,
-				291A141A59DE7AFBFFE9F2CB7C67784A /* UIViewController + Navigation bar.swift */,
 				C9F931C32216EA1000921CE5 /* UITableViewCell + Seprator.swift */,
 				C9F931C52216EB2600921CE5 /* UIStackView + Remove subviews.swift */,
-				C9F931C72216EB8400921CE5 /* UIViewController + TransparentNavigationbar.swift */,
-				C9F931CB2216EBE800921CE5 /* UITextField + PasswordIcon.swift */,
 			);
 			path = "UI components";
 			sourceTree = "<group>";
@@ -3770,6 +3777,7 @@
 		B1143DE03098D9BA4F29692C26F3CCA6 /* String */ = {
 			isa = PBXGroup;
 			children = (
+				C91B4547221D98A500F73884 /* String + Replace character.swift */,
 				1E8224C9853D4E3B510D74E8F019B72E /* String + Capitalize first letter.swift */,
 				DD8F3EA8DFC8FE24786A477F113E75A3 /* String + class name.swift */,
 				BC379F45733336A7A55C5BC4F9447A69 /* String + Localizable.swift */,
@@ -4275,6 +4283,26 @@
 				C91B41EA220F33FB00FBC680 /* ObjectShouldBeNotNil.swift */,
 			);
 			path = object;
+			sourceTree = "<group>";
+		};
+		C91B4541221D95A100F73884 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				291A141A59DE7AFBFFE9F2CB7C67784A /* UIViewController + Navigation bar.swift */,
+				C9F931C72216EB8400921CE5 /* UIViewController + TransparentNavigationbar.swift */,
+				C91B4545221D965000F73884 /* UIViewController + Connect next field.swift */,
+				C91B4549221D996200F73884 /* UIViewController + Classs name.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		C91B4542221D95D900F73884 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				C91B4543221D960C00F73884 /* UITextField + Connect next field.swift */,
+				C9F931CB2216EBE800921CE5 /* UITextField + PasswordIcon.swift */,
+			);
+			path = UITextField;
 			sourceTree = "<group>";
 		};
 		CC844706F20C9EEE718D690F1A8E125B /* Extensions */ = {
@@ -5997,6 +6025,7 @@
 				C92BC41521F3D40C006A0072 /* BaseStubedAPIsConnector.swift in Sources */,
 				EF7E5500301EAB25A23A0D6159C4F3BC /* MenuItemViewController base classes.swift in Sources */,
 				95C95A8D18792B40524B87804C6D324F /* MultiLanguageManager.swift in Sources */,
+				C91B4546221D965000F73884 /* UIViewController + Connect next field.swift in Sources */,
 				C80CE11EC12109DDE1258CF382EB7E92 /* NavigationController + show and hide bottom line.swift in Sources */,
 				C9F931C82216EB8400921CE5 /* UIViewController + TransparentNavigationbar.swift in Sources */,
 				06B3E9AECCBA6C6779D9ABB1F0E25D63 /* NavigationCoordinator.swift in Sources */,
@@ -6015,6 +6044,7 @@
 				80ACCED8088E3119559C5086A143ECE9 /* Observable+String+Extension.swift in Sources */,
 				6DE02A57C6E85D21C92919E31C15C93A /* OverridableFunctions.swift in Sources */,
 				CA77CAF4E3EDFB06C5D7B370561FE7AB /* Parameters.swift in Sources */,
+				C91B4544221D960D00F73884 /* UITextField + Connect next field.swift in Sources */,
 				451A41FDEEDA096FD2C008A9BE09A78A /* Picker.swift in Sources */,
 				279F8885D7A9CB0E50CA7350639E6697 /* PopUpProtocol.swift in Sources */,
 				512E200C61C0C26BED97FD8248D89E39 /* PresenterFunctions.swift in Sources */,
@@ -6053,9 +6083,11 @@
 				0B998F1648AD1F8E03D56EC7D34E987E /* StringValidationTarget.swift in Sources */,
 				014653C6021CAE003B2142286DC6488C /* StringValidator.swift in Sources */,
 				827F9110302A6BD4254BF6F2F7752F4A /* SWActionSheet.m in Sources */,
+				C91B454A221D996200F73884 /* UIViewController + Classs name.swift in Sources */,
 				F360EC9C18D42C32C5CACD8D7DDEFE49 /* SwiftyImage.swift in Sources */,
 				C91B41EB220F33FB00FBC680 /* ObjectShouldBeNotNil.swift in Sources */,
 				F5F0D988E8B9C3C7717482BFD09CADAE /* Tableview + Reusablel.swift in Sources */,
+				C91B4548221D98A700F73884 /* String + Replace character.swift in Sources */,
 				C92BC40F21F3D261006A0072 /* TestingHelpers.swift in Sources */,
 				E9B86020669FD6216C5F370825C63397 /* TableviewAdapter.swift in Sources */,
 				021B53BBD0C1718A2717FF4F27CB24B7 /* Throttler.swift in Sources */,
