@@ -6,9 +6,9 @@
 //
 
 public protocol OverridableFunctions {
-    func initUI ()
+    
 }
 
 public extension OverridableFunctions {
-    public func initUI () {}
+    
 }

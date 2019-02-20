@@ -15,8 +15,8 @@ open class BaseViewController<T, V> :
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-       // self.presenter = T.init(viewDelegator: self as! V)
-        initPresenter()
+        // self.presenter = T.init(viewDelegator: self as! V)
+        self.presenter = initPresenter()
         getPresenter().viewControllerDidLoaded()
         initUI()
         localizeStrings()
@@ -57,7 +57,7 @@ open class BaseViewController<T, V> :
     
     open func localizeStrings () { fatalError("Must Override") }
 
-    open func initPresenter () { fatalError("Must Override") }
+    open func initPresenter () -> T? { return nil }
 
     open func loadingDidStarted() { showLoadingIndicator(message: "Loading..") }
     

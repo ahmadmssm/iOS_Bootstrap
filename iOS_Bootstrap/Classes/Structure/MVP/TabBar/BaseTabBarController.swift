@@ -16,7 +16,8 @@ open class BaseTabBarController <T, V> :
     private var presenter : T!
     
     override open func viewDidLoad() {
-        self.presenter = T.init(viewDelegator: self as! V)
+        // self.presenter = T.init(viewDelegator: self as! V)
+        self.presenter = initPresenter()
         getPresenter().viewControllerDidLoaded()
         initUI()
         localizeStrings()
@@ -43,7 +44,7 @@ open class BaseTabBarController <T, V> :
     
     open func localizeStrings () { fatalError("Must Override") }
     
-    open func initPresenter () { fatalError("Must Override") }
+    open func initPresenter () -> T? { return nil }
     
     open func loadingDidStarted() { showLoadingIndicator(message: "Loading..") }
     
