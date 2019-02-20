@@ -39,11 +39,20 @@ open class BaseTabBarController <T, V> :
     //
     public final func getPresenter() -> T { return presenter }
     
-    open func initUI () { fatalError("Must Override") }
+    open func initUI () {
+        localizeStrings()
+        fatalError("Must Override")
+    }
     
+    open func showToast(toastMessage: String, duration: Double, position: ToastPosition) {
+        self.view.makeToast(toastMessage, duration: duration, position: position)
+    }
+    
+    open func localizeStrings () { fatalError("Must Override") }
+
     open func loadingDidStarted() { showLoadingIndicator(message: "Loading..") }
     
     open func didFinishedLoading() { hideLoadingIndicator() }
-
+    
 }
 

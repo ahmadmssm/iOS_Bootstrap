@@ -27,6 +27,11 @@ open class BaseViewController<T, V> :
         getPresenter().viewControllerWillRefresh()
     }
     //
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getPresenter().viewControllerDidAppear()
+    }
+    //
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if (presenter != nil) {
@@ -39,9 +44,23 @@ open class BaseViewController<T, V> :
         setupViewDidDisappearEssentials()
     }
     
-    public final func getPresenter() -> T { return presenter }
+    public final func getPresenter() -> T {
+        if (presenter == nil) {
+            self.presenter = T.init(viewDelegator: self as! V)
+        }
+        return presenter
+    }
 
-    open func initUI () { fatalError("Must Override") }
+    open func initUI () {
+        localizeStrings()
+        fatalError("Must Override")
+    }
+    
+    open func showToast(toastMessage: String, duration: Double, position: ToastPosition) {
+        self.view.makeToast(toastMessage, duration: duration, position: position)
+    }
+    
+    open func localizeStrings () { fatalError("Must Override") }
     
     open func loadingDidStarted() { showLoadingIndicator(message: "Loading..") }
     
