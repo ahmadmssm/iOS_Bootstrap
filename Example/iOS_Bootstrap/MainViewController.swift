@@ -21,6 +21,8 @@ class MainViewController:
     
     override func initUI() { self.title = "Home" }
     
+    override func localizeStrings() {}
+    
     override func initCollectionViewAdapterConfiguraton() {
         super.initCollectionViewAdapterConfiguraton(collectionView: collectionView, delegate: self)
     }

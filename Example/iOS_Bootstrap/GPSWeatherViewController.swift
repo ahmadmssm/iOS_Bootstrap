@@ -28,6 +28,8 @@ class GPSWeatherViewController:
 
     override func initUI() {}
 
+    override func localizeStrings() {}
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.navigationItem.title = "GPS weather"

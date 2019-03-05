@@ -23,6 +23,8 @@ class ValidatorsExampleViewController:
         }
     }
     
+    override func localizeStrings() {}
+    
     @IBAction func didEndTyping(_ sender: UITextField) {
         switch sender {
         case emailTextField:

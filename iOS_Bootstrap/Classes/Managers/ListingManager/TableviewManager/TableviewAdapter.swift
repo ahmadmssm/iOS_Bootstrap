@@ -9,7 +9,7 @@
 
 import UIKit
 
-open class TableviewAdapter : NSObject {
+open class TableviewAdapter: NSObject {
     
     private final var mTableview : UITableView!
     private var tableViewDataSource: [Any]!
@@ -24,15 +24,17 @@ open class TableviewAdapter : NSObject {
     private var firstTime : Bool = true
     private var indicator : UIActivityIndicatorView?
     
-    public var getDataSource : [Any] {
+    public var getDataSource: [Any] {
         get { if (tableViewDataSource != nil) { return tableViewDataSource }; return [] }
     }
     
-    public final func setDataSource (dataSource : [Any]) { tableViewDataSource = dataSource }
+    open func setDataSource (dataSource : [Any]) { tableViewDataSource = dataSource }
     
     public final func getTableView() -> UITableView { return mTableview }
 
-    public final func configureTableWithXibCell (tableView: UITableView,
+    public final func clearDataSource () { self.tableViewDataSource.removeAll() }
+    
+    open func configureTableWithXibCell (tableView: UITableView,
                                     dataSource: [Any]!,
                                     nibClass : BaseTableViewCell.Type!,
                                     delegate : BaseTableViewDelegates) {
@@ -40,7 +42,7 @@ open class TableviewAdapter : NSObject {
         configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
     }
     
-    public final func configureTableWithMultiXibCell (tableView: UITableView,
+    open func configureTableWithMultiXibCell (tableView: UITableView,
                                                  dataSource: [Any]!,
                                                  nibClasses : [BaseTableViewCell.Type]?,
                                                  delegate : BaseTableViewDelegates) {
@@ -48,14 +50,14 @@ open class TableviewAdapter : NSObject {
         configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
     }
 
-    public final func configureTableWithXibCell (tableView: UITableView,
+    open func configureTableWithXibCell (tableView: UITableView,
                                                  nibClass : BaseTableViewCell.Type!,
                                                  delegate : BaseTableViewDelegates) {
         self.mNibClass = nibClass
         configureTable(tableView: tableView, dataSource: [], delegate: delegate)
     }
   
-    private final func configureTable (tableView: UITableView,
+    open func configureTable (tableView: UITableView,
                                        dataSource: [Any],
                                        delegate : BaseTableViewDelegates) {
         setDataSource(dataSource: dataSource)
@@ -74,7 +76,7 @@ open class TableviewAdapter : NSObject {
     }
     
     //
-    public final func configurePaginationParameters(totalNumberOfItems : Int, itemsPerPage : Int) {
+    open func configurePaginationParameters(totalNumberOfItems : Int, itemsPerPage : Int) {
         if (firstTime) {
             firstTime = false
             self.mTotalNumberOfItems = totalNumberOfItems
@@ -88,7 +90,7 @@ open class TableviewAdapter : NSObject {
     }
     
     // Pull to refresh configuration
-    public func configurePullToRefresh(refreshControl : UIRefreshControl) {
+    open func configurePullToRefresh(refreshControl : UIRefreshControl) {
         mDelegate?.configurePullToRefresh?(refreshcontrole: refreshControl)
         refreshControl.addTarget(self, action:
             #selector(self.pullToRefresh), for: UIControlEvents.valueChanged)
@@ -98,7 +100,7 @@ open class TableviewAdapter : NSObject {
     @objc private func pullToRefresh () { mDelegate?.pullToRefresh?() }
     
   //  public final func reloadTable(pageItems:[Any], currentPage : Int) {
-    public final func reloadTable(pageItems:[Any]) {
+    open func reloadTable(pageItems:[Any]) {
         //
         if (self.mCurrentPage < mNumberOfPages) { hasMore = true }
         //
@@ -118,7 +120,7 @@ open class TableviewAdapter : NSObject {
         self.mCurrentPage += 1
     }
     
-    public final func reloadSinglePageTable(items:[Any]) {
+    open func reloadSinglePageTable(items:[Any]) {
         hasMore = false
         if (self.tableViewDataSource.isEmpty) { self.tableViewDataSource = items }
         else {
@@ -136,7 +138,7 @@ open class TableviewAdapter : NSObject {
         mTableview.reloadRows(at: indexPaths, with: animation)
     }
     
-    public final func resetTable() {
+    open func resetTable() {
         self.tableViewDataSource.removeAll()
         mTableview?.reloadData()
         indicator?.stopAnimating()
@@ -183,9 +185,18 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return (mDelegate?.configureHeightForRowAt?(tableView: tableView, indexPath: indexPath)) ?? UITableViewAutomaticDimension
     }
+    
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        mDelegate?.scrollViewAdapterWillEndDragging?(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
+    }
+    
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        mDelegate?.scrollViewAdapterWillBeginDragging?(scrollView)
+    }
+    
     // Pagination (Load more)
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        mDelegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
+        mDelegate?.scrollViewAdapterDidEndDragging?(scrollView, willDecelerate: decelerate)
         if (scrollView == mTableview) {
             if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= (scrollView.contentSize.height)) {
                 if (hasMore) {

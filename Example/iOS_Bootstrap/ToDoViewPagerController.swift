@@ -25,4 +25,6 @@ class ToDoViewPagerController:
         viewControllers = [activeTodos, doneTodos]
     }
     
+    override func localizeStrings() {}
+    
 }

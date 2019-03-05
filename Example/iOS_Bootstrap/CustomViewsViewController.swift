@@ -19,6 +19,9 @@ class CustomViewsViewController:
     
     override func initUI() { self.title = "Custom views" }
     
+    override func localizeStrings() {}
+    
+    
     @IBAction func showProgress(_ sender: UIButton) {
         EZLoadingActivity.showWithDelay("Waiting...", disableUI: false, seconds: 2)
     }

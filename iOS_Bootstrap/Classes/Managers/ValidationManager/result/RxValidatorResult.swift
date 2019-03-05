@@ -31,7 +31,7 @@ public enum RxValidatorResult: Error,  Equatable {
     case notAfterDate
     case notEqualDate
     case nilObject
-    
+    // case customError(error: String)
     
     public static func ==(lhs: RxValidatorResult, rhs: RxValidatorResult) -> Bool {
         switch (lhs, rhs){
@@ -73,6 +73,8 @@ public enum RxValidatorResult: Error,  Equatable {
             return true
         case (.nilObject, .nilObject):
             return true
+//        case (.customError, .customError):
+//            return true
         default:
             break
         }  
@@ -83,16 +85,13 @@ public enum RxValidatorResult: Error,  Equatable {
         if let validateError = error as? RxValidatorResult {
             return validateError
         }
-        
         return .undefinedError
     }
     
     public func getCode() -> Int? {
         switch self {
-        case .notValidWithCode(let code):
-            return code
-        default:
-            return nil
+        case .notValidWithCode(let code): return code
+        default: return nil
         }
     }
     

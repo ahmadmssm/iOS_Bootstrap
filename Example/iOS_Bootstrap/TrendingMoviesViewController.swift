@@ -31,6 +31,8 @@ class TrendingMoviesViewController:
         createFloatingButton()
     }
     
+    override func localizeStrings() {}
+    
     override func initTableViewAdapterConfiguraton() {
         getTableViewAdapter().configureTableWithXibCell(tableView: tableView, nibClass: TrendingMoviesCell.self, delegate: self)
     }

@@ -18,7 +18,9 @@ class NetworkWeatherViewController:
     override func viewDidLoad() { super.viewDidLoad() }
     
     override func initUI() {}
-
+    
+    override func localizeStrings() {}
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.navigationItem.title = "Network weather"

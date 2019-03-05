@@ -32,6 +32,8 @@ class CountriesViewController:
     
     required init?(coder aDecoder: NSCoder) { super.init(coder: aDecoder) }
     
+    override func localizeStrings() {}
+    
     deinit { disposeBag = nil }
 
     override func viewDidLoad() {

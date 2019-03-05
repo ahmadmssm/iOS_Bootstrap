@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class CollectionViewAdapter : NSObject {
+open class CollectionViewAdapter: NSObject {
     
     private final var mCollectionview : UICollectionView!
     private final var collectionViewDataSource: [Any]!
@@ -21,19 +21,21 @@ open class CollectionViewAdapter : NSObject {
     private var firstTime : Bool = true
     fileprivate var indicator : UIActivityIndicatorView?
     
-    public final func getDataSource() -> [Any] {
+    public var getDataSource: [Any] {
         if (collectionViewDataSource != nil) { return collectionViewDataSource }
         return []
     }
 
-    public final func setDataSource (dataSource: [Any]) {
+    open func setDataSource (dataSource: [Any]) {
         self.collectionViewDataSource = dataSource
     }
+  
+    public final func clearDataSource () { self.collectionViewDataSource.removeAll() }
     
     public final func getTCollectionView() -> UICollectionView { return mCollectionview }
 
     //
-    public final func configureCollectionviewWithXibCell (collectionView: UICollectionView,
+    open func configureCollectionviewWithXibCell (collectionView: UICollectionView,
                                                  dataSource: [Any]!,
                                                  nibClass : BaseCollectionViewCell.Type!,
                                                  delegate : BaseCollectionViewDelegates) {
@@ -42,7 +44,7 @@ open class CollectionViewAdapter : NSObject {
         configureCollectionView(collectionView: collectionView, dataSource: dataSource, delegate: delegate)
     }
     //
-    public final func configureCollectionviewWithXibCell (collectionView: UICollectionView,
+    open func configureCollectionviewWithXibCell (collectionView: UICollectionView,
                                                           nibClass : BaseCollectionViewCell.Type!,
                                                           delegate : BaseCollectionViewDelegates) {
         self.mNibClass = nibClass
@@ -50,14 +52,14 @@ open class CollectionViewAdapter : NSObject {
         configureCollectionView(collectionView: collectionView, dataSource: [], delegate: delegate)
     }
     //
-    public final func configureCollectionviewWithStoryboardCell (collectionView: UICollectionView,
+    open func configureCollectionviewWithStoryboardCell (collectionView: UICollectionView,
                                                         dataSource: [Any],
                                                         nibClass : BaseCollectionViewCell.Type!,
                                                         delegate : BaseCollectionViewDelegates) {
         configureCollectionView(collectionView: collectionView, dataSource: dataSource, delegate: delegate)
     }
     //
-    private final func configureCollectionView (collectionView: UICollectionView,
+    open func configureCollectionView (collectionView: UICollectionView,
                                        dataSource: [Any],
                                        delegate : BaseCollectionViewDelegates) {
         setDataSource(dataSource: dataSource)
@@ -72,7 +74,7 @@ open class CollectionViewAdapter : NSObject {
         mDelegate.configureAdditionalCollectionViewProperties?(collectionView: collectionView)
     }
     //
-    public final func configurePaginationParameters(totalNumberOfItems : Int, itemsPerPage : Int) {
+    open func configurePaginationParameters(totalNumberOfItems : Int, itemsPerPage : Int) {
         if (firstTime) {
             firstTime = false
             //
@@ -89,7 +91,7 @@ open class CollectionViewAdapter : NSObject {
         }
     }
     // Pull to refresh configuration
-    public func configurePullToRefresh(refreshControl : UIRefreshControl) {
+    open func configurePullToRefresh(refreshControl : UIRefreshControl) {
         mDelegate?.configurePullToRefresh?(refreshcontrole: refreshControl)
         refreshControl.addTarget(self, action:
             #selector(self.pullToRefresh),
@@ -99,7 +101,7 @@ open class CollectionViewAdapter : NSObject {
     // Pull to refresh action
     @objc private func pullToRefresh () { mDelegate?.pullToRefresh?() }
     //
-    public final func reloadCollectionView(pageItems:[Any]) {
+    open func reloadCollectionView(pageItems:[Any]) {
         //
         if (self.mCurrentPage < mNumberOfPages) { hasMore = true }
         if (self.collectionViewDataSource.isEmpty) { self.collectionViewDataSource = pageItems }
@@ -117,7 +119,7 @@ open class CollectionViewAdapter : NSObject {
         self.mCurrentPage += 1
     }
     
-    public final func reloadSinglePageCollectionView(items:[Any]) {
+    open func reloadSinglePageCollectionView(items:[Any]) {
         hasMore = false
         if (self.collectionViewDataSource.isEmpty) { self.collectionViewDataSource = items }
         else {
@@ -128,34 +130,32 @@ open class CollectionViewAdapter : NSObject {
         indicator?.stopAnimating()
     }
     
-    public final func reloadCollectionView() {
-        mCollectionview?.reloadData()
-    }
+    public final func reloadCollectionView() { mCollectionview?.reloadData() }
     
-    public final func resetCollectionView() {
+    open func resetCollectionView() {
         self.collectionViewDataSource.removeAll()
         mCollectionview?.reloadData()
         indicator?.stopAnimating()
     }
     
     // return cells that are square sized
-    public func configurePaddingForSquareSizedCells (padding : CGFloat) -> CGSize {
+    open func configurePaddingForSquareSizedCells (padding : CGFloat) -> CGSize {
         let collectionViewSize = mCollectionview.frame.size.width - padding
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
     }
     // configure dimesions and number of items per row
-    public func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, itemHeight : CGFloat, padding : CGFloat) -> CGSize {
+    open func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, itemHeight : CGFloat, padding : CGFloat) -> CGSize {
         let collectionViewSize = mCollectionview.frame.size.width - padding
         return CGSize(width: collectionViewSize/numberOfItemsPerRow, height: itemHeight)
     }
     //
     // configure dimesions and number of items per row
-    public func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, padding : CGFloat) -> CGSize {
+    open func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, padding : CGFloat) -> CGSize {
         let collectionViewSize = mCollectionview.frame.size.width - padding
         return CGSize(width: collectionViewSize/numberOfItemsPerRow, height: collectionViewSize/numberOfItemsPerRow)
     }
     //
-    public func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, cellHeight : CGFloat, padding : CGFloat) -> CGSize {
+    open func configureNumberOfCollectionViewItemsPerRow (numberOfItemsPerRow: CGFloat, cellHeight : CGFloat, padding : CGFloat) -> CGSize {
         let collectionViewSize = mCollectionview.frame.size.width - padding
         return CGSize(width: collectionViewSize/numberOfItemsPerRow, height: cellHeight)
     }
@@ -203,9 +203,17 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
         mDelegate?.itemDidSelected?(collectionView: collectionView, indexPath: indexPath)
     }
     
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        mDelegate?.scrollViewAdapterWillEndDragging?(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
+    }
+    
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        mDelegate?.scrollViewAdapterWillBeginDragging?(scrollView)
+    }
+    
     // Pagination (Load more)
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        mDelegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
+        mDelegate?.scrollViewAdapterDidEndDragging?(scrollView, willDecelerate: decelerate)
         if (scrollView == mCollectionview) {
             if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= (scrollView.contentSize.height)) {
                 //

@@ -30,6 +30,8 @@ class LeftSideMenuViewController:
         profileTitle.text = "John Doe"
     }
     
+    override func localizeStrings() {}
+    
     override func setupMenuItemsData() -> [SideMenuModel] {
         var menu: [SideMenuModel] = []
         let trendingMoviesMenuItem = SideMenuModel(itemName: "Trending Movies", itemId: 0, itemIcon: #imageLiteral(resourceName: "trending_movies"))

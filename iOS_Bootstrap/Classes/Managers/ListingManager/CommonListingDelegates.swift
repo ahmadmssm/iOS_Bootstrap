@@ -9,7 +9,9 @@
     @objc optional func noMoreResutlsToLoad () 
     @objc optional func configurePullToRefresh (refreshcontrole : UIRefreshControl)
     @objc optional func pullToRefresh ()
-    @objc optional func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
+    @objc optional func scrollViewAdapterDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
+    @objc optional func scrollViewAdapterWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
+    @objc optional func scrollViewAdapterWillBeginDragging(_ scrollView: UIScrollView)
     // Empty dataset callbacks
     @objc optional func emptyDataSetShouldDisplay () -> Bool
     @objc optional func emptyDataSetTitleText () -> NSAttributedString

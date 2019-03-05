@@ -45,6 +45,8 @@ class ToDoViewController:
     
     override func initUI() {}
     
+    override func localizeStrings() {}
+    
     private func getCreateNewToDoPopUp() -> SCLAlertView {
         let poUpAppearance = SCLAlertView.SCLAppearance (showCloseButton: false, shouldAutoDismiss: false)
         let popUp = SCLAlertView(appearance: poUpAppearance)

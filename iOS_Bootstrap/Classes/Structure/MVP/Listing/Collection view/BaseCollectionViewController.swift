@@ -15,7 +15,7 @@ open class BaseCollectionViewController <T, V, D>: BaseViewController<T, V> wher
     }
 
     public final var getCollectionViewDataSource: [D] {
-        get { return collectionViewAdapter.getDataSource() as! [D] }
+        get { return collectionViewAdapter.getDataSource as! [D] }
     }
     
     public final func setDataSource(datasource : [D]) {

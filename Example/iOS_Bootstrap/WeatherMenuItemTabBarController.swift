@@ -13,5 +13,5 @@ class WeatherMenuItemTabBarController:
                 BaseViewDelegator> {
     
     override func initUI() { self.title = "Weather provider" }
-    
+    override func localizeStrings() {}
 }
