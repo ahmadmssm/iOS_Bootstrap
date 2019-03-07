@@ -26,20 +26,39 @@ open class BaseCollectionViewController <T, V, D>: BaseViewController<T, V> wher
         let collectionViewDataSource : [D] = [D]()
         collectionViewAdapter.setDataSource(dataSource: collectionViewDataSource)
         initCollectionViewAdapterConfiguraton()
+        listenForCollectionViewCellItemsClickEvent()
     }
     
     open func initCollectionViewAdapterConfiguraton() { fatalError("Must Override") }
+    
+    open func listenForCollectionViewCellItemsClickEvent() {}
     
     public final func initDataSourceIfNeeded(collectionViewDataSource : [D]) {
         setDataSource(datasource: collectionViewDataSource)
     }
     
-    open func initCell <T: BaseCollectionViewCellV2<D>>(cell: T.Type, indexPath: IndexPath) -> T {
-        let cell: T = getCollectionViewAdapter().getTCollectionView().dequeueReusableCell(forIndexPath: indexPath)
+    open func initCell <C: BaseCollectionViewCellV2<D>>(cell: C.Type, indexPath: IndexPath) -> C {
+        let cell: C = getCollectionViewAdapter().getTCollectionView().dequeueReusableCell(forIndexPath: indexPath)
         if (getCellModel(indexPath: indexPath) != nil) {
             cell.cellModel = getCellModel(indexPath: indexPath)
         }
         return cell
+    }
+    
+    open func initHeaderCell <C: BaseCollectionViewCellV2<D>>(cell: C.Type, indexPath: IndexPath) -> C {
+        let headerCell: C = getCollectionViewAdapter().getTCollectionView().dequeueReusableHeaderCell(forIndexPath: indexPath)
+        if (getCellModel(indexPath: indexPath) != nil) {
+            headerCell.cellModel = getCellModel(indexPath: indexPath)
+        }
+        return headerCell
+    }
+    
+    open func initFooterCell <C: BaseCollectionViewCellV2<D>>(cell: C.Type, indexPath: IndexPath) -> C {
+        let headerCell: C = getCollectionViewAdapter().getTCollectionView().dequeueReusableFooterCell(forIndexPath: indexPath)
+        if (getCellModel(indexPath: indexPath) != nil) {
+            headerCell.cellModel = getCellModel(indexPath: indexPath)
+        }
+        return headerCell
     }
 
     open func getCellModel(indexPath: IndexPath) -> D? {

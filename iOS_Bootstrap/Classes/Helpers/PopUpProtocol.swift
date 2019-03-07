@@ -12,7 +12,7 @@ private var activityIndicatorAlert: UIAlertController!
 public protocol PopUpProtocol {}
 public extension PopUpProtocol where Self: UIViewController {
     //
-    public func showAlert(title : String, message: String, actions : [UIAlertAction]) {
+    public func showAlert(title : String?, message: String?, actions : [UIAlertAction]) {
         let alert = UIAlertController (
             title: title,
             message: message,
@@ -25,7 +25,7 @@ public extension PopUpProtocol where Self: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     //
-    public func showActionSheet(title : String, message: String, actions : [UIAlertAction]) {
+    public func showActionSheet(title : String?, message: String?, actions : [UIAlertAction]) {
         let actionSheet = UIAlertController(
             title: title,
             message: message, preferredStyle: .actionSheet)

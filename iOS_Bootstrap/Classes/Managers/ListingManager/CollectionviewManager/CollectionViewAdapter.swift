@@ -40,7 +40,7 @@ open class CollectionViewAdapter: NSObject {
                                                  nibClass : BaseCollectionViewCell.Type!,
                                                  delegate : BaseCollectionViewDelegates) {
         self.mNibClass = nibClass
-        mCollectionview?.register(cellClass: mNibClass.self)
+        mCollectionview?.registerCell(cellClass: mNibClass.self)
         configureCollectionView(collectionView: collectionView, dataSource: dataSource, delegate: delegate)
     }
     //
@@ -48,7 +48,7 @@ open class CollectionViewAdapter: NSObject {
                                                           nibClass : BaseCollectionViewCell.Type!,
                                                           delegate : BaseCollectionViewDelegates) {
         self.mNibClass = nibClass
-        mCollectionview?.register(cellClass: mNibClass.self)
+        mCollectionview?.registerCell(cellClass: mNibClass.self)
         configureCollectionView(collectionView: collectionView, dataSource: [], delegate: delegate)
     }
     //
@@ -65,7 +65,7 @@ open class CollectionViewAdapter: NSObject {
         setDataSource(dataSource: dataSource)
         self.mCollectionview = collectionView
         self.mDelegate = delegate
-        mCollectionview?.register(cellClass: mNibClass.self)
+        mCollectionview?.registerCell(cellClass: mNibClass.self)
         mCollectionview?.dataSource = self
         mCollectionview?.delegate = self
         mCollectionview.emptyDataSetDelegate = self
@@ -203,12 +203,21 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
         mDelegate?.itemDidSelected?(collectionView: collectionView, indexPath: indexPath)
     }
     
+
     public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         mDelegate?.scrollViewAdapterWillEndDragging?(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
     }
     
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         mDelegate?.scrollViewAdapterWillBeginDragging?(scrollView)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return mDelegate?.collectionViewAdapter?(collectionView, layout: collectionViewLayout, insetForSectionAt: section) ?? UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        return mDelegate?.collectionViewAdapter?(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath) ?? UICollectionReusableView()
     }
     
     // Pagination (Load more)

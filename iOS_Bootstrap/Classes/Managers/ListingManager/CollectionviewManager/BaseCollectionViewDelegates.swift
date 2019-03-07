@@ -18,9 +18,9 @@ public protocol BaseCollectionViewDelegates : CollectionViewOptionalDelegates {
     @objc optional func sizeForItemAtIndexPath (collectionView: UICollectionView, collectionViewLayout: UICollectionViewLayout) -> CGSize
     @objc optional func spacingBetweenRows (collectionView: UICollectionView, collectionViewLayout: UICollectionViewLayout, section: Int) -> CGFloat
     @objc optional func spacingBetweenRowItems (collectionView: UICollectionView, collectionViewLayout: UICollectionViewLayout, section: Int) -> CGFloat
-    
     @objc optional func configureNumberOfSections(collectionView: UICollectionView) -> Int
     @objc optional func loadMore (collectionView: UICollectionView, forPage page : Int, updatedDataSource : [Any])
-    
     @objc optional func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
+    @objc optional func collectionViewAdapter(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
+    @objc optional func collectionViewAdapter(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
 }

@@ -7,8 +7,8 @@
 
 
 public extension UIViewController {
-    public func showActionSheet(title: String,
-                                message: String, actions: [(String, UIAlertActionStyle)],
+    public func showActionSheet(title: String?,
+                                message: String?, actions: [(String, UIAlertActionStyle)],
                                 completion: @escaping (_ index: Int) -> Void) {
         let alertViewController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         for (index, (title, style)) in actions.enumerated() {

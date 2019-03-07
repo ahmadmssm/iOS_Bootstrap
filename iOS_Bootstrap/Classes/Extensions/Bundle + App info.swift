@@ -17,4 +17,16 @@ extension Bundle {
         return Bundle.main.bundleIdentifier!
     }
 
+    public var versionNumber: String? {
+        return infoDictionary?["CFBundleShortVersionString"] as? String
+    }
+    
+    public var buildNumber: String? {
+        return infoDictionary?["CFBundleVersion"] as? String
+    }
+    
+    public var bundleName: String? {
+        return infoDictionary?["CFBundleName"] as? String
+    }
+    
 }

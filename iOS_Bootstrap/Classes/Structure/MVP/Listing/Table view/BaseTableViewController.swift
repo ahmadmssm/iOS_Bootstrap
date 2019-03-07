@@ -28,7 +28,10 @@ open class BaseTableViewController <T, V, D> :
         let tableViewDataSource : [D] = [D]()
         tableViewAdapter.setDataSource(dataSource: tableViewDataSource)
         initTableViewAdapterConfiguraton()
+        listenForTableCellItemsClickEvent()
     }
+    
+    open func listenForTableCellItemsClickEvent() {}
     
     open func initTableViewAdapterConfiguraton() { fatalError("Must Override") }
 
