@@ -6,7 +6,7 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-import UIKit
+import iOS_Bootstrap
 
 class NetworkWeatherViewController:
                 WeatherTableViewController<NetworkWeatherPresenter, WeatherViewDelegator> {

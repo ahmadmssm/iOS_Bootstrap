@@ -8,7 +8,6 @@
 
 import iOS_Bootstrap
 import SCLAlertView
-import AFDateHelper
 
 class WeatherTableViewController <T, V>:
                                 BaseTableViewControllerV2<T, V, Forcast, WeatherCell>,
