@@ -34,6 +34,10 @@ open class CollectionViewAdapter: NSObject {
     
     public final func getTCollectionView() -> UICollectionView { return mCollectionview }
 
+    open func getCollectionViewFlowLayout() -> UICollectionViewFlowLayout? {
+        return mCollectionview.collectionViewLayout as? UICollectionViewFlowLayout
+    }
+    
     //
     open func configureCollectionviewWithXibCell (collectionView: UICollectionView,
                                                  dataSource: [Any]!,
@@ -66,6 +70,7 @@ open class CollectionViewAdapter: NSObject {
         self.mCollectionview = collectionView
         self.mDelegate = delegate
         mCollectionview?.registerCell(cellClass: mNibClass.self)
+        mDelegate?.registerMoreCustomCells?()
         mCollectionview?.dataSource = self
         mCollectionview?.delegate = self
         mCollectionview.emptyDataSetDelegate = self

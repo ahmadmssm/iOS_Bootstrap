@@ -841,7 +841,10 @@
 		C80A633C882EAC37193E0CFA94BC361E /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5B036F60670E0D46A005964A9742B /* StoryboardIdentifiable.swift */; };
 		C86329EA343288A46E8E27F93F2D6E19 /* StringIsAlwaysPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFA89AE5507AABD1F0A6E2F1F375E73 /* StringIsAlwaysPass.swift */; };
 		C8E822039D38066442011DC62041B7DC /* ObjectSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754C40FA793F7A9698A0CDCB6048E88 /* ObjectSchema.swift */; };
-		C91E30EF22310FD200E38890 /* BaseDateTimeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E30EE22310FD200E38890 /* BaseDateTimeHelpers.swift */; };
+		C9164A412232ABAB0040D13A /* BaseCollectionViewHeaderOrFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9164A402232ABAB0040D13A /* BaseCollectionViewHeaderOrFooter.swift */; };
+		C9164A432232AE080040D13A /* BaseCollectionViewHeaderOrFooterV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9164A422232AE080040D13A /* BaseCollectionViewHeaderOrFooterV2.swift */; };
+		C9164A472232D5FF0040D13A /* BaseDateTimeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9164A462232D5FE0040D13A /* BaseDateTimeHelpers.swift */; };
+		C9164A492232D67C0040D13A /* UIImage + Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9164A482232D67C0040D13A /* UIImage + Color.swift */; };
 		C91E30F122312F2000E38890 /* BaseAppHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E30F022312F2000E38890 /* BaseAppHelpers.swift */; };
 		C91E30F52231565C00E38890 /* UIImage + Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E30F42231565C00E38890 /* UIImage + Rotate.swift */; };
 		C951E2F43E512FC73AE33BD9BDFEFCFB /* Producer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7257D017721B6698E8D34C00B6EC470A /* Producer.swift */; };
@@ -2277,8 +2280,11 @@
 		C853888A3425006CEE28ABEC0FC460A3 /* Bag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bag.swift; path = Platform/DataStructures/Bag.swift; sourceTree = "<group>"; };
 		C8E869795C1502A89A8F3AE05FBB1AEA /* Binder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Binder.swift; path = RxCocoa/Common/Binder.swift; sourceTree = "<group>"; };
 		C8E8ECF86F31A5BA4DF24CBDC3D65E1F /* First.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = First.swift; path = RxSwift/Observables/First.swift; sourceTree = "<group>"; };
+		C9164A402232ABAB0040D13A /* BaseCollectionViewHeaderOrFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewHeaderOrFooter.swift; sourceTree = "<group>"; };
+		C9164A422232AE080040D13A /* BaseCollectionViewHeaderOrFooterV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewHeaderOrFooterV2.swift; sourceTree = "<group>"; };
+		C9164A462232D5FE0040D13A /* BaseDateTimeHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDateTimeHelpers.swift; sourceTree = "<group>"; };
+		C9164A482232D67C0040D13A /* UIImage + Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Color.swift"; sourceTree = "<group>"; };
 		C91714566615E35DA0E0D0E3ED507EDA /* RLMRealmConfiguration_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMRealmConfiguration_Private.h; path = include/RLMRealmConfiguration_Private.h; sourceTree = "<group>"; };
-		C91E30EE22310FD200E38890 /* BaseDateTimeHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDateTimeHelpers.swift; sourceTree = "<group>"; };
 		C91E30F022312F2000E38890 /* BaseAppHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAppHelpers.swift; sourceTree = "<group>"; };
 		C91E30F42231565C00E38890 /* UIImage + Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Rotate.swift"; sourceTree = "<group>"; };
 		C96103E74E73DF002BAD9744893B9A9A /* network_reachability_observer.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = network_reachability_observer.cpp; path = Realm/ObjectStore/src/sync/impl/apple/network_reachability_observer.cpp; sourceTree = "<group>"; };
@@ -2660,6 +2666,7 @@
 				7AB473574DFCB9B92787303F0C80E252 /* UIImage + To:From data.swift */,
 				56DE46991B0CDEC857A430E98160E617 /* UIImageView + Activity indicator.swift */,
 				C91E30F42231565C00E38890 /* UIImage + Rotate.swift */,
+				C9164A482232D67C0040D13A /* UIImage + Color.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -4208,8 +4215,10 @@
 		C91E30ED22310F4700E38890 /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
-				C91E30EE22310FD200E38890 /* BaseDateTimeHelpers.swift */,
+				C9164A462232D5FE0040D13A /* BaseDateTimeHelpers.swift */,
 				C91E30F022312F2000E38890 /* BaseAppHelpers.swift */,
+				C9164A402232ABAB0040D13A /* BaseCollectionViewHeaderOrFooter.swift */,
+				C9164A422232AE080040D13A /* BaseCollectionViewHeaderOrFooterV2.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -6046,6 +6055,7 @@
 				909B3A122B5E411BBBAEEA4B793B656C /* AbstractActionSheetPicker.m in Sources */,
 				B6FCB54C429B8932DA39B8CFFE89404E /* ActionSheetCustomPicker.m in Sources */,
 				8EA988B6F49F3E28B0D169697EE7E197 /* ActionSheetDatePicker.m in Sources */,
+				C9164A492232D67C0040D13A /* UIImage + Color.swift in Sources */,
 				4A4C9093D3606E2A772358E051A0C167 /* ActionSheetDistancePicker.m in Sources */,
 				3D3F45765C74A211FE8F82DE5F61E1B5 /* ActionSheetLocalePicker.m in Sources */,
 				DF2DBB19F96AC1BC02E9ACD77BA0F0D3 /* ActionSheetMultipleStringPicker.m in Sources */,
@@ -6100,7 +6110,6 @@
 				B82BD8BC89EF922CA2BFCD6B1257859D /* Collectionview+Reusable.swift in Sources */,
 				0F2F7DEA435E60CE1F34BC751C7B1980 /* CollectionViewAdapter.swift in Sources */,
 				DAC991D47248B6F39E3750B3EA7819EB /* CombinedOperators.swift in Sources */,
-				C91E30EF22310FD200E38890 /* BaseDateTimeHelpers.swift in Sources */,
 				643AFC40C18D7D6CA9FB03430B1965A4 /* CommonListingDelegates.swift in Sources */,
 				3EC0DB63164168E8C714F00A8C4A03F3 /* ConnectionResult.swift in Sources */,
 				4669070F9293A7159AB2B799E6EF78A8 /* ConnectionResultWithDataOrError.swift in Sources */,
@@ -6181,6 +6190,7 @@
 				8B795CC6996CDA817FAA7A729CD129F6 /* MultiLanguageManager.swift in Sources */,
 				DFA083F16155FB3E4236B26BE4E4FECF /* NavigationController + show and hide bottom line.swift in Sources */,
 				9FD39EB47CD732A53A87FF0A5CDE8BBB /* NavigationCoordinator.swift in Sources */,
+				C9164A432232AE080040D13A /* BaseCollectionViewHeaderOrFooterV2.swift in Sources */,
 				E0E94541DC940A5BB67A286C3920DC1F /* NetworkConnectionConfiguration.swift in Sources */,
 				51740B55DE1783E0E50D0B0D78D92D68 /* NetworkLoggerDataFormatter.swift in Sources */,
 				0BCD34AD5B99616B0213ABCA21B7F374 /* NetworkStatusListener.swift in Sources */,
@@ -6257,6 +6267,7 @@
 				F247CBC74086AAF5CAA251EACB67B513 /* UITableViewCell + Seprator.swift in Sources */,
 				B5DC4000BFECA7F530D7617CF665782A /* UITextField + Connect next field.swift in Sources */,
 				666129F539B35099676C13A88A65E260 /* UITextField + PasswordIcon.swift in Sources */,
+				C9164A472232D5FF0040D13A /* BaseDateTimeHelpers.swift in Sources */,
 				881DD4066AD23A917EB79E796D274669 /* UIView + Border.swift in Sources */,
 				060FA4DBB352439D7633C9D67FAADBFA /* UIView + hairlineImageView.swift in Sources */,
 				86763233ABC91C599EA2C71FAA25473B /* UIView + Loadable Nib.swift in Sources */,
@@ -6271,6 +6282,7 @@
 				6ADA5F9697BEA0BB4797181AA652F619 /* UIViewController+Bartinter.swift in Sources */,
 				46CE8A403220171DEEB038E9D93629C5 /* UIViewController.swift in Sources */,
 				412562FAC2918A1A37DB3965DCC3A529 /* UIViewControllerEnvironment.swift in Sources */,
+				C9164A412232ABAB0040D13A /* BaseCollectionViewHeaderOrFooter.swift in Sources */,
 				AE2B0082E705F6EBBCAE92FC9E1734F7 /* UserDefaultsManager.swift in Sources */,
 				FB4FB14C14AB50C3A306FC96D5212DE7 /* Validate.swift in Sources */,
 				66CAC783AD848FD44EE04135B1C15DDC /* ValidationTarget.swift in Sources */,

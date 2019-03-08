@@ -68,13 +68,13 @@ open class TableviewAdapter: NSObject {
         else if (mNibClasses != nil) {
             for nibClass in mNibClasses! { mTableview?.register(cellClass: nibClass.self) }
         }
+        mDelegate?.registerMoreCustomCells?()
         mTableview?.dataSource = self
         mTableview?.delegate = self
         mTableview.emptyDataSetDelegate = self
         mTableview.emptyDataSetSource = self
         mDelegate?.configureAdditionalTableProperties?(table: mTableview!)
     }
-    
     //
     open func configurePaginationParameters(totalNumberOfItems : Int, itemsPerPage : Int) {
         if (firstTime) {

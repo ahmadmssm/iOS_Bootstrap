@@ -45,20 +45,36 @@ open class BaseCollectionViewController <T, V, D>: BaseViewController<T, V> wher
         return cell
     }
     
-    open func initHeaderCell <C: BaseCollectionViewCellV2<D>>(cell: C.Type, indexPath: IndexPath) -> C {
-        let headerCell: C = getCollectionViewAdapter().getTCollectionView().dequeueReusableHeaderCell(forIndexPath: indexPath)
-        if (getCellModel(indexPath: indexPath) != nil) {
-            headerCell.cellModel = getCellModel(indexPath: indexPath)
-        }
+    open func initHeaderCell <H: BaseCollectionViewHeaderOrFooter>(indexPath: IndexPath) -> H {
+        let headerCell: H =
+            getCollectionViewAdapter()
+                .getTCollectionView()
+                .dequeueReusableHeaderCell(forIndexPath: indexPath)
         return headerCell
     }
     
-    open func initFooterCell <C: BaseCollectionViewCellV2<D>>(cell: C.Type, indexPath: IndexPath) -> C {
-        let headerCell: C = getCollectionViewAdapter().getTCollectionView().dequeueReusableFooterCell(forIndexPath: indexPath)
-        if (getCellModel(indexPath: indexPath) != nil) {
-            headerCell.cellModel = getCellModel(indexPath: indexPath)
-        }
+    //        if (getCellModel(indexPath: indexPath) != nil) {
+    //           // headerCell.cellModel = getCellModel(indexPath: indexPath)
+    //        }
+    
+    open func initHeaderCell <M, H: BaseCollectionViewHeader<M>>(cellModel: M, indexPath: IndexPath) -> H {
+        let headerCell: H = initHeaderCell(indexPath: indexPath)
+        headerCell.cellModel = cellModel
         return headerCell
+    }
+    
+    open func initFooterCell <F: BaseCollectionViewHeaderOrFooter>(indexPath: IndexPath) -> F {
+        let footerCell: F =
+            getCollectionViewAdapter()
+                .getTCollectionView()
+                .dequeueReusableFooterCell(forIndexPath: indexPath)
+        return footerCell
+    }
+    
+    open func initFooterCell <M, F: BaseCollectionViewFooter<M>>(cellModel: M, indexPath: IndexPath) -> F {
+        let footerCell: F = initFooterCell(indexPath: indexPath)
+        footerCell.cellModel = cellModel
+        return footerCell
     }
 
     open func getCellModel(indexPath: IndexPath) -> D? {

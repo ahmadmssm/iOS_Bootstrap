@@ -9,6 +9,7 @@
     @objc optional func noMoreResutlsToLoad () 
     @objc optional func configurePullToRefresh (refreshcontrole : UIRefreshControl)
     @objc optional func pullToRefresh ()
+    @objc optional func registerMoreCustomCells()
     @objc optional func scrollViewAdapterDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
     @objc optional func scrollViewAdapterWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
     @objc optional func scrollViewAdapterWillBeginDragging(_ scrollView: UIScrollView)
