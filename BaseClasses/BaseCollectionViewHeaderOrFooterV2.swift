@@ -12,7 +12,3 @@ open class BaseCollectionViewHeaderOrFooterV2 <M>: BaseCollectionViewHeaderOrFoo
     open func initCellFrom(cellModel: M) { fatalError("Must Override") }
     
 }
-
-open class BaseCollectionViewHeader <M>: BaseCollectionViewHeaderOrFooterV2<M> {}
-
-open class BaseCollectionViewFooter <M>: BaseCollectionViewHeaderOrFooterV2<M> {}

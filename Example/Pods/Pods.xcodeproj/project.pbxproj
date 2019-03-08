@@ -845,6 +845,8 @@
 		C9164A432232AE080040D13A /* BaseCollectionViewHeaderOrFooterV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9164A422232AE080040D13A /* BaseCollectionViewHeaderOrFooterV2.swift */; };
 		C9164A472232D5FF0040D13A /* BaseDateTimeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9164A462232D5FE0040D13A /* BaseDateTimeHelpers.swift */; };
 		C9164A492232D67C0040D13A /* UIImage + Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9164A482232D67C0040D13A /* UIImage + Color.swift */; };
+		C9164A4B2232D9EA0040D13A /* BaseCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9164A4A2232D9EA0040D13A /* BaseCollectionViewHeader.swift */; };
+		C9164A4D2232D9FE0040D13A /* BaseCollectionViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9164A4C2232D9FE0040D13A /* BaseCollectionViewFooter.swift */; };
 		C91E30F122312F2000E38890 /* BaseAppHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E30F022312F2000E38890 /* BaseAppHelpers.swift */; };
 		C91E30F52231565C00E38890 /* UIImage + Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E30F42231565C00E38890 /* UIImage + Rotate.swift */; };
 		C951E2F43E512FC73AE33BD9BDFEFCFB /* Producer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7257D017721B6698E8D34C00B6EC470A /* Producer.swift */; };
@@ -2284,6 +2286,8 @@
 		C9164A422232AE080040D13A /* BaseCollectionViewHeaderOrFooterV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewHeaderOrFooterV2.swift; sourceTree = "<group>"; };
 		C9164A462232D5FE0040D13A /* BaseDateTimeHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDateTimeHelpers.swift; sourceTree = "<group>"; };
 		C9164A482232D67C0040D13A /* UIImage + Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Color.swift"; sourceTree = "<group>"; };
+		C9164A4A2232D9EA0040D13A /* BaseCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewHeader.swift; sourceTree = "<group>"; };
+		C9164A4C2232D9FE0040D13A /* BaseCollectionViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewFooter.swift; sourceTree = "<group>"; };
 		C91714566615E35DA0E0D0E3ED507EDA /* RLMRealmConfiguration_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMRealmConfiguration_Private.h; path = include/RLMRealmConfiguration_Private.h; sourceTree = "<group>"; };
 		C91E30F022312F2000E38890 /* BaseAppHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAppHelpers.swift; sourceTree = "<group>"; };
 		C91E30F42231565C00E38890 /* UIImage + Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Rotate.swift"; sourceTree = "<group>"; };
@@ -4219,6 +4223,8 @@
 				C91E30F022312F2000E38890 /* BaseAppHelpers.swift */,
 				C9164A402232ABAB0040D13A /* BaseCollectionViewHeaderOrFooter.swift */,
 				C9164A422232AE080040D13A /* BaseCollectionViewHeaderOrFooterV2.swift */,
+				C9164A4A2232D9EA0040D13A /* BaseCollectionViewHeader.swift */,
+				C9164A4C2232D9FE0040D13A /* BaseCollectionViewFooter.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -6060,6 +6066,7 @@
 				3D3F45765C74A211FE8F82DE5F61E1B5 /* ActionSheetLocalePicker.m in Sources */,
 				DF2DBB19F96AC1BC02E9ACD77BA0F0D3 /* ActionSheetMultipleStringPicker.m in Sources */,
 				FBCE2242DCB81EE3FAAE8EB5761A4C2C /* ActionSheetStringPicker.m in Sources */,
+				C9164A4B2232D9EA0040D13A /* BaseCollectionViewHeader.swift in Sources */,
 				74D8B8A627FEB2AC9FB6DBCAB3F671E3 /* APIsProvider.swift in Sources */,
 				2BA05951B3F369102E193EAF56EDBF83 /* Array + Clonable.swift in Sources */,
 				8589F43A6F775FE72AFA17BE653881B4 /* AZDialogViewController.swift in Sources */,
@@ -6219,6 +6226,7 @@
 				FF4087450A7577A42AB88497D9D87B2E /* RetryWithAuthentication.swift in Sources */,
 				34D071257A82C61DA8F42909A282B34C /* ReusableCell.swift in Sources */,
 				445E044990ACF06B6769486037A38300 /* Route.swift in Sources */,
+				C9164A4D2232D9FE0040D13A /* BaseCollectionViewFooter.swift in Sources */,
 				E055E4FAA1A8468B0EA0BB9CFEAA7B9B /* RxValidatorResult.swift in Sources */,
 				8734B34E5565E1399738DAEAE7F9AEB4 /* Schedulers.swift in Sources */,
 				8791A084F3DF568242EAE85322C241A1 /* ServicesInstances.swift in Sources */,
