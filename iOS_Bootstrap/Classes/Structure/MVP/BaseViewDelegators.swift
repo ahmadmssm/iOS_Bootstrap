@@ -11,6 +11,8 @@ import Foundation
 @objc public protocol BaseViewDelegator where Self: UIViewController {
     @objc optional func loadingDidStarted()
     @objc optional func didFinishedLoading()
+    @objc optional func didGetError(errorMessage: String)
+    @objc optional func didGetWarning(warningMessage: String)
 }
 
 @objc public protocol BaseTableViewDelegator : BaseViewDelegator {

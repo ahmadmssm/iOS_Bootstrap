@@ -30,6 +30,11 @@ open class TableviewAdapter: NSObject {
     
     open func setDataSource (dataSource : [Any]) { tableViewDataSource = dataSource }
     
+    open var dataSource: [Any] {
+        set { tableViewDataSource = newValue }
+        get { return tableViewDataSource }
+    }
+
     public final func getTableView() -> UITableView { return mTableview }
 
     public final func clearDataSource () { self.tableViewDataSource.removeAll() }

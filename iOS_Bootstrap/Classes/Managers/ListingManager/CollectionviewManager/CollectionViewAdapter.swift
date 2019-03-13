@@ -30,6 +30,11 @@ open class CollectionViewAdapter: NSObject {
         self.collectionViewDataSource = dataSource
     }
   
+    open var dataSource: [Any] {
+        set { collectionViewDataSource = newValue }
+        get { return collectionViewDataSource }
+    }
+    
     public final func clearDataSource () { self.collectionViewDataSource.removeAll() }
     
     public final func getTCollectionView() -> UICollectionView { return mCollectionview }

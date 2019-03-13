@@ -853,6 +853,8 @@
 		C975E90221A61061181A2602B52B6613 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675ECB33203BD9A14C5D1EFBA89FBBF1 /* Reactive.swift */; };
 		C98F13CC5D0AB7EC49E2529F2B21FD28 /* UIViewController + Navigation bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F97142A8971590848BB265C10266C /* UIViewController + Navigation bar.swift */; };
 		C993EEE33AE3AE2CB7C5E282D7010746 /* TakeLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F51630C5162061554348CECAAFD06F4 /* TakeLast.swift */; };
+		C9B759572239135C003AE923 /* Array + Remove multiple indices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B759562239135C003AE923 /* Array + Remove multiple indices.swift */; };
+		C9B75959223913A6003AE923 /* UIViewController + Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B75958223913A6003AE923 /* UIViewController + Utils.swift */; };
 		CA0256D0C1228F5192A51FFBC8421025 /* DDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 609694DBC6DEBFA800D8D899BB566F0B /* DDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA1641256E647BEE1EDD15F9121B33D3 /* RLMConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 92BF9B803E1A272E7B743BB017A37A32 /* RLMConstants.h */; };
 		CA2F7136FCFC6D3D9A4B06B9A3DAB04A /* BaseClassForAllSVGBasicShapes.m in Sources */ = {isa = PBXBuildFile; fileRef = 97133595F0270EA61F6C82FD7A05EBB1 /* BaseClassForAllSVGBasicShapes.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -2295,6 +2297,8 @@
 		C96380354F7DE9E259D0190D08746961 /* UINavigationItem+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationItem+Rx.swift"; path = "RxCocoa/iOS/UINavigationItem+Rx.swift"; sourceTree = "<group>"; };
 		C98475679382A6669F9D083DC671F3A6 /* SVGTitleElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVGTitleElement.m; path = "Source/DOM classes/Unported or Partial DOM/SVGTitleElement.m"; sourceTree = "<group>"; };
 		C9AEF8B0B59A4BD43A91ED3E76E2EF8D /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDContextFilterLogFormatter.m; path = Classes/Extensions/DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		C9B759562239135C003AE923 /* Array + Remove multiple indices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Remove multiple indices.swift"; sourceTree = "<group>"; };
+		C9B75958223913A6003AE923 /* UIViewController + Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Utils.swift"; sourceTree = "<group>"; };
 		CB3FF84B8F13B14BF4604A7ED8F18F1C /* DDASLLogCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogCapture.h; path = Classes/DDASLLogCapture.h; sourceTree = "<group>"; };
 		CB4E21F679BDAFEBBB27232D743DADB6 /* CALayerWithClipRender.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CALayerWithClipRender.m; path = "Source/QuartzCore additions/CALayerWithClipRender.m"; sourceTree = "<group>"; };
 		CB8639CB4D972B77F331A8765797776B /* RLMSyncPermission.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMSyncPermission.mm; path = Realm/RLMSyncPermission.mm; sourceTree = "<group>"; };
@@ -4107,6 +4111,7 @@
 				DB0034648E211A1F695C4800C32B1EEC /* UIViewController + Connect next field.swift */,
 				851F97142A8971590848BB265C10266C /* UIViewController + Navigation bar.swift */,
 				82B5591D40F8E0F7AC3B373FB4B1A5CA /* UIViewController + Load nib.swift */,
+				C9B75958223913A6003AE923 /* UIViewController + Utils.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -4395,6 +4400,7 @@
 				36834A581B438722E62E441E705DC8F1 /* Collection + nilable values.swift */,
 				69F006C2B5CC0496C826762349049263 /* NetworkLoggerDataFormatter.swift */,
 				EEBE0CC3F29F27B5378284E3280B6558 /* Remove duplicates + filter array.swift */,
+				C9B759562239135C003AE923 /* Array + Remove multiple indices.swift */,
 				0E0DEA8332F51FB95A68F6E93941411E /* Codable */,
 				E773A335EC4D24240FB3FDB3E6BCD780 /* DataTypes */,
 				F10CC4631B275962C310BF30E161F9C1 /* RX */,
@@ -6077,6 +6083,7 @@
 				0AB0776A38106D6A999D99D741E019F4 /* BaseCollectionViewCell.swift in Sources */,
 				BFD2B0AE629D18AB7DD51B4B00BCCA79 /* BaseCollectionViewCellV2.swift in Sources */,
 				6B71C9F821AF1D57B505485926C76B49 /* BaseCollectionViewController.swift in Sources */,
+				C9B75959223913A6003AE923 /* UIViewController + Utils.swift in Sources */,
 				90B0D4A75D2E18B4EC8CF47F6F51235F /* BaseCollectionViewControllerV2.swift in Sources */,
 				0C2F3A1FF647BD6267229E54BB496AC9 /* BaseCollectionViewDelegates.swift in Sources */,
 				B6D972CAC0729AE527ECFC53FEDD2B92 /* BaseController.swift in Sources */,
@@ -6182,6 +6189,7 @@
 				7DE74050B95D66938369B1B86750DC74 /* ImageView.swift in Sources */,
 				264F9F331FDF499FE262604E8CAACA27 /* Internal.swift in Sources */,
 				9A78FE1EBB48A2E9DF63F7A5677D8056 /* InternetConnectionManager.swift in Sources */,
+				C9B759572239135C003AE923 /* Array + Remove multiple indices.swift in Sources */,
 				EABB07E57A8C2E4248B74CB79A6BADE5 /* IntShouldBeEven.swift in Sources */,
 				B3F128C4C691EA955026DB75BB880C74 /* iOS_Bootstrap-dummy.m in Sources */,
 				FC08B52CC09BC68EC4EB024DD73C0DE3 /* IServices.swift in Sources */,
