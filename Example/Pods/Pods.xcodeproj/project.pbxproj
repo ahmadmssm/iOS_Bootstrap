@@ -849,6 +849,9 @@
 		C9164A592232E0CD0040D13A /* BaseCollectionViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9164A532232E0CC0040D13A /* BaseCollectionViewFooter.swift */; };
 		C9164A5A2232E0CD0040D13A /* BaseCollectionViewHeaderOrFooterV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9164A542232E0CC0040D13A /* BaseCollectionViewHeaderOrFooterV2.swift */; };
 		C91E30F52231565C00E38890 /* UIImage + Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E30F42231565C00E38890 /* UIImage + Rotate.swift */; };
+		C91E3C10223A5C8200B65CAE /* String + To codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E3C0F223A5C8200B65CAE /* String + To codable.swift */; };
+		C91ECFA6223E923D00E14919 /* String + Nil if empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91ECFA5223E923D00E14919 /* String + Nil if empty.swift */; };
+		C91ECFA8223E928100E14919 /* Error+ Nilable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91ECFA7223E928100E14919 /* Error+ Nilable.swift */; };
 		C951E2F43E512FC73AE33BD9BDFEFCFB /* Producer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7257D017721B6698E8D34C00B6EC470A /* Producer.swift */; };
 		C975E90221A61061181A2602B52B6613 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675ECB33203BD9A14C5D1EFBA89FBBF1 /* Reactive.swift */; };
 		C98F13CC5D0AB7EC49E2529F2B21FD28 /* UIViewController + Navigation bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F97142A8971590848BB265C10266C /* UIViewController + Navigation bar.swift */; };
@@ -2293,6 +2296,9 @@
 		C9164A542232E0CC0040D13A /* BaseCollectionViewHeaderOrFooterV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewHeaderOrFooterV2.swift; sourceTree = "<group>"; };
 		C91714566615E35DA0E0D0E3ED507EDA /* RLMRealmConfiguration_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMRealmConfiguration_Private.h; path = include/RLMRealmConfiguration_Private.h; sourceTree = "<group>"; };
 		C91E30F42231565C00E38890 /* UIImage + Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Rotate.swift"; sourceTree = "<group>"; };
+		C91E3C0F223A5C8200B65CAE /* String + To codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + To codable.swift"; sourceTree = "<group>"; };
+		C91ECFA5223E923D00E14919 /* String + Nil if empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Nil if empty.swift"; sourceTree = "<group>"; };
+		C91ECFA7223E928100E14919 /* Error+ Nilable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+ Nilable.swift"; sourceTree = "<group>"; };
 		C96103E74E73DF002BAD9744893B9A9A /* network_reachability_observer.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = network_reachability_observer.cpp; path = Realm/ObjectStore/src/sync/impl/apple/network_reachability_observer.cpp; sourceTree = "<group>"; };
 		C96380354F7DE9E259D0190D08746961 /* UINavigationItem+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationItem+Rx.swift"; path = "RxCocoa/iOS/UINavigationItem+Rx.swift"; sourceTree = "<group>"; };
 		C98475679382A6669F9D083DC671F3A6 /* SVGTitleElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVGTitleElement.m; path = "Source/DOM classes/Unported or Partial DOM/SVGTitleElement.m"; sourceTree = "<group>"; };
@@ -4405,6 +4411,7 @@
 				E773A335EC4D24240FB3FDB3E6BCD780 /* DataTypes */,
 				F10CC4631B275962C310BF30E161F9C1 /* RX */,
 				964917323C1D28949FC5235323266142 /* UI components */,
+				C91ECFA7223E928100E14919 /* Error+ Nilable.swift */,
 			);
 			name = Extensions;
 			path = iOS_Bootstrap/Classes/Extensions;
@@ -4517,6 +4524,7 @@
 		E773A335EC4D24240FB3FDB3E6BCD780 /* DataTypes */ = {
 			isa = PBXGroup;
 			children = (
+				C91ECFA5223E923D00E14919 /* String + Nil if empty.swift */,
 				4BF286657A1F6BCC72B312C3893474AB /* Double + isInteger.swift */,
 				68B2AC75D318404BD33C7D5E11D1909C /* Double + toString.swift */,
 				5720B1DAC15B840448274CDEE4E75B77 /* Float + toString.swift */,
@@ -4559,6 +4567,7 @@
 		F4949C27345796EBD8110B373AFDE7BC /* String */ = {
 			isa = PBXGroup;
 			children = (
+				C91E3C0F223A5C8200B65CAE /* String + To codable.swift */,
 				ED1A65A21971AC0A5AAC6C66624B3D2E /* String + Capitalize first letter.swift */,
 				72B41ABDEE7C7E79DBF84D547148D7C5 /* String + class name.swift */,
 				51DCE90795747E1DF05B48DA62C109A8 /* String + Localizable.swift */,
@@ -6130,6 +6139,7 @@
 				D72CAE424F83A083B9F3B4AE21C23914 /* ConnectionResultWithError.swift in Sources */,
 				E0FF385EAB8E4FFBB7EA92479AD739E1 /* ConnectionResultWithGenericError.swift in Sources */,
 				FD837E10CBF4F2DC726A15C79D915805 /* CoreDataConfigurations.swift in Sources */,
+				C91E3C10223A5C8200B65CAE /* String + To codable.swift in Sources */,
 				FD38561C9E7230BA381C2334B91066DA /* CoreDataManager.swift in Sources */,
 				D55C8A8443C0BE0094A0E9233649AE14 /* CustomButton.swift in Sources */,
 				ED41D4A2F191DF695596C1A7A53CC709 /* CustomObjectValidationTarget.swift in Sources */,
@@ -6191,6 +6201,8 @@
 				9A78FE1EBB48A2E9DF63F7A5677D8056 /* InternetConnectionManager.swift in Sources */,
 				C9B759572239135C003AE923 /* Array + Remove multiple indices.swift in Sources */,
 				EABB07E57A8C2E4248B74CB79A6BADE5 /* IntShouldBeEven.swift in Sources */,
+				C91ECFA8223E928100E14919 /* Error+ Nilable.swift in Sources */,
+				C91ECFA6223E923D00E14919 /* String + Nil if empty.swift in Sources */,
 				B3F128C4C691EA955026DB75BB880C74 /* iOS_Bootstrap-dummy.m in Sources */,
 				FC08B52CC09BC68EC4EB024DD73C0DE3 /* IServices.swift in Sources */,
 				782CC1248FB836FD27EB44DD9098F87C /* IServicesInstances.swift in Sources */,

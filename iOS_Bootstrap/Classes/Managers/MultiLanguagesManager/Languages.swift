@@ -6,6 +6,11 @@
 //
 
 public enum Languages : String {
+    case German = "de"
+    case French = "fr"
+    case Italian = "it"
+    case Spanish = "es"
+    case Czech = "cs"
     case English = "en"
     case Arabic = "ar"
     case Arabic_Egypt = "ar-EG"
