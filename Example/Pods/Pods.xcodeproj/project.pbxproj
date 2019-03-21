@@ -4407,11 +4407,11 @@
 				69F006C2B5CC0496C826762349049263 /* NetworkLoggerDataFormatter.swift */,
 				EEBE0CC3F29F27B5378284E3280B6558 /* Remove duplicates + filter array.swift */,
 				C9B759562239135C003AE923 /* Array + Remove multiple indices.swift */,
+				C91ECFA7223E928100E14919 /* Error+ Nilable.swift */,
 				0E0DEA8332F51FB95A68F6E93941411E /* Codable */,
 				E773A335EC4D24240FB3FDB3E6BCD780 /* DataTypes */,
 				F10CC4631B275962C310BF30E161F9C1 /* RX */,
 				964917323C1D28949FC5235323266142 /* UI components */,
-				C91ECFA7223E928100E14919 /* Error+ Nilable.swift */,
 			);
 			name = Extensions;
 			path = iOS_Bootstrap/Classes/Extensions;
