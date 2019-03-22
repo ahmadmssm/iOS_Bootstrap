@@ -57,16 +57,16 @@ open class BaseAPIsConnector<T : GenericAPIs> : GenericConnector {
     }
     
     
-    open func requestSingle<M: Codable>(api : T, model: M.Type) -> Single<M> {
+    open func requestSingle<M: Decodable>(api : T, model: M.Type) -> Single<M> {
         return request(api: api).map(model.self, using: getJSONDecoder())
     }
-    open func requestObservable<M: Codable>(api : T, model: M.Type) -> Observable<M> {
+    open func requestObservable<M: Decodable>(api : T, model: M.Type) -> Observable<M> {
         return requestSingle(api: api, model: model).asObservable()
     }
-    open func requestMaybe<M: Codable>(api : T, model: M.Type) -> Maybe<M> {
+    open func requestMaybe<M: Decodable>(api : T, model: M.Type) -> Maybe<M> {
         return requestSingle(api: api, model: model).asMaybe()
     }
-    open func requestCompletable<M: Codable>(api : T, model: M.Type) -> Completable {
+    open func requestCompletable<M: Decodable>(api : T, model: M.Type) -> Completable {
         return requestSingle(api: api, model: model).asCompletable()
     }
     //

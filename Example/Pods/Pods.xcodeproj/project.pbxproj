@@ -852,6 +852,7 @@
 		C91E3C10223A5C8200B65CAE /* String + To codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E3C0F223A5C8200B65CAE /* String + To codable.swift */; };
 		C91ECFA6223E923D00E14919 /* String + Nil if empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91ECFA5223E923D00E14919 /* String + Nil if empty.swift */; };
 		C91ECFA8223E928100E14919 /* Error+ Nilable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91ECFA7223E928100E14919 /* Error+ Nilable.swift */; };
+		C921ABF822452CCC00C3CCD0 /* Decodable + Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921ABF722452CCC00C3CCD0 /* Decodable + Rx.swift */; };
 		C951E2F43E512FC73AE33BD9BDFEFCFB /* Producer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7257D017721B6698E8D34C00B6EC470A /* Producer.swift */; };
 		C975E90221A61061181A2602B52B6613 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675ECB33203BD9A14C5D1EFBA89FBBF1 /* Reactive.swift */; };
 		C98F13CC5D0AB7EC49E2529F2B21FD28 /* UIViewController + Navigation bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F97142A8971590848BB265C10266C /* UIViewController + Navigation bar.swift */; };
@@ -2299,6 +2300,7 @@
 		C91E3C0F223A5C8200B65CAE /* String + To codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + To codable.swift"; sourceTree = "<group>"; };
 		C91ECFA5223E923D00E14919 /* String + Nil if empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Nil if empty.swift"; sourceTree = "<group>"; };
 		C91ECFA7223E928100E14919 /* Error+ Nilable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+ Nilable.swift"; sourceTree = "<group>"; };
+		C921ABF722452CCC00C3CCD0 /* Decodable + Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable + Rx.swift"; sourceTree = "<group>"; };
 		C96103E74E73DF002BAD9744893B9A9A /* network_reachability_observer.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = network_reachability_observer.cpp; path = Realm/ObjectStore/src/sync/impl/apple/network_reachability_observer.cpp; sourceTree = "<group>"; };
 		C96380354F7DE9E259D0190D08746961 /* UINavigationItem+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationItem+Rx.swift"; path = "RxCocoa/iOS/UINavigationItem+Rx.swift"; sourceTree = "<group>"; };
 		C98475679382A6669F9D083DC671F3A6 /* SVGTitleElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVGTitleElement.m; path = "Source/DOM classes/Unported or Partial DOM/SVGTitleElement.m"; sourceTree = "<group>"; };
@@ -2761,6 +2763,7 @@
 			children = (
 				2AD97D3D4E2A73B709780DA68ECA9057 /* Codable + dictionary.swift */,
 				CBDD7EC82F40A9857D53912169D4BA69 /* Codable + String.swift */,
+				C921ABF722452CCC00C3CCD0 /* Decodable + Rx.swift */,
 			);
 			path = Codable;
 			sourceTree = "<group>";
@@ -6233,6 +6236,7 @@
 				D4D798ACD30922F13D9A1EEE094DEB43 /* NumberValidator.swift in Sources */,
 				738E8F16E50D67F500E19B743747A29D /* ObjectShouldBeNotNil.swift in Sources */,
 				7BA4F2594FDE605B756C2B45F801E236 /* ObjectValidator.swift in Sources */,
+				C921ABF822452CCC00C3CCD0 /* Decodable + Rx.swift in Sources */,
 				555E7208FCFB3E07EA6D50136AF8AF63 /* Observable+Date+Extension.swift in Sources */,
 				BE3416EBE8FAC5292072BF6FBA60ABF8 /* Observable+Number+Extension.swift in Sources */,
 				4E28BB1F99F475BEFDD23CD36717BBD8 /* Observable+String+Extension.swift in Sources */,

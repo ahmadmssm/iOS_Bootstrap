@@ -18,4 +18,16 @@ public extension String {
         } catch { print(error) }
         return nil
     }
+    public func toModelWithCamelCaseKeys<T: Decodable>(model: T.Type) -> T? {
+        guard let data = self.data(using: .utf8) else {
+            fatalError("Couldn't get data from json")
+        }
+        do {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let response = try decoder.decode(model.self, from: data)
+            return response
+        } catch { print(error) }
+        return nil
+    }
 }
