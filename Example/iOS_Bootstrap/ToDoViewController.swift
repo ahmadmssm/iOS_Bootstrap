@@ -93,11 +93,11 @@ class ToDoViewController:
     func emptyDataSetShouldDisplay() -> Bool { return self.isEmptyDataSource }
     
     func emptyDataSetDescriptionText() -> NSAttributedString {
-        let attributes: [NSAttributedStringKey : Any] = [
-            NSAttributedStringKey.strokeColor : UIColor.black,
-            NSAttributedStringKey.foregroundColor : UIColor.blue,
-            NSAttributedStringKey.strokeWidth : -2.0,
-            NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18)
+        let attributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.strokeColor : UIColor.black,
+            NSAttributedString.Key.foregroundColor : UIColor.blue,
+            NSAttributedString.Key.strokeWidth : -2.0,
+            NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18)
         ]
         return NSAttributedString(string: "No data !", attributes: attributes)
     }

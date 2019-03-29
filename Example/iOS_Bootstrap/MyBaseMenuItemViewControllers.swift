@@ -14,6 +14,7 @@ class MyMenuItemViewController <P, V>: BaseMenuItemViewController <P, V> where P
         addCustomLeftMenuItemViewController()
         self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side_menu"))
     }
+    override func localizeStrings() {}
 }
 
 class MyMenuItemTabBarController <P, V>: BaseMenuItemTabBarController <P, V> where P: BasePresenter<V> {
@@ -22,6 +23,7 @@ class MyMenuItemTabBarController <P, V>: BaseMenuItemTabBarController <P, V> whe
         addCustomLeftMenuItemViewController()
         self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side_menu"))
     }
+    override func localizeStrings() {}
 }
 
 class MyMenuItemViewPagerController <P, V>: BaseMenuItemViewPagerController <P, V> where P: BasePresenter<V> {
@@ -30,6 +32,7 @@ class MyMenuItemViewPagerController <P, V>: BaseMenuItemViewPagerController <P, 
         addCustomLeftMenuItemViewController()
         self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side_menu"))
     }
+    override func localizeStrings() {}
 }
 
 class MyMenuItemTableViewController <P, V, M>: BaseMenuItemTableViewController <P, V, M> where P: BasePresenter<V> {
@@ -38,6 +41,7 @@ class MyMenuItemTableViewController <P, V, M>: BaseMenuItemTableViewController <
         addCustomLeftMenuItemViewController()
         self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side_menu"))
     }
+    override func localizeStrings() {}
 }
 
 class MyMenuItemTableViewControllerV2 <P, V, M, C>:
@@ -48,6 +52,7 @@ class MyMenuItemTableViewControllerV2 <P, V, M, C>:
         addCustomLeftMenuItemViewController()
         self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side_menu"))
     }
+    override func localizeStrings() {}
 }
 
 class MyMenuItemLiveTableViewController <P, V, M>:
@@ -57,6 +62,7 @@ class MyMenuItemLiveTableViewController <P, V, M>:
         addCustomLeftMenuItemViewController()
         self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side_menu"))
     }
+    override func localizeStrings() {}
 }
 
 class MyMenuItemLiveTableViewControllerV2 <P, V, M, C>:
@@ -67,6 +73,7 @@ class MyMenuItemLiveTableViewControllerV2 <P, V, M, C>:
         addCustomLeftMenuItemViewController()
         self.setRightSideMenuNavigationBarItem(icon: #imageLiteral(resourceName: "side_menu"))
     }
+    override func localizeStrings() {}
 }
 
 extension UIViewController {

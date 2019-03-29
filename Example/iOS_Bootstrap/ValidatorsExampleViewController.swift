@@ -18,7 +18,7 @@ class ValidatorsExampleViewController:
     
     
     override func initUI() {
-        okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+        okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
             UIAlertAction in
         }
     }

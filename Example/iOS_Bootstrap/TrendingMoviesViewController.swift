@@ -78,7 +78,7 @@ extension TrendingMoviesViewController {
         floatingButton.translatesAutoresizingMaskIntoConstraints = false
         floatingButton.backgroundColor = .white
         floatingButton.setImage(#imageLiteral(resourceName: "back"), for: .normal)
-        floatingButton.addTarget(self, action: #selector(buttonClick(_:)), for: UIControlEvents.touchUpInside)
+        floatingButton.addTarget(self, action: #selector(buttonClick(_:)), for: UIControl.Event.touchUpInside)
         // We're manipulating the UI, must be on the main thread:
         DispatchQueue.main.async {
             if let keyWindow = UIApplication.shared.keyWindow {

@@ -14,6 +14,6 @@ class StaticResources {
     }
     struct CustomStyles {
         static let navigationBarTextStyle =
-            [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.white]
+            [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white]
     }
 }

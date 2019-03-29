@@ -18,6 +18,8 @@ class WeatherTableViewController <T, V>:
 
     override func viewDidLoad() { super.viewDidLoad() }
     
+    override func localizeStrings() {}
+
     override func initTableViewAdapterConfiguraton() {
         super.initTableViewAdapterConfiguraton(tableView: tableView, delegate: self)
     }

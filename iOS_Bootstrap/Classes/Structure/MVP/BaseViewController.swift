@@ -63,6 +63,10 @@ open class BaseViewController<T, V> :
     
     open func didFinishedLoading() { hideLoadingIndicator() }
     
+    open func didGetWarning(warningMessage: String) {}
+    
+    open func didGetError(errorMessage: String) {}
+    
     open func showToast(toastMessage: String, duration: Double, position: ToastPosition) {
         self.view.makeToast(toastMessage, duration: duration, position: position)
     }

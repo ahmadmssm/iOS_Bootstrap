@@ -19,6 +19,8 @@ BaseSideMenuViewController <BasePresenter<BaseViewDelegator>, BaseViewDelegator>
         addMenuItemsClickAction(views: menuItems)
     }
     
+    override func localizeStrings() {}
+
     override func menuItemDidClicked(view: UIView) {
         switch view {
         case menuItems[0]:

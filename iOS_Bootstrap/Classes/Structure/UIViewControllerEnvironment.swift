@@ -18,7 +18,7 @@ extension InternetConnectionService where Self : UIViewController {
     
     public func networkStatusDidChanged(status: InternetConnectionManager.Connection) {
         snackbar?.dismiss()
-        if (status == InternetConnectionManager.Connection.notConnected) {
+        if (status == InternetConnectionManager.Connection.none) {
             snackbar?.actionText = "Dismiss"
             snackbar?.actionBlock = { snackbar in snackbar.dismiss() }
             self.snackbar?.message = "Network became unreachable"
@@ -46,12 +46,12 @@ extension UIViewController : ViewControllerCommonFeatures {
     
     func setupViewWillAppearEssentials() {
         setContext(context: self)
-        InternetConnectionManager.getInstance.addListener(listener: self)
+        InternetConnectionManager.getInstance?.addListener(listener: self)
         configureViewControllerSnackBar()
     }
     
     func setupViewDidDisappearEssentials() {
-        InternetConnectionManager.getInstance.removeListener(listener: self)
+        InternetConnectionManager.getInstance?.removeListener(listener: self)
         if (getDefaultSnackbar != nil && !(getDefaultSnackbar?.isHidden)!) {
             getDefaultSnackbar?.dismiss()
         }
