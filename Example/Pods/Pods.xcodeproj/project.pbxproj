@@ -857,6 +857,10 @@
 		C921AC082245880B00C3CCD0 /* UIView + Pin edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921AC072245880B00C3CCD0 /* UIView + Pin edges.swift */; };
 		C951E2F43E512FC73AE33BD9BDFEFCFB /* Producer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7257D017721B6698E8D34C00B6EC470A /* Producer.swift */; };
 		C975E90221A61061181A2602B52B6613 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675ECB33203BD9A14C5D1EFBA89FBBF1 /* Reactive.swift */; };
+		C983254F22521D5E00303FDF /* BaseConnectorConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C983254E22521D5D00303FDF /* BaseConnectorConfigurations.swift */; };
+		C983255122521D9900303FDF /* BaseApiBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C983255022521D9900303FDF /* BaseApiBuilder.swift */; };
+		C983255322521E1D00303FDF /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C983255222521E1D00303FDF /* BaseAPI.swift */; };
+		C983255522521F2E00303FDF /* Decodable + Camel case.swift in Sources */ = {isa = PBXBuildFile; fileRef = C983255422521F2E00303FDF /* Decodable + Camel case.swift */; };
 		C98F13CC5D0AB7EC49E2529F2B21FD28 /* UIViewController + Navigation bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F97142A8971590848BB265C10266C /* UIViewController + Navigation bar.swift */; };
 		C993EEE33AE3AE2CB7C5E282D7010746 /* TakeLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F51630C5162061554348CECAAFD06F4 /* TakeLast.swift */; };
 		C9A83E4D224EDBEB00BDD291 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A83E4C224EDBEB00BDD291 /* Device.swift */; };
@@ -2308,6 +2312,10 @@
 		C921AC072245880B00C3CCD0 /* UIView + Pin edges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Pin edges.swift"; sourceTree = "<group>"; };
 		C96103E74E73DF002BAD9744893B9A9A /* network_reachability_observer.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = network_reachability_observer.cpp; path = Realm/ObjectStore/src/sync/impl/apple/network_reachability_observer.cpp; sourceTree = "<group>"; };
 		C96380354F7DE9E259D0190D08746961 /* UINavigationItem+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationItem+Rx.swift"; path = "RxCocoa/iOS/UINavigationItem+Rx.swift"; sourceTree = "<group>"; };
+		C983254E22521D5D00303FDF /* BaseConnectorConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConnectorConfigurations.swift; sourceTree = "<group>"; };
+		C983255022521D9900303FDF /* BaseApiBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiBuilder.swift; sourceTree = "<group>"; };
+		C983255222521E1D00303FDF /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		C983255422521F2E00303FDF /* Decodable + Camel case.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable + Camel case.swift"; sourceTree = "<group>"; };
 		C98475679382A6669F9D083DC671F3A6 /* SVGTitleElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVGTitleElement.m; path = "Source/DOM classes/Unported or Partial DOM/SVGTitleElement.m"; sourceTree = "<group>"; };
 		C9A83E4C224EDBEB00BDD291 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		C9AEF8B0B59A4BD43A91ED3E76E2EF8D /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDContextFilterLogFormatter.m; path = Classes/Extensions/DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
@@ -2720,6 +2728,7 @@
 		0647A66B1E76AD97B35FF280093119B8 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				C983254D22521D3700303FDF /* MoyaPretty */,
 				867E93D3DE1ECF2FCA2E305B85820FCE /* BaseAPIsConnector.swift */,
 				59882C2957468864831707B89C5B5F9B /* BaseStubedAPIsConnector.swift */,
 				482F7B5A0B765D81723D2886DE1E6605 /* GenericConnector.swift */,
@@ -4251,6 +4260,16 @@
 			path = iOS_Bootstrap/Classes/BaseClasses;
 			sourceTree = "<group>";
 		};
+		C983254D22521D3700303FDF /* MoyaPretty */ = {
+			isa = PBXGroup;
+			children = (
+				C983254E22521D5D00303FDF /* BaseConnectorConfigurations.swift */,
+				C983255022521D9900303FDF /* BaseApiBuilder.swift */,
+				C983255222521E1D00303FDF /* BaseAPI.swift */,
+			);
+			path = MoyaPretty;
+			sourceTree = "<group>";
+		};
 		CADE40B10FA12F975BFFDB200B9DD9CC /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -4572,6 +4591,7 @@
 			isa = PBXGroup;
 			children = (
 				6CB092752A180602CD360954CD05D000 /* Disposable + cancel request.swift */,
+				C983255422521F2E00303FDF /* Decodable + Camel case.swift */,
 			);
 			path = RX;
 			sourceTree = "<group>";
@@ -6256,6 +6276,7 @@
 				8E57CDDFB1E01F1A3FD66C01175A9B11 /* Parameters.swift in Sources */,
 				CEC7040CD54A6C78CE7329521E41E75E /* Picker.swift in Sources */,
 				51A2C7A7416103B63C7BADB239CC333C /* PopUpProtocol.swift in Sources */,
+				C983255322521E1D00303FDF /* BaseAPI.swift in Sources */,
 				6A1E28EADE896464951BDE79CDF50612 /* PresenterFunctions.swift in Sources */,
 				D5E0F2D9EB128F74EDAE29497A34109B /* PushNotificationBaseModel.swift in Sources */,
 				FBB5A4F299801255DDF4EA556BDC8CE4 /* PushNotificationManager.swift in Sources */,
@@ -6293,6 +6314,7 @@
 				C9164A582232E0CD0040D13A /* BaseCollectionViewHeaderOrFooter.swift in Sources */,
 				56E78D1C936E9C8A088E10848B03375A /* StringValidationTarget.swift in Sources */,
 				F294C48D89DD4B43912EAC489BCE200E /* StringValidator.swift in Sources */,
+				C983255122521D9900303FDF /* BaseApiBuilder.swift in Sources */,
 				F2DB0B461B5BDDF238C72A6D2D1D102F /* SWActionSheet.m in Sources */,
 				9292D6C3920082D1991180091AD58776 /* SwiftyImage.swift in Sources */,
 				2DB926634366CF1BD2B100E7FCDB36F6 /* Tableview + Reusablel.swift in Sources */,
@@ -6310,6 +6332,7 @@
 				C7730D40D3B3DCCED9EB35DDD98A4198 /* UIImageView + Activity indicator.swift in Sources */,
 				2F1B2369A85591CE6A7B5816A70F42E3 /* UIKitSwizzling.swift in Sources */,
 				4E3E3F6445BA25449AFC74CD29A5381B /* UILabel + format part of the text.swift in Sources */,
+				C983254F22521D5E00303FDF /* BaseConnectorConfigurations.swift in Sources */,
 				B1FECD8D3E835874E841A47E23A96D5F /* UIStackView + Remove subviews.swift in Sources */,
 				F247CBC74086AAF5CAA251EACB67B513 /* UITableViewCell + Seprator.swift in Sources */,
 				B5DC4000BFECA7F530D7617CF665782A /* UITextField + Connect next field.swift in Sources */,
@@ -6317,6 +6340,7 @@
 				666129F539B35099676C13A88A65E260 /* UITextField + PasswordIcon.swift in Sources */,
 				881DD4066AD23A917EB79E796D274669 /* UIView + Border.swift in Sources */,
 				060FA4DBB352439D7633C9D67FAADBFA /* UIView + hairlineImageView.swift in Sources */,
+				C983255522521F2E00303FDF /* Decodable + Camel case.swift in Sources */,
 				86763233ABC91C599EA2C71FAA25473B /* UIView + Loadable Nib.swift in Sources */,
 				1ECC465163DB33AE1642B727BCE91911 /* UIView + Rounded corner radius.swift in Sources */,
 				02B99BBC5ADC3ACA85439EBB11ED98F1 /* UIView + Toast.swift in Sources */,
