@@ -27,7 +27,7 @@ class MainViewController:
         super.initCollectionViewAdapterConfiguraton(collectionView: collectionView, delegate: self)
     }
     
-    func configureCollectionViewCell(collectionView: UICollectionView, cellForRowAt indexPath: IndexPath) -> UICollectionViewCell {
+    func configureCollectionViewCell(collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : MainViewCell = self.initCell(indexPath: indexPath)
         return cell
     }

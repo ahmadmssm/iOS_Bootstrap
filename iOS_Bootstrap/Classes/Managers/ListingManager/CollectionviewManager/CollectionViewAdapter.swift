@@ -192,8 +192,9 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if (mDelegate?.sizeForItemAtIndexPath?(collectionView: collectionView, collectionViewLayout: collectionViewLayout)) != nil {
-            return(mDelegate?.sizeForItemAtIndexPath?(collectionView: collectionView, collectionViewLayout: collectionViewLayout))! }
+        if (mDelegate?.collectionView?(collectionView, layout: collectionViewLayout, sizeForItemAt: indexPath)) != nil {
+            return (mDelegate?.collectionView?(collectionView, layout: collectionViewLayout, sizeForItemAt: indexPath))!
+        }
         return configurePaddingForSquareSizedCells(padding: 25)
     }
     // Configure spacing between row items
@@ -206,7 +207,7 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
     }
     // Configure cell
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return (mDelegate?.configureCollectionViewCell(collectionView: collectionView, cellForRowAt: indexPath))!
+        return (mDelegate?.configureCollectionViewCell(collectionView: collectionView, cellForItemAt: indexPath))!
     }
     // item did selected at index
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -228,6 +229,14 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
     
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         return mDelegate?.collectionViewAdapter?(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath) ?? UICollectionReusableView()
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return (mDelegate?.collectionView?(collectionView, layout: collectionViewLayout, referenceSizeForHeaderInSection: section)) ?? CGSize(width: 0, height: 0)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return (mDelegate?.collectionView?(collectionView, layout: collectionViewLayout, referenceSizeForFooterInSection: section)) ?? CGSize(width: 0, height: 0)
     }
     
     // Pagination (Load more)
