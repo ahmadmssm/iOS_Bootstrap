@@ -22,4 +22,6 @@ open class BaseAPI: GenericAPIs {
         }
     }
     open var sampleData: Data { return Data() }
+    
+    public init() {}
 }
