@@ -37,6 +37,13 @@ open class BaseAPIsConnector<T : GenericAPIs> : GenericConnector {
     open func flatRequest(api : T) -> Single <Response> {
         return apisProvider.rx.request(api)
     }
+  
+    open func flatRequestWithFilterError(api : T) -> Single <Response> {
+        return
+            apisProvider.rx
+                .request(api)
+                .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
+    }
     
     open func requestTokenRefresh(api : T) -> Single <Response> {
         return flatRequest(api: api)
