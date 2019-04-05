@@ -18,9 +18,9 @@ public extension UIImageView {
         }
     }
     
-    public func showActivityIndicator() { activityIndicator.startAnimating() }
+    func showActivityIndicator() { activityIndicator.startAnimating() }
     
-    public func dismissActivityIndicator() {
+    func dismissActivityIndicator() {
         activityIndicator.stopAnimating()
         activityIndicator.removeFromSuperview()
     }

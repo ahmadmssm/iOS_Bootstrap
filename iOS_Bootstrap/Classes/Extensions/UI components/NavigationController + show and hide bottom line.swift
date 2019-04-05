@@ -6,7 +6,7 @@
 //
 
 public extension UINavigationBar {
-    public func hideBottomLine() { self.hairlineImageView?.isHidden = true }
-    public func showBottomLine() { self.hairlineImageView?.isHidden = false }
+    func hideBottomLine() { self.hairlineImageView?.isHidden = true }
+    func showBottomLine() { self.hairlineImageView?.isHidden = false }
 }
 

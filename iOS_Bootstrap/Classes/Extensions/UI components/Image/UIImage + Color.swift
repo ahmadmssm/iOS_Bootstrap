@@ -6,7 +6,7 @@
 //
 
 public extension UIImage {
-    public func withBackgroundColor(_ color: UIColor) -> UIImage? {
+    func withBackgroundColor(_ color: UIColor) -> UIImage? {
         var image: UIImage?
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         let imageRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
@@ -21,7 +21,7 @@ public extension UIImage {
         return nil
     }
     
-    public func withColor(_ color: UIColor) -> UIImage {
+    func withColor(_ color: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         color.setFill()
         let context = UIGraphicsGetCurrentContext()

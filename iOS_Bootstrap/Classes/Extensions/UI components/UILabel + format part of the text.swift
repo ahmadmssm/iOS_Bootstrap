@@ -8,9 +8,8 @@
 
 import UIKit
 
-extension UILabel {
-    
-    public func formatText (fullText : String, foregroundColor : UIColor, textToChange : String ) {
+public extension UILabel {
+    func formatText (fullText : String, foregroundColor : UIColor, textToChange : String ) {
         let strNumber: NSString = fullText as NSString
         let range = (strNumber).range(of: textToChange)
         let attribute = NSMutableAttributedString.init(string: fullText)

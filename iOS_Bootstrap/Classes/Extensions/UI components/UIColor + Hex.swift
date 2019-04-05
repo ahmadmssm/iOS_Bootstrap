@@ -6,8 +6,8 @@
 //
 //  Ref : https://stackoverflow.com/questions/24263007/how-to-use-hex-colour-values
 
-extension UIColor {
-    public convenience init(red: Int, green: Int, blue: Int) {
+public extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
         assert(green >= 0 && green <= 255, "Invalid green component")
         assert(blue >= 0 && blue <= 255, "Invalid blue component")
@@ -15,7 +15,7 @@ extension UIColor {
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
     }
     
-    public convenience init(fromHex: Int) {
+    convenience init(fromHex: Int) {
         self.init(
             red: (fromHex >> 16) & 0xFF,
             green: (fromHex >> 8) & 0xFF,
@@ -24,7 +24,7 @@ extension UIColor {
     }
     
     //
-    public static func color(fromHexString: String, alpha:CGFloat? = 1.0) -> UIColor {
+    static func color(fromHexString: String, alpha:CGFloat? = 1.0) -> UIColor {
         // Convert hex string to an integer
         let hexint = Int(colorInteger(fromHexString: fromHexString))
         let red = CGFloat((hexint & 0xff0000) >> 16) / 255.0

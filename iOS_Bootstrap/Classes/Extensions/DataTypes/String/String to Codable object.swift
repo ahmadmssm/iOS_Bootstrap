@@ -6,7 +6,7 @@
 //
 
 public extension String {
-    public func toObjectOfType<T : Codable>(Object : T.Type) -> T {
+    func toObjectOfType<T : Codable>(Object : T.Type) -> T {
         let data = self.data(using: .utf8)!
         var obj : T? = nil
         do { obj = try JSONDecoder().decode(Object.self, from: data) }

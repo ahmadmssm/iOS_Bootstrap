@@ -6,8 +6,8 @@
 //  Copyright © 2018 Robustastudio. All rights reserved.
 //
 
-extension String {
-    public func toDictionary() -> [String: Any] {
+public extension String {
+    func toDictionary() -> [String: Any] {
 //        if let data = self.data(using: .utf8) {
 //            do {
 //                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]

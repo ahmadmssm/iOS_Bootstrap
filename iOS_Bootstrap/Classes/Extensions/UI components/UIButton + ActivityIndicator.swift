@@ -13,8 +13,7 @@ private var originalButtonText: String?
 private var activityIndicator: UIActivityIndicatorView!
 
 public extension UIButton {
-    
-    public func showLoading() {
+    func showLoading() {
         originalButtonText = self.titleLabel?.text
         self.setTitle("", for: .normal)
         
@@ -24,7 +23,7 @@ public extension UIButton {
         showSpinning()
     }
     
-    public func hideLoading() {
+    func hideLoading() {
         self.setTitle(originalButtonText, for: .normal)
         activityIndicator.stopAnimating()
     }

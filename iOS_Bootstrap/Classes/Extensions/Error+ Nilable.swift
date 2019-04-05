@@ -8,7 +8,7 @@
 import Foundation
 
 public extension Optional where Wrapped == Error {
-    public func handleNilError(errorMessage: String, errorCode: Int? = 2000) -> Error {
+    func handleNilError(errorMessage: String, errorCode: Int? = 2000) -> Error {
         return self ?? NSError(domain: errorMessage, code: errorCode!, userInfo: nil)
     }
 }

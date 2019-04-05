@@ -5,10 +5,6 @@
 //  Created by Ahmad Mahmoud on 3/5/19.
 //
 
-public protocol Clonable {
-    init(object: Self)
-}
+public protocol Clonable { init(object: Self) }
 
-public extension Clonable {
-    public func clone() -> Self { return Self.init(object: self) }
-}
+public extension Clonable { func clone() -> Self { return Self.init(object: self) } }

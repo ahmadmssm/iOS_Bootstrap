@@ -6,12 +6,10 @@
 //
 
 public extension Double {
-    
     func toString() -> String { return String(format:"%f", self) }
     
     func toString(withDecimalPoints : Int) -> String {
         let format: String = "%." + String (withDecimalPoints) + "f"
         return String(format: format, self)
     }
-    
 }

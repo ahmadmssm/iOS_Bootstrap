@@ -7,7 +7,7 @@
 //
 
 public extension Encodable {
-    public func toStringForm() -> String {
+    func toStringForm() -> String {
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         let data = try! encoder.encode(self)

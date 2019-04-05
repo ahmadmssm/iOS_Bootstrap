@@ -18,29 +18,30 @@ public enum BorderAlignment {
 
 public extension UIImage {
 
-  public typealias ContextBlock = (CGContext) -> Void
+    typealias ContextBlock = (CGContext) -> Void
 
-  public class func with(width: CGFloat, height: CGFloat, block: ContextBlock) -> UIImage {
-    return self.with(size: CGSize(width: width, height: height), block: block)
-  }
-
-  public class func with(size: CGSize, opaque: Bool = false, scale: CGFloat = 0, block: ContextBlock) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(size, opaque, scale)
-    let context = UIGraphicsGetCurrentContext()!
-    block(context)
-    let image = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return image ?? UIImage()
-  }
-
-  public func with(_ contextBlock: (CGContext) -> Void) -> UIImage! {
-    return UIImage.with(size: self.size, opaque: false, scale: self.scale) { context in
-      let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
-      self.draw(in: rect)
-      contextBlock(context)
+    class func with(width: CGFloat,
+                    height: CGFloat,
+                    block: ContextBlock) -> UIImage {
+        return self.with(size: CGSize(width: width, height: height), block: block)
     }
+    
+    class func with(size: CGSize, opaque: Bool = false, scale: CGFloat = 0, block: ContextBlock) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, opaque, scale)
+        let context = UIGraphicsGetCurrentContext()!
+        block(context)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image ?? UIImage()
   }
 
+    func with(_ contextBlock: (CGContext) -> Void) -> UIImage! {
+        return UIImage.with(size: self.size, opaque: false, scale: self.scale) { context in
+            let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
+            self.draw(in: rect)
+            contextBlock(context)
+        }
+  }
 }
 
 
@@ -67,21 +68,20 @@ public func + (lhs: UIImage, rhs: UIImage) -> UIImage {
 //MARK: - Image Drawing
 
 public extension UIImage {
+    class func size(width: CGFloat, height: CGFloat) -> ImageDrawer {
+        return self.size(CGSize(width: width, height: height))
+    }
 
-  public class func size(width: CGFloat, height: CGFloat) -> ImageDrawer {
-    return self.size(CGSize(width: width, height: height))
-  }
+    class func size(_ size: CGSize) -> ImageDrawer {
+        let drawer = ImageDrawer()
+        drawer.size = .fixed(size)
+        return drawer
+    }
 
-  public class func size(_ size: CGSize) -> ImageDrawer {
-    let drawer = ImageDrawer()
-    drawer.size = .fixed(size)
-    return drawer
-  }
-
-  public class func resizable() -> ImageDrawer {
-    let drawer = ImageDrawer()
-    drawer.size = .resizable
-    return drawer
+    class func resizable() -> ImageDrawer {
+        let drawer = ImageDrawer()
+        drawer.size = .resizable
+        return drawer
   }
 }
 

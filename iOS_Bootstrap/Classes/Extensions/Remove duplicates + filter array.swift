@@ -10,8 +10,7 @@
 import Foundation
 
 public extension Array where Element:Equatable {
-    
-    public func removeDuplicates() -> [Element] {
+    func removeDuplicates() -> [Element] {
         var result = [Element]()
         for value in self {
             if result.contains(value) == false {
@@ -21,7 +20,7 @@ public extension Array where Element:Equatable {
         return result
     }
     
-    public func filterDuplicates( includeElement: (_ lhs:Element, _ rhs:Element) -> Bool) -> [Element]{
+    func filterDuplicates( includeElement: (_ lhs:Element, _ rhs:Element) -> Bool) -> [Element]{
         var results = [Element]()
         forEach { (element) in
             let existingElements = results.filter {

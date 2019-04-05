@@ -5,8 +5,8 @@
 //  Created by Ahmad Mahmoud on 11/18/18.
 //
 
-extension UIImage {
-    public static func getGradientImageFrom(gradientLayer: CAGradientLayer) -> UIImage? {
+public extension UIImage {
+    static func getGradientImageFrom(gradientLayer: CAGradientLayer) -> UIImage? {
         var gradientImage:UIImage?
         UIGraphicsBeginImageContext(gradientLayer.frame.size)
         if let context = UIGraphicsGetCurrentContext() {

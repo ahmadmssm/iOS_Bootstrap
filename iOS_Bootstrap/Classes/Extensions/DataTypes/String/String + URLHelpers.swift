@@ -9,10 +9,10 @@
 import Foundation
 
 public extension String {
-    public var escapedURL: String {
+    var escapedURL: String {
         return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
     }
-    public var utf8Encoded: Data {
+    var utf8Encoded: Data {
         return data(using: .utf8)!
     }
 }

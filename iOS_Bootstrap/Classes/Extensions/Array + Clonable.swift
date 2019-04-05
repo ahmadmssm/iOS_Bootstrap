@@ -8,7 +8,7 @@
 import Foundation
 
 public extension Array where Element: Clonable {
-    public func clone() -> Array {
+    func clone() -> Array {
         var copiedArray = Array<Element>()
         for element in self {
             copiedArray.append(element.clone())

@@ -8,6 +8,6 @@
 import RxSwift
 
 public extension Decodable {
-    public func toObservable() -> Observable<Self> { return Observable.just(self) }
-    public func toSingle() -> Single<Self> { return Single.just(self) }
+    func toObservable() -> Observable<Self> { return Observable.just(self) }
+    func toSingle() -> Single<Self> { return Single.just(self) }
 }

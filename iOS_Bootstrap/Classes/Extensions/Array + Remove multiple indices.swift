@@ -6,7 +6,7 @@
 //
 
 public extension Array {
-    public mutating func remove(at indexs: [Int]) {
+    mutating func remove(at indexs: [Int]) {
         guard !isEmpty else { return }
         let newIndexs = Set(indexs).sorted(by: >)
         newIndexs.forEach {

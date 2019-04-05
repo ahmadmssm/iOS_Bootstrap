@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-public extension Data { public var uiImage: UIImage? { return UIImage(data: self) } }
+public extension Data { var uiImage: UIImage? { return UIImage(data: self) } }
 
 public extension UIImage {
     // QUALITY min = 0 / max = 1

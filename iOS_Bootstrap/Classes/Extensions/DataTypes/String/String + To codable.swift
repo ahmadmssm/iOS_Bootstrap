@@ -8,7 +8,7 @@
 import Foundation
 
 public extension String {
-    public func toModel<T: Decodable>(model: T.Type) -> T? {
+    func toModel<T: Decodable>(model: T.Type) -> T? {
         guard let data = self.data(using: .utf8) else {
             fatalError("Couldn't get data from json")
         }
@@ -18,7 +18,7 @@ public extension String {
         } catch { print(error) }
         return nil
     }
-    public func toModelWithCamelCaseKeys<T: Decodable>(model: T.Type) -> T? {
+    func toModelWithCamelCaseKeys<T: Decodable>(model: T.Type) -> T? {
         guard let data = self.data(using: .utf8) else {
             fatalError("Couldn't get data from json")
         }
