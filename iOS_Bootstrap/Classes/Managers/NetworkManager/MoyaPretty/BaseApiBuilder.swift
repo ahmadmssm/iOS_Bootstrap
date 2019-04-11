@@ -21,12 +21,19 @@ open class BaseApiBuilder<T, A> where
     open class func getApiBuilder(api: A.Type) -> T {
         return self.init().getBuilder(api: A.self)
     }
+    open class func getApiBuilderWithoutLoadingIndicator(api: A.Type) -> T {
+        return self.init().getBuilder(api: A.self)
+    }
     open class func getTokenRefreshApiBuilder(api: A.Type) -> T {
         return self.init().getTokenRefreshBuilder(api: A.self)
     }
     
-    open func getBuilder(api: A.Type) -> T { return initApiProvider() }
-    open func getBuilder() -> T { return initApiProvider() }
     open func getTokenRefreshBuilder(api: A.Type) -> T { return initApiProvider() }
     open func getTokenRefreshBuilder() -> T { return initApiProvider() }
+    open func getBuilder(api: A.Type) -> T { return initApiProvider() }
+    open func getBuilder() -> T { return initApiProvider() }
+    open func getBuilderWithoutLoadingIndicator(api: A.Type) -> T {
+        return initApiProvider()
+    }
+    open func getBuilderWithoutLoadingIndicator() -> T { return initApiProvider() }
 }
