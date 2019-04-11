@@ -5,7 +5,7 @@
 //  Created by Ahmad Mahmoud on 8/3/18.
 //
 
-public enum Languages : String {
+public enum Languages: String, CaseIterable {
     case German = "de"
     case French = "fr"
     case Italian = "it"
@@ -14,4 +14,7 @@ public enum Languages : String {
     case English = "en"
     case Arabic = "ar"
     case Arabic_Egypt = "ar-EG"
+    
+    
+    public var description: String { return self.rawValue }
 }
