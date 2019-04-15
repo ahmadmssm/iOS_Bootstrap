@@ -22,7 +22,7 @@ open class BaseApiBuilder<T, A> where
         return self.init().getBuilder(api: A.self)
     }
     open class func getApiBuilderWithoutLoadingIndicator(api: A.Type) -> T {
-        return self.init().getBuilder(api: A.self)
+        return self.init().getBuilderWithoutLoadingIndicator(api: A.self)
     }
     open class func getTokenRefreshApiBuilder(api: A.Type) -> T {
         return self.init().getTokenRefreshBuilder(api: A.self)
