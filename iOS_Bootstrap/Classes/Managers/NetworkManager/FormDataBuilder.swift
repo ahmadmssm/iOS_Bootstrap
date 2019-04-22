@@ -11,6 +11,8 @@ open class FormDataBuilder {
     
     private var multipartData = [MultipartFormData]()
     
+    public init() {}
+    
     open func append(image: UIImage) -> FormDataBuilder {
         multipartData.append(Moya.MultipartFormData(provider: MultipartFormData.FormDataProvider.data(image.png!), name: "image", fileName: "image.png", mimeType: "image/png"))
         return self
