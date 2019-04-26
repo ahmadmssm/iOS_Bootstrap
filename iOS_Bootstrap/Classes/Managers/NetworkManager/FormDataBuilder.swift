@@ -49,6 +49,12 @@ open class FormDataBuilder {
         return self
     }
     
+    open func append(boolean: Bool, with name: String) -> FormDataBuilder {
+        let booleanToInt: Int = boolean ? 1 : 0
+        self.append(integer: booleanToInt, with: name)
+        return self
+    }
+    
     open func append(data: Data, with name: String) -> FormDataBuilder {
         let formData = MultipartFormData(provider: .data(data), name: name)
         multipartData.append(formData)
