@@ -27,14 +27,21 @@ open class BaseNavigator : NavigationCoordinator, ContextService {
             }, completion: nil)
         }
     }
-    
-    open class func push(viewController: UIViewController) {
+    open class func push(viewController: UIViewController,
+                         withAnimation: Bool? = true) {
         getContext()
             .navigationController?
-            .pushViewController(viewController, animated: true)
+            .pushViewController(viewController, animated: withAnimation!)
     }
-    
-    open class func present(viewController: UIViewController) {
-        getContext().present(viewController, animated: true, completion: nil)
+    open class func present(viewController: UIViewController,
+                            withAnimation: Bool? = true) {
+        getContext()
+            .present(viewController, animated: withAnimation!, completion: nil)
     }
+    open class func set(rootViewController viewController: UIViewController) {
+        navigationController? = UINavigationController(rootViewController:
+            viewController)
+    }
+    //
+    open class func startInitialViewController() {}
 }
