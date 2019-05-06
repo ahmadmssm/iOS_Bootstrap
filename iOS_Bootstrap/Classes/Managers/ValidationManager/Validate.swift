@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-public final class Validate {
+open class Validate {
     public static func to(_ value: String?) -> StringValidationTarget {
         return StringValidationTarget(value)
     }

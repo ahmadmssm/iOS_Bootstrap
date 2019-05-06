@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class DateShouldEqualTo: DateValidator {
+open class DateShouldEqualTo: DateValidator {
     let date: Date
 
     public init(_ date: Date) {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class DateShouldAfterThen: DateValidator {
+open class DateShouldAfterThen: DateValidator {
     let date: Date
 
     public init(_ date: Date) {

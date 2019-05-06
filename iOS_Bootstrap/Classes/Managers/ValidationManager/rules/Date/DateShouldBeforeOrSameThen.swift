@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class DateShouldBeforeOrSameThen: DateValidator {
+open class DateShouldBeforeOrSameThen: DateValidator {
     let date: Date
 
     public init(_ date: Date) {

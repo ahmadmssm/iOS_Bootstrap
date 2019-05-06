@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-public final class DateValidationTarget: ValidationTarget {
+open class DateValidationTarget: ValidationTarget {
     public typealias TargetType = Date
     public typealias ValidatorType = DateValidator
     

@@ -5,7 +5,7 @@
 //  Created by Kawoou on 06/10/2018.
 //
 
-public final class StringIsNotUnderflowThen: StringValidator {
+open class StringIsNotUnderflowThen: StringValidator {
     let minLength: Int
 
     public init(minLength: Int) {

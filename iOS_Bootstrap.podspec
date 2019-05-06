@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'iOS_Bootstrap'
-    s.version          = '1.4.5'
+    s.version          = '1.4.6'
     s.summary          = 'iOS Bootstrap library'
     
     # This description is used to generate tags and improve search results.
@@ -47,8 +47,6 @@ Pod::Spec.new do |s|
 
     # s.subspec 'Firebase' do |firebase|
     #       firebase.source_files = 'iOS_Bootstrap/Classes/Managers/PushNotificationManager/**/*'
-    #       firebase.dependency 'Firebase/Core'
-    #       firebase.dependency 'Firebase/Messaging'
     #   end
     
 end

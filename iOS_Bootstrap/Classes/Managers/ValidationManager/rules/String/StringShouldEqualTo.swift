@@ -7,13 +7,13 @@
 
 import Foundation
 
-private final class StringShouldEqualTo: StringValidator {
+open class StringShouldEqualTo: StringValidator {
     let string: String
 
     init(_ string: String) {
         self.string = string
     }
-    override func validate(_ value: String?) throws {
+    override public func validate(_ value: String?) throws {
         if (value == nil) {
             throw RxValidatorResult.nilObject
         }

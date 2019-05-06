@@ -5,7 +5,7 @@
 //  Created by Kawoou on 06/10/2018.
 //
 
-public final class NumberShouldLessThan<T: Numeric & Comparable>: NumberValidator<T> {
+open class NumberShouldLessThan<T: Numeric & Comparable>: NumberValidator<T> {
     let number: T
 
     public init(_ number: T) {

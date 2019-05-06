@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-public final class StringValidationTarget: ValidationTarget {
+open class StringValidationTarget: ValidationTarget {
     
     public typealias TargetType = String
     public typealias ValidatorType = StringValidator

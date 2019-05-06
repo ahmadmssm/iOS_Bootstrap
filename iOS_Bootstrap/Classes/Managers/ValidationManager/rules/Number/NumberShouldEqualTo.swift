@@ -5,7 +5,7 @@
 //  Created by Kawoou on 06/10/2018.
 //
 
-public final class NumberShouldEqualTo<T: Numeric>: NumberValidator<T> {
+open class NumberShouldEqualTo<T: Numeric>: NumberValidator<T> {
     let number: T
 
     public init(_ number: T) {

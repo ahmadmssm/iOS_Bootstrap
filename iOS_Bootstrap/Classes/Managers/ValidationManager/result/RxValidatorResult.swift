@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum RxValidatorResult: Error,  Equatable {
+public enum RxValidatorResult: Error, Equatable {
     case valid
     case notValid
     case notValidWithMessage(message: String)
@@ -31,7 +31,6 @@ public enum RxValidatorResult: Error,  Equatable {
     case notAfterDate
     case notEqualDate
     case nilObject
-    // case customError(error: String)
     
     public static func ==(lhs: RxValidatorResult, rhs: RxValidatorResult) -> Bool {
         switch (lhs, rhs){
@@ -73,8 +72,6 @@ public enum RxValidatorResult: Error,  Equatable {
             return true
         case (.nilObject, .nilObject):
             return true
-//        case (.customError, .customError):
-//            return true
         default:
             break
         }  

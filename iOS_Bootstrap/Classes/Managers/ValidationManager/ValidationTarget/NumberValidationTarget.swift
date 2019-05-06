@@ -8,7 +8,8 @@
 import Foundation
 import RxSwift
 
-public final class NumberValidationTarget<T: Numeric>: ValidationTarget {
+open class NumberValidationTarget<T: Numeric>: ValidationTarget {
+    
     public typealias TargetType = T
     public typealias ValidatorType = NumberValidator<T>
     

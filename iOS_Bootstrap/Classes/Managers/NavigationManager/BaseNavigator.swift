@@ -38,6 +38,11 @@ open class BaseNavigator : NavigationCoordinator, ContextService {
         getContext()
             .present(viewController, animated: withAnimation!, completion: nil)
     }
+    open class func popOver(viewController: UIViewController) {
+        viewController.modalPresentationStyle = .overCurrentContext
+        viewController.modalTransitionStyle = .crossDissolve
+        push(viewController: viewController)
+    }
     open class func set(rootViewController viewController: UIViewController) {
         navigationController? = UINavigationController(rootViewController:
             viewController)

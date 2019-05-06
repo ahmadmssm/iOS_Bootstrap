@@ -5,7 +5,7 @@
 //  Created by 유금상 on 2018. 6. 20..
 //
 
-public final class IntShouldBeEven: NumberValidator<Int> {
+open class IntShouldBeEven: NumberValidator<Int> {
     override public func validate(_ value: Int?) throws {
         if (value == nil) {
             throw RxValidatorResult.nilObject

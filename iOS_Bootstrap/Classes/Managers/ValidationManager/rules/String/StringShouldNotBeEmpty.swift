@@ -5,7 +5,7 @@
 //  Created by 유금상 on 2018. 5. 30..
 //
 
-public final class StringShouldNotBeEmpty: StringValidator {
+open class StringShouldNotBeEmpty: StringValidator {
     override public init() {}
     override public func validate(_ value: String?) throws {
         if (value == nil) {

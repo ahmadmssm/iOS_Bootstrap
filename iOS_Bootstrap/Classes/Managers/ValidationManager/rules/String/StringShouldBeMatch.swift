@@ -5,7 +5,7 @@
 //  Created by 유금상 on 2018. 6. 18..
 //
 
-public final class StringShouldBeMatch: StringValidator {
+open class StringShouldBeMatch: StringValidator {
     
     let regex: NSRegularExpression?
     

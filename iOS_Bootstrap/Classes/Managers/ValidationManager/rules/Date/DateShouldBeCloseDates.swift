@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class DateShouldBeCloseDates: DateValidator {
+open class DateShouldBeCloseDates: DateValidator {
     let date: Date
     let termOfDays: Int
 
