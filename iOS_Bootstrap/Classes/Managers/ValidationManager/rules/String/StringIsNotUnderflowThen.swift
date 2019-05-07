@@ -6,7 +6,8 @@
 //
 
 open class StringIsNotUnderflowThen: StringValidator {
-    let minLength: Int
+    
+    public let minLength: Int
 
     public init(minLength: Int) {
         self.minLength = minLength

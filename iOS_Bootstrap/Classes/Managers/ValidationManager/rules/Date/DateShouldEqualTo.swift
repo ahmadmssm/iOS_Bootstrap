@@ -8,9 +8,11 @@
 import Foundation
 
 open class DateShouldEqualTo: DateValidator {
-    let date: Date
+    
+    public let date: Date
 
     public init(_ date: Date) {
+       
         self.date = date
     }
     override public func validate(_ value: Date, granularity: Calendar.Component) throws {

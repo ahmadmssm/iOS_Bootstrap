@@ -6,7 +6,8 @@
 //
 
 open class StringIsNotOverflowThen: StringValidator {
-    let maxLength: Int
+    
+    public let maxLength: Int
     
     public init(maxLength: Int) {
         self.maxLength = maxLength

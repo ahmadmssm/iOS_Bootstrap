@@ -8,13 +8,14 @@
 import Foundation
 
 open class DateShouldBeCloseDates: DateValidator {
-    let date: Date
-    let termOfDays: Int
+    public let date: Date
+    public let termOfDays: Int
 
     public init(_ date: Date, termOfDays: Int) {
         self.date = date
         self.termOfDays = termOfDays
     }
+    
     override public func validate(_ value: Date, granularity: Calendar.Component) throws {
         let beforeDate = min(value, date)
         let afterDate = max(value, date)

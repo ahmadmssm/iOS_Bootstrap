@@ -6,11 +6,13 @@
 //
 
 open class NumberShouldLessThan<T: Numeric & Comparable>: NumberValidator<T> {
-    let number: T
+    
+    public let number: T
 
     public init(_ number: T) {
         self.number = number
     }
+    
     override public func validate(_ value: T?) throws {
         if (value == nil) {
             throw RxValidatorResult.nilObject

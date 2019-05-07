@@ -8,7 +8,7 @@
 import Foundation
 
 open class DateShouldAfterOrSameThen: DateValidator {
-    let date: Date
+    public let date: Date
 
     public init(_ date: Date) {
         self.date = date

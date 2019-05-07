@@ -10,5 +10,5 @@ import Foundation
 open class DateValidator {
     public func validate(_ value: Date, granularity: Calendar.Component = .minute) throws {}
 
-    init() {}
+    public init() {}
 }

@@ -7,7 +7,7 @@
 
 open class StringShouldBeMatch: StringValidator {
     
-    let regex: NSRegularExpression?
+    public let regex: NSRegularExpression?
     
     public init(_ regex: String) {
         self.regex = try? NSRegularExpression(pattern: regex, options: .caseInsensitive)

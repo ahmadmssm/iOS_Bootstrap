@@ -8,11 +8,13 @@
 import Foundation
 
 open class StringShouldEqualTo: StringValidator {
-    let string: String
+    
+    public let string: String
 
-    init(_ string: String) {
+    public init(_ string: String) {
         self.string = string
     }
+    
     override public func validate(_ value: String?) throws {
         if (value == nil) {
             throw RxValidatorResult.nilObject

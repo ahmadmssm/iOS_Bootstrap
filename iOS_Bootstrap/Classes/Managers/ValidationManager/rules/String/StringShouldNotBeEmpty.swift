@@ -6,7 +6,9 @@
 //
 
 open class StringShouldNotBeEmpty: StringValidator {
+   
     override public init() {}
+    
     override public func validate(_ value: String?) throws {
         if (value == nil) {
             throw RxValidatorResult.nilObject

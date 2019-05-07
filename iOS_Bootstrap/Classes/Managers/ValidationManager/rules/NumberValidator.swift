@@ -8,5 +8,5 @@
 open class NumberValidator<T: Numeric> {
     public func validate(_ value: T?) throws {}
 
-    init() {}
+    public init() {}
 }
