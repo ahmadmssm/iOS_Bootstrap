@@ -38,6 +38,10 @@ extension ValidationTarget {
         }
     }
     
+    public func asCompletable() -> Completable {
+        return self.asObservable().asSingle().asCompletable()
+    }
+    
     public func check() -> RxValidatorResult {
         if let result = self.result {
             var validationError: RxValidatorResult?
