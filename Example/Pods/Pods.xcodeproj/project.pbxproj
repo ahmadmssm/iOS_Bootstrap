@@ -480,7 +480,7 @@
 		72CB5557CC2FA2CEB0EB78AB15604816 /* SVGStylable.h in Headers */ = {isa = PBXBuildFile; fileRef = EF2034E6E677FC82D32864AF6D7F11D3 /* SVGStylable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73052ACF5FB7DFB075B461D6B2E95B88 /* SCLAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EAC1EA33850D9FC778AB54AE58DF1D7 /* SCLAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7349BBA64267440479DA2A7F8EC4A814 /* Result-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17B89967E191F7D6273FACEB0EDF137B /* Result-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		738E8F16E50D67F500E19B743747A29D /* ObjectValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54E05C6154BF7893218570174D8AC1 /* ObjectValidator.swift */; };
+		738E8F16E50D67F500E19B743747A29D /* ObjectShouldBeNotNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54E05C6154BF7893218570174D8AC1 /* ObjectShouldBeNotNil.swift */; };
 		73AB9E2A29F17B8FDF02B0C4E25FBAF4 /* BaseLiveCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DF09978822A38ED8FA254F95C2396 /* BaseLiveCollectionViewController.swift */; };
 		73E13B35B77478C4D88FA75133C1FF55 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 633B81928BD285EBD8D4E2B74595656A /* DDMultiFormatter.m */; };
 		744E0538A41FBD8AD52E63CB0A41D681 /* Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2BFC725C1603C87CA3E673A7DCCA6 /* Create.swift */; };
@@ -2477,7 +2477,7 @@
 		EEEFC2CD691863C31FE4DCBE97A686AC /* String + URLHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String + URLHelpers.swift"; sourceTree = "<group>"; };
 		EF0092EE6E9AC1AC9B6AFC983E13E71D /* DateShouldBeforeThen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateShouldBeforeThen.swift; sourceTree = "<group>"; };
 		EF2034E6E677FC82D32864AF6D7F11D3 /* SVGStylable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVGStylable.h; path = "Source/DOM classes/SVG-DOM/SVGStylable.h"; sourceTree = "<group>"; };
-		EF54E05C6154BF7893218570174D8AC1 /* ObjectValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ObjectValidator.swift; sourceTree = "<group>"; };
+		EF54E05C6154BF7893218570174D8AC1 /* ObjectShouldBeNotNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ObjectShouldBeNotNil.swift; sourceTree = "<group>"; };
 		EF62699AC434B17B01834212B8A27F28 /* UISwitch+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISwitch+Rx.swift"; path = "RxCocoa/iOS/UISwitch+Rx.swift"; sourceTree = "<group>"; };
 		EF6C41C93E2AC761D7861067E6FEDACD /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		EF73E64529EA9C89576A665B0C7B28A8 /* SCLAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = SCLAlertView/SCLAlertView.swift; sourceTree = "<group>"; };
@@ -3662,7 +3662,7 @@
 		714701CAC96F687DB43F35E9FBCFA543 /* Object */ = {
 			isa = PBXGroup;
 			children = (
-				EF54E05C6154BF7893218570174D8AC1 /* ObjectValidator.swift */,
+				EF54E05C6154BF7893218570174D8AC1 /* ObjectShouldBeNotNil.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -6293,7 +6293,7 @@
 				C5EE087772F47A9A0B1B91006A6B49D3 /* NumberShouldLessThan.swift in Sources */,
 				22D46F953D1B050CDDD4D39986F7C4BE /* NumberValidationTarget.swift in Sources */,
 				D4D798ACD30922F13D9A1EEE094DEB43 /* NumberValidator.swift in Sources */,
-				738E8F16E50D67F500E19B743747A29D /* ObjectValidator.swift in Sources */,
+				738E8F16E50D67F500E19B743747A29D /* ObjectShouldBeNotNil.swift in Sources */,
 				7BA4F2594FDE605B756C2B45F801E236 /* ObjectValidator.swift in Sources */,
 				C921ABF822452CCC00C3CCD0 /* Decodable + Rx.swift in Sources */,
 				555E7208FCFB3E07EA6D50136AF8AF63 /* Observable+Date+Extension.swift in Sources */,
