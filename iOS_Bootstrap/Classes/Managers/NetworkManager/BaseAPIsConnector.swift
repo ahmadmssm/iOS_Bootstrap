@@ -46,7 +46,7 @@ open class BaseAPIsConnector<T : GenericAPIs> : GenericConnector {
     }
     
     open func requestTokenRefresh(api : T) -> Single <Response> {
-        return flatRequest(api: api)
+        return flatRequestWithFilterError(api: api)
     }
     
     open func requestWithProgress(api : T) -> Observable<ProgressResponse> {
