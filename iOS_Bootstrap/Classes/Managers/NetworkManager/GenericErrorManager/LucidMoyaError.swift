@@ -48,6 +48,8 @@ public enum LucidMoyaError: Swift.Error, LocalizedError {
         switch self {
         case .statusCodeError(_, _,let statusCode, _, _):
             return statusCode
+        case .networkingError( _, let originalError):
+            return originalError.code
         default:
             break
         }
