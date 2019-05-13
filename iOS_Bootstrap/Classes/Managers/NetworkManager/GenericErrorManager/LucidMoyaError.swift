@@ -15,17 +15,25 @@ import Foundation
  */
 public enum LucidMoyaError: Swift.Error, LocalizedError {
     /// The user encountered a networking issue with their API request.
-    case networkingError(message: String, originalError: URLError)
+//    case networkingError(message: String, originalError: URLError)
+    case networkingError(message: String, originalError: NSError)
+
     /// The request was successful, but the status code is not acceptable as a successful response.
     case statusCodeError(message : String?, errorBody: String?, statusCode: Int, request: URLRequest?, response: URLResponse?)
     
     /// Moya specific error. Moya had an error mapping response body to JSON, Image, String, etc.
     case moyaError(message: String, originalError: MoyaError)
     
+    
     public var errorDescription: String? {
         switch self {
         case .networkingError(let message, _):
             return message // No Internet, timeout, etc. Any of the URLError options.
+
+//        case .networkingError(let message, _):
+//            return message // No Internet, timeout, etc. Any of the URLError options.
+//        case .swiftError(let message, _):
+//            return message // No Internet, timeout, etc. Any of the URLError options.
         case .statusCodeError(let message, _, _, _, _):
        // case .statusCodeError(let message, _, _, response: let response):
        // case .statusCodeError(let message, _, _, let response):

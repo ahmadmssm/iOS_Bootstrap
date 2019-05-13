@@ -22,6 +22,9 @@ class MainPresenter: BasePresenter<MainViewDelegator> {
         getViewDelegator().didGetCollectioViewItems(items: collectionViewItems)
     }
     
-    func switchAppLanguage() { langMngr.switchAppLanguage { Navigator.startInitialView() } }
-    
+    func switchAppLanguage() {
+        langMngr.switchAppLanguage {
+            Navigator.startInitialView()
+        }
+    }
 }

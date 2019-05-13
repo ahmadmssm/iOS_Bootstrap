@@ -32,6 +32,7 @@ open class BaseAPIsConnector<T : GenericAPIs> : GenericConnector {
                 .request(api)
                 .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
                 .refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate: self)
+                .processErrors()
     }
     
     open func flatRequest(api : T) -> Single <Response> {
@@ -43,6 +44,7 @@ open class BaseAPIsConnector<T : GenericAPIs> : GenericConnector {
             apisProvider.rx
                 .request(api)
                 .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
+                .processErrors()
     }
     
     open func requestTokenRefresh(api : T) -> Single <Response> {

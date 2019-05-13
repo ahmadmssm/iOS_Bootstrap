@@ -60,5 +60,4 @@ public protocol LucidErrorMessageProvider {
      - Returns: Human readable string meant to show to the end user about the error.
      */
     func moyaError(_ error: MoyaError) -> String
-        
 }

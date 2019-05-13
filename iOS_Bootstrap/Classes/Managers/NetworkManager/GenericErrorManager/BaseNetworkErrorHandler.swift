@@ -23,5 +23,4 @@ open class BaseNetworkErrorHandler: LucidErrorMessageProvider {
     open func moyaError(_ error: MoyaError) -> String {
         return ""
     }
-    
 }

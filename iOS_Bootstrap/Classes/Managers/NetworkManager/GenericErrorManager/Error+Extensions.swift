@@ -15,7 +15,7 @@ public extension Swift.Error {
     }
     
     /// Take the error that Moya returned to you after performing the networking request to get a better, human readable error message `LucidMoyaResponseError`.
-    public func getLucidError(errorHandler: LucidErrorMessageProvider? = Singleton.sharedInstance.errorHandler) -> Swift.Error {
+    func getLucidError(errorHandler: LucidErrorMessageProvider? = Singleton.sharedInstance.errorHandler) -> Swift.Error {
         guard let errorHandler = errorHandler else {
             errorHandlerNotSet()
             // this code below exists only to make the compiler happy. Really, it should never run as a fatal error is thrown above but the swift compiler doesn't consider that a break.
@@ -40,27 +40,48 @@ public extension Swift.Error {
                 
                 return LucidMoyaError.moyaError(message: errorMessage, originalError: moyaError)
             case MoyaError.underlying(let error):
-                if let urlError = error as? URLError {
-                    switch urlError.code {
-                    case URLError.Code.notConnectedToInternet:
-                        let errorMessage = errorHandler.networkingError(LucidMoyaNetworkingError.notConnectedToInternet(urlError))
-                        
-                        return LucidMoyaError.networkingError(message: errorMessage, originalError: urlError)
-                    case URLError.Code.timedOut, URLError.Code.networkConnectionLost, URLError.Code.dnsLookupFailed:
-                        let errorMessage = errorHandler.networkingError(LucidMoyaNetworkingError.badNetworkRequest(urlError))
-                        
-                        return LucidMoyaError.networkingError(message: errorMessage, originalError: urlError)
-                    case URLError.Code.cancelled:
-                        let errorMessage = errorHandler.networkingError(LucidMoyaNetworkingError.cancelledRequest(urlError))
-                        
-                        return LucidMoyaError.networkingError(message: errorMessage, originalError: urlError)
-                    default:
-                        let errorMessage = errorHandler.networkingError(LucidMoyaNetworkingError.failedNetworkRequest(urlError))
-                        
-                        return LucidMoyaError.networkingError(message: errorMessage, originalError: urlError)
+//                if let urlError = error as? URLError {
+//                    switch urlError.code {
+//                    case URLError.Code.notConnectedToInternet:
+//                        let errorMessage = errorHandler.networkingError(LucidMoyaNetworkingError.notConnectedToInternet(urlError))
+//
+//                        return LucidMoyaError.networkingError(message: errorMessage, originalError: urlError)
+//                    case URLError.Code.timedOut, URLError.Code.networkConnectionLost, URLError.Code.dnsLookupFailed:
+//                        let errorMessage = errorHandler.networkingError(LucidMoyaNetworkingError.badNetworkRequest(urlError))
+//
+//                        return LucidMoyaError.networkingError(message: errorMessage, originalError: urlError)
+//                    case URLError.Code.cancelled:
+//                        let errorMessage = errorHandler.networkingError(LucidMoyaNetworkingError.cancelledRequest(urlError))
+//
+//                        return LucidMoyaError.networkingError(message: errorMessage, originalError: urlError)
+//                    default:
+//                        let errorMessage = errorHandler.networkingError(LucidMoyaNetworkingError.failedNetworkRequest(urlError))
+//
+//                        return LucidMoyaError.networkingError(message: errorMessage, originalError: urlError)
+//                    }
+//                }
+                if let nsError = error.0 as? NSError {
+                    switch nsError.code {
+                        case URLError.Code.notConnectedToInternet.rawValue:
+                            let errorMessage = errorHandler.networkingError(LucidMoyaNetworkingError.notConnectedToInternet(nsError))
+                            
+                            return LucidMoyaError.networkingError(message: errorMessage, originalError: nsError)
+                        case URLError.Code.timedOut.rawValue, URLError.Code.networkConnectionLost.rawValue, URLError.Code.dnsLookupFailed.rawValue:
+                            let errorMessage = errorHandler.networkingError(LucidMoyaNetworkingError.badNetworkRequest(nsError))
+                            
+                            return LucidMoyaError.networkingError(message: errorMessage, originalError: nsError)
+                        case URLError.Code.cancelled.rawValue:
+                            let errorMessage = errorHandler.networkingError(LucidMoyaNetworkingError.cancelledRequest(nsError))
+                            
+                            return LucidMoyaError.networkingError(message: errorMessage, originalError: nsError)
+                        default:
+                            let errorMessage = errorHandler.networkingError(LucidMoyaNetworkingError.failedNetworkRequest(nsError))
+                            
+                            return LucidMoyaError.networkingError(message: errorMessage, originalError: nsError)
                     }
-                } else {
-                    // return self so we allow any custom errors (not MoyaErrors) thrown to be passed through.
+                }
+                else {
+                   // return self so we allow any custom errors (not MoyaErrors) thrown to be passed through.
                     return self
                 }
             }
@@ -69,5 +90,4 @@ public extension Swift.Error {
             return self
         }
     }
-    
 }

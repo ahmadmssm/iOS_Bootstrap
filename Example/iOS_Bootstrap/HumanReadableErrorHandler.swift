@@ -31,11 +31,16 @@ class HumanReadableErrorHandler: BaseNetworkErrorHandler {
     
 
     override func networkingError(_ error: LucidMoyaNetworkingError) -> String {
-        return ""
+        switch error {
+        case .notConnectedToInternet(let networkError):
+            errorMessage = networkError.localizedDescription
+        default:
+            errorMessage = "Unknown error"
+        }
+        return errorMessage!.description
     }
     
     override func moyaError(_ error: MoyaError) -> String {
         return ""
     }
-    
 }

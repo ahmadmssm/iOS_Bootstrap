@@ -82,7 +82,8 @@ extension APIsConnector {
     
     func getTrendingMovies (pageNo : Int,
                             completion: @escaping completionHandler<MoviesPage>) {
-        networkRequest = request(api: .getTrendingMovies(page: pageNo)).map(MoviesPage.self)
+        networkRequest = request(api: .getTrendingMovies(page: pageNo))
+            .map(MoviesPage.self)
             .subscribe { event in
                 switch event {
                 case .success(let moviesPage):
