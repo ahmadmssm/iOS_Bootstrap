@@ -108,5 +108,4 @@ extension TrendingMoviesViewController {
             self.floatingButton.layer.add(scaleAnimation, forKey: "scale")
         }
     }
-    
 }

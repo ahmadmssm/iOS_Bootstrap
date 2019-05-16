@@ -33,8 +33,10 @@ private var redrawDelegateHandle = "redrawDelegateHandle"
 extension UIView {
 
     @objc func swizzledLayoutSubviews() {
-        self.swizzledLayoutSubviews()
-        redrawDelegate?.didLayoutSubviews()
+        DispatchQueue.main.async {
+            self.swizzledLayoutSubviews()
+            self.redrawDelegate?.didLayoutSubviews()
+        }
     }
 
     fileprivate static func setupSetNeedsLayoutSwizzling() {
@@ -51,10 +53,10 @@ extension UIView {
 }
 
 public extension Bartinter {
-    public static var isSwizzlingEnabled: Bool = true
+    static var isSwizzlingEnabled: Bool = true
 
     static var isSwizzlingPerformed: Bool = false
-    public static func swizzleIfNeeded() {
+    static func swizzleIfNeeded() {
         guard isSwizzlingEnabled && !isSwizzlingPerformed else { return }
         UIViewController.setupChildViewControllerForStatusBarStyleSwizzling()
         UIView.setupSetNeedsLayoutSwizzling()

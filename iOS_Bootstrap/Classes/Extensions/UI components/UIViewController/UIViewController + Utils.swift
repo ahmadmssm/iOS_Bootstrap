@@ -6,13 +6,13 @@
 //
 
 public extension UIViewController {
-    public final func addNavigationBarCustomBackButton(imageButton: UIButton, selector: Selector) {
+    final func addNavigationBarCustomBackButton(imageButton: UIButton, selector: Selector) {
         imageButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 0)
         imageButton.addTarget(self, action: selector, for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: imageButton)
     }
     
-    public final func addChildViewController(viewController: UIViewController, containerView: UIView) {
+    final func addChildViewController(viewController: UIViewController, containerView: UIView) {
         // Add Child View Controller
         addChildViewController(viewController)
         // Add Child View as Subview
@@ -24,7 +24,7 @@ public extension UIViewController {
         viewController.didMove(toParentViewController: self)
     }
     
-    public final func removeChildViewController(viewController: UIViewController, containerView: UIView) {
+    final func removeChildViewController(viewController: UIViewController, containerView: UIView) {
         if (containerView.subviews.contains(viewController.view)) {
             // Notify Child View Controller
             viewController.willMove(toParentViewController: nil)

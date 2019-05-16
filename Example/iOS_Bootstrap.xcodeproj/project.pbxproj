@@ -963,7 +963,6 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = AXBRK75K78;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -1363,7 +1362,7 @@
 			baseConfigurationReference = EE1D9FD411B4C49B117C5CCA /* Pods-iOS_Bootstrap_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AXBRK75K78;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOS_Bootstrap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1382,7 +1381,7 @@
 			baseConfigurationReference = 391E8062EDB4ACBF62F604AF /* Pods-iOS_Bootstrap_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AXBRK75K78;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOS_Bootstrap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1493,7 +1492,7 @@
 			baseConfigurationReference = 6EF0DDB201FCB6637EF098C8 /* Pods-iOS_Bootstrap_Example.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AXBRK75K78;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOS_Bootstrap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

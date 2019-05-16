@@ -38,7 +38,7 @@ open class KeyboardManager {
     }
     
     public static func showTextFieldPlaceholder(enable: Bool) {
-        iqKeyboardManagerInstanace.shouldShowTextFieldPlaceholder = enable
+        iqKeyboardManagerInstanace.shouldShowToolbarPlaceholder = enable
     }
     
 }

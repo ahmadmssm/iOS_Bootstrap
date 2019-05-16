@@ -38,14 +38,37 @@ open class BaseNavigator : NavigationCoordinator, ContextService {
         getContext()
             .present(viewController, animated: withAnimation!, completion: nil)
     }
-    open class func popOver(viewController: UIViewController) {
-        viewController.modalPresentationStyle = .overCurrentContext
-        viewController.modalTransitionStyle = .crossDissolve
-        push(viewController: viewController)
-    }
     open class func set(rootViewController viewController: UIViewController) {
         navigationController? = UINavigationController(rootViewController:
             viewController)
+    }
+    
+    open class  func popOver(viewController: UIViewController) {
+        viewController.modalPresentationStyle = .overCurrentContext
+        viewController.modalTransitionStyle = .crossDissolve
+        present(viewController: viewController)
+    }
+    
+    open class func popOver(currentviewController: UIViewController,
+                            destinationViewController: UIViewController) {
+        destinationViewController.modalPresentationStyle = .overCurrentContext
+        destinationViewController.modalTransitionStyle = .crossDissolve
+        currentviewController.present(destinationViewController,
+                                      animated: true, completion: nil)
+    }
+    
+    open class  func fullScreenPopOver(viewController: UIViewController) {
+        viewController.modalPresentationStyle = .overFullScreen
+        viewController.modalTransitionStyle = .crossDissolve
+        present(viewController: viewController)
+    }
+    
+    open class func fullScreenPopOver(currentviewController: UIViewController,
+                                      destinationViewController: UIViewController) {
+        currentviewController.modalPresentationStyle = .overFullScreen
+        currentviewController.modalTransitionStyle = .crossDissolve
+        currentviewController.present(destinationViewController,
+                                      animated: true, completion: nil)
     }
     //
     open class func startInitialViewController() {}

@@ -6,11 +6,11 @@
 //
 
 public extension UIViewController {
-    public func loadFromNib<T: UIViewController>(nib: T) {
+    func loadFromNib<T: UIViewController>(nib: T) {
         Bundle.main.loadNibNamed(nib.className, owner: self, options: nil)
     }
     
-    public class func loadFromNib<T: UIViewController>() -> T {
+    class func loadFromNib<T: UIViewController>() -> T {
         return T(nibName: String(describing: self), bundle: nil)
     }
 }

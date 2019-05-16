@@ -55,9 +55,19 @@ class MainViewController:
         }
     }
     
+    override func configureViewControllerSnackBar() -> TTGSnackbar {
+        let newSnackBar = TTGSnackbar(message: "",duration: .short)
+        newSnackBar.backgroundColor = UIColor.green
+        return newSnackBar
+    }
+    
     func didGetCollectioViewItems(items: [String]) {
         getCollectionViewAdapter().setDataSource(dataSource: items)
         getCollectionViewAdapter().reloadCollectionView()
     }
     
+    override func networkStatusDidChange(isConnected: Bool) {
+        super.networkStatusDidChange(isConnected: isConnected)
+        print("Status ", isConnected, "Connected through ->", getNetworkConnectionType())
+    }
 }

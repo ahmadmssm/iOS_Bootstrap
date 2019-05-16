@@ -13,8 +13,10 @@ open class DefaultConfigurations {
     
     // Helper variables
     static var snackBar: TTGSnackbar?
-    private var notificationContext: Any?
     static var coreDataModelName: String?
+    private var notificationContext: Any?
+    // Deafult is false
+    private var isInternetConnectionMonitoringEnabled: Bool = false
 
     public init() {}
 
@@ -40,20 +42,6 @@ open class DefaultConfigurations {
         return self
     }
     
-    public func configureAppWindow(window : UIWindow) -> DefaultConfigurations {
-        window.makeKeyAndVisible()
-        return self
-    }
-    
-    public func setTokenRefreshListener(_ context : Any) -> DefaultConfigurations {
-        // You must make your class (self class) conform to TokenRefreshService prototcol or the app will crash
-        NotificationCenter.default.addObserver(context, selector: #selector(TokenRefreshService.didFailedToRefreshToken), name: .expiredToken, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.getTokenFromNotification(notification:)), name: .newAuthenticationToken, object: nil)
-        //
-        notificationContext = context
-        return self
-    }
-    
     public func setNavigationBarColor (barColor : UIColor) -> DefaultConfigurations {
         UINavigationBar.appearance().barTintColor = barColor
         return self
@@ -68,24 +56,39 @@ open class DefaultConfigurations {
         UINavigationBar.appearance().titleTextAttributes = textApperance
         return self
     }
-    
-    public func configureAppWindowWithRootNavigationController(window : UIWindow, navController : UINavigationController) -> DefaultConfigurations {
-        // create a basic UIWindow and activate it
-        window.rootViewController = navController
-        window.makeKeyAndVisible()
-        return self
-    }
-    
-    public func configureAppSnackBar(snacbBar : TTGSnackbar) -> DefaultConfigurations {
-        DefaultConfigurations.snackBar = snacbBar
-        return self
-    }
    
     public func disableNotchForIphoneX() -> DefaultConfigurations {
         NotchArea.instance.spread()
         return self
     }
     
+    open func configureAppWindowWithRootNavigationController(window : UIWindow, navController : UINavigationController) -> DefaultConfigurations {
+        // create a basic UIWindow and activate it
+        window.rootViewController = navController
+        window.makeKeyAndVisible()
+        return self
+    }
+    
+    open func configureAppWindow(window : UIWindow) -> DefaultConfigurations {
+        window.makeKeyAndVisible()
+        return self
+    }
+    
+    open func setTokenRefreshListener(_ context : Any) -> DefaultConfigurations {
+        // You must make your class (self class) conform to TokenRefreshService prototcol or the app will crash
+        NotificationCenter.default.addObserver(context, selector: #selector(TokenRefreshService.didFailedToRefreshToken), name: .expiredToken, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.getTokenFromNotification(notification:)), name: .newAuthenticationToken, object: nil)
+        //
+        notificationContext = context
+        return self
+    }
+    
+    open func configureAppSnackBar(snacbBar : TTGSnackbar) -> DefaultConfigurations {
+        DefaultConfigurations.snackBar = snacbBar
+        return self
+    }
+    
+    @discardableResult
     open func setCoreDataModelName(modelName: String) -> DefaultConfigurations {
         DefaultConfigurations.coreDataModelName = modelName
         return self
@@ -114,5 +117,24 @@ open class DefaultConfigurations {
         KeyboardManager.showTextFieldPlaceholder(enable: enable)
         return self
     }
+   
+    open func enableInternetConnectionMonitoring() -> DefaultConfigurations {
+        isInternetConnectionMonitoringEnabled = true
+        InternetConnectionMonitor.sharedInstance.enable()
+        return self
+    }
     
+    
+    
+    open func startInternetConnectionMonitoring() {
+        if (isInternetConnectionMonitoringEnabled) {
+            InternetConnectionMonitor.sharedInstance.start()
+        }
+    }
+    
+    open func stopInternetConnectionMonitoring() {
+        if (isInternetConnectionMonitoringEnabled) {
+            InternetConnectionMonitor.sharedInstance.stop()
+        }
+    }
 }

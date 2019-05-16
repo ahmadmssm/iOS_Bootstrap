@@ -7,5 +7,5 @@
 //
 
 public extension UIViewController {
-    public var className : String { return String(describing: self.classForCoder) }
+    var className : String { return String(describing: self.classForCoder) }
 }

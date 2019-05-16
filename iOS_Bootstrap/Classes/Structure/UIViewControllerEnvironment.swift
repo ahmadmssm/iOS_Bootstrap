@@ -5,59 +5,108 @@
 //  Created by Ahmad Mahmoud on 10/27/18.
 //
 
-public protocol InternetConnectionService: NetworkStatusListener  {
-    var snackbar : TTGSnackbar? { set get }
-    func configureViewControllerSnackBar()
-}
-extension InternetConnectionService where Self : UIViewController {
-    
-    public func configureViewControllerSnackBar()  {
-        snackbar = TTGSnackbar(message: "",duration: .short)
-        snackbar?.backgroundColor = UIColor.blue
-    }
-    
-    public func networkStatusDidChanged(status: InternetConnectionManager.Connection) {
-        snackbar?.dismiss()
-        if (status == InternetConnectionManager.Connection.none) {
-            snackbar?.actionText = "Dismiss"
-            snackbar?.actionBlock = { snackbar in snackbar.dismiss() }
-            self.snackbar?.message = "Network became unreachable"
-            self.snackbar?.duration = .forever
-            DispatchQueue.main.async {
-                self.snackbar?.show()
-            }
-        }
-    }
-    
-    public var snackbar : TTGSnackbar? {
-        set (newSnackbar) { UIViewController.snackBar = newSnackbar }
-        get { return UIViewController.snackBar }
-    }
-    
+public protocol InternetConnectionServiceMonitoring {
+    func configureViewControllerSnackBar() -> TTGSnackbar
+    func snackBarMessage() -> String
+    func snackbarDismissText() -> String
+    func networkStatusDidChange(isConnected: Bool)
 }
 
 extension UIViewController : ViewControllerCommonFeatures {
     
-    static var snackBar : TTGSnackbar?
-    
-    public final var getDefaultSnackbar : TTGSnackbar? {
-        get { return DefaultConfigurations.snackBar }
+    private struct AssociatedKeys {
+        static var snackBar = "TTGSnackbar"
+        static var networkConnectionType = "networkConnectionType"
     }
+    
+    public final var defaultSnackbar : TTGSnackbar? {
+        get {
+            return DefaultConfigurations.snackBar
+        }
+    }
+    
+    var snackBar: TTGSnackbar? {
+        get {
+            return getAssociatedObject(object: self, associativeKey: &AssociatedKeys.snackBar)
+        }
+        set {
+            if let value = newValue {
+                setAssociatedObject(object: self, value: value, associativeKey: &AssociatedKeys.snackBar, policy: objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            }
+        }
+    }
+    
+    var networkConnectionType: Reachability.Connection? {
+        get {
+            return getAssociatedObject(object: self, associativeKey: &AssociatedKeys.networkConnectionType)
+        }
+        set {
+            if let value = newValue {
+                setAssociatedObject(object: self, value: value, associativeKey: &AssociatedKeys.networkConnectionType, policy: objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            }
+        }
+    }
+    
     
     func setupViewWillAppearEssentials() {
         setContext(context: self)
-        InternetConnectionManager.getInstance?.addListener(listener: self)
-        configureViewControllerSnackBar()
+        snackBar = configureViewControllerSnackBar()
+        //
+        let monitoringKey: String = InternetConnectionMonitor.sharedInstance.connectionMonitoringKey
+        EventBus.onMainThread(self, name: monitoringKey) { [weak self] result in
+            if let reachability = (result?.object as? Reachability) {
+                self?.networkStatusDidChange(status: reachability.connection)
+            }
+        }
     }
     
     func setupViewDidDisappearEssentials() {
-        InternetConnectionManager.getInstance?.removeListener(listener: self)
-        if (getDefaultSnackbar != nil && !(getDefaultSnackbar?.isHidden)!) {
-            getDefaultSnackbar?.dismiss()
-        }
-        else if (snackbar != nil && !(snackbar?.isHidden)!) { getDefaultSnackbar?.dismiss() }
+        snackBar?.dismiss()
+        defaultSnackbar?.dismiss()
+        //
+        let monitoringKey: String = InternetConnectionMonitor.sharedInstance.connectionMonitoringKey
+        EventBus.unregister(self, name: monitoringKey)
     }
     
+    public final func getNetworkConnectionType() -> Reachability.Connection {
+        return networkConnectionType!
+    }
+    
+    public func networkStatusDidChange(status: Reachability.Connection) {
+        networkConnectionType = status
+        if (status == .none) {
+            self.networkStatusDidChange(isConnected: false)
+        }
+        else if (status == .wifi || status == .cellular) {
+            self.networkStatusDidChange(isConnected: true)
+        }
+    }
+    
+    @objc open func networkStatusDidChange(isConnected: Bool) {
+        snackBar?.dismiss()
+        defaultSnackbar?.dismiss()
+        if (!isConnected) {
+            snackBar?.actionText = self.snackbarDismissText()
+            snackBar?.actionBlock = { snackbar in snackbar.dismiss() }
+            snackBar?.message = self.snackBarMessage()
+            snackBar?.duration = .forever
+            DispatchQueue.main.async {
+                self.snackBar?.show()
+            }
+        }
+    }
+    
+    @objc open func configureViewControllerSnackBar() -> TTGSnackbar {
+        let newSnackBar = TTGSnackbar(message: "",duration: .short)
+        newSnackBar.backgroundColor = UIColor.blue
+        return newSnackBar
+    }
+
+    @objc open func snackBarMessage() -> String {
+        return "Network became unreachable"
+    }
+
+    @objc open func snackbarDismissText() -> String { return "Dismiss" }
 }
     
     

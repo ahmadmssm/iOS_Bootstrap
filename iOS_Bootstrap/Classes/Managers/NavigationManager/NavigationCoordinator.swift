@@ -11,6 +11,6 @@ public protocol NavigationCoordinator {
 }
 
 public extension NavigationCoordinator {
-    public func startInitialView() {}
+    func startInitialView() {}
 }
 

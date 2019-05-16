@@ -7,7 +7,7 @@
 
 
 public extension UIViewController {
-    public func showActionSheet(title: String?,
+    func showActionSheet(title: String?,
                                 message: String?, actions: [(String, UIAlertActionStyle)],
                                 completion: @escaping (_ index: Int) -> Void) {
         let alertViewController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)

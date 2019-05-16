@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import iOS_Bootstrap
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var defaultConfigs: DefaultConfigurations?
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         initEssentialAppConfigurations()
