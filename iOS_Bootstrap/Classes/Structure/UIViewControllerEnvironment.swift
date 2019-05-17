@@ -25,7 +25,7 @@ extension UIViewController : ViewControllerCommonFeatures {
         }
     }
     
-    var snackBar: TTGSnackbar? {
+    public var snackBar: TTGSnackbar? {
         get {
             return getAssociatedObject(object: self, associativeKey: &AssociatedKeys.snackBar)
         }

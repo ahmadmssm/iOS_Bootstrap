@@ -5,7 +5,7 @@
 //  Created by Ahmad Mahmoud on 5/15/19.
 //
 
-extension String {
+public extension String {
     var centeredAttributedString: NSAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .justified

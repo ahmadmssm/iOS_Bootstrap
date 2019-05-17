@@ -6,7 +6,7 @@
 //
 
 extension RangeReplaceableCollection where Self: StringProtocol {
-    var removeAllNonNumeric: Self {
+    public var removeAllNonNumeric: Self {
         return filter(("0"..."9").contains)
     }
 }
