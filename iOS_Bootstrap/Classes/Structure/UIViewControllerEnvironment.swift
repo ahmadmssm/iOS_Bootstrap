@@ -6,33 +6,18 @@
 //
 
 public protocol InternetConnectionServiceMonitoring {
-    func configureViewControllerSnackBar() -> TTGSnackbar
-    func snackBarMessage() -> String
-    func snackbarDismissText() -> String
     func networkStatusDidChange(isConnected: Bool)
 }
 
 extension UIViewController : ViewControllerCommonFeatures {
     
     private struct AssociatedKeys {
-        static var snackBar = "TTGSnackbar"
         static var networkConnectionType = "networkConnectionType"
     }
     
     public final var defaultSnackbar : TTGSnackbar? {
         get {
             return DefaultConfigurations.snackBar
-        }
-    }
-    
-    public var snackBar: TTGSnackbar? {
-        get {
-            return getAssociatedObject(object: self, associativeKey: &AssociatedKeys.snackBar)
-        }
-        set {
-            if let value = newValue {
-                setAssociatedObject(object: self, value: value, associativeKey: &AssociatedKeys.snackBar, policy: objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            }
         }
     }
     
@@ -50,7 +35,6 @@ extension UIViewController : ViewControllerCommonFeatures {
     
     func setupViewWillAppearEssentials() {
         setContext(context: self)
-        snackBar = configureViewControllerSnackBar()
         //
         let monitoringKey: String = InternetConnectionMonitor.sharedInstance.connectionMonitoringKey
         EventBus.onMainThread(self, name: monitoringKey) { [weak self] result in
@@ -61,7 +45,6 @@ extension UIViewController : ViewControllerCommonFeatures {
     }
     
     func setupViewDidDisappearEssentials() {
-        snackBar?.dismiss()
         defaultSnackbar?.dismiss()
         //
         let monitoringKey: String = InternetConnectionMonitor.sharedInstance.connectionMonitoringKey
@@ -83,30 +66,8 @@ extension UIViewController : ViewControllerCommonFeatures {
     }
     
     @objc open func networkStatusDidChange(isConnected: Bool) {
-        snackBar?.dismiss()
         defaultSnackbar?.dismiss()
-        if (!isConnected) {
-            snackBar?.actionText = self.snackbarDismissText()
-            snackBar?.actionBlock = { snackbar in snackbar.dismiss() }
-            snackBar?.message = self.snackBarMessage()
-            snackBar?.duration = .forever
-            DispatchQueue.main.async {
-                self.snackBar?.show()
-            }
-        }
     }
-    
-    @objc open func configureViewControllerSnackBar() -> TTGSnackbar {
-        let newSnackBar = TTGSnackbar(message: "",duration: .short)
-        newSnackBar.backgroundColor = UIColor.blue
-        return newSnackBar
-    }
-
-    @objc open func snackBarMessage() -> String {
-        return "Network became unreachable"
-    }
-
-    @objc open func snackbarDismissText() -> String { return "Dismiss" }
 }
     
     
