@@ -22,7 +22,7 @@ class APIsTests: XCTestCase {
         let expectation = self.expectation(description: "Execute")
         let expectedResult = TestingHelpers.getbjectsFromData(type: Country.self, fileName: "Countries")! as! [Country]
         _ = networkingProvider
-            .stubedRequest(api: .getWorldCountries())
+            .stubbedRequest(api: .getWorldCountries())
             .map([Country].self)
             .subscribe({ result in
                 switch result {

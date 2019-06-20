@@ -117,5 +117,4 @@ open class BaseAPIsConnector<T : GenericAPIs> : GenericConnector {
     open func requestImageCompletable(api : T) -> Completable {
         return requestImageSingle(api: api).asCompletable()
     }
-    
 }

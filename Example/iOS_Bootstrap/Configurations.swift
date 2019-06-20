@@ -46,5 +46,4 @@ class APIsConnector: BaseAPIsConnector<APIs> {
     override func getTokenRefreshRequest() -> Single<Response> {
         return requestTokenRefresh(api: .refreshToken(token: "oldToken"))
     }
-
 }

@@ -34,12 +34,11 @@ class StubedAPIsConnector: BaseStubedAPIsConnector<APIs> {
         return plugins
     }
 
-    override func configureErrorHandle() {
+    override func configureStubbedErrorHandle() {
         GenericErrorConfigurator.defaultErrorHandler(HumanReadableErrorHandler())
     }
-
-    override func getTokenRefreshRequest() -> Single<Response> {
-        return requestTokenRefresh(api: .refreshToken(token: "oldToken"))
-    }
     
+    override func getTokenRefreshRequest() -> Single<Response> {
+        return stubbedRequestTokenRefresh(api: .refreshToken(token: "oldToken"))
+    }
 }

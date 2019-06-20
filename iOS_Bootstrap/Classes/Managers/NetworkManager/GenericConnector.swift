@@ -40,5 +40,4 @@ open class GenericConnector: NSObject, TokenRefresh, UserDefaultsService {
     public final func didFailedToRefreshToken() {
         NotificationCenter.default.post(name: .expiredToken, object: nil)
     }
-
 }

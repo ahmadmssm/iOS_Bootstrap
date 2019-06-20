@@ -31,5 +31,4 @@ open class TestingHelpers {
         let objects = try? JSONDecoder().decode([T].self, from: getDataFromJsonFileWith(name: fileName)!)
         return objects
     }
-    
 }

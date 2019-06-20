@@ -226,6 +226,7 @@
 		C95E24DE21FE5A8200621645 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		C96606432114A0D000E2D38A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C96629E121C5415200961750 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
+		C96ECCC722BB9D4100A20B4D /* BaseStubbedConnectorConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseStubbedConnectorConfigurations.swift; path = ../iOS_Bootstrap/Classes/Helpers/BaseStubbedConnectorConfigurations.swift; sourceTree = "<group>"; };
 		C970DD6A21A065FD0079B706 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		C970DD7821A07D280079B706 /* GradientNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientNavigationController.swift; sourceTree = "<group>"; };
 		C973B7BA21C436D400B63A69 /* ValidatorsExamplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorsExamplePresenter.swift; sourceTree = "<group>"; };
@@ -302,6 +303,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				C96ECCC722BB9D4100A20B4D /* BaseStubbedConnectorConfigurations.swift */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for iOS_Bootstrap */,
 				607FACE81AFB9204008FA782 /* Tests */,
