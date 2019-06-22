@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
     # s.pod_target_xcconfig = { 'SWIFT_WHOLE_MODULE_OPTIMIZATION' => 'YES',
     # 'APPLICATION_EXTENSION_API_ONLY' => 'YES', 'DEFINES_MODULE' => 'YES' }
     
-    s.dependency 'Moya/RxSwift', '~> 11.0'
+    s.dependency 'Moya/RxSwift', '~> 13.0'
     s.dependency 'IQKeyboardManagerSwift', '6.0.4'
     s.frameworks = 'Foundation'
 
