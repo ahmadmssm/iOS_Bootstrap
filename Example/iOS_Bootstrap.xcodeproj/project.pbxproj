@@ -76,6 +76,7 @@
 		C946C12D21A3681100B0F553 /* NoCancelButtonSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946C12C21A3681100B0F553 /* NoCancelButtonSearchController.swift */; };
 		C95263B121CDB76E00FEFAFF /* Results + Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95263B021CDB76E00FEFAFF /* Results + Pagination.swift */; };
 		C953267C2189BE2500105260 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953267B2189BE2500105260 /* Movie.swift */; };
+		C95ABA7322BEA18E00E06DC3 /* UIViewController + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ABA7222BEA18E00E06DC3 /* UIViewController + Alerts.swift */; };
 		C95D787B21D6580B00D25B77 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D787921D6580B00D25B77 /* CountriesViewController.swift */; };
 		C95D787C21D6580B00D25B77 /* CountriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95D787A21D6580B00D25B77 /* CountriesView.xib */; };
 		C95D787F21D6653000D25B77 /* CustomViewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D787E21D6652F00D25B77 /* CustomViewsViewController.swift */; };
@@ -213,6 +214,7 @@
 		C94D407821162C14002E7623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C95263B021CDB76E00FEFAFF /* Results + Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Results + Pagination.swift"; sourceTree = "<group>"; };
 		C953267B2189BE2500105260 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		C95ABA7222BEA18E00E06DC3 /* UIViewController + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alerts.swift"; sourceTree = "<group>"; };
 		C95D787921D6580B00D25B77 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		C95D787A21D6580B00D25B77 /* CountriesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountriesView.xib; sourceTree = "<group>"; };
 		C95D787D21D6652F00D25B77 /* CustomViewsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CustomViewsView.xib; path = /Users/ams/Desktop/Projects/Work/Bootstrap/iOS_Bootstrap/Example/iOS_Bootstrap/CustomViewsView.xib; sourceTree = "<absolute>"; };
@@ -481,6 +483,7 @@
 				C930E1DB21CD1EC500809FB2 /* SVG Image */,
 				C930E1D321CD165000809FB2 /* Realm */,
 				C90BBE4621D77E1F0065FF43 /* DateTimeHelpers.swift */,
+				C95ABA7222BEA18E00E06DC3 /* UIViewController + Alerts.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1157,6 +1160,7 @@
 				C9B18B98218C99C4004520F5 /* TrendingMoviesCell.swift in Sources */,
 				C930E1FC21CD644600809FB2 /* TrendingMoviesViewController.swift in Sources */,
 				C973B7BD21C436E500B63A69 /* ValidatorsExampleViewDelegator.swift in Sources */,
+				C95ABA7322BEA18E00E06DC3 /* UIViewController + Alerts.swift in Sources */,
 				C9CC0E59219245D300AF9D62 /* NetworkWeatherViewController.swift in Sources */,
 				C91AF9A3218CE9CF00BB5559 /* MainPresenter.swift in Sources */,
 				C99AA091218845E7001683B8 /* CountriesPresenter.swift in Sources */,

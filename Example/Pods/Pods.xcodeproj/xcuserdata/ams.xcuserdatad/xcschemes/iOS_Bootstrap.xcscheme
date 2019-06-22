@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "261FEDA0B957CF9F5D35F58A35E8E2FD"
+               BlueprintIdentifier = "A0CF4DC9D19F52C2763BD3A0E7C4F298"
+               BuildableName = "iOS_Bootstrap.framework"
                BlueprintName = "iOS_Bootstrap"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "iOS_Bootstrap.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

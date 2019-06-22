@@ -7,7 +7,6 @@
 //
 
 import iOS_Bootstrap
-import SCLAlertView
 
 class ToDoViewController:
             MyMenuItemLiveTableViewControllerV2
@@ -47,22 +46,22 @@ class ToDoViewController:
     
     override func localizeStrings() {}
     
-    private func getCreateNewToDoPopUp() -> SCLAlertView {
-        let poUpAppearance = SCLAlertView.SCLAppearance (showCloseButton: false, shouldAutoDismiss: false)
-        let popUp = SCLAlertView(appearance: poUpAppearance)
-        let toDoNameField = popUp.addTextField("Enter your ToDo name")
-        popUp.addButton("Create") {
-            if (toDoNameField.text?.isEmpty)! {
-                self.view.makeToast("To do name can not be empty!", duration: 3.0, position: .top)
-            }
-            else {
-                self.getPresenter().createNewToDo(name: toDoNameField.text!)
-                popUp.hideView()
-            }
-        }
-        popUp.addButton("close") { popUp.hideView() }
-        return popUp
-    }
+//    private func getCreateNewToDoPopUp() -> SCLAlertView {
+//        let poUpAppearance = SCLAlertView.SCLAppearance (showCloseButton: false, shouldAutoDismiss: false)
+//        let popUp = SCLAlertView(appearance: poUpAppearance)
+//        let toDoNameField = popUp.addTextField("Enter your ToDo name")
+//        popUp.addButton("Create") {
+//            if (toDoNameField.text?.isEmpty)! {
+//                self.view.makeToast("To do name can not be empty!", duration: 3.0, position: .top)
+//            }
+//            else {
+//                self.getPresenter().createNewToDo(name: toDoNameField.text!)
+//                popUp.hideView()
+//            }
+//        }
+//        popUp.addButton("close") { popUp.hideView() }
+//        return popUp
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -103,27 +102,28 @@ class ToDoViewController:
     }
     
     @IBAction func createNewListButton(_ sender: CustomButton) {
-        getCreateNewToDoPopUp().showEdit("Create new todo", subTitle: "")
+      //  getCreateNewToDoPopUp().showEdit("Create new todo", subTitle: "")
     }
     
     func newToDoDidCreated() {
-        SCLAlertView().showSuccess("", subTitle: "ToDo created successfully")
+        showSuccess(message: "ToDo created successfully")
     }
     
     func toDoDidUpdated() {
-        SCLAlertView().showSuccess("", subTitle: "ToDo updated successfully")
+        showSuccess(message: "ToDo updated successfully")
     }
     
     func toDoDidDeleted() {
-        SCLAlertView().showSuccess("", subTitle: "ToDo deleted successfully")
+        showSuccess(message: "ToDo deleted successfully")
     }
     
     func onError(error: String) {
-        SCLAlertView().showError("Error", subTitle: error)
+        showError(errorMessage: error)
     }
     
-    func removeToDoAtRow(index: Int) { getPresenter().deleteToDoByIndex(index, mode) }
+    func removeToDoAtRow(index: Int) {
+        getPresenter().deleteToDoByIndex(index, mode)
+    }
     
     deinit { EventBus.unregister(self) }
-    
 }

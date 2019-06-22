@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "189E1CC8A940CB17A3D099E44F41293F"
+               BlueprintIdentifier = "A77FE899B67781C7F87ECD16DDC0F5F5"
+               BuildableName = "Alamofire.framework"
                BlueprintName = "Alamofire"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Alamofire.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

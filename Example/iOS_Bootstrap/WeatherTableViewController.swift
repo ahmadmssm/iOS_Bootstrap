@@ -7,7 +7,6 @@
 //
 
 import iOS_Bootstrap
-import SCLAlertView
 
 class WeatherTableViewController <T, V>:
                                 BaseTableViewControllerV2<T, V, Forcast, WeatherCell>,
@@ -55,7 +54,7 @@ class WeatherTableViewController <T, V>:
     }
     
     func didFailToGetFiveDaysWeather(errorMessage: String) {
-        SCLAlertView().showError("Error", subTitle: errorMessage)
+        showError(errorMessage: errorMessage)
     }
     
 }

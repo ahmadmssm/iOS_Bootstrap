@@ -8,7 +8,6 @@
 
 import iOS_Bootstrap
 import SVGKit
-import SCLAlertView
 import RxSwift
 import RxCocoa
 
@@ -145,7 +144,7 @@ extension CountriesViewController: CountriesViewDelegator {
     }
 
     func didFailToGetCountries(error: String) {
-        SCLAlertView().showError("Error", subTitle: error)
+        showError(errorMessage: error)
     }
 
     func didFailToSaveCountriesInCoreData(error: String) {

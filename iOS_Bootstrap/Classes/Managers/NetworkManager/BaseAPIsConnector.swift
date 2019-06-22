@@ -105,13 +105,13 @@ open class BaseAPIsConnector<T : GenericAPIs> : GenericConnector {
         return requestJsonSingle(api: api).asCompletable()
     }
     //
-    open func requestImageSingle(api : T) -> Single<UIImage?> {
+    open func requestImageSingle(api : T) -> Single<UIImage> {
         return request(api: api).mapImage()
     }
-    open func requestImageObservable(api : T) -> Observable<UIImage?> {
+    open func requestImageObservable(api : T) -> Observable<UIImage> {
         return requestImageSingle(api: api).asObservable()
     }
-    open func requestImageMaybe(api : T) -> Maybe<UIImage?> {
+    open func requestImageMaybe(api : T) -> Maybe<UIImage> {
         return requestImageSingle(api: api).asMaybe()
     }
     open func requestImageCompletable(api : T) -> Completable {

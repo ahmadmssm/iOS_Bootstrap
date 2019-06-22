@@ -106,13 +106,13 @@ open class BaseStubedAPIsConnector<T : GenericAPIs> : GenericConnector {
         return stubbedRequestJsonSingle(api: api).asCompletable()
     }
     //
-    open func stubbedRrequestImageSingle(api : T) -> Single<UIImage?> {
+    open func stubbedRrequestImageSingle(api : T) -> Single<UIImage> {
         return stubbedRequest(api: api).mapImage()
     }
-    open func stubbedRequestImageObservable(api : T) -> Observable<UIImage?> {
+    open func stubbedRequestImageObservable(api : T) -> Observable<UIImage> {
         return stubbedRrequestImageSingle(api: api).asObservable()
     }
-    open func stubbedRequestImageMaybe(api : T) -> Maybe<UIImage?> {
+    open func stubbedRequestImageMaybe(api : T) -> Maybe<UIImage> {
         return stubbedRrequestImageSingle(api: api).asMaybe()
     }
     open func stubbedRequestImageCompletable(api : T) -> Completable {

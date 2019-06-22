@@ -7,7 +7,6 @@
 //
 
 import iOS_Bootstrap
-import SCLAlertView
 
 class TrendingMoviesViewController:
     MyMenuItemLiveTableViewController
@@ -16,18 +15,12 @@ class TrendingMoviesViewController:
     
     @IBOutlet private weak var tableView: UITableView!
     //
-    private var sclAlertViewAppearance : SCLAlertView.SCLAppearance!
-    private var sclAlertView : SCLAlertView!
     private var floatingButton : UIButton!
     
     override func viewDidLoad() { super.viewDidLoad() }
     
     override func initUI() {
         self.title = "Trending movies"
-        sclAlertViewAppearance =  SCLAlertView.SCLAppearance (
-            showCloseButton: false,
-            hideWhenBackgroundViewIsTapped: true
-        )
         createFloatingButton()
     }
     
@@ -59,14 +52,12 @@ class TrendingMoviesViewController:
 extension TrendingMoviesViewController: TrendingMoviesViewDelegator {
     
     func didGetMovieSummary(summary: String) {
-        sclAlertView = SCLAlertView(appearance: sclAlertViewAppearance)
-        sclAlertView.showEdit("Movie summary", subTitle: summary)
+        showWarning(warningMessage: summary)
     }
     
     func didFailToGetTrendingMovies(error: String) {
-        SCLAlertView().showError("Error", subTitle: error)
+        showError(errorMessage: error)
     }
-    
 }
 
 extension TrendingMoviesViewController {
