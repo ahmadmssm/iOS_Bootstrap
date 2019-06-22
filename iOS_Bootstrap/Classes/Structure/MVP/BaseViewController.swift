@@ -12,6 +12,14 @@ open class BaseViewController<T, V> :
                             UIViewController, BaseViewDelegator where T : BasePresenter<V> {
 
     private var presenter: T!
+    //
+    open var isPresented: Bool {
+        return presentingViewController != nil ||
+            navigationController?
+                .presentingViewController?
+                .presentedViewController === navigationController ||
+            tabBarController?.presentingViewController is UITabBarController
+    }
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +79,15 @@ open class BaseViewController<T, V> :
         self.view.makeToast(toastMessage, duration: duration, position: position)
     }
     
+    open func dismiss(withAnimation animated: Bool? = true,
+                      completion: (() -> Void)? = nil) {
+        if (isPresented) {
+            dismiss(animated: animated!, completion: completion ?? nil)
+        }
+        else {
+            navigationController?.popViewController(animated: animated!)
+        }
+    }
 }
 
 

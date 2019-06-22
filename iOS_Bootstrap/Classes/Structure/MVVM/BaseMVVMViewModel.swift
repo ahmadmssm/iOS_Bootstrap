@@ -1,21 +1,18 @@
 //
-//  BasePresenter.swift
+//  BaseMVVMViewModel.swift
 //  iOS_Bootstrap
 //
-//  Created by Ahmad Mahmoud on 6/28/18.
-//  Copyright © 2018 Ahmad Mahmoud. All rights reserved.
+//  Created by Ahmad Mahmoud on 6/22/19.
 //
 
 import RxSwift
 
-open class BasePresenter<T>: UserDefaultsService, PresenterFunctions {
+open class BaseMVVMViewModel: UserDefaultsService, ViewModelFunctions {
     
-    public final var mViewDelegator: T!
     private var disposeBag : DisposeBag!
     
-    required public init (viewDelegator : T) { self.mViewDelegator = viewDelegator }
     
-    public final func getViewDelegator() -> T { return mViewDelegator }
+    required public init () {}
     
     public final func getDisposeBag() -> DisposeBag {
         if (disposeBag == nil) { disposeBag = DisposeBag() }
@@ -23,21 +20,18 @@ open class BasePresenter<T>: UserDefaultsService, PresenterFunctions {
     }
     
     open func viewControllerDidLoaded() {}
-
+    
     open func viewControllerDidFinishedSettingUpUI() {}
-
+    
     open func viewControllerWillRefresh() {}
     
     open func viewControllerWillDisappear() {}
     
     open func viewControllerDidAppear() {}
-
+    
     open func logOut() {}
-
+    
     deinit {
-        if (mViewDelegator != nil) { mViewDelegator = nil }
         if (disposeBag != nil) { disposeBag = nil }
     }
-    
 }
-

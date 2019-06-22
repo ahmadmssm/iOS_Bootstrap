@@ -7,7 +7,7 @@
 
 open class BaseCollectionView<D>: BaseView {
     
-    private let collectionViewAdapter : CollectionViewAdapter = CollectionViewAdapter()
+    private let collectionViewAdapter: CollectionViewAdapter = CollectionViewAdapter()
     public final var getCollectionViewAdapter : CollectionViewAdapter {
         get { return collectionViewAdapter }
     }

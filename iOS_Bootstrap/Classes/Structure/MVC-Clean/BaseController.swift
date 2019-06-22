@@ -5,7 +5,7 @@
 //  Created by Ahmad Mahmoud on 7/23/18.
 //
 
-open class BaseController<V> : UserDefaultsService {
+open class BaseController<V>: UserDefaultsService {
     
     public var getView : V!
 // public let getUserDefaults : UserDefaultsManager!

@@ -20,7 +20,7 @@ class APIsTests: XCTestCase {
     
     func testGetCountries() {
         let expectation = self.expectation(description: "Execute")
-        let expectedResult = TestingHelpers.getbjectsFromData(type: Country.self, fileName: "Countries")! as! [Country]
+        let expectedResult = TestingHelpers.getObjectsFromData(type: Country.self, fileName: "Countries")! as! [Country]
         _ = networkingProvider
             .stubbedRequest(api: .getWorldCountries())
             .map([Country].self)

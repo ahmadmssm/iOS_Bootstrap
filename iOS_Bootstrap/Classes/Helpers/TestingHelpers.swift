@@ -22,12 +22,15 @@ open class TestingHelpers {
         return jsonData
     }
     
-    public static func getbjectFromData<T: Decodable>(type: T.Type, fileName: String) -> T? {
-        let object = try? JSONDecoder().decode(T.self, from: getDataFromJsonFileWith(name: fileName)!)
-        return object
+    public static func getObjectFromData<T: Decodable>(type: T.Type, fileName: String) -> T? {
+        if let jsonData =  getDataFromJsonFileWith(name: fileName) {
+            let object = try? JSONDecoder().decode(T.self, from: jsonData)
+            return object
+        }
+        return nil
     }
    
-    public static func getbjectsFromData<T: Decodable>(type: T.Type, fileName: String) -> [T?]? {
+    public static func getObjectsFromData<T: Decodable>(type: T.Type, fileName: String) -> [T?]? {
         let objects = try? JSONDecoder().decode([T].self, from: getDataFromJsonFileWith(name: fileName)!)
         return objects
     }

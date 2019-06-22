@@ -8,7 +8,7 @@
 import UIKit
 
 
-open class BaseView : UIViewController {
+open class BaseView: UIViewController {
 
     open func getController<C>() -> C? {
         return nil
