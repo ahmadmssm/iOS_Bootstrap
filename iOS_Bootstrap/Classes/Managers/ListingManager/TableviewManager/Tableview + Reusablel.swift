@@ -10,12 +10,20 @@ import UIKit
 
 // MARK: - Table View Registration and Dequeue
 extension UITableView {
-    /// Register a cell from external xib into a table instance.
+    /// Register a cell withOut xib into a table instance.
     ///
     /// - Parameter _: cell class
     public func register<T: UITableViewCell>(cellClass: T.Type) where T: ReusableCell {
-        let bundle = Bundle(for: cellClass.self)
-        let cellClassName : String = String(describing: cellClass.self)
+        self.register(cellClass.self, forCellReuseIdentifier: cellClass.dequeueNibName)
+        
+    }
+    
+    /// Register a cell from external xib into a table instance.
+    ///
+    /// - Parameter _: nib class
+    public func register<T: UITableViewCell>(nibClass: T.Type) where T: ReusableCell {
+        let bundle = Bundle(for: nibClass.self)
+        let cellClassName : String = String(describing: nibClass.self)
         let nib = UINib(nibName: cellClassName, bundle: bundle)
         self.register(nib, forCellReuseIdentifier: cellClassName)
     }

@@ -82,6 +82,7 @@ extension CountriesViewController {
         // Customise navigation bar
         navigationItem.hidesSearchBarWhenScrolling = false
     }
+    
     private func setUpSearchBar(searchController: UISearchController) {
         // Search bar
         searchBar = searchController.searchBar
@@ -99,6 +100,7 @@ extension CountriesViewController {
             }
         }
     }
+    
     private func getGradientLayerForView(view: UIView) -> CAGradientLayer {
         let gradient : CAGradientLayer = CAGradientLayer()
         gradient.frame = view.bounds
@@ -107,6 +109,7 @@ extension CountriesViewController {
         gradient.endPoint = CGPoint(x: 1, y: 0)
         return gradient
     }
+    
     private func setUpNavigationBarSearchController() -> UISearchController {
         let searchController = NoCancelButtonSearchController(searchResultsController: nil)
         // Customise search controller
@@ -117,6 +120,7 @@ extension CountriesViewController {
         // searchController.searchBar.setValue("Search", forKey: "cancelButtonText")
         return searchController
     }
+    
     private func setUpSearch(searchBar: UISearchBar) {
         searchBar.rx
             .text

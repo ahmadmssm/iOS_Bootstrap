@@ -69,9 +69,13 @@ open class TableviewAdapter: NSObject {
         self.mTableview = tableView
         self.mDelegate = delegate
         //
-        if (mNibClass != nil) { mTableview?.register(cellClass: mNibClass.self) }
+        if (mNibClass != nil) {
+            mTableview?.register(nibClass: mNibClass.self)
+        }
         else if (mNibClasses != nil) {
-            for nibClass in mNibClasses! { mTableview?.register(cellClass: nibClass.self) }
+            for nibClass in mNibClasses! {
+                mTableview?.register(nibClass: nibClass.self)
+            }
         }
         mDelegate?.registerMoreCustomCells?()
         mTableview?.dataSource = self

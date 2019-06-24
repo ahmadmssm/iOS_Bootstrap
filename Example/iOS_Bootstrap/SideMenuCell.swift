@@ -21,8 +21,12 @@ class SideMenuCell: BaseTableViewCellV2<SideMenuModel> {
     }
   
     override func initCellFrom(cellModel: SideMenuModel) {
-        itemIcon.image = cellModel.icon
-        itemLabel.text = cellModel.itemName
+        if let icon = itemIcon.image {
+            itemIcon.image = icon
+        }
+        if let itemName = cellModel.itemName {
+            itemLabel.text = itemName
+        }
     }
     
     func setData(_ data: Any?) {
