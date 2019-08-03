@@ -57,7 +57,7 @@ open class BaseNavigator : NavigationCoordinator, ContextService {
                                       animated: true, completion: nil)
     }
     
-    open class  func fullScreenPopOver(viewController: UIViewController) {
+    open class func fullScreenPopOver(viewController: UIViewController) {
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .crossDissolve
         present(viewController: viewController)

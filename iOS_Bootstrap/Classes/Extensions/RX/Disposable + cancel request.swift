@@ -9,6 +9,6 @@ import RxSwift
 
 public extension Disposable {
     func cancelRequest() {
-        if (self != nil) { self.dispose() }
+        self.dispose() 
     }
 }
