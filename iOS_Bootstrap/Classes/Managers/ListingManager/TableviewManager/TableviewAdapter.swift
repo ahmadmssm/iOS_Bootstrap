@@ -12,7 +12,7 @@ import UIKit
 open class TableviewAdapter: NSObject {
     
     private final var mTableview : UITableView!
-    private var tableViewDataSource: [Any]!
+    private var tableViewDataSource: [Any]?
     private final var mNibClass : BaseTableViewCell.Type!
     private final var mNibClasses : [BaseTableViewCell.Type]?
     public var mDelegate : BaseTableViewDelegates!
@@ -25,46 +25,53 @@ open class TableviewAdapter: NSObject {
     private var indicator : UIActivityIndicatorView?
     
     public var getDataSource: [Any] {
-        get { if (tableViewDataSource != nil) { return tableViewDataSource }; return [] }
+        get {
+            if (tableViewDataSource != nil) {
+                return tableViewDataSource ?? []
+            }
+            return []
+        }
     }
     
     open func setDataSource (dataSource : [Any]) { tableViewDataSource = dataSource }
     
     open var dataSource: [Any] {
         set { tableViewDataSource = newValue }
-        get { return tableViewDataSource }
+        get { return tableViewDataSource ?? [] }
     }
-
+    
     public final func getTableView() -> UITableView { return mTableview }
-
-    public final func clearDataSource () { self.tableViewDataSource.removeAll() }
+    
+    public final func clearDataSource () {
+        self.tableViewDataSource?.removeAll()
+    }
     
     open func configureTableWithXibCell (tableView: UITableView,
-                                    dataSource: [Any]!,
-                                    nibClass : BaseTableViewCell.Type!,
-                                    delegate : BaseTableViewDelegates) {
+                                         dataSource: [Any]!,
+                                         nibClass : BaseTableViewCell.Type!,
+                                         delegate : BaseTableViewDelegates) {
         self.mNibClass = nibClass
         configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
     }
     
     open func configureTableWithMultiXibCell (tableView: UITableView,
-                                                 dataSource: [Any]!,
-                                                 nibClasses : [BaseTableViewCell.Type]?,
-                                                 delegate : BaseTableViewDelegates) {
+                                              dataSource: [Any]!,
+                                              nibClasses : [BaseTableViewCell.Type]?,
+                                              delegate : BaseTableViewDelegates) {
         self.mNibClasses = nibClasses
         configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
     }
-
+    
     open func configureTableWithXibCell (tableView: UITableView,
-                                                 nibClass : BaseTableViewCell.Type!,
-                                                 delegate : BaseTableViewDelegates) {
+                                         nibClass : BaseTableViewCell.Type!,
+                                         delegate : BaseTableViewDelegates) {
         self.mNibClass = nibClass
         configureTable(tableView: tableView, dataSource: [], delegate: delegate)
     }
-  
+    
     open func configureTable (tableView: UITableView,
-                                       dataSource: [Any],
-                                       delegate : BaseTableViewDelegates) {
+                              dataSource: [Any],
+                              delegate : BaseTableViewDelegates) {
         setDataSource(dataSource: dataSource)
         self.mTableview = tableView
         self.mDelegate = delegate
@@ -108,32 +115,38 @@ open class TableviewAdapter: NSObject {
     // Pull to refresh action
     @objc private func pullToRefresh () { mDelegate?.pullToRefresh?() }
     
-  //  public final func reloadTable(pageItems:[Any], currentPage : Int) {
+    //  public final func reloadTable(pageItems:[Any], currentPage : Int) {
     open func reloadTable(pageItems:[Any]) {
         //
         if (self.mCurrentPage < mNumberOfPages) { hasMore = true }
         //
-        if (self.tableViewDataSource.isEmpty) { self.tableViewDataSource = pageItems }
+        if (self.tableViewDataSource?.isEmpty ?? true) {
+            self.tableViewDataSource = pageItems
+        }
         else {
-            if (tableViewDataSource.count == pageItems.count) {
-                if (!tableViewDataSource.description.isEqual(pageItems.description)) {
-                    self.tableViewDataSource.append(contentsOf: pageItems)
+            if (tableViewDataSource?.count == pageItems.count) {
+                if (!(tableViewDataSource?.description.isEqual(pageItems.description))!) {
+                    self.tableViewDataSource?.append(contentsOf: pageItems)
                 }
             }
-            else { self.tableViewDataSource.append(contentsOf: pageItems) }
+            else {
+                self.tableViewDataSource?.append(contentsOf: pageItems)
+            }
         }
         //
         mTableview?.reloadData()
         indicator?.stopAnimating()
-        mTableview.tableFooterView?.isHidden = true
+        mTableview?.tableFooterView?.isHidden = true
         self.mCurrentPage += 1
     }
     
     open func reloadSinglePageTable(items:[Any]) {
         hasMore = false
-        if (self.tableViewDataSource.isEmpty) { self.tableViewDataSource = items }
+        if (self.tableViewDataSource?.isEmpty ?? true) {
+            self.tableViewDataSource = items
+        }
         else {
-            self.tableViewDataSource.removeAll()
+            self.tableViewDataSource?.removeAll()
             self.tableViewDataSource = items
         }
         mTableview?.reloadData()
@@ -148,7 +161,7 @@ open class TableviewAdapter: NSObject {
     }
     
     open func resetTable() {
-        self.tableViewDataSource.removeAll()
+        self.tableViewDataSource?.removeAll()
         mTableview?.reloadData()
         indicator?.stopAnimating()
         mTableview.tableFooterView?.isHidden = true
@@ -162,10 +175,10 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     // Configure number of rows/sections
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (mDelegate?.configureNumberOfRowsForSection?(tableView: tableView, section: section)) != nil {
-                return (mDelegate?.configureNumberOfRowsForSection!(tableView: tableView, section: section))!
-            }
-            else if (tableViewDataSource != nil && (tableViewDataSource?.count)! > 0) {
-                return (tableViewDataSource?.count)!
+            return (mDelegate?.configureNumberOfRowsForSection!(tableView: tableView, section: section))!
+        }
+        else if (tableViewDataSource != nil && (tableViewDataSource?.count)! > 0) {
+            return (tableViewDataSource?.count)!
         }
         return 0
     }
@@ -179,11 +192,11 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     }
     // Configure height of section header if needed
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-         return (mDelegate?.configureHeightForSectionHeader?(tableView: tableView, sectionNumber: section)) ?? UITableViewAutomaticDimension
+        return (mDelegate?.configureHeightForSectionHeader?(tableView: tableView, sectionNumber: section)) ?? UITableViewAutomaticDimension
     }
     // Configure cell
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      //  indicator?.stopAnimating()
+        //  indicator?.stopAnimating()
         return (mDelegate?.configureCellForRow(tableView: mTableview, cellForRowAt: indexPath))!
     }
     // cell did selected at index
@@ -216,7 +229,7 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
                     mTableview.tableFooterView?.isHidden = false
                     //
                     hasMore = false
-                    mDelegate.loadMore?(tableView: mTableview, forPage: mCurrentPage, updatedDataSource: tableViewDataSource)
+                    mDelegate.loadMore?(tableView: mTableview, forPage: mCurrentPage, updatedDataSource: tableViewDataSource ?? [])
                 }
                 else { mDelegate?.noMoreResutlsToLoad?() }
             }
@@ -230,7 +243,7 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
             self.mTableview.tableFooterView?.isHidden = true
         }
     }
-
+    
     public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return (mDelegate?.canEditRow?()) ?? false
     }
@@ -272,7 +285,7 @@ extension TableviewAdapter : EmptyDataSetSource, EmptyDataSetDelegate {
     
     public func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         return (mDelegate?.emptyDataSetDescriptionText?())
-
+        
     }
     public func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
         return (mDelegate?.emptyDataSetImage?())
@@ -311,7 +324,7 @@ extension TableviewAdapter : EmptyDataSetSource, EmptyDataSetDelegate {
     }
     
     public func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {
-         mDelegate?.emptyDataSetButtonTapped?(didTapButton: button)
+        mDelegate?.emptyDataSetButtonTapped?(didTapButton: button)
     }
     
 }

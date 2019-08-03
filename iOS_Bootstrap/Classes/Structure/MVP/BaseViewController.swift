@@ -9,7 +9,7 @@
 import UIKit
 
 open class BaseViewController<T, V> :
-                            UIViewController, BaseViewDelegator where T : BasePresenter<V> {
+                            UIViewController, BaseViewDelegator where T: BasePresenter<V> {
 
     private var presenter: T!
     //

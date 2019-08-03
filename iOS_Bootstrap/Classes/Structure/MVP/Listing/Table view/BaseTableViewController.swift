@@ -5,19 +5,23 @@
 //  Created by Ahmad Mahmoud on 8/30/18.
 //
 
-open class BaseTableViewController <T, V, D> :
+open class BaseTableViewController <T, V, D>:
                             BaseViewController<T, V>
                             where T: BasePresenter<V> {
     
-    private let tableViewAdapter : TableviewAdapter = TableviewAdapter()
-    public var isEmptyDataSource : Bool {
+    private let tableViewAdapter: TableviewAdapter = TableviewAdapter()
+    public var isEmptyDataSource: Bool {
         return getTableViewDataSource.count == 0 ? true : false
     }
     //
     
-    public final func getTableViewAdapter() -> TableviewAdapter { return tableViewAdapter }
+    public final func getTableViewAdapter() -> TableviewAdapter {
+        return tableViewAdapter
+    }
     
-    public var getTableViewDataSource: [D] { return tableViewAdapter.getDataSource as! [D] }
+    public var getTableViewDataSource: [D] {
+        return tableViewAdapter.getDataSource as! [D]
+    }
     
     public final func setTableViewDataSource(tableViewDataSource: [D])  {
         tableViewAdapter.setDataSource(dataSource: tableViewDataSource)

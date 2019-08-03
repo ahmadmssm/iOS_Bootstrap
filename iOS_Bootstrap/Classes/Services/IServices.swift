@@ -7,7 +7,7 @@
 
 public protocol UserDefaultsService : IServicesInstances {}
 public extension UserDefaultsService {
-    public func getUserDefaults() -> UserDefaultsManager {
+    func getUserDefaults() -> UserDefaultsManager {
         return servicesInstaces.userDefaultsManagerInstance
     }
 }
