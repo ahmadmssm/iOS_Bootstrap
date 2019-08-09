@@ -15,16 +15,19 @@ class GPSWeatherPresenter : BasePresenter<WeatherViewDelegator> {
     }
     
     func getFiveDaysWeather(lat : Double, longt : Double) {
-        APIsConnector.sharedInstance.getFiveDaysWeatherForcastWithGPSprovidedLocation(lat: lat, longt: longt) { response in
-            switch response {
-            case .success(let weatherFocast):
-                self.getViewDelegator().didGetFiveDaysWeather(weatherForcast: weatherFocast!)
-                break
-            case .failure(let errorMessage):
-                self.getViewDelegator().didFailToGetFiveDaysWeather(errorMessage: errorMessage!)
-                break
+        Repo
+            .get5DaysWeatherForcastBy(lat: lat, longt: longt)
+            .subscribe(onSuccess: { [weak self] weatherForcast in
+                self?
+                    .getViewDelegator()
+                    .didGetFiveDaysWeather(weatherForcast: weatherForcast)
+
+            }) { [weak self] error in
+                self?
+                    .getViewDelegator()
+                    .didFailToGetFiveDaysWeather(errorMessage: error.localizedDescription)
+
             }
-        }
+            .disposed(by: getDisposeBag())
     }
-    
 }

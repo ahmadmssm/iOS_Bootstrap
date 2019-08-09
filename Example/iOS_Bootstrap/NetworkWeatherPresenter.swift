@@ -17,17 +17,18 @@ class NetworkWeatherPresenter : BasePresenter<WeatherViewDelegator> {
     override func viewControllerDidLoaded() { getFiveDaysWeather() }
     
     private func getFiveDaysWeather() {
-        APIsConnector.sharedInstance.getFiveDaysWeatherForcastWithNetworkProvidedLocation() { response in
-            switch response {
-            case .success(let weatherFocast):
-                self.getViewDelegator().didGetFiveDaysWeather(weatherForcast: weatherFocast!)
-                break
-            case .failure(let errorMessage):
-                self.getViewDelegator().didFailToGetFiveDaysWeather(errorMessage: errorMessage!)
-                break
+        Repo
+            .getFiveDaysWeatherForcastWithNetworkProvidedLocation()
+            .subscribe(onSuccess: { [weak self] weatherForcast in
+                self?
+                    .getViewDelegator()
+                    .didGetFiveDaysWeather(weatherForcast: weatherForcast)
+            }) { [weak self] error in
+                self?
+                    .getViewDelegator()
+                    .didFailToGetFiveDaysWeather(errorMessage: error.localizedDescription)
             }
-        }
+            .disposed(by: getDisposeBag())
     }
-    
 }
 

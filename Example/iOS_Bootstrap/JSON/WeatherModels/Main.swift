@@ -16,14 +16,14 @@ struct Main : Codable {
     let tempMin : Float?
     
     enum CodingKeys: String, CodingKey {
-        case grndLevel = "grnd_level"
-        case humidity = "humidity"
-        case pressure = "pressure"
-        case seaLevel = "sea_level"
-        case temp = "temp"
-        case tempKf = "temp_kf"
-        case tempMax = "temp_max"
-        case tempMin = "temp_min"
+        case grndLevel
+        case humidity
+        case pressure
+        case seaLevel
+        case temp
+        case tempKf
+        case tempMax
+        case tempMin
     }
     
     init(from decoder: Decoder) throws {

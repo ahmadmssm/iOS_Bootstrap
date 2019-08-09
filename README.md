@@ -74,38 +74,35 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 28. Simple depenfancy injection implementation.
 29. Refresh token plugin for moya.
 30. Refresh token RX Swift plugin.
-31. Real time listeners for token update/expire event ( Work with 29 or 30 but not alone ).
-32. Out of the box build variants ( Debug - Staging - Release ) auto handler.
+31. Real time listeners for token update/expire event ( Work with point 29 or 30 but not alone ).
+32. Out of the box app build variants/schemes ( Debug - Staging - Release ) handler.
 33. Read/Write Files/Folder managers.
 34. In app localization manager ( No need tor restart your app 😉 ).
 35. Cleaner localization syntax.
 36. UI button show/hide loading extension.
-37. Show/hode loading in any vew controller
+37. Show/hide loading in any vew controller
 38. BaseTableAdapterController,  BaseTableAdapterPresenter, BaseCollectionAdapterController,  BaseCollectionAdapterPresenter to save you somtime and code when you implement table or collection view.
 39. You can call getUserDefaults from BaseController and BasePresenter by default.
 40. Phone number validator string extension.
-41. Includes **SCLAlertView** awesone swift library.
-42. ViewPager (AKA : Segmented controller) as the one in Android 😁.
-43. Automated Contexts injection.
-44. Added UITabBar controller MVP base class.
-45. Updated the default configurations Class to use builder design pattern instead of static methods.
-46. Added a new network gneric completion handler in addition to the older ones.
-47. Cancel any newtowrk request out of the box.
-48. Base side menu controller + Base tabbar controller + base table and collection view controller, all with MVP out of the box.
-49. You can hide the notch for iPhone X series 😁.
-50. Side menu out of the box.
-51. Event bus helper class.
-52. Added Skeleton helper class to add skeleton effect to UIViews, table and collection views.
-53. Added dropdown banner component.
-54. Includes RXvalidation.
-55. Out of the box table and collection view live data.
-56. How to use + examples + documentation + references.
+41. ViewPager (AKA : Segmented controller) as the one in Android 😁.
+42. Automated Contexts injection.
+43. Added UITabBar controller MVP base class.
+44. Default app delegate configurations using friendly builder pattern methods.
+45. Cancel any newtowrk request out of the box.
+46. Base side menu controller + Base tabbar controller + base table and collection view controller, all with MVP out of the box.
+47. You can hide the notch for iPhone X series 😁.
+48. Side menu out of the box.
+49. Event bus helper class.
+50. Added Skeleton helper class to add shimmering effect to UIViews, table and collection views.
+51. Added dropdown banner component.
+52. Includes RXvalidation.
+53. Out of the box table and collection view live data.
+54. How to use + examples + documentation + references.
 
 
 ## Upcoming features
 
-1. Push notification manager.
-2. More extensions! Please if there is an extension you are constantly using, send a PR now.
+1. More extensions! Please if there is an extension you are constantly using, send a PR now.
 
 
 ## Requirements

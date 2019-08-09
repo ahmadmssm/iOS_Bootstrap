@@ -55,7 +55,7 @@ class MainViewController:
         }
     }
     
-    override func configureViewControllerSnackBar() -> TTGSnackbar {
+    func configureViewControllerSnackBar() -> TTGSnackbar {
         let newSnackBar = TTGSnackbar(message: "",duration: .short)
         newSnackBar.backgroundColor = UIColor.green
         return newSnackBar

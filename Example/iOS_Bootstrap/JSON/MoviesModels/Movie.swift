@@ -15,16 +15,18 @@ struct Movie : Codable {
     var genreIDS: [Int]?
     
     enum CodingKeys: String, CodingKey {
-        case voteCount = "vote_count"
-        case voteAverage = "vote_average"
-        case posterPath = "poster_path"
-        case originalLanguage = "original_language"
-        case originalTitle = "original_title"
-        case genreIDS = "genre_ids"
-        case backdropPath = "backdrop_path"
-        case releaseDate = "release_date"
+        case voteCount
+        case voteAverage
+        case posterPath
+        case originalLanguage
+        case originalTitle
+        case genreIds
+        case backdropPath
+        case releaseDate
         case id, video, title, popularity, adult, overview
     }
+    
+    func encode(to encoder: Encoder) throws {}
     
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -33,7 +35,7 @@ struct Movie : Codable {
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         voteAverage = try values.decodeIfPresent(Double.self, forKey: .voteAverage)
         popularity = try values.decodeIfPresent(Double.self, forKey: .popularity)
-        genreIDS = try values.decodeIfPresent([Int].self, forKey: .genreIDS)
+        genreIDS = try values.decodeIfPresent([Int].self, forKey: .genreIds)
         title = try values.decodeIfPresent(String.self, forKey: .title)
         posterPath = try values.decodeIfPresent(String.self, forKey: .posterPath)
         originalTitle = try values.decodeIfPresent(String.self, forKey: .originalLanguage)

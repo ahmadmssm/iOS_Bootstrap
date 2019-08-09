@@ -21,12 +21,12 @@ class CountriesViewController:
     private var searchBar : UISearchBar!
     //
     private var disposeBag: DisposeBag!
-    private var svgImageHelper: SVGimageHelper!
+    private var svgImageHelper: SVGImageLoader!
 
     init() {
         super.init(nibName: nil, bundle: nil)
         disposeBag = DisposeBag()
-        svgImageHelper = SVGimageHelper()
+        svgImageHelper = SVGImageLoader()
     }
     
     required init?(coder aDecoder: NSCoder) { super.init(coder: aDecoder) }

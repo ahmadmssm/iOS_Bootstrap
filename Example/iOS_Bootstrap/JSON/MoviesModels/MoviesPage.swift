@@ -14,9 +14,9 @@ class MoviesPage : BasePage {
     var totalPages : Int?
     
     enum CodingKeys: String, CodingKey {
-        case totalNumberOfItems = "total_results"
-        case totalPages = "total_pages"
-        case moviesList = "results"
+        case totalResults
+        case totalPages
+        case results
     }
     
     required init() { super.init() }
@@ -25,9 +25,9 @@ class MoviesPage : BasePage {
         try super.init(from: decoder)
         let values = try decoder.container(keyedBy: CodingKeys.self)
         //
-        totalNumberOfItems = try values.decodeIfPresent(Int.self, forKey: .totalNumberOfItems)
+        totalNumberOfItems = try values.decodeIfPresent(Int.self, forKey: .totalResults)
         totalPages = try values.decodeIfPresent(Int.self, forKey: .totalPages)
-        moviesList = try values.decodeIfPresent([Movie].self, forKey: .moviesList)
+        moviesList = try values.decodeIfPresent([Movie].self, forKey: .results)
         //
         if (totalNumberOfItems! > 0 && totalPages! > 0) {
             self.itemsPerPage = totalNumberOfItems!/totalPages!

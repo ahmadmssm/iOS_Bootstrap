@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-class Country : NSObject, Decodable {
+class Country: NSObject, Codable {
     
     var countryName : String?
     var capital : String?
@@ -36,6 +36,8 @@ class Country : NSObject, Decodable {
         case currencies = "currencies"
     }
     
+    func encode(to encoder: Encoder) throws {}
+    
     public required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         countryName = try values.decodeIfPresent(String.self, forKey: .countryName)
@@ -50,6 +52,5 @@ class Country : NSObject, Decodable {
         numericCode = try values.decodeIfPresent(String.self, forKey: .numericCode)
         currencies = try values.decodeIfPresent([Currency].self, forKey: .currencies)
     }
-    
 }
 

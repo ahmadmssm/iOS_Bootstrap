@@ -11,8 +11,8 @@ struct Wind : Codable {
     let speed : Float?
     
     enum CodingKeys: String, CodingKey {
-        case deg = "deg"
-        case speed = "speed"
+        case deg
+        case speed
     }
     
     init(from decoder: Decoder) throws {
@@ -20,5 +20,4 @@ struct Wind : Codable {
         deg = try values.decodeIfPresent(Float.self, forKey: .deg)
         speed = try values.decodeIfPresent(Float.self, forKey: .speed)
     }
-    
 }

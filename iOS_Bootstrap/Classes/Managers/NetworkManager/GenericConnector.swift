@@ -1,5 +1,5 @@
 //
-//  Connector.swift
+//  GenericRestClient.swift
 //  iOS_Bootstrap
 //
 //  Created by Ahmad Mahmoud on 6/9/18.
@@ -16,7 +16,7 @@ public typealias completionHandlerWithError<T> =
 public typealias completionHandlerWithDataOrError<T, Error> =
     (ConnectionResultWithDataOrError) -> ()
 
-open class GenericConnector: NSObject, TokenRefresh, UserDefaultsService {
+open class GenericRestClient: NSObject, TokenRefresh, UserDefaultsService {
     
     private final var tokenRefreshDelegate : TokenRefresh!
     public var networkRequest: Disposable?

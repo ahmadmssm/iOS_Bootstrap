@@ -42,6 +42,5 @@ open class BaseUser: Codable {
     public static func clearCachedUserWithKey(key : String) {
         userDefaults.deleteSavedValueWithKey(key: key)
     }
-    
 }
 

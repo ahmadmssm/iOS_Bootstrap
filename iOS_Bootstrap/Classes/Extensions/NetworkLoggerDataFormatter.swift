@@ -5,7 +5,7 @@
 //  Created by Ahmad Mahmoud on 7/26/18.
 //
 
-public extension GenericConnector {
+public extension GenericRestClient {
     func JSONResponseDataFormatter(_ data: Data) -> Data {
         do {
             let dataAsJSON = try JSONSerialization.jsonObject(with: data)

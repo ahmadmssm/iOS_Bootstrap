@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 extension UIImageView {
-    private static var svgImageHelper: SVGimageHelper = SVGimageHelper()
+    private static var svgImageHelper: SVGImageLoader = SVGImageLoader()
     func loadSVGfrom(url: String, disposeBag: DisposeBag) {
         _ = UIImageView.svgImageHelper.loadFrom(svgImageURL: url)
             .do(onSuccess: { img in self.image = img },

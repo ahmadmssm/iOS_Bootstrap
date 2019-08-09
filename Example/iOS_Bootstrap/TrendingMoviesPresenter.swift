@@ -20,30 +20,34 @@ class TrendingMoviesPresenter :
     override func viewControllerDidLoaded() { getTrendingMovies(pageNumber: 1) }
 
     func getTrendingMovies(pageNumber : Int) {
-        APIsConnector.sharedInstance.getTrendingMovies(pageNo: pageNumber) { response in
-            switch response {
-            case .success(let moviesPage):
-                // The page params setted one time only, the hadling is done by the boot strap
-                self.setPaginationParams(totalNumberOfItems: moviesPage!.totalNumberOfItems!, itemsPerPage: moviesPage!.itemsPerPage!)
+        Repo
+            .getTrendingMovies(page: pageNumber)
+            .subscribe(onSuccess: { [weak self] moviesPage in
+                // The page params are set one time only,
+                // Pagination hadling is done by the boot strap
+                self?
+                    .setPaginationParams(totalNumberOfItems: moviesPage.totalNumberOfItems!, itemsPerPage: moviesPage.itemsPerPage!)
                 var movies: [TrendingMovieCellModel] = []
-                for movie in moviesPage!.moviesList! {
+                for movie in moviesPage.moviesList! {
                     var trendingMovie = TrendingMovieCellModel()
                     //
                     trendingMovie.movieTitle = movie.title
                     trendingMovie.releaseDate = movie.releaseDate
                     trendingMovie.voting = movie.voteAverage
                     trendingMovie.originalLanguage = movie.originalLanguage
-                    if let posterURL = movie.posterPath { trendingMovie.imageURL = posterURL }
+                    if let posterURL = movie.posterPath {
+                        trendingMovie.imageURL = posterURL
+                    }
                     movies.append(trendingMovie)
                 }
-                self.moviesArray += moviesPage!.moviesList!
-                self.dataSource = movies
-                break
-            case .failure(let errorMsg):
-                self.getViewDelegator().didFailToGetTrendingMovies(error: errorMsg!)
-                break
+                self?.moviesArray += moviesPage.moviesList!
+                self?.dataSource = movies
+            }) { [weak self] error in
+                self?
+                    .getViewDelegator()
+                    .didFailToGetTrendingMovies(error: error.localizedDescription)
             }
-        }
+            .disposed(by: getDisposeBag())
     }
     
     func getSummaryForMovieAt(index: Int) {
@@ -52,5 +56,4 @@ class TrendingMoviesPresenter :
         else { summary = "Sorry, There is no summary for this movie!" }
         getViewDelegator().didGetMovieSummary(summary: summary)
     }
-    
 }

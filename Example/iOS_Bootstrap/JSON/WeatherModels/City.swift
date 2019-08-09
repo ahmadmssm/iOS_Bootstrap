@@ -10,10 +10,10 @@ struct City : Decodable {
     let name : String?
     
     enum CodingKeys: String, CodingKey {
-        case coord = "coord"
-        case country = "country"
-        case id = "id"
-        case name = "name"
+        case coord
+        case country
+        case id
+        case name
     }
     
     init(from decoder: Decoder) throws {
@@ -23,5 +23,4 @@ struct City : Decodable {
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         name = try values.decodeIfPresent(String.self, forKey: .name)
     }
-    
 }

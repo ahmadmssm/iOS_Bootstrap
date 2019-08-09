@@ -25,17 +25,18 @@ class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
     override func viewControllerDidLoaded() { getWorldCountries() }
     
     private func getWorldCountries() {
-        APIsConnector.sharedInstance.getAllCountries (completion: { response in
-            switch response {
-            case .success(let countries):
-                self.processCountriesList(countries: countries!)
-                break
-            case .failure(let errorMsg):
-                self.getViewDelegator().didFailToGetCountries(error: errorMsg!)
-                print("Error : " + errorMsg!)
-                break
-                    }
-                })
+        Repo
+            .getAllCountries()
+            .subscribe(onSuccess: { [weak self] countries in
+                self?
+                    .processCountriesList(countries: countries)
+            }) { [weak self] error in
+                self?
+                    .getViewDelegator()
+                    .didFailToGetCountries(error: error.localizedDescription)
+                print("Error : " + error.localizedDescription)
+        }
+        .disposed(by: getDisposeBag())
     }
     
     private func processCountriesList(countries: [Country]) {

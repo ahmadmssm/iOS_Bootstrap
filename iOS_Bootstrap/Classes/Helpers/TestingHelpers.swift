@@ -9,6 +9,11 @@
 import Foundation
 
 open class TestingHelpers {
+    
+    public static func isRunningTests() -> Bool {
+        return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
+    }
+    
     private static func getJsonContentAsStringFromFile(fileName: String) -> String? {
         guard let file = Bundle.main.path(forResource: fileName, ofType: "json")
             else { return nil }
