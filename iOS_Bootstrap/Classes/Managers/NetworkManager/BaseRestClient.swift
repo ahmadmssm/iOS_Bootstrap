@@ -1,5 +1,5 @@
 //
-//  BaseRestClient.swift
+//  GenericRestClient.swift
 //  Alamofire
 //
 //  Created by Ahmad Mahmoud on 11/5/18.
