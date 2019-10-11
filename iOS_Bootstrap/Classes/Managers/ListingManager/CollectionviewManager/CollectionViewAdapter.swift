@@ -241,7 +241,7 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
     
     // Pagination (Load more)
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        mDelegate?.scrollViewAdapterDidEndDragging?(scrollView, willDecelerate: decelerate)
+        mDelegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
         if (scrollView == mCollectionview) {
             if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= (scrollView.contentSize.height)) {
                 //

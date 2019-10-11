@@ -18,4 +18,3 @@ public extension NibLoadableView where Self: UIView {
         return NSStringFromClass(self).components(separatedBy: ".").last!
     }
 }
-

@@ -36,8 +36,12 @@ open class TableviewAdapter: NSObject {
     open func setDataSource (dataSource : [Any]) { tableViewDataSource = dataSource }
     
     open var dataSource: [Any] {
-        set { tableViewDataSource = newValue }
-        get { return tableViewDataSource ?? [] }
+        set {
+            tableViewDataSource = newValue
+        }
+        get {
+            return tableViewDataSource ?? []
+        }
     }
     
     public final func getTableView() -> UITableView { return mTableview }
@@ -113,12 +117,16 @@ open class TableviewAdapter: NSObject {
         mTableview?.addSubview(refreshControl)
     }
     // Pull to refresh action
-    @objc private func pullToRefresh () { mDelegate?.pullToRefresh?() }
+    @objc private func pullToRefresh () {
+        mDelegate?.pullToRefresh?()
+    }
     
     //  public final func reloadTable(pageItems:[Any], currentPage : Int) {
     open func reloadTable(pageItems:[Any]) {
         //
-        if (self.mCurrentPage < mNumberOfPages) { hasMore = true }
+        if (self.mCurrentPage < mNumberOfPages) {
+            hasMore = true
+        }
         //
         if (self.tableViewDataSource?.isEmpty ?? true) {
             self.tableViewDataSource = pageItems
@@ -154,7 +162,9 @@ open class TableviewAdapter: NSObject {
         mTableview.tableFooterView?.isHidden = true
     }
     
-    public final func reloadTable() { mTableview?.reloadData() }
+    public final func reloadTable() {
+        mTableview?.reloadData()
+    }
     
     public final func reloadTableRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation) {
         mTableview.reloadRows(at: indexPaths, with: animation)
@@ -166,7 +176,6 @@ open class TableviewAdapter: NSObject {
         indicator?.stopAnimating()
         mTableview.tableFooterView?.isHidden = true
     }
-    
 }
 
 extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
@@ -196,10 +205,9 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     }
     // Configure cell
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //  indicator?.stopAnimating()
         return (mDelegate?.configureCellForRow(tableView: mTableview, cellForRowAt: indexPath))!
     }
-    // cell did selected at index
+    // Cell did selected at index
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         mDelegate?.rowDidSelected?(tableView: tableView, indexPath: indexPath)
     }
@@ -207,7 +215,7 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return (mDelegate?.configureHeightForRowAt?(tableView: tableView, indexPath: indexPath)) ?? UITableViewAutomaticDimension
     }
-    
+    //
     public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         mDelegate?.scrollViewAdapterWillEndDragging?(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
     }
@@ -216,35 +224,41 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
         mDelegate?.scrollViewAdapterWillBeginDragging?(scrollView)
     }
     
-    // Pagination (Load more)
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        mDelegate?.scrollViewAdapterDidEndDragging?(scrollView, willDecelerate: decelerate)
-        if (scrollView == mTableview) {
-            if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= (scrollView.contentSize.height)) {
-                if (hasMore) {
-                    indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        mDelegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
+    }
+    
+    // Pagination (Load more)
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //
+        mDelegate?.tableView?(tableView, willDisplay: cell, forRowAt: indexPath)
+        //
+        let lastElement = (tableViewDataSource?.count ?? 0) - 1
+        if indexPath.row == lastElement {
+            if (hasMore) {
+                if (mDelegate?.shouldEnableBottomActivityIndicator?() ?? false) {
+                    indicator = mDelegate?.getBottomActivityIndicatorView?() ?? UIActivityIndicatorView(activityIndicatorStyle: .gray)
                     indicator?.startAnimating()
                     indicator?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: mTableview.bounds.width, height: CGFloat(45))
                     mTableview.tableFooterView = indicator
                     mTableview.tableFooterView?.isHidden = false
-                    //
-                    hasMore = false
-                    mDelegate.loadMore?(tableView: mTableview, forPage: mCurrentPage, updatedDataSource: tableViewDataSource ?? [])
                 }
-                else { mDelegate?.noMoreResutlsToLoad?() }
+                //
+                hasMore = false
+                mDelegate.loadMore?(tableView: mTableview, forPage: mCurrentPage, updatedDataSource: tableViewDataSource ?? [])
             }
             else {
-                indicator?.stopAnimating()
-                mTableview.tableFooterView?.isHidden = true
+                mDelegate?.noMoreResutlsToLoad?()
             }
-        }
-        DispatchQueue.main.async {
-            self.indicator?.stopAnimating()
-            self.mTableview.tableFooterView?.isHidden = true
         }
     }
     
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        mDelegate?.scrollViewDidScroll?(scrollView)
+    }
+    
     public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        _ = mDelegate?.tableView?(tableView, canEditRowAt: indexPath)
         return (mDelegate?.canEditRow?()) ?? false
     }
     
@@ -270,10 +284,9 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
         // Must enable canEditRow to use this feature
         return UISwipeActionsConfiguration()
     }
-    
 }
 
-extension TableviewAdapter : EmptyDataSetSource, EmptyDataSetDelegate {
+extension TableviewAdapter: EmptyDataSetSource, EmptyDataSetDelegate {
     //
     public func emptyDataSetShouldDisplay(_ scrollView: UIScrollView) -> Bool {
         return (mDelegate?.emptyDataSetShouldDisplay?()) ?? false

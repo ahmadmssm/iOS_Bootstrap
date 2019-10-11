@@ -1,6 +1,6 @@
 {
   "name": "iOS_Bootstrap",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "summary": "iOS Bootstrap library",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/ahmadmssm/iOS_Bootstrap",
@@ -13,12 +13,12 @@
   },
   "source": {
     "git": "https://github.com/ahmadmssm/iOS_Bootstrap.git",
-    "tag": "1.6.3"
+    "tag": "1.6.4"
   },
   "platforms": {
     "ios": "9.1"
   },
-  "swift_version": "4.0",
+  "swift_versions": "4.0",
   "source_files": "iOS_Bootstrap/Classes/**/*",
   "dependencies": {
     "Moya/RxSwift": [
@@ -28,5 +28,6 @@
       "6.0.4"
     ]
   },
-  "frameworks": "Foundation"
+  "frameworks": "Foundation",
+  "swift_version": "4.0"
 }

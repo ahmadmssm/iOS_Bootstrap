@@ -25,5 +25,11 @@ public protocol BaseTableViewDelegates : TableViewOptionalDelegates {
     @objc optional func editActionsRowAtIndexPath(tableView: UITableView, indexPath: IndexPath) -> [UITableViewRowAction]?
     @available(iOS 11.0, *)
     @objc optional func configureSwipAction(tableView: UITableView, indexPath: IndexPath) -> UISwipeActionsConfiguration?
+    @objc optional func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+    @objc optional func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int)
+    @objc optional func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    @objc optional func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    @objc optional func shouldEnableBottomActivityIndicator() -> Bool
+    @objc optional func getBottomActivityIndicatorView() -> UIActivityIndicatorView
 }
 

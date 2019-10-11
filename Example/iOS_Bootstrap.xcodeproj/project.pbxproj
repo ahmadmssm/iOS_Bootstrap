@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -75,8 +75,6 @@
 		C95ABA7322BEA18E00E06DC3 /* UIViewController + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ABA7222BEA18E00E06DC3 /* UIViewController + Alerts.swift */; };
 		C95D787B21D6580B00D25B77 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D787921D6580B00D25B77 /* CountriesViewController.swift */; };
 		C95D787C21D6580B00D25B77 /* CountriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95D787A21D6580B00D25B77 /* CountriesView.xib */; };
-		C95D787F21D6653000D25B77 /* CustomViewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D787E21D6652F00D25B77 /* CustomViewsViewController.swift */; };
-		C95D788021D66BD700D25B77 /* CustomViewsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95D787D21D6652F00D25B77 /* CustomViewsView.xib */; };
 		C95D788321D6718F00D25B77 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D788121D6718F00D25B77 /* MainViewController.swift */; };
 		C95D788421D6718F00D25B77 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95D788221D6718F00D25B77 /* MainView.xib */; };
 		C95D788721D6753F00D25B77 /* ValidatorsExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95D788521D6753F00D25B77 /* ValidatorsExampleViewController.swift */; };
@@ -134,6 +132,8 @@
 		C9BBA26322FD944F0052E57A /* GetLocationCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA26222FD944F0052E57A /* GetLocationCoordinates.swift */; };
 		C9BBA26522FD94770052E57A /* GetFiveDaysWeatherForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA26422FD94770052E57A /* GetFiveDaysWeatherForcast.swift */; };
 		C9BBA26C22FD998A0052E57A /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA26B22FD998A0052E57A /* Repo.swift */; };
+		C9CBBD37234ABB2B00B6CA29 /* CustomViewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CBBD35234ABB2B00B6CA29 /* CustomViewsViewController.swift */; };
+		C9CBBD38234ABB2B00B6CA29 /* CustomViewsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CBBD36234ABB2B00B6CA29 /* CustomViewsView.xib */; };
 		C9CC0E49219100F500AF9D62 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0E47219100F500AF9D62 /* WeatherCell.swift */; };
 		C9CC0E4A219100F500AF9D62 /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CC0E48219100F500AF9D62 /* WeatherCell.xib */; };
 		C9CC0E4D2191997E00AF9D62 /* AdditionalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0E4C2191997E00AF9D62 /* AdditionalData.swift */; };
@@ -227,8 +227,6 @@
 		C95ABA7222BEA18E00E06DC3 /* UIViewController + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alerts.swift"; sourceTree = "<group>"; };
 		C95D787921D6580B00D25B77 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		C95D787A21D6580B00D25B77 /* CountriesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountriesView.xib; sourceTree = "<group>"; };
-		C95D787D21D6652F00D25B77 /* CustomViewsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CustomViewsView.xib; path = /Users/ams/Desktop/Projects/Work/Bootstrap/iOS_Bootstrap/Example/iOS_Bootstrap/CustomViewsView.xib; sourceTree = "<absolute>"; };
-		C95D787E21D6652F00D25B77 /* CustomViewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomViewsViewController.swift; path = /Users/ams/Desktop/Projects/Work/Bootstrap/iOS_Bootstrap/Example/iOS_Bootstrap/CustomViewsViewController.swift; sourceTree = "<absolute>"; };
 		C95D788121D6718F00D25B77 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C95D788221D6718F00D25B77 /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		C95D788521D6753F00D25B77 /* ValidatorsExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorsExampleViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +284,8 @@
 		C9BBA26222FD944F0052E57A /* GetLocationCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationCoordinates.swift; sourceTree = "<group>"; };
 		C9BBA26422FD94770052E57A /* GetFiveDaysWeatherForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFiveDaysWeatherForcast.swift; sourceTree = "<group>"; };
 		C9BBA26B22FD998A0052E57A /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		C9CBBD35234ABB2B00B6CA29 /* CustomViewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewsViewController.swift; sourceTree = "<group>"; };
+		C9CBBD36234ABB2B00B6CA29 /* CustomViewsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomViewsView.xib; sourceTree = "<group>"; };
 		C9CC0E47219100F500AF9D62 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		C9CC0E48219100F500AF9D62 /* WeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
 		C9CC0E4C2191997E00AF9D62 /* AdditionalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalData.swift; sourceTree = "<group>"; };
@@ -614,8 +614,8 @@
 		C93E4B3E218D23EB00A62059 /* CustomViewsScene */ = {
 			isa = PBXGroup;
 			children = (
-				C95D787D21D6652F00D25B77 /* CustomViewsView.xib */,
-				C95D787E21D6652F00D25B77 /* CustomViewsViewController.swift */,
+				C9CBBD36234ABB2B00B6CA29 /* CustomViewsView.xib */,
+				C9CBBD35234ABB2B00B6CA29 /* CustomViewsViewController.swift */,
 			);
 			name = CustomViewsScene;
 			sourceTree = "<group>";
@@ -1046,7 +1046,7 @@
 				};
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "iOS_Bootstrap" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1084,10 +1084,10 @@
 				C966063E2114A04C00E2D38A /* Localizable.strings in Resources */,
 				C90BBE3121D682C00065FF43 /* SplashScreen.xib in Resources */,
 				C90BBE3D21D697B60065FF43 /* RightSideMenuView.xib in Resources */,
-				C95D788021D66BD700D25B77 /* CustomViewsView.xib in Resources */,
 				C9CC0E4A219100F500AF9D62 /* WeatherCell.xib in Resources */,
 				C99AA05A21871BBB001683B8 /* SideMenuTabBar.storyboard in Resources */,
 				C915C59D20CAC1F10029F5D9 /* CountriesCell.xib in Resources */,
+				C9CBBD38234ABB2B00B6CA29 /* CustomViewsView.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				C95D788821D6753F00D25B77 /* ValidatorsExampleView.xib in Resources */,
 				C90BBE4121D69B570065FF43 /* WeatherTableView.xib in Resources */,
@@ -1248,6 +1248,7 @@
 				C99AA08B21884526001683B8 /* TrendingMoviesViewDelegator.swift in Sources */,
 				C9BBA25D22FD93110052E57A /* GetWorldCountriesAPI.swift in Sources */,
 				C99AA08F218845C9001683B8 /* CountriesViewDelegator.swift in Sources */,
+				C9CBBD37234ABB2B00B6CA29 /* CustomViewsViewController.swift in Sources */,
 				C949830E22FDC0DC00904CD1 /* AppErrorModel.swift in Sources */,
 				C946C12D21A3681100B0F553 /* NoCancelButtonSearchController.swift in Sources */,
 				C90BBE4021D69B570065FF43 /* WeatherTableViewController.swift in Sources */,
@@ -1259,7 +1260,6 @@
 				C95D788721D6753F00D25B77 /* ValidatorsExampleViewController.swift in Sources */,
 				C973B7CE21C5216000B63A69 /* CountriesCachingManager.swift in Sources */,
 				C93E4B542190575300A62059 /* Main.swift in Sources */,
-				C95D787F21D6653000D25B77 /* CustomViewsViewController.swift in Sources */,
 				C91FC7192113092600A199F0 /* Constants.swift in Sources */,
 				C9BBA26122FD942D0052E57A /* GetDevicePublicIP.swift in Sources */,
 				C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */,
@@ -1430,8 +1430,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_INCLUDE_PATHS = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1445,7 +1446,10 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOS_Bootstrap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/Realm/core",
@@ -1468,7 +1472,10 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOS_Bootstrap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/Realm/core",
@@ -1494,7 +1501,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1510,7 +1521,11 @@
 				DEVELOPMENT_TEAM = GV86YZ8K5S;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1583,7 +1598,10 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iOS_Bootstrap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/Realm/core",
@@ -1609,7 +1627,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;

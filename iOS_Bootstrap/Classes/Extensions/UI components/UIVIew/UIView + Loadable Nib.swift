@@ -6,7 +6,7 @@
 //
 
 public extension UIView {
-    public func loadFromNibIfEmbeddedInDifferentNib() -> Self {
+    func loadFromNibIfEmbeddedInDifferentNib() -> Self {
         let isJustAPlaceholder = subviews.count == 0
         if isJustAPlaceholder {
             let theRealThing = type(of: self).viewFromNib()
@@ -20,7 +20,7 @@ public extension UIView {
 }
 
 public extension UIView {
-    public class func viewFromNib(withOwner owner: Any? = nil) -> Self {
+    class func viewFromNib(withOwner owner: Any? = nil) -> Self {
         let name = String(describing: type(of:      self)).components(separatedBy: ".")[0]
         let view = UINib(nibName: name, bundle: nil).instantiate(withOwner: owner, options: nil)[0]
         return cast(view)!
@@ -32,12 +32,12 @@ public extension UIView {
 }
 
 public extension UIView {
-    public static func loadNib<T: UIView>(_ viewType: T.Type) -> T {
+    static func loadNib<T: UIView>(_ viewType: T.Type) -> T {
         let className = String.className(viewType)
         return Bundle(for: viewType).loadNibNamed(className, owner: nil, options: nil)!.first as! T
     }
     
-    public static func loadNib() -> Self {
+    static func loadNib() -> Self {
         return loadNib(self)
     }
 }

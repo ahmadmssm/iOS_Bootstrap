@@ -21,8 +21,9 @@ public extension UIDevice {
         func mapToDevice(identifier: String) -> String { // swiftlint:disable:this cyclomatic_complexity
             #if os(iOS)
             switch identifier {
-            case "iPod5,1":                                 return "iPod Touch 5"
-            case "iPod7,1":                                 return "iPod Touch 6"
+            case "iPod5,1":                                 return "iPod touch (5th generation)"
+            case "iPod7,1":                                 return "iPod touch (6th generation)"
+            case "iPod9,1":                                 return "iPod touch (7th generation)"
             case "iPhone3,1", "iPhone3,2", "iPhone3,3":     return "iPhone 4"
             case "iPhone4,1":                               return "iPhone 4s"
             case "iPhone5,1", "iPhone5,2":                  return "iPhone 5"
@@ -41,6 +42,9 @@ public extension UIDevice {
             case "iPhone11,2":                              return "iPhone XS"
             case "iPhone11,4", "iPhone11,6":                return "iPhone XS Max"
             case "iPhone11,8":                              return "iPhone XR"
+            case "iPhone12,1":                              return "iPhone 11"
+            case "iPhone12,3":                              return "iPhone 11 Pro"
+            case "iPhone12,5":                              return "iPhone 11 Pro Max"
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return "iPad 2"
             case "iPad3,1", "iPad3,2", "iPad3,3":           return "iPad 3"
             case "iPad3,4", "iPad3,5", "iPad3,6":           return "iPad 4"
@@ -48,6 +52,7 @@ public extension UIDevice {
             case "iPad5,3", "iPad5,4":                      return "iPad Air 2"
             case "iPad6,11", "iPad6,12":                    return "iPad 5"
             case "iPad7,5", "iPad7,6":                      return "iPad 6"
+            case "iPad7,11", "iPad7,12":                    return "iPad 7"
             case "iPad11,4", "iPad11,5":                    return "iPad Air (3rd generation)"
             case "iPad2,5", "iPad2,6", "iPad2,7":           return "iPad Mini"
             case "iPad4,4", "iPad4,5", "iPad4,6":           return "iPad Mini 2"
@@ -75,6 +80,7 @@ public extension UIDevice {
             }
             #endif
         }
+        //
         return mapToDevice(identifier: identifier)
     }()
 }
