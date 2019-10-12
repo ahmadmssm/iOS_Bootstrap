@@ -276,6 +276,14 @@ extension TableviewAdapter : UITableViewDataSource, UITableViewDelegate  {
         return [UITableViewRowAction]()
     }
     
+    public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        mDelegate?.tableView?(tableView, willDisplayHeaderView: view, forSection: section)
+    }
+    
+    public func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
+        mDelegate?.tableView?(tableView, didEndDisplayingHeaderView: view, forSection: section)
+    }
+    
     @available(iOS 11.0, *)
     public func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if (mDelegate?.canEditRow!())! {
