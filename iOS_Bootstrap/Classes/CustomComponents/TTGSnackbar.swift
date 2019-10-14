@@ -448,7 +448,7 @@ public extension TTGSnackbar {
     /**
      Show the snackbar.
      */
-    @objc public func show() {
+    @objc func show() {
         // Only show once
         if superview != nil {
             return
@@ -639,7 +639,7 @@ public extension TTGSnackbar {
     /**
      Dismiss the snackbar manually.
      */
-    @objc public func dismiss() {
+    @objc func dismiss() {
         // On main thread
         DispatchQueue.main.async {
             () -> Void in

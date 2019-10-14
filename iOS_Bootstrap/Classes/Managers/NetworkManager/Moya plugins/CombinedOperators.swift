@@ -8,7 +8,7 @@
 import RxSwift
 
 public extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
-    public func applyFilterStatusCodeAndProcessErrorsAndTokenRefresh (tokenRefreshDelegate : TokenRefresh) -> Single<Response> {
+    func applyFilterStatusCodeAndProcessErrorsAndTokenRefresh (tokenRefreshDelegate : TokenRefresh) -> Single<Response> {
         return self
             .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
             .refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate: tokenRefreshDelegate)

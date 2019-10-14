@@ -9,14 +9,14 @@ fileprivate var extensionPasswordImageButton: UIButton?
 
 public extension UITextField {
     
-    public enum Direction {
+    enum Direction {
         case Left
         case Right
     }
     
-    public var passwordIcon: UIButton? { return extensionPasswordImageButton }
+    var passwordIcon: UIButton? { return extensionPasswordImageButton }
     
-    public final func AddImage(direction:Direction, image: UIImage, Frame: CGRect, backgroundColor: UIColor) {
+    final func AddImage(direction:Direction, image: UIImage, Frame: CGRect, backgroundColor: UIColor) {
         let View = UIView(frame: Frame)
         View.backgroundColor = backgroundColor
         let imageButton = UIButton(frame: Frame)
@@ -35,5 +35,4 @@ public extension UITextField {
     }
     
     func willDeinit() { extensionPasswordImageButton = nil }
-    
 }

@@ -913,7 +913,7 @@ open class AZDialogViewController: UIViewController{
     ///
     /// - Parameter sender: The Gesture Recognizer.
  @objc internal func handleTapGesture(_ sender: UITapGestureRecognizer){
-        if sender.view is BaseView || sender.view == container{
+        if sender.view is BaseView || sender.view == container {
             return
         }
         if dismissWithOutsideTouch{

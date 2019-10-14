@@ -12,7 +12,7 @@ private var activityIndicatorAlert: UIAlertController!
 public protocol PopUpProtocol {}
 public extension PopUpProtocol where Self: UIViewController {
     //
-    public func showAlert(title : String?, message: String?, actions : [UIAlertAction]) {
+    func showAlert(title : String?, message: String?, actions : [UIAlertAction]) {
         let alert = UIAlertController (
             title: title,
             message: message,
@@ -25,7 +25,7 @@ public extension PopUpProtocol where Self: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     //
-    public func showActionSheet(title : String?, message: String?, actions : [UIAlertAction]) {
+    func showActionSheet(title : String?, message: String?, actions : [UIAlertAction]) {
         let actionSheet = UIAlertController(
             title: title,
             message: message, preferredStyle: .actionSheet)
@@ -37,7 +37,7 @@ public extension PopUpProtocol where Self: UIViewController {
         self.present(actionSheet, animated: true, completion: nil)
     }
     
-    public func showLoadingIndicator(message: String) {
+    func showLoadingIndicator(message: String) {
       
         activityIndicatorAlert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
@@ -48,18 +48,17 @@ public extension PopUpProtocol where Self: UIViewController {
         present(activityIndicatorAlert, animated: true, completion: nil)
     }
     
-    public func hideLoadingIndicator() {
+    func hideLoadingIndicator() {
         activityIndicatorAlert.dismiss(animated: true, completion: nil)
     }
     
-    public func showEZloadinActivity(message : String, cancelable : Bool) {
+    func showEZloadinActivity(message : String, cancelable : Bool) {
         EZLoadingActivity.show(message, disableUI: cancelable)
     }
-    public func showEZloadinActivityWithDuration(message : String, cancelable : Bool, seconds : Double) {
+    func showEZloadinActivityWithDuration(message : String, cancelable : Bool, seconds : Double) {
         EZLoadingActivity.showWithDelay(message, disableUI: cancelable, seconds: seconds)
     }
-    public func hideEZloadingActivity() {
+    func hideEZloadingActivity() {
         EZLoadingActivity.hide()
     }
-    
 }

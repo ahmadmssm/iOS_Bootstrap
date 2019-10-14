@@ -19,6 +19,10 @@ public extension UIViewController {
         }
     }
     
+    func enableTabBarItem(_ tab: Int) {
+        enableTabBarItems(tab)
+    }
+    
     func enableTabBarItems(_ tabs: Int...) {
         if let tabBarItems = tabBarController?.tabBar.items as NSArray? {
             for indexOfTabToBeDisabled in tabs {
@@ -27,6 +31,10 @@ public extension UIViewController {
                 }
             }
         }
+    }
+    
+    func disableTabBarItem(_ tab: Int) {
+        disableTabBarItems(tab)
     }
     
     func disableTabBarItems(_ tabs: Int...) {

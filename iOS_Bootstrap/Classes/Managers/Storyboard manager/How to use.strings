@@ -1,0 +1,15 @@
+/* 
+  Ref :
+  https://medium.com/swift-programming/uistoryboard-safer-with-enums-protocol-extensions-and-generics-7aad3883b44d
+  https://gist.github.com/filippotosetto/209802c01edc7ed8ae4a
+*/
+
+/*
+
+ Example :
+
+ let storyboard = UIStoryboard.storyboard(.News)
+ let viewController = storyboard.instantiateViewController(ArticleViewController.self)
+ viewController.printHeadline()
+
+*/

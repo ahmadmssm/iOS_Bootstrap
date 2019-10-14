@@ -8,7 +8,7 @@
 import UIKit
 
 public extension UIView {
-    public func withRoundCornerRadius()  {
+    func withRoundCornerRadius()  {
         layer.cornerRadius = self.frame.height / 2.0
         layer.masksToBounds = true
     }

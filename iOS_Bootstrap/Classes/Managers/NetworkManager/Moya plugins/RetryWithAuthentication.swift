@@ -17,7 +17,7 @@ public extension Notification.Name {
 }
 
 public extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
-    public func filterUnAuthorized() -> Single<ElementType> {
+    func filterUnAuthorized() -> Single<ElementType> {
         return flatMap { response -> Single<ElementType> in
             return Single.just(try response.filterUnAuthorized())
         }
@@ -38,7 +38,7 @@ public extension ObservableType where E == Response {
     
     // Tries to refresh auth token on 401 error and retry the request.
     // If the refresh fails it returns an error .
-    public func refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate : TokenRefresh) -> Observable<E> {
+    func refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate : TokenRefresh) -> Observable<E> {
         return
             // Retry and process the request if any error occurred
             self.retryWhen { responseFromFirstRequest in
@@ -89,7 +89,7 @@ extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Respo
     
     // Tries to refresh auth token on 401 error and retry the request.
     // If the refresh fails it returns an error .
-    public func refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate : TokenRefresh) -> Single<Response> {
+    func refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate : TokenRefresh) -> Single<Response> {
         return
             // Retry and process the request if any error occurred
             self.retryWhen { responseFromFirstRequest in

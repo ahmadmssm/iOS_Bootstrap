@@ -99,7 +99,7 @@ public struct RealmChangeset {
 public extension ObservableType where E: NotificationEmitter {
 
     @available(*, deprecated, renamed: "collection(from:synchronousStart:)")
-    public static func from(_ collection: E, scheduler: ImmediateSchedulerType = CurrentThreadScheduler.instance) -> Observable<E> {
+    static func from(_ collection: E, scheduler: ImmediateSchedulerType = CurrentThreadScheduler.instance) -> Observable<E> {
         return self.collection(from: collection)
     }
 
@@ -112,7 +112,7 @@ public extension ObservableType where E: NotificationEmitter {
 
      - returns: `Observable<E>`, e.g. when called on `Results<Model>` it will return `Observable<Results<Model>>`, on a `List<User>` it will return `Observable<List<User>>`, etc.
      */
-    public static func collection(from collection: E, synchronousStart: Bool = true)
+    static func collection(from collection: E, synchronousStart: Bool = true)
         -> Observable<E> {
 
         return Observable.create { observer in
@@ -147,7 +147,7 @@ public extension ObservableType where E: NotificationEmitter {
     }
 
     @available(*, deprecated, renamed: "array(from:synchronousStart:)")
-    public static func arrayFrom(_ collection: E, scheduler: ImmediateSchedulerType = CurrentThreadScheduler.instance) -> Observable<Array<E.ElementType>> {
+    static func arrayFrom(_ collection: E, scheduler: ImmediateSchedulerType = CurrentThreadScheduler.instance) -> Observable<Array<E.ElementType>> {
         return array(from: collection)
     }
 
@@ -160,7 +160,7 @@ public extension ObservableType where E: NotificationEmitter {
 
      - returns: `Observable<Array<E.Element>>`, e.g. when called on `Results<Model>` it will return `Observable<Array<Model>>`, on a `List<User>` it will return `Observable<Array<User>>`, etc.
      */
-    public static func array(from collection: E, synchronousStart: Bool = true)
+    static func array(from collection: E, synchronousStart: Bool = true)
         -> Observable<Array<E.ElementType>> {
 
         return Observable.collection(from: collection, synchronousStart: synchronousStart)
@@ -168,7 +168,7 @@ public extension ObservableType where E: NotificationEmitter {
     }
 
     @available(*, deprecated, renamed: "changeset(from:synchronousStart:)")
-    public static func changesetFrom(_ collection: E, scheduler: ImmediateSchedulerType = CurrentThreadScheduler.instance) -> Observable<(AnyRealmCollection<E.ElementType>, RealmChangeset?)> {
+    static func changesetFrom(_ collection: E, scheduler: ImmediateSchedulerType = CurrentThreadScheduler.instance) -> Observable<(AnyRealmCollection<E.ElementType>, RealmChangeset?)> {
         return changeset(from: collection)
     }
 
@@ -184,7 +184,7 @@ public extension ObservableType where E: NotificationEmitter {
 
      - returns: `Observable<(AnyRealmCollection<E.Element>, RealmChangeset?)>`
      */
-    public static func changeset(from collection: E, synchronousStart: Bool = true)
+    static func changeset(from collection: E, synchronousStart: Bool = true)
         -> Observable<(AnyRealmCollection<E.ElementType>, RealmChangeset?)> {
 
         return Observable.create { observer in
@@ -213,7 +213,7 @@ public extension ObservableType where E: NotificationEmitter {
     }
 
     @available(*, deprecated, renamed: "arrayWithChangeset(from:synchronousStart:)")
-    public static func changesetArrayFrom(_ collection: E, scheduler: ImmediateSchedulerType = CurrentThreadScheduler.instance) -> Observable<(Array<E.ElementType>, RealmChangeset?)> {
+    static func changesetArrayFrom(_ collection: E, scheduler: ImmediateSchedulerType = CurrentThreadScheduler.instance) -> Observable<(Array<E.ElementType>, RealmChangeset?)> {
         return arrayWithChangeset(from: collection)
     }
 
@@ -231,7 +231,7 @@ public extension ObservableType where E: NotificationEmitter {
 
      - returns: `Observable<(Array<E.Element>, RealmChangeset?)>`
      */
-    public static func arrayWithChangeset(from collection: E, synchronousStart: Bool = true)
+    static func arrayWithChangeset(from collection: E, synchronousStart: Bool = true)
         -> Observable<(Array<E.ElementType>, RealmChangeset?)> {
 
         return Observable.changeset(from: collection)
@@ -242,7 +242,7 @@ public extension ObservableType where E: NotificationEmitter {
 public extension Observable {
 
     @available(*, deprecated, renamed: "from(realm:)")
-    public static func from(_ realm: Realm, scheduler: ImmediateSchedulerType = CurrentThreadScheduler.instance) -> Observable<(Realm, Realm.Notification)> {
+    static func from(_ realm: Realm, scheduler: ImmediateSchedulerType = CurrentThreadScheduler.instance) -> Observable<(Realm, Realm.Notification)> {
         return from(realm: realm)
     }
 
@@ -260,7 +260,7 @@ public extension Observable {
      - parameter realm: A Realm instance
      - returns: `Observable<(Realm, Realm.Notification)>`, which you can subscribe to
      */
-    public static func from(realm: Realm) -> Observable<(Realm, Realm.Notification)> {
+    static func from(realm: Realm) -> Observable<(Realm, Realm.Notification)> {
 
         return Observable<(Realm, Realm.Notification)>.create { observer in
             let token = realm.observe { (notification: Realm.Notification, realm: Realm) in
@@ -278,7 +278,7 @@ public extension Observable {
 
 extension Realm: ReactiveCompatible { }
 
-extension Reactive where Base: Realm {
+public extension Reactive where Base: Realm {
 
     /**
      Returns bindable sink wich adds object sequence to the current Realm
@@ -287,7 +287,7 @@ extension Reactive where Base: Realm {
      - parameter: onError - closure to implement custom error handling
      - returns: `AnyObserver<S>`, which you can use to subscribe an `Observable` to
      */
-    public func add<S: Sequence>(update: Bool = false, onError: ((S?, Error)->Void)? = nil)
+    func add<S: Sequence>(update: Bool = false, onError: ((S?, Error)->Void)? = nil)
         -> AnyObserver<S> where S.Iterator.Element: Object {
 
         return RealmObserver(realm: base) { realm, elements, error in
@@ -298,7 +298,7 @@ extension Reactive where Base: Realm {
 
             do {
                 try realm.write {
-                    realm.add(elements, update: update)
+                    realm.add(elements, update: .modified)
                 }
             } catch let e {
                 onError?(elements, e)
@@ -314,7 +314,7 @@ extension Reactive where Base: Realm {
      - parameter: onError - closure to implement custom error handling
      - returns: `AnyObserver<O>`, which you can use to subscribe an `Observable` to
      */
-    public func add<O: Object>(update: Bool = false,
+    func add<O: Object>(update: Bool = false,
                     onError: ((O?, Error)->Void)? = nil) -> AnyObserver<O> {
 
         return RealmObserver(realm: base) { realm, element, error in
@@ -325,7 +325,7 @@ extension Reactive where Base: Realm {
 
             do {
                 try realm.write {
-                    realm.add(element, update: update)
+                    realm.add(element, update: .modified)
                 }
             } catch let e {
                 onError?(element, e)
@@ -339,7 +339,7 @@ extension Reactive where Base: Realm {
      - parameter: onError - closure to implement custom error handling
      - returns: `AnyObserver<S>`, which you can use to subscribe an `Observable` to
      */
-    public func delete<S: Sequence>(onError: ((S?, Error)->Void)? = nil)
+    func delete<S: Sequence>(onError: ((S?, Error)->Void)? = nil)
         -> AnyObserver<S> where S.Iterator.Element: Object {
 
         return RealmObserver(realm: base, binding: { realm, elements, error in
@@ -364,7 +364,7 @@ extension Reactive where Base: Realm {
      - parameter: onError - closure to implement custom error handling
      - returns: `AnyObserver<O>`, which you can use to subscribe an `Observable` to
      */
-    public func delete<O: Object>(onError: ((O?, Error)->Void)? = nil) -> AnyObserver<O> {
+    func delete<O: Object>(onError: ((O?, Error)->Void)? = nil) -> AnyObserver<O> {
         return RealmObserver(realm: base, binding: { realm, element, error in
             guard let realm = realm else {
                 onError?(nil, error ?? RxRealmError.unknown)
@@ -382,7 +382,7 @@ extension Reactive where Base: Realm {
     }
 }
 
-extension Reactive where Base: Realm {
+public extension Reactive where Base: Realm {
     
     /**
      Returns bindable sink wich adds object sequence to a Realm
@@ -393,7 +393,7 @@ extension Reactive where Base: Realm {
      - parameter: onError - closure to implement custom error handling
      - returns: `AnyObserver<S>`, which you can use to subscribe an `Observable` to
      */
-    public static func add<S: Sequence>(
+    static func add<S: Sequence>(
         configuration: Realm.Configuration = Realm.Configuration.defaultConfiguration,
         update: Bool = false,
         onError: ((S?, Error)->Void)? = nil) -> AnyObserver<S> where S.Iterator.Element: Object {
@@ -403,10 +403,9 @@ extension Reactive where Base: Realm {
                 onError?(nil, error ?? RxRealmError.unknown)
                 return
             }
-
             do {
                 try realm.write {
-                    realm.add(elements, update: update)
+                    realm.add(elements, update: .modified)
                 }
             } catch let e {
                 onError?(elements, e)
@@ -423,7 +422,7 @@ extension Reactive where Base: Realm {
      - parameter: onError - closure to implement custom error handling
      - returns: `AnyObserver<O>`, which you can use to subscribe an `Observable` to
      */
-    public static func add<O: Object>(
+    static func add<O: Object>(
         configuration: Realm.Configuration = Realm.Configuration.defaultConfiguration,
         update: Bool = false,
         onError: ((O?, Error)->Void)? = nil) -> AnyObserver<O> {
@@ -436,7 +435,7 @@ extension Reactive where Base: Realm {
 
             do {
                 try realm.write {
-                    realm.add(element, update: update)
+                    realm.add(element, update: .modified)
                 }
             } catch let e {
                 onError?(element, e)
@@ -450,7 +449,7 @@ extension Reactive where Base: Realm {
      - parameter: onError - closure to implement custom error handling
      - returns: `AnyObserver<S>`, which you can use to subscribe an `Observable` to
      */
-    public static func delete<S: Sequence>(onError: ((S?, Error)->Void)? = nil)
+    static func delete<S: Sequence>(onError: ((S?, Error)->Void)? = nil)
         -> AnyObserver<S>  where S.Iterator.Element: Object {
 
         return AnyObserver { event in
@@ -479,7 +478,7 @@ extension Reactive where Base: Realm {
      - parameter: onError - closure to implement custom error handling
      - returns: `AnyObserver<O>`, which you can use to subscribe an `Observable` to
      */
-    public static func delete<O: Object>(onError: ((O?, Error)->Void)? = nil) -> AnyObserver<O> {
+    static func delete<O: Object>(onError: ((O?, Error)->Void)? = nil) -> AnyObserver<O> {
 
         return AnyObserver { event in
 
@@ -504,7 +503,7 @@ extension Reactive where Base: Realm {
 public extension Observable where Element: Object {
 
     @available(*, deprecated, renamed: "from(object:)")
-    public static func from(_ object: Element) -> Observable<Element> {
+    static func from(_ object: Element) -> Observable<Element> {
         return from(object: object)
     }
 
@@ -516,8 +515,7 @@ public extension Observable where Element: Object {
      - parameter properties: changes to which properties would triger emitting a .next event
      - returns: `Observable<Object>` will emit any time the observed object changes + one initial emit upon subscription
      */
-
-  public static func from(object: Element, emitInitialValue: Bool = true,
+    static func from(object: Element, emitInitialValue: Bool = true,
                           properties: [String]? = nil) -> Observable<Element> {
 
         return Observable<Element>.create { observer in
@@ -553,8 +551,7 @@ public extension Observable where Element: Object {
      - returns: `Observable<PropertyChange>` will emit any time a change is detected on the object
      */
     
-    public static func propertyChanges(object: Element) -> Observable<PropertyChange> {
-
+    static func propertyChanges(object: Element) -> Observable<PropertyChange> {
         return Observable<PropertyChange>.create { observer in
             let token = object.observe { change in
                 switch change {
@@ -574,6 +571,4 @@ public extension Observable where Element: Object {
             }
         }
     }
-
-    
 }

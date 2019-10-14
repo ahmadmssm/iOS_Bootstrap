@@ -17,13 +17,14 @@ public final class SVGImageLoader {
     public func loadFrom(svgImageURL: String) -> Single<UIImage?> {
         return Single.create { single in
             let url = URL(string: svgImageURL)
-            if let cachedImage = SVGImageLoader.imageCache.object(forKey: url?.absoluteString as! NSString) {
+            let nsStringURL = (url?.absoluteString)! as NSString
+            if let cachedImage = SVGImageLoader.imageCache.object(forKey: nsStringURL) {
                 single(.success(cachedImage))
             }
             else {
                 let svgImage: SVGKImage = SVGKImage(contentsOf: url)
                 let image: UIImage = svgImage.uiImage
-                SVGImageLoader.imageCache.setObject(image, forKey: url?.absoluteString as! NSString)
+                SVGImageLoader.imageCache.setObject(image, forKey: nsStringURL)
                 single(.success(image))
             }
             return Disposables.create()

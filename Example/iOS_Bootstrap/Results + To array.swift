@@ -9,5 +9,5 @@
 import RealmSwift
 
 extension Results {
-    final func toArray<T>(type: T.Type) -> [T] { return flatMap { $0 as? T } }
+    final func toArray<T>(type: T.Type) -> [T] { return compactMap { $0 as? T } }
 }

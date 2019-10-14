@@ -58,7 +58,7 @@ class RealmManager<T: Object> {
         return Completable.create { completable in
             do {
                 try self.realm.write {
-                    self.realm.add(record, update: true)
+                    self.realm.add(record, update: .modified)
                     completable(.completed)
                 }
             }
@@ -71,7 +71,7 @@ class RealmManager<T: Object> {
         return Completable.create { completable in
             do {
                 try self.realm.write {
-                    self.realm.add(records, update: true)
+                    self.realm.add(records, update: .modified)
                     completable(.completed)
                 }
             }

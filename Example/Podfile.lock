@@ -3,7 +3,7 @@ PODS:
   - CocoaLumberjack (3.5.3):
     - CocoaLumberjack/Core (= 3.5.3)
   - CocoaLumberjack/Core (3.5.3)
-  - iOS_Bootstrap (1.6.4):
+  - iOS_Bootstrap (1.6.6):
     - IQKeyboardManagerSwift (= 6.0.4)
     - Moya/RxSwift (~> 13.0)
   - IQKeyboardManagerSwift (6.0.4)
@@ -32,7 +32,7 @@ DEPENDENCIES:
   - SVGKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - CocoaLumberjack
     - IQKeyboardManagerSwift
@@ -51,7 +51,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
-  iOS_Bootstrap: 0b837cab653a607e1cf15b4f6dbd1e424ca8e094
+  iOS_Bootstrap: e1f48f903ad734b1ca4f03862e5e7f96b792cb07
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
@@ -63,4 +63,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 4eca9ef9c3ea5463b85740740b23a30cdf651e2d
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.3

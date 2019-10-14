@@ -36,13 +36,13 @@ public protocol ReusableCell: class {
 public extension ReusableCell where Self: UIView {
     
     /// Return the same name of the class with module name as prefix ('MyApp.MyCell')
-    public static var dequeueIdentifier: String {
+    static var dequeueIdentifier: String {
       //  return NSStringFromClass(self)
         return NSStringFromClass(self).components(separatedBy: ".").last!
     }
     
     /// Return the name of the nib, it return the same name of the cell class itself
-    public static var dequeueNibName: String {
+    static var dequeueNibName: String {
         return NSStringFromClass(self).components(separatedBy: ".").last!
     }
 }

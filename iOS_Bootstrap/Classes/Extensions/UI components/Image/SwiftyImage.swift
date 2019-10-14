@@ -456,19 +456,16 @@ open class ImageDrawer {
 
 
 // MARK: - Color overlay
-
 public extension UIImage {
-
-  public func with(color: UIColor) -> UIImage {
-    return UIImage.with(size: self.size) { context in
-      context.translateBy(x: 0, y: self.size.height)
-      context.scaleBy(x: 1, y: -1)
-      context.setBlendMode(.normal)
-      let rect = CGRect(origin: .zero, size: self.size)
-      context.clip(to: rect, mask: self.cgImage!)
-      color.setFill()
-      context.fill(rect)
+    func with(color: UIColor) -> UIImage {
+        return UIImage.with(size: self.size) { context in
+            context.translateBy(x: 0, y: self.size.height)
+            context.scaleBy(x: 1, y: -1)
+            context.setBlendMode(.normal)
+            let rect = CGRect(origin: .zero, size: self.size)
+            context.clip(to: rect, mask: self.cgImage!)
+            color.setFill()
+            context.fill(rect)
+        }
     }
-  }
-
 }

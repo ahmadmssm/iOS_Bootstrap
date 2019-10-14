@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UITextField {
-    public func connectFields(fields:[UITextField]) -> Void {
+    func connectFields(fields:[UITextField]) -> Void {
         guard let last = fields.last else { return }
         for i in 0 ..< fields.count - 1 {
             if fields[i].keyboardType == .decimalPad || fields[i].keyboardType == .numberPad || fields[i].keyboardType == .phonePad {

@@ -23,21 +23,21 @@ public protocol Injectable : IServicesInstances {
     func setContext(context : UIViewController)
 }
 public extension Injectable {
-    public func setContext(context : UIViewController) { ServicesInstances.context = context }
+    func setContext(context : UIViewController) { ServicesInstances.context = context }
 }
 //
 public protocol ContextService : IServicesInstances {
     static func getContext() -> UIViewController
 }
 public extension ContextService {
-    public static func getContext() -> UIViewController { return ServicesInstances.context! }
+    static func getContext() -> UIViewController { return ServicesInstances.context! }
 }
 
 public protocol BaseEnvironment: BuildVariantService, CaseIterable {}
 public extension BaseEnvironment
                 where Self: Hashable & RawRepresentable,
                       Self.RawValue : StringProtocol {
-    public static func getEnvironmentVariables() -> Self {
+    static func getEnvironmentVariables() -> Self {
         return getEnvironment(Self.self)
     }
 }

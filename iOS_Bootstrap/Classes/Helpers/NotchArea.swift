@@ -61,7 +61,7 @@ open class NotchArea {
             if window.safeAreaInsets.top > 0.0 {
                 DispatchQueue.main.async { [weak self] in
                     self?.statusWindow.makeKeyAndVisible()
-                    DispatchQueue.main.async { [weak self] in
+                    DispatchQueue.main.async {
                         window.makeKey()
                     }
                 }

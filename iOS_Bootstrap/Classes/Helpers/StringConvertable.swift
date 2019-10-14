@@ -10,7 +10,7 @@ public protocol StringConvertable {
 }
 
 public extension StringConvertable {
-    public func toString() -> String {
+    func toString() -> String {
         return JSONSerializer.toJsonString(self, prettify: true)
     }
 }
