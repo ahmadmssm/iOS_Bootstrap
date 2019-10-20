@@ -23,7 +23,7 @@ extension UITableView {
     /// - Parameter _: nib class
     public func register<T: UITableViewCell>(nibClass: T.Type) where T: ReusableCell {
         let bundle = Bundle(for: nibClass.self)
-        let cellClassName : String = String(describing: nibClass.self)
+        let cellClassName: String = String(describing: nibClass.self)
         let nib = UINib(nibName: cellClassName, bundle: bundle)
         self.register(nib, forCellReuseIdentifier: cellClassName)
     }

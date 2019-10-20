@@ -2,31 +2,39 @@
 //  TrendingMoviesPresenter.swift
 //  iOS_Bootstrap_Example
 //
-//  Created by Ahmad Mahmoud on 10/30/18.
-//  Copyright © 2018 CocoaPods. All rights reserved.
+//  Created by Ahmad Mahmoud on 10/19/19.
+//  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
 import iOS_Bootstrap
+import RxSwift
 
-class TrendingMoviesPresenter :
-             BaseLiveListingPresenter<TrendingMoviesViewDelegator, TrendingMovieCellModel> {
+class TrendingMoviesPresenter: BasePresenter<TrendingMoviesViewDelegate> {
     
-    private var moviesArray: [Movie]  = []
+    private var moviesArray: [TrendingMovieCellModel]  = []
+    private var page: Int = 1
     
-    required init(viewDelegator: TrendingMoviesViewDelegator) {
+    required init(viewDelegator: TrendingMoviesViewDelegate) {
         super.init(viewDelegator: viewDelegator)
     }
     
-    override func viewControllerDidLoaded() { getTrendingMovies(pageNumber: 1) }
-
+    override func viewControllerDidLoaded() {
+        getTrendingMovies(pageNumber: page)
+    }
+    
     func getTrendingMovies(pageNumber : Int) {
-        Repo
-            .getTrendingMovies(page: pageNumber)
+        Repo.getTrendingMovies(page: pageNumber)
+            .flatMap({ [weak self] moviesPage -> Single<MoviesPage> in
+                // The page params are set one time only
+                if(self?.page == 1) {
+                    self?
+                        .getViewDelegator()
+                        .setPaginationParams(totalNumberOfItems: moviesPage.totalNumberOfItems!,
+                                             itemsPerPage: moviesPage.itemsPerPage!)
+                }
+                return Single.just(moviesPage)
+            })
             .subscribe(onSuccess: { [weak self] moviesPage in
-                // The page params are set one time only,
-                // Pagination hadling is done by the boot strap
-                self?
-                    .setPaginationParams(totalNumberOfItems: moviesPage.totalNumberOfItems!, itemsPerPage: moviesPage.itemsPerPage!)
                 var movies: [TrendingMovieCellModel] = []
                 for movie in moviesPage.moviesList! {
                     var trendingMovie = TrendingMovieCellModel()
@@ -40,20 +48,20 @@ class TrendingMoviesPresenter :
                     }
                     movies.append(trendingMovie)
                 }
-                self?.moviesArray += moviesPage.moviesList!
-                self?.dataSource = movies
+                self?.moviesArray.append(contentsOf: movies)
+                self?.getViewDelegator().didGet(trendingMovies: self?.moviesArray ?? [])
             }) { [weak self] error in
                 self?
                     .getViewDelegator()
                     .didFailToGetTrendingMovies(error: error.localizedDescription)
-            }
-            .disposed(by: getDisposeBag())
+        }
+        .disposed(by: getDisposeBag())
     }
     
     func getSummaryForMovieAt(index: Int) {
-        var summary: String
-        if let moviewOverview = moviesArray[index].overview { summary = moviewOverview }
-        else { summary = "Sorry, There is no summary for this movie!" }
-        getViewDelegator().didGetMovieSummary(summary: summary)
+//        var summary: String
+//        if let moviewOverview = moviesArray[index].overview { summary = moviewOverview }
+//        else { summary = "Sorry, There is no summary for this movie!" }
+//        getViewDelegator().didGetMovieSummary(summary: summary)
     }
 }

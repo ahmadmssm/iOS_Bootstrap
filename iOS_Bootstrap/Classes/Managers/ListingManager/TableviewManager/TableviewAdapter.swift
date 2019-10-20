@@ -58,17 +58,17 @@ open class TableviewAdapter: NSObject {
         configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
     }
     
-    open func configureTableWithMultiXibCell (tableView: UITableView,
-                                              dataSource: [Any]!,
-                                              nibClasses : [BaseTableViewCell.Type]?,
-                                              delegate : BaseTableViewDelegates) {
+    open func configureTableWithMultiXibCell(tableView: UITableView,
+                                            dataSource: [Any]!,
+                                            nibClasses : [BaseTableViewCell.Type]?,
+                                            delegate : BaseTableViewDelegates) {
         self.mNibClasses = nibClasses
         configureTable(tableView: tableView, dataSource: dataSource, delegate: delegate)
     }
     
-    open func configureTableWithXibCell (tableView: UITableView,
-                                         nibClass : BaseTableViewCell.Type!,
-                                         delegate : BaseTableViewDelegates) {
+    open func configureTableWithXibCell(tableView: UITableView,
+                                        nibClass : BaseTableViewCell.Type!,
+                                        delegate : BaseTableViewDelegates) {
         self.mNibClass = nibClass
         configureTable(tableView: tableView, dataSource: [], delegate: delegate)
     }
@@ -347,6 +347,5 @@ extension TableviewAdapter: EmptyDataSetSource, EmptyDataSetDelegate {
     public func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {
         mDelegate?.emptyDataSetButtonTapped?(didTapButton: button)
     }
-    
 }
 

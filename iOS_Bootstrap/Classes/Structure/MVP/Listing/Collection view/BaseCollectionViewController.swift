@@ -83,5 +83,4 @@ open class BaseCollectionViewController <T, V, D>: BaseViewController<T, V> wher
         }
         return nil
     }
-    
 }

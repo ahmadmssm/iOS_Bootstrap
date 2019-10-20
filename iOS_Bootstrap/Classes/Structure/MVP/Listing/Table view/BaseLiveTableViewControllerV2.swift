@@ -16,5 +16,4 @@ where T: BaseLiveListingPresenter<V, D>, C: BaseTableViewCellV2<D> {
     public final func initCell (indexPath: IndexPath) -> C {
         return initCell(cell: C.self, indexPath: indexPath)
     }
-    
 }

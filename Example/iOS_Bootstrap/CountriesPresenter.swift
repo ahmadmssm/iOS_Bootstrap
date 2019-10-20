@@ -100,5 +100,4 @@ class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
         }
         isFirstTimeLoading = false
     }
-    
 }

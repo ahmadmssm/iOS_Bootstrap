@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-class TrendingMoviesCell: BaseTableViewCell {
+class TrendingMoviesCell: BaseTableViewCellV2<TrendingMovieCellModel> {
     
     @IBOutlet private weak var posterImage: UIImageView!
     @IBOutlet private weak var movieTitleLabel: UILabel!
@@ -16,17 +16,16 @@ class TrendingMoviesCell: BaseTableViewCell {
     @IBOutlet private weak var votingLabel: UILabel!
     @IBOutlet private weak var movieLanguage: UILabel!
     
-    var cellMode: TrendingMovieCellModel? {
-        didSet {
-            movieTitleLabel.text = cellMode?.movieTitle
-            releaseDateLabel.text = cellMode?.releaseDate
-            votingLabel.text = (cellMode?.voting?.toString(withDecimalPoints: 1))! + "  \u{2B50}"
-            movieLanguage.text = cellMode?.originalLanguage
-            //
-            if let imageURL = cellMode?.imageURL {
-                let posterURL = URL(string: imageURL)
-                posterImage.loadImage(with: posterURL!)
-            }
+    
+    override func initCellFrom(cellModel: TrendingMovieCellModel) {
+        movieTitleLabel.text = cellModel.movieTitle
+        releaseDateLabel.text = cellModel.releaseDate
+        votingLabel.text = (cellModel.voting?.toString(withDecimalPoints: 1))! + "  \u{2B50}"
+        movieLanguage.text = cellModel.originalLanguage
+        //
+        if let imageURL = cellModel.imageURL {
+            let posterURL = URL(string: imageURL)
+            posterImage.loadImage(with: posterURL!)
         }
     }
     
@@ -34,5 +33,4 @@ class TrendingMoviesCell: BaseTableViewCell {
         super.awakeFromNib()
         selectionStyle = .none
     }
-    
 }

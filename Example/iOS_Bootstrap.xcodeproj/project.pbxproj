@@ -59,8 +59,6 @@
 		C930E1F021CD40ED00809FB2 /* ToDoListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930E1EF21CD40ED00809FB2 /* ToDoListEntity.swift */; };
 		C930E1F321CD418900809FB2 /* ToDoListCachingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930E1F221CD418900809FB2 /* ToDoListCachingManager.swift */; };
 		C930E1F521CD487400809FB2 /* ToDoViewPagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930E1F421CD487400809FB2 /* ToDoViewPagerController.swift */; };
-		C930E1FC21CD644600809FB2 /* TrendingMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930E1FA21CD644600809FB2 /* TrendingMoviesViewController.swift */; };
-		C930E1FD21CD644600809FB2 /* TrendingMoviesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C930E1FB21CD644600809FB2 /* TrendingMoviesView.xib */; };
 		C930E20021CD825200809FB2 /* ToDoMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930E1FF21CD825100809FB2 /* ToDoMode.swift */; };
 		C930E20221CD892E00809FB2 /* TaskEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930E20121CD892E00809FB2 /* TaskEntity.swift */; };
 		C93E4B502190575300A62059 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B472190575200A62059 /* City.swift */; };
@@ -82,6 +80,11 @@
 		C95E24DF21FE5A8300621645 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E24DC21FE5A8200621645 /* CloseButton.swift */; };
 		C95E24E021FE5A8300621645 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E24DD21FE5A8200621645 /* TagListView.swift */; };
 		C95E24E121FE5A8300621645 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E24DE21FE5A8200621645 /* TagView.swift */; };
+		C964F15B235B9C64006320AE /* TrendingMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964F159235B9C64006320AE /* TrendingMoviesViewController.swift */; };
+		C964F15C235B9C64006320AE /* TrendingMoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C964F15A235B9C64006320AE /* TrendingMoviesViewController.xib */; };
+		C964F15E235B9D48006320AE /* TrendingMoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964F15D235B9D48006320AE /* TrendingMoviesPresenter.swift */; };
+		C964F160235B9E15006320AE /* TrendingMoviesViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964F15F235B9E15006320AE /* TrendingMoviesViewDelegate.swift */; };
+		C964F162235B9F7C006320AE /* TrendingMoviesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964F161235B9F7C006320AE /* TrendingMoviesAdapter.swift */; };
 		C966063E2114A04C00E2D38A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96606402114A04C00E2D38A /* Localizable.strings */; };
 		C96629E221C5415200961750 /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C96629E021C5415200961750 /* DataBase.xcdatamodeld */; };
 		C970DD6B21A065FD0079B706 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970DD6A21A065FD0079B706 /* Section.swift */; };
@@ -108,8 +111,6 @@
 		C99AA070218740CD001683B8 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99AA06E218740CD001683B8 /* SideMenuCell.xib */; };
 		C99AA0812187D360001683B8 /* MyBaseMenuItemViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0802187D360001683B8 /* MyBaseMenuItemViewControllers.swift */; };
 		C99AA0862187D3E2001683B8 /* NetworkWeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0852187D3E2001683B8 /* NetworkWeatherPresenter.swift */; };
-		C99AA08B21884526001683B8 /* TrendingMoviesViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA08A21884526001683B8 /* TrendingMoviesViewDelegator.swift */; };
-		C99AA08D2188455E001683B8 /* TrendingMoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA08C2188455E001683B8 /* TrendingMoviesPresenter.swift */; };
 		C99AA08F218845C9001683B8 /* CountriesViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA08E218845C9001683B8 /* CountriesViewDelegator.swift */; };
 		C99AA091218845E7001683B8 /* CountriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA090218845E7001683B8 /* CountriesPresenter.swift */; };
 		C99AA09521884652001683B8 /* GPSWeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA09421884652001683B8 /* GPSWeatherPresenter.swift */; };
@@ -139,6 +140,9 @@
 		C9CC0E4D2191997E00AF9D62 /* AdditionalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0E4C2191997E00AF9D62 /* AdditionalData.swift */; };
 		C9CC0E562192449000AF9D62 /* WeatherMenuItemTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0E552192449000AF9D62 /* WeatherMenuItemTabBarController.swift */; };
 		C9CC0E59219245D300AF9D62 /* NetworkWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0E58219245D300AF9D62 /* NetworkWeatherViewController.swift */; };
+		C9FD08E5235CED2B0008CAF1 /* BaseTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FD08E4235CED2B0008CAF1 /* BaseTableViewAdapter.swift */; };
+		C9FD08E8235D09E90008CAF1 /* TrendingMovies + Floating button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FD08E7235D09E90008CAF1 /* TrendingMovies + Floating button.swift */; };
+		C9FD08EB235D0CA60008CAF1 /* TrendingMoviesAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FD08EA235D0CA60008CAF1 /* TrendingMoviesAdapterProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,8 +212,6 @@
 		C930E1EF21CD40ED00809FB2 /* ToDoListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListEntity.swift; sourceTree = "<group>"; };
 		C930E1F221CD418900809FB2 /* ToDoListCachingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListCachingManager.swift; sourceTree = "<group>"; };
 		C930E1F421CD487400809FB2 /* ToDoViewPagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewPagerController.swift; sourceTree = "<group>"; };
-		C930E1FA21CD644600809FB2 /* TrendingMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesViewController.swift; sourceTree = "<group>"; };
-		C930E1FB21CD644600809FB2 /* TrendingMoviesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingMoviesView.xib; sourceTree = "<group>"; };
 		C930E1FF21CD825100809FB2 /* ToDoMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoMode.swift; sourceTree = "<group>"; };
 		C930E20121CD892E00809FB2 /* TaskEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntity.swift; sourceTree = "<group>"; };
 		C93E4B472190575200A62059 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -234,6 +236,11 @@
 		C95E24DC21FE5A8200621645 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		C95E24DD21FE5A8200621645 /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		C95E24DE21FE5A8200621645 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		C964F159235B9C64006320AE /* TrendingMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesViewController.swift; sourceTree = "<group>"; };
+		C964F15A235B9C64006320AE /* TrendingMoviesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingMoviesViewController.xib; sourceTree = "<group>"; };
+		C964F15D235B9D48006320AE /* TrendingMoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesPresenter.swift; sourceTree = "<group>"; };
+		C964F15F235B9E15006320AE /* TrendingMoviesViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesViewDelegate.swift; sourceTree = "<group>"; };
+		C964F161235B9F7C006320AE /* TrendingMoviesAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesAdapter.swift; sourceTree = "<group>"; };
 		C96606432114A0D000E2D38A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C96629E121C5415200961750 /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		C970DD6A21A065FD0079B706 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -260,8 +267,6 @@
 		C99AA06E218740CD001683B8 /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		C99AA0802187D360001683B8 /* MyBaseMenuItemViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBaseMenuItemViewControllers.swift; sourceTree = "<group>"; };
 		C99AA0852187D3E2001683B8 /* NetworkWeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherPresenter.swift; sourceTree = "<group>"; };
-		C99AA08A21884526001683B8 /* TrendingMoviesViewDelegator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesViewDelegator.swift; sourceTree = "<group>"; };
-		C99AA08C2188455E001683B8 /* TrendingMoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesPresenter.swift; sourceTree = "<group>"; };
 		C99AA08E218845C9001683B8 /* CountriesViewDelegator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewDelegator.swift; sourceTree = "<group>"; };
 		C99AA090218845E7001683B8 /* CountriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenter.swift; sourceTree = "<group>"; };
 		C99AA09421884652001683B8 /* GPSWeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSWeatherPresenter.swift; sourceTree = "<group>"; };
@@ -291,6 +296,9 @@
 		C9CC0E4C2191997E00AF9D62 /* AdditionalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalData.swift; sourceTree = "<group>"; };
 		C9CC0E552192449000AF9D62 /* WeatherMenuItemTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMenuItemTabBarController.swift; sourceTree = "<group>"; };
 		C9CC0E58219245D300AF9D62 /* NetworkWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherViewController.swift; sourceTree = "<group>"; };
+		C9FD08E4235CED2B0008CAF1 /* BaseTableViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewAdapter.swift; sourceTree = "<group>"; };
+		C9FD08E7235D09E90008CAF1 /* TrendingMovies + Floating button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrendingMovies + Floating button.swift"; sourceTree = "<group>"; };
+		C9FD08EA235D0CA60008CAF1 /* TrendingMoviesAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesAdapterProtocol.swift; sourceTree = "<group>"; };
 		E8BFEB017ECAAB4B900CC096 /* iOS_Bootstrap.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = iOS_Bootstrap.podspec; path = ../iOS_Bootstrap.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EA97E69C3092BBDE3AC0DD10 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		EE1D9FD411B4C49B117C5CCA /* Pods-iOS_Bootstrap_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Bootstrap_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Bootstrap_Example/Pods-iOS_Bootstrap_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -356,6 +364,7 @@
 				C99A405121186C3F007B88A4 /* Resources */,
 				C91AF9A6218D1BAE00BB5559 /* GlobalKeys */,
 				C9C960F720FA8BA30023CDD7 /* Views */,
+				C9FD08E4235CED2B0008CAF1 /* BaseTableViewAdapter.swift */,
 				C99EA61D20CB461B00D7C158 /* Models */,
 				C91FFF5C2193306900DFC0CC /* Utils */,
 			);
@@ -623,6 +632,7 @@
 		C93E4B41218E232C00A62059 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C9FD08E6235D08DB0008CAF1 /* TrendingMovies */,
 				C91AF998218CE8BF00BB5559 /* MainViewScene */,
 				C973B7B721C4367700B63A69 /* ValidatorsExampleScene */,
 				C93E4B3E218D23EB00A62059 /* CustomViewsScene */,
@@ -851,11 +861,12 @@
 		C99AA087218844AB001683B8 /* TrendingMoviesScene */ = {
 			isa = PBXGroup;
 			children = (
-				C930E1FB21CD644600809FB2 /* TrendingMoviesView.xib */,
-				C930E1FA21CD644600809FB2 /* TrendingMoviesViewController.swift */,
-				C99AA08C2188455E001683B8 /* TrendingMoviesPresenter.swift */,
-				C99AA08A21884526001683B8 /* TrendingMoviesViewDelegator.swift */,
-				C9B18B9A218C99C9004520F5 /* TableCell */,
+				C9FD08E9235D0C410008CAF1 /* Table */,
+				C964F15A235B9C64006320AE /* TrendingMoviesViewController.xib */,
+				C964F159235B9C64006320AE /* TrendingMoviesViewController.swift */,
+				C964F15D235B9D48006320AE /* TrendingMoviesPresenter.swift */,
+				C964F15F235B9E15006320AE /* TrendingMoviesViewDelegate.swift */,
+				C9FD08E7235D09E90008CAF1 /* TrendingMovies + Floating button.swift */,
 			);
 			name = TrendingMoviesScene;
 			sourceTree = "<group>";
@@ -982,6 +993,23 @@
 			name = NetworkWeatherViewController;
 			sourceTree = "<group>";
 		};
+		C9FD08E6235D08DB0008CAF1 /* TrendingMovies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TrendingMovies;
+			sourceTree = "<group>";
+		};
+		C9FD08E9235D0C410008CAF1 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				C964F161235B9F7C006320AE /* TrendingMoviesAdapter.swift */,
+				C9FD08EA235D0CA60008CAF1 /* TrendingMoviesAdapterProtocol.swift */,
+				C9B18B9A218C99C9004520F5 /* TableCell */,
+			);
+			name = Table;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1073,7 +1101,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C930E1FD21CD644600809FB2 /* TrendingMoviesView.xib in Resources */,
 				C95D788421D6718F00D25B77 /* MainView.xib in Resources */,
 				C95D787C21D6580B00D25B77 /* CountriesView.xib in Resources */,
 				C91AF9A0218CE93D00BB5559 /* MainViewCell.xib in Resources */,
@@ -1091,6 +1118,7 @@
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				C95D788821D6753F00D25B77 /* ValidatorsExampleView.xib in Resources */,
 				C90BBE4121D69B570065FF43 /* WeatherTableView.xib in Resources */,
+				C964F15C235B9C64006320AE /* TrendingMoviesViewController.xib in Resources */,
 				C930E1E221CD3B3000809FB2 /* ToDoView.xib in Resources */,
 				C9B18B99218C99C4004520F5 /* TrendingMoviesCell.xib in Resources */,
 			);
@@ -1173,13 +1201,16 @@
 				C9954A3822FCB98300D4ECE9 /* AppViewDelegator.swift in Sources */,
 				C99AA06F218740CD001683B8 /* SideMenuCell.swift in Sources */,
 				C9954A3422FCB98300D4ECE9 /* AppAPI.swift in Sources */,
+				C9FD08E8235D09E90008CAF1 /* TrendingMovies + Floating button.swift in Sources */,
 				C9BBA26322FD944F0052E57A /* GetLocationCoordinates.swift in Sources */,
+				C964F15E235B9D48006320AE /* TrendingMoviesPresenter.swift in Sources */,
 				C930E1E921CD3D7100809FB2 /* ToDoCell.swift in Sources */,
 				C90BBE3C21D697B60065FF43 /* RightSideMenuViewController.swift in Sources */,
 				C930E20221CD892E00809FB2 /* TaskEntity.swift in Sources */,
 				C97CB4032190E94A00F396D3 /* Currency.swift in Sources */,
 				C930E1D721CD172C00809FB2 /* RealmObserver.swift in Sources */,
 				C9BBA25F22FD94020052E57A /* GetTrendingMovies.swift in Sources */,
+				C964F15B235B9C64006320AE /* TrendingMoviesViewController.swift in Sources */,
 				C9CC0E4D2191997E00AF9D62 /* AdditionalData.swift in Sources */,
 				C930E1F321CD418900809FB2 /* ToDoListCachingManager.swift in Sources */,
 				C902036F20F571C100A63492 /* Navigator.swift in Sources */,
@@ -1209,7 +1240,6 @@
 				C9B18B93218C6DE5004520F5 /* UserDefaultKeys.swift in Sources */,
 				C95E24E021FE5A8300621645 /* TagListView.swift in Sources */,
 				C9B18B98218C99C4004520F5 /* TrendingMoviesCell.swift in Sources */,
-				C930E1FC21CD644600809FB2 /* TrendingMoviesViewController.swift in Sources */,
 				C973B7BD21C436E500B63A69 /* ValidatorsExampleViewDelegator.swift in Sources */,
 				C95ABA7322BEA18E00E06DC3 /* UIViewController + Alerts.swift in Sources */,
 				C9CC0E59219245D300AF9D62 /* NetworkWeatherViewController.swift in Sources */,
@@ -1220,11 +1250,11 @@
 				C95E24DF21FE5A8300621645 /* CloseButton.swift in Sources */,
 				C930E1E421CD3BB600809FB2 /* ToDoPresenter.swift in Sources */,
 				C9BBA26522FD94770052E57A /* GetFiveDaysWeatherForcast.swift in Sources */,
+				C9FD08E5235CED2B0008CAF1 /* BaseTableViewAdapter.swift in Sources */,
 				C93E4B582190575300A62059 /* Wind.swift in Sources */,
 				C930E1CD21CC4F4300809FB2 /* SVGImageLoader.swift in Sources */,
 				C90BBE4721D77E1F0065FF43 /* DateTimeHelpers.swift in Sources */,
 				C9954A3522FCB98300D4ECE9 /* AppRestClient.swift in Sources */,
-				C99AA08B21884526001683B8 /* TrendingMoviesViewDelegator.swift in Sources */,
 				C9BBA25D22FD93110052E57A /* GetWorldCountriesAPI.swift in Sources */,
 				C99AA08F218845C9001683B8 /* CountriesViewDelegator.swift in Sources */,
 				C9CBBD37234ABB2B00B6CA29 /* CustomViewsViewController.swift in Sources */,
@@ -1234,7 +1264,9 @@
 				C930E1F021CD40ED00809FB2 /* ToDoListEntity.swift in Sources */,
 				C91AF997218CCFAE00BB5559 /* StaticResources.swift in Sources */,
 				C953267C2189BE2500105260 /* Movie.swift in Sources */,
+				C9FD08EB235D0CA60008CAF1 /* TrendingMoviesAdapterProtocol.swift in Sources */,
 				C95D787B21D6580B00D25B77 /* CountriesViewController.swift in Sources */,
+				C964F162235B9F7C006320AE /* TrendingMoviesAdapter.swift in Sources */,
 				C930E1E121CD3B3000809FB2 /* ToDoViewController.swift in Sources */,
 				C95D788721D6753F00D25B77 /* ValidatorsExampleViewController.swift in Sources */,
 				C973B7CE21C5216000B63A69 /* CountriesCachingManager.swift in Sources */,
@@ -1247,6 +1279,7 @@
 				C9B18B95218C6F6E004520F5 /* MoviesPage.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				C930E1D221CD164B00809FB2 /* RealmManager.swift in Sources */,
+				C964F160235B9E15006320AE /* TrendingMoviesViewDelegate.swift in Sources */,
 				C93E4B532190575300A62059 /* Forcast.swift in Sources */,
 				C973B7BB21C436D400B63A69 /* ValidatorsExamplePresenter.swift in Sources */,
 				C9954A4322FCB99A00D4ECE9 /* BaseRealmModel.swift in Sources */,
@@ -1264,7 +1297,6 @@
 				C9CC0E49219100F500AF9D62 /* WeatherCell.swift in Sources */,
 				C9954A4122FCB99A00D4ECE9 /* AppNavigator.swift in Sources */,
 				C9954A3B22FCB98300D4ECE9 /* AppTableViewController.swift in Sources */,
-				C99AA08D2188455E001683B8 /* TrendingMoviesPresenter.swift in Sources */,
 				C90BBE3421D685610065FF43 /* LeftSideMenuViewController.swift in Sources */,
 				C91AF99F218CE93D00BB5559 /* MainViewCell.swift in Sources */,
 				C99AA09521884652001683B8 /* GPSWeatherPresenter.swift in Sources */,
@@ -1424,7 +1456,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GV86YZ8K5S;
 				INFOPLIST_FILE = iOS_Bootstrap/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1450,7 +1482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GV86YZ8K5S;
 				INFOPLIST_FILE = iOS_Bootstrap/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1576,7 +1608,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GV86YZ8K5S;
 				INFOPLIST_FILE = iOS_Bootstrap/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -56,5 +56,4 @@ class Navigator: BaseNavigator {
         let viewController: ValidatorsExampleViewController = ValidatorsExampleViewController()
         getContext().navigationController?.pushViewController(viewController, animated: true)
     }
-    
 }
