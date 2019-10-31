@@ -5,12 +5,12 @@
 //  Created by Ahmad Mahmoud on 10/16/19.
 //
 
-open class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
-                                                              UITableViewDataSource,
-                                                              UITableViewDelegate,
-                                                              EmptyDataSetSource,
-                                                              EmptyDataSetDelegate,
-                                                              ListingAdapterDelegates {
+open class BaseTableViewAdapter<TableView: UITableView, CellItem: Equatable>: NSObject,
+                                                                              UITableViewDataSource,
+                                                                              UITableViewDelegate,
+                                                                              EmptyDataSetSource,
+                                                                              EmptyDataSetDelegate,
+                                                                              ListingAdapterDelegates {
     //
     private final var mTableview : TableView!
     private var tableViewDataSource: [CellItem]?
@@ -18,7 +18,7 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
     private var mCurrentPage : Int = 1
     private var hasMore : Bool = false
     private var firstTime : Bool = true
-    private var indicator : UIActivityIndicatorView?
+    public private(set) var loadingIndicator : UIActivityIndicatorView?
     
     
     open var dataSource: [CellItem] {
@@ -134,7 +134,7 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
         }
         else {
             if (tableViewDataSource?.count == pageItems.count) {
-                if (!(tableViewDataSource?.description.isEqual(pageItems.description))!) {
+                if (!(tableViewDataSource ?? [] == pageItems)) {
                     self.tableViewDataSource?.append(contentsOf: pageItems)
                 }
             }
@@ -144,7 +144,7 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
         }
         //
         mTableview?.reloadData()
-        indicator?.stopAnimating()
+        loadingIndicator?.stopAnimating()
         mTableview?.tableFooterView?.isHidden = true
         self.mCurrentPage += 1
     }
@@ -159,7 +159,7 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
             self.tableViewDataSource = items
         }
         mTableview?.reloadData()
-        indicator?.stopAnimating()
+        loadingIndicator?.stopAnimating()
         mTableview.tableFooterView?.isHidden = true
     }
     
@@ -174,7 +174,7 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
     open func resetTable() {
         self.tableViewDataSource?.removeAll()
         mTableview?.reloadData()
-        indicator?.stopAnimating()
+        loadingIndicator?.stopAnimating()
         mTableview.tableFooterView?.isHidden = true
     }
     //
@@ -197,7 +197,7 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
     open func shouldEnableBottomActivityIndicator() -> Bool {
         return true
     }
-    open func getBottomActivityIndicatorView() -> UIActivityIndicatorView {
+    open func configureBottomActivityIndicatorView() -> UIActivityIndicatorView {
         return UIActivityIndicatorView(activityIndicatorStyle: .gray)
     }
     open func loadMore(tableView: UITableView, forPage page: Int, updatedDataSource: [CellItem]) {}
@@ -285,13 +285,13 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
         if indexPath.row == lastElement {
             if (hasMore) {
                 if (shouldEnableBottomActivityIndicator()) {
-                    indicator = getBottomActivityIndicatorView()
-                    indicator?.startAnimating()
-                    indicator?.frame = CGRect(x: CGFloat(0),
+                    loadingIndicator = configureBottomActivityIndicatorView()
+                    loadingIndicator?.startAnimating()
+                    loadingIndicator?.frame = CGRect(x: CGFloat(0),
                                               y: CGFloat(0),
                                               width: mTableview.bounds.width,
                                               height: CGFloat(45))
-                    mTableview.tableFooterView = indicator
+                    mTableview.tableFooterView = loadingIndicator
                     mTableview.tableFooterView?.isHidden = false
                 }
                 //
@@ -342,7 +342,3 @@ public extension UITableView {
     }
 }
 
-
-class OP: BaseTableViewCellV2<String> {
-    
-}
