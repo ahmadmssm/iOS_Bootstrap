@@ -32,6 +32,4 @@ class TrendingMoviesAdapter: BaseTableViewAdapter<UITableView, TrendingMovieCell
                            updatedDataSource: [TrendingMovieCellModel]) {
         trendingMoviesAdapterProtocol.loadMore(forPage: page, updatedDataSource: updatedDataSource)
     }
-    
-    
 }

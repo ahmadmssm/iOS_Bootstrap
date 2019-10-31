@@ -894,8 +894,8 @@
 		C94FA514BA662168FF2CD721970ED85F /* RLMOptionalBase.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = 29B444B0A5F8AA592F820CE208247128 /* RLMOptionalBase.h */; };
 		C953348C83EA01F5C545B532D8A84620 /* LocalizationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE919E53BB66C1DF780C2AF1DCBAE26 /* LocalizationHelpers.swift */; };
 		C95CA41E25489C316B341BDAE5FCC32F /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D93EFE248F53F795961379B5F672CA /* IQInvocation.swift */; };
-		C9681DF5235BA4560007AA58 /* BaseTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9681DF4235BA4560007AA58 /* BaseTableViewAdapter.swift */; };
 		C978671D744F391945703EB5BA43BE9F /* URLSession+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A808C63109C0FA50A8B7199B4F7E94 /* URLSession+Rx.swift */; };
+		C99949D5235F19B10014A7D7 /* BaseTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99949D4235F19B10014A7D7 /* BaseTableViewAdapter.swift */; };
 		C9A6CF32BBC4E2A36ADA3AF31E0DCC6B /* UITableViewCell + Seprator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E83F9CBA2618E5336D2350F18BFE95 /* UITableViewCell + Seprator.swift */; };
 		CA38EA771026BC2F23945538180DC59F /* UITextField+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25BD272F71F518D9CE356345743ED6E /* UITextField+Rx.swift */; };
 		CA7FDB21FF61431DE26FCD356F8503B9 /* Bundle + App info.swift in Sources */ = {isa = PBXBuildFile; fileRef = A936EBFCDB498870D66A9001C8BB13FA /* Bundle + App info.swift */; };
@@ -2262,7 +2262,7 @@
 		C8D45E20E06D66429DC458A5084BF985 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Extensions.swift"; path = "Platform/DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 		C912E80480196C5B0D939E986C628889 /* BaseTableViewControllerV2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseTableViewControllerV2.swift; sourceTree = "<group>"; };
 		C92706ECB2872FCF71F3809E74899AFB /* CSSPrimitiveValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSSPrimitiveValue.m; path = "Source/DOM classes/Core DOM/CSSPrimitiveValue.m"; sourceTree = "<group>"; };
-		C9681DF4235BA4560007AA58 /* BaseTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewAdapter.swift; sourceTree = "<group>"; };
+		C99949D4235F19B10014A7D7 /* BaseTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewAdapter.swift; sourceTree = "<group>"; };
 		C9E6B07B3DBD34CCE12E4C451EF91AE7 /* BinaryDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryDisposable.swift; path = RxSwift/Disposables/BinaryDisposable.swift; sourceTree = "<group>"; };
 		C9E718E61F67376F1C14E3C2C1F0036D /* RLMQueryUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMQueryUtil.mm; path = Realm/RLMQueryUtil.mm; sourceTree = "<group>"; };
 		CA2DA815BBDBA296AB9F3D25F9C6C37B /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationController+Rx.swift"; path = "RxCocoa/iOS/UINavigationController+Rx.swift"; sourceTree = "<group>"; };
@@ -3716,7 +3716,7 @@
 		92FAE310685C1E5DC7CC3727EC826109 /* NewAdapter */ = {
 			isa = PBXGroup;
 			children = (
-				C9681DF4235BA4560007AA58 /* BaseTableViewAdapter.swift */,
+				C99949D4235F19B10014A7D7 /* BaseTableViewAdapter.swift */,
 				CAB062CCD28CB57CDC1A02F3051B9E2A /* ListingAdapterDelegates.swift */,
 			);
 			path = NewAdapter;
@@ -5730,6 +5730,7 @@
 				B9638BA2ED3E15D9B1FF8C731D41F94C /* BaseCollectionAdapterView.swift in Sources */,
 				4F96DEF893D6A505C817A20083353D96 /* BaseCollectionViewCell.swift in Sources */,
 				179CB19FAF6B802034DDD8818A8980CC /* BaseCollectionViewCellV2.swift in Sources */,
+				50C5634132A3AF56A05B7AB0441F97CB /* ListingAdapterDelegates.swift in Sources */,
 				A0010D0D6348F8D76AB7F00F1056F722 /* BaseCollectionViewController.swift in Sources */,
 				BD4BE7294B516A753D5CC3520CB5091F /* BaseCollectionViewControllerV2.swift in Sources */,
 				A80E722D9B5EB380DC8BA267948CAB1F /* BaseCollectionViewDelegates.swift in Sources */,
@@ -5863,7 +5864,6 @@
 				EB6CB352FD9F7B2E82002D67EF8399B3 /* JsonSerializer.swift in Sources */,
 				8B444FC4263418D76A67070E94AAC967 /* KeyboardManager.swift in Sources */,
 				44AE5698040C9AB6C74C3DDDF64C7AA7 /* Languages.swift in Sources */,
-				50C5634132A3AF56A05B7AB0441F97CB /* ListingAdapterDelegates.swift in Sources */,
 				E5AD54C5562160D02DED76F56CA6A7D7 /* LiveDataProtocol.swift in Sources */,
 				DBA767BA2EEFFE4AB63783FF03C098BC /* LoadingButton.swift in Sources */,
 				C953348C83EA01F5C545B532D8A84620 /* LocalizationHelpers.swift in Sources */,
@@ -5887,7 +5887,7 @@
 				929BA6E710F28C83AC686C64BDC43007 /* ObjectShouldBeNotNil.swift in Sources */,
 				CE078EFDCE8A376CD72A5C643CF9A7B0 /* ObjectValidator.swift in Sources */,
 				9770DD9DA19E3BCF35933184ADF7310D /* Observable+Date+Extension.swift in Sources */,
-				C9681DF5235BA4560007AA58 /* BaseTableViewAdapter.swift in Sources */,
+				C99949D5235F19B10014A7D7 /* BaseTableViewAdapter.swift in Sources */,
 				231961CF0B58CEF3BBF8A02F86EAAAEB /* Observable+Number+Extension.swift in Sources */,
 				B8BA4BEC974F95A14AE0F12583543300 /* Observable+String+Extension.swift in Sources */,
 				CBA2EEBF2EBBD10774AD8746D7B12A88 /* OverridableFunctions.swift in Sources */,

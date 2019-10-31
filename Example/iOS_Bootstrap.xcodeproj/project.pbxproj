@@ -140,7 +140,6 @@
 		C9CC0E4D2191997E00AF9D62 /* AdditionalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0E4C2191997E00AF9D62 /* AdditionalData.swift */; };
 		C9CC0E562192449000AF9D62 /* WeatherMenuItemTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0E552192449000AF9D62 /* WeatherMenuItemTabBarController.swift */; };
 		C9CC0E59219245D300AF9D62 /* NetworkWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0E58219245D300AF9D62 /* NetworkWeatherViewController.swift */; };
-		C9FD08E5235CED2B0008CAF1 /* BaseTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FD08E4235CED2B0008CAF1 /* BaseTableViewAdapter.swift */; };
 		C9FD08E8235D09E90008CAF1 /* TrendingMovies + Floating button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FD08E7235D09E90008CAF1 /* TrendingMovies + Floating button.swift */; };
 		C9FD08EB235D0CA60008CAF1 /* TrendingMoviesAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FD08EA235D0CA60008CAF1 /* TrendingMoviesAdapterProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -296,7 +295,6 @@
 		C9CC0E4C2191997E00AF9D62 /* AdditionalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalData.swift; sourceTree = "<group>"; };
 		C9CC0E552192449000AF9D62 /* WeatherMenuItemTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMenuItemTabBarController.swift; sourceTree = "<group>"; };
 		C9CC0E58219245D300AF9D62 /* NetworkWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherViewController.swift; sourceTree = "<group>"; };
-		C9FD08E4235CED2B0008CAF1 /* BaseTableViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewAdapter.swift; sourceTree = "<group>"; };
 		C9FD08E7235D09E90008CAF1 /* TrendingMovies + Floating button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrendingMovies + Floating button.swift"; sourceTree = "<group>"; };
 		C9FD08EA235D0CA60008CAF1 /* TrendingMoviesAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesAdapterProtocol.swift; sourceTree = "<group>"; };
 		E8BFEB017ECAAB4B900CC096 /* iOS_Bootstrap.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = iOS_Bootstrap.podspec; path = ../iOS_Bootstrap.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -364,7 +362,6 @@
 				C99A405121186C3F007B88A4 /* Resources */,
 				C91AF9A6218D1BAE00BB5559 /* GlobalKeys */,
 				C9C960F720FA8BA30023CDD7 /* Views */,
-				C9FD08E4235CED2B0008CAF1 /* BaseTableViewAdapter.swift */,
 				C99EA61D20CB461B00D7C158 /* Models */,
 				C91FFF5C2193306900DFC0CC /* Utils */,
 			);
@@ -1250,7 +1247,6 @@
 				C95E24DF21FE5A8300621645 /* CloseButton.swift in Sources */,
 				C930E1E421CD3BB600809FB2 /* ToDoPresenter.swift in Sources */,
 				C9BBA26522FD94770052E57A /* GetFiveDaysWeatherForcast.swift in Sources */,
-				C9FD08E5235CED2B0008CAF1 /* BaseTableViewAdapter.swift in Sources */,
 				C93E4B582190575300A62059 /* Wind.swift in Sources */,
 				C930E1CD21CC4F4300809FB2 /* SVGImageLoader.swift in Sources */,
 				C90BBE4721D77E1F0065FF43 /* DateTimeHelpers.swift in Sources */,

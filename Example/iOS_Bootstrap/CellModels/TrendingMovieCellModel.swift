@@ -13,6 +13,7 @@ struct TrendingMovieCellModel: Codable {
     private var posterURL: String?
     //
     var movieTitle: String?
+    var overview: String?
     var releaseDate: String?
     var voting: Double?
     var originalLanguage: String?

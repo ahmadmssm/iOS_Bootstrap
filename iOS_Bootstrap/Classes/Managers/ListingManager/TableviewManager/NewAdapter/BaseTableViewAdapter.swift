@@ -5,9 +5,7 @@
 //  Created by Ahmad Mahmoud on 10/16/19.
 //
 
-import UIKit
-
-class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
+open class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
                                                               UITableViewDataSource,
                                                               UITableViewDelegate,
                                                               EmptyDataSetSource,
@@ -32,30 +30,32 @@ class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
         }
     }
     
-    convenience init(tableView: TableView,
+    public convenience init(tableView: TableView,
                      xibCell: BaseTableViewCell.Type,
                      dataSource: [CellItem] = []) {
         self.init(tableView: tableView, xibCells: xibCell, dataSource: dataSource)
     }
     
-    convenience init(tableView: TableView,
-                     cellClass: BaseTableViewCell.Type,
-                     dataSource: [CellItem] = []) {
+    public convenience init(tableView: TableView,
+                            cellClass: BaseTableViewCell.Type,
+                             dataSource: [CellItem] = []) {
            self.init(tableView: tableView, cellClasses: cellClass, dataSource: dataSource)
     }
     
-    init(tableView: TableView, xibCells: BaseTableViewCell.Type..., dataSource: [CellItem] = []) {
+    public init(tableView: TableView, xibCells: BaseTableViewCell.Type..., dataSource: [CellItem] = []) {
         super.init()
         configureTableWithXibCell(tableView: tableView, dataSource: dataSource, cells: xibCells)
     }
     
-    init(tableView: TableView, cellClasses: BaseTableViewCell.Type..., dataSource: [CellItem] = []) {
+    public init(tableView: TableView,
+                cellClasses: BaseTableViewCell.Type...,
+                dataSource: [CellItem] = []) {
         super.init()
         configureTableWithXibCell(tableView: tableView, dataSource: dataSource, cells: cellClasses)
     }
     
     // Basic(Default) cell
-    init(tableView: TableView, dataSource: [CellItem] = []) {
+    public init(tableView: TableView, dataSource: [CellItem] = []) {
         super.init()
         self.tableViewDataSource = dataSource
         self.mTableview = tableView
@@ -111,7 +111,7 @@ class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
     open func configurePullToRefresh(refreshControl : UIRefreshControl) {
         refreshControl.addTarget(self,
                                  action: #selector(self.pullToRefresh),
-                                 for: UIControlEvents.valueChanged)
+                                 for: UIControl.Event.valueChanged)
         mTableview?.addSubview(refreshControl)
     }
     //
@@ -167,7 +167,7 @@ class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
         mTableview?.reloadData()
     }
     
-    open func reloadTableRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation) {
+    open func reloadTableRows(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
            mTableview.reloadRows(at: indexPaths, with: animation)
     }
     
@@ -187,10 +187,6 @@ class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
         return cell
     }
     
-    open func initCell<Cell: BaseTableViewCellV2<CellItem>>(indexPath: IndexPath) -> Cell {
-        return initCell(cell: Cell.self, indexPath: indexPath)
-    }
-    
     public final func getCellModel(indexPath: IndexPath) -> CellItem? {
         if let cellModel = tableViewDataSource?[exist: indexPath.row] {
             return cellModel
@@ -202,7 +198,7 @@ class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
         return true
     }
     open func getBottomActivityIndicatorView() -> UIActivityIndicatorView {
-        return UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
+        return UIActivityIndicatorView(activityIndicatorStyle: .gray)
     }
     open func loadMore(tableView: UITableView, forPage page: Int, updatedDataSource: [CellItem]) {}
     open func noMoreResutlsToLoad() {}
@@ -259,14 +255,14 @@ class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
     }
 
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  UITableViewAutomaticDimension
+        return UITableViewAutomaticDimension
     }
 
     open func scrollViewWillEndDragging(_ scrollView: UIScrollView,
                                         withVelocity velocity: CGPoint,
                                         targetContentOffset: UnsafeMutablePointer<CGPoint>) {}
     open func tableView(_ tableView: UITableView,
-                        commit editingStyle: UITableViewCellEditingStyle,
+                        commit editingStyle: UITableViewCell.EditingStyle,
                         forRowAt indexPath: IndexPath) {}
     open func tableView(_ tableView: UITableView,
                           willDisplayHeaderView view: UIView,
@@ -325,11 +321,11 @@ class BaseTableViewAdapter<TableView: UITableView, CellItem>: NSObject,
     open func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? { return nil }
     //
     open func buttonImage(forEmptyDataSet scrollView: UIScrollView,
-                          for state: UIControlState) -> UIImage? { return nil }
+                          for state: UIControl.State) -> UIImage? { return nil }
     open func buttonBackgroundImage(forEmptyDataSet scrollView: UIScrollView,
-                                    for state: UIControlState) -> UIImage? { return nil }
+                                    for state: UIControl.State) -> UIImage? { return nil }
     open func buttonTitle(forEmptyDataSet scrollView: UIScrollView,
-                          for state: UIControlState) -> NSAttributedString? { return nil }
+                          for state: UIControl.State) -> NSAttributedString? { return nil }
     open func tableView(_ tableView: UITableView,
                         titleForHeaderInSection section: Int) -> String? { return nil }
     open func tableView(_ tableView: UITableView,

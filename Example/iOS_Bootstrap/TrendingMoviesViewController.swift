@@ -56,7 +56,7 @@ class TrendingMoviesViewController:
     }
     
     func didGetMovieSummary(summary: String) {
-        showWarning(warningMessage: summary)
+        showInfo(message: summary)
     }
     
     @objc func buttonClick(_ :UIButton) {

@@ -43,6 +43,7 @@ class TrendingMoviesPresenter: BasePresenter<TrendingMoviesViewDelegate> {
                     trendingMovie.releaseDate = movie.releaseDate
                     trendingMovie.voting = movie.voteAverage
                     trendingMovie.originalLanguage = movie.originalLanguage
+                    trendingMovie.overview = movie.overview
                     if let posterURL = movie.posterPath {
                         trendingMovie.imageURL = posterURL
                     }
@@ -59,9 +60,13 @@ class TrendingMoviesPresenter: BasePresenter<TrendingMoviesViewDelegate> {
     }
     
     func getSummaryForMovieAt(index: Int) {
-//        var summary: String
-//        if let moviewOverview = moviesArray[index].overview { summary = moviewOverview }
-//        else { summary = "Sorry, There is no summary for this movie!" }
-//        getViewDelegator().didGetMovieSummary(summary: summary)
+        var summary: String
+        if let moviewOverview = moviesArray[index].overview {
+            summary = moviewOverview
+        }
+        else {
+            summary = "Sorry, There is no summary for this movie!"
+        }
+        getViewDelegator().didGetMovieSummary(summary: summary)
     }
 }
