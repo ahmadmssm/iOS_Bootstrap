@@ -157,14 +157,14 @@ void ensure_partial_sync_schema_initialized(Realm& realm)
     auto& group = realm.read_group();
     // Check if the result sets table already has the expected number of columns
     auto table = ObjectStore::table_for_object_type(group, result_sets_type_name);
-    if (table && table->size() >= result_sets_property_count)
+    if (table && table->get_column_count() >= result_sets_property_count)
         return;
 
     realm.begin_transaction();
     // Recheck after starting the transaction as it refreshes
     if (!table)
         table = ObjectStore::table_for_object_type(group, result_sets_type_name);
-    if (table && table->size() >= result_sets_property_count)
+    if (table && table->get_column_count() >= result_sets_property_count)
         return;
     initialize_schema(group);
     realm.commit_transaction();
@@ -607,7 +607,12 @@ private:
     }
 
     bool do_add_required_change_info(_impl::TransactionChangeInfo&) override { return false; }
-    bool prepare_to_deliver() override { return m_has_results_to_deliver; }
+    bool prepare_to_deliver() override
+    {
+        std::lock_guard<std::mutex> lock(m_mutex);
+        return m_has_results_to_deliver;
+
+    }
 
     _impl::RealmCoordinator *m_coordinator;
 
