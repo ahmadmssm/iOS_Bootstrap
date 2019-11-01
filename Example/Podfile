@@ -3,14 +3,12 @@ use_frameworks!
 
 target 'iOS_Bootstrap_Example' do
   pod 'iOS_Bootstrap', :path => '../'
-  pod 'SVGKit'
   pod 'RxCocoa',    '~> 4.0'
-  pod ‘RealmSwift’
+  pod 'RealmSwift'
+  pod 'SVGKit'
 
   target 'iOS_Bootstrap_Tests' do
     inherit! :search_paths
-
-    
   end
 end
 

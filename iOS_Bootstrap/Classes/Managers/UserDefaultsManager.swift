@@ -114,12 +114,14 @@ public class UserDefaultsManager {
     }
     
     open func getArrayWithKey<T>(key: String) -> [T] {
-        if let value: [T] = defaults.array(forKey: key)! as? [T] { return value }
+        if let value: [T] = defaults.array(forKey: key) as? [T] {
+            return value
+        }
         return [] as [T]
     }
     
     open func getArrayWithKey <O, T: RawRepresentable>(key: T) -> [O] where T.RawValue == String {
-        if let value : [O] = defaults.array(forKey: key.rawValue)! as? [O] { return value }
+        if let value : [O] = defaults.array(forKey: key.rawValue) as? [O] { return value }
         return [] as [O]
     }
     

@@ -3,7 +3,7 @@ PODS:
   - CocoaLumberjack (3.6.0):
     - CocoaLumberjack/Core (= 3.6.0)
   - CocoaLumberjack/Core (3.6.0)
-  - iOS_Bootstrap (1.6.8):
+  - iOS_Bootstrap (1.6.9):
     - IQKeyboardManagerSwift (= 6.0.4)
     - Moya/RxSwift (~> 13.0)
   - IQKeyboardManagerSwift (6.0.4)
@@ -13,11 +13,11 @@ PODS:
   - Moya/RxSwift (13.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
-  - Realm (3.19.0):
-    - Realm/Headers (= 3.19.0)
-  - Realm/Headers (3.19.0)
-  - RealmSwift (3.19.0):
-    - Realm (= 3.19.0)
+  - Realm (3.20.0):
+    - Realm/Headers (= 3.20.0)
+  - Realm/Headers (3.20.0)
+  - RealmSwift (3.20.0):
+    - Realm (= 3.20.0)
   - Result (4.1.0)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
@@ -34,14 +34,15 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
-    - CocoaLumberjack
     - IQKeyboardManagerSwift
     - Moya
-    - Realm
-    - RealmSwift
     - Result
     - RxCocoa
     - RxSwift
+  trunk:
+    - CocoaLumberjack
+    - Realm
+    - RealmSwift
     - SVGKit
 
 EXTERNAL SOURCES:
@@ -51,16 +52,16 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   CocoaLumberjack: 78b0c238666f4f58db069738ec176f4519557516
-  iOS_Bootstrap: b90a4097392f26b6f9124f1846a99fa2a9e7ef59
+  iOS_Bootstrap: 3c00d19d42274d4cabb3f51a4791d7282c0a8aa5
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  Realm: 995d585bcf699aaff226715886c849a29dd3d07f
-  RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
+  Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
+  RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
 
-PODFILE CHECKSUM: 4eca9ef9c3ea5463b85740740b23a30cdf651e2d
+PODFILE CHECKSUM: c176b9829079c6660a56904589dcad2c90aa2162
 
 COCOAPODS: 1.8.4

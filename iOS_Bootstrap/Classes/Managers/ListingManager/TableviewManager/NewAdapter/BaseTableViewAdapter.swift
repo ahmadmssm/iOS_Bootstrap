@@ -89,8 +89,8 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem: Equatable>: NS
     
     private func setUp() {
         registerMoreCustomCells()
-        mTableview?.dataSource = self
-        mTableview?.delegate = self
+        mTableview.dataSource = self
+        mTableview.delegate = self
         mTableview.emptyDataSetDelegate = self
         mTableview.emptyDataSetSource = self
         //
@@ -112,7 +112,7 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem: Equatable>: NS
         refreshControl.addTarget(self,
                                  action: #selector(self.pullToRefresh),
                                  for: UIControl.Event.valueChanged)
-        mTableview?.addSubview(refreshControl)
+        mTableview.addSubview(refreshControl)
     }
     //
     public final func getTableView() -> TableView {
@@ -143,9 +143,9 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem: Equatable>: NS
             }
         }
         //
-        mTableview?.reloadData()
+        mTableview.reloadData()
         loadingIndicator?.stopAnimating()
-        mTableview?.tableFooterView?.isHidden = true
+        mTableview.tableFooterView?.isHidden = true
         self.mCurrentPage += 1
     }
     
@@ -158,7 +158,7 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem: Equatable>: NS
             self.tableViewDataSource?.removeAll()
             self.tableViewDataSource = items
         }
-        mTableview?.reloadData()
+        mTableview.reloadData()
         loadingIndicator?.stopAnimating()
         mTableview.tableFooterView?.isHidden = true
     }
@@ -176,6 +176,16 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem: Equatable>: NS
         mTableview?.reloadData()
         loadingIndicator?.stopAnimating()
         mTableview.tableFooterView?.isHidden = true
+    }
+    
+    open func showBottomLoader() {
+        self.loadingIndicator?.startAnimating()
+        self.mTableview.tableFooterView?.isHidden = false
+    }
+    
+    open func hideBottomLoader() {
+        self.loadingIndicator?.stopAnimating()
+        self.mTableview.tableFooterView?.isHidden = true
     }
     //
     open func initCell<Cell: BaseTableViewCellV2<CellItem>>(cell: Cell.Type,

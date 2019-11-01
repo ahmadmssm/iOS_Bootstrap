@@ -7,7 +7,6 @@
 
 public protocol ListingAdapterDelegates {
     associatedtype CellItem
-    func loadMore(tableView: UITableView, forPage page: Int, updatedDataSource: [CellItem])
     func noMoreResutlsToLoad()
     func pullToRefresh()
     func registerMoreCustomCells()

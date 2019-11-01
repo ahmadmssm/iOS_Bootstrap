@@ -213,7 +213,6 @@ extension CollectionViewAdapter : UICollectionViewDataSource, UICollectionViewDe
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         mDelegate?.itemDidSelected?(collectionView: collectionView, indexPath: indexPath)
     }
-    
 
     public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         mDelegate?.scrollViewAdapterWillEndDragging?(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
@@ -316,6 +315,5 @@ extension CollectionViewAdapter : EmptyDataSetSource, EmptyDataSetDelegate {
     public func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {
         mDelegate?.emptyDataSetButtonTapped?(didTapButton: button)
     }
-    
 }
 

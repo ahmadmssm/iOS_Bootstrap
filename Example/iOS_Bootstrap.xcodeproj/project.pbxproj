@@ -629,7 +629,6 @@
 		C93E4B41218E232C00A62059 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				C9FD08E6235D08DB0008CAF1 /* TrendingMovies */,
 				C91AF998218CE8BF00BB5559 /* MainViewScene */,
 				C973B7B721C4367700B63A69 /* ValidatorsExampleScene */,
 				C93E4B3E218D23EB00A62059 /* CustomViewsScene */,
@@ -988,13 +987,6 @@
 				C99AA0852187D3E2001683B8 /* NetworkWeatherPresenter.swift */,
 			);
 			name = NetworkWeatherViewController;
-			sourceTree = "<group>";
-		};
-		C9FD08E6235D08DB0008CAF1 /* TrendingMovies */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = TrendingMovies;
 			sourceTree = "<group>";
 		};
 		C9FD08E9235D0C410008CAF1 /* Table */ = {
