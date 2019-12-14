@@ -7,16 +7,16 @@
 //
 
 import MapKit
+import Resolver
 
 protocol LocationManagerDelegate {
     func didGetLocationCoordinates(lat : Double, longt : Double)
     func didFailtToGetLocationCoordinates()
-
 }
 
 class LocationManager {
     
-    private let locationManager = CLLocationManager()
+    @LazyInjected private var locationManager: CLLocationManager
     var delegate: LocationManagerDelegate!
     
     final func requestLocationPermission() {
@@ -35,5 +35,4 @@ class LocationManager {
             delegate!.didGetLocationCoordinates(lat: currentLocation.coordinate.latitude, longt: currentLocation.coordinate.longitude)
         }
     }
-
 }

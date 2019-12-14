@@ -27,6 +27,10 @@ class TrendingMoviesViewController:
         self.title = "Trending movies"
         createFloatingButton()
     }
+     
+    override func initPresenter() -> TrendingMoviesPresenter {
+        return  resolver.resolve(args: self)
+    }
     
     override func localizeStrings() {}
 

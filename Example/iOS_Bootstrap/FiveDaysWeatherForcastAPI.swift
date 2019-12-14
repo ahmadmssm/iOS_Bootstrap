@@ -1,5 +1,5 @@
 //
-//  GetFiveDaysWeatherForcast.swift
+//  FiveDaysWeatherForcastAPI.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 8/9/19.
@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-class GetFiveDaysWeatherForcast: AppAPI<WeatherForcast> {
+class FiveDaysWeatherForcastAPI: AppAPI<WeatherForcast> {
     
     private let lat: Double
     private let longt: Double

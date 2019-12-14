@@ -8,10 +8,12 @@
 
 import iOS_Bootstrap
 import RxSwift
+import Resolver
 
 @available(iOS 10.0, *)
-class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
+class CountriesPresenter: BasePresenter<CountriesViewDelegator> {
     
+    @LazyInjected private var repo: Repo
     private var countriesArray : [CountryEntity]!
     private var filteredCountriesArray : [CountryEntity]!
     private var isFirstTimeLoading : Bool = true
@@ -25,7 +27,7 @@ class CountriesPresenter : BasePresenter<CountriesViewDelegator> {
     override func viewControllerDidLoaded() { getWorldCountries() }
     
     private func getWorldCountries() {
-        Repo
+        repo
             .getAllCountries()
             .subscribe(onSuccess: { [weak self] countries in
                 self?

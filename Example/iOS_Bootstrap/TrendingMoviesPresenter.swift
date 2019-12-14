@@ -13,6 +13,12 @@ class TrendingMoviesPresenter: BasePresenter<TrendingMoviesViewDelegate> {
     
     private var moviesArray: [TrendingMovieCellModel]  = []
     private var page: Int = 1
+    private var trendingMoviesRepo: TrendingMoviesRepo!
+    
+    required convenience init(viewDelegator: TrendingMoviesViewDelegate, trendingMoviesRepo: TrendingMoviesRepo) {
+        self.init(viewDelegator: viewDelegator)
+        self.trendingMoviesRepo = trendingMoviesRepo
+    }
     
     required init(viewDelegator: TrendingMoviesViewDelegate) {
         super.init(viewDelegator: viewDelegator)
@@ -23,7 +29,8 @@ class TrendingMoviesPresenter: BasePresenter<TrendingMoviesViewDelegate> {
     }
     
     func getTrendingMovies(pageNumber : Int) {
-        Repo.getTrendingMovies(page: pageNumber)
+        trendingMoviesRepo
+            .getTrendingMovies(page: pageNumber)
             .flatMap({ [weak self] moviesPage -> Single<MoviesPage> in
                 // The page params are set one time only
                 if(self?.page == 1) {

@@ -37,5 +37,4 @@ class LanguageManager {
         lngMngr.switchAppLanguageInstantly(language: Languages.English)
         completion()
     }
-    
 }

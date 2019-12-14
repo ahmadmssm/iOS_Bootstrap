@@ -1,5 +1,5 @@
 //
-//  GetWorldCountriesAPI.swift
+//  WorldCountriesAPI.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 8/9/19.
@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-class GetWorldCountriesAPI: AppAPI<[Country]> {
+class WorldCountriesAPI: AppAPI<[Country]> {
     
     override var baseURL: URL { return "https://restcountries.eu/rest/v2".toURL() }
     override var route: Route { return .get("/all") }

@@ -7,36 +7,38 @@
 //
 
 import RxSwift
+import Resolver
 
-struct Repo {
+class Repo: Resolving {
     
-    static func getTrendingMovies(page: Int) -> Single<MoviesPage> {
-        return GetTrendingMovies(page: page).requestWithNoAuthentication()
-    }
+    @LazyInjected private var worldCountriesAPI: WorldCountriesAPI
+    @LazyInjected private var devicePublicIPAPI: DevicePublicIPAPI
     
-    static func getAllCountries() -> Single<[Country]> {
-        return GetWorldCountriesAPI().requestWithNoAuthentication()
+    func getAllCountries() -> Single<[Country]> {
+        return worldCountriesAPI.requestWithNoAuthentication()
     }
    
-    static func getPublicIP() -> Single<String> {
-        return GetDevicePublicIP().requestWithNoAuthentication()
+    func getPublicIP() -> Single<String> {
+        return devicePublicIPAPI.requestWithNoAuthentication()
     }
     
-    static func getLocationCoordinatesFor(publicIP: String) -> Single<Coordinates> {
-        return GetLocationCoordinates(ip: publicIP).requestWithNoAuthentication()
+    func getLocationCoordinatesFor(publicIP: String) -> Single<Coordinates> {
+        let locationCoordinatesAPI: LocationCoordinatesAPI = resolver.resolve(args: publicIP)
+        return locationCoordinatesAPI.requestWithNoAuthentication()
     }
 
-    static func get5DaysWeatherForcastBy(lat: Double, longt: Double) -> Single<WeatherForcast> {
-        return GetFiveDaysWeatherForcast(lat: lat, longt: longt).requestWithNoAuthentication()
+    func get5DaysWeatherForcastBy(lat: Double, longt: Double) -> Single<WeatherForcast> {
+        let fiveDaysWeatherForcastAPI: FiveDaysWeatherForcastAPI = resolver.resolve(arg0: lat, arg1: longt)
+        return fiveDaysWeatherForcastAPI.requestWithNoAuthentication()
     }
     
-    static func getFiveDaysWeatherForcastWithNetworkProvidedLocation() -> Single<WeatherForcast> {
+    func getFiveDaysWeatherForcastWithNetworkProvidedLocation() -> Single<WeatherForcast> {
         return getPublicIP()
             .flatMap({ publicIP in
-                return getLocationCoordinatesFor(publicIP: publicIP)
+                return self.getLocationCoordinatesFor(publicIP: publicIP)
             })
             .flatMap({ coordinates in
-                return get5DaysWeatherForcastBy(lat: coordinates.lat!, longt: coordinates.lon!)
+                return self.get5DaysWeatherForcastBy(lat: coordinates.lat!, longt: coordinates.lon!)
             })
     }
 }

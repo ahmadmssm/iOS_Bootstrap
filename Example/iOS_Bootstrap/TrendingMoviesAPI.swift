@@ -1,5 +1,5 @@
 //
-//  GetTrendingMovies.swift
+//  TrendingMoviesAPI.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 8/9/19.
@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-class GetTrendingMovies: AppAPI<MoviesPage> {
+class TrendingMoviesAPI: AppAPI<MoviesPage> {
     
     private let page: Int
     

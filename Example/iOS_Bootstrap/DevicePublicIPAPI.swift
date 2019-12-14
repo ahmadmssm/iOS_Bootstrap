@@ -1,5 +1,5 @@
 //
-//  GetDevicePublicIP.swift
+//  DevicePublicIPAPI.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 8/9/19.
@@ -9,7 +9,7 @@
 import iOS_Bootstrap
 import RxSwift
 
-class GetDevicePublicIP: AppAPI<String> {
+class DevicePublicIPAPI: AppAPI<String> {
     override var baseURL: URL {
         return "https://api.ipify.org?format=json2".toURL()
     }

@@ -1,5 +1,5 @@
 //
-//  AppViewDelegator.swift
+//  AppViewDelegate.swift
 //  iOS_Bootstrap_BaseProject
 //
 //  Created by Ahmad Mahmoud on 6/20/19.
@@ -8,4 +8,4 @@
 
 import iOS_Bootstrap
 
-protocol AppViewDelegator: BaseViewDelegator {}
+protocol AppViewDelegate: BaseViewDelegator {}

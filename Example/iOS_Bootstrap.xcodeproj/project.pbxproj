@@ -29,6 +29,14 @@
 		C91AF9A0218CE93D00BB5559 /* MainViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91AF99E218CE93D00BB5559 /* MainViewCell.xib */; };
 		C91AF9A3218CE9CF00BB5559 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91AF9A2218CE9CF00BB5559 /* MainPresenter.swift */; };
 		C91AF9A5218CE9E300BB5559 /* MainViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91AF9A4218CE9E300BB5559 /* MainViewDelegator.swift */; };
+		C91C797F23A5594D00D4952A /* Resolver+MultiParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C797E23A5594D00D4952A /* Resolver+MultiParams.swift */; };
+		C91FACF823A4F1B700F516CF /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FACF723A4F1B700F516CF /* AppDelegate+Injection.swift */; };
+		C91FACFB23A4F33000F516CF /* RestModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FACFA23A4F33000F516CF /* RestModules.swift */; };
+		C91FACFD23A4F36000F516CF /* RepositoriesModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FACFC23A4F36000F516CF /* RepositoriesModules.swift */; };
+		C91FACFF23A4F37400F516CF /* OtherModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FACFE23A4F37400F516CF /* OtherModules.swift */; };
+		C91FAD0123A4F4F700F516CF /* TrendingMoviesRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FAD0023A4F4F600F516CF /* TrendingMoviesRepo.swift */; };
+		C91FAD0323A4FC2800F516CF /* PresenterModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FAD0223A4FC2800F516CF /* PresenterModules.swift */; };
+		C91FAD0623A4FD6E00F516CF /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FAD0523A4FD6E00F516CF /* UIViewControllerExtensions.swift */; };
 		C91FC7172112FE8800A199F0 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FC7162112FE8800A199F0 /* Environment.swift */; };
 		C91FC7192113092600A199F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FC7182113092600A199F0 /* Constants.swift */; };
 		C91FFF592192F94B00DFC0CC /* WeatherViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FFF582192F94B00DFC0CC /* WeatherViewDelegator.swift */; };
@@ -97,10 +105,9 @@
 		C97CB4032190E94A00F396D3 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97CB4022190E94A00F396D3 /* Currency.swift */; };
 		C9954A3422FCB98300D4ECE9 /* AppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A2522FCB98200D4ECE9 /* AppAPI.swift */; };
 		C9954A3522FCB98300D4ECE9 /* AppRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A2622FCB98200D4ECE9 /* AppRestClient.swift */; };
-		C9954A3822FCB98300D4ECE9 /* AppViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A2D22FCB98300D4ECE9 /* AppViewDelegator.swift */; };
+		C9954A3822FCB98300D4ECE9 /* AppViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A2D22FCB98300D4ECE9 /* AppViewDelegate.swift */; };
 		C9954A3922FCB98300D4ECE9 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A2E22FCB98300D4ECE9 /* AppViewController.swift */; };
 		C9954A3A22FCB98300D4ECE9 /* AppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A2F22FCB98300D4ECE9 /* AppPresenter.swift */; };
-		C9954A3B22FCB98300D4ECE9 /* AppTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A3022FCB98300D4ECE9 /* AppTableViewController.swift */; };
 		C9954A4122FCB99A00D4ECE9 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A3C22FCB99900D4ECE9 /* AppNavigator.swift */; };
 		C9954A4222FCB99A00D4ECE9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A3D22FCB99900D4ECE9 /* BaseViewModel.swift */; };
 		C9954A4322FCB99A00D4ECE9 /* BaseRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A3F22FCB99900D4ECE9 /* BaseRealmModel.swift */; };
@@ -127,11 +134,11 @@
 		C9B7E2CA21EF4CD100DF4751 /* AppWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B7E2C921EF4CD100DF4751 /* AppWindow.swift */; };
 		C9BBA25522FCD54B0052E57A /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA25022FCD54B0052E57A /* Requestable.swift */; };
 		C9BBA25B22FD92150052E57A /* RefreshTokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA25A22FD92150052E57A /* RefreshTokenAPI.swift */; };
-		C9BBA25D22FD93110052E57A /* GetWorldCountriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA25C22FD93110052E57A /* GetWorldCountriesAPI.swift */; };
-		C9BBA25F22FD94020052E57A /* GetTrendingMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA25E22FD94020052E57A /* GetTrendingMovies.swift */; };
-		C9BBA26122FD942D0052E57A /* GetDevicePublicIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA26022FD942D0052E57A /* GetDevicePublicIP.swift */; };
-		C9BBA26322FD944F0052E57A /* GetLocationCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA26222FD944F0052E57A /* GetLocationCoordinates.swift */; };
-		C9BBA26522FD94770052E57A /* GetFiveDaysWeatherForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA26422FD94770052E57A /* GetFiveDaysWeatherForcast.swift */; };
+		C9BBA25D22FD93110052E57A /* WorldCountriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA25C22FD93110052E57A /* WorldCountriesAPI.swift */; };
+		C9BBA25F22FD94020052E57A /* TrendingMoviesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA25E22FD94020052E57A /* TrendingMoviesAPI.swift */; };
+		C9BBA26122FD942D0052E57A /* DevicePublicIPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA26022FD942D0052E57A /* DevicePublicIPAPI.swift */; };
+		C9BBA26322FD944F0052E57A /* LocationCoordinatesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA26222FD944F0052E57A /* LocationCoordinatesAPI.swift */; };
+		C9BBA26522FD94770052E57A /* FiveDaysWeatherForcastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA26422FD94770052E57A /* FiveDaysWeatherForcastAPI.swift */; };
 		C9BBA26C22FD998A0052E57A /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBA26B22FD998A0052E57A /* Repo.swift */; };
 		C9CBBD37234ABB2B00B6CA29 /* CustomViewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CBBD35234ABB2B00B6CA29 /* CustomViewsViewController.swift */; };
 		C9CBBD38234ABB2B00B6CA29 /* CustomViewsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CBBD36234ABB2B00B6CA29 /* CustomViewsView.xib */; };
@@ -187,6 +194,14 @@
 		C91AF99E218CE93D00BB5559 /* MainViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewCell.xib; sourceTree = "<group>"; };
 		C91AF9A2218CE9CF00BB5559 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		C91AF9A4218CE9E300BB5559 /* MainViewDelegator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewDelegator.swift; sourceTree = "<group>"; };
+		C91C797E23A5594D00D4952A /* Resolver+MultiParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+MultiParams.swift"; sourceTree = "<group>"; };
+		C91FACF723A4F1B700F516CF /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
+		C91FACFA23A4F33000F516CF /* RestModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestModules.swift; sourceTree = "<group>"; };
+		C91FACFC23A4F36000F516CF /* RepositoriesModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesModules.swift; sourceTree = "<group>"; };
+		C91FACFE23A4F37400F516CF /* OtherModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherModules.swift; sourceTree = "<group>"; };
+		C91FAD0023A4F4F600F516CF /* TrendingMoviesRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesRepo.swift; sourceTree = "<group>"; };
+		C91FAD0223A4FC2800F516CF /* PresenterModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterModules.swift; sourceTree = "<group>"; };
+		C91FAD0523A4FD6E00F516CF /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		C91FC7162112FE8800A199F0 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		C91FC7182113092600A199F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C91FFF582192F94B00DFC0CC /* WeatherViewDelegator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewDelegator.swift; sourceTree = "<group>"; };
@@ -251,10 +266,9 @@
 		C97CB4022190E94A00F396D3 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C9954A2522FCB98200D4ECE9 /* AppAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAPI.swift; sourceTree = "<group>"; };
 		C9954A2622FCB98200D4ECE9 /* AppRestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRestClient.swift; sourceTree = "<group>"; };
-		C9954A2D22FCB98300D4ECE9 /* AppViewDelegator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewDelegator.swift; sourceTree = "<group>"; };
+		C9954A2D22FCB98300D4ECE9 /* AppViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewDelegate.swift; sourceTree = "<group>"; };
 		C9954A2E22FCB98300D4ECE9 /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		C9954A2F22FCB98300D4ECE9 /* AppPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPresenter.swift; sourceTree = "<group>"; };
-		C9954A3022FCB98300D4ECE9 /* AppTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTableViewController.swift; sourceTree = "<group>"; };
 		C9954A3C22FCB99900D4ECE9 /* AppNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
 		C9954A3D22FCB99900D4ECE9 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		C9954A3F22FCB99900D4ECE9 /* BaseRealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRealmModel.swift; sourceTree = "<group>"; };
@@ -282,11 +296,11 @@
 		C9B7E2C921EF4CD100DF4751 /* AppWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindow.swift; sourceTree = "<group>"; };
 		C9BBA25022FCD54B0052E57A /* Requestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		C9BBA25A22FD92150052E57A /* RefreshTokenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenAPI.swift; sourceTree = "<group>"; };
-		C9BBA25C22FD93110052E57A /* GetWorldCountriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWorldCountriesAPI.swift; sourceTree = "<group>"; };
-		C9BBA25E22FD94020052E57A /* GetTrendingMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrendingMovies.swift; sourceTree = "<group>"; };
-		C9BBA26022FD942D0052E57A /* GetDevicePublicIP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDevicePublicIP.swift; sourceTree = "<group>"; };
-		C9BBA26222FD944F0052E57A /* GetLocationCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationCoordinates.swift; sourceTree = "<group>"; };
-		C9BBA26422FD94770052E57A /* GetFiveDaysWeatherForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFiveDaysWeatherForcast.swift; sourceTree = "<group>"; };
+		C9BBA25C22FD93110052E57A /* WorldCountriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCountriesAPI.swift; sourceTree = "<group>"; };
+		C9BBA25E22FD94020052E57A /* TrendingMoviesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesAPI.swift; sourceTree = "<group>"; };
+		C9BBA26022FD942D0052E57A /* DevicePublicIPAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicePublicIPAPI.swift; sourceTree = "<group>"; };
+		C9BBA26222FD944F0052E57A /* LocationCoordinatesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinatesAPI.swift; sourceTree = "<group>"; };
+		C9BBA26422FD94770052E57A /* FiveDaysWeatherForcastAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDaysWeatherForcastAPI.swift; sourceTree = "<group>"; };
 		C9BBA26B22FD998A0052E57A /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		C9CBBD35234ABB2B00B6CA29 /* CustomViewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewsViewController.swift; sourceTree = "<group>"; };
 		C9CBBD36234ABB2B00B6CA29 /* CustomViewsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomViewsView.xib; sourceTree = "<group>"; };
@@ -355,15 +369,10 @@
 		607FACD21AFB9204008FA782 /* Example for iOS_Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				C9954A1E22FCB90000D4ECE9 /* BaseClasses */,
-				607FACD31AFB9204008FA782 /* Supporting Files */,
-				C9BBA25922FD91FC0052E57A /* APIs */,
-				C930E1D821CD19F900809FB2 /* Managers */,
-				C99A405121186C3F007B88A4 /* Resources */,
-				C91AF9A6218D1BAE00BB5559 /* GlobalKeys */,
+				C91C798023A55E2A00D4952A /* Common */,
+				C91FACF923A4F31A00F516CF /* DI */,
+				C930E1D821CD19F900809FB2 /* DataSource */,
 				C9C960F720FA8BA30023CDD7 /* Views */,
-				C99EA61D20CB461B00D7C158 /* Models */,
-				C91FFF5C2193306900DFC0CC /* Utils */,
 			);
 			name = "Example for iOS_Bootstrap";
 			path = iOS_Bootstrap;
@@ -491,13 +500,47 @@
 			name = GlobalKeys;
 			sourceTree = "<group>";
 		};
-		C91FFF542192F17800DFC0CC /* BaseClasses */ = {
+		C91C798023A55E2A00D4952A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C902036E20F571C100A63492 /* Navigator.swift */,
+				C91FFF5C2193306900DFC0CC /* Utils */,
+				C99EA61D20CB461B00D7C158 /* Models */,
+				C91AF9A6218D1BAE00BB5559 /* GlobalKeys */,
+				C99A405121186C3F007B88A4 /* Resources */,
+				607FACD31AFB9204008FA782 /* Supporting Files */,
+				C9954A1E22FCB90000D4ECE9 /* BaseClasses */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		C91FACF923A4F31A00F516CF /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				C91FACFA23A4F33000F516CF /* RestModules.swift */,
+				C91FACFC23A4F36000F516CF /* RepositoriesModules.swift */,
+				C91FACFE23A4F37400F516CF /* OtherModules.swift */,
+				C91FAD0223A4FC2800F516CF /* PresenterModules.swift */,
+			);
+			name = DI;
+			sourceTree = "<group>";
+		};
+		C91FAD0423A4FD5C00F516CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C91FAD0523A4FD6E00F516CF /* UIViewControllerExtensions.swift */,
+				C91C797E23A5594D00D4952A /* Resolver+MultiParams.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		C91FFF542192F17800DFC0CC /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
 				C99AA0A021886120001683B8 /* MySlidingMenu.swift */,
 				C99AA0802187D360001683B8 /* MyBaseMenuItemViewControllers.swift */,
 			);
-			name = BaseClasses;
+			name = SideMenu;
 			sourceTree = "<group>";
 		};
 		C91FFF572192F8FC00DFC0CC /* Common */ = {
@@ -512,10 +555,13 @@
 		C91FFF5C2193306900DFC0CC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C91FAD0423A4FD5C00F516CF /* Extensions */,
 				C930E1DB21CD1EC500809FB2 /* SVG Image */,
 				C930E1D321CD165000809FB2 /* Realm */,
 				C90BBE4621D77E1F0065FF43 /* DateTimeHelpers.swift */,
 				C95ABA7222BEA18E00E06DC3 /* UIViewController + Alerts.swift */,
+				C91FFF5A21930F7F00DFC0CC /* LocationManager.swift */,
+				C91FFF6021972F0C00DFC0CC /* LanguageManager.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -546,17 +592,15 @@
 			name = Realm;
 			sourceTree = "<group>";
 		};
-		C930E1D821CD19F900809FB2 /* Managers */ = {
+		C930E1D821CD19F900809FB2 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				C902036E20F571C100A63492 /* Navigator.swift */,
-				C91FFF5A21930F7F00DFC0CC /* LocationManager.swift */,
-				C91FFF6021972F0C00DFC0CC /* LanguageManager.swift */,
 				C9BBA26B22FD998A0052E57A /* Repo.swift */,
+				C9BBA25922FD91FC0052E57A /* APIs */,
 				C930E1F121CD416900809FB2 /* Realm */,
 				C973B7CA21C51DA400B63A69 /* CoreData */,
 			);
-			name = Managers;
+			name = DataSource;
 			sourceTree = "<group>";
 		};
 		C930E1DB21CD1EC500809FB2 /* SVG Image */ = {
@@ -663,6 +707,7 @@
 		C946C12B21A367F800B0F553 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
+				C91FFF542192F17800DFC0CC /* SideMenu */,
 				C95E24E221FE5C1D00621645 /* FloatingButton */,
 				C95E24DB21FE5A5900621645 /* TagListView  */,
 				C970DD7821A07D280079B706 /* GradientNavigationController.swift */,
@@ -796,10 +841,9 @@
 		C9954A2C22FCB98300D4ECE9 /* BaseMVP */ = {
 			isa = PBXGroup;
 			children = (
-				C9954A2D22FCB98300D4ECE9 /* AppViewDelegator.swift */,
+				C9954A2D22FCB98300D4ECE9 /* AppViewDelegate.swift */,
 				C9954A2E22FCB98300D4ECE9 /* AppViewController.swift */,
 				C9954A2F22FCB98300D4ECE9 /* AppPresenter.swift */,
-				C9954A3022FCB98300D4ECE9 /* AppTableViewController.swift */,
 			);
 			path = BaseMVP;
 			sourceTree = "<group>";
@@ -863,6 +907,7 @@
 				C964F15D235B9D48006320AE /* TrendingMoviesPresenter.swift */,
 				C964F15F235B9E15006320AE /* TrendingMoviesViewDelegate.swift */,
 				C9FD08E7235D09E90008CAF1 /* TrendingMovies + Floating button.swift */,
+				C91FAD0023A4F4F600F516CF /* TrendingMoviesRepo.swift */,
 			);
 			name = TrendingMoviesScene;
 			sourceTree = "<group>";
@@ -942,6 +987,7 @@
 				C9B7E2C721EF4C8B00DF4751 /* RefreshTokenService.swift */,
 				C9B7E2C921EF4CD100DF4751 /* AppWindow.swift */,
 				C901192A21F342D30061B593 /* EssentialAppConfigs.swift */,
+				C91FACF723A4F1B700F516CF /* AppDelegate+Injection.swift */,
 			);
 			name = AppDelegate;
 			sourceTree = "<group>";
@@ -950,11 +996,11 @@
 			isa = PBXGroup;
 			children = (
 				C9BBA25A22FD92150052E57A /* RefreshTokenAPI.swift */,
-				C9BBA25C22FD93110052E57A /* GetWorldCountriesAPI.swift */,
-				C9BBA25E22FD94020052E57A /* GetTrendingMovies.swift */,
-				C9BBA26022FD942D0052E57A /* GetDevicePublicIP.swift */,
-				C9BBA26222FD944F0052E57A /* GetLocationCoordinates.swift */,
-				C9BBA26422FD94770052E57A /* GetFiveDaysWeatherForcast.swift */,
+				C9BBA25C22FD93110052E57A /* WorldCountriesAPI.swift */,
+				C9BBA25E22FD94020052E57A /* TrendingMoviesAPI.swift */,
+				C9BBA26022FD942D0052E57A /* DevicePublicIPAPI.swift */,
+				C9BBA26222FD944F0052E57A /* LocationCoordinatesAPI.swift */,
+				C9BBA26422FD94770052E57A /* FiveDaysWeatherForcastAPI.swift */,
 			);
 			name = APIs;
 			sourceTree = "<group>";
@@ -964,7 +1010,6 @@
 			children = (
 				C90BBE3021D682C00065FF43 /* SplashScreen.xib */,
 				C99AA09E21885751001683B8 /* Storyboards */,
-				C91FFF542192F17800DFC0CC /* BaseClasses */,
 				C946C12B21A367F800B0F553 /* CustomComponents */,
 				C93E4B41218E232C00A62059 /* Scenes */,
 			);
@@ -1187,18 +1232,19 @@
 				C91FFF652197816A00DFC0CC /* Coordinates.swift in Sources */,
 				C95D788321D6718F00D25B77 /* MainViewController.swift in Sources */,
 				C915C59C20CAC1F10029F5D9 /* CountriesCell.swift in Sources */,
-				C9954A3822FCB98300D4ECE9 /* AppViewDelegator.swift in Sources */,
+				C9954A3822FCB98300D4ECE9 /* AppViewDelegate.swift in Sources */,
 				C99AA06F218740CD001683B8 /* SideMenuCell.swift in Sources */,
 				C9954A3422FCB98300D4ECE9 /* AppAPI.swift in Sources */,
 				C9FD08E8235D09E90008CAF1 /* TrendingMovies + Floating button.swift in Sources */,
-				C9BBA26322FD944F0052E57A /* GetLocationCoordinates.swift in Sources */,
+				C9BBA26322FD944F0052E57A /* LocationCoordinatesAPI.swift in Sources */,
 				C964F15E235B9D48006320AE /* TrendingMoviesPresenter.swift in Sources */,
+				C91FAD0123A4F4F700F516CF /* TrendingMoviesRepo.swift in Sources */,
 				C930E1E921CD3D7100809FB2 /* ToDoCell.swift in Sources */,
 				C90BBE3C21D697B60065FF43 /* RightSideMenuViewController.swift in Sources */,
 				C930E20221CD892E00809FB2 /* TaskEntity.swift in Sources */,
 				C97CB4032190E94A00F396D3 /* Currency.swift in Sources */,
 				C930E1D721CD172C00809FB2 /* RealmObserver.swift in Sources */,
-				C9BBA25F22FD94020052E57A /* GetTrendingMovies.swift in Sources */,
+				C9BBA25F22FD94020052E57A /* TrendingMoviesAPI.swift in Sources */,
 				C964F15B235B9C64006320AE /* TrendingMoviesViewController.swift in Sources */,
 				C9CC0E4D2191997E00AF9D62 /* AdditionalData.swift in Sources */,
 				C930E1F321CD418900809FB2 /* ToDoListCachingManager.swift in Sources */,
@@ -1230,6 +1276,8 @@
 				C95E24E021FE5A8300621645 /* TagListView.swift in Sources */,
 				C9B18B98218C99C4004520F5 /* TrendingMoviesCell.swift in Sources */,
 				C973B7BD21C436E500B63A69 /* ValidatorsExampleViewDelegator.swift in Sources */,
+				C91FAD0323A4FC2800F516CF /* PresenterModules.swift in Sources */,
+				C91FAD0623A4FD6E00F516CF /* UIViewControllerExtensions.swift in Sources */,
 				C95ABA7322BEA18E00E06DC3 /* UIViewController + Alerts.swift in Sources */,
 				C9CC0E59219245D300AF9D62 /* NetworkWeatherViewController.swift in Sources */,
 				C91AF9A3218CE9CF00BB5559 /* MainPresenter.swift in Sources */,
@@ -1237,13 +1285,15 @@
 				C9BBA25522FCD54B0052E57A /* Requestable.swift in Sources */,
 				C930E1DA21CD1E8600809FB2 /* UIImageView + SVG extension.swift in Sources */,
 				C95E24DF21FE5A8300621645 /* CloseButton.swift in Sources */,
+				C91FACFB23A4F33000F516CF /* RestModules.swift in Sources */,
 				C930E1E421CD3BB600809FB2 /* ToDoPresenter.swift in Sources */,
-				C9BBA26522FD94770052E57A /* GetFiveDaysWeatherForcast.swift in Sources */,
+				C9BBA26522FD94770052E57A /* FiveDaysWeatherForcastAPI.swift in Sources */,
 				C93E4B582190575300A62059 /* Wind.swift in Sources */,
 				C930E1CD21CC4F4300809FB2 /* SVGImageLoader.swift in Sources */,
 				C90BBE4721D77E1F0065FF43 /* DateTimeHelpers.swift in Sources */,
 				C9954A3522FCB98300D4ECE9 /* AppRestClient.swift in Sources */,
-				C9BBA25D22FD93110052E57A /* GetWorldCountriesAPI.swift in Sources */,
+				C9BBA25D22FD93110052E57A /* WorldCountriesAPI.swift in Sources */,
+				C91FACFD23A4F36000F516CF /* RepositoriesModules.swift in Sources */,
 				C99AA08F218845C9001683B8 /* CountriesViewDelegator.swift in Sources */,
 				C9CBBD37234ABB2B00B6CA29 /* CustomViewsViewController.swift in Sources */,
 				C949830E22FDC0DC00904CD1 /* AppErrorModel.swift in Sources */,
@@ -1256,12 +1306,14 @@
 				C95D787B21D6580B00D25B77 /* CountriesViewController.swift in Sources */,
 				C964F162235B9F7C006320AE /* TrendingMoviesAdapter.swift in Sources */,
 				C930E1E121CD3B3000809FB2 /* ToDoViewController.swift in Sources */,
+				C91FACF823A4F1B700F516CF /* AppDelegate+Injection.swift in Sources */,
 				C95D788721D6753F00D25B77 /* ValidatorsExampleViewController.swift in Sources */,
 				C973B7CE21C5216000B63A69 /* CountriesCachingManager.swift in Sources */,
 				C93E4B542190575300A62059 /* Main.swift in Sources */,
 				C91FC7192113092600A199F0 /* Constants.swift in Sources */,
-				C9BBA26122FD942D0052E57A /* GetDevicePublicIP.swift in Sources */,
+				C9BBA26122FD942D0052E57A /* DevicePublicIPAPI.swift in Sources */,
 				C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */,
+				C91C797F23A5594D00D4952A /* Resolver+MultiParams.swift in Sources */,
 				C9BBA26C22FD998A0052E57A /* Repo.swift in Sources */,
 				C91FFF592192F94B00DFC0CC /* WeatherViewDelegator.swift in Sources */,
 				C9B18B95218C6F6E004520F5 /* MoviesPage.swift in Sources */,
@@ -1284,9 +1336,9 @@
 				C96629E221C5415200961750 /* DataBase.xcdatamodeld in Sources */,
 				C9CC0E49219100F500AF9D62 /* WeatherCell.swift in Sources */,
 				C9954A4122FCB99A00D4ECE9 /* AppNavigator.swift in Sources */,
-				C9954A3B22FCB98300D4ECE9 /* AppTableViewController.swift in Sources */,
 				C90BBE3421D685610065FF43 /* LeftSideMenuViewController.swift in Sources */,
 				C91AF99F218CE93D00BB5559 /* MainViewCell.swift in Sources */,
+				C91FACFF23A4F37400F516CF /* OtherModules.swift in Sources */,
 				C99AA09521884652001683B8 /* GPSWeatherPresenter.swift in Sources */,
 				C9B7E2C821EF4C8B00DF4751 /* RefreshTokenService.swift in Sources */,
 			);
@@ -1377,7 +1429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1426,7 +1478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1444,7 +1496,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GV86YZ8K5S;
 				INFOPLIST_FILE = iOS_Bootstrap/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1458,7 +1510,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1470,7 +1522,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GV86YZ8K5S;
 				INFOPLIST_FILE = iOS_Bootstrap/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1484,7 +1536,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1579,7 +1631,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1596,7 +1648,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GV86YZ8K5S;
 				INFOPLIST_FILE = iOS_Bootstrap/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1610,7 +1662,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Staging;
