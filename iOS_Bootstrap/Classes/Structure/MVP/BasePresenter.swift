@@ -10,19 +10,19 @@ import RxSwift
 
 open class BasePresenter<T>: UserDefaultsService, PresenterFunctions {
     
-    public final var mViewDelegator: T!
+    public final var mViewDelegate: T!
     private var disposeBag : DisposeBag!
     
-    required public init (viewDelegator : T) { self.mViewDelegator = viewDelegator }
+    required public init (viewDelegator : T) { self.mViewDelegate = viewDelegator }
     
-    public final func getViewDelegator() -> T { return mViewDelegator }
+    public final func getViewDelegate() -> T { return mViewDelegate }
     
     public final func getDisposeBag() -> DisposeBag {
         if (disposeBag == nil) { disposeBag = DisposeBag() }
         return disposeBag
     }
     
-    open func viewControllerDidLoaded() {}
+    open func viewControllerDidLoad() {}
 
     open func viewControllerDidFinishedSettingUpUI() {}
 
@@ -35,9 +35,8 @@ open class BasePresenter<T>: UserDefaultsService, PresenterFunctions {
     open func logOut() {}
 
     deinit {
-        if (mViewDelegator != nil) { mViewDelegator = nil }
+        if (mViewDelegate != nil) { mViewDelegate = nil }
         if (disposeBag != nil) { disposeBag = nil }
     }
-    
 }
 

@@ -25,7 +25,7 @@ open class BaseViewController<T, V> :
         super.viewDidLoad()
         // self.presenter = T.init(viewDelegator: self as! V)
         self.presenter = initPresenter()
-        getPresenter().viewControllerDidLoaded()
+        getPresenter().viewControllerDidLoad()
         initUI()
         localizeStrings()
         getPresenter().viewControllerDidFinishedSettingUpUI()
@@ -67,7 +67,7 @@ open class BaseViewController<T, V> :
 
     open func initPresenter () -> T? { return nil }
 
-    open func loadingDidStarted() { showLoadingIndicator(message: "Loading..") }
+    open func loadingDidStart() { showLoadingIndicator(message: "Loading..") }
     
     open func didFinishedLoading() { hideLoadingIndicator() }
     

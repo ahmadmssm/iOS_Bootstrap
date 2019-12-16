@@ -38,11 +38,11 @@ class ToDoPresenter: BaseLiveListingPresenter<ToDoViewDelegator, ToDoCellModel> 
         createNewToDoCompletable(name: name)
             .andThen(getActiveTodosObservable())
             .subscribe(onNext: { toDos in
-                self.getViewDelegator().newToDoDidCreated()
+                self.getViewDelegate().newToDoDidCreated()
                 self.reloadFromScratch()
                 self.dataSource = toDos
             }, onError: { error in
-            self.getViewDelegator().onError(error: error.localizedDescription)
+            self.getViewDelegate().onError(error: error.localizedDescription)
         }, onCompleted: {}) {}
             .disposed(by: disposeBag)
     }
@@ -63,11 +63,11 @@ class ToDoPresenter: BaseLiveListingPresenter<ToDoViewDelegator, ToDoCellModel> 
             .deleteToDo(toDo: transformToDoCellModelToToDoCellEntity(toDo: toDo))
             .andThen(getToDosObservable(mode: forMode))
             .subscribe(onNext: { toDos in
-                self.getViewDelegator().toDoDidDeleted()
+                self.getViewDelegate().toDoDidDeleted()
                 self.reloadFromScratch()
                 self.dataSource = toDos
             }, onError: { error in
-                self.getViewDelegator().onError(error: error.localizedDescription)
+                self.getViewDelegate().onError(error: error.localizedDescription)
             }, onCompleted: {}, onDisposed: {})
             .disposed(by: disposeBag)
     }
@@ -79,11 +79,11 @@ class ToDoPresenter: BaseLiveListingPresenter<ToDoViewDelegator, ToDoCellModel> 
             .asCompletable()
             .andThen(getToDosObservable(mode: mode))
             .subscribe(onNext: { toDos in
-                self.getViewDelegator().toDoDidDeleted()
+                self.getViewDelegate().toDoDidDeleted()
                 self.reloadFromScratch()
                 self.dataSource = toDos
             }, onError: { error in
-                self.getViewDelegator().onError(error: error.localizedDescription)
+                self.getViewDelegate().onError(error: error.localizedDescription)
             }, onCompleted: {}, onDisposed: {})
             .disposed(by: disposeBag)
     }
@@ -97,7 +97,7 @@ extension ToDoPresenter {
         getActiveTodosObservable()
             .subscribe(onNext: { toDos in self.dataSource = toDos },
                        onError: { error in
-                        self.getViewDelegator().onError(error: error.localizedDescription)
+                        self.getViewDelegate().onError(error: error.localizedDescription)
             }, onCompleted: {}, onDisposed: {})
             .disposed(by: disposeBag)
     }
@@ -108,7 +108,7 @@ extension ToDoPresenter {
             })
             .subscribe(onNext: { toDos in self.dataSource = toDos },
                        onError: { error in
-                        self.getViewDelegator().onError(error: error.localizedDescription)
+                        self.getViewDelegate().onError(error: error.localizedDescription)
             }, onCompleted: {}, onDisposed: {})
             .disposed(by: disposeBag)
     }
@@ -117,11 +117,11 @@ extension ToDoPresenter {
             .updateToDo(toDo: transformToDoCellModelToToDoCellEntity(toDo: toDo))
             .andThen(getActiveTodosObservable())
             .subscribe(onNext: { toDos in
-                self.getViewDelegator().toDoDidUpdated()
+                self.getViewDelegate().toDoDidUpdated()
                 self.reloadFromScratch()
                 self.dataSource = toDos
             }, onError: { error in
-                self.getViewDelegator().onError(error: error.localizedDescription)
+                self.getViewDelegate().onError(error: error.localizedDescription)
             }, onCompleted: {}) {}
             .disposed(by: disposeBag)
     }
@@ -130,11 +130,11 @@ extension ToDoPresenter {
             .updateToDo(toDo: transformToDoCellModelToToDoCellEntity(toDo: toDo))
             .andThen(getDoneTodosObservable())
             .subscribe(onNext: { toDos in
-                self.getViewDelegator().toDoDidUpdated()
+                self.getViewDelegate().toDoDidUpdated()
                 self.reloadFromScratch()
                 self.dataSource = toDos
             }, onError: { error in
-                self.getViewDelegator().onError(error: error.localizedDescription)
+                self.getViewDelegate().onError(error: error.localizedDescription)
             }, onCompleted: {}) {}
             .disposed(by: disposeBag)
     }

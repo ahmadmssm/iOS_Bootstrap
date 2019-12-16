@@ -19,7 +19,7 @@ open class BaseMVVMViewModel: UserDefaultsService, ViewModelFunctions {
         return disposeBag
     }
     
-    open func viewControllerDidLoaded() {}
+    open func viewControllerDidLoad() {}
     
     open func viewControllerDidFinishedSettingUpUI() {}
     

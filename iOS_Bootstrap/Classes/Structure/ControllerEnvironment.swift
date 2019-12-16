@@ -6,7 +6,7 @@
 //
 
 public protocol ControllerEnvironment: SessionService {
-    func viewControllerDidLoaded()
+    func viewControllerDidLoad()
     func viewControllerDidFinishedSettingUpUI()
     func viewControllerWillRefresh()
     func viewControllerWillDisappear()

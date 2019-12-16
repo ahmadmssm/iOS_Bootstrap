@@ -14,7 +14,7 @@ open class BaseMVVMView<VM>: UIViewController where VM: BaseMVVMViewModel {
     override open func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = initViewModel()
-        getViewModel().viewControllerDidLoaded()
+        getViewModel().viewControllerDidLoad()
         initUI()
         bindViewModel()
         localizeStrings()

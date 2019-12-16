@@ -24,7 +24,7 @@ class TrendingMoviesPresenter: BasePresenter<TrendingMoviesViewDelegate> {
         super.init(viewDelegator: viewDelegator)
     }
     
-    override func viewControllerDidLoaded() {
+    override func viewControllerDidLoad() {
         getTrendingMovies(pageNumber: page)
     }
     
@@ -35,7 +35,7 @@ class TrendingMoviesPresenter: BasePresenter<TrendingMoviesViewDelegate> {
                 // The page params are set one time only
                 if(self?.page == 1) {
                     self?
-                        .getViewDelegator()
+                        .getViewDelegate()
                         .setPaginationParams(totalNumberOfItems: moviesPage.totalNumberOfItems!,
                                              itemsPerPage: moviesPage.itemsPerPage!)
                 }
@@ -57,10 +57,10 @@ class TrendingMoviesPresenter: BasePresenter<TrendingMoviesViewDelegate> {
                     movies.append(trendingMovie)
                 }
                 self?.moviesArray.append(contentsOf: movies)
-                self?.getViewDelegator().didGet(trendingMovies: self?.moviesArray ?? [])
+                self?.getViewDelegate().didGet(trendingMovies: self?.moviesArray ?? [])
             }) { [weak self] error in
                 self?
-                    .getViewDelegator()
+                    .getViewDelegate()
                     .didFailToGetTrendingMovies(error: error.localizedDescription)
         }
         .disposed(by: getDisposeBag())
@@ -74,6 +74,6 @@ class TrendingMoviesPresenter: BasePresenter<TrendingMoviesViewDelegate> {
         else {
             summary = "Sorry, There is no summary for this movie!"
         }
-        getViewDelegator().didGetMovieSummary(summary: summary)
+        getViewDelegate().didGetMovieSummary(summary: summary)
     }
 }

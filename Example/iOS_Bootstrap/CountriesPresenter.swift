@@ -24,7 +24,7 @@ class CountriesPresenter: BasePresenter<CountriesViewDelegator> {
         filteredCountriesArray = []
     }
     
-    override func viewControllerDidLoaded() { getWorldCountries() }
+    override func viewControllerDidLoad() { getWorldCountries() }
     
     private func getWorldCountries() {
         repo
@@ -34,7 +34,7 @@ class CountriesPresenter: BasePresenter<CountriesViewDelegator> {
                     .processCountriesList(countries: countries)
             }) { [weak self] error in
                 self?
-                    .getViewDelegator()
+                    .getViewDelegate()
                     .didFailToGetCountries(error: error.localizedDescription)
                 print("Error : " + error.localizedDescription)
         }
@@ -56,9 +56,9 @@ class CountriesPresenter: BasePresenter<CountriesViewDelegator> {
                 self.countriesArray = savedCountries
                 // Sort countries array alphabetically
                 self.countriesArray = self.countriesArray.sorted(by: { $0.name! < $1.name! })
-                self.getViewDelegator().didGetCountries(countries: self.countriesArray)
+                self.getViewDelegate().didGetCountries(countries: self.countriesArray)
             }, onError: { error in
-                self.getViewDelegator().didFailToSaveCountriesInCoreData(error: error.localizedDescription)
+                self.getViewDelegate().didFailToSaveCountriesInCoreData(error: error.localizedDescription)
             }, onCompleted: {}, onDisposed: {})
     }
     
@@ -83,21 +83,21 @@ class CountriesPresenter: BasePresenter<CountriesViewDelegator> {
             if (name == "") {
                 if (currentDataSource != countriesArray) {
                     
-                    getViewDelegator().loadingDidStarted!()
-                    getViewDelegator().didResetCountriesTable(countries: countriesArray)
+                    getViewDelegate().loadingDidStart!()
+                    getViewDelegate().didResetCountriesTable(countries: countriesArray)
                 }
-                getViewDelegator().didFinishedLoading!()
+                getViewDelegate().didFinishedLoading!()
             }
             else {
-                getViewDelegator().loadingDidStarted!()
+                getViewDelegate().loadingDidStart!()
                 filteredCountriesArray.removeAll()
                 for country in countriesArray {
                     if (country.name?.range(of:name) != nil) {
                         filteredCountriesArray.append(country)
                     }
                 }
-                getViewDelegator().didGetSearchResults(filteredCountries: filteredCountriesArray)
-                getViewDelegator().didFinishedLoading!()
+                getViewDelegate().didGetSearchResults(filteredCountries: filteredCountriesArray)
+                getViewDelegate().didFinishedLoading!()
             }
         }
         isFirstTimeLoading = false

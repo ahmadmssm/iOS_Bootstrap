@@ -19,7 +19,7 @@ class MainPresenter: BasePresenter<MainViewDelegator> {
     
     func setDataSource() {
         let collectionViewItems : [String] = ["Side menu", "Custom views", "Switch language", "Validatiors"]
-        getViewDelegator().didGetCollectioViewItems(items: collectionViewItems)
+        getViewDelegate().didGetCollectioViewItems(items: collectionViewItems)
     }
     
     func switchAppLanguage() {

@@ -21,7 +21,7 @@ open class AppViewModel: UserDefaultsService, PresenterFunctions {
         return disposeBag
     }
     
-    open func viewControllerDidLoaded() {}
+    open func viewControllerDidLoad() {}
     
     open func viewControllerDidFinishedSettingUpUI() {}
     
