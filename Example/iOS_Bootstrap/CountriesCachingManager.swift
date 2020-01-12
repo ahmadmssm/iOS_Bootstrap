@@ -15,7 +15,9 @@ class CountriesCachingManager: CoreDataManager<CountryEntity> {
     
     static let instance: CountriesCachingManager = CountriesCachingManager()
     
-    override private init() { super.init() }
-    
+    override private init() {
+        super.init()
+        // super.init(withName: "")
+    }
 }
 

@@ -16,7 +16,13 @@ open class CoreDataManager<T: NSManagedObject> {
     
     public let context: NSManagedObjectContext!
     
-    public init() { context = CoreDataConfigurations.persistentContainer.viewContext }
+    public init() {
+        context = CoreDataConfigurations.persistentContainer.viewContext
+    }
+    
+    public init(withName name: String) {
+        context = CoreDataConfigurations.getPersistentContainer(withName: name).viewContext
+    }
     
     public func insertRecord(record: T) { context.insert(record) }
 

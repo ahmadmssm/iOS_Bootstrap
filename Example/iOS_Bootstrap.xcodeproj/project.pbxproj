@@ -517,6 +517,7 @@
 		C91FACF923A4F31A00F516CF /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				C91FACF723A4F1B700F516CF /* AppDelegate+Injection.swift */,
 				C91FACFA23A4F33000F516CF /* RestModules.swift */,
 				C91FACFC23A4F36000F516CF /* RepositoriesModules.swift */,
 				C91FACFE23A4F37400F516CF /* OtherModules.swift */,
@@ -987,7 +988,6 @@
 				C9B7E2C721EF4C8B00DF4751 /* RefreshTokenService.swift */,
 				C9B7E2C921EF4CD100DF4751 /* AppWindow.swift */,
 				C901192A21F342D30061B593 /* EssentialAppConfigs.swift */,
-				C91FACF723A4F1B700F516CF /* AppDelegate+Injection.swift */,
 			);
 			name = AppDelegate;
 			sourceTree = "<group>";

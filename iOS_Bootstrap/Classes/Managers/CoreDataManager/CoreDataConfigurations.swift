@@ -11,12 +11,16 @@ import CoreData
 @available(iOS 10.0, *)
 final class CoreDataConfigurations {
     static var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: DefaultConfigurations.coreDataModelName!)
+        return getPersistentContainer(withName: DefaultConfigurations.coreDataModelName!)
+    }()
+    
+    static func getPersistentContainer(withName name: String) -> NSPersistentContainer {
+        let container = NSPersistentContainer(name: name)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error {
                 fatalError("Unresolved error, \((error as NSError).userInfo)")
             }
         })
         return container
-    }()
+    }
 }
