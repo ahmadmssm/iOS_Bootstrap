@@ -22,12 +22,12 @@ class GPSWeatherPresenter : BasePresenter<WeatherViewDelegator> {
             .get5DaysWeatherForcastBy(lat: lat, longt: longt)
             .subscribe(onSuccess: { [weak self] weatherForcast in
                 self?
-                    .getViewDelegator()
+                    .getViewDelegate()
                     .didGetFiveDaysWeather(weatherForcast: weatherForcast)
 
             }) { [weak self] error in
                 self?
-                    .getViewDelegator()
+                    .getViewDelegate()
                     .didFailToGetFiveDaysWeather(errorMessage: error.localizedDescription)
 
             }

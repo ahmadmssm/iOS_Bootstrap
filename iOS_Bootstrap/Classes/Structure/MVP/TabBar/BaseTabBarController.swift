@@ -18,7 +18,7 @@ open class BaseTabBarController <T, V> :
     override open func viewDidLoad() {
         // self.presenter = T.init(viewDelegator: self as! V)
         self.presenter = initPresenter()
-        getPresenter().viewControllerDidLoaded()
+        getPresenter().viewControllerDidLoad()
         initUI()
         localizeStrings()
         getPresenter().viewControllerDidFinishedSettingUpUI()
@@ -46,7 +46,7 @@ open class BaseTabBarController <T, V> :
     
     open func initPresenter () -> T? { return nil }
     
-    open func loadingDidStarted() { showLoadingIndicator(message: "Loading..") }
+    open func loadingDidStart() { showLoadingIndicator(message: "Loading..") }
     
     open func didFinishedLoading() { hideLoadingIndicator() }
     

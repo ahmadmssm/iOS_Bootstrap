@@ -38,7 +38,7 @@ class ValidatorsExamplePresenter: BasePresenter<ValidatorsExampleViewDelegator> 
             },
                        onError: { [weak self] error in
                         self!.isValidMail = false
-                        self!.getViewDelegator().onInvalidEmail(
+                        self!.getViewDelegate().onInvalidEmail(
                             errorMessage: self!.handleValidationError(error: error))
             })
             .disposed(by: disposeBag)
@@ -55,7 +55,7 @@ class ValidatorsExamplePresenter: BasePresenter<ValidatorsExampleViewDelegator> 
             },
                        onError: { [weak self] error in
                         self!.isValidPassword = false
-                        self!.getViewDelegator().onInvalidPassword(
+                        self!.getViewDelegate().onInvalidPassword(
                                 errorMessage: self!.handleValidationError(error: error))
             })
             .disposed(by: disposeBag)
@@ -76,10 +76,10 @@ class ValidatorsExamplePresenter: BasePresenter<ValidatorsExampleViewDelegator> 
     
     func submit() {
         guard isValidMail, isValidPassword  else {
-            getViewDelegator().onMisssingValidation()
+            getViewDelegate().onMisssingValidation()
             return
         }
-        getViewDelegator().onAllValid()
+        getViewDelegate().onAllValid()
     }
     
 }
