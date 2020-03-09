@@ -74,8 +74,6 @@ open class MultiLanguageManager {
         else {
             UIView.appearance().semanticContentAttribute = .forceLeftToRight
         }
-        
-        
     }
     
     private func localizationSwizzler() {
@@ -84,5 +82,4 @@ open class MultiLanguageManager {
         // Swizzle navigationbar direction variable.
         swizzleOriginalLocalizationMethod(className: UIApplication.self, originalSelector: #selector(getter: UIApplication.userInterfaceLayoutDirection), newSelector: #selector(getter: UIApplication.customisedUserInterfaceDirection))
     }
-    
 }

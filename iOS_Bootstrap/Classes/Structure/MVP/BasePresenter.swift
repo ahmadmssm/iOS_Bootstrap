@@ -8,9 +8,9 @@
 
 import RxSwift
 
-open class BasePresenter<T>: UserDefaultsService, PresenterFunctions {
+open class BasePresenter<T: AnyObject>: UserDefaultsService, PresenterFunctions {
     
-    public final var mViewDelegate: T!
+    public final weak var mViewDelegate: T!
     private var disposeBag : DisposeBag!
     
     required public init (viewDelegator : T) { self.mViewDelegate = viewDelegator }

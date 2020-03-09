@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-class MainPresenter: BasePresenter<MainViewDelegator> {
+class MainPresenter: AppPresenter<MainViewDelegator> {
     
     private var langMngr : LanguageManager!
 

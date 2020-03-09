@@ -46,5 +46,4 @@ struct Movie : Codable {
         video = (try values.decodeIfPresent(Bool.self, forKey: .video))!
         adult = (try values.decodeIfPresent(Bool.self, forKey: .adult))!
     }
-    
 }
