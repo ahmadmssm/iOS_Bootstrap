@@ -13,7 +13,6 @@ open class BasePresenter<T>: UserDefaultsService, PresenterFunctions {
     public final weak var viewDelegate: AnyObject!
     public lazy var disposeBag: DisposeBag = { return DisposeBag() }()
     
-    
     required public init (viewDelegate: T) {
         self.viewDelegate = viewDelegate as AnyObject
     }

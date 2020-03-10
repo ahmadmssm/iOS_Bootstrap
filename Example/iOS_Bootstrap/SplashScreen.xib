@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +15,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS_Bootstrap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiL-Nv-6To">
-                    <rect key="frame" x="95" y="283" width="185" height="21"/>
+                    <rect key="frame" x="100" y="318.5" width="175.5" height="30"/>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -25,10 +23,8 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="EiL-Nv-6To" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="95" id="50d-Gn-6kF"/>
-                <constraint firstItem="EiL-Nv-6To" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="263" id="ASF-p9-E1b"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="EiL-Nv-6To" secondAttribute="bottom" constant="363" id="Jpx-mn-Fba"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EiL-Nv-6To" secondAttribute="trailing" constant="95" id="w92-sS-IYV"/>
+                <constraint firstItem="EiL-Nv-6To" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ScW-JT-ZC8"/>
+                <constraint firstItem="EiL-Nv-6To" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lpf-AC-p1f"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="69.5" y="123.5"/>

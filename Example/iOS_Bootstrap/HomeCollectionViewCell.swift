@@ -17,7 +17,7 @@ class HomeCollectionViewCell: BaseCollectionViewCellV2<String> {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Same image for all cells, That is why it is placed here
-        image.image = #imageLiteral(resourceName: "example")
+        image.image = #imageLiteral(resourceName: "picture")
     }
     
     override func initCellFrom(cellModel: String) { label.text = cellModel }

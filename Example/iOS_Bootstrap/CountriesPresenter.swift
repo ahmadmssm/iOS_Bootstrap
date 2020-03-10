@@ -14,6 +14,7 @@ import Resolver
 class CountriesPresenter: BasePresenter<CountriesViewDelegator> {
     
     @LazyInjected private var repo: Repo
+    @LazyInjected private var countriesCachingManager: CountriesCachingManager
     private var countriesArray : [CountryEntity]!
     private var filteredCountriesArray : [CountryEntity]!
     private var isFirstTimeLoading : Bool = true
@@ -45,10 +46,10 @@ class CountriesPresenter: BasePresenter<CountriesViewDelegator> {
         // Flush search array
         self.countriesArray.removeAll()
         // Flush previously saved countries
-        _ = CountriesCachingManager
-            .instance.deleteAllRecords()
+        _ = countriesCachingManager
+            .deleteAllRecords()
             .andThen(insertCountriesToCoreData(countries: countries))
-            .andThen(CountriesCachingManager.instance.fetchAll())
+            .andThen(countriesCachingManager.fetchAll())
             .asObservable()
             .subscribeOn(Schedulers.backgroundConcurrentScheduler)
             .observeOn(Schedulers.uiScheduler)
@@ -64,14 +65,14 @@ class CountriesPresenter: BasePresenter<CountriesViewDelegator> {
     
     private func insertCountriesToCoreData(countries: [Country]) -> Completable {
         return Completable.create { completable in
-            countries.forEach({ country in
-                let countryEntity = CountryEntity(context: CountriesCachingManager.instance.context)
+            countries.forEach({ [weak self] country in
+                let countryEntity = CountryEntity(context: self!.countriesCachingManager.context)
                 countryEntity.name = country.countryName!
                 countryEntity.capital = country.capital!
                 countryEntity.continental = country.region!
                 countryEntity.flagURL = country.flag!
                 countryEntity.timeZone = country.timeZones![0]
-                CountriesCachingManager.instance.insertRecord(record: countryEntity)
+                self?.countriesCachingManager.insertRecord(record: countryEntity)
             })
             completable(.completed)
             return Disposables.create {}
@@ -82,7 +83,6 @@ class CountriesPresenter: BasePresenter<CountriesViewDelegator> {
         if (!isFirstTimeLoading) {
             if (name == "") {
                 if (currentDataSource != countriesArray) {
-                    
                     getViewDelegate().showLoading()
                     getViewDelegate().didResetCountriesTable(countries: countriesArray)
                 }

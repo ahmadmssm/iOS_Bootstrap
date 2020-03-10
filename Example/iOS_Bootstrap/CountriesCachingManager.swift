@@ -11,13 +11,5 @@ import CoreData
 import RxSwift
 
  @available(iOS 10.0, *)
-class CountriesCachingManager: CoreDataManager<CountryEntity> {
-    
-    static let instance: CountriesCachingManager = CountriesCachingManager()
-    
-    override private init() {
-        super.init()
-        // super.init(withName: "")
-    }
-}
+class CountriesCachingManager: CoreDataManager<CountryEntity> {}
 

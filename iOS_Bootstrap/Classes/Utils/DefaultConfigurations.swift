@@ -15,6 +15,7 @@ open class DefaultConfigurations {
     static var snackBar: TTGSnackbar?
     static var coreDataModelName: String?
     private var notificationContext: Any?
+    public let keyboardManager = KeyboardManager()
     // Deafult is false
     private var isInternetConnectionMonitoringEnabled: Bool = false
 
@@ -28,26 +29,26 @@ open class DefaultConfigurations {
     }
     
     public func enableIQKeyboard() -> DefaultConfigurations {
-        KeyboardManager.setupKeyboardManager()
+        keyboardManager.setupKeyboardManager()
         return self
     }
     
     public func iqKeyboardCanGoNext() -> DefaultConfigurations {
-        KeyboardManager.canGoNext()
+        keyboardManager.canGoNext()
         return self
     }
     
     public func iqKeyboardCanGoBack() -> DefaultConfigurations {
-        KeyboardManager.canGoPrevious()
+        keyboardManager.canGoPrevious()
         return self
     }
     
-    public func setNavigationBarColor (barColor : UIColor) -> DefaultConfigurations {
+    public func setNavigationBarColor (barColor: UIColor) -> DefaultConfigurations {
         UINavigationBar.appearance().barTintColor = barColor
         return self
     }
     
-    public func setNavigationBarBackButtonColor (backButtonColor : UIColor) -> DefaultConfigurations {
+    public func setNavigationBarBackButtonColor (backButtonColor: UIColor) -> DefaultConfigurations {
         UINavigationBar.appearance().tintColor = backButtonColor
         return self
     }
@@ -109,12 +110,12 @@ open class DefaultConfigurations {
     }
     
     open func hideKeyboardToolBar() -> DefaultConfigurations {
-        KeyboardManager.disableKeyboardToolBar()
+        keyboardManager.disableKeyboardToolBar()
         return self
     }
    
     open func showTextFieldPlaceholder(enable: Bool) -> DefaultConfigurations {
-        KeyboardManager.showTextFieldPlaceholder(enable: enable)
+        keyboardManager.showTextFieldPlaceholder(enable: enable)
         return self
     }
    
@@ -123,8 +124,6 @@ open class DefaultConfigurations {
         InternetConnectionMonitor.sharedInstance.enable()
         return self
     }
-    
-    
     
     open func startInternetConnectionMonitoring() {
         if (isInternetConnectionMonitoringEnabled) {

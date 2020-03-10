@@ -10,7 +10,7 @@ import Foundation
 
 public class UserDefaultsManager {
     
-    private let defaults : UserDefaults
+    private let defaults: UserDefaults
     public init() { defaults = UserDefaults.standard }
     
     func getUserDefaults() -> UserDefaults { return defaults }

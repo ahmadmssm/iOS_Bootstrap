@@ -8,11 +8,12 @@
 
 import UIKit
 import RxSwift
+import Resolver
 
-extension UIImageView {
-    private static var svgImageHelper: SVGImageLoader = SVGImageLoader()
+extension UIImageView: Resolving {
     func loadSVGfrom(url: String, disposeBag: DisposeBag) {
-        _ = UIImageView.svgImageHelper.loadFrom(svgImageURL: url)
+        let svgImageLoader: SVGImageLoader = resolver.resolve()
+        _ = svgImageLoader.loadFrom(svgImageURL: url)
             .do(onSuccess: { img in self.image = img },
                 onError: { error in self.image = #imageLiteral(resourceName: "image_not_found") },
                 onSubscribe: {}, onSubscribed: {}, onDispose: {})

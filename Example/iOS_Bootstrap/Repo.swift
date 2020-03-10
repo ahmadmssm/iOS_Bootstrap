@@ -8,6 +8,7 @@
 
 import RxSwift
 import Resolver
+import iOS_Bootstrap
 
 class Repo: Resolving {
     
@@ -15,7 +16,10 @@ class Repo: Resolving {
     @LazyInjected private var devicePublicIPAPI: DevicePublicIPAPI
     
     func getAllCountries() -> Single<[Country]> {
-        return worldCountriesAPI.requestWithNoAuthentication()
+        return worldCountriesAPI
+            .requestWithNoAuthentication()
+            // Dealy just to show the skeleton effect :D
+            .delaySubscription(2.0, scheduler: Schedulers.backgroundConcurrentScheduler)
     }
    
     func getPublicIP() -> Single<String> {

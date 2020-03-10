@@ -34,6 +34,11 @@ class Navigator: BaseNavigator {
         let viewController = TrendingMoviesViewController()
         Self.getContext().navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    func openCountriesViewController() {
+        let viewController: CountriesViewController = CountriesViewController()
+        Self.getContext().navigationController?.pushViewController(viewController, animated: true)
+    }
     //
     @available(iOS 10.0, *)
     func goToSideMenuStoryboard() {
@@ -56,13 +61,13 @@ class Navigator: BaseNavigator {
       //  getContext().navigationController?.pushViewController(vc, animated: false)
     }
     
-    static func goToCustomViewsViewController() {
-        let viewController: CustomViewsViewController = CustomViewsViewController()
-        getContext().navigationController?.pushViewController(viewController, animated: true)
-    }
+//    func goToCustomViewsViewController() {
+//        let viewController: CustomViewsViewController = CustomViewsViewController()
+//        Self.navigationController?.pushViewController(viewController, animated: true)
+//    }
     
-    static func goToValidatorsExampleViewController() {
-        let viewController: ValidatorsExampleViewController = ValidatorsExampleViewController()
-        getContext().navigationController?.pushViewController(viewController, animated: true)
-    }
+//    static func goToValidatorsExampleViewController() {
+//        let viewController: ValidatorsExampleViewController = ValidatorsExampleViewController()
+//        getContext().navigationController?.pushViewController(viewController, animated: true)
+//    }
 }

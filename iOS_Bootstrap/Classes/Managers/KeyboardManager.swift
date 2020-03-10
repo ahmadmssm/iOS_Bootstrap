@@ -10,35 +10,34 @@ import IQKeyboardManagerSwift
 
 open class KeyboardManager {
     
-    private static let iqKeyboardManagerInstanace = IQKeyboardManager.shared
+    public let iqKeyboardManager = IQKeyboardManager.shared
     
-    static func setupKeyboardManager() {
-        iqKeyboardManagerInstanace.enable = true
-        iqKeyboardManagerInstanace.shouldResignOnTouchOutside = true
+    open func setupKeyboardManager() {
+        iqKeyboardManager.enable = true
+        iqKeyboardManager.shouldResignOnTouchOutside = true
     }
     
-    static func canGoNext() {
-        iqKeyboardManagerInstanace.goNext()
+    open func canGoNext() {
+        iqKeyboardManager.goNext()
     }
 
-    static func canGoPrevious() {
-        iqKeyboardManagerInstanace.goPrevious()
+    open func canGoPrevious() {
+        iqKeyboardManager.goPrevious()
     }
     
-    public static func getIQKeyboardManager() -> IQKeyboardManager {
-        return iqKeyboardManagerInstanace
+    open func getIQKeyboardManager() -> IQKeyboardManager {
+        return iqKeyboardManager
     }
     
-    public static func disableInViewController(viewController : UIViewController.Type) {
-        iqKeyboardManagerInstanace.disabledDistanceHandlingClasses.append(viewController.self)
+    open func disableInViewController(viewController : UIViewController.Type) {
+        iqKeyboardManager.disabledDistanceHandlingClasses.append(viewController.self)
     }
     
-    public static func disableKeyboardToolBar() {
-        iqKeyboardManagerInstanace.enableAutoToolbar = false
+    open func disableKeyboardToolBar() {
+        iqKeyboardManager.enableAutoToolbar = false
     }
     
-    public static func showTextFieldPlaceholder(enable: Bool) {
-        iqKeyboardManagerInstanace.shouldShowToolbarPlaceholder = enable
+    open func showTextFieldPlaceholder(enable: Bool) {
+        iqKeyboardManager.shouldShowToolbarPlaceholder = enable
     }
-    
 }

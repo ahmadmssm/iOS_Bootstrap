@@ -23,10 +23,10 @@ class HomeViewController:
     func didSelectItem(indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-           if #available(iOS 10.0, *) { navigator.openTrendingMoviesViewController() }
+            navigator.openTrendingMoviesViewController()
             break
         case 1:
-           // navigator.goToCustomViewsViewController()
+            navigator.openCountriesViewController()
             break
         case 2:
             getPresenter().switchAppLanguage()
