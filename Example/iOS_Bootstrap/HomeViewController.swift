@@ -28,10 +28,10 @@ class HomeViewController:
         case 1:
             navigator.openCountriesViewController()
             break
-        case 2:
+        case 3:
             getPresenter().switchAppLanguage()
             break
-        case 3:
+        case 4:
           //  navigator.goToValidatorsExampleViewController()
             break
         default:

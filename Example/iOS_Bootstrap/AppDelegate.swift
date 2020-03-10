@@ -9,7 +9,6 @@
 import UIKit
 import iOS_Bootstrap
 
-@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?

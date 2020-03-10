@@ -12,7 +12,9 @@ import MapKit
 extension Resolver {
     static func otherModules() {
         register { CLLocationManager() }
-        register { LanguageManager() }
+        register {
+            LanguageManager()
+        }
         register { Navigator() }.scope(application)
         register { SVGImageLoader() }.scope(application)
     }

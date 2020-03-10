@@ -119,6 +119,12 @@
 		C99685CA24181170006BAE56 /* CountriesTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685C924181170006BAE56 /* CountriesTableViewAdapter.swift */; };
 		C99685D024183D9A006BAE56 /* CAGradientLayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685CF24183D9A006BAE56 /* CAGradientLayerExtensions.swift */; };
 		C99685D224184238006BAE56 /* OfflineCachingModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685D124184238006BAE56 /* OfflineCachingModules.swift */; };
+		C99685D6241845F5006BAE56 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685D324184565006BAE56 /* main.swift */; };
+		C99685DB2418470A006BAE56 /* UnitTestingDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685D9241846F2006BAE56 /* UnitTestingDI.swift */; };
+		C99685DF24184741006BAE56 /* OtherModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685DD2418473E006BAE56 /* OtherModules.swift */; };
+		C99685E024184776006BAE56 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FFF6021972F0C00DFC0CC /* LanguageManager.swift */; };
+		C99685E3241848AD006BAE56 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685E124184845006BAE56 /* BaseXCTestCase.swift */; };
+		C99685E4241848BB006BAE56 /* UnitTestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685D724184634006BAE56 /* UnitTestingAppDelegate.swift */; };
 		C99AA05A21871BBB001683B8 /* SideMenuTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99AA05921871BBB001683B8 /* SideMenuTabBar.storyboard */; };
 		C99AA0642187388C001683B8 /* GPSWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0602187388B001683B8 /* GPSWeatherViewController.swift */; };
 		C99AA0862187D3E2001683B8 /* NetworkWeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0852187D3E2001683B8 /* NetworkWeatherPresenter.swift */; };
@@ -280,6 +286,11 @@
 		C99685C924181170006BAE56 /* CountriesTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewAdapter.swift; sourceTree = "<group>"; };
 		C99685CF24183D9A006BAE56 /* CAGradientLayerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerExtensions.swift; sourceTree = "<group>"; };
 		C99685D124184238006BAE56 /* OfflineCachingModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineCachingModules.swift; sourceTree = "<group>"; };
+		C99685D324184565006BAE56 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = iOS_Bootstrap/main.swift; sourceTree = "<group>"; };
+		C99685D724184634006BAE56 /* UnitTestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingAppDelegate.swift; sourceTree = "<group>"; };
+		C99685D9241846F2006BAE56 /* UnitTestingDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingDI.swift; sourceTree = "<group>"; };
+		C99685DD2418473E006BAE56 /* OtherModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherModules.swift; sourceTree = "<group>"; };
+		C99685E124184845006BAE56 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
 		C99AA05921871BBB001683B8 /* SideMenuTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenuTabBar.storyboard; sourceTree = "<group>"; };
 		C99AA0602187388B001683B8 /* GPSWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSWeatherViewController.swift; sourceTree = "<group>"; };
 		C99AA0852187D3E2001683B8 /* NetworkWeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherPresenter.swift; sourceTree = "<group>"; };
@@ -349,6 +360,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				C99685D324184565006BAE56 /* main.swift */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for iOS_Bootstrap */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -390,11 +402,13 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				C99685DC24184730006BAE56 /* DI */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				C92BC41221F3D37C006A0072 /* Networking */,
 				C92BC41121F3D334006A0072 /* JsonFiles */,
 				C92BC40121F3BE69006A0072 /* APIsTests.swift */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				C99685E124184845006BAE56 /* BaseXCTestCase.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -403,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACEA1AFB9204008FA782 /* Info.plist */,
+				C99685D724184634006BAE56 /* UnitTestingAppDelegate.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -925,6 +940,15 @@
 			name = CountriesTable;
 			sourceTree = "<group>";
 		};
+		C99685DC24184730006BAE56 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				C99685D9241846F2006BAE56 /* UnitTestingDI.swift */,
+				C99685DD2418473E006BAE56 /* OtherModules.swift */,
+			);
+			name = DI;
+			sourceTree = "<group>";
+		};
 		C99A405121186C3F007B88A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1354,6 +1378,7 @@
 				C9B18B95218C6F6E004520F5 /* MoviesPage.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				C930E1D221CD164B00809FB2 /* RealmManager.swift in Sources */,
+				C99685D6241845F5006BAE56 /* main.swift in Sources */,
 				C99685D024183D9A006BAE56 /* CAGradientLayerExtensions.swift in Sources */,
 				C964F160235B9E15006320AE /* TrendingMoviesViewDelegate.swift in Sources */,
 				C93E4B532190575300A62059 /* Forcast.swift in Sources */,
@@ -1385,13 +1410,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C99685E3241848AD006BAE56 /* BaseXCTestCase.swift in Sources */,
 				C92BC40D21F3C37E006A0072 /* Currency.swift in Sources */,
+				C99685DB2418470A006BAE56 /* UnitTestingDI.swift in Sources */,
 				C92BC40A21F3C115006A0072 /* Environment.swift in Sources */,
+				C99685DF24184741006BAE56 /* OtherModules.swift in Sources */,
+				C99685E4241848BB006BAE56 /* UnitTestingAppDelegate.swift in Sources */,
 				C973038B22FDC475000430B4 /* AppErrorModel.swift in Sources */,
 				C92BC40321F3BE69006A0072 /* APIsTests.swift in Sources */,
 				C92BC40C21F3C370006A0072 /* Country.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 				C92BC40921F3C102006A0072 /* Constants.swift in Sources */,
+				C99685E024184776006BAE56 /* LanguageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

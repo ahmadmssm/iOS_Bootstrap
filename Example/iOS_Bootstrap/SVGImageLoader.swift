@@ -9,22 +9,22 @@
 import RxSwift
 import iOS_Bootstrap
 import SVGKit
+import Resolver
 
-public final class SVGImageLoader {
-
-    private static let imageCache = NSCache<NSString, UIImage>()
+public final class SVGImageLoader: Resolving {
 
     public func loadFrom(svgImageURL: String) -> Single<UIImage?> {
+        let imageCache: NSCache<NSString, UIImage> = resolver.resolve()
         return Single.create { single in
             let url = URL(string: svgImageURL)
             let nsStringURL = (url?.absoluteString)! as NSString
-            if let cachedImage = SVGImageLoader.imageCache.object(forKey: nsStringURL) {
+            if let cachedImage = imageCache.object(forKey: nsStringURL) {
                 single(.success(cachedImage))
             }
             else {
                 let svgImage: SVGKImage = SVGKImage(contentsOf: url)
                 let image: UIImage = svgImage.uiImage
-                SVGImageLoader.imageCache.setObject(image, forKey: nsStringURL)
+                imageCache.setObject(image, forKey: nsStringURL)
                 single(.success(image))
             }
             return Disposables.create()
@@ -32,6 +32,5 @@ public final class SVGImageLoader {
             .subscribeOn(Schedulers.imageLoadingScheduler)
             .observeOn(Schedulers.uiScheduler)
     }
-    
 }
 

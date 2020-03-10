@@ -1,7 +1,8 @@
 import XCTest
 import iOS_Bootstrap
+import Resolver
 
-class Tests: XCTestCase {
+class Tests: XCTestCase, Resolving {
     
     override func setUp() {
         super.setUp()
@@ -14,6 +15,7 @@ class Tests: XCTestCase {
     }
     
     func testExample() {
+        let lngMngr: LanguageManager = resolver.resolve()
         // This is an example of a functional test case.
         XCTAssert(true, "Pass")
     }

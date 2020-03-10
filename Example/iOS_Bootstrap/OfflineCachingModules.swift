@@ -11,6 +11,7 @@ import Resolver
 extension Resolver {
     static func offlineCachingModules() {
         register { CountriesCachingManager() }
+        register { NSCache<NSString, UIImage>() }.scope(application)
     }
 }
 
