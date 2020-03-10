@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol HomeCollectionViewDelegate {
+protocol HomeCollectionViewDelegate: class {
     func didSelectItem(indexPath: IndexPath)
 }

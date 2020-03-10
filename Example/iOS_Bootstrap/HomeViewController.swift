@@ -14,25 +14,25 @@ class HomeViewController:
     HomeCollectionViewDelegate {
     
     @IBOutlet private weak var collectionView: UICollectionView!
-    var collectionViewAdapter: HomeCollectionViewAdapter!
-
-    override func initUI() {
-        self.navigationItem.title = "Home"
+    private var collectionViewAdapter: HomeCollectionViewAdapter!
+    
+    override func localizeStrings() {
+        self.navigationItem.title = "home".localized()
     }
         
     func didSelectItem(indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-           if #available(iOS 10.0, *) { Navigator.goToSideMenuStoryboard() }
+           if #available(iOS 10.0, *) { navigator.openTrendingMoviesViewController() }
             break
         case 1:
-            Navigator.goToCustomViewsViewController()
+           // navigator.goToCustomViewsViewController()
             break
         case 2:
             getPresenter().switchAppLanguage()
             break
         case 3:
-            Navigator.goToValidatorsExampleViewController()
+          //  navigator.goToValidatorsExampleViewController()
             break
         default:
             break
@@ -47,10 +47,14 @@ class HomeViewController:
         
     func didGetCollectioViewItems(items: [String]) {
         collectionViewAdapter = HomeCollectionViewAdapter(collectionView: collectionView,
-                                                           dataSource: items,
-                                                           mainCollectionViewDelegate: self)
+                                                          dataSource: items,
+                                                          homeCollectionViewDelegate: self)
     }
     
+    func didSwitchAppLanguage() {
+        navigator.startInitialViewController()
+    }
+
     override func networkStatusDidChange(isConnected: Bool) {
 //        super.networkStatusDidChange(isConnected: isConnected)
 //        print("Status ", isConnected, "Connected through ->", getNetworkConnectionType())

@@ -10,13 +10,13 @@ import iOS_Bootstrap
 
 class HomeCollectionViewAdapter: BaseCollectionViewAdapter<UICollectionView, String> {
     
-    private var mainCollectionViewDelegate: HomeCollectionViewDelegate!
+    private weak var homeCollectionViewDelegate: HomeCollectionViewDelegate!
     
     convenience init(collectionView: UICollectionView,
                      dataSource: [String],
-                     mainCollectionViewDelegate: HomeCollectionViewDelegate) {
+                     homeCollectionViewDelegate: HomeCollectionViewDelegate) {
         self.init(collectionView: collectionView, xibCell: HomeCollectionViewCell.self)
-        self.mainCollectionViewDelegate = mainCollectionViewDelegate
+        self.homeCollectionViewDelegate = homeCollectionViewDelegate
         super.reloadSinglePageCollectionView(items: dataSource)
     }
     
@@ -30,7 +30,7 @@ class HomeCollectionViewAdapter: BaseCollectionViewAdapter<UICollectionView, Str
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        mainCollectionViewDelegate.didSelectItem(indexPath: indexPath)
+        homeCollectionViewDelegate.didSelectItem(indexPath: indexPath)
     }
 }
 

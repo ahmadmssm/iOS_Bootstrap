@@ -24,7 +24,7 @@ class TrendingMoviesAdapter: BaseTableViewAdapter<UITableView, TrendingMovieCell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        trendingMoviesAdapterProtocol.rowDidSelected(indexPath: indexPath)
+        trendingMoviesAdapterProtocol.didSelectRow(indexPath: indexPath)
     }
     
     override func loadMore(tableView: UITableView,

@@ -9,6 +9,6 @@
 import Foundation
 
 protocol TrendingMoviesAdapterProtocol {
-    func rowDidSelected(indexPath: IndexPath)
+    func didSelectRow(indexPath: IndexPath)
     func loadMore(forPage page: Int, updatedDataSource: [TrendingMovieCellModel])
 }

@@ -9,6 +9,4 @@
 import Resolver
 import iOS_Bootstrap
 
-class AppPresenter<V>: BasePresenter<V>, Resolving {
-    @LazyInjected var navigoator: Navigator
-}
+class AppPresenter<V>: BasePresenter<V> {}

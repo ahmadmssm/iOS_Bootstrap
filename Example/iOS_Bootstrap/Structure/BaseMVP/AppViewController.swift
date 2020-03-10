@@ -6,10 +6,12 @@
 //  Copyright © 2019 Ahmad Mahmoud. All rights reserved.
 //
 
+import Resolver
 import iOS_Bootstrap
 
 class AppViewController<P, V>: BaseViewController<P, V> where P: BasePresenter<V> {
     
+    @LazyInjected var navigator: Navigator
     private var snackBar: TTGSnackbar?
     
     override func viewDidLoad() {

@@ -29,9 +29,14 @@ class Navigator: BaseNavigator {
                 window.makeKeyAndVisible()
         }, completion: nil)
     }
+    
+    func openTrendingMoviesViewController()  {
+        let viewController = TrendingMoviesViewController()
+        Self.getContext().navigationController?.pushViewController(viewController, animated: true)
+    }
     //
     @available(iOS 10.0, *)
-    static func goToSideMenuStoryboard() {
+    func goToSideMenuStoryboard() {
 //        let mainViewController = TrendingMoviesViewController()
 //        let leftSideMenuViewController: LeftSideMenuViewController = LeftSideMenuViewController()
 //        let rightSideMenuViewController: RightSideMenuViewController = RightSideMenuViewController()

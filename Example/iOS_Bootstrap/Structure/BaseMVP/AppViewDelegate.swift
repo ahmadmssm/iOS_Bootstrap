@@ -8,4 +8,10 @@
 
 import iOS_Bootstrap
 
-protocol AppViewDelegate: BaseViewDelegate {}
+protocol AppViewDelegate: BaseViewDelegate {
+    func didSwitchAppLanguage()
+}
+
+extension AppViewDelegate {
+    func didSwitchAppLanguage() {}
+}

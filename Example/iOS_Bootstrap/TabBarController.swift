@@ -22,21 +22,21 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     private func configureTabBarItems() {
-        let vc1 = HomeViewController()
-        let nv1 = GradientNavigationController(rootViewController: vc1)
-        nv1.title = "First"
-        nv1.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 0)
+        let firstItem = HomeViewController()
+        let firstNavigationController = GradientNavigationController(rootViewController: firstItem)
+        firstItem.title = "First"
+        firstItem.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 0)
         //
-        let vc2 = HomeViewController()
-        let nv2 = GradientNavigationController(rootViewController: vc2)
-        nv2.tabBarItem = UITabBarItem(title: "", image: nil, selectedImage: nil)
+        let secondItem = TrendingMoviesViewController()
+        let secondtNavigationController = GradientNavigationController(rootViewController: secondItem)
+        secondtNavigationController.tabBarItem = UITabBarItem(title: "", image: nil, selectedImage: nil)
         //
-        let vc3 = HomeViewController()
-        let nv3 = GradientNavigationController(rootViewController: vc3)
-        nv3.title = "Third"
-        nv3.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 0)
+        let thirdItem = TrendingMoviesViewController()
+        let thirdNavigationController = GradientNavigationController(rootViewController: thirdItem)
+        thirdNavigationController.title = "Third"
+        thirdNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 0)
         //
-        viewControllers = [nv1, nv2, nv3]
+        viewControllers = [firstNavigationController, secondtNavigationController, thirdNavigationController]
     }
     
     private func configureTabBarCenterButton() {

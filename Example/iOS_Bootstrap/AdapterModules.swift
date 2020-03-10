@@ -16,7 +16,7 @@ extension Resolver {
             let delegate: HomeCollectionViewDelegate? = resolver.thirdArgument(from: args)!
             return HomeCollectionViewAdapter(collectionView: collectionView,
                                              dataSource: datasource,
-                                             mainCollectionViewDelegate: delegate!)
+                                             homeCollectionViewDelegate: delegate!)
         }
     }
 }

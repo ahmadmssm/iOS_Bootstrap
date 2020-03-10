@@ -13,9 +13,7 @@ open class BaseCollectionViewAdapter<CollectionView: UICollectionView, CellItem:
                                                         EmptyDataSetSource,
                                                         EmptyDataSetDelegate,
                                                         ListingAdapterDelegates {
-                                                                    
     
-    //
     private final weak var mCollectionview : CollectionView!
     private var collectionViewDataSource: [CellItem]?
     private var mNumberOfPages : Int = 0
