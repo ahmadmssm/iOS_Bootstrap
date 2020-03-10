@@ -10,21 +10,21 @@ import Foundation
 
 /// PagerViewControllerDelegate
 public protocol DTPagerControllerDelegate: NSObjectProtocol {
-    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegator>,
-        BaseViewDelegator>, didChangeSelectedPageIndex index: Int)
-    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegator>,
-        BaseViewDelegator>, willChangeSelectedPageIndex index: Int, fromPageIndex oldIndex: Int)
-    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegator>,
-        BaseViewDelegator>, pageScrollViewDidScroll: UIScrollView)
+    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegate>,
+        BaseViewDelegate>, didChangeSelectedPageIndex index: Int)
+    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegate>,
+        BaseViewDelegate>, willChangeSelectedPageIndex index: Int, fromPageIndex oldIndex: Int)
+    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegate>,
+        BaseViewDelegate>, pageScrollViewDidScroll: UIScrollView)
 }
 
 public extension DTPagerControllerDelegate {
-    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegator>,
-        BaseViewDelegator>, didChangeSelectedPageIndex index: Int) {}
-    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegator>,
-        BaseViewDelegator>, willChangeSelectedPageIndex index: Int, fromPageIndex oldIndex: Int) {}
-    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegator>,
-        BaseViewDelegator>, pageScrollViewDidScroll: UIScrollView) {}
+    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegate>,
+        BaseViewDelegate>, didChangeSelectedPageIndex index: Int) {}
+    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegate>,
+        BaseViewDelegate>, willChangeSelectedPageIndex index: Int, fromPageIndex oldIndex: Int) {}
+    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegate>,
+        BaseViewDelegate>, pageScrollViewDidScroll: UIScrollView) {}
 }
 
 /// DTPagerController
@@ -252,8 +252,8 @@ open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelega
     //MARK: Segmented control action
     @objc func pageSegmentedControlValueChanged() {
         //Call delegate method before changing value
-        delegate?.pagerController(self as! DTPagerController<BasePresenter<BaseViewDelegator>,
-            BaseViewDelegator>, willChangeSelectedPageIndex: selectedPageIndex, fromPageIndex: previousPageIndex)
+        delegate?.pagerController(self as! DTPagerController<BasePresenter<BaseViewDelegate>,
+            BaseViewDelegate>, willChangeSelectedPageIndex: selectedPageIndex, fromPageIndex: previousPageIndex)
         
         let oldViewController = viewControllers[previousPageIndex]
         let newViewController = viewControllers[selectedPageIndex]
@@ -289,8 +289,8 @@ open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelega
             }
             
             //Call delegate method after changing value
-            self.delegate?.pagerController(self as! DTPagerController<BasePresenter<BaseViewDelegator>,
-                BaseViewDelegator>, didChangeSelectedPageIndex: self.selectedPageIndex)
+            self.delegate?.pagerController(self as! DTPagerController<BasePresenter<BaseViewDelegate>,
+                BaseViewDelegate>, didChangeSelectedPageIndex: self.selectedPageIndex)
         })
         
         //Setting up new previousPageIndex for next change
@@ -427,8 +427,8 @@ open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelega
         UIView.setAnimationsEnabled(false)
         
         // Delegate
-        delegate?.pagerController(self as! DTPagerController<BasePresenter<BaseViewDelegator>,
-            BaseViewDelegator>, pageScrollViewDidScroll: scrollView)
+        delegate?.pagerController(self as! DTPagerController<BasePresenter<BaseViewDelegate>,
+            BaseViewDelegate>, pageScrollViewDidScroll: scrollView)
 
         
         // Add child view controller's view if needed

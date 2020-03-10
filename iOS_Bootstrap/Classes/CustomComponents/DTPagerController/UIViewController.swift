@@ -8,7 +8,7 @@
 import Foundation
 
 public extension BaseViewController {
-    var pagerController : DTPagerController<BasePresenter<Any>, Any>? {
+    var pagerController: DTPagerController<BasePresenter<Any>, Any>? {
         get {
             var viewController : UIViewController?
             viewController = self

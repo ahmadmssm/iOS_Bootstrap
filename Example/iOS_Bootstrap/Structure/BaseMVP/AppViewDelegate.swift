@@ -8,4 +8,4 @@
 
 import iOS_Bootstrap
 
-protocol AppViewDelegate: BaseViewDelegator {}
+protocol AppViewDelegate: BaseViewDelegate {}

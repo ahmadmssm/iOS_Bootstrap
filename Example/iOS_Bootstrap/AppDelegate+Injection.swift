@@ -11,9 +11,12 @@ import Resolver
 
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
+        Resolver.defaultScope = Resolver.unique
+        //
         presenterModules()
         restModules()
         repositoriesModules()
+        AdapterModules()
         otherModules()
     }
 }

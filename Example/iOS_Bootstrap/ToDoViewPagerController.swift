@@ -1,30 +1,30 @@
+////
+////  ToDoViewPagerController.swift
+////  iOS_Bootstrap_Example
+////
+////  Created by Ahmad Mahmoud on 12/21/18.
+////  Copyright © 2018 CocoaPods. All rights reserved.
+////
 //
-//  ToDoViewPagerController.swift
-//  iOS_Bootstrap_Example
+//import iOS_Bootstrap
 //
-//  Created by Ahmad Mahmoud on 12/21/18.
-//  Copyright © 2018 CocoaPods. All rights reserved.
+//class ToDoViewPagerController:
+//                        MyMenuItemViewPagerController
+//                                    <BasePresenter<BaseViewDelegate>, BaseViewDelegate> {
 //
-
-import iOS_Bootstrap
-
-class ToDoViewPagerController:
-                        MyMenuItemViewPagerController
-                                    <BasePresenter<BaseViewDelegator>, BaseViewDelegator> {
-
-    override func viewDidLoad() { super.viewDidLoad() }
-    
-    override func initUI() {
-        self.title = "ToDo list"
-        
-        // Setup view pager
-        let activeTodos = ToDoViewController(mode: ToDoMode.Active)
-        activeTodos.title = "Active todos"
-        let doneTodos = ToDoViewController(mode: ToDoMode.Done)
-        doneTodos.title = "Done todos"
-        viewControllers = [activeTodos, doneTodos]
-    }
-    
-    override func localizeStrings() {}
-    
-}
+//    override func viewDidLoad() { super.viewDidLoad() }
+//    
+//    override func initUI() {
+//        self.title = "ToDo list"
+//        
+//        // Setup view pager
+//        let activeTodos = ToDoViewController(mode: ToDoMode.Active)
+//        activeTodos.title = "Active todos"
+//        let doneTodos = ToDoViewController(mode: ToDoMode.Done)
+//        doneTodos.title = "Done todos"
+//        viewControllers = [activeTodos, doneTodos]
+//    }
+//    
+//    override func localizeStrings() {}
+//    
+//}

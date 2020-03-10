@@ -9,10 +9,9 @@
 import UIKit
 
 open class BaseViewController<T, V> :
-                            UIViewController, BaseViewDelegator where T: BasePresenter<V> {
+                            UIViewController, BaseViewDelegate where T: BasePresenter<V> {
 
     private var presenter: T!
-    //
     open var isPresented: Bool {
         return presentingViewController != nil ||
             navigationController?
@@ -20,7 +19,7 @@ open class BaseViewController<T, V> :
                 .presentedViewController === navigationController ||
             tabBarController?.presentingViewController is UITabBarController
     }
-    
+
     override open func viewDidLoad() {
         super.viewDidLoad()
         // self.presenter = T.init(viewDelegator: self as! V)
@@ -56,7 +55,7 @@ open class BaseViewController<T, V> :
     
     public final func getPresenter() -> T {
         if (presenter == nil) {
-            self.presenter = T.init(viewDelegator: self as! V)
+            self.presenter = T.init(viewDelegate: self as! V)
         }
         return presenter
     }
@@ -67,9 +66,9 @@ open class BaseViewController<T, V> :
 
     open func initPresenter () -> T? { return nil }
 
-    open func loadingDidStart() { showLoadingIndicator(message: "Loading..") }
+    open func showLoading() { showLoadingIndicator(message: "Loading..") }
     
-    open func didFinishedLoading() { hideLoadingIndicator() }
+    open func hideLoading() { hideLoadingIndicator() }
     
     open func didGetWarning(warningMessage: String) {}
     

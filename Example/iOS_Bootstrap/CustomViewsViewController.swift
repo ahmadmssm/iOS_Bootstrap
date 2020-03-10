@@ -9,10 +9,8 @@
 import iOS_Bootstrap
 
 class CustomViewsViewController:
-              BaseViewController<BasePresenter<BaseViewDelegator>, BaseViewDelegator> {
-    
-    private let picker = Picker()
-    
+              BaseViewController<BasePresenter<BaseViewDelegate>, BaseViewDelegate> {
+        
     override func viewDidLoad() { super.viewDidLoad() }
     
     override func viewWillAppear(_ animated: Bool) { super.viewWillAppear(animated) }
@@ -64,14 +62,14 @@ extension CustomViewsViewController {
     
     func openMultiDatasourcePicker(sender : UIButton) {
         let dataSource : [[String]] = [["One", "Two", "A lot"], ["Many", "Many more", "Infinite"],["One", "Two", "A lot"]]
-        picker.showMutiDataSelectionPicker(sender: sender, title: "", dataSource: dataSource, initislSelection: [0,0,0], okButton: nil, cancelButton: nil) { (position, result) in
-            Log.info("Data " + String(position[0]))
-        }
+       // picker.showMutiDataSelectionPicker(sender: sender, title: "", dataSource: dataSource, initislSelection: [0,0,0], okButton: nil, cancelButton: nil) { (position, result) in
+         //   Log.info("Data " + String(position[0]))
+       // }
     }
     
     func openLocalePicer(sender : UIButton) {
-        picker.showLocalePicker(sender: sender, title: "Locale picker", initislSelection: 0, currentLocaleButtonTitle: nil, okButton: nil, cancelButton: nil) { (timeZone) in
-        }
+//        picker.showLocalePicker(sender: sender, title: "Locale picker", initislSelection: 0, currentLocaleButtonTitle: nil, okButton: nil, cancelButton: nil) { (timeZone) in
+//        }
     }
     
     func openDataPicker(sender : UIButton) {
@@ -80,20 +78,20 @@ extension CustomViewsViewController {
         rightButton.setTitle("Cancel", for: .normal)
         rightButton.setTitleColor(UIColor.red, for: .normal)
         let dataSource : [String] = ["One", "Two", "A lot"]
-        picker.showDataSelectionPicker(sender: sender, title: "Dropdown", dataSource: dataSource, initislSelection: 0, okButton: nil, cancelButton: rightButton) { (data) in
-        }
+//        picker.showDataSelectionPicker(sender: sender, title: "Dropdown", dataSource: dataSource, initislSelection: 0, okButton: nil, cancelButton: rightButton) { (data) in
+//        }
     }
     
     func openTimePicker(sender : UIButton) {
-        picker.showTimePicker(sender: sender, title: "", currentLocaleButtonTitle: nil, okButton: nil, cancelButton: nil) { (date) in
-            Log.info(date)
-        }
+//        picker.showTimePicker(sender: sender, title: "", currentLocaleButtonTitle: nil, okButton: nil, cancelButton: nil) { (date) in
+//            Log.info(date)
+//        }
     }
     
     func openDateAndTimePicker(sender : UIButton) {
-        picker.showDateTimePicker(sender: sender, title: "", minimumDate: nil, maximumDate: nil, currentLocaleButtonTitle: nil, okButton: nil, cancelButton: nil) { (date) in
-            Log.info(date)
-        }
+//        picker.showDateTimePicker(sender: sender, title: "", minimumDate: nil, maximumDate: nil, currentLocaleButtonTitle: nil, okButton: nil, cancelButton: nil) { (date) in
+//            Log.info(date)
+//        }
     }
     
     func openDatePicker(sender : UIButton) {
@@ -101,9 +99,9 @@ extension CustomViewsViewController {
         rightButton.titleLabel?.font.withSize(22)
         rightButton.setTitle("Ok", for: .normal)
         rightButton.setTitleColor(UIColor.blue, for: .normal)
-        picker.showDatePicker(sender: sender, title: "", minimumDate: nil, maximumDate: nil, currentLocaleButtonTitle: nil, okButton: rightButton, cancelButton: nil) { (date) in
-            Log.info(date)
-        }
+//        picker.showDatePicker(sender: sender, title: "", minimumDate: nil, maximumDate: nil, currentLocaleButtonTitle: nil, okButton: rightButton, cancelButton: nil) { (date) in
+//            Log.info(date)
+//        }
     }
     
 }

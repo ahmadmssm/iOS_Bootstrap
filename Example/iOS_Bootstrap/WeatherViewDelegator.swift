@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-protocol WeatherViewDelegator : BaseViewDelegator {
+protocol WeatherViewDelegator : BaseViewDelegate {
     func didGetFiveDaysWeather(weatherForcast : WeatherForcast)
     func didFailToGetFiveDaysWeather(errorMessage : String)
 }

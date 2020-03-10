@@ -18,7 +18,7 @@ extension AppDelegate {
             .iqKeyboardCanGoNext()
             .enableInternetConnectionMonitoring()
             .setTokenRefreshListener(self)
-            .setNavigationBarTextApperance(textApperance: StaticResources.CustomStyles.navigationBarTextStyle)
+            .setNavigationBarTextApperance(textApperance: NSAttributedString.navigationBarTextStyle)
             .setNavigationBarBackButtonColor(backButtonColor: UIColor.white)
             .setCoreDataModelName(modelName: Constants.coreDataModelName)
     }

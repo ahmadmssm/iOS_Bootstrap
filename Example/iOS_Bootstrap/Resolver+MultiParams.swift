@@ -9,6 +9,38 @@
 import Resolver
 
 extension Resolver {
+    
+    public func optional<Service>(_ type: Service.Type = Service.self,
+                                         name: String? = nil,
+                                         arg0: Any? = nil,
+                                         arg1: Any? = nil,
+                                         arg2: Any? = nil,
+                                         arg3: Any? = nil,
+                                         arg4: Any? = nil,
+                                         arg5: Any? = nil) -> Service? {
+        Resolver.registerServices?()
+        var args: Any? = nil
+        var argsDict: [String : Any] = [:]
+        if (arg0 != nil) { argsDict["arg0"] = arg0 }
+        if (arg1 != nil) { argsDict["arg1"] = arg1 }
+        if (arg2 != nil) { argsDict["arg2"] = arg2 }
+        if (arg3 != nil) { argsDict["arg3"] = arg3 }
+        if (arg4 != nil) { argsDict["arg4"] = arg4 }
+        if (arg5 != nil) { argsDict["arg5"] = arg5 }
+        if (!argsDict.isEmpty) {
+            args = argsDict as Any
+        }
+        return Resolver.root.optional(type, name: name, args: args)
+    }
+
+     
+    public final func optional<Service>(_ type: Service.Type = Service.self,
+                                        name: String? = nil,
+                                        params: Any...) -> Service? {
+        let args: Any? = params as Any
+        return optional(type, name: name, args: args)
+    }
+    
     public func resolve<Service>(_ type: Service.Type = Service.self,
                                  name: String? = nil,
                                  arg0: Any? = nil,
@@ -50,7 +82,7 @@ extension Resolver {
         }
         return argumentsArray
     }
-    
+        
     func firstArgument<T>(from args: Any) -> T? {
         if let arg = resolveArguments(from: args)[exist: 0] {
             return arg as? T

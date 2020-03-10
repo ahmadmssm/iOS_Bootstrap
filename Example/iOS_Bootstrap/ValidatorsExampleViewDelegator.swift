@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-protocol ValidatorsExampleViewDelegator: BaseViewDelegator {
+protocol ValidatorsExampleViewDelegator: BaseViewDelegate {
     func onInvalidEmail(errorMessage: String)
     func onInvalidPassword(errorMessage: String)
     func onMisssingValidation()

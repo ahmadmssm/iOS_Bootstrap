@@ -9,36 +9,41 @@
 import iOS_Bootstrap
 
 class Navigator: BaseNavigator {
-    //
-    static func startInitialView() {
-        let mainViewController: MainViewController = MainViewController()
-        navigationController? = GradientNavigationController(rootViewController: mainViewController)
-        let window : UIWindow = AppDelegate.getAppWindow()
+    
+    override init() {}
+    
+    override func getAppWindow() -> UIWindow? {
+        return AppDelegate.getAppWindow()
+    }
+    
+    override func startInitialViewController() {
+        let mainViewController: TabBarController = TabBarController.initFromNib()
+        let window: UIWindow = getAppWindow()!
         //
         UIView.transition(
             with: window,
             duration: 0.3,
             options: .transitionFlipFromLeft,
             animations: {
-                window.rootViewController = navigationController
+                window.rootViewController = mainViewController
                 window.makeKeyAndVisible()
         }, completion: nil)
     }
     //
     @available(iOS 10.0, *)
     static func goToSideMenuStoryboard() {
-        let mainViewController = TrendingMoviesViewController()
-        let leftSideMenuViewController: LeftSideMenuViewController = LeftSideMenuViewController()
-        let rightSideMenuViewController: RightSideMenuViewController = RightSideMenuViewController()
-        let navigationController: UINavigationController = GradientNavigationController(rootViewController: mainViewController)
+//        let mainViewController = TrendingMoviesViewController()
+//        let leftSideMenuViewController: LeftSideMenuViewController = LeftSideMenuViewController()
+//        let rightSideMenuViewController: RightSideMenuViewController = RightSideMenuViewController()
+//        let navigationController: UINavigationController = GradientNavigationController(rootViewController: mainViewController)
         // Set the main menu view controller
-        leftSideMenuViewController.mainViewController = mainViewController
-        rightSideMenuViewController.mainViewController = mainViewController
+      //  leftSideMenuViewController.mainViewController = mainViewController
+      //  rightSideMenuViewController.mainViewController = mainViewController
         // Add rignt and/or left menu (We can add 2 different menues for right and left sides).
 //        let slidingMenu = MySlidingMenu (mainViewController:navigationController, leftMenuViewController: leftSideMenuViewController)
-        let slidingMenu = MySlidingMenu (mainViewController:navigationController, leftMenuViewController: leftSideMenuViewController, rightMenuViewController: rightSideMenuViewController)
+     //   let slidingMenu = MySlidingMenu (mainViewController:navigationController, leftMenuViewController: leftSideMenuViewController, rightMenuViewController: rightSideMenuViewController)
         // getContext().navigationController?.pushViewController(slidingMenu, animated: true)
-        getContext().present(slidingMenu, animated: true, completion: nil)
+     //   getContext().present(slidingMenu, animated: true, completion: nil)
     }
     //
     static func goToCountryDetailsViewController(country : Country) {

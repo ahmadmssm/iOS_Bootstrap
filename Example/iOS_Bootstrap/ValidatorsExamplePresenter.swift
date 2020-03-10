@@ -11,7 +11,6 @@ import RxSwift
 
 class ValidatorsExamplePresenter: BasePresenter<ValidatorsExampleViewDelegator> {
     
-    private var disposeBag : DisposeBag!
     private var email: String!
     private var password: String!
     private var invalidInputErrorMessage: String!
@@ -19,14 +18,12 @@ class ValidatorsExamplePresenter: BasePresenter<ValidatorsExampleViewDelegator> 
     private var isValidMail: Bool = false
     private var isValidPassword: Bool = false
     
-    required init(viewDelegator: ValidatorsExampleViewDelegator) {
-        super.init(viewDelegator: viewDelegator)
+    required init(viewDelegate: ValidatorsExampleViewDelegator) {
+        super.init(viewDelegate: viewDelegate)
         disposeBag = DisposeBag ()
         invalidInputErrorMessage = "Input data is not valid !"
     }
-    
-    deinit { disposeBag = nil }
-    
+        
     func setEmail(email: String) {
         Validate.to(email)
             .validate(StringShouldNotBeEmpty())

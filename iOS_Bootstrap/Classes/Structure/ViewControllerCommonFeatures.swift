@@ -8,7 +8,6 @@
 public protocol ViewControllerCommonFeatures :
                                               InternetConnectionServiceMonitoring,
                                               PopUpProtocol,
-                                              Injectable,
-                                              OverridableFunctions {}
+                                              Injectable {}
 
 

@@ -18,8 +18,8 @@ class CountriesPresenter: BasePresenter<CountriesViewDelegator> {
     private var filteredCountriesArray : [CountryEntity]!
     private var isFirstTimeLoading : Bool = true
 
-    required init(viewDelegator: CountriesViewDelegator) {
-        super.init(viewDelegator: viewDelegator)
+    required init(viewDelegate: CountriesViewDelegator) {
+        super.init(viewDelegate: viewDelegate)
         countriesArray = []
         filteredCountriesArray = []
     }
@@ -38,7 +38,7 @@ class CountriesPresenter: BasePresenter<CountriesViewDelegator> {
                     .didFailToGetCountries(error: error.localizedDescription)
                 print("Error : " + error.localizedDescription)
         }
-        .disposed(by: getDisposeBag())
+        .disposed(by: disposeBag)
     }
     
     private func processCountriesList(countries: [Country]) {
@@ -83,13 +83,13 @@ class CountriesPresenter: BasePresenter<CountriesViewDelegator> {
             if (name == "") {
                 if (currentDataSource != countriesArray) {
                     
-                    getViewDelegate().loadingDidStart!()
+                    getViewDelegate().showLoading()
                     getViewDelegate().didResetCountriesTable(countries: countriesArray)
                 }
-                getViewDelegate().didFinishedLoading!()
+                getViewDelegate().hideLoading()
             }
             else {
-                getViewDelegate().loadingDidStart!()
+                getViewDelegate().showLoading()
                 filteredCountriesArray.removeAll()
                 for country in countriesArray {
                     if (country.name?.range(of:name) != nil) {
@@ -97,7 +97,7 @@ class CountriesPresenter: BasePresenter<CountriesViewDelegator> {
                     }
                 }
                 getViewDelegate().didGetSearchResults(filteredCountries: filteredCountriesArray)
-                getViewDelegate().didFinishedLoading!()
+                getViewDelegate().hideLoading()
             }
         }
         isFirstTimeLoading = false

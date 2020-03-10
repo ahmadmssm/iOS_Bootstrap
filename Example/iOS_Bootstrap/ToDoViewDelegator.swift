@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-protocol ToDoViewDelegator: BaseViewDelegator {
+protocol ToDoViewDelegator: BaseViewDelegate {
     func newToDoDidCreated()
     func toDoDidUpdated()
     func toDoDidDeleted()

@@ -6,11 +6,11 @@
 //
 
 public protocol NavigationCoordinator {
-    static var navigationController: UINavigationController? { get set }
-    func startInitialView()
+    var navigationController: UINavigationController? { get set }
+    func startInitialViewController()
 }
 
 public extension NavigationCoordinator {
-    func startInitialView() {}
+    func startInitialViewController() {}
 }
 

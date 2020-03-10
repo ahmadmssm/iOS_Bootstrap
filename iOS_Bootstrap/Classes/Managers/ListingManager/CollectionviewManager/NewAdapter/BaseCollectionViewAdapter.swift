@@ -16,7 +16,7 @@ open class BaseCollectionViewAdapter<CollectionView: UICollectionView, CellItem:
                                                                     
     
     //
-    private final var mCollectionview : CollectionView!
+    private final weak var mCollectionview : CollectionView!
     private var collectionViewDataSource: [CellItem]?
     private var mNumberOfPages : Int = 0
     private var mCurrentPage : Int = 1

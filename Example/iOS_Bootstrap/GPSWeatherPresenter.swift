@@ -13,8 +13,8 @@ class GPSWeatherPresenter : BasePresenter<WeatherViewDelegator> {
    
     @LazyInjected private var repo: Repo
 
-    required init(viewDelegator: WeatherViewDelegator) {
-        super.init(viewDelegator: viewDelegator)
+    required init(viewDelegate: WeatherViewDelegator) {
+        super.init(viewDelegate: viewDelegate)
     }
     
     func getFiveDaysWeather(lat : Double, longt : Double) {
@@ -31,6 +31,6 @@ class GPSWeatherPresenter : BasePresenter<WeatherViewDelegator> {
                     .didFailToGetFiveDaysWeather(errorMessage: error.localizedDescription)
 
             }
-            .disposed(by: getDisposeBag())
+            .disposed(by: disposeBag)
     }
 }

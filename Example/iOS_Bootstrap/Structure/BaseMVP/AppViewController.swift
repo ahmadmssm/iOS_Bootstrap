@@ -46,7 +46,7 @@ class AppViewController<P, V>: BaseViewController<P, V> where P: BasePresenter<V
     
     func initSnackbar() -> TTGSnackbar? {
         let newSnackBar = TTGSnackbar(message: "",duration: .short)
-        newSnackBar.backgroundColor = StaticResources.CustomColors.beautifulBlueColor
+        newSnackBar.backgroundColor = UIColor.beautifulBlueColor
         newSnackBar.actionText = "dismiss".localized()
         newSnackBar.actionBlock = { snackbar in
             snackbar.dismiss()

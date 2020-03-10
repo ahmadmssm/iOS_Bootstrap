@@ -13,8 +13,8 @@ class NetworkWeatherPresenter : BasePresenter<WeatherViewDelegator> {
     
     @LazyInjected private var repo: Repo
 
-    required init(viewDelegator: WeatherViewDelegator) {
-        super.init(viewDelegator: viewDelegator)
+    required init(viewDelegate: WeatherViewDelegator) {
+        super.init(viewDelegate: viewDelegate)
     }
     
     override func viewControllerDidLoad() { getFiveDaysWeather() }
@@ -31,7 +31,7 @@ class NetworkWeatherPresenter : BasePresenter<WeatherViewDelegator> {
                     .getViewDelegate()
                     .didFailToGetFiveDaysWeather(errorMessage: error.localizedDescription)
             }
-            .disposed(by: getDisposeBag())
+            .disposed(by: disposeBag)
     }
 }
 

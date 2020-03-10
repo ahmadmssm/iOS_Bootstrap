@@ -11,6 +11,8 @@ import MapKit
 
 extension Resolver {
     static func otherModules() {
+        register { Navigator() }.scope(application)
         register { CLLocationManager() }
+        register { LanguageManager() }
     }
 }

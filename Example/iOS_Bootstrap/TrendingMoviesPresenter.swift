@@ -15,13 +15,13 @@ class TrendingMoviesPresenter: BasePresenter<TrendingMoviesViewDelegate> {
     private var page: Int = 1
     private var trendingMoviesRepo: TrendingMoviesRepo!
     
-    required convenience init(viewDelegator: TrendingMoviesViewDelegate, trendingMoviesRepo: TrendingMoviesRepo) {
-        self.init(viewDelegator: viewDelegator)
+    required convenience init(viewDelegate: TrendingMoviesViewDelegate, trendingMoviesRepo: TrendingMoviesRepo) {
+        self.init(viewDelegate: viewDelegate)
         self.trendingMoviesRepo = trendingMoviesRepo
     }
     
-    required init(viewDelegator: TrendingMoviesViewDelegate) {
-        super.init(viewDelegator: viewDelegator)
+    required init(viewDelegate: TrendingMoviesViewDelegate) {
+        super.init(viewDelegate: viewDelegate)
     }
     
     override func viewControllerDidLoad() {
@@ -63,7 +63,7 @@ class TrendingMoviesPresenter: BasePresenter<TrendingMoviesViewDelegate> {
                     .getViewDelegate()
                     .didFailToGetTrendingMovies(error: error.localizedDescription)
         }
-        .disposed(by: getDisposeBag())
+        .disposed(by: disposeBag)
     }
     
     func getSummaryForMovieAt(index: Int) {

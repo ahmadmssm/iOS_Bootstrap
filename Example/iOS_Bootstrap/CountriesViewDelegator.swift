@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-protocol CountriesViewDelegator : BaseViewDelegator {
+protocol CountriesViewDelegator: BaseViewDelegate {
     func didGetCountries(countries : [CountryEntity])
     func didFailToGetCountries(error : String)
     func didFailToSaveCountriesInCoreData(error : String)

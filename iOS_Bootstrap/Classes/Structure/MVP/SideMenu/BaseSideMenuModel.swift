@@ -14,5 +14,4 @@ open class BaseSideMenuModel {
         self.itemName = itemName
         self.itemId = itemId
     }
-    
 }

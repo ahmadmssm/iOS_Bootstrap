@@ -5,16 +5,20 @@
 //  Created by Ahmad Mahmoud on 7/10/18.
 //
 
-open class BaseNavigator : NavigationCoordinator, ContextService {
+open class BaseNavigator: NavigationCoordinator, ContextService {
+    
     public static var childCoordinators = [NavigationCoordinator]()
-    public static var navigationController: UINavigationController? = UINavigationController()
+    public var navigationController: UINavigationController? = UINavigationController()
     //
-    open class func getAppWindow() -> UIWindow? { return nil }
-    open class func getAnimationDuration() -> Double { return 0.3 }
-    open class func getTransitionAnimation() -> UIView.AnimationOptions {
+    
+    public init() {}
+    
+    open func getAppWindow() -> UIWindow? { return nil }
+    open func getAnimationDuration() -> Double { return 0.3 }
+    open func getTransitionAnimation() -> UIView.AnimationOptions {
         return .transitionFlipFromLeft
     }
-    open class func animateAndOpen(viewController: UIViewController) {
+    open func animateAndOpen(viewController: UIViewController) {
         if (getAppWindow() != nil) {
             let window: UIWindow = getAppWindow()!
             UIView.transition(
@@ -27,29 +31,30 @@ open class BaseNavigator : NavigationCoordinator, ContextService {
             }, completion: nil)
         }
     }
-    open class func push(viewController: UIViewController,
+    open func push(viewController: UIViewController,
                          withAnimation: Bool? = true) {
-        getContext()
+        Self.getContext()
             .navigationController?
             .pushViewController(viewController, animated: withAnimation!)
     }
-    open class func present(viewController: UIViewController,
+    open func present(viewController: UIViewController,
                             withAnimation: Bool? = true) {
-        getContext()
+        Self.getContext()
             .present(viewController, animated: withAnimation!, completion: nil)
     }
-    open class func set(rootViewController viewController: UIViewController) {
+    
+    open func set(rootViewController viewController: UIViewController) {
         navigationController? = UINavigationController(rootViewController:
             viewController)
     }
     
-    open class  func popOver(viewController: UIViewController) {
+    open func popOver(viewController: UIViewController) {
         viewController.modalPresentationStyle = .overCurrentContext
         viewController.modalTransitionStyle = .crossDissolve
         present(viewController: viewController)
     }
     
-    open class func popOver(currentviewController: UIViewController,
+    open func popOver(currentviewController: UIViewController,
                             destinationViewController: UIViewController) {
         destinationViewController.modalPresentationStyle = .overCurrentContext
         destinationViewController.modalTransitionStyle = .crossDissolve
@@ -57,13 +62,13 @@ open class BaseNavigator : NavigationCoordinator, ContextService {
                                       animated: true, completion: nil)
     }
     
-    open class func fullScreenPopOver(viewController: UIViewController) {
+    open func fullScreenPopOver(viewController: UIViewController) {
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .crossDissolve
         present(viewController: viewController)
     }
     
-    open class func fullScreenPopOver(currentviewController: UIViewController,
+    open func fullScreenPopOver(currentviewController: UIViewController,
                                       destinationViewController: UIViewController) {
         currentviewController.modalPresentationStyle = .overFullScreen
         currentviewController.modalTransitionStyle = .crossDissolve
@@ -71,5 +76,5 @@ open class BaseNavigator : NavigationCoordinator, ContextService {
                                       animated: true, completion: nil)
     }
     //
-    open class func startInitialViewController() {}
+    open func startInitialViewController() {}
 }

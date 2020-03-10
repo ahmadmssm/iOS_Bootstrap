@@ -1,5 +1,5 @@
 //
-//  BaseViewDelegator.swift
+//  BaseViewDelegate.swift
 //  iOS_Bootstrap
 //
 //  Created by Ahmad Mahmoud on 6/28/18.
@@ -8,21 +8,19 @@
 
 import Foundation
 
-@objc public protocol BaseViewDelegator where Self: UIViewController {
-    @objc optional func loadingDidStart()
-    @objc optional func didFinishedLoading()
-    @objc optional func didGetError(errorMessage: String)
-    @objc optional func didGetWarning(warningMessage: String)
+public protocol BaseViewDelegate where Self: UIViewController {
+    func showLoading()
+    func hideLoading()
+    func didGetError(errorMessage: String)
+    func didGetWarning(warningMessage: String)
 }
 
-@objc public protocol BaseTableViewDelegator : BaseViewDelegator {
-    @objc optional func didGetTableViewItems(forPage page: Int, updatedDataSource: [Any])
+public extension BaseViewDelegate {
+    func showLoading() {}
+    func hideLoading() {}
+    func didGetError(errorMessage: String) {}
+    func didGetWarning(warningMessage: String) {}
 }
-
-@objc public protocol BaseCollectionViewDelegator : BaseViewDelegator {
-    @objc optional func didGetCollectionViewItems(forPage page: Int, updatedDataSource: [Any])
-}
-
 
 
 

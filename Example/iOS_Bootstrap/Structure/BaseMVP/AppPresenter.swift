@@ -6,6 +6,9 @@
 //  Copyright © 2019 Ahmad Mahmoud. All rights reserved.
 //
 
+import Resolver
 import iOS_Bootstrap
 
-class AppPresenter<V>: BasePresenter<V> {}
+class AppPresenter<V>: BasePresenter<V>, Resolving {
+    @LazyInjected var navigoator: Navigator
+}

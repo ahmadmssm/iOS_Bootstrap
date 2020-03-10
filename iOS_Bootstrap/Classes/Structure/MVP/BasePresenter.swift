@@ -8,18 +8,18 @@
 
 import RxSwift
 
-open class BasePresenter<T: AnyObject>: UserDefaultsService, PresenterFunctions {
+open class BasePresenter<T>: UserDefaultsService, PresenterFunctions {
     
-    public final weak var mViewDelegate: T!
-    private var disposeBag : DisposeBag!
+    public final weak var viewDelegate: AnyObject!
+    public lazy var disposeBag: DisposeBag = { return DisposeBag() }()
     
-    required public init (viewDelegator : T) { self.mViewDelegate = viewDelegator }
     
-    public final func getViewDelegate() -> T { return mViewDelegate }
+    required public init (viewDelegate: T) {
+        self.viewDelegate = viewDelegate as AnyObject
+    }
     
-    public final func getDisposeBag() -> DisposeBag {
-        if (disposeBag == nil) { disposeBag = DisposeBag() }
-        return disposeBag
+    public final func getViewDelegate() -> T {
+        return viewDelegate as! T
     }
     
     open func viewControllerDidLoad() {}
@@ -35,8 +35,7 @@ open class BasePresenter<T: AnyObject>: UserDefaultsService, PresenterFunctions 
     open func logOut() {}
 
     deinit {
-        if (mViewDelegate != nil) { mViewDelegate = nil }
-        if (disposeBag != nil) { disposeBag = nil }
+        if (viewDelegate != nil) { viewDelegate = nil }
     }
 }
 

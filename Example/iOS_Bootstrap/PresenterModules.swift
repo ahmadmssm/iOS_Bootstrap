@@ -13,7 +13,7 @@ extension Resolver {
     static func presenterModules() {
         register { (_, arg) -> TrendingMoviesPresenter in
             let viewDelegate = arg as! TrendingMoviesViewDelegate
-            return TrendingMoviesPresenter(viewDelegator: viewDelegate, trendingMoviesRepo: resolve())
+            return TrendingMoviesPresenter(viewDelegate: viewDelegate, trendingMoviesRepo: resolve())
         }
     }
 }
