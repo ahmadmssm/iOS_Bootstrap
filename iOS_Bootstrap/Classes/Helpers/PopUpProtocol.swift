@@ -49,7 +49,7 @@ public extension PopUpProtocol where Self: UIViewController {
     }
     
     func hideLoadingIndicator() {
-        activityIndicatorAlert.dismiss(animated: true, completion: nil)
+        activityIndicatorAlert?.dismiss(animated: true, completion: nil)
     }
     
     func showEZloadinActivity(message : String, cancelable : Bool) {

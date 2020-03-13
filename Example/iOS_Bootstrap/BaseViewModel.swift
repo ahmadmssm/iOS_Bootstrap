@@ -23,7 +23,7 @@ open class AppViewModel: UserDefaultsService, PresenterFunctions {
     
     open func viewControllerDidLoad() {}
     
-    open func viewControllerDidFinishedSettingUpUI() {}
+    open func viewControllerDidFinishSettingUpUI() {}
     
     open func viewControllerWillRefresh() {}
     

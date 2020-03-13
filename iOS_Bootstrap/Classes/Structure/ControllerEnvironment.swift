@@ -7,7 +7,7 @@
 
 public protocol ControllerEnvironment: SessionService {
     func viewControllerDidLoad()
-    func viewControllerDidFinishedSettingUpUI()
+    func viewControllerDidFinishSettingUpUI()
     func viewControllerWillRefresh()
     func viewControllerWillDisappear()
     func logOut()

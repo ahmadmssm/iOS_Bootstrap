@@ -18,7 +18,7 @@ open class BaseMVVMView<VM>: UIViewController where VM: BaseMVVMViewModel {
         initUI()
         bindViewModel()
         localizeStrings()
-        getViewModel().viewControllerDidFinishedSettingUpUI()
+        getViewModel().viewControllerDidFinishSettingUpUI()
     }
     //
     override open func viewWillAppear(_ animated: Bool) {

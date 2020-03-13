@@ -21,7 +21,7 @@ open class BaseMVVMViewModel: UserDefaultsService, ViewModelFunctions {
     
     open func viewControllerDidLoad() {}
     
-    open func viewControllerDidFinishedSettingUpUI() {}
+    open func viewControllerDidFinishSettingUpUI() {}
     
     open func viewControllerWillRefresh() {}
     

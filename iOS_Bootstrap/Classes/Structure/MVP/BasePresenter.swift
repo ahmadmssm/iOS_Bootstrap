@@ -10,7 +10,7 @@ import RxSwift
 
 open class BasePresenter<T>: UserDefaultsService, PresenterFunctions {
     
-    public final weak var viewDelegate: AnyObject!
+    private final weak var viewDelegate: AnyObject!
     public lazy var disposeBag: DisposeBag = { return DisposeBag() }()
     
     required public init (viewDelegate: T) {
@@ -23,7 +23,7 @@ open class BasePresenter<T>: UserDefaultsService, PresenterFunctions {
     
     open func viewControllerDidLoad() {}
 
-    open func viewControllerDidFinishedSettingUpUI() {}
+    open func viewControllerDidFinishSettingUpUI() {}
 
     open func viewControllerWillRefresh() {}
     

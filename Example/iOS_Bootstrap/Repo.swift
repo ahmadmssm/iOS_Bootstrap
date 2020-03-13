@@ -12,16 +12,8 @@ import iOS_Bootstrap
 
 class Repo: Resolving {
     
-    @LazyInjected private var worldCountriesAPI: WorldCountriesAPI
     @LazyInjected private var devicePublicIPAPI: DevicePublicIPAPI
     
-    func getAllCountries() -> Single<[Country]> {
-        return worldCountriesAPI
-            .requestWithNoAuthentication()
-            // Dealy just to show the skeleton effect :D
-            .delaySubscription(2.0, scheduler: Schedulers.backgroundConcurrentScheduler)
-    }
-   
     func getPublicIP() -> Single<String> {
         return devicePublicIPAPI.requestWithNoAuthentication()
     }

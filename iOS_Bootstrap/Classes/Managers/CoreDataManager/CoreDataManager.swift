@@ -26,8 +26,24 @@ open class CoreDataManager<T: NSManagedObject> {
     
     public func insertRecord(record: T) { context.insert(record) }
 
+    public func insertRecordCompletable(record: T) -> Completable {
+        return Completable.create { [weak self] completable in
+            self?.insertRecord(record: record)
+            completable(.completed)
+            return Disposables.create {}
+        }
+    }
+
     public func insertRecords(records : [T]) {
         records.forEach { record in insertRecord(record: record) }
+    }
+    
+    public func insertRecordsCompletable(records : [T]) -> Completable {
+        return Completable.create { [weak self] completable in
+            self?.insertRecords(records: records)
+            completable(.completed)
+            return Disposables.create {}
+        }
     }
     
     open func fetchAll() -> Observable<[T]> {
@@ -48,13 +64,13 @@ open class CoreDataManager<T: NSManagedObject> {
         return []
     }
     
-    public func updateRecord(record: String, completion: @escaping completionHandler<Bool>) {
-    
-    }
-    
-    public func deleteRecord(record: String, completion: @escaping completionHandler<Bool>) {
-        
-    }
+//    public func updateRecord(record: String, completion: @escaping completionHandler<Bool>) {
+//
+//    }
+//
+//    public func deleteRecord(record: String, completion: @escaping completionHandler<Bool>) {
+//
+//    }
     
     public func deleteAllRecords() -> Completable {
         return self.fetchAll()

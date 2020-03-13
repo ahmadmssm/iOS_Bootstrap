@@ -20,23 +20,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1pE-rL-7d0">
-                    <rect key="frame" x="25" y="50" width="325" height="617"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="5" id="jNE-b3-l3F">
-                        <size key="itemSize" width="50" height="50"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="jNE-b3-l3F">
+                        <size key="itemSize" width="250" height="250"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                     <cells/>
                 </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="1pE-rL-7d0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="CDI-bP-3VR"/>
-                <constraint firstItem="1pE-rL-7d0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="MVA-Sy-NJT"/>
+                <constraint firstItem="1pE-rL-7d0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CDI-bP-3VR"/>
+                <constraint firstItem="1pE-rL-7d0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="MVA-Sy-NJT"/>
                 <constraint firstItem="1pE-rL-7d0" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="gDn-hE-Vn2"/>
-                <constraint firstItem="1pE-rL-7d0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-25" id="kgh-16-YjP"/>
+                <constraint firstItem="1pE-rL-7d0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kgh-16-YjP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="69.5" y="123.5"/>

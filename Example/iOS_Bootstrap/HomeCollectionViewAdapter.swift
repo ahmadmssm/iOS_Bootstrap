@@ -17,6 +17,7 @@ class HomeCollectionViewAdapter: BaseCollectionViewAdapter<UICollectionView, Str
                      homeCollectionViewDelegate: HomeCollectionViewDelegate) {
         self.init(collectionView: collectionView, xibCell: HomeCollectionViewCell.self)
         self.homeCollectionViewDelegate = homeCollectionViewDelegate
+        collectionView.contentInset = UIEdgeInsets(top: 25, left: 20, bottom: 0, right: 20)
         super.reloadSinglePageCollectionView(items: dataSource)
     }
     
@@ -25,8 +26,8 @@ class HomeCollectionViewAdapter: BaseCollectionViewAdapter<UICollectionView, Str
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let collectionViewSize = collectionView.frame.size.width - 25
-        return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+        let collectionViewCalculatedWidth = collectionView.frame.size.width - 75
+        return CGSize(width: collectionViewCalculatedWidth/2, height: 230)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

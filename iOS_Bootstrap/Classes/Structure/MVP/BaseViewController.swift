@@ -27,7 +27,7 @@ open class BaseViewController<T, V> :
         getPresenter().viewControllerDidLoad()
         initUI()
         localizeStrings()
-        getPresenter().viewControllerDidFinishedSettingUpUI()
+        getPresenter().viewControllerDidFinishSettingUpUI()
     }
     //
     override open func viewWillAppear(_ animated: Bool) {

@@ -125,10 +125,15 @@
 		C99685E024184776006BAE56 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FFF6021972F0C00DFC0CC /* LanguageManager.swift */; };
 		C99685E3241848AD006BAE56 /* BaseXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685E124184845006BAE56 /* BaseXCTestCase.swift */; };
 		C99685E4241848BB006BAE56 /* UnitTestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685D724184634006BAE56 /* UnitTestingAppDelegate.swift */; };
+		C99685E6241BA133006BAE56 /* IOfflineCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685E5241BA133006BAE56 /* IOfflineCaching.swift */; };
+		C99685E8241BD071006BAE56 /* CountriesRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685E7241BD071006BAE56 /* CountriesRepo.swift */; };
+		C99685EA241BE152006BAE56 /* RxSwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685E9241BE152006BAE56 /* RxSwiftExtensions.swift */; };
+		C99685EC241BF6D7006BAE56 /* SearchBarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685EB241BF6D7006BAE56 /* SearchBarUtils.swift */; };
+		C99685EE241BF6EA006BAE56 /* SearchBarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685ED241BF6EA006BAE56 /* SearchBarExtensions.swift */; };
 		C99AA05A21871BBB001683B8 /* SideMenuTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99AA05921871BBB001683B8 /* SideMenuTabBar.storyboard */; };
 		C99AA0642187388C001683B8 /* GPSWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0602187388B001683B8 /* GPSWeatherViewController.swift */; };
 		C99AA0862187D3E2001683B8 /* NetworkWeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0852187D3E2001683B8 /* NetworkWeatherPresenter.swift */; };
-		C99AA08F218845C9001683B8 /* CountriesViewDelegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA08E218845C9001683B8 /* CountriesViewDelegator.swift */; };
+		C99AA08F218845C9001683B8 /* CountriesViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA08E218845C9001683B8 /* CountriesViewDelegate.swift */; };
 		C99AA091218845E7001683B8 /* CountriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA090218845E7001683B8 /* CountriesPresenter.swift */; };
 		C99AA09521884652001683B8 /* GPSWeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA09421884652001683B8 /* GPSWeatherPresenter.swift */; };
 		C99AA09C21884824001683B8 /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA09B21884824001683B8 /* SideMenuModel.swift */; };
@@ -291,10 +296,15 @@
 		C99685D9241846F2006BAE56 /* UnitTestingDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingDI.swift; sourceTree = "<group>"; };
 		C99685DD2418473E006BAE56 /* OtherModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherModules.swift; sourceTree = "<group>"; };
 		C99685E124184845006BAE56 /* BaseXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXCTestCase.swift; sourceTree = "<group>"; };
+		C99685E5241BA133006BAE56 /* IOfflineCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOfflineCaching.swift; sourceTree = "<group>"; };
+		C99685E7241BD071006BAE56 /* CountriesRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRepo.swift; sourceTree = "<group>"; };
+		C99685E9241BE152006BAE56 /* RxSwiftExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftExtensions.swift; sourceTree = "<group>"; };
+		C99685EB241BF6D7006BAE56 /* SearchBarUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarUtils.swift; sourceTree = "<group>"; };
+		C99685ED241BF6EA006BAE56 /* SearchBarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarExtensions.swift; sourceTree = "<group>"; };
 		C99AA05921871BBB001683B8 /* SideMenuTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenuTabBar.storyboard; sourceTree = "<group>"; };
 		C99AA0602187388B001683B8 /* GPSWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSWeatherViewController.swift; sourceTree = "<group>"; };
 		C99AA0852187D3E2001683B8 /* NetworkWeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherPresenter.swift; sourceTree = "<group>"; };
-		C99AA08E218845C9001683B8 /* CountriesViewDelegator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewDelegator.swift; sourceTree = "<group>"; };
+		C99AA08E218845C9001683B8 /* CountriesViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewDelegate.swift; sourceTree = "<group>"; };
 		C99AA090218845E7001683B8 /* CountriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenter.swift; sourceTree = "<group>"; };
 		C99AA09421884652001683B8 /* GPSWeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSWeatherPresenter.swift; sourceTree = "<group>"; };
 		C99AA09B21884824001683B8 /* SideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
@@ -383,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				C91C798023A55E2A00D4952A /* Common */,
-				C930E1D821CD19F900809FB2 /* DataSource */,
 				C9C960F720FA8BA30023CDD7 /* Views */,
 			);
 			name = "Example for iOS_Bootstrap";
@@ -535,6 +544,8 @@
 				C93598012416E637000976B2 /* NSAttributedStringExtensions.swift */,
 				C99685C52417C09E006BAE56 /* FloatExtensions.swift */,
 				C99685CF24183D9A006BAE56 /* CAGradientLayerExtensions.swift */,
+				C99685E9241BE152006BAE56 /* RxSwiftExtensions.swift */,
+				C99685ED241BF6EA006BAE56 /* SearchBarExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -558,6 +569,7 @@
 				C95ABA7222BEA18E00E06DC3 /* UIViewController + Alerts.swift */,
 				C91FFF5A21930F7F00DFC0CC /* LocationManager.swift */,
 				C91FFF6021972F0C00DFC0CC /* LanguageManager.swift */,
+				C99685EB241BF6D7006BAE56 /* SearchBarUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -670,7 +682,9 @@
 		C93597FE2416E585000976B2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C930E1D821CD19F900809FB2 /* DataSource */,
 				C99EA61D20CB461B00D7C158 /* Models */,
+				C99685E5241BA133006BAE56 /* IOfflineCaching.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -775,7 +789,6 @@
 				C93598212417A270000976B2 /* TabBar */,
 				C93598202417A25D000976B2 /* SearchController */,
 				C935981F2417A24C000976B2 /* NavigationController */,
-				C95E24E221FE5C1D00621645 /* FloatingButton */,
 				C95E24DB21FE5A5900621645 /* TagListView  */,
 			);
 			name = CustomComponents;
@@ -798,13 +811,6 @@
 				C95E24DE21FE5A8200621645 /* TagView.swift */,
 			);
 			name = "TagListView ";
-			sourceTree = "<group>";
-		};
-		C95E24E221FE5C1D00621645 /* FloatingButton */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = FloatingButton;
 			sourceTree = "<group>";
 		};
 		C973B7B721C4367700B63A69 /* ValidatorsExampleScreen */ = {
@@ -999,7 +1005,8 @@
 				C95D787A21D6580B00D25B77 /* CountriesView.xib */,
 				C95D787921D6580B00D25B77 /* CountriesViewController.swift */,
 				C99AA090218845E7001683B8 /* CountriesPresenter.swift */,
-				C99AA08E218845C9001683B8 /* CountriesViewDelegator.swift */,
+				C99AA08E218845C9001683B8 /* CountriesViewDelegate.swift */,
+				C99685E7241BD071006BAE56 /* CountriesRepo.swift */,
 			);
 			name = CountriesScene;
 			sourceTree = "<group>";
@@ -1303,6 +1310,7 @@
 				C9BBA25F22FD94020052E57A /* TrendingMoviesAPI.swift in Sources */,
 				C964F15B235B9C64006320AE /* TrendingMoviesViewController.swift in Sources */,
 				C9CC0E4D2191997E00AF9D62 /* AdditionalData.swift in Sources */,
+				C99685EA241BE152006BAE56 /* RxSwiftExtensions.swift in Sources */,
 				C930E1F321CD418900809FB2 /* ToDoListCachingManager.swift in Sources */,
 				C902036F20F571C100A63492 /* Navigator.swift in Sources */,
 				C973B7D321C524FD00B63A69 /* CountryEntity.swift in Sources */,
@@ -1315,6 +1323,7 @@
 				C99EA60320CB3D7900D7C158 /* AppErrorHandler.swift in Sources */,
 				C91FFF5B21930F7F00DFC0CC /* LocationManager.swift in Sources */,
 				C91FFF6121972F0C00DFC0CC /* LanguageManager.swift in Sources */,
+				C99685E8241BD071006BAE56 /* CountriesRepo.swift in Sources */,
 				C970DD6B21A065FD0079B706 /* Section.swift in Sources */,
 				C930E1E621CD3BDA00809FB2 /* ToDoViewDelegator.swift in Sources */,
 				C95263B121CDB76E00FEFAFF /* Results + Pagination.swift in Sources */,
@@ -1325,6 +1334,7 @@
 				C9BBA25B22FD92150052E57A /* RefreshTokenAPI.swift in Sources */,
 				C93597FB2416D63E000976B2 /* AdapterModules.swift in Sources */,
 				C9954A4222FCB99A00D4ECE9 /* BaseViewModel.swift in Sources */,
+				C99685EE241BF6EA006BAE56 /* SearchBarExtensions.swift in Sources */,
 				C9954A3A22FCB98300D4ECE9 /* AppPresenter.swift in Sources */,
 				C9954A3922FCB98300D4ECE9 /* AppViewController.swift in Sources */,
 				C93E4B502190575300A62059 /* City.swift in Sources */,
@@ -1341,7 +1351,9 @@
 				C99AA091218845E7001683B8 /* CountriesPresenter.swift in Sources */,
 				C9BBA25522FCD54B0052E57A /* Requestable.swift in Sources */,
 				C930E1DA21CD1E8600809FB2 /* UIImageView + SVG extension.swift in Sources */,
+				C99685E6241BA133006BAE56 /* IOfflineCaching.swift in Sources */,
 				C95E24DF21FE5A8300621645 /* CloseButton.swift in Sources */,
+				C99685EC241BF6D7006BAE56 /* SearchBarUtils.swift in Sources */,
 				C91FACFB23A4F33000F516CF /* RestModules.swift in Sources */,
 				C930E1E421CD3BB600809FB2 /* ToDoPresenter.swift in Sources */,
 				C9BBA26522FD94770052E57A /* FiveDaysWeatherForcastAPI.swift in Sources */,
@@ -1352,7 +1364,7 @@
 				C99685D224184238006BAE56 /* OfflineCachingModules.swift in Sources */,
 				C9BBA25D22FD93110052E57A /* WorldCountriesAPI.swift in Sources */,
 				C91FACFD23A4F36000F516CF /* RepositoriesModules.swift in Sources */,
-				C99AA08F218845C9001683B8 /* CountriesViewDelegator.swift in Sources */,
+				C99AA08F218845C9001683B8 /* CountriesViewDelegate.swift in Sources */,
 				C9CBBD37234ABB2B00B6CA29 /* CustomViewsViewController.swift in Sources */,
 				C949830E22FDC0DC00904CD1 /* AppErrorModel.swift in Sources */,
 				C946C12D21A3681100B0F553 /* NoCancelButtonSearchController.swift in Sources */,

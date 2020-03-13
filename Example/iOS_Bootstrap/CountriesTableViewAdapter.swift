@@ -35,12 +35,8 @@ class CountriesTableViewAdapter: BaseTableViewAdapter<UITableView, CountryEntity
         }
     }
     
-    func showAllDataSet(items: [CountryEntity]) {
+    func postItems(items: [CountryEntity]) {
         resetTable()
-        super.reloadSinglePageTable(items: items)
-    }
-    
-    func postSearchItems(searchItems: [CountryEntity]) {
-        showAllDataSet(items: searchItems)
+        reloadSinglePageTable(items: items)
     }
 }
