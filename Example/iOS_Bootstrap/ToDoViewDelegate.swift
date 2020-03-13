@@ -1,5 +1,5 @@
 //
-//  ToDoViewDelegator.swift
+//  ToDoViewDelegate.swift
 //  iOS_Bootstrap_Example
 //
 //  Created by Ahmad Mahmoud on 12/21/18.
@@ -8,9 +8,9 @@
 
 import iOS_Bootstrap
 
-protocol ToDoViewDelegator: BaseViewDelegate {
-    func newToDoDidCreated()
-    func toDoDidUpdated()
+protocol ToDoViewDelegate: AppViewDelegate {
+    func didGetAllToDos(toDos: [ToDoCellModel])
+    func didCreateNewToDo()
+    func didUpdateToDo()
     func toDoDidDeleted()
-    func onError(error: String)
 }

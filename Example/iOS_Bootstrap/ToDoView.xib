@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,8 +23,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drF-hq-CGy" customClass="CustomButton" customModule="iOS_Bootstrap">
-                    <rect key="frame" x="100" y="598" width="175" height="44"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drF-hq-CGy">
+                    <rect key="frame" x="100" y="573" width="175" height="44"/>
                     <color key="backgroundColor" red="0.26062288420000002" green="0.53508837119999997" blue="0.89920660620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Ora-ud-2oP"/>
@@ -48,7 +46,7 @@
             <constraints>
                 <constraint firstItem="GhF-Zm-WrJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3Aj-zM-ymu"/>
                 <constraint firstItem="GhF-Zm-WrJ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="7Pb-Cb-xdA"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="drF-hq-CGy" secondAttribute="bottom" constant="10" id="Bu9-wu-UK5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="drF-hq-CGy" secondAttribute="bottom" constant="50" id="Bu9-wu-UK5"/>
                 <constraint firstItem="GhF-Zm-WrJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="a5R-fh-Ax3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="drF-hq-CGy" secondAttribute="trailing" constant="100" id="cJE-Rm-6OG"/>
                 <constraint firstItem="drF-hq-CGy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="oF1-YN-IBd"/>

@@ -12,6 +12,7 @@ extension Resolver {
     static func repositoriesModules() {
         register { TrendingMoviesRepo() }
         register { Repo() }.scope(application)
+        register { ToDoRepo() }
         register { CountriesRepo() }
     }
 }

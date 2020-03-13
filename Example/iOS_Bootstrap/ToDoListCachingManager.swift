@@ -14,32 +14,30 @@ class ToDoListCachingManager: RealmManager<ToDoListEntity> {
     
     func addNewToDo(toDo: ToDoListEntity) -> Completable { return insertRecord(record: toDo) }
     
-    func getActiveToDos() -> Observable<[ToDoListEntity]> {
+    func getActiveToDos() -> Single<[ToDoListEntity]> {
         return getRecordsFilteredBy(filter: "isDone = false")
     }
     
-    func getFinishedToDos() -> Observable<[ToDoListEntity]> {
+    func getFinishedToDos() -> Single<[ToDoListEntity]> {
         return getRecordsFilteredBy(filter: "isDone = true")
     }
     
-    func getToDosSortedByRecentDate() -> Observable<[ToDoListEntity]> {
-        return Observable.create { observer in
+    func getToDosSortedByRecentDate() -> Single<[ToDoListEntity]> {
+        return Single.create { single in
             do {
                 let results = self.getRealm().objects(ToDoListEntity.self).sorted(byKeyPath: "createdAt", ascending: false)
-                observer.onNext(results.toArray())
+                single(.success(results.toArray()))
             }
-            observer.on(.completed)
             return Disposables.create()
         }
     }
     
-    func getToDosSortedById() -> Observable<[ToDoListEntity]> {
-        return Observable.create { observer in
+    func getToDosSortedById() -> Single<[ToDoListEntity]> {
+        return Single.create { single in
             do {
                 let results = self.getRealm().objects(ToDoListEntity.self).sorted(byKeyPath: "id", ascending: true)
-                observer.onNext(results.toArray())
+                single(.success(results.toArray()))
             }
-            observer.on(.completed)
             return Disposables.create()
         }
     }
@@ -54,7 +52,7 @@ class ToDoListCachingManager: RealmManager<ToDoListEntity> {
         }).asMaybe()
     }
     
-    func getAllTodos() -> Observable<[ToDoListEntity]> { return getAllRecords() }
+    func getAllTodos() -> Single<[ToDoListEntity]> { return getAllRecords() }
     
     func updateToDo(toDo: ToDoListEntity) -> Completable { return updateRecord(record: toDo) }
 

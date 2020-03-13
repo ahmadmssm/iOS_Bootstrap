@@ -155,13 +155,12 @@ class RealmManager<T: Object> {
         }
     }
     
-    func getRecordsFilteredBy(filter: String) -> Observable<[T]> {
-        return Observable.create { observer in
+    func getRecordsFilteredBy(filter: String) -> Single<[T]> {
+        return Single.create { single in
             do {
                 let results = self.realm.objects(T.self).filter(filter)
-                observer.onNext(results.toArray())
+                single(.success(results.toArray()))
             }
-            observer.on(.completed)
             return Disposables.create()
         }
     }
@@ -195,21 +194,19 @@ class RealmManager<T: Object> {
         }
     }
     
-    func getAllRecords() -> Observable<[T]> {
-        return Observable.create { observer in
+    func getAllRecords() -> Single<[T]> {
+        return Single.create { single in
             do {
                 let results = self.realm.objects(T.self)
-                observer.onNext(results.toArray())
+                single(.success(results.toArray()))
             }
-            observer.on(.completed)
             return Disposables.create()
         }
     }
     
     func getRecordAtIndex(index: Int) -> Single<T> {
-        return getAllRecords().flatMap { selector -> Observable<T> in
-            return Observable.just(selector[index])
-        }.asSingle()
+        return getAllRecords().flatMap { selector -> Single<T> in
+            return Single.just(selector[index])
+        }
     }
-    
 }

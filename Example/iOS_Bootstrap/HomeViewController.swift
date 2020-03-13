@@ -29,7 +29,7 @@ class HomeViewController:
             navigator.openCountriesViewController()
             break
         case 2:
-          //  navigator.openCountriesViewController()
+            navigator.openToDoViewController()
             break
         case 3:
             getPresenter().switchAppLanguage()

@@ -39,6 +39,11 @@ class Navigator: BaseNavigator {
         let viewController: CountriesViewController = CountriesViewController()
         Self.getContext().navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    func openToDoViewController() {
+         let viewController: ToDoViewController = ToDoViewController()
+        Self.getContext().navigationController?.pushViewController(viewController, animated: true)
+    }
     //
     @available(iOS 10.0, *)
     func goToSideMenuStoryboard() {

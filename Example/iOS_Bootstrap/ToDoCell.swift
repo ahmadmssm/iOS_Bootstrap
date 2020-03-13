@@ -31,6 +31,4 @@ class ToDoCell: BaseTableViewCellV2<ToDoCellModel> {
     }
     
     deinit { EventBus.unregister(self) }
-
-    
 }

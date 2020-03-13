@@ -12,7 +12,7 @@ import iOS_Bootstrap
 class HomePresenter: AppPresenter<HomeViewDelegate>, Resolving {
     
     override func viewControllerDidLoad() {
-        let collectionViewItems : [String] = ["Table view + Pagination", "SVG Image loader + Core data + SearchBar + Shimmering", "Custom views", "Switch language (RTL)", "Validatiors"]
+        let collectionViewItems : [String] = ["Table view + Pagination", "SVG Image loader + Core data + SearchBar + Shimmering", "Realm + View pager", "Switch language (RTL)", "Validatiors"]
         getViewDelegate().didGetCollectioViewItems(items: collectionViewItems)
     }
     

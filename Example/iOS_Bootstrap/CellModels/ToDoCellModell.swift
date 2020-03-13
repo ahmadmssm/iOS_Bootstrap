@@ -6,7 +6,7 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-struct ToDoCellModel: Codable {
+struct ToDoCellModel: Codable, Equatable {
     var id: Int?
     var name: String?
     var createdAt: String?
