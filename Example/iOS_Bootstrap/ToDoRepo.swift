@@ -37,14 +37,6 @@ class ToDoRepo {
             .updateToDo(toDo: getToToDoCellEntittFrom(toDo: toDo))
     }
     
-    func getAllToDos() -> Single<[ToDoCellModel]> {
-        return toDoListManager
-            .getAllTodos()
-            .map({ toDoEntityList -> [ToDoCellModel] in
-                return self.getToDoCellModeslListFrom(toDoEntites: toDoEntityList)
-            })
-    }
-    
     func getToDos(mode: ToDoMode) -> Single<[ToDoCellModel]> {
         switch mode {
             case .Active: return getActiveToDos()

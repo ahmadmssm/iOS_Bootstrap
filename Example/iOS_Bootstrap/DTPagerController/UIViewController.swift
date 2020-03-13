@@ -5,23 +5,22 @@
 //  Created by Admin on 25/02/2018.
 //
 
-import Foundation
+import UIKit
 
-public extension BaseViewController {
-    var pagerController: DTPagerController<BasePresenter<Any>, Any>? {
+public extension UIViewController {
+    var pagerController: DTPagerController? {
         get {
             var viewController : UIViewController?
             viewController = self
             
             while viewController != nil {
-                if let containerViewController = viewController?.parent as? DTPagerController<BasePresenter<Any>, Any> {
+                if let containerViewController = viewController?.parent as? DTPagerController {
                     return containerViewController
                 }
                 else {
                     viewController = viewController?.parent
                 }
             }
-            
             return nil
         }
     }

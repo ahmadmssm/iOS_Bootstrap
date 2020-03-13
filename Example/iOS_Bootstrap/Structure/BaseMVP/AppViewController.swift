@@ -23,7 +23,7 @@ class AppViewController<P, V>: BaseViewController<P, V> where P: BasePresenter<V
         }
         self.snackBar = initSnackbar()
     }
-    
+        
     override func initUI() {}
     
     override func localizeStrings() {}

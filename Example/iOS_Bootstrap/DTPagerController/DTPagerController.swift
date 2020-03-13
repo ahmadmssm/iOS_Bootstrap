@@ -6,31 +6,25 @@
 //
 //
 
-import Foundation
+import UIKit
 
 /// PagerViewControllerDelegate
 public protocol DTPagerControllerDelegate: NSObjectProtocol {
-    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegate>,
-        BaseViewDelegate>, didChangeSelectedPageIndex index: Int)
-    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegate>,
-        BaseViewDelegate>, willChangeSelectedPageIndex index: Int, fromPageIndex oldIndex: Int)
-    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegate>,
-        BaseViewDelegate>, pageScrollViewDidScroll: UIScrollView)
+    func pagerController(_ pagerController: DTPagerController, didChangeSelectedPageIndex index: Int)
+    func pagerController(_ pagerController: DTPagerController, willChangeSelectedPageIndex index: Int, fromPageIndex oldIndex: Int)
+    func pagerController(_ pagerController: DTPagerController, pageScrollViewDidScroll: UIScrollView)
 }
 
 public extension DTPagerControllerDelegate {
-    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegate>,
-        BaseViewDelegate>, didChangeSelectedPageIndex index: Int) {}
-    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegate>,
-        BaseViewDelegate>, willChangeSelectedPageIndex index: Int, fromPageIndex oldIndex: Int) {}
-    func pagerController(_ pagerController: DTPagerController<BasePresenter<BaseViewDelegate>,
-        BaseViewDelegate>, pageScrollViewDidScroll: UIScrollView) {}
+    func pagerController(_ pagerController: DTPagerController, didChangeSelectedPageIndex index: Int) {}
+    func pagerController(_ pagerController: DTPagerController, willChangeSelectedPageIndex index: Int, fromPageIndex oldIndex: Int) {}
+    func pagerController(_ pagerController: DTPagerController, pageScrollViewDidScroll: UIScrollView) {}
 }
 
 /// DTPagerController
 /// Used to create a pager controller of multiple view controllers.
 // open class DTPagerController: UIViewController, UIScrollViewDelegate {
-open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelegate where T: BasePresenter<V> {
+open class DTPagerController: UIViewController, UIScrollViewDelegate {
 
     /// scrollIndicator below the segmented control bar.
     /// Default background color is blue.
@@ -99,7 +93,7 @@ open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelega
             pageSegmentedControl.selectedSegmentIndex = newValue
             
             if newValue != previousPageIndex {
-                pageSegmentedControl.sendActions(for: UIControlEvents.valueChanged)
+                pageSegmentedControl.sendActions(for: UIControl.Event.valueChanged)
             }
         }
         
@@ -204,7 +198,8 @@ open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelega
     
     override open func loadView() {
         super.loadView()
-        automaticallyAdjustsScrollViewInsets = false
+        pageScrollView.contentInsetAdjustmentBehavior = .automatic
+        // automaticallyAdjustsScrollViewInsets = false
         edgesForExtendedLayout = UIRectEdge()
     }
     
@@ -252,8 +247,7 @@ open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelega
     //MARK: Segmented control action
     @objc func pageSegmentedControlValueChanged() {
         //Call delegate method before changing value
-        delegate?.pagerController(self as! DTPagerController<BasePresenter<BaseViewDelegate>,
-            BaseViewDelegate>, willChangeSelectedPageIndex: selectedPageIndex, fromPageIndex: previousPageIndex)
+        delegate?.pagerController(self , willChangeSelectedPageIndex: selectedPageIndex, fromPageIndex: previousPageIndex)
         
         let oldViewController = viewControllers[previousPageIndex]
         let newViewController = viewControllers[selectedPageIndex]
@@ -265,32 +259,26 @@ open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelega
         
         // Call these two methods to notify that two view controllers are being removed or added to container view controller (Check Documentation)
         if automaticallyHandleAppearanceTransitions {
-            oldViewController.willMove(toParentViewController: nil)
-            addChildViewController(newViewController)
+            oldViewController.willMove(toParent: nil)
+            addChild(newViewController)
         }
-        
         let size = view.bounds.size
         let contentOffset = CGFloat(selectedPageIndex) * size.width
-        
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.5, initialSpringVelocity: 5, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.5, initialSpringVelocity: 5, options: UIView.AnimationOptions.curveEaseIn, animations: { () -> Void in
             self.pageScrollView.contentOffset = CGPoint(x: contentOffset, y: 0)
             
             // Update status bar
             self.setNeedsStatusBarAppearanceUpdate()
-            
         }, completion: { (finished) -> Void in
             // Call these two methods to notify that two view controllers are already removed or added to container view controller (Check Documentation)
             if self.automaticallyHandleAppearanceTransitions {
-                oldViewController.removeFromParentViewController()
-                newViewController.didMove(toParentViewController: self)
-                
+                oldViewController.removeFromParent()
+                newViewController.didMove(toParent: self)
                 oldViewController.endAppearanceTransition()
                 newViewController.endAppearanceTransition()
             }
-            
-            //Call delegate method after changing value
-            self.delegate?.pagerController(self as! DTPagerController<BasePresenter<BaseViewDelegate>,
-                BaseViewDelegate>, didChangeSelectedPageIndex: self.selectedPageIndex)
+            // Call delegate method after changing value
+            self.delegate?.pagerController(self , didChangeSelectedPageIndex: self.selectedPageIndex)
         })
         
         //Setting up new previousPageIndex for next change
@@ -304,17 +292,15 @@ open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelega
             if automaticallyHandleAppearanceTransitions {
                 viewController.beginAppearanceTransition(false, animated: false)
             }
-            
-            viewController.willMove(toParentViewController: nil)
+            viewController.willMove(toParent: nil)
             viewController.view.removeFromSuperview()
-            viewController.removeFromParentViewController()
-            
+            viewController.removeFromParent()
             if automaticallyHandleAppearanceTransitions {
                 viewController.endAppearanceTransition()
             }
         }
     }
-    
+
     // Setup new child view controllers
     // Called in viewDidLoad or each time a new array of viewControllers is set
     private func setUpViewControllers() {
@@ -337,19 +323,16 @@ open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelega
             // Then add subview, we do this later to prevent viewDidLoad of child view controllers to be called before page segment is allocated.
             for (index, viewController) in viewControllers.enumerated() {
                 // Add view controller's view if it must be visible in scroll view
-                if let _ = indexes.index(of: index) {
+                if let _ = indexes.firstIndex(of: index) {
                     // Add to call viewDidLoad if needed
                     viewController.view.frame = CGRect(x: CGFloat(index) * view.bounds.width, y: 0, width: view.bounds.width, height: view.bounds.height - segmentedControlHeight)
                     pageScrollView.addSubview(viewController.view)
-                    
                     // This will call viewWillAppear
-                    addChildViewController(viewController)
-                    
+                    addChild(viewController)
                     // This will call viewDidAppear
-                    viewController.didMove(toParentViewController: self)
+                    viewController.didMove(toParent: self)
                 }
             }
-            
             // Scroll indicator
             setUpScrollIndicator()
         }
@@ -389,16 +372,13 @@ open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelega
             if let pageSegmentedControl = pageSegmentedControl as? UISegmentedControl {
                 pageSegmentedControl.insertSegment(withTitle: "", at: index, animated: false)
             }
-            
             // Call this method to setup appearance for every single segmented.
             updateAppearanceForSegmentedItem(at: index)
         }
-        
         // Add target if needed
-        if self != (pageSegmentedControl.target(forAction: #selector(pageSegmentedControlValueChanged), withSender: UIControlEvents.valueChanged) as? DTPagerController) {
-            pageSegmentedControl.addTarget(self, action: #selector(pageSegmentedControlValueChanged), for: UIControlEvents.valueChanged)
+        if self != (pageSegmentedControl.target(forAction: #selector(pageSegmentedControlValueChanged), withSender: UIControl.Event.valueChanged) as? DTPagerController) {
+            pageSegmentedControl.addTarget(self, action: #selector(pageSegmentedControlValueChanged), for: UIControl.Event.valueChanged)
         }
-        
         selectedPageIndex = previousPageIndex
     }
     
@@ -425,11 +405,8 @@ open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelega
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // Disable animation
         UIView.setAnimationsEnabled(false)
-        
         // Delegate
-        delegate?.pagerController(self as! DTPagerController<BasePresenter<BaseViewDelegate>,
-            BaseViewDelegate>, pageScrollViewDidScroll: scrollView)
-
+        delegate?.pagerController(self , pageScrollViewDidScroll: scrollView)
         
         // Add child view controller's view if needed
         let indexes = self.visiblePageIndexes()
@@ -529,13 +506,13 @@ open class DTPagerController<T, V>: BaseViewController<T, V>, UIScrollViewDelega
     
     //MARK: Segmented control setup
     func updateSegmentedNormalTitleTextAttributes() {
-        pageSegmentedControl.setTitleTextAttributes([NSAttributedStringKey.font : font, NSAttributedStringKey.foregroundColor : textColor], for: .normal)
-        pageSegmentedControl.setTitleTextAttributes([NSAttributedStringKey.font : font, NSAttributedStringKey.foregroundColor : textColor.withAlphaComponent(0.5)], for: [.normal, .highlighted])
+        pageSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font : font, NSAttributedString.Key.foregroundColor : textColor], for: .normal)
+        pageSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font : font, NSAttributedString.Key.foregroundColor : textColor.withAlphaComponent(0.5)], for: [.normal, .highlighted])
     }
     
     func updateSegmentedSelectedTitleTextAttributes() {
-        pageSegmentedControl.setTitleTextAttributes([NSAttributedStringKey.font : selectedFont, NSAttributedStringKey.foregroundColor : selectedTextColor], for: .selected)
-        pageSegmentedControl.setTitleTextAttributes([NSAttributedStringKey.font : selectedFont, NSAttributedStringKey.foregroundColor : selectedTextColor.withAlphaComponent(0.5)], for: [.selected, .highlighted])
+        pageSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font : selectedFont, NSAttributedString.Key.foregroundColor : selectedTextColor], for: .selected)
+        pageSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font : selectedFont, NSAttributedString.Key.foregroundColor : selectedTextColor.withAlphaComponent(0.5)], for: [.selected, .highlighted])
     }
     
     func updateSegmentedTitleTextAttributes() {

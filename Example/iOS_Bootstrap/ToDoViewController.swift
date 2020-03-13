@@ -23,6 +23,10 @@ class ToDoViewController:
         listenForToDoCellEvent(forMode: mode)
     }
     
+    open override func initPresenter () -> ToDoPresenter? {
+        return ToDoPresenter(viewDelegate: self, mode: mode)
+    }
+    
     private func listenForToDoCellEvent(forMode: ToDoMode) {
         var event: String!
         switch self.mode {

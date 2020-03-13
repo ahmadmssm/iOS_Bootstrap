@@ -13,14 +13,20 @@ import Resolver
 class ToDoPresenter: AppPresenter<ToDoViewDelegate> {
     
     @LazyInjected private var toDoRepo: ToDoRepo
-
-    override func viewControllerWillRefresh() {
-        self.reloadFromScratch()
+    private var mode: ToDoMode!
+    
+    required convenience init (viewDelegate: ToDoViewDelegate, mode: ToDoMode) {
+        self.init(viewDelegate: viewDelegate)
+        self.mode = mode
     }
     
+    override func viewControllerWillRefresh() {
+           self.reloadFromScratch()
+    }
+       
     private func reloadFromScratch() {
         toDoRepo
-            .getAllToDos()
+            .getToDos(mode: mode)
             .subscribe(onSuccess: { [weak self] toDos in
                 self?.getViewDelegate().didGetAllToDos(toDos: toDos)
             }, onError: { [weak self] error in

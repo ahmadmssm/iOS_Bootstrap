@@ -133,6 +133,9 @@
 		C99685F3241C2C30006BAE56 /* ToDosTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685F2241C2C30006BAE56 /* ToDosTableAdapter.swift */; };
 		C99685F5241C2C3F006BAE56 /* ToDosTableAdapterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685F4241C2C3F006BAE56 /* ToDosTableAdapterDelegate.swift */; };
 		C99685F7241C2E5C006BAE56 /* ToDoRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685F6241C2E5C006BAE56 /* ToDoRepo.swift */; };
+		C99685FC241C44FD006BAE56 /* DTSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685F9241C44FD006BAE56 /* DTSegmentedControl.swift */; };
+		C99685FD241C44FD006BAE56 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685FA241C44FD006BAE56 /* UIViewController.swift */; };
+		C99685FE241C44FD006BAE56 /* DTPagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685FB241C44FD006BAE56 /* DTPagerController.swift */; };
 		C99AA05A21871BBB001683B8 /* SideMenuTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99AA05921871BBB001683B8 /* SideMenuTabBar.storyboard */; };
 		C99AA0642187388C001683B8 /* GPSWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0602187388B001683B8 /* GPSWeatherViewController.swift */; };
 		C99AA0862187D3E2001683B8 /* NetworkWeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AA0852187D3E2001683B8 /* NetworkWeatherPresenter.swift */; };
@@ -306,6 +309,9 @@
 		C99685F2241C2C30006BAE56 /* ToDosTableAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosTableAdapter.swift; sourceTree = "<group>"; };
 		C99685F4241C2C3F006BAE56 /* ToDosTableAdapterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosTableAdapterDelegate.swift; sourceTree = "<group>"; };
 		C99685F6241C2E5C006BAE56 /* ToDoRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRepo.swift; sourceTree = "<group>"; };
+		C99685F9241C44FD006BAE56 /* DTSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTSegmentedControl.swift; sourceTree = "<group>"; };
+		C99685FA241C44FD006BAE56 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		C99685FB241C44FD006BAE56 /* DTPagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTPagerController.swift; sourceTree = "<group>"; };
 		C99AA05921871BBB001683B8 /* SideMenuTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenuTabBar.storyboard; sourceTree = "<group>"; };
 		C99AA0602187388B001683B8 /* GPSWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSWeatherViewController.swift; sourceTree = "<group>"; };
 		C99AA0852187D3E2001683B8 /* NetworkWeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherPresenter.swift; sourceTree = "<group>"; };
@@ -795,6 +801,7 @@
 				C93598202417A25D000976B2 /* SearchController */,
 				C935981F2417A24C000976B2 /* NavigationController */,
 				C95E24DB21FE5A5900621645 /* TagListView  */,
+				C99685F8241C44FD006BAE56 /* DTPagerController */,
 			);
 			name = CustomComponents;
 			sourceTree = "<group>";
@@ -968,6 +975,16 @@
 				C99685F4241C2C3F006BAE56 /* ToDosTableAdapterDelegate.swift */,
 			);
 			name = ToDoTable;
+			sourceTree = "<group>";
+		};
+		C99685F8241C44FD006BAE56 /* DTPagerController */ = {
+			isa = PBXGroup;
+			children = (
+				C99685F9241C44FD006BAE56 /* DTSegmentedControl.swift */,
+				C99685FA241C44FD006BAE56 /* UIViewController.swift */,
+				C99685FB241C44FD006BAE56 /* DTPagerController.swift */,
+			);
+			path = DTPagerController;
 			sourceTree = "<group>";
 		};
 		C99A405121186C3F007B88A4 /* Resources */ = {
@@ -1363,6 +1380,7 @@
 				C99AA091218845E7001683B8 /* CountriesPresenter.swift in Sources */,
 				C9BBA25522FCD54B0052E57A /* Requestable.swift in Sources */,
 				C930E1DA21CD1E8600809FB2 /* UIImageView + SVG extension.swift in Sources */,
+				C99685FD241C44FD006BAE56 /* UIViewController.swift in Sources */,
 				C99685E6241BA133006BAE56 /* IOfflineCaching.swift in Sources */,
 				C95E24DF21FE5A8300621645 /* CloseButton.swift in Sources */,
 				C99685EC241BF6D7006BAE56 /* SearchBarUtils.swift in Sources */,
@@ -1399,6 +1417,7 @@
 				C99EA63920CBECFB00D7C158 /* Storyboards.swift in Sources */,
 				C93598022416E637000976B2 /* NSAttributedStringExtensions.swift in Sources */,
 				C91C797F23A5594D00D4952A /* Resolver+MultiParams.swift in Sources */,
+				C99685FE241C44FD006BAE56 /* DTPagerController.swift in Sources */,
 				C9BBA26C22FD998A0052E57A /* Repo.swift in Sources */,
 				C99685F7241C2E5C006BAE56 /* ToDoRepo.swift in Sources */,
 				C91FFF592192F94B00DFC0CC /* WeatherViewDelegator.swift in Sources */,
@@ -1424,6 +1443,7 @@
 				C99AA09C21884824001683B8 /* SideMenuModel.swift in Sources */,
 				C930E1ED21CD3E3C00809FB2 /* ToDoCellModell.swift in Sources */,
 				C96629E221C5415200961750 /* DataBase.xcdatamodeld in Sources */,
+				C99685FC241C44FD006BAE56 /* DTSegmentedControl.swift in Sources */,
 				C93598002416E5E3000976B2 /* UIColorExtensions.swift in Sources */,
 				C9CC0E49219100F500AF9D62 /* WeatherCell.swift in Sources */,
 				C93597F72416CEB1000976B2 /* HomeCollectionViewAdapter.swift in Sources */,

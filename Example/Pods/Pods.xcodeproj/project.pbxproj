@@ -270,7 +270,6 @@
 		3FAD72397432F0901428EE5A43BF6FD2 /* Codable + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B0CC1DE892A3E5D47DA094B006612 /* Codable + String.swift */; };
 		3FD3A4D9031300A93221E3F892F0543A /* Float + toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD6589C0A14B4E3452943118C89E939 /* Float + toString.swift */; };
 		3FD68E7CDF9683223C1CCBDB04C3A8DD /* StringValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC4F8561E242AF50C2F7093E1993F8 /* StringValidator.swift */; };
-		406979D1FBCEEA053CFE4CBE0418185A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE421C0658B74015F818DBEBF55E216 /* UIViewController.swift */; };
 		40A108E934D4BDA4C49E493C485B23BD /* RxCocoaObjCRuntimeError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D28134B8B39A1E700B66D93CC87F68A /* RxCocoaObjCRuntimeError+Extensions.swift */; };
 		40E5A04E753937E02250FE3E061586F7 /* SVGFitToViewBox.h in Headers */ = {isa = PBXBuildFile; fileRef = F301E41FC6D90FFFF2C2BA29363845DD /* SVGFitToViewBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4100074DBC338FCC986892B9587825FB /* SVGKParseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 032A4CD848AD3CA7D1FAA6E7129F1BBE /* SVGKParseResult.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -470,7 +469,6 @@
 		6E8C5644C3D42DEABC76D42080B25388 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = B438462DFC3265B00531D001F4D1530E /* Node.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		6EB8363DF8BCC93979A95267274929AB /* SVGKDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 4261130E788051919C7FB262CE71BEA4 /* SVGKDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6ED0EE6EBC8FDC3767EFF26368F94E2D /* CAShapeLayerWithClipRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3F84F8BA77B1B095A12C130A7232BC /* CAShapeLayerWithClipRender.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6EDAA54B239C5B5A67070CC95F2B3F43 /* DTSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9141B706E92D599DEFA4CE0863038CE /* DTSegmentedControl.swift */; };
 		6EE36F0CADB661511B07B7B0FADE999A /* sync_metadata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B69DFFA99BDE95724D42603F6966756D /* sync_metadata.cpp */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"3.20.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
 		6F10AC777F03067B8E3B8C478DC1AB32 /* WithLatestFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766005F2CC8E1FD77DBF418D8FBD8B20 /* WithLatestFrom.swift */; };
 		6F86C7F470A7329974F6B8295AA77162 /* CommonListingDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E82D97FA06B08CE759A85E9227FDA1 /* CommonListingDelegates.swift */; };
@@ -607,7 +605,6 @@
 		8F274BEC33DCC805BB30F9BF72D39613 /* Disposables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39A4F4DA8DB0BB500FD862F45A2595 /* Disposables.swift */; };
 		8F32573A1F21B40160B947183117A063 /* StringShouldEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8ADD8CD6F0DA32B223938B0B198614 /* StringShouldEqualTo.swift */; };
 		8F44342BC1345B753483987E7B57B190 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD2B738A42A9E67CF128ACD20F15372 /* ServerTrustPolicy.swift */; };
-		8F8701D92825B4086560867FEA217BD1 /* DTPagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E43AA9D96680C558DF9D6D7731BC7 /* DTPagerController.swift */; };
 		8FA90E653C5C8BE483BF992FEC6FDE50 /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8CA23B722345F22258C3814A6B9B979 /* object.cpp */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"3.20.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
 		8FAC6D33FE9C733DC81FA64B6889A57D /* Text.h in Headers */ = {isa = PBXBuildFile; fileRef = 534F3834F6AF94541B9FBE88AED97FB2 /* Text.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8FBE84D6B47015AA819627A418B16E14 /* SVGMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = DB516EDB0A97F681EDA9AABE3DE5FD0F /* SVGMatrix.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -1552,7 +1549,6 @@
 		33F235B09BB610734479DD8A9C32383E /* SVGGElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVGGElement.m; path = "Source/DOM classes/SVG-DOM/SVGGElement.m"; sourceTree = "<group>"; };
 		346DC37A0589748A78B22765E2E84504 /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		34D03920BCD2A450A7E74EEF6B4263C1 /* Bartinter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bartinter.swift; sourceTree = "<group>"; };
-		354E43AA9D96680C558DF9D6D7731BC7 /* DTPagerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTPagerController.swift; sourceTree = "<group>"; };
 		3566B71BA386B674709FD793A33CA60B /* DelegateProxyType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelegateProxyType.swift; path = RxCocoa/Common/DelegateProxyType.swift; sourceTree = "<group>"; };
 		359AF5A2496BCEAE3D78E6D5F0810A93 /* CharacterData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CharacterData.h; path = "Source/DOM classes/Core DOM/CharacterData.h"; sourceTree = "<group>"; };
 		35E77EC57E84F7FF18D3D189B3F891FA /* SVGSVGElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVGSVGElement.h; path = "Source/DOM classes/Unported or Partial DOM/SVGSVGElement.h"; sourceTree = "<group>"; };
@@ -1945,7 +1941,6 @@
 		8C726C57302C4D8C9E780965354BDFBB /* RxSearchBarDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxSearchBarDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxSearchBarDelegateProxy.swift; sourceTree = "<group>"; };
 		8CA9C31C87208679BCA6AB7439826457 /* object_schema.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = object_schema.cpp; path = Realm/ObjectStore/src/object_schema.cpp; sourceTree = "<group>"; };
 		8D4621CD89BF067A91F7DE8A4F7ECB45 /* Event.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Event.swift; path = RxSwift/Event.swift; sourceTree = "<group>"; };
-		8DE421C0658B74015F818DBEBF55E216 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		8E82DA5E977A4243FB48AE904ED5ED3D /* UIGestureRecognizer+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIGestureRecognizer+Rx.swift"; path = "RxCocoa/iOS/UIGestureRecognizer+Rx.swift"; sourceTree = "<group>"; };
 		8E8E69AB8FE82AE3676A6EBBEE6D0685 /* Bag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bag.swift; path = Platform/DataStructures/Bag.swift; sourceTree = "<group>"; };
 		8E98710C8B9C11ED350FFA0C5C31C09C /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Extensions.swift"; path = "Platform/DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
@@ -2326,7 +2321,6 @@
 		E872C3387604E3669394618547CC99C6 /* UIView + Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView + Toast.swift"; sourceTree = "<group>"; };
 		E8810D0C274889D2A861E1A34DF36733 /* AnonymousDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnonymousDisposable.swift; path = RxSwift/Disposables/AnonymousDisposable.swift; sourceTree = "<group>"; };
 		E8CA23B722345F22258C3814A6B9B979 /* object.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = object.cpp; path = Realm/ObjectStore/src/object.cpp; sourceTree = "<group>"; };
-		E9141B706E92D599DEFA4CE0863038CE /* DTSegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSegmentedControl.swift; sourceTree = "<group>"; };
 		E9339A52FEA6BD487FD071EA67A14D9E /* AppleSucksDOMImplementation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AppleSucksDOMImplementation.m; path = "Source/DOM classes/Core DOM/AppleSucksDOMImplementation.m"; sourceTree = "<group>"; };
 		E93484B54662A7E5AEC638D578FABCF2 /* Never.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Never.swift; path = RxSwift/Observables/Never.swift; sourceTree = "<group>"; };
 		E93A47EB4CFE988035C6C1B922454465 /* SkipUntil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkipUntil.swift; path = RxSwift/Observables/SkipUntil.swift; sourceTree = "<group>"; };
@@ -3392,7 +3386,6 @@
 				21795EC7BD33DE6BEDE94F361CC65DE8 /* LoadingButton.swift */,
 				5A4AACF07CFC1E833CD579E7AE4A3405 /* SlideMenuController.swift */,
 				1EC5C7C9FC3E55680D1E5CF3BC881D12 /* TTGSnackbar.swift */,
-				CCC7BCA1AAC6B6C20F0718D0ED7BABFE /* DTPagerController */,
 			);
 			name = CustomComponents;
 			path = iOS_Bootstrap/Classes/CustomComponents;
@@ -4016,16 +4009,6 @@
 				1D7D9F509D2F370252EEEF1834972923 /* Protocol */,
 			);
 			path = "Storyboard manager";
-			sourceTree = "<group>";
-		};
-		CCC7BCA1AAC6B6C20F0718D0ED7BABFE /* DTPagerController */ = {
-			isa = PBXGroup;
-			children = (
-				354E43AA9D96680C558DF9D6D7731BC7 /* DTPagerController.swift */,
-				E9141B706E92D599DEFA4CE0863038CE /* DTSegmentedControl.swift */,
-				8DE421C0658B74015F818DBEBF55E216 /* UIViewController.swift */,
-			);
-			path = DTPagerController;
 			sourceTree = "<group>";
 		};
 		CE3C6686260B211E651F7DE9B16458AB /* IQKeyboardManagerSwift */ = {
@@ -5840,8 +5823,6 @@
 				55A12E94B5EBECEB8E0A9EA4D342BECA /* Double + isInteger.swift in Sources */,
 				D0BB949520A421242A6619A608095877 /* Double + toString.swift in Sources */,
 				080A59CC311100367E39C6D01C9B37A4 /* DropDownValidator.swift in Sources */,
-				8F8701D92825B4086560867FEA217BD1 /* DTPagerController.swift in Sources */,
-				6EDAA54B239C5B5A67070CC95F2B3F43 /* DTSegmentedControl.swift in Sources */,
 				6073B4AB1C32E7FD8D27F19A54534161 /* EmptyDataSet.swift in Sources */,
 				47A1A9B29C1F3902D62ABD16A8FA0EF5 /* EmptyDataSetDelegate.swift in Sources */,
 				52CA39DC6A08267452A00106E6A51521 /* EmptyDataSetSource.swift in Sources */,
@@ -5995,7 +5976,6 @@
 				0BB4815F1F4007309D88AE3937A15543 /* UIViewController + Tabbar items.swift in Sources */,
 				83665F8424B79FCA8548F3F5888D3DA2 /* UIViewController + Utils.swift in Sources */,
 				6E5934D725D935C5C85E3BA6CA4E987C /* UIViewController+Bartinter.swift in Sources */,
-				406979D1FBCEEA053CFE4CBE0418185A /* UIViewController.swift in Sources */,
 				515ABDFEAA5BB39F26DFAA90BB76951C /* UIViewControllerEnvironment.swift in Sources */,
 				DF2CE3BF146DB2AF01F388A798E9F8E7 /* URL + Query parameters.swift in Sources */,
 				7B03FE59A024D25378F7B44036898464 /* UserDefaultsManager.swift in Sources */,

@@ -41,7 +41,7 @@ class Navigator: BaseNavigator {
     }
     
     func openToDoViewController() {
-         let viewController: ToDoViewController = ToDoViewController()
+        let viewController: ToDoViewPagerController = ToDoViewPagerController()
         Self.getContext().navigationController?.pushViewController(viewController, animated: true)
     }
     //
