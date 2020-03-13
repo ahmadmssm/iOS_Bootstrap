@@ -39,10 +39,6 @@ class CountriesViewController:
         self.title = "world_countries".localized()
     }
     
-    override func didGetError(errorMessage: String) {
-           showError(errorMessage: errorMessage)
-    }
-    
     func didGetCountries(countries: [CountryEntity]) {
         countriesTableViewAdapter.postItems(items: countries)
     }

@@ -616,16 +616,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6E074461-FEA5-4AC6-983D-48983B0E5A11"
+            uuid = "D8A331D0-A152-4EC0-A81A-2FF3B74330C7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iOS_Bootstrap/OtherModules.swift"
+            filePath = "../iOS_Bootstrap/Classes/Structure/MVP/BaseViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "otherModules()"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "showLoading()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "182CE6B0-92F4-477C-AAFD-51500BBF7E22"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Bootstrap/IOfflineCaching.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "fetchItems(forceNetwork:page:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

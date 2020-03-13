@@ -7,5 +7,5 @@
 //
 
 protocol CountriesViewDelegate: AppViewDelegate {
-    func didGetCountries(countries : [CountryEntity])
+    func didGetCountries(countries: [CountryEntity])
 }

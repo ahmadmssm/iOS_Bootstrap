@@ -8,9 +8,8 @@
 
 import iOS_Bootstrap
 
-protocol TrendingMoviesViewDelegate: BaseViewDelegate {
+protocol TrendingMoviesViewDelegate: AppViewDelegate {
     func setPaginationParams(totalNumberOfItems: Int, itemsPerPage: Int)
     func didGet(trendingMovies: [TrendingMovieCellModel])
-    func didFailToGetTrendingMovies(error: String)
     func didGetMovieSummary(summary: String)
 }

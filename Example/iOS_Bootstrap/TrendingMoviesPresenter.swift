@@ -9,71 +9,44 @@
 import iOS_Bootstrap
 import RxSwift
 
-class TrendingMoviesPresenter: BasePresenter<TrendingMoviesViewDelegate> {
+class TrendingMoviesPresenter: AppPresenter<TrendingMoviesViewDelegate> {
     
-    private var moviesArray: [TrendingMovieCellModel]  = []
-    private var page: Int = 1
     private var trendingMoviesRepo: TrendingMoviesRepo!
     
-    required convenience init(viewDelegate: TrendingMoviesViewDelegate, trendingMoviesRepo: TrendingMoviesRepo) {
+    required convenience init(viewDelegate: TrendingMoviesViewDelegate,
+                              trendingMoviesRepo: TrendingMoviesRepo) {
         self.init(viewDelegate: viewDelegate)
         self.trendingMoviesRepo = trendingMoviesRepo
     }
     
-    required init(viewDelegate: TrendingMoviesViewDelegate) {
-        super.init(viewDelegate: viewDelegate)
-    }
-    
     override func viewControllerDidLoad() {
-        getTrendingMovies(pageNumber: page)
+        getTrendingMovies()
     }
     
-    func getTrendingMovies(pageNumber : Int) {
+    func getTrendingMovies() {
         trendingMoviesRepo
-            .getTrendingMovies(page: pageNumber)
-            .flatMap({ [weak self] moviesPage -> Single<MoviesPage> in
-                // The page params are set one time only
-                if(self?.page == 1) {
-                    self?
-                        .getViewDelegate()
-                        .setPaginationParams(totalNumberOfItems: moviesPage.totalNumberOfItems!,
-                                             itemsPerPage: moviesPage.itemsPerPage!)
-                }
-                return Single.just(moviesPage)
-            })
-            .subscribe(onSuccess: { [weak self] moviesPage in
-                var movies: [TrendingMovieCellModel] = []
-                for movie in moviesPage.moviesList! {
-                    var trendingMovie = TrendingMovieCellModel()
-                    //
-                    trendingMovie.movieTitle = movie.title
-                    trendingMovie.releaseDate = movie.releaseDate
-                    trendingMovie.voting = movie.voteAverage
-                    trendingMovie.originalLanguage = movie.originalLanguage
-                    trendingMovie.overview = movie.overview
-                    if let posterURL = movie.posterPath {
-                        trendingMovie.imageURL = posterURL
-                    }
-                    movies.append(trendingMovie)
-                }
-                self?.moviesArray.append(contentsOf: movies)
-                self?.getViewDelegate().didGet(trendingMovies: self?.moviesArray ?? [])
+            .getTrendingMovies()
+            .subscribe(onSuccess: { [weak self] moviesList in
+                self?.posMoviesList(moviesList: moviesList)
             }) { [weak self] error in
-                self?
-                    .getViewDelegate()
-                    .didFailToGetTrendingMovies(error: error.localizedDescription)
-        }
-        .disposed(by: disposeBag)
+                self?.postError(errorMessage: error.localizedDescription)
+            }
+            .disposed(by: disposeBag)
     }
     
     func getSummaryForMovieAt(index: Int) {
-        var summary: String
-        if let moviewOverview = moviesArray[index].overview {
-            summary = moviewOverview
-        }
-        else {
-            summary = "Sorry, There is no summary for this movie!"
-        }
+        let summary = trendingMoviesRepo.getSummaryForMovieAt(index: index)
         getViewDelegate().didGetMovieSummary(summary: summary)
+    }
+    
+    private func posMoviesList(moviesList: [TrendingMovieCellModel]) {
+        // The page params are set one time only
+        if(trendingMoviesRepo.isFirstTime) {
+            trendingMoviesRepo.isFirstTime = false
+            getViewDelegate()
+                .setPaginationParams(totalNumberOfItems: trendingMoviesRepo.totalNumberOfItems,
+                                     itemsPerPage: trendingMoviesRepo.itemsPerPage)
+        }
+        getViewDelegate().didGet(trendingMovies: moviesList)
     }
 }

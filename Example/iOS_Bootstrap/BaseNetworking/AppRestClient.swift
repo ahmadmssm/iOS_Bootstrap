@@ -19,10 +19,10 @@ class AppRestClient<API>: BaseRestClient<API, AppErrorHandler>
         let networkActivityPlugin = NetworkActivityPlugin { [weak self] change, _ in
             switch(change) {
             case .began:
-                if ((self?.isLoadingActivityEnabled)!) { self?.showLoader() }
+               // if ((self?.isLoadingActivityEnabled)!) { self?.showLoader() }
                 break
             case .ended:
-                if ((self?.isLoadingActivityEnabled)!) { self?.hideLoader() }
+               // if ((self?.isLoadingActivityEnabled)!) { self?.hideLoader() }
                 break
             }
         }

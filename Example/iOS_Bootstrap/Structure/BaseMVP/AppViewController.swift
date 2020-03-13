@@ -12,6 +12,7 @@ import iOS_Bootstrap
 class AppViewController<P, V>: BaseViewController<P, V> where P: BasePresenter<V> {
     
     @LazyInjected var navigator: Navigator
+    @LazyInjected var dialogs: Dialogs
     private var snackBar: TTGSnackbar?
     
     override func viewDidLoad() {
@@ -85,5 +86,13 @@ class AppViewController<P, V>: BaseViewController<P, V> where P: BasePresenter<V
                 self.snackBar?.show()
             }
         }
+    }
+    
+    override func showLoading() {
+        dialogs.showLoading(viewController: self)
+    }
+    
+    override func hideLoading() {
+        dialogs.hideDialog()
     }
 }

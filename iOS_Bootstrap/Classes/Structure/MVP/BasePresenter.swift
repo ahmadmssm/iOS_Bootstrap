@@ -10,11 +10,11 @@ import RxSwift
 
 open class BasePresenter<T>: UserDefaultsService, PresenterFunctions {
     
-    private final weak var viewDelegate: AnyObject!
+    private final weak var viewDelegate: BaseViewDelegate!
     public lazy var disposeBag: DisposeBag = { return DisposeBag() }()
     
     required public init (viewDelegate: T) {
-        self.viewDelegate = viewDelegate as AnyObject
+        self.viewDelegate = viewDelegate as? BaseViewDelegate
     }
     
     public final func getViewDelegate() -> T {

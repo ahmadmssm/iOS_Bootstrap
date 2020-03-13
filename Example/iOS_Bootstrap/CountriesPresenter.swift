@@ -45,9 +45,4 @@ class CountriesPresenter: AppPresenter<CountriesViewDelegate> {
         getViewDelegate().hideLoading()
         getViewDelegate().didGetCountries(countries: countries)
     }
-    
-    private func postError(errorMessage: String) {
-        getViewDelegate().hideLoading()
-        getViewDelegate().didGetError(errorMessage: errorMessage)
-    }
 }

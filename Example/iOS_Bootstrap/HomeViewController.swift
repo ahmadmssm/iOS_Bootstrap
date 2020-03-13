@@ -28,6 +28,9 @@ class HomeViewController:
         case 1:
             navigator.openCountriesViewController()
             break
+        case 2:
+          //  navigator.openCountriesViewController()
+            break
         case 3:
             getPresenter().switchAppLanguage()
             break

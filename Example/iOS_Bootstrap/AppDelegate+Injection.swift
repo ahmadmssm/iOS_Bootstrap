@@ -17,7 +17,6 @@ extension Resolver: ResolverRegistering {
         restModules()
         repositoriesModules()
         offlineCachingModules()
-        AdapterModules()
         otherModules()
     }
 }

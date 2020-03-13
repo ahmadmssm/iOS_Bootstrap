@@ -35,7 +35,7 @@ class TrendingMoviesViewController:
     }
     
     func loadMore(forPage page: Int, updatedDataSource: [TrendingMovieCellModel]) {
-         getPresenter().getTrendingMovies(pageNumber: page)
+         getPresenter().getTrendingMovies()
     }
     
     func setPaginationParams(totalNumberOfItems: Int, itemsPerPage: Int) {
@@ -44,13 +44,7 @@ class TrendingMoviesViewController:
     }
     
     func didGet(trendingMovies: [TrendingMovieCellModel]) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.tableViewAdapter.reloadTable(pageItems: trendingMovies)
-        }
-    }
-    
-    func didFailToGetTrendingMovies(error: String) {
-        showError(errorMessage: error)
+        self.tableViewAdapter.reloadTable(pageItems: trendingMovies)
     }
     
     func didGetMovieSummary(summary: String) {
