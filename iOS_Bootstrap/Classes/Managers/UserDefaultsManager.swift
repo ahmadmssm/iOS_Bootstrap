@@ -174,5 +174,4 @@ public class UserDefaultsManager {
         defaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
         defaults.synchronize()
     }
-    
 }

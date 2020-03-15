@@ -5,14 +5,15 @@
 //  Created by Ahmad Mahmoud on 7/10/18.
 //
 
-open class BaseNavigator: NavigationCoordinator, ContextService {
+open class BaseNavigator: NavigationCoordinator {
     
-    public static var childCoordinators = [NavigationCoordinator]()
+    static var currentViewController: UIViewController?
+    static var childCoordinators = [NavigationCoordinator]()
     public var navigationController: UINavigationController? = UINavigationController()
-    //
     
     public init() {}
     
+    public func getCurrentViewController() -> UIViewController? { return Self.currentViewController }
     open func getAppWindow() -> UIWindow? { return nil }
     open func getAnimationDuration() -> Double { return 0.3 }
     open func getTransitionAnimation() -> UIView.AnimationOptions {
@@ -33,13 +34,13 @@ open class BaseNavigator: NavigationCoordinator, ContextService {
     }
     open func push(viewController: UIViewController,
                          withAnimation: Bool? = true) {
-        Self.getContext()
+        getCurrentViewController()?
             .navigationController?
             .pushViewController(viewController, animated: withAnimation!)
     }
     open func present(viewController: UIViewController,
                             withAnimation: Bool? = true) {
-        Self.getContext()
+        getCurrentViewController()?
             .present(viewController, animated: withAnimation!, completion: nil)
     }
     

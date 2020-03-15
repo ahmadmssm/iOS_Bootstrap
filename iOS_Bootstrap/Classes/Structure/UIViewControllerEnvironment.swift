@@ -9,16 +9,10 @@ public protocol InternetConnectionServiceMonitoring {
     func networkStatusDidChange(isConnected: Bool)
 }
 
-extension UIViewController : ViewControllerCommonFeatures {
+extension UIViewController: ViewControllerCommonFeatures {
     
     private struct AssociatedKeys {
         static var networkConnectionType = "networkConnectionType"
-    }
-    
-    public final var defaultSnackbar : TTGSnackbar? {
-        get {
-            return DefaultConfigurations.snackBar
-        }
     }
     
     var networkConnectionType: Reachability.Connection? {
@@ -34,7 +28,7 @@ extension UIViewController : ViewControllerCommonFeatures {
     
     
     func setupViewWillAppearEssentials() {
-        setContext(context: self)
+        setCurrent(viewController: self)
         //
         let monitoringKey: String = InternetConnectionMonitor.sharedInstance.connectionMonitoringKey
         EventBus.onMainThread(self, name: monitoringKey) { [weak self] result in
@@ -45,8 +39,6 @@ extension UIViewController : ViewControllerCommonFeatures {
     }
     
     func setupViewDidDisappearEssentials() {
-        defaultSnackbar?.dismiss()
-        //
         let monitoringKey: String = InternetConnectionMonitor.sharedInstance.connectionMonitoringKey
         EventBus.unregister(self, name: monitoringKey)
     }
@@ -66,7 +58,7 @@ extension UIViewController : ViewControllerCommonFeatures {
     }
     
     @objc open func networkStatusDidChange(isConnected: Bool) {
-        defaultSnackbar?.dismiss()
+
     }
 }
     

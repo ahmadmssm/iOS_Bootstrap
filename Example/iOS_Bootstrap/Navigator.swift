@@ -32,17 +32,20 @@ class Navigator: BaseNavigator {
     
     func openTrendingMoviesViewController()  {
         let viewController = TrendingMoviesViewController()
-        Self.getContext().navigationController?.pushViewController(viewController, animated: true)
+        getCurrentViewController()?.navigationController?.pushViewController(viewController,
+                                                                             animated: true)
     }
     
     func openCountriesViewController() {
         let viewController: CountriesViewController = CountriesViewController()
-        Self.getContext().navigationController?.pushViewController(viewController, animated: true)
+        getCurrentViewController()?.navigationController?.pushViewController(viewController,
+                                                                             animated: true)
     }
     
     func openToDoViewController() {
         let viewController: ToDoViewPagerController = ToDoViewPagerController()
-        Self.getContext().navigationController?.pushViewController(viewController, animated: true)
+        getCurrentViewController()?.navigationController?.pushViewController(viewController,
+                                                                             animated: true)
     }
     //
     @available(iOS 10.0, *)

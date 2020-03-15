@@ -11,8 +11,8 @@ import Resolver
 
 extension Resolver {
     static func presenterModules() {
-        register { (_, arg) -> TrendingMoviesPresenter in
-            let viewDelegate = arg as! TrendingMoviesViewDelegate
+        register { (resolver, args) -> TrendingMoviesPresenter in
+            let viewDelegate = args as! TrendingMoviesViewDelegate
             return TrendingMoviesPresenter(viewDelegate: viewDelegate, trendingMoviesRepo: resolve())
         }
     }

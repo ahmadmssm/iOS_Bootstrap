@@ -1,10 +1,10 @@
 platform :ios, '13.1'
-use_frameworks!
+# use_frameworks!
 
 target 'iOS_Bootstrap_Example' do
   pod 'iOS_Bootstrap', :path => '../'
   pod 'RxCocoa', '~> 4.0'
-  pod 'RealmSwift'
+  # pod 'RealmSwift'
   pod 'SVGKit'
   pod 'Resolver', '~> 1.1.1'
 

@@ -13,11 +13,6 @@ PODS:
   - Moya/RxSwift (13.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
-  - Realm (3.20.0):
-    - Realm/Headers (= 3.20.0)
-  - Realm/Headers (3.20.0)
-  - RealmSwift (3.20.0):
-    - Realm (= 3.20.0)
   - Resolver (1.1.1)
   - Result (4.1.0)
   - RxCocoa (4.5.0):
@@ -28,7 +23,6 @@ PODS:
 
 DEPENDENCIES:
   - iOS_Bootstrap (from `../`)
-  - RealmSwift
   - Resolver (~> 1.1.1)
   - RxCocoa (~> 4.0)
   - SVGKit
@@ -43,8 +37,6 @@ SPEC REPOS:
     - RxSwift
   trunk:
     - CocoaLumberjack
-    - Realm
-    - RealmSwift
     - Resolver
     - SVGKit
 
@@ -58,14 +50,12 @@ SPEC CHECKSUMS:
   iOS_Bootstrap: 2121bc1a354b0da36e784aea587338451f21c874
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
-  RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
   Resolver: 13bf2462d6790f67fa6fa45f3753db8199706fc3
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
 
-PODFILE CHECKSUM: 275369ed33811f46502d649cf1377bb5fcef11d7
+PODFILE CHECKSUM: c5ae21f3b0ca61dfa1d621ef4075ade9b7c0f57a
 
 COCOAPODS: 1.8.4

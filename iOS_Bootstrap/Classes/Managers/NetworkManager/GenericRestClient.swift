@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-open class GenericRestClient: NSObject, TokenRefresh, UserDefaultsService {
+open class GenericRestClient: NSObject, TokenRefresh {
     
     private final var tokenRefreshDelegate : TokenRefresh!
     public var networkRequest: Disposable?

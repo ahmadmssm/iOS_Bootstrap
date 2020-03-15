@@ -10,6 +10,7 @@ import CoreData
 
 @available(iOS 10.0, *)
 final class CoreDataConfigurations {
+    
     static var persistentContainer: NSPersistentContainer = {
         return getPersistentContainer(withName: DefaultConfigurations.coreDataModelName!)
     }()

@@ -13,7 +13,7 @@
 //  Note : If you have pods in your project make pod install to avoid any problems (Must be done).
 //  4. Clean & build
 //  5. Create enum (Like this file) with all your modes and variables (Only add variable which there values are mode dependant, i.e : Has different value per mode like base url, auth token, etc..).
-//  6. Conform to Protocol BuildVariantService and Pass your Enum to it then use that to get values ber mode
+//  6. Conform to Protocol SchemeService and Pass your Enum to it then use that to get values ber mode
 //  Ref : https://cocoacasts.com/switching-environments-with-configurations
 //
 

@@ -11,8 +11,6 @@ import UIKit
 
 open class DefaultConfigurations {
     
-    // Helper variables
-    static var snackBar: TTGSnackbar?
     static var coreDataModelName: String?
     private var notificationContext: Any?
     public let keyboardManager = KeyboardManager()
@@ -81,11 +79,6 @@ open class DefaultConfigurations {
         NotificationCenter.default.addObserver(self, selector: #selector(self.getTokenFromNotification(notification:)), name: .newAuthenticationToken, object: nil)
         //
         notificationContext = context
-        return self
-    }
-    
-    open func configureAppSnackBar(snacbBar : TTGSnackbar) -> DefaultConfigurations {
-        DefaultConfigurations.snackBar = snacbBar
         return self
     }
     

@@ -14,7 +14,7 @@ public class InternetConnectionMonitor {
     private var reachability : Reachability!
     
     public func enable() {
-        self.reachability = Reachability()
+        self.reachability = try! Reachability()
         NotificationCenter.default.addObserver(self, selector:#selector(self.reachabilityChanged), name: NSNotification.Name.reachabilityChanged, object: nil)
     }
     
@@ -40,8 +40,11 @@ public class InternetConnectionMonitor {
         case .wifi:
             print("Network available via WiFi.")
             break
+        case .notAvailable:
+            print("Network is not notAvailable.")
+            break
         case .none:
-            print("Network is not available.")
+            print("Non")
             break
         }
         EventBus.post(connectionMonitoringKey, sender: reachability)

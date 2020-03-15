@@ -9,7 +9,7 @@
 import iOS_Bootstrap
 import RxSwift
 
-open class AppViewModel: UserDefaultsService, PresenterFunctions {
+open class AppViewModel: PresenterFunctions {
     
     private var disposeBag : DisposeBag!
     

@@ -7,7 +7,7 @@
 
 import RxSwift
 
-open class BaseMVVMViewModel: UserDefaultsService, ViewModelFunctions {
+open class BaseMVVMViewModel: ViewModelFunctions {
     
     private var disposeBag : DisposeBag!
     

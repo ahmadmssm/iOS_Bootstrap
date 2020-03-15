@@ -14,10 +14,10 @@ public class BaseSessionManager {
     
 }
 
-public final class SessionManager : BaseSessionManager {
+public final class SessionManager: BaseSessionManager {
     
     private let sessionKey: String = "com.iOS_Bootstrap.Session"
-    private var hasValidSessionKey : String = "com.iOS_Bootstrap.HasValidSessionKey"
+    private var hasValidSessionKey: String = "com.iOS_Bootstrap.HasValidSessionKey"
     
     public final func saveSession<T: BaseSession>(session : T) {
         getUserDefaults().setObjectWithKey(value: session, key: sessionKey)
@@ -37,5 +37,4 @@ public final class SessionManager : BaseSessionManager {
         getUserDefaults().deleteSavedValueWithKey(key: sessionKey)
         getUserDefaults().setBooleanWithKey(value: false, key: hasValidSessionKey)
     }
-    
 }

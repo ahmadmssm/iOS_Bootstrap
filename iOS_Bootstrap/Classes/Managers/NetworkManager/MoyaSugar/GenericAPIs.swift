@@ -1,7 +1,7 @@
 import struct Foundation.URL
 
 
-public protocol GenericAPIs: TargetType, UserDefaultsService {
+public protocol GenericAPIs: TargetType {
   var url: URL { get }
 
   /// Returns `Route` which contains HTTP method and URL path information.

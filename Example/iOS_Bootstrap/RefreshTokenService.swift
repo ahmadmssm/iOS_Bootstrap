@@ -8,9 +8,12 @@
 
 import iOS_Bootstrap
 
-extension AppDelegate: AppDelegateService {
+extension AppDelegate: TokenRefreshService {
     // Refresh token callbacks
-    func didFailedToRefreshToken() {}
+    func didFailedToRefreshToken() {
+        
+    }
+    
     func tokenDidRefreshed(response: String) {
         Log.debug("Refresh token response : " + response)
     }

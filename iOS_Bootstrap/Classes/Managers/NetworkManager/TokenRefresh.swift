@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import Moya
 
 public protocol TokenRefresh {
     func getTokenRefreshRequest() -> Single<Response>
