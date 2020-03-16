@@ -29,9 +29,19 @@ extension UIViewController: ViewControllerCommonFeatures {
     
     func setupViewWillAppearEssentials() {
         setCurrent(viewController: self)
+        //
+        let monitoringKey: String = InternetConnectionMonitor.sharedInstance.connectionMonitoringKey
+        EventBus.onMainThread(self, name: monitoringKey) { [weak self] result in
+            if let reachability = (result?.object as? Reachability) {
+                self?.networkStatusDidChange(status: reachability.connection)
+            }
+        }
     }
     
-    func setupViewDidDisappearEssentials() {}
+    func setupViewDidDisappearEssentials() {
+        let monitoringKey: String = InternetConnectionMonitor.sharedInstance.connectionMonitoringKey
+        EventBus.unregister(self, name: monitoringKey)
+    }
     
     public final func getNetworkConnectionType() -> Reachability.Connection {
         return networkConnectionType!

@@ -12,6 +12,8 @@ open class DefaultConfigurations {
     static var coreDataModelName: String?
     private var notificationContext: Any?
     public let keyboardManager = KeyboardManager()
+    // Deafult is false
+    private var isInternetConnectionMonitoringEnabled: Bool = false
 
     public init() {}
 
@@ -106,5 +108,23 @@ open class DefaultConfigurations {
     open func showTextFieldPlaceholder(enable: Bool) -> DefaultConfigurations {
         keyboardManager.showTextFieldPlaceholder(enable: enable)
         return self
+    }
+   
+    open func enableInternetConnectionMonitoring() -> DefaultConfigurations {
+        isInternetConnectionMonitoringEnabled = true
+        InternetConnectionMonitor.sharedInstance.enable()
+        return self
+    }
+    
+    open func startInternetConnectionMonitoring() {
+        if (isInternetConnectionMonitoringEnabled) {
+            InternetConnectionMonitor.sharedInstance.start()
+        }
+    }
+    
+    open func stopInternetConnectionMonitoring() {
+        if (isInternetConnectionMonitoringEnabled) {
+            InternetConnectionMonitor.sharedInstance.stop()
+        }
     }
 }

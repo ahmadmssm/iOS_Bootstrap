@@ -37,6 +37,11 @@
 		C91FFF6121972F0C00DFC0CC /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91FFF6021972F0C00DFC0CC /* LanguageManager.swift */; };
 		C91FFF652197816A00DFC0CC /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E4B492190575200A62059 /* Coordinates.swift */; };
 		C925B946241ED50F00148AF6 /* NetworkMonitoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C925B945241ED50F00148AF6 /* NetworkMonitoring.swift */; };
+		C925B952241EE98100148AF6 /* LegacyetworkMonitoringFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C925B951241EE98100148AF6 /* LegacyetworkMonitoringFactory.swift */; };
+		C925B954241EE9A900148AF6 /* NewNetworkMonitoringFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C925B953241EE9A900148AF6 /* NewNetworkMonitoringFactory.swift */; };
+		C925B956241EE9D000148AF6 /* INetworkMonitoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C925B955241EE9D000148AF6 /* INetworkMonitoring.swift */; };
+		C925B958241EE9E500148AF6 /* NetworkMonitoringFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C925B957241EE9E500148AF6 /* NetworkMonitoringFactory.swift */; };
+		C925B95B241EEB0300148AF6 /* ConnectivityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C925B95A241EEB0300148AF6 /* ConnectivityStatus.swift */; };
 		C92BC3F621F3B616006A0072 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = C92BC3F521F3B616006A0072 /* Countries.json */; };
 		C92BC3F721F3B616006A0072 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = C92BC3F521F3B616006A0072 /* Countries.json */; };
 		C92BC40321F3BE69006A0072 /* APIsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BC40121F3BE69006A0072 /* APIsTests.swift */; };
@@ -239,6 +244,11 @@
 		C91FFF5A21930F7F00DFC0CC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C91FFF6021972F0C00DFC0CC /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		C925B945241ED50F00148AF6 /* NetworkMonitoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitoring.swift; sourceTree = "<group>"; };
+		C925B951241EE98100148AF6 /* LegacyetworkMonitoringFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyetworkMonitoringFactory.swift; sourceTree = "<group>"; };
+		C925B953241EE9A900148AF6 /* NewNetworkMonitoringFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNetworkMonitoringFactory.swift; sourceTree = "<group>"; };
+		C925B955241EE9D000148AF6 /* INetworkMonitoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INetworkMonitoring.swift; sourceTree = "<group>"; };
+		C925B957241EE9E500148AF6 /* NetworkMonitoringFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitoringFactory.swift; sourceTree = "<group>"; };
+		C925B95A241EEB0300148AF6 /* ConnectivityStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityStatus.swift; sourceTree = "<group>"; };
 		C92BC3F521F3B616006A0072 /* Countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
 		C92BC40121F3BE69006A0072 /* APIsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIsTests.swift; sourceTree = "<group>"; };
 		C92E4B0221C31A2F00B76B6C /* TrendingMovieCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMovieCellModel.swift; sourceTree = "<group>"; };
@@ -615,6 +625,7 @@
 		C91FFF5C2193306900DFC0CC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C925B959241EEAB700148AF6 /* InternetConnectionMonitoring */,
 				C925B947241ED80F00148AF6 /* AppDelegateServices */,
 				C99685FF241D6949006BAE56 /* Swift-GSON */,
 				C91FAD0423A4FD5C00F516CF /* Extensions */,
@@ -637,6 +648,18 @@
 				C925B945241ED50F00148AF6 /* NetworkMonitoring.swift */,
 			);
 			name = AppDelegateServices;
+			sourceTree = "<group>";
+		};
+		C925B959241EEAB700148AF6 /* InternetConnectionMonitoring */ = {
+			isa = PBXGroup;
+			children = (
+				C925B957241EE9E500148AF6 /* NetworkMonitoringFactory.swift */,
+				C925B951241EE98100148AF6 /* LegacyetworkMonitoringFactory.swift */,
+				C925B953241EE9A900148AF6 /* NewNetworkMonitoringFactory.swift */,
+				C925B955241EE9D000148AF6 /* INetworkMonitoring.swift */,
+				C925B95A241EEB0300148AF6 /* ConnectivityStatus.swift */,
+			);
+			name = InternetConnectionMonitoring;
 			sourceTree = "<group>";
 		};
 		C92BC41121F3D334006A0072 /* JsonFiles */ = {
@@ -1456,6 +1479,7 @@
 				C915C59C20CAC1F10029F5D9 /* CountriesCell.swift in Sources */,
 				C9954A3822FCB98300D4ECE9 /* AppViewDelegate.swift in Sources */,
 				C9954A3422FCB98300D4ECE9 /* AppAPI.swift in Sources */,
+				C925B95B241EEB0300148AF6 /* ConnectivityStatus.swift in Sources */,
 				C93597F92416D00C000976B2 /* HomeCollectionViewDelegate.swift in Sources */,
 				C9BBA26322FD944F0052E57A /* LocationCoordinatesAPI.swift in Sources */,
 				C964F15E235B9D48006320AE /* TrendingMoviesPresenter.swift in Sources */,
@@ -1467,6 +1491,7 @@
 				C9BBA25F22FD94020052E57A /* TrendingMoviesAPI.swift in Sources */,
 				C964F15B235B9C64006320AE /* TrendingMoviesViewController.swift in Sources */,
 				C97A7947241ECBFD00E312C3 /* AppDefaultConfigs.swift in Sources */,
+				C925B952241EE98100148AF6 /* LegacyetworkMonitoringFactory.swift in Sources */,
 				C9CC0E4D2191997E00AF9D62 /* AdditionalData.swift in Sources */,
 				C99685EA241BE152006BAE56 /* RxSwiftExtensions.swift in Sources */,
 				C930E1F321CD418900809FB2 /* ToDoListCachingManager.swift in Sources */,
@@ -1564,15 +1589,18 @@
 				C99685FE241C44FD006BAE56 /* DTPagerController.swift in Sources */,
 				C9BBA26C22FD998A0052E57A /* Repo.swift in Sources */,
 				C99685F7241C2E5C006BAE56 /* ToDoRepo.swift in Sources */,
+				C925B954241EE9A900148AF6 /* NewNetworkMonitoringFactory.swift in Sources */,
 				C91FFF592192F94B00DFC0CC /* WeatherViewDelegator.swift in Sources */,
 				C9B18B95218C6F6E004520F5 /* MoviesPage.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				C930E1D221CD164B00809FB2 /* RealmManager.swift in Sources */,
+				C925B956241EE9D000148AF6 /* INetworkMonitoring.swift in Sources */,
 				C99685F5241C2C3F006BAE56 /* ToDosTableAdapterDelegate.swift in Sources */,
 				C99685D6241845F5006BAE56 /* main.swift in Sources */,
 				C99685D024183D9A006BAE56 /* CAGradientLayerExtensions.swift in Sources */,
 				C964F160235B9E15006320AE /* TrendingMoviesViewDelegate.swift in Sources */,
 				C93E4B532190575300A62059 /* Forcast.swift in Sources */,
+				C925B958241EE9E500148AF6 /* NetworkMonitoringFactory.swift in Sources */,
 				C93598142416F9A5000976B2 /* CenteredCurvedButtonTabBar.swift in Sources */,
 				C93597FD2416E2D7000976B2 /* AppDelegateExtensions.swift in Sources */,
 				C973B7BB21C436D400B63A69 /* ValidatorsExamplePresenter.swift in Sources */,

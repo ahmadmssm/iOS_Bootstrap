@@ -23,6 +23,7 @@ class AppDefaultConfigs: AppDelegateService {
             .enableIQKeyboard()
             .iqKeyboardCanGoBack()
             .iqKeyboardCanGoNext()
+            .enableInternetConnectionMonitoring()
             .setTokenRefreshListener(self)
             .setNavigationBarTextApperance(textApperance: NSAttributedString.navigationBarTextStyle)
             .setNavigationBarBackButtonColor(backButtonColor: UIColor.white)
