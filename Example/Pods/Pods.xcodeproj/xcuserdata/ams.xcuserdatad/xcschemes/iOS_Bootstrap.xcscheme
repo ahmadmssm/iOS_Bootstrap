@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B968D2058ED01E81725FB04220A4926F"
-               BuildableName = "iOS_Bootstrap.framework"
+               BuildableName = "libiOS_Bootstrap.a"
                BlueprintName = "iOS_Bootstrap"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

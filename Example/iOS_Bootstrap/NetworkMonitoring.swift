@@ -13,12 +13,6 @@ class NetworkMonitoring: AppDelegateService, ConnectivityStatus {
     
     private let networkListener = NetworkMonitoringFactory()
     
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        return true
-    }
-    
     func applicationDidBecomeActive(_ application: UIApplication) {
         networkListener.startMonitoring(listener: self)
     }

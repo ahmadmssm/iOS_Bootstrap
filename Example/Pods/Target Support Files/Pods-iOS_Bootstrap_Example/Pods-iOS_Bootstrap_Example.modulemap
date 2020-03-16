@@ -1,4 +1,4 @@
-framework module Pods_iOS_Bootstrap_Example {
+module Pods_iOS_Bootstrap_Example {
   umbrella header "Pods-iOS_Bootstrap_Example-umbrella.h"
 
   export *

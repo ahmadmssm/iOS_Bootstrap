@@ -10,8 +10,6 @@ import Resolver
 
 extension Resolver {
     static func otherModules() {
-        register {
-            LanguageManager()
-        }
+        register { LanguageManager() }
     }
 }

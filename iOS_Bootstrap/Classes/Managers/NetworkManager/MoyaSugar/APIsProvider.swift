@@ -1,5 +1,4 @@
 import class Foundation.DispatchQueue
-import RxSwift
 import Result
 
 /// `APIProvider` overrides `parameterEncoding` and `httpHeaderFields` of the
@@ -37,7 +36,6 @@ open class APIsProvider<Target: GenericAPIs>: MoyaProvider<Target> {
             trackInflights: trackInflights
         )
     }
-    
 }
 
 

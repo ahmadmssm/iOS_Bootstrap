@@ -44,7 +44,6 @@ Pod::Spec.new do |s|
     s.dependency 'Moya/RxSwift', '~> 13.0'
     s.dependency 'IQKeyboardManagerSwift', '6.0.4'
     s.frameworks = 'Foundation'
-    
 end
 
 

@@ -1,7 +1,7 @@
 //
 //  RxRealm extensions
 //
-//  Copyright (c) 2016 RxSwiftCommunity. All rights reserved. 
+//  Copyright (c) 2016 RxSwiftCommunity. All rights reserved.
 //  Check the LICENSE file for details
 //  Created by Marin Todorov
 //
@@ -81,7 +81,7 @@ extension LinkingObjects: NotificationEmitter {
 }
 
 /**
- `RealmChangeset` is a struct that contains the data about a single realm change set. 
+ `RealmChangeset` is a struct that contains the data about a single realm change set.
  
  It includes the insertions, modifications, and deletions indexes in the data set that the current notification is about.
 */

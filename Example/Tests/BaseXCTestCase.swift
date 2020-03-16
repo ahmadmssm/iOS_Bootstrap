@@ -11,8 +11,12 @@ import XCTest
 
 class BaseXCTestCase: XCTestCase {
     
+    private var unitTestingAppDelegate: UnitTestingAppDelegate!
+    
     override func setUp() {
         super.setUp()
-        UIApplication.shared.delegate = UnitTestingAppDelegate()
+        // Another way to use diffrent app delegate with unti tests
+        unitTestingAppDelegate = UnitTestingAppDelegate()
+        UIApplication.shared.delegate = unitTestingAppDelegate
     }
 }

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B537A1FD6BC67DF7FE8C2B34E5CE6F19"
-               BuildableName = "SVGKit.framework"
+               BuildableName = "libSVGKit.a"
                BlueprintName = "SVGKit"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

@@ -1,6 +1,5 @@
 import struct Foundation.URL
 
-
 public protocol GenericAPIs: TargetType {
   var url: URL { get }
 

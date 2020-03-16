@@ -6,6 +6,7 @@
 //
 // Ref: https://github.com/Moya/Moya/blob/master/docs/Targets.md
 
+
 open class BaseAPI: GenericAPIs {
     open var baseURL: URL { return URL(string: "")! }
     open var headers: [String: String]? { return [ : ] }

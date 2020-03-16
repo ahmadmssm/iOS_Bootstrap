@@ -6,8 +6,8 @@
 //
 //
 
-import Foundation
 import RxSwift
+import Foundation
 
 enum MoyaResponseHandlerFatalError: Swift.Error, LocalizedError {
     case errorHandlerNotSet

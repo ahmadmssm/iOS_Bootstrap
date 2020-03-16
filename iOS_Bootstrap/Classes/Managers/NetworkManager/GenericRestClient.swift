@@ -5,8 +5,8 @@
 //  Created by Ahmad Mahmoud on 6/9/18.
 //
 
-import Foundation
 import RxSwift
+import Foundation
 
 open class GenericRestClient: NSObject, TokenRefresh {
     

@@ -1,4 +1,4 @@
-framework module SVGKit {
+module SVGKit {
   umbrella header "SVGKit.h"
 
   export *
