@@ -6,7 +6,6 @@
 //  Copyright (c) 2018 ams.eng@hotmail.com. All rights reserved.
 //
 
-import UIKit
 import iOS_Bootstrap
 
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -57,9 +57,4 @@ class HomeViewController:
     func didSwitchAppLanguage() {
         navigator.startInitialViewController()
     }
-
-    override func networkStatusDidChange(isConnected: Bool) {
-//        super.networkStatusDidChange(isConnected: isConnected)
-//        print("Status ", isConnected, "Connected through ->", getNetworkConnectionType())
-    }
 }

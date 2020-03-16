@@ -5,10 +5,6 @@
 //  Created by Ahmad Mahmoud on 10/27/18.
 //
 
-public protocol InternetConnectionServiceMonitoring {
-    func networkStatusDidChange(isConnected: Bool)
-}
-
 extension UIViewController: ViewControllerCommonFeatures {
     
     private struct AssociatedKeys {
@@ -29,37 +25,9 @@ extension UIViewController: ViewControllerCommonFeatures {
     
     func setupViewWillAppearEssentials() {
         setCurrent(viewController: self)
-        //
-        let monitoringKey: String = InternetConnectionMonitor.sharedInstance.connectionMonitoringKey
-        EventBus.onMainThread(self, name: monitoringKey) { [weak self] result in
-            if let reachability = (result?.object as? Reachability) {
-                self?.networkStatusDidChange(status: reachability.connection)
-            }
-        }
     }
     
-    func setupViewDidDisappearEssentials() {
-        let monitoringKey: String = InternetConnectionMonitor.sharedInstance.connectionMonitoringKey
-        EventBus.unregister(self, name: monitoringKey)
-    }
-    
-    public final func getNetworkConnectionType() -> Reachability.Connection {
-        return networkConnectionType!
-    }
-    
-    public func networkStatusDidChange(status: Reachability.Connection) {
-        networkConnectionType = status
-        if (status == .none) {
-            self.networkStatusDidChange(isConnected: false)
-        }
-        else if (status == .wifi || status == .cellular) {
-            self.networkStatusDidChange(isConnected: true)
-        }
-    }
-    
-    @objc open func networkStatusDidChange(isConnected: Bool) {
-
-    }
+    func setupViewDidDisappearEssentials() {}
 }
     
     

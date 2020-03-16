@@ -67,27 +67,6 @@ class AppViewController<P, V>: BaseViewController<P, V> where P: BasePresenter<V
         showWarning(warningMessage: warningMessage)
     }
     
-    override func networkStatusDidChange(isConnected: Bool) {
-        snackBar?.dismiss()
-        if (networkConnectionMonitoringEnabled()) {
-            if (!isConnected) {
-                snackBar?.duration = .forever
-                snackBar?.message = "networkDisConnected".localized()
-                snackBar?.backgroundColor = .red
-            }
-            else {
-                snackBar?.duration = .middle
-                snackBar?.message =
-                    "networkConnected".localized() +
-                    " " +
-                    getNetworkConnectionType().description
-            }
-            DispatchQueue.main.async {
-                self.snackBar?.show()
-            }
-        }
-    }
-    
     override func showLoading() {
         dialogs.showLoading(viewController: self)
     }
