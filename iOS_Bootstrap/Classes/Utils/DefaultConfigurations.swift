@@ -6,8 +6,6 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-import Foundation
-import UIKit
 
 open class DefaultConfigurations {
     

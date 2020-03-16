@@ -69,7 +69,6 @@ open class EventBus {
                 Static.instance.cache[id] = [namedObserver]
             }
         }
-
         return observer
     }
 
