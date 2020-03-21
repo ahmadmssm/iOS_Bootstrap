@@ -13,16 +13,7 @@ class BaseModel: BaseRealmModel, Decodable {
     
     required init() { super.init() }
     
-    
     required init(from decoder: Decoder) {
         super.init()
-    }
-    
-    required init(value: Any, schema: RLMSchema) {
-        super.init(value: value, schema: schema)
-    }
-    
-    required init(realm: RLMRealm, schema: RLMObjectSchema) {
-        super.init(realm: realm, schema: schema)
     }
 }

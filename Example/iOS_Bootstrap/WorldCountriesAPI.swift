@@ -8,16 +8,15 @@
 
 import iOS_Bootstrap
 
-class WorldCountriesAPI: AppAPI<[Country]> {
-    
-    override var baseURL: URL { return "https://restcountries.eu/rest/v2".toURL() }
-    override var route: Route { return .get("/all") }
-    
-        // var sampleData: Data {
-        //        switch self {
-        //        case .getWorldCountries():
-        //            return TestingHelpers.getDataFromJsonFileWith(name: "Countries")!
-        //        default: return Data()
-        //        }
-        //    }
+// https://restcountries.eu/rest/v2"
+class WorldCountriesAPI: AppAPI {
+    var route: Route { return .get("/all") }
 }
+
+// var sampleData: Data {
+//        switch self {
+//        case .getWorldCountries():
+//            return TestingHelpers.getDataFromJsonFileWith(name: "Countries")!
+//        default: return Data()
+//        }
+//    }

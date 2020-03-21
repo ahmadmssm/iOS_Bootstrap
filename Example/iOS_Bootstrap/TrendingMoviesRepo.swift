@@ -18,10 +18,8 @@ class TrendingMoviesRepo: Resolving {
     private var moviesArray: [TrendingMovieCellModel]  = []
     
     func getTrendingMovies() -> Single<[TrendingMovieCellModel]> {
-        let trendingMoviesAPI: TrendingMoviesAPI = resolver.resolve(args: page)
-        return trendingMoviesAPI
-            .requestWithNoAuthentication()
-            .map({ [weak self] moviesPage -> [TrendingMovieCellModel] in
+        let trendingMoviesAPI: Single<MoviesPage> = resolver.resolve(args: page)
+        return trendingMoviesAPI.map({ [weak self] moviesPage -> [TrendingMovieCellModel] in
                 let moviesList = self?.getMoviesListFrom(moviesPage: moviesPage) ?? []
                 self?.page += 1
                 self?.moviesArray.append(contentsOf: moviesList)

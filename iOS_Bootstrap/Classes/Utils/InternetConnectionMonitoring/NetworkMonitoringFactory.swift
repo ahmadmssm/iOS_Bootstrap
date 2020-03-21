@@ -8,6 +8,8 @@
 
 open class NetworkMonitoringFactory: INetworkMonitoring {
     
+    public init() {}
+    
     open func startMonitoring(listener: ConnectivityStatus) {
         if #available(iOS 12.0, *) {
             NewNetworkMonitoringFactory.shared.startMonitoring(listener: listener)

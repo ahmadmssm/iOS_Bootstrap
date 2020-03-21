@@ -9,7 +9,7 @@
 import UIKit
 import iOS_Bootstrap
 
-class WeatherCell: BaseTableViewCellV2<Forcast> {
+class WeatherCell: BaseGenericTableViewCell<Forcast> {
     
     @IBOutlet weak var labelTemperature: UILabel!
     @IBOutlet weak var labelMinTemperature: UILabel!

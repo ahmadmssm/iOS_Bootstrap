@@ -9,38 +9,42 @@
 import Foundation
 import UIKit
 
-extension UICollectionView {
+public extension UICollectionView {
     
-    public func registerCell<T: UICollectionViewCell>(cellClass: T.Type) where T: ReusableCell {
+    func registerCell<T: UICollectionViewCell>(cellClass: T.Type) where T: ReusableCell {
         let bundle = Bundle(for: cellClass.self)
         let cellClassName: String = String(describing: cellClass.self)
         let nib = UINib(nibName: cellClassName, bundle: bundle)
         register(nib, forCellWithReuseIdentifier: cellClassName)
     }
     
-    public func registerHeaderCell<T: UICollectionReusableView>(headerClass: T.Type) where T: ReusableCell {
+    func registerHeaderCell<T: UICollectionReusableView>(headerClass: T.Type) where T: ReusableCell {
         register(headerClass.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerClass.nibName)
     }
     
-    public func registerFooterCell<T: UICollectionViewCell>(footerClass: T.Type) where T: ReusableCell {
+    func registerFooterCell<T: UICollectionViewCell>(footerClass: T.Type) where T: ReusableCell {
         let bundle = Bundle(for: footerClass.self)
         let nib = UINib(nibName: footerClass.nibName, bundle: bundle)
         register(nib, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerClass.nibName)
     }
     
-    public func dequeueReusableCell<T: UICollectionViewCell>(forIndexPath indexPath: IndexPath) -> T where T: ReusableCell {
+    func dequeueReusableCell<T: UICollectionViewCell>(forIndexPath indexPath: IndexPath) -> T where T: ReusableCell {
         guard let cell = dequeueReusableCell(withReuseIdentifier: T.dequeueIdentifier, for: indexPath as IndexPath) as? T else {
             fatalError("Could not dequeue cell with identifier: \(T.dequeueIdentifier)")
         }
         return cell
     }
     
-    public func dequeueReusableHeaderCell<H: UICollectionReusableView>(forIndexPath indexPath: IndexPath) -> H where H: ReusableCell  {
+    func dequeueReusableHeaderCell<H: UICollectionReusableView>(forIndexPath indexPath: IndexPath) -> H where H: ReusableCell  {
         return dequeueReusableHeaderOrFooterCell(kind: UICollectionElementKindSectionHeader, forIndexPath: indexPath)
     }
     
-    public func dequeueReusableFooterCell<F: UICollectionReusableView>(forIndexPath indexPath: IndexPath) -> F where F: ReusableCell {
+    func dequeueReusableFooterCell<F: UICollectionReusableView>(forIndexPath indexPath: IndexPath) -> F where F: ReusableCell {
         return dequeueReusableHeaderOrFooterCell(kind: UICollectionElementKindSectionFooter, forIndexPath: indexPath)
+    }
+    
+    func dequeueReusableDefaultCell(indexPath: IndexPath) -> UICollectionViewCell {
+        return self.dequeueReusableCell(withReuseIdentifier: "DefaultCell", for: indexPath)
     }
     
     private func dequeueReusableHeaderOrFooterCell <T: UICollectionReusableView>

@@ -8,17 +8,16 @@
 
 import iOS_Bootstrap
 
-class LocationCoordinatesAPI: AppAPI<Coordinates> {
-    
+// "http://api.ipstack.com"
+class LocationCoordinatesAPI: AppAPI {
+
     private let ip: String
 
-    override var baseURL: URL { return "http://api.ipstack.com".toURL() }
-    override var route: Route { return .get("/" + ip) }
-    override var parameters: Parameters? {
-        return URLEncoding() => ["access_key" : Constants.ipstackAuthKey]
-    }
-    
+    var route: Route { return .get("/" + ip) }
+    var parameters: Parameters? { return URLEncoding() => ["access_key" : Constants.ipstackAuthKey] }
+
     init(ip: String) {
         self.ip = ip
     }
 }
+

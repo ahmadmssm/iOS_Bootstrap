@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-class TrendingMoviesCell: BaseTableViewCellV2<TrendingMovieCellModel> {
+class TrendingMoviesCell: BaseGenericTableViewCell<TrendingMovieCellModel> {
     
     @IBOutlet private weak var posterImage: UIImageView!
     @IBOutlet private weak var movieTitleLabel: UILabel!

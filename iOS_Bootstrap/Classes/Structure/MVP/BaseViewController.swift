@@ -78,10 +78,6 @@ open class BaseViewController<T, V> :
     
     open func didGetError(errorMessage: String) {}
     
-    open func showToast(toastMessage: String, duration: Double, position: ToastPosition) {
-        self.view.makeToast(toastMessage, duration: duration, position: position)
-    }
-    
     open func dismiss(withAnimation animated: Bool? = true,
                       completion: (() -> Void)? = nil) {
         if (isPresented) {

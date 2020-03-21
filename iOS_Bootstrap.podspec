@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
     s.author           = { 'Ahmad Mahmoud Saleh' => 'ams.eng@hotmail.com' }
     s.source           = { :git => 'https://github.com/ahmadmssm/iOS_Bootstrap.git', :tag => s.version.to_s }
     
-    s.ios.deployment_target = '9.1'
+    s.ios.deployment_target = '10.0'
     s.swift_version = '4.0'
     s.source_files = 'iOS_Bootstrap/Classes/**/*'
 
@@ -41,7 +41,8 @@ Pod::Spec.new do |s|
     # s.pod_target_xcconfig = { 'SWIFT_WHOLE_MODULE_OPTIMIZATION' => 'YES',
     # 'APPLICATION_EXTENSION_API_ONLY' => 'YES', 'DEFINES_MODULE' => 'YES' }
     
-    s.dependency 'Moya/RxSwift', '~> 13.0'
+    s.dependency 'Alamofire', '~> 5.0'
+    s.dependency 'RxSwift', '~> 5'
     s.dependency 'IQKeyboardManagerSwift', '6.0.4'
     s.frameworks = 'Foundation'
 end

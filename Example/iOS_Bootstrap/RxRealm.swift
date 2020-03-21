@@ -96,7 +96,7 @@ public struct RealmChangeset {
     public let updated: [Int]
 }
 
-public extension ObservableType where E: NotificationEmitter {
+public extension ObservableType where Element: NotificationEmitter {
 
     @available(*, deprecated, renamed: "collection(from:synchronousStart:)")
     static func from(_ collection: E, scheduler: ImmediateSchedulerType = CurrentThreadScheduler.instance) -> Observable<E> {
@@ -112,8 +112,8 @@ public extension ObservableType where E: NotificationEmitter {
 
      - returns: `Observable<E>`, e.g. when called on `Results<Model>` it will return `Observable<Results<Model>>`, on a `List<User>` it will return `Observable<List<User>>`, etc.
      */
-    static func collection(from collection: E, synchronousStart: Bool = true)
-        -> Observable<E> {
+    static func collection(from collection: Element, synchronousStart: Bool = true)
+        -> Observable<Element> {
 
         return Observable.create { observer in
             if synchronousStart {
@@ -122,7 +122,7 @@ public extension ObservableType where E: NotificationEmitter {
 
             let token = collection.observe { changeset in
 
-                let value: E
+                let value: Element
 
                 switch changeset {
                     case .initial(let latestValue):
@@ -147,7 +147,7 @@ public extension ObservableType where E: NotificationEmitter {
     }
 
     @available(*, deprecated, renamed: "array(from:synchronousStart:)")
-    static func arrayFrom(_ collection: E, scheduler: ImmediateSchedulerType = CurrentThreadScheduler.instance) -> Observable<Array<E.ElementType>> {
+    static func arrayFrom(_ collection: Element, scheduler: ImmediateSchedulerType = CurrentThreadScheduler.instance) -> Observable<Array<E.ElementType>> {
         return array(from: collection)
     }
 
@@ -155,7 +155,7 @@ public extension ObservableType where E: NotificationEmitter {
      Returns an `Observable<Array<E.Element>>` that emits each time the collection data changes. The observable emits an initial value upon subscription.
      The result emits an array containing all objects from the source collection.
 
-     - parameter from: A Realm collection of type `E`: either `Results`, `List`, `LinkingObjects` or `AnyRealmCollection`.
+     - parameter from: A Realm collection of type `Element`: either `Results`, `List`, `LinkingObjects` or `AnyRealmCollection`.
      - parameter synchronousStart: whether the resulting Observable should emit its first element synchronously (e.g. better for UI bindings)
 
      - returns: `Observable<Array<E.Element>>`, e.g. when called on `Results<Model>` it will return `Observable<Array<Model>>`, on a `List<User>` it will return `Observable<Array<User>>`, etc.
@@ -184,8 +184,8 @@ public extension ObservableType where E: NotificationEmitter {
 
      - returns: `Observable<(AnyRealmCollection<E.Element>, RealmChangeset?)>`
      */
-    static func changeset(from collection: E, synchronousStart: Bool = true)
-        -> Observable<(AnyRealmCollection<E.ElementType>, RealmChangeset?)> {
+    static func changeset(from collection: Element, synchronousStart: Bool = true)
+        -> Observable<(AnyRealmCollection<Element.ElementType>, RealmChangeset?)> {
 
         return Observable.create { observer in
             if synchronousStart {
@@ -231,8 +231,8 @@ public extension ObservableType where E: NotificationEmitter {
 
      - returns: `Observable<(Array<E.Element>, RealmChangeset?)>`
      */
-    static func arrayWithChangeset(from collection: E, synchronousStart: Bool = true)
-        -> Observable<(Array<E.ElementType>, RealmChangeset?)> {
+    static func arrayWithChangeset(from collection: Element, synchronousStart: Bool = true)
+        -> Observable<(Array<Element.ElementType>, RealmChangeset?)> {
 
         return Observable.changeset(from: collection)
             .map { ($0.toArray(), $1) }
@@ -278,7 +278,7 @@ public extension Observable {
 
 extension Realm: ReactiveCompatible { }
 
-public extension Reactive where Base: Realm {
+public extension Reactive where Base == Realm {
 
     /**
      Returns bindable sink wich adds object sequence to the current Realm
@@ -382,7 +382,7 @@ public extension Reactive where Base: Realm {
     }
 }
 
-public extension Reactive where Base: Realm {
+public extension Reactive where Base == Realm {
     
     /**
      Returns bindable sink wich adds object sequence to a Realm

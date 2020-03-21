@@ -7,21 +7,18 @@
 //
 
 import iOS_Bootstrap
-import RxSwift
 
-class AppAPI<MappableType>: BaseAPI,
-                            Requestable,
-                            CachingPolicyService where MappableType: Codable {
+protocol AppAPI: AlamofireAPI {}
 
-    override var baseURL: URL {
-        return URL(string: "https://api.github.com")!
-    }
-    
-    override var headers: [String: String]? { return nil }
+// https://api.github.com
+//    var cachePolicy: URLRequest.CachePolicy {
+//        return .useProtocolCachePolicy
+//    }
 
-    override var route: Route { return .get("") }
-
-    var cachePolicy: URLRequest.CachePolicy {
-        return .useProtocolCachePolicy
-    }
-}
+// var sampleData: Data {
+       //        switch self {
+       //        case .getWorldCountries():
+       //            return TestingHelpers.getDataFromJsonFileWith(name: "Countries")!
+       //        default: return Data()
+       //        }
+       //    }

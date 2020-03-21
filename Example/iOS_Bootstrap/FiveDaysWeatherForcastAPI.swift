@@ -8,16 +8,14 @@
 
 import iOS_Bootstrap
 
-class FiveDaysWeatherForcastAPI: AppAPI<WeatherForcast> {
+// http://api.openweathermap.org/data/2.5
+class FiveDaysWeatherForcastAPI: AppAPI {
     
     private let lat: Double
     private let longt: Double
 
-    override var baseURL: URL {
-        return "http://api.openweathermap.org/data/2.5".toURL()
-    }
-    override var route: Route { return .get("/forecast") }
-    override var parameters: Parameters? {
+    var route: Route { return .get("/forecast") }
+    var parameters: Parameters? {
         return URLEncoding() => [
             "lat" : lat,
             "lon" : longt,

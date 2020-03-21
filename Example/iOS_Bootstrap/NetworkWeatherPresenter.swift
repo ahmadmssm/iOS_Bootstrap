@@ -11,7 +11,7 @@ import Resolver
 
 class NetworkWeatherPresenter : BasePresenter<WeatherViewDelegator> {
     
-    @LazyInjected private var repo: Repo
+    @LazyInjected private var repo: WeatherForcastingRepo
 
     required init(viewDelegate: WeatherViewDelegator) {
         super.init(viewDelegate: viewDelegate)

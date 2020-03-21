@@ -3,11 +3,11 @@ platform :ios, '13.1'
 
 target 'iOS_Bootstrap_Example' do
   pod 'iOS_Bootstrap', :path => '../'
-  pod 'RxCocoa', '~> 4.0'
+  pod 'RxCocoa', '~> 5'
   pod 'Realm', :modular_headers => true
   pod 'RealmSwift', :modular_headers => true
   pod 'SVGKit', :modular_headers => true
-  pod 'Resolver', '~> 1.1.1'
+  pod 'Resolver'
 
   target 'iOS_Bootstrap_Tests' do
     # inherit! :search_paths

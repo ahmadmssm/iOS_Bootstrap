@@ -7,25 +7,45 @@
 //
 //  Ref: https://github.com/hmlongco/Resolver/blob/master/Documentation/Arguments.md
 
+import RxSwift
 import Resolver
+import iOS_Bootstrap
 
 extension Resolver {
+    
     static func restModules() {
+        restClientModules()
+        restAPIsModules()
+    }
+    
+    static func restClientModules() {
+        register { SessionManager() as SessionService }
+        register { AlamofireLoader() as LoadingIndicatorService }
+        //
+        register { AppRestClient(resolve(), resolve()) as RxAlamofireClientProtocol }.scope(application)
+    }
+    
+    static func restAPIsModules() {
         register { RefreshTokenAPI() }
-        register { WorldCountriesAPI() }
+        register { (_, args) -> Single<MoviesPage> in
+            let page = args as! Int
+            return getRxAPI(api: TrendingMoviesAPI(page: page))
+        }
+        register { (_, _) -> Single<[Country]> in
+            return getRxAPI(api: WorldCountriesAPI())
+        }
         register { DevicePublicIPAPI() }
-        register { (_, arg) -> TrendingMoviesAPI in
-            let page = (arg as? Int ?? 1)
-            return TrendingMoviesAPI(page: page)
+        register { (_, _) -> Single<String> in
+            return getRxAPI(api: DevicePublicIPAPI())
         }
-        register { (_, arg) -> LocationCoordinatesAPI in
+        register { (_, arg) -> Single<Coordinates> in
             let publicIP = arg as! String
-            return LocationCoordinatesAPI(ip: publicIP)
+            return getRxAPI(api: LocationCoordinatesAPI(ip: publicIP))
         }
-        register { (resolver, args) -> FiveDaysWeatherForcastAPI in
+        register { (resolver, args) -> Single<WeatherForcast> in
             let lat: Double? = resolver.firstArgument(from: args!)
             let longt: Double? = resolver.secondArgument(from: args!)
-            return FiveDaysWeatherForcastAPI(lat: lat!, longt: longt!)
+            return getRxAPI(api: FiveDaysWeatherForcastAPI(lat: lat!, longt: longt!))
         }
     }
 }

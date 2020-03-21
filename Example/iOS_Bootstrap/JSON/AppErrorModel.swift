@@ -43,7 +43,7 @@ class AppErrorModel: Codable {
     }
     
     func toString() -> String {
-        return self.toStringForm()
+        return self.toJsonString()
     }
 }
 

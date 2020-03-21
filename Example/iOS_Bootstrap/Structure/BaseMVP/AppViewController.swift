@@ -30,7 +30,6 @@ class AppViewController<P, V>: BaseViewController<P, V> where P: BasePresenter<V
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.updatesStatusBarAppearanceAutomatically = true
     }
     
     final func removeNavigationBarBottomBorder() {
@@ -42,10 +41,6 @@ class AppViewController<P, V>: BaseViewController<P, V> where P: BasePresenter<V
     }
     
     func setNavigationBarTitle(title: String) { self.navigationItem.title = title }
-    
-    func showToast(toastMessage: String) {
-        showToast(toastMessage: toastMessage, duration: 2.0, position: .center)
-    }
     
     func initSnackbar() -> TTGSnackbar? {
         let newSnackBar = TTGSnackbar(message: "",duration: .short)

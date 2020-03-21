@@ -8,15 +8,15 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import iOS_Bootstrap
 
 extension UISearchBar {
     func setUpSearchBarListener(action: @escaping (_ searchText: String) -> Void, disposeBag: DisposeBag) {
         self.rx
             .text
-            .orEmpty
-            .skip(1)
-            .debounce(1.5, scheduler: Schedulers.uiScheduler)
+            .orEmpty.skip(1)
+            .debounce(RxTimeInterval.seconds(Int(1.5)), scheduler: Schedulers.uiScheduler)
             // Only emits if the current value is different from the last one
             .distinctUntilChanged()
             .subscribe(onNext: { searchText in

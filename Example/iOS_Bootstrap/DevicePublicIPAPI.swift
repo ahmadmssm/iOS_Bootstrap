@@ -9,9 +9,8 @@
 import iOS_Bootstrap
 import RxSwift
 
-class DevicePublicIPAPI: AppAPI<String> {
-    override var baseURL: URL {
-        return "https://api.ipify.org?format=json2".toURL()
-    }
+// https://api.ipify.org?format=json2
+class DevicePublicIPAPI: AppAPI {
+    var route: Route { return .get("/forecast") }
 }
 

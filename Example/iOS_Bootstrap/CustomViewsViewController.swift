@@ -49,13 +49,12 @@ class CustomViewsViewController:
     }
     
     @IBAction func showToast(_ sender: UIButton) {
-        self.view.makeToast("This is a piece of toast", duration: 3.0, position: .center)
+
     }
     
     @IBAction func loggers(_ sender: UIButton) {
         Log.info("Hi, I'm a logger that prints what you want in Xcode console and i work in debug mode only")
     }
-    
 }
 
 extension CustomViewsViewController {

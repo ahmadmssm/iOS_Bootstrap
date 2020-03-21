@@ -1,24 +1,24 @@
+////
+////  TrendingMoviesAPI.swift
+////  iOS_Bootstrap_Example
+////
+////  Created by Ahmad Mahmoud on 8/9/19.
+////  Copyright © 2019 CocoaPods. All rights reserved.
+////
 //
-//  TrendingMoviesAPI.swift
-//  iOS_Bootstrap_Example
-//
-//  Created by Ahmad Mahmoud on 8/9/19.
-//  Copyright © 2019 CocoaPods. All rights reserved.
-//
-
 import iOS_Bootstrap
 
-class TrendingMoviesAPI: AppAPI<MoviesPage> {
+// https://api.themoviedb.org/3/
+class TrendingMoviesAPI: AppAPI {
     
     private let page: Int
     
-    override var baseURL: URL { return "https://api.themoviedb.org/3/".toURL() }
-    override var route: Route { return .get("movie/popular") }
-    override var parameters: Parameters? {
-        return URLEncoding() => [
-            "api_key" : Constants.tmdbAuthKey,
-            "page": page
-        ]
+    var route: Route { return .get("movie/popular") }
+    var parameters: Parameters? {
+            return URLEncoding() => [
+                "api_key" : Constants.tmdbAuthKey,
+                "page": page
+            ]
     }
     
     init(page: Int) {

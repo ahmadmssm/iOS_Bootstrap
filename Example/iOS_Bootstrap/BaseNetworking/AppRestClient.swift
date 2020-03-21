@@ -6,45 +6,24 @@
 //  Copyright © 2019 Ahmad Mahmoud. All rights reserved.
 //
 
-import iOS_Bootstrap
 import RxSwift
+import iOS_Bootstrap
 
-class AppRestClient<API>: BaseRestClient<API, AppErrorHandler>
-                          where API: GenericAPIs {
+class AppRestClient: RxAlamofireRestClient {
     
-    override func enableNetworkPlugins() -> Bool { return true }
-    
-    override func configureNetworkPlugginsIfNeeded() -> [PluginType] {
-        let networkLoggerPlugin = NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter)
-        let networkActivityPlugin = NetworkActivityPlugin { [weak self] change, _ in
-            switch(change) {
-            case .began:
-               // if ((self?.isLoadingActivityEnabled)!) { self?.showLoader() }
-                break
-            case .ended:
-               // if ((self?.isLoadingActivityEnabled)!) { self?.hideLoader() }
-                break
-            }
-        }
-        let networkCachingPlugin: CachingPolicyPlugin = CachingPolicyPlugin()
-        //
-        var plugins : [PluginType] = []
-        plugins.append(networkLoggerPlugin)
-        plugins.append(networkActivityPlugin)
-        plugins.append(networkCachingPlugin)
-        //
-        return plugins
+    init(_ sessionService: SessionService, _ loadingIndicatorService: LoadingIndicatorService) {
+        super.init(sessionService, loadingIndicatorService)
     }
     
-    private func showLoader() {
-        EZLoadingActivity.show("loading".localized(), disableUI: true)
+    override func getBaseURL() -> String {
+        return "https://api.themoviedb.org/3/"
     }
     
-    private func hideLoader() {
-        EZLoadingActivity.hide()
+    override func getRefreshTokenAPI() -> BaseRefreTokenAPI? {
+        return nil
     }
     
-    override func getTokenRefreshRequest() -> Single<Response> {
-        return RefreshTokenAPI.request()
+    override func shouldEnableLoadingIndicator() -> Bool {
+        return true
     }
 }

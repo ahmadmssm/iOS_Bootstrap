@@ -5,7 +5,7 @@
 //  Created by Ahmad Mahmoud on 3/15/20.
 //
 
-public protocol BaseEnvironment: SchemeService, CaseIterable {}
+public protocol BaseEnvironment: SchemeTypeService, CaseIterable {}
 
 public extension BaseEnvironment
                 where Self: Hashable & RawRepresentable,

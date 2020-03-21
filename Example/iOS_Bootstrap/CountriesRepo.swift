@@ -11,7 +11,7 @@ import Resolver
 import iOS_Bootstrap
 
 class CountriesRepo: IOfflineCaching, Resolving {
-    
+
     typealias CachableEntity = CountryEntity
     //
     @LazyInjected private var countriesCachingManager: CountriesCachingManager
@@ -19,11 +19,11 @@ class CountriesRepo: IOfflineCaching, Resolving {
     private var searchResultsArray: [CountryEntity] = []
 
     func fetchtemsFromNetwork(page: Int = 0) -> Single<[CountryEntity]> {
-        let worldCountriesAPI: WorldCountriesAPI = resolver.resolve()
+        let rxScheduler = Schedulers.backgroundConcurrentScheduler
+        let worldCountriesAPI: Single<[Country]> = resolver.resolve()
         return worldCountriesAPI
-            .requestWithNoAuthentication()
             // Dealy just to show the skeleton effect :D
-            .delaySubscription(2.0, scheduler: Schedulers.backgroundConcurrentScheduler)
+            .delaySubscription(RxTimeInterval.seconds(Int(2.0)), scheduler: rxScheduler)
             .map { $0.compactMap { country in
                     return self.getCountryCoreDataEntityFrom(country: country)
                 }
@@ -34,21 +34,21 @@ class CountriesRepo: IOfflineCaching, Resolving {
                 self?.countriesArray = self?.countriesArray.sorted(by: { $0.name! < $1.name! }) ?? []
             })
     }
-    
+
     func fetchtemsFromDB(page: Int) -> Single<[CountryEntity]> {
         return countriesCachingManager.fetchAll().asSingle()
     }
-    
+
     func saveItemsToLocalDB(itemsList: [CountryEntity]) -> Completable {
         return countriesCachingManager.insertRecordsCompletable(records: itemsList)
     }
-    
+
     func deleteAllCachedItems() -> Completable {
         // Flush search array
         self.countriesArray.removeAll()
         return countriesCachingManager.deleteAllRecords()
     }
-    
+
     func findCountriesWith(text : String) -> Single<[CountryEntity]> {
         if (text == "") {
             return Single.just(countriesArray)
@@ -63,7 +63,7 @@ class CountriesRepo: IOfflineCaching, Resolving {
             return Single.just(searchResultsArray)
         }
     }
-    
+
     private func getCountryCoreDataEntityFrom(country: Country) -> CountryEntity {
         let countryEntity = CountryEntity(context: countriesCachingManager.context)
         countryEntity.name = country.countryName!

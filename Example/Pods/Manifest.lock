@@ -1,28 +1,25 @@
 PODS:
-  - Alamofire (4.9.1)
-  - CocoaLumberjack (3.6.0):
-    - CocoaLumberjack/Core (= 3.6.0)
-  - CocoaLumberjack/Core (3.6.0)
+  - Alamofire (5.0.0)
+  - CocoaLumberjack (3.6.1):
+    - CocoaLumberjack/Core (= 3.6.1)
+  - CocoaLumberjack/Core (3.6.1)
   - iOS_Bootstrap (1.7.0):
+    - Alamofire (~> 5.0)
     - IQKeyboardManagerSwift (= 6.0.4)
-    - Moya/RxSwift (~> 13.0)
+    - RxSwift (~> 5)
   - IQKeyboardManagerSwift (6.0.4)
-  - Moya/Core (13.0.1):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.1)
-  - Moya/RxSwift (13.0.1):
-    - Moya/Core
-    - RxSwift (~> 4.0)
-  - Realm (3.20.0):
-    - Realm/Headers (= 3.20.0)
-  - Realm/Headers (3.20.0)
-  - RealmSwift (3.20.0):
-    - Realm (= 3.20.0)
-  - Resolver (1.1.1)
-  - Result (4.1.0)
-  - RxCocoa (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxSwift (4.5.0)
+  - Realm (4.3.2):
+    - Realm/Headers (= 4.3.2)
+  - Realm/Headers (4.3.2)
+  - RealmSwift (4.3.2):
+    - Realm (= 4.3.2)
+  - Resolver (1.1.2)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
   - SVGKit (2.1.1):
     - CocoaLumberjack (~> 3.0)
 
@@ -31,8 +28,7 @@ DEPENDENCIES:
   - Realm
   - RealmSwift
   - Resolver
-  - Resolver (~> 1.1.1)
-  - RxCocoa (~> 4.0)
+  - RxCocoa (~> 5)
   - SVGKit
 
 SPEC REPOS:
@@ -40,12 +36,11 @@ SPEC REPOS:
     - Alamofire
     - CocoaLumberjack
     - IQKeyboardManagerSwift
-    - Moya
     - Realm
     - RealmSwift
     - Resolver
-    - Result
     - RxCocoa
+    - RxRelay
     - RxSwift
     - SVGKit
 
@@ -54,19 +49,18 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  CocoaLumberjack: 78b0c238666f4f58db069738ec176f4519557516
-  iOS_Bootstrap: 2121bc1a354b0da36e784aea587338451f21c874
+  Alamofire: 58ff2bfb8daaacaa233d5c36e37b10a5248f59b1
+  CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
+  iOS_Bootstrap: 6b8994117c172415efcdc6e557c502b6fca60e00
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
-  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
-  RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
-  Resolver: 13bf2462d6790f67fa6fa45f3753db8199706fc3
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
+  RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
+  Resolver: e04ca5a9a19906f2e5cdceb2b90edd3b5daed049
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
 
-PODFILE CHECKSUM: ada6fc2bd05a361d44a9f9855a17dc1f8d0f65a6
+PODFILE CHECKSUM: e1249189451245f439e303b789f1c6d2e5c6b289
 
 COCOAPODS: 1.8.4

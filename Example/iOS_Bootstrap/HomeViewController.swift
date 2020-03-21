@@ -35,7 +35,7 @@ class HomeViewController:
             getPresenter().switchAppLanguage()
             break
         case 4:
-          //  navigator.goToValidatorsExampleViewController()
+           //  navigator.goToValidatorsExampleViewController()
             break
         default:
             break

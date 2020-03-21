@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-class ToDoCell: BaseTableViewCellV2<ToDoCellModel> {
+class ToDoCell: BaseGenericTableViewCell<ToDoCellModel> {
     
     @IBOutlet private weak var todoNameLabel: UILabel!
     @IBOutlet private weak var toDoDate: UILabel!

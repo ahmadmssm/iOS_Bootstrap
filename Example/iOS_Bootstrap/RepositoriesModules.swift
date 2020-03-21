@@ -11,7 +11,7 @@ import Resolver
 extension Resolver {
     static func repositoriesModules() {
         register { TrendingMoviesRepo() }
-        register { Repo() }.scope(application)
+        register { WeatherForcastingRepo() }
         register { ToDoRepo() }
         register { CountriesRepo() }
     }

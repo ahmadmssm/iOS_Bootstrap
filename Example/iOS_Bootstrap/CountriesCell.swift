@@ -10,7 +10,7 @@ import UIKit
 import iOS_Bootstrap
 import RxSwift
 
-class CountriesCell: BaseTableViewCellV2<CountryEntity> {
+class CountriesCell: BaseGenericTableViewCell<CountryEntity> {
     
     @IBOutlet private weak var labelCountryName: UILabel!
     @IBOutlet private weak var labelCapitalName: UILabel!

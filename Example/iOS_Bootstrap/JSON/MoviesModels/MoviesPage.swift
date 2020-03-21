@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-class MoviesPage : BasePage {
+class MoviesPage: BasePage {
     
     var moviesList : [Movie]?
     var totalPages : Int?

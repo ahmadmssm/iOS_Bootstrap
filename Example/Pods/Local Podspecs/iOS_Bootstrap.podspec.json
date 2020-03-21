@@ -16,13 +16,16 @@
     "tag": "1.7.0"
   },
   "platforms": {
-    "ios": "9.1"
+    "ios": "10.0"
   },
   "swift_versions": "4.0",
   "source_files": "iOS_Bootstrap/Classes/**/*",
   "dependencies": {
-    "Moya/RxSwift": [
-      "~> 13.0"
+    "Alamofire": [
+      "~> 5.0"
+    ],
+    "RxSwift": [
+      "~> 5"
     ],
     "IQKeyboardManagerSwift": [
       "6.0.4"

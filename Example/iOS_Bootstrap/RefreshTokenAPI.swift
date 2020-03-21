@@ -9,16 +9,7 @@
 import iOS_Bootstrap
 import RxSwift
 
-class RefreshTokenAPI: AppAPI<String> {
-    
-    override var route: Route { return .get("/refrehs/") }
-    override var parameters: Parameters? {
-        return JSONEncoding() => ["old_token" : "oldToken"]
-    }
-}
-
-extension RefreshTokenAPI {
-    static func request() -> Single<Response> {
-        return RefreshTokenAPI().buildFlatRequestWithoutLoader()
-    }
+class RefreshTokenAPI: AppAPI {
+    var route: Route { return .get("/refresh/") }
+    var parameters: Parameters? { return JSONEncoding() => ["old_token" : "oldToken"] }
 }

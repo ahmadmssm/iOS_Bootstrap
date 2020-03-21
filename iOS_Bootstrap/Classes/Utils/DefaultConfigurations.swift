@@ -16,13 +16,6 @@ open class DefaultConfigurations {
     private var isInternetConnectionMonitoringEnabled: Bool = false
 
     public init() {}
-
-    @objc private func getTokenFromNotification(notification: NSNotification) {
-        if let responseString = notification.userInfo?["response"] as? String {
-            let tokenRefreshDelegate : TokenRefreshService = notificationContext as! TokenRefreshService
-            tokenRefreshDelegate.tokenDidRefreshed(response: responseString)
-        }
-    }
     
     public func enableIQKeyboard() -> DefaultConfigurations {
         keyboardManager.setupKeyboardManager()
@@ -68,15 +61,6 @@ open class DefaultConfigurations {
     
     open func configureAppWindow(window : UIWindow) -> DefaultConfigurations {
         window.makeKeyAndVisible()
-        return self
-    }
-    
-    open func setTokenRefreshListener(_ context : Any) -> DefaultConfigurations {
-        // You must make your class (self class) conform to TokenRefreshService prototcol or the app will crash
-        NotificationCenter.default.addObserver(context, selector: #selector(TokenRefreshService.didFailedToRefreshToken), name: .expiredToken, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.getTokenFromNotification(notification:)), name: .newAuthenticationToken, object: nil)
-        //
-        notificationContext = context
         return self
     }
     

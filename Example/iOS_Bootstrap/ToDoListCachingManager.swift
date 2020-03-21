@@ -57,5 +57,4 @@ class ToDoListCachingManager: RealmManager<ToDoListEntity> {
     func updateToDo(toDo: ToDoListEntity) -> Completable { return updateRecord(record: toDo) }
 
     func deleteToDo(toDo: ToDoListEntity) -> Completable { return deleteRecord(record: toDo) }
-    
 }

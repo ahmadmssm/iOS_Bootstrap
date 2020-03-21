@@ -9,7 +9,7 @@
 import UIKit
 import iOS_Bootstrap
 
-class HomeCollectionViewCell: BaseCollectionViewCellV2<String> {
+class HomeCollectionViewCell: BaseGenericCollectionViewCell<String> {
 
     @IBOutlet private weak var image: UIImageView!
     @IBOutlet private weak var label: UILabel!
