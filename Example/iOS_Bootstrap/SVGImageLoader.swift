@@ -29,8 +29,8 @@ public final class SVGImageLoader: Resolving {
             }
             return Disposables.create()
             }
-            .subscribeOn(Schedulers.imageLoadingScheduler)
-            .observeOn(Schedulers.uiScheduler)
+            .subscribeOn(RxSchedulers.imageLoadingScheduler)
+            .observeOn(RxSchedulers.uiScheduler)
     }
 }
 

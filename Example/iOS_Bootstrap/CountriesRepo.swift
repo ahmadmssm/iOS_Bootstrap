@@ -19,7 +19,7 @@ class CountriesRepo: IOfflineCaching, Resolving {
     private var searchResultsArray: [CountryEntity] = []
 
     func fetchtemsFromNetwork(page: Int = 0) -> Single<[CountryEntity]> {
-        let rxScheduler = Schedulers.backgroundConcurrentScheduler
+        let rxScheduler = RxSchedulers.backgroundConcurrentScheduler
         let worldCountriesAPI: Single<[Country]> = resolver.resolve()
         return worldCountriesAPI
             // Dealy just to show the skeleton effect :D

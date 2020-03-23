@@ -26,19 +26,19 @@ class NetworkMonitoring: AppDelegateService, ConnectivityStatus {
     }
     
     func didConnectViaWIFI() {
-        print("Hopa WIFI")
+        print("Connectivity : WIFI")
     }
     
     func didConnectViaCellular() {
-        print("Hopa 4G")
+        print("Connectivity : 4G")
     }
     
     func didDisconnect() {
-        print("Hopa Diconnected")
+        print("Connectivity : Diconnected")
     }
     
     func didGetConnectivityError(errorMessage: String) {
-        print("Hopa Error")
+        print("Connectivity : Error")
     }
 }
 

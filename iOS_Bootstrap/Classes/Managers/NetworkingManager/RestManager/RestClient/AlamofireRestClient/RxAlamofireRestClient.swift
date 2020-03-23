@@ -205,9 +205,12 @@ open class RxAlamofireRestClient: AlamofireRestClient, RxAlamofireClientProtocol
            return Observable.create { [weak self] observer -> Disposable in
                if let self = self {
                   self.getMultipartRequestBuilder(api: api)
-                      .downloadProgress { progress in
-                           // This closure is NOT called on the main queue for performance
-                           observer.on(.next((nil, progress)))
+                      .uploadProgress(closure: { uploadProgress in
+                        // This closure is NOT called on the main queue for performance
+                        observer.on(.next((nil, uploadProgress)))
+                      })
+                      .downloadProgress { downloadProgress in
+                        
                       }
                       .responseJSON( completionHandler: { response in
                        switch response.result {

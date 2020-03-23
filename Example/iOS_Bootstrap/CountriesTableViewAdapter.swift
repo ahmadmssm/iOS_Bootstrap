@@ -13,7 +13,7 @@ class CountriesTableViewAdapter: BaseTableViewAdapter<UITableView, CountryEntity
     convenience init(tableView: UITableView) {
         self.init(tableView: tableView, xibCell: CountriesCell.self)
         self.reloadTable()
-        Skeleton.addTo(tableView)
+        tableView.addShimmer()
     }
     
     override func tableView(_ tableView: UITableView,
@@ -29,7 +29,7 @@ class CountriesTableViewAdapter: BaseTableViewAdapter<UITableView, CountryEntity
     }
     
     override func reloadSinglePageTable(items: [CountryEntity]) {
-        Skeleton.removeFrom(getTableView())
+        getTableView().removeShimmer()
         if (dataSource.count == 0) {
             super.reloadSinglePageTable(items: items)
         }

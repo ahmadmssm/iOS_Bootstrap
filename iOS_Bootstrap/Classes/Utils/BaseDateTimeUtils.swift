@@ -9,6 +9,8 @@ open class BaseDateTimeUtils {
     
     public let formatter = DateFormatter()
     
+    public init() {}
+    
     open func getCurrentDate(desiredFormat: String) -> Date {
         let date = Date()
         formatter.dateFormat = desiredFormat

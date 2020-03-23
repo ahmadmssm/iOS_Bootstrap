@@ -47,7 +47,7 @@ extension UIView {
     }
 }
 
-open class Skeleton {
+open class Shimmer {
     public static func addToViews(_ views : [UIView]) {
         CATransaction.begin()
         views.forEach { $0.ld_addLoader() }

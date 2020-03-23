@@ -42,17 +42,18 @@ class ValidatorsExampleViewController:
 extension ValidatorsExampleViewController: ValidatorsExampleViewDelegator {
     
     func onInvalidEmail(errorMessage: String) {
-        showAlert(title: "Error", message: errorMessage, actions: [okAction])
+        // showAlert(title: "Error", message: errorMessage, actions: [okAction])
     }
     
     func onInvalidPassword(errorMessage: String) {
-        showAlert(title: "Error", message: errorMessage, actions: [okAction])
+        // showAlert(title: "Error", message: errorMessage, actions: [okAction])
     }
     
     func onMisssingValidation() {
-        showAlert(title: "Error", message: "Invalid input data !", actions: [okAction])
+        // showAlert(title: "Error", message: "Invalid input data !", actions: [okAction])
     }
     
-    func onAllValid() { showAlert(title: "", message: "All Valid", actions: [okAction]) }
-    
+    func onAllValid() {
+        // showAlert(title: "", message: "All Valid", actions: [okAction])
+    }
 }

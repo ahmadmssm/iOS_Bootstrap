@@ -46,20 +46,10 @@ open class DefaultConfigurations {
         UINavigationBar.appearance().titleTextAttributes = textApperance
         return self
     }
-   
-    public func disableNotchForIphoneX() -> DefaultConfigurations {
-        NotchArea.instance.spread()
-        return self
-    }
     
-    open func configureAppWindowWithRootNavigationController(window : UIWindow, navController : UINavigationController) -> DefaultConfigurations {
+    open func configureAppWindowWithRootNavigationController(window : UIWindow, viewController : UIViewController) -> DefaultConfigurations {
         // create a basic UIWindow and activate it
-        window.rootViewController = navController
-        window.makeKeyAndVisible()
-        return self
-    }
-    
-    open func configureAppWindow(window : UIWindow) -> DefaultConfigurations {
+        window.rootViewController = viewController
         window.makeKeyAndVisible()
         return self
     }

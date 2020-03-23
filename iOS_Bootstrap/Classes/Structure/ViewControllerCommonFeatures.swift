@@ -5,8 +5,6 @@
 //  Created by Ahmad Mahmoud on 7/24/18.
 //
 
-public protocol ViewControllerCommonFeatures :
-                                              PopUpProtocol,
-                                              InjectableView {}
+public protocol ViewControllerCommonFeatures: InjectableView {}
 
 

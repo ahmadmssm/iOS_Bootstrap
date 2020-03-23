@@ -15,7 +15,7 @@ public extension Session {
         let headers = api.headers?.toAlamofireHttpHeaders()
         let parameters = api.parameters?.values
         let encoding = api.parameters?.encoding ?? JSONEncoding.default
-        let dataRequest = AF.request(fullURL,
+        let dataRequest = self.request(fullURL,
                                      method: method,
                                      parameters: parameters,
                                      encoding: encoding,
@@ -28,7 +28,7 @@ public extension Session {
         let method = api.route.method
         let headers = api.headers?.toAlamofireHttpHeaders()
         let formDataDictionary = api.parameters?.values ?? [:]
-        let uploadRequest = AF.upload(multipartFormData: { multipartFormData in
+        let uploadRequest = self.upload(multipartFormData: { multipartFormData in
             multipartFormData.from(dictionary: formDataDictionary)
         }, to: fullURL, method: method, headers: headers)
         return uploadRequest.validate(statusCode: 200..<300)
@@ -42,7 +42,7 @@ public extension Session {
         let headers = api.headers?.toAlamofireHttpHeaders()
         let parameters = api.parameters?.values
         let encoding = api.parameters?.encoding ?? JSONEncoding.default
-        let downloadRequest = AF.download(fullURL,
+        let downloadRequest = self.download(fullURL,
                                           method: method,
                                           parameters: parameters,
                                           encoding: encoding,

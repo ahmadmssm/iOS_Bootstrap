@@ -1,5 +1,5 @@
 //
-//  Schedulers.swift
+//  RxSchedulers.swift
 //  iOS_Bootstrap
 //
 //  Created by Ahmad Mahmoud on 12/21/18.
@@ -7,7 +7,7 @@
 
 import RxSwift
 
-public struct Schedulers {
+public struct RxSchedulers {
     public static let uiScheduler = MainScheduler.instance
     public static let backgroundConcurrentScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
     public let workerScheduler = ConcurrentDispatchQueueScheduler(qos: .default)

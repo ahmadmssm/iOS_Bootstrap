@@ -253,3 +253,25 @@ public extension UIView {
     }
 }
 
+// Shimmer
+public extension UIView {
+   
+    func addShimmer() {
+        Shimmer.addToViews([self])
+    }
+   
+    func removeShimmer() {
+        Shimmer.removeFromViews([self])
+    }
+}
+
+extension Array where Element: UIView {
+    
+    func addShimmer() {
+        self.forEach { $0.addShimmer() }
+    }
+    
+    func removeShimmer() {
+        self.forEach { $0.removeShimmer() }
+    }
+}

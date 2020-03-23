@@ -59,9 +59,9 @@ open class BaseMVVMView<VM>: UIViewController where VM: BaseMVVMViewModel {
     
     open func initViewModel () -> VM? { return nil }
     
-    open func loadingDidStarted() { showLoadingIndicator(message: "Loading..") }
+    open func showLoading() {}
     
-    open func didFinishedLoading() { hideLoadingIndicator() }
+    open func hideLoading() {}
     
     open func didGetWarning(warningMessage: String) {}
     

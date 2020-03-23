@@ -8,7 +8,7 @@
 import Alamofire
 
 extension Dictionary where Key == String, Value == String {
-    func toAlamofireHttpHeaders() -> HTTPHeaders {
+    public func toAlamofireHttpHeaders() -> HTTPHeaders {
         var header: HTTPHeader? = nil
         var headersArray: [HTTPHeader] = []
         self.forEach { args in

@@ -19,7 +19,7 @@ open class AlamofireRestClient: BaseHTTPClient {
                        interceptor: getRequestInterceptor(),
                        eventMonitors: getEventMonitorsList())
     }()
-        
+            
     public init(_ sessionService: SessionService? = nil,
                 _ loadingIndicatorService: LoadingIndicatorService? = nil) {
         self.sessionService = sessionService
@@ -83,7 +83,7 @@ open class AlamofireRestClient: BaseHTTPClient {
         configuration.allowsCellularAccess = true
         return configuration
     }
-    
+        
     open func getRequestBuilder<API: AlamofireAPI>(api: API) -> DataRequest {
         return alamofireSession.getRequestWith(baseURL: getBaseURL(), api: api)
     }
@@ -91,7 +91,7 @@ open class AlamofireRestClient: BaseHTTPClient {
     open func getMultipartRequestBuilder<API: AlamofireAPI>(api: API) -> UploadRequest {
         return alamofireSession.getUploadRequestWith(baseURL: getBaseURL(), api: api)
     }
-
+    
     // https://stackoverflow.com/questions/41136560/setting-alamofire-custom-destination-file-name-instead-of-using-suggesteddownloa
     open func getDownloadRequestBuilder<API: AlamofireAPI>(api: API,
                                                            downloadDestination: @escaping DownloadRequest.Destination) -> DownloadRequest {
@@ -148,11 +148,10 @@ open class AlamofireRestClient: BaseHTTPClient {
     }
    
     open func canceDownloadRequests() {
-           alamofireSession.session
-               .getTasksWithCompletionHandler({ _, _, downloadTasks in
-                   downloadTasks.forEach { $0.cancel() }
-           })
-       }
+        alamofireSession.session.getTasksWithCompletionHandler({ _, _, downloadTasks in
+            downloadTasks.forEach { $0.cancel() }
+        })
+    }
     
     open func cancelAllRequests() {
         alamofireSession.session.invalidateAndCancel()

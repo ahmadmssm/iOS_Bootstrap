@@ -12,16 +12,16 @@ import iOS_Bootstrap
 extension Observable {
     func applyThreadingConfig() -> Observable {
         return self
-            .subscribeOn(Schedulers.backgroundConcurrentScheduler)
-            .observeOn(Schedulers.uiScheduler)
+            .subscribeOn(RxSchedulers.backgroundConcurrentScheduler)
+            .observeOn(RxSchedulers.uiScheduler)
     }
 }
 
 extension PrimitiveSequence {
     func applyThreadingConfig() -> PrimitiveSequence {
         return self
-            .subscribeOn(Schedulers.backgroundConcurrentScheduler)
-            .observeOn(Schedulers.uiScheduler)
+            .subscribeOn(RxSchedulers.backgroundConcurrentScheduler)
+            .observeOn(RxSchedulers.uiScheduler)
     }
 }
 
@@ -29,7 +29,7 @@ extension PrimitiveSequence {
 extension Completable {
     func applyThreadingConfig() -> Completable {
         return self
-            .subscribeOn(Schedulers.backgroundConcurrentScheduler)
-            .observeOn(Schedulers.uiScheduler)
+            .subscribeOn(RxSchedulers.backgroundConcurrentScheduler)
+            .observeOn(RxSchedulers.uiScheduler)
     }
 }

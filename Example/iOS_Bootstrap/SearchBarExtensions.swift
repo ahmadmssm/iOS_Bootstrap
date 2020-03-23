@@ -16,7 +16,7 @@ extension UISearchBar {
         self.rx
             .text
             .orEmpty.skip(1)
-            .debounce(RxTimeInterval.seconds(Int(1.5)), scheduler: Schedulers.uiScheduler)
+            .debounce(RxTimeInterval.seconds(Int(1.5)), scheduler: RxSchedulers.uiScheduler)
             // Only emits if the current value is different from the last one
             .distinctUntilChanged()
             .subscribe(onNext: { searchText in

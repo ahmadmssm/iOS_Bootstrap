@@ -19,7 +19,7 @@ class HomeViewController:
     override func localizeStrings() {
         self.navigationItem.title = "home".localized()
     }
-        
+            
     func didSelectItem(indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
@@ -35,7 +35,7 @@ class HomeViewController:
             getPresenter().switchAppLanguage()
             break
         case 4:
-           //  navigator.goToValidatorsExampleViewController()
+            // navigator.goToValidatorsExampleViewController()
             break
         default:
             break

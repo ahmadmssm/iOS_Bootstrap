@@ -66,13 +66,9 @@ open class BaseViewController<T, V> :
 
     open func initPresenter () -> T? { return nil }
 
-    open func showLoading() {
-        showLoadingIndicator(message: "Loading..")
-    }
-    
-    open func hideLoading() {
-        hideLoadingIndicator()
-    }
+    open func showLoading() {}
+
+    open func hideLoading() {}
     
     open func didGetWarning(warningMessage: String) {}
     

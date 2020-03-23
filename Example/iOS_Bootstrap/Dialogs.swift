@@ -23,14 +23,16 @@ class Dialogs {
 
     func showLoading(viewController: UIViewController) {
         self.viewController = viewController
-        alertController = UIAlertController(title: nil, message: "loading".localized(), preferredStyle: .alert)
+        self.alertController = UIAlertController(title: nil,
+                                            message: "loading".localized(),
+                                            preferredStyle: .alert)
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
         if #available(iOS 13.0, *) { loadingIndicator.style = .medium }
         else { loadingIndicator.style = .gray }
         loadingIndicator.startAnimating()
-        alertController!.view.addSubview(loadingIndicator)
-        viewController.present(alertController!, animated: true, completion: nil)
+        self.alertController!.view.addSubview(loadingIndicator)
+        self.viewController?.present(alertController!, animated: true, completion: nil)
     }
 
     func hideLoading() {
@@ -38,7 +40,26 @@ class Dialogs {
     }
 
     func hideDialog() {
-        viewController?.dismiss(animated: true, completion: nil)
-        viewController = nil
+        self.viewController?.dismiss(animated: true, completion: nil)
+        self.viewController = nil
+    }
+    
+    func showActionSheet(viewController: UIViewController, title : String?,
+                         message: String?,
+                         actions : [UIAlertAction]) {
+        self.viewController = viewController
+        self.alertController = UIAlertController(title: title,
+                                                 message: message,
+                                                 preferredStyle: .actionSheet)
+        if (!actions.isEmpty) {
+            for action in actions {
+                self.alertController!.addAction(action)
+            }
+        }
+        self.viewController?.present(alertController!, animated: true, completion: nil)
+    }
+    
+    func hideActionSheet() {
+        self.hideDialog()
     }
 }
