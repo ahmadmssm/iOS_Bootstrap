@@ -689,7 +689,7 @@
 			name = "SVG Image";
 			sourceTree = "<group>";
 		};
-		C930E1DE21CD3AE900809FB2 /* ToDoScene */ = {
+		C930E1DE21CD3AE900809FB2 /* ToDoScenes */ = {
 			isa = PBXGroup;
 			children = (
 				C930E1FE21CD780400809FB2 /* Common */,
@@ -698,7 +698,7 @@
 				C930E1E521CD3BDA00809FB2 /* ToDoViewDelegate.swift */,
 				C99685F6241C2E5C006BAE56 /* ToDoRepo.swift */,
 			);
-			name = ToDoScene;
+			name = ToDoScenes;
 			sourceTree = "<group>";
 		};
 		C930E1EB21CD3D8000809FB2 /* TableCell */ = {
@@ -804,7 +804,6 @@
 			isa = PBXGroup;
 			children = (
 				C99685C724180774006BAE56 /* FirstTab */,
-				C930E1DE21CD3AE900809FB2 /* ToDoScene */,
 			);
 			name = TabBarItems;
 			sourceTree = "<group>";
@@ -1024,7 +1023,8 @@
 				C91AF998218CE8BF00BB5559 /* HomeScreen */,
 				C99AA087218844AB001683B8 /* TrendingMoviesScreen */,
 				C99AA088218844E0001683B8 /* CountriesScreen */,
-				C99AA0822187D3AC001683B8 /* WeatherForcastingScreen */,
+				C99AA0822187D3AC001683B8 /* WeatherForcastingScreens */,
+				C930E1DE21CD3AE900809FB2 /* ToDoScenes */,
 			);
 			name = FirstTab;
 			sourceTree = "<group>";
@@ -1137,14 +1137,14 @@
 			name = TabBarScreens;
 			sourceTree = "<group>";
 		};
-		C99AA0822187D3AC001683B8 /* WeatherForcastingScreen */ = {
+		C99AA0822187D3AC001683B8 /* WeatherForcastingScreens */ = {
 			isa = PBXGroup;
 			children = (
 				C91FFF572192F8FC00DFC0CC /* Common */,
 				C9CC0E572192451300AF9D62 /* WeatherFromNetwork */,
 				C99AA089218844F7001683B8 /* WeatherFromGPS */,
 			);
-			name = WeatherForcastingScreen;
+			name = WeatherForcastingScreens;
 			sourceTree = "<group>";
 		};
 		C99AA087218844AB001683B8 /* TrendingMoviesScreen */ = {
