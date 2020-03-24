@@ -6,7 +6,15 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-enum ToDoMode {
+enum ToDoMode: CustomStringConvertible {
+   
     case Active
     case Done
+    
+    var description: String {
+        switch self {
+        case .Active: return Constants.activeToDoEvent
+        case .Done: return  Constants.doneToDoEvent
+        }
+    }
 }

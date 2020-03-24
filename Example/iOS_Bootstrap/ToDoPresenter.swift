@@ -24,7 +24,7 @@ class ToDoPresenter: AppPresenter<ToDoViewDelegate> {
            self.reloadFromScratch()
     }
        
-    private func reloadFromScratch() {
+     func reloadFromScratch() {
         toDoRepo
             .getToDos(mode: mode)
             .subscribe(onSuccess: { [weak self] toDos in
@@ -35,11 +35,35 @@ class ToDoPresenter: AppPresenter<ToDoViewDelegate> {
             .disposed(by: disposeBag)
     }
     
-    func changeToDoStatus(toDo: ToDoCellModel) {
+    func createNewToDo(name: String) {
         toDoRepo
-            .changeToDoStatus(toDo: toDo)
+            .createNewToDo(name: name)
+            .subscribe(onCompleted: { [weak self] in
+                self?.getViewDelegate().didCreateNewToDo()
+                self?.reloadFromScratch()
+        }) { [weak self] error in
+            self?.postError(errorMessage: error.localizedDescription)
+        }
+        .disposed(by: disposeBag)
+    }
+    
+    func update(toDo: ToDoCellModel) {
+        toDoRepo
+            .updateToDo(toDo: toDo)
             .subscribe(onCompleted: { [weak self] in
                 self?.getViewDelegate().didUpdateToDo()
+                self?.reloadFromScratch()
+             }, onError: { [weak self] error in
+                self?.postError(errorMessage: error.localizedDescription)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func delete(toDo: ToDoCellModel, mode: ToDoMode) {
+        toDoRepo
+            .deleteToDo(toDo: toDo, forMode: mode)
+            .subscribe(onCompleted: { [weak self] in
+                self?.getViewDelegate().didDeleteToDo()
                 self?.reloadFromScratch()
              }, onError: { [weak self] error in
                 self?.postError(errorMessage: error.localizedDescription)

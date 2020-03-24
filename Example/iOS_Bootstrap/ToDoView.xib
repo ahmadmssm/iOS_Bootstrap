@@ -38,7 +38,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="createNewListButton:" destination="-1" eventType="touchUpInside" id="8hZ-Ne-arA"/>
+                        <action selector="createNewToDo:" destination="-1" eventType="touchUpInside" id="8hZ-Ne-arA"/>
                     </connections>
                 </button>
             </subviews>

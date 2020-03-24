@@ -9,16 +9,10 @@
 import iOS_Bootstrap
 import Resolver
 
-class GPSWeatherPresenter : BasePresenter<WeatherViewDelegator> {
+class GPSWeatherPresenter: WeatherPresenter {
    
-    @LazyInjected private var repo: WeatherForcastingRepo
-
-    required init(viewDelegate: WeatherViewDelegator) {
-        super.init(viewDelegate: viewDelegate)
-    }
-    
-    func getFiveDaysWeather(lat : Double, longt : Double) {
-        repo
+    override func getFiveDaysWeather(lat: Double, longt: Double) {
+        weatherForcastingRepo
             .get5DaysWeatherForcastBy(lat: lat, longt: longt)
             .subscribe(onSuccess: { [weak self] weatherForcast in
                 self?

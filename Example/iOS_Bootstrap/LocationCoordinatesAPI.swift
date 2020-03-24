@@ -8,12 +8,11 @@
 
 import iOS_Bootstrap
 
-// "http://api.ipstack.com"
 class LocationCoordinatesAPI: AppAPI {
 
     private let ip: String
 
-    var route: Route { return .get("/" + ip) }
+    var route: Route { return .get(Endpoints.locationCoordinates + ip) }
     var parameters: Parameters? { return URLEncoding() => ["access_key" : Constants.ipstackAuthKey] }
 
     init(ip: String) {

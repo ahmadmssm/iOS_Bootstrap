@@ -11,14 +11,14 @@ import iOS_Bootstrap
 
 class WeatherCell: BaseGenericTableViewCell<Forcast> {
     
-    @IBOutlet weak var labelTemperature: UILabel!
-    @IBOutlet weak var labelMinTemperature: UILabel!
-    @IBOutlet weak var labelMaxTemp: UILabel!
-    @IBOutlet weak var labelWindSpeed: UILabel!
-    @IBOutlet weak var labelDate: UILabel!
-    @IBOutlet weak var labelPressure: UILabel!
-    @IBOutlet weak var labelHumidity: UILabel!
-    @IBOutlet weak var imageViewWeather: UIImageView!
+    @IBOutlet private weak var labelTemperature: UILabel!
+    @IBOutlet private weak var labelMinTemperature: UILabel!
+    @IBOutlet private weak var labelMaxTemp: UILabel!
+    @IBOutlet private weak var labelWindSpeed: UILabel!
+    @IBOutlet private weak var labelDate: UILabel!
+    @IBOutlet private weak var labelPressure: UILabel!
+    @IBOutlet private weak var labelHumidity: UILabel!
+    @IBOutlet private weak var imageViewWeather: UIImageView!
     
     override func initCellFrom(cellModel: Forcast) {
         if let temp = cellModel.main?.temp?.toString() {
@@ -47,5 +47,4 @@ class WeatherCell: BaseGenericTableViewCell<Forcast> {
             imageViewWeather.loadImage(with: fullURL!)
         }
     }
-    
 }

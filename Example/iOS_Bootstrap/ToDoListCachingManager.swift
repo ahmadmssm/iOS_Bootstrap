@@ -42,7 +42,7 @@ class ToDoListCachingManager: RealmManager<ToDoListEntity> {
         }
     }
     
-    func getLatestToDoId() -> Maybe<Int> {
+    func getIncrementalToDoId() -> Maybe<Int> {
         return getToDosSortedById().map({ toDoEntityList -> Int in
             var id: Int = 0
             if (toDoEntityList.count > 0 && toDoEntityList.last != nil) {

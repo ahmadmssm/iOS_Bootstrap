@@ -21,7 +21,17 @@ extension Resolver {
         let restClient = Resolver.resolve(RxAlamofireClientProtocol.self)
         return restClient.request(api: api)
     }
-       
+    
+    static func getRxAPI<API: AlamofireAPI>(api: API) -> Single<Any> {
+           let restClient = Resolver.resolve(RxAlamofireClientProtocol.self)
+           return restClient.request(api: api)
+    }
+    
+    static func getDataRxAPI<API: AlamofireAPI>(api: API) -> Single<Data> {
+           let restClient = Resolver.resolve(RxAlamofireClientProtocol.self)
+           return restClient.requesData(api: api)
+    }
+    
     static func getRxAPI<API: AlamofireAPI>(api: API) -> Completable {
         let restClient = Resolver.resolve(RxAlamofireClientProtocol.self)
         return restClient.request(api: api)

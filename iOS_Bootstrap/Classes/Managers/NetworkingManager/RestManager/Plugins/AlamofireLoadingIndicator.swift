@@ -1,5 +1,5 @@
 //
-//  HttpRequestLoadingIndicator.swift
+//  AlamofireLoadingIndicator.swift
 //  iOS_Bootstrap
 //
 //  Created by Ahmad Mahmoud on 3/18/20.
@@ -7,7 +7,7 @@
 
 import Alamofire
 
-open class HttpRequestLoadingIndicator: EventMonitor {
+open class AlamofireLoadingIndicator: EventMonitor {
     
     private let loadingIndicatorService: LoadingIndicatorService
     

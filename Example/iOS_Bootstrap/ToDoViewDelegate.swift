@@ -12,5 +12,5 @@ protocol ToDoViewDelegate: AppViewDelegate {
     func didGetAllToDos(toDos: [ToDoCellModel])
     func didCreateNewToDo()
     func didUpdateToDo()
-    func toDoDidDeleted()
+    func didDeleteToDo()
 }

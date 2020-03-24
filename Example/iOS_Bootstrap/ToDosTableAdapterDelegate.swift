@@ -9,5 +9,7 @@
 import Foundation
 
 protocol ToDosTableAdapterDelegate {
-    func didSelectRow(indexPath: IndexPath)
+    func reload()
+    func didUpdate(toDo: ToDoCellModel)
+    func didDeleteToDoAt(indexPath: IndexPath, toDo: ToDoCellModel)
 }

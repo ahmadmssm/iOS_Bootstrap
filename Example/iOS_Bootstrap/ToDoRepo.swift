@@ -15,7 +15,7 @@ class ToDoRepo {
         
     func createNewToDo(name: String) -> Completable {
         return toDoListManager
-            .getLatestToDoId()
+            .getIncrementalToDoId()
             .map { id -> ToDoListEntity in
                 let toDoEntity: ToDoListEntity = ToDoListEntity()
                 toDoEntity.name = name
@@ -29,12 +29,7 @@ class ToDoRepo {
     }
     
     func updateToDo(toDo: ToDoCellModel) -> Completable {
-           return toDoListManager.updateToDo(toDo: getToToDoCellEntittFrom(toDo: toDo))
-    }
-    
-    func changeToDoStatus(toDo: ToDoCellModel) -> Completable {
-        toDoListManager
-            .updateToDo(toDo: getToToDoCellEntittFrom(toDo: toDo))
+        return toDoListManager.updateToDo(toDo: toDo.getToDoCellEntity())
     }
     
     func getToDos(mode: ToDoMode) -> Single<[ToDoCellModel]> {
@@ -48,49 +43,23 @@ class ToDoRepo {
         return toDoListManager
             .getActiveToDos()
             .map({ toDoEntityList -> [ToDoCellModel] in
-                return self.getToDoCellModeslListFrom(toDoEntites: toDoEntityList)
+                return toDoEntityList.map { toDo -> ToDoCellModel in
+                    return toDo.getToDoCellModel()
+                }
             })
     }
     
     private func getDoneToDos() -> Single<[ToDoCellModel]> {
         return toDoListManager.getFinishedToDos()
             .map({ toDoEntityList -> [ToDoCellModel] in
-                return self.getToDoCellModeslListFrom(toDoEntites: toDoEntityList)
+                return toDoEntityList.map { toDo -> ToDoCellModel in
+                    return toDo.getToDoCellModel()
+                }
             })
     }
     
     func deleteToDo(toDo: ToDoCellModel, forMode: ToDoMode) -> Completable {
-        return toDoListManager.deleteToDo(toDo: getToToDoCellEntittFrom(toDo: toDo))
-    }
-        
-    func deleteToDoByIndex(_ index: Int, _ mode: ToDoMode) -> Completable {
-        toDoListManager
-            .getRecordAtIndex(index: index).asObservable()
-            .flatMap { toDoEntity in self.toDoListManager.deleteToDo(toDo: toDoEntity) }
-            .asCompletable()
-    }
-    
-    private func getToDoCellModeslListFrom(toDoEntites: [ToDoListEntity]) -> [ToDoCellModel] {
-        var toDos: [ToDoCellModel] = []
-        toDoEntites.forEach({ toDoEntity in
-            var toDo = ToDoCellModel ()
-            toDo.id = toDoEntity.id
-            toDo.name = toDoEntity.name
-            toDo.createdAt = DateTimeHelpers.getDateStringFromDate(date: toDoEntity.createdAt)
-            toDo.isDone = toDoEntity.isDone
-            toDos.append(toDo)
-        })
-        return toDos
-    }
-    
-    private func getToToDoCellEntittFrom(toDo: ToDoCellModel) -> ToDoListEntity {
-        let toDoEntity = ToDoListEntity()
-        toDoEntity.id = toDo.id!
-        toDoEntity.name = toDo.name!
-        if let date = DateTimeHelpers.getDateFromDateString(dateString: toDo.createdAt!) {
-            toDoEntity.createdAt = date
-        }
-        toDoEntity.isDone = toDo.isDone!
-        return toDoEntity
+        let predicate = NSPredicate(format: "id == %d", toDo.id!)
+        return toDoListManager.deleteRecord(with: predicate)
     }
 }

@@ -11,8 +11,8 @@ import Resolver
 extension Resolver {
     static func repositoriesModules() {
         register { TrendingMoviesRepo() }
-        register { WeatherForcastingRepo() }
         register { ToDoRepo() }
         register { CountriesRepo() }
+        register { WeatherForcastingRepo() }
     }
 }

@@ -14,14 +14,13 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem: Equatable>: NS
                                                                               EmptyDataSetDelegate,
                                                                               ListingAdapterDelegate {
     //
-    private final var mTableview : TableView!
+    private final var mTableview: TableView!
     private var tableViewDataSource: [CellItem]?
-    private var mNumberOfPages : Int = 0
-    private var mCurrentPage : Int = 1
-    private var hasMore : Bool = false
-    private var firstTime : Bool = true
-    public private(set) var loadingIndicator : UIActivityIndicatorView?
-    
+    private var mNumberOfPages: Int = 0
+    private var mCurrentPage: Int = 1
+    private var hasMore: Bool = false
+    private var firstTime: Bool = true
+    public private(set) var loadingIndicator: UIActivityIndicatorView?
     
     open var dataSource: [CellItem] {
         set {
@@ -324,7 +323,7 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem: Equatable>: NS
     open func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {}
     //
     open func emptyDataSetShouldDisplay(_ scrollView: UIScrollView) -> Bool { return false }
-    open func emptyDataSetShouldAllowTouch(_ scrollView: UIScrollView) -> Bool { return false }
+    open func emptyDataSetShouldAllowTouch(_ scrollView: UIScrollView) -> Bool { return true }
     open func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? { return nil }
     open func customView(forEmptyDataSet scrollView: UIScrollView) -> UIView? { return nil }
     open func backgroundColor(forEmptyDataSet scrollView: UIScrollView) -> UIColor? { return nil }

@@ -32,9 +32,12 @@ class HomeViewController:
             navigator.openToDoViewController()
             break
         case 3:
-            getPresenter().switchAppLanguage()
+            navigator.openWeatherForcastingViewController()
             break
         case 4:
+            getPresenter().switchAppLanguage()
+            break
+        case 5:
             // navigator.goToValidatorsExampleViewController()
             break
         default:

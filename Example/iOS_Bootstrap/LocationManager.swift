@@ -9,11 +9,6 @@
 import MapKit
 import Resolver
 
-protocol LocationManagerDelegate {
-    func didGetLocationCoordinates(lat : Double, longt : Double)
-    func didFailtToGetLocationCoordinates()
-}
-
 class LocationManager {
     
     @LazyInjected private var locationManager: CLLocationManager

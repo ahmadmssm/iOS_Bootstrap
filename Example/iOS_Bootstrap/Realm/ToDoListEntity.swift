@@ -9,6 +9,7 @@
 import RealmSwift
 
 class ToDoListEntity: Object {
+    
     @objc dynamic var id = 0
     @objc dynamic var name: String = ""
     @objc dynamic var createdAt: Date = Date()
@@ -18,4 +19,12 @@ class ToDoListEntity: Object {
     
     override static func primaryKey() -> String? { return "id" }
     
+    func getToDoCellModel() -> ToDoCellModel {
+        var toDo = ToDoCellModel ()
+        toDo.id = self.id
+        toDo.name = self.name
+        toDo.createdAt = DateTimeHelpers.getDateStringFromDate(date: self.createdAt)
+        toDo.isDone = self.isDone
+        return toDo
+    }
 }

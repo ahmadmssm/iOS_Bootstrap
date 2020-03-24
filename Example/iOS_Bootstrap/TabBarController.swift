@@ -31,23 +31,23 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     private func configureTabBarItems() {
-        let firstItem = TrendingMoviesViewController()
-        firstItem.title = "First"
-        let firstNavigationController = GradientNavigationController(rootViewController: firstItem)
-        firstNavigationController.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "side_menu"), selectedImage: #imageLiteral(resourceName: "side_menu"))
-        firstNavigationController.tabBarItem.tag = 0
+//        let firstItem = TrendingMoviesViewController()
+//        firstItem.title = "First"
+//        let firstNavigationController = GradientNavigationController(rootViewController: firstItem)
+//        firstNavigationController.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "side_menu"), selectedImage: #imageLiteral(resourceName: "side_menu"))
+//        firstNavigationController.tabBarItem.tag = 0
         //
         let secondItem = HomeViewController()
         let secondtNavigationController = GradientNavigationController(rootViewController: secondItem)
         secondtNavigationController.tabBarItem = UITabBarItem(title: "", image: nil, selectedImage: nil)
         secondtNavigationController.tabBarItem.tag = 1
         //
-        let thirdItem = TrendingMoviesViewController()
-        let thirdNavigationController = GradientNavigationController(rootViewController: thirdItem)
-        thirdNavigationController.title = "Third"
-        thirdNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
+//        let thirdItem = TrendingMoviesViewController()
+//        let thirdNavigationController = GradientNavigationController(rootViewController: thirdItem)
+//        thirdNavigationController.title = "Third"
+//        thirdNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
         //
-        viewControllers = [firstNavigationController, secondtNavigationController, thirdNavigationController]
+        viewControllers = [secondtNavigationController]
     }
         
     private func configureTabBarCenterButton() {

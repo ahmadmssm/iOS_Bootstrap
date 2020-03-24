@@ -2,13 +2,13 @@
 //  ForcastList.swift
 //  Created on November 5, 2018
 
-struct Forcast : Decodable {
+struct Forcast: Decodable, Equatable {
     
-    let timeStamp : Int?
-    let date : String?
-    let main : Main?
-    let wind : Wind?
-    let additionalData : [AdditionalData]?
+    let timeStamp: Int?
+    let date: String?
+    let main: Main?
+    let wind: Wind?
+    let additionalData: [AdditionalData]?
     
     enum CodingKeys: String, CodingKey {
         case dt
@@ -25,5 +25,13 @@ struct Forcast : Decodable {
         main = try values.decodeIfPresent(Main.self, forKey: .main)
         wind = try values.decodeIfPresent(Wind.self, forKey: .wind)
         additionalData = try values.decodeIfPresent([AdditionalData].self, forKey: .weather)
+    }
+    
+    static func == (lhs: Forcast, rhs: Forcast) -> Bool {
+        return (lhs.timeStamp == rhs.timeStamp &&
+            lhs.date == rhs.date &&
+            lhs.main == rhs.main &&
+            lhs.wind == rhs.wind &&
+            lhs.additionalData == rhs.additionalData)
     }
 }

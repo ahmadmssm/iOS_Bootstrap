@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct Main : Codable {
+struct Main: Codable, Equatable {
     
     let grndLevel : Float?
     let humidity : Float?

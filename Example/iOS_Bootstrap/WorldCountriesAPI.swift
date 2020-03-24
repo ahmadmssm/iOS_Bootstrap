@@ -8,9 +8,8 @@
 
 import iOS_Bootstrap
 
-// https://restcountries.eu/rest/v2
 class WorldCountriesAPI: AppAPI {
-    var route: Route { return .get("/all") }
+    var route: Route { return .get(Endpoints.worldCountries) }
 }
 
 // var sampleData: Data {

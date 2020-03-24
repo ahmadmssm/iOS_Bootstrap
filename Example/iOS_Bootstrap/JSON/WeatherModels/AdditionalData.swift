@@ -6,9 +6,9 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-struct AdditionalData : Decodable {
-    let id : Int?
-    let main : String?
-    let description : String?
-    let icon : String?
+struct AdditionalData: Decodable, Equatable {
+    let id: Int?
+    let main: String?
+    let description: String?
+    let icon: String?
 }

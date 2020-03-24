@@ -67,6 +67,21 @@ class RealmManager<T: Object> {
         }
     }
     
+    func updateRecord(with predicate: NSPredicate) -> Completable {
+        return Completable.create { completable in
+            do {
+                try self.realm.write {
+                    if let recordToUpdate = self.realm.objects(T.self).filter(predicate).first {
+                        self.realm.add(recordToUpdate, update: .modified)
+                        completable(.completed)
+                    }
+                }
+            }
+            catch let error { completable(.error(error)) }
+            return Disposables.create()
+        }
+    }
+    
     func updateRecords(records: [T]) -> Completable {
         return Completable.create { completable in
             do {
@@ -80,12 +95,42 @@ class RealmManager<T: Object> {
         }
     }
     
+    func updateRecords(with predicate: NSPredicate) -> Completable {
+        return Completable.create { completable in
+            do {
+                try self.realm.write {
+                    if let recordsToUpdate = self.realm.objects(T.self).filter(predicate).first {
+                        self.realm.add(recordsToUpdate, update: .modified)
+                        completable(.completed)
+                    }
+                }
+            }
+            catch let error { completable(.error(error)) }
+            return Disposables.create()
+        }
+    }
+    
     func deleteRecord(record: T) -> Completable {
         return Completable.create { completable in
             do {
                 try self.realm.write {
                     self.realm.delete(record.self)
                     completable(.completed)
+                }
+            }
+            catch let error { completable(.error(error)) }
+            return Disposables.create()
+        }
+    }
+    
+    func deleteRecord(with predicate: NSPredicate) -> Completable {
+        return Completable.create { completable in
+            do {
+                try self.realm.write {
+                    if let recordToDelete = self.realm.objects(T.self).filter(predicate).first {
+                        self.realm.delete(recordToDelete)
+                        completable(.completed)
+                    }
                 }
             }
             catch let error { completable(.error(error)) }
@@ -125,6 +170,21 @@ class RealmManager<T: Object> {
         }
     }
     
+    func deleteRecords(with predicate: NSPredicate) -> Completable {
+        return Completable.create { completable in
+            do {
+                try self.realm.write {
+                    if let recordToDelete = self.realm.objects(T.self).filter(predicate).first {
+                        self.realm.delete(recordToDelete)
+                        completable(.completed)
+                    }
+                }
+            }
+            catch let error { completable(.error(error)) }
+            return Disposables.create()
+        }
+    }
+    
     func deleteAllRecords(forObject: T.Type) -> Completable {
         return Completable.create { completable in
             do {
@@ -139,18 +199,31 @@ class RealmManager<T: Object> {
         }
     }
     
-    func getRecordWith(primaryKey: String) -> Observable<T> {
-        return Observable.create { observer in
+    func getRecordWith(primaryKey: String) -> Single<T> {
+        return Single.create { single in
             do {
                 if let result = self.realm.object(ofType: T.self, forPrimaryKey: primaryKey) {
-                    observer.onNext(result)
+                    single(.success(result))
                 }
                 else {
                     let error = NSError(domain: "", code: 1009, userInfo:[ NSLocalizedDescriptionKey: "Record not found in database !"])
-                    observer.onError(error)
+                    single(.error(error))
                 }
             }
-            observer.on(.completed)
+            return Disposables.create()
+        }
+    }
+    
+    func getRecordWith(with predicate: NSPredicate) -> Single<T> {
+        return Single.create { single in
+            do {
+                try self.realm.write {
+                    if let result = self.realm.objects(T.self).filter(predicate).first {
+                        single(.success(result))
+                    }
+                }
+            }
+            catch let error { single(.error(error)) }
             return Disposables.create()
         }
     }
@@ -161,6 +234,20 @@ class RealmManager<T: Object> {
                 let results = self.realm.objects(T.self).filter(filter)
                 single(.success(results.toArray()))
             }
+            return Disposables.create()
+        }
+    }
+    
+    func getRecordsFilteredBy(with predicate: NSPredicate) -> Single<T> {
+        return Single.create { single in
+            do {
+                try self.realm.write {
+                    if let results = self.realm.objects(T.self).filter(predicate).first {
+                        single(.success(results))
+                    }
+                }
+            }
+            catch let error { single(.error(error)) }
             return Disposables.create()
         }
     }

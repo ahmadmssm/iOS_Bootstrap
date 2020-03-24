@@ -13,6 +13,7 @@ class Dialogs {
 
     private var alertController: UIAlertController?
     private weak var viewController: UIViewController?
+    public typealias ToDoClosure = (_ title: String, _ details: String) -> Void
 
     func showDialog(viewController: UIViewController, title: String = "message".localized(), message: String) {
         self.viewController = viewController
@@ -34,14 +35,18 @@ class Dialogs {
         self.alertController!.view.addSubview(loadingIndicator)
         self.viewController?.present(alertController!, animated: true, completion: nil)
     }
-
+    
+    private func hideAletDialog() {
+        self.viewController?.dismiss(animated: true, completion: nil)
+        self.viewController = nil
+    }
+    
     func hideLoading() {
         hideDialog()
     }
 
     func hideDialog() {
-        self.viewController?.dismiss(animated: true, completion: nil)
-        self.viewController = nil
+        hideAletDialog()
     }
     
     func showActionSheet(viewController: UIViewController, title : String?,
@@ -61,5 +66,32 @@ class Dialogs {
     
     func hideActionSheet() {
         self.hideDialog()
+    }
+    
+    func showCreateToDoAlertDialog(viewController: UIViewController, completion: @escaping ToDoClosure) {
+        self.viewController = viewController
+        self.alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        self.alertController!.addTextField { (textField) in
+            textField.placeholder = "Title"
+        }
+        self.alertController!.addTextField { textField in
+            // textField can be customized like this
+            textField.placeholder = "Details"
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { _ in
+            self.hideAletDialog()
+        })
+        let createToDoAction = UIAlertAction(title: "Create new ToDo",
+                                             style: .default,
+                                             handler: { [weak alertController] _ in
+            let title = alertController?.textFields![0].text ?? "N/A"
+            let details = alertController?.textFields![1].text ?? ""
+            completion(title, details)
+
+        })
+        // Alert dialog actions
+        self.alertController!.addAction(cancelAction)
+        self.alertController!.addAction(createToDoAction)
+        self.viewController?.present(alertController!, animated: true, completion: nil)
     }
 }

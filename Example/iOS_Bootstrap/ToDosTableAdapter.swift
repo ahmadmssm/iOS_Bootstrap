@@ -8,7 +8,7 @@
 
 import iOS_Bootstrap
 
-class ToDosTableAdapter: BaseTableViewAdapter<UITableView, ToDoCellModel> {
+class ToDosTableAdapter: BaseTableViewAdapter<UITableView, ToDoCellModel>, ToDoCellDelegate {
     
     private var toDosTableAdapterDelegate: ToDosTableAdapterDelegate!
     
@@ -20,28 +20,42 @@ class ToDosTableAdapter: BaseTableViewAdapter<UITableView, ToDoCellModel> {
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return initCell(cell: ToDoCell.self, indexPath: indexPath)
+        let cell = initCell(cell: ToDoCell.self, indexPath: indexPath)
+        cell.setDelegate(delegate: self)
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        toDosTableAdapterDelegate.didSelectRow(indexPath: indexPath)
+        toDosTableAdapterDelegate.didDeleteToDoAt(indexPath: indexPath, toDo: dataSource[indexPath.row])
     }
     
-    func canEditRow() -> Bool { return true }
-
-//    @available(iOS 11.0, *)
-//       func configureSwipAction(tableView: UITableView, indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//           let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, nil) in
-//               self.removeToDoAtRow(index: indexPath.row)
-//           }
-//           let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
-//           swipeActionConfig.performsFirstActionWithFullSwipe = false
-//           return swipeActionConfig
-//    }
-//
-//    func emptyDataSetShouldDisplay() -> Bool { return self.isEmptyDataSource }
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
-    func emptyDataSetDescriptionText() -> NSAttributedString {
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, nil) in
+            let toDo = self.dataSource[indexPath.row]
+            self.toDosTableAdapterDelegate.didDeleteToDoAt(indexPath: indexPath, toDo: toDo)
+        }
+        let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
+        swipeActionConfig.performsFirstActionWithFullSwipe = false
+        return swipeActionConfig
+    }
+    
+    override func emptyDataSetShouldDisplay(_ scrollView: UIScrollView) -> Bool {
+        return self.dataSource.isEmpty
+    }
+    
+    override func buttonImage(forEmptyDataSet scrollView: UIScrollView, for state: UIControl.State) -> UIImage? {
+        return #imageLiteral(resourceName: "empty_box")
+    }
+    
+    override func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return emptyDataSetDescriptionText()
+    }
+    
+    private func emptyDataSetDescriptionText() -> NSAttributedString {
         let attributes: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key.strokeColor : UIColor.black,
             NSAttributedString.Key.foregroundColor : UIColor.blue,
@@ -49,5 +63,13 @@ class ToDosTableAdapter: BaseTableViewAdapter<UITableView, ToDoCellModel> {
             NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18)
         ]
         return NSAttributedString(string: "No data !", attributes: attributes)
+    }
+    
+    override func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {
+        toDosTableAdapterDelegate.reload()
+    }
+    
+    func didUpdate(toDo: ToDoCellModel) {
+        toDosTableAdapterDelegate.didUpdate(toDo: toDo)
     }
 }

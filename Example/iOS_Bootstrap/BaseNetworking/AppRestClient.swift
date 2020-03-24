@@ -16,11 +16,15 @@ class AppRestClient: RxAlamofireRestClient {
     }
     
     override func getBaseURL() -> String {
-        return "https://api.themoviedb.org/3/"
+        return ""
     }
     
     override func getRefreshTokenAPI() -> BaseRefreTokenAPI? {
         return nil
+    }
+    
+    override func getAdditionalRequestIntercepters() -> [RequestIntercepterProtocol] {
+        return [BaseURLChanger()]
     }
     
     override func shouldEnableLoadingIndicator() -> Bool {

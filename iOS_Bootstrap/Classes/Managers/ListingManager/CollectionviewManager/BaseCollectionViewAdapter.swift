@@ -334,7 +334,7 @@ open class BaseCollectionViewAdapter<CollectionView: UICollectionView, CellItem:
     open func emptyDataSet(_ scrollView: UIScrollView, didTapView view: UIView) {}
     open func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {}
     open func emptyDataSetShouldDisplay(_ scrollView: UIScrollView) -> Bool { return false }
-    open func emptyDataSetShouldAllowTouch(_ scrollView: UIScrollView) -> Bool { return false }
+    open func emptyDataSetShouldAllowTouch(_ scrollView: UIScrollView) -> Bool { return true }
     open func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? { return nil }
     open func customView(forEmptyDataSet scrollView: UIScrollView) -> UIView? { return nil }
     open func backgroundColor(forEmptyDataSet scrollView: UIScrollView) -> UIColor? { return nil }

@@ -21,8 +21,7 @@ extension Resolver {
     static func restClientModules() {
         register { SessionManager() as SessionService }
         register { AlamofireLoader() as LoadingIndicatorService }
-        //
-        register { AppRestClient(resolve(), resolve()) as RxAlamofireClientProtocol }.scope(application)
+        register { (AppRestClient(resolve(), resolve()) as RxAlamofireClientProtocol) }.scope(application)
     }
     
     static func restAPIsModules() {
@@ -34,9 +33,8 @@ extension Resolver {
         register { (_, _) -> Single<[Country]> in
             return getRxAPI(api: WorldCountriesAPI())
         }
-        register { DevicePublicIPAPI() }
-        register { (_, _) -> Single<String> in
-            return getRxAPI(api: DevicePublicIPAPI())
+        register { (_, _) -> Single<Data> in
+            return getDataRxAPI(api: DevicePublicIPAPI())
         }
         register { (_, arg) -> Single<Coordinates> in
             let publicIP = arg as! String

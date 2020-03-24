@@ -7,10 +7,8 @@
 //
 
 import iOS_Bootstrap
-import RxSwift
 
-// https://api.ipify.org?format=json2
 class DevicePublicIPAPI: AppAPI {
-    var route: Route { return .get("/forecast") }
+    var route: Route { return .get(Endpoints.devicePublicIP) }
 }
 

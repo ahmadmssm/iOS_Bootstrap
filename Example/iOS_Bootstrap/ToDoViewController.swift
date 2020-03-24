@@ -20,28 +20,10 @@ class ToDoViewController:
     convenience init(mode: ToDoMode) {
         self.init()
         self.mode = mode
-        listenForToDoCellEvent(forMode: mode)
     }
     
     open override func initPresenter () -> ToDoPresenter? {
         return ToDoPresenter(viewDelegate: self, mode: mode)
-    }
-    
-    private func listenForToDoCellEvent(forMode: ToDoMode) {
-        var event: String!
-        switch self.mode {
-        case .Active?:
-            event = Constants.activeToDoEvent
-            break
-        case .Done?:
-            event = Constants.doneToDoEvent
-            break
-        default: break
-        }
-        EventBus.onMainThread(self, name: event) { result in
-            let toDo: ToDoCellModel = result!.object as! ToDoCellModel
-            // self.getPresenter().updateToDo(toDo: toDo, forMode: self.mode)
-        }
     }
     
     override func viewDidLoad() {
@@ -53,8 +35,16 @@ class ToDoViewController:
         
     }
     
-    func didSelectRow(indexPath: IndexPath) {
-
+    func reload() {
+        self.getPresenter().reloadFromScratch()
+    }
+    
+    func didUpdate(toDo: ToDoCellModel) {
+        self.getPresenter().update(toDo: toDo)
+    }
+    
+    func didDeleteToDoAt(indexPath: IndexPath, toDo: ToDoCellModel) {
+        self.getPresenter().delete(toDo: toDo, mode: mode)
     }
     
     func didGetAllToDos(toDos: [ToDoCellModel]) {
@@ -69,21 +59,13 @@ class ToDoViewController:
         showSuccess(message: "ToDo updated successfully")
     }
     
-    func toDoDidDeleted() {
+    func didDeleteToDo() {
         showSuccess(message: "ToDo deleted successfully")
     }
     
-    func onError(error: String) {
-        showError(errorMessage: error)
+    @IBAction private func createNewToDo(_ sender: UIButton) {
+        dialogs.showCreateToDoAlertDialog(viewController: self) { [weak self] title, details in
+            self?.getPresenter().createNewToDo(name: title)
+        }
     }
-    
-    func removeToDoAtRow(index: Int) {
-        // getPresenter().deleteToDoByIndex(index, mode)
-    }
-    
-    @IBAction private func createNewListButton(_ sender: UIButton) {
-        //  getCreateNewToDoPopUp().showEdit("Create new todo", subTitle: "")
-    }
-    
-    deinit { EventBus.unregister(self) }
 }

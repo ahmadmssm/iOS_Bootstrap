@@ -57,11 +57,16 @@ open class AlamofireRestClient: BaseHTTPClient {
     open func getRequestInterceptor() -> RequestInterceptor? {
         return RequestInterceptor(sessionService: sessionService,
                                   refreTokenAPI: getRefreshTokenAPI(),
+                                  requestIntercepters: getAdditionalRequestIntercepters(),
                                   additionalHeaders: getAdditionalHeaders())
     }
     
     open func getAdditionalHeaders() -> [String : String] {
         return [:]
+    }
+    
+    open func getAdditionalRequestIntercepters() -> [RequestIntercepterProtocol] {
+        return []
     }
     
     open func getEventMonitorsList() -> [EventMonitor] {
@@ -70,7 +75,7 @@ open class AlamofireRestClient: BaseHTTPClient {
             eventMonitors.append(AlamofireLogger())
         }
         if (self.shouldEnableLoadingIndicator() && loadingIndicatorService != nil) {
-            eventMonitors.append(HttpRequestLoadingIndicator(loadingIndicatorService!))
+            eventMonitors.append(AlamofireLoadingIndicator(loadingIndicatorService!))
         }
         return eventMonitors
     }

@@ -13,6 +13,8 @@ class ToDoCell: BaseGenericTableViewCell<ToDoCellModel> {
     @IBOutlet private weak var todoNameLabel: UILabel!
     @IBOutlet private weak var toDoDate: UILabel!
     @IBOutlet private weak var markAsDoneSwitch: UISwitch!
+    //
+    private var delegate: ToDoCellDelegate!
     
     override func initCellFrom(cellModel: ToDoCellModel) {
         if let title = cellModel.name { todoNameLabel.text = "Todo name " + title }
@@ -23,12 +25,12 @@ class ToDoCell: BaseGenericTableViewCell<ToDoCellModel> {
         }
     }
     
-    @objc private func switchValueDidChange(_ sender: UISwitch) {
-        cellModel?.isDone = sender.isOn
-        var event: String = Constants.doneToDoEvent
-        if (sender.isOn) { event = Constants.activeToDoEvent }
-        EventBus.post(event, sender: cellModel)
+    func setDelegate(delegate: ToDoCellDelegate) {
+        self.delegate = delegate
     }
     
-    deinit { EventBus.unregister(self) }
+    @objc private func switchValueDidChange(_ sender: UISwitch) {
+        cellModel.isDone! = !cellModel.isDone!
+        delegate.didUpdate(toDo: cellModel!)
+    }
 }

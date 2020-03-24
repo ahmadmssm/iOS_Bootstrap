@@ -14,7 +14,7 @@ open class RequestInterceptor: Alamofire.RequestInterceptor {
     private let lock: NSLock
     private var sessionService: SessionService?
     private var refreTokenAPI: BaseRefreTokenAPI?
-    private let requestIntercepters: [RequestIntercepter]
+    private let requestIntercepters: [RequestIntercepterProtocol]
     private let additionalHeaders: [String : String]
     private var requestsToRetry: [(RetryResult) -> Void] = []
     private var isFirstTime = true
@@ -24,7 +24,7 @@ open class RequestInterceptor: Alamofire.RequestInterceptor {
     
     init(sessionService: SessionService? = nil,
          refreTokenAPI: BaseRefreTokenAPI? = nil,
-         requestIntercepters: [RequestIntercepter] = [],
+         requestIntercepters: [RequestIntercepterProtocol] = [],
          additionalHeaders: [String : String]) {
         self.refreTokenAPI = refreTokenAPI
         self.sessionService = sessionService
@@ -45,10 +45,16 @@ open class RequestInterceptor: Alamofire.RequestInterceptor {
     
     open func getModifiedURLRequest(_ urlRequest: URLRequest, _ session: Session) -> URLRequest {
         var request = urlRequest
+      //  configureRefreshToken(&request)
         appendAdditionalHeaders(&request)
         appendAdditionalIntercepters(&request, session)
-        configureRefreshToken(&request)
         return request
+    }
+   
+    open func configureRefreshToken(_ urlRequest: inout URLRequest)  {
+        if (sessionService?.hasValidSession() ?? false) {
+               urlRequest.headers.add(.authorization(bearerToken: sessionService!.getAccessToken()))
+        }
     }
     
     open func appendAdditionalHeaders(_ urlRequest: inout URLRequest)  {
@@ -67,12 +73,6 @@ open class RequestInterceptor: Alamofire.RequestInterceptor {
             }
         }
         urlRequest = request
-    }
-    
-    open func configureRefreshToken(_ urlRequest: inout URLRequest)  {
-        if (sessionService?.hasValidSession() ?? false) {
-            urlRequest.headers.add(.authorization(bearerToken: sessionService!.getAccessToken()))
-        }
     }
     
     public func retry(_ request: Request,
@@ -103,38 +103,38 @@ open class RequestInterceptor: Alamofire.RequestInterceptor {
         return previousResponse.statusCode == 401
     }
     
-//    open func refreshToken(completion: @escaping (RetryResult) -> Void) {
-//        guard !isRefreshing else { return }
-//        isRefreshing = true
-//        AF.getRequestWith(baseURL: baseURL!, api: refreTokenAPI!)
-//          .response(queue: .global(qos: .background)) { [weak self] response in
-//            guard let strongSelf = self else { return }
-//            strongSelf.lock.lock(); defer { strongSelf.lock.unlock() }
-//            switch response.result {
-//            case .success(let data):
-//                let newAccessToken = strongSelf.sessionService!.extractTokenFrom(data: data!)
-//                strongSelf.sessionService?.save(accessToken: newAccessToken)
-//                /// After updating the token we can retry the original request.
-//                // Retry every request if there were many concurrent requests
-//                if (strongSelf.requestsToRetry.count > 1) {
-//                    strongSelf.requestsToRetry.forEach { $0(.retry) }
-//                    strongSelf.requestsToRetry.removeAll()
-//                }
-//                else {
-//                    completion(.retry)
-//                }
-//                break
-//            case .failure(let error):
-//                if (strongSelf.requestsToRetry.count > 1) {
-//                    strongSelf.requestsToRetry.forEach { $0(.doNotRetryWithError(error)) }
-//                    strongSelf.requestsToRetry.removeAll()
-//                }
-//                else {
-//                    completion(.doNotRetryWithError(error))
-//                }
-//                break
-//            }
-//            strongSelf.isRefreshing = false
-//        }
-//    }
+    open func refreshToken(completion: @escaping (RetryResult) -> Void) {
+        guard !isRefreshing else { return }
+        isRefreshing = true
+        AF.getRequestWith(baseURL: baseURL!, api: refreTokenAPI!)
+          .response(queue: .global(qos: .background)) { [weak self] response in
+            guard let strongSelf = self else { return }
+            strongSelf.lock.lock(); defer { strongSelf.lock.unlock() }
+            switch response.result {
+            case .success(let data):
+                let newAccessToken = strongSelf.sessionService!.extractTokenFrom(data: data!)
+                strongSelf.sessionService?.save(accessToken: newAccessToken)
+                /// After updating the token we can retry the original request.
+                // Retry every request if there were many concurrent requests
+                if (strongSelf.requestsToRetry.count > 1) {
+                    strongSelf.requestsToRetry.forEach { $0(.retry) }
+                    strongSelf.requestsToRetry.removeAll()
+                }
+                else {
+                    completion(.retry)
+                }
+                break
+            case .failure(let error):
+                if (strongSelf.requestsToRetry.count > 1) {
+                    strongSelf.requestsToRetry.forEach { $0(.doNotRetryWithError(error)) }
+                    strongSelf.requestsToRetry.removeAll()
+                }
+                else {
+                    completion(.doNotRetryWithError(error))
+                }
+                break
+            }
+            strongSelf.isRefreshing = false
+        }
+    }
 }

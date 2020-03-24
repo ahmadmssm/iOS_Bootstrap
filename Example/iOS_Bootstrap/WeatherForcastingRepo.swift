@@ -12,8 +12,8 @@ import iOS_Bootstrap
 
 class WeatherForcastingRepo: Resolving {
     
-    func getPublicIP() -> Single<String> {
-        let devicePublicAPI: Single<String> = resolver.resolve()
+    func getPublicIP() -> Single<Data> {
+        let devicePublicAPI: Single<Data> = resolver.resolve()
         return devicePublicAPI
     }
 
@@ -29,7 +29,10 @@ class WeatherForcastingRepo: Resolving {
     
     func getFiveDaysWeatherForcastWithNetworkProvidedLocation() -> Single<WeatherForcast> {
         return getPublicIP()
-            .flatMap({ publicIP in
+            .map({ data -> String in
+                return String(data: data, encoding: .utf8)!
+            })
+            .flatMap({ publicIP -> Single<Coordinates> in
                 return self.getLocationCoordinatesFor(publicIP: publicIP)
             })
             .flatMap({ coordinates in

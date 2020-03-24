@@ -5,10 +5,10 @@
 
 import Foundation
 
-struct Wind : Codable {
+struct Wind: Codable, Equatable {
     
-    let deg : Float?
-    let speed : Float?
+    let deg: Float?
+    let speed: Float?
     
     enum CodingKeys: String, CodingKey {
         case deg

@@ -47,6 +47,12 @@ class Navigator: BaseNavigator {
         getCurrentViewController()?.navigationController?.pushViewController(viewController,
                                                                              animated: true)
     }
+    
+    func openWeatherForcastingViewController() {
+        let viewController: WeatherPagerController = WeatherPagerController()
+        getCurrentViewController()?.navigationController?.pushViewController(viewController,
+                                                                             animated: true)
+    }
     //
     @available(iOS 10.0, *)
     func goToSideMenuStoryboard() {

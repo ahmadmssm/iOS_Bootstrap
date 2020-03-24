@@ -7,7 +7,7 @@
 
 open class BaseGenericCollectionViewCell<M>: BaseCollectionViewCell {
     
-    public var cellModel: M? { didSet { initCellFrom(cellModel: cellModel!) } }
+    public var cellModel: M! { didSet { initCellFrom(cellModel: cellModel!) } }
     
     open func initCellFrom(cellModel: M) { fatalError("Must Override") }
 

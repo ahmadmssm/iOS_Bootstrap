@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="O5Y-SU-q8W" id="DCZ-TX-ljM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="88.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vef-Z6-B0C" customClass="CardView" customModule="iOS_Bootstrap">
@@ -101,7 +99,6 @@
                     <constraint firstItem="Vef-Z6-B0C" firstAttribute="leading" secondItem="DCZ-TX-ljM" secondAttribute="leadingMargin" constant="-10" id="1on-EI-Y9b"/>
                     <constraint firstItem="Vef-Z6-B0C" firstAttribute="leading" secondItem="DCZ-TX-ljM" secondAttribute="leading" constant="5" id="8Sf-ki-qEN"/>
                     <constraint firstItem="Vef-Z6-B0C" firstAttribute="top" secondItem="DCZ-TX-ljM" secondAttribute="top" constant="6" id="Jdq-ry-BUe"/>
-                    <constraint firstItem="Vef-Z6-B0C" firstAttribute="top" secondItem="DCZ-TX-ljM" secondAttribute="topMargin" constant="-4" id="UdK-5f-cMB"/>
                     <constraint firstAttribute="bottom" secondItem="Vef-Z6-B0C" secondAttribute="bottom" constant="6" id="biw-nK-59t"/>
                     <constraint firstAttribute="trailing" secondItem="Vef-Z6-B0C" secondAttribute="trailing" constant="5" id="ggb-dN-Jpv"/>
                     <constraint firstItem="Vef-Z6-B0C" firstAttribute="centerX" secondItem="DCZ-TX-ljM" secondAttribute="centerX" id="qZY-vF-TBL"/>

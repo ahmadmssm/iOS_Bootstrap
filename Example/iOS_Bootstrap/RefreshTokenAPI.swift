@@ -7,9 +7,8 @@
 //
 
 import iOS_Bootstrap
-import RxSwift
 
 class RefreshTokenAPI: AppAPI {
-    var route: Route { return .get("/refresh/") }
+    var route: Route { return .get(Endpoints.refreshToken) }
     var parameters: Parameters? { return JSONEncoding() => ["old_token" : "oldToken"] }
 }

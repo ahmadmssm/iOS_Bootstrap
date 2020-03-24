@@ -6,8 +6,6 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-import UIKit
-
 class ToDoViewPagerController: DTPagerController {
 
     override func viewDidLoad() {
@@ -19,5 +17,6 @@ class ToDoViewPagerController: DTPagerController {
         let doneTodos = ToDoViewController(mode: ToDoMode.Done)
         doneTodos.title = "Done todos"
         viewControllers = [activeTodos, doneTodos]
+        pageScrollView.isScrollEnabled = false
     }
 }

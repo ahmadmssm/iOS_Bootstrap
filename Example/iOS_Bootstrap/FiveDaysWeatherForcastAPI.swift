@@ -8,13 +8,12 @@
 
 import iOS_Bootstrap
 
-// http://api.openweathermap.org/data/2.5
 class FiveDaysWeatherForcastAPI: AppAPI {
     
     private let lat: Double
     private let longt: Double
 
-    var route: Route { return .get("/forecast") }
+    var route: Route { return .get(Endpoints.fiveDaysWeatherForcast) }
     var parameters: Parameters? {
         return URLEncoding() => [
             "lat" : lat,
