@@ -27,18 +27,26 @@ class NetworkMonitoring: AppDelegateService, ConnectivityStatus {
     
     func didConnectViaWIFI() {
         print("Connectivity : WIFI")
+        notifiy(isConnected: true, isWiFi: true, error: nil)
     }
     
     func didConnectViaCellular() {
         print("Connectivity : 4G")
+        notifiy(isConnected: true, isWiFi: false, error: nil)
     }
     
     func didDisconnect() {
+        notifiy(isConnected: false, isWiFi: nil, error: nil)
         print("Connectivity : Diconnected")
     }
     
     func didGetConnectivityError(errorMessage: String) {
+        notifiy(isConnected: false, isWiFi: nil, error: nil)
         print("Connectivity : Error")
+    }
+    
+    private func notifiy(isConnected: Bool, isWiFi: Bool?, error: String?) {
+        NetworkConnection.shared.notifyAllObservers(isConnected, isWiFi, error)
     }
 }
 

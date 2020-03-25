@@ -1,5 +1,5 @@
 //
-//  BaseViewModel.swift
+//  AppViewModel.swift
 //  DecadeOfMoviesSample
 //
 //  Created by Ahmad Mahmoud on 6/22/19.
@@ -9,10 +9,9 @@
 import iOS_Bootstrap
 import RxSwift
 
-open class AppViewModel: PresenterFunctions {
+open class AppViewModel: PresentationLayerFunctions {
     
     private var disposeBag : DisposeBag!
-    
     
     required public init () {}
 

@@ -25,7 +25,6 @@ extension PrimitiveSequence {
     }
 }
 
-
 extension Completable {
     func applyThreadingConfig() -> Completable {
         return self

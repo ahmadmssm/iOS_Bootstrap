@@ -7,7 +7,9 @@
 
 import UIKit
 
-open class BaseMVVMView<VM>: UIViewController where VM: BaseMVVMViewModel {
+open class BaseMVVMView<VM>: UIViewController,
+                             ViewControllerCommonEnv
+                             where VM: BaseMVVMViewModel {
     
     private var viewModel: VM!
     
@@ -20,25 +22,25 @@ open class BaseMVVMView<VM>: UIViewController where VM: BaseMVVMViewModel {
         localizeStrings()
         getViewModel().viewControllerDidFinishSettingUpUI()
     }
-    //
+
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupViewWillAppearEssentials()
         getViewModel().viewControllerWillRefresh()
     }
-    //
+
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         getViewModel().viewControllerDidAppear()
     }
-    //
+
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if (viewModel != nil) {
             getViewModel().viewControllerWillDisappear()
         }
     }
-    //
+
     override open func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         setupViewDidDisappearEssentials()
@@ -66,6 +68,8 @@ open class BaseMVVMView<VM>: UIViewController where VM: BaseMVVMViewModel {
     open func didGetWarning(warningMessage: String) {}
     
     open func didGetError(errorMessage: String) {}
+    
+    open func notify(_ isConnected: Bool, _ isWiFi: Bool?, _ error: String?) {}
 }
 
 

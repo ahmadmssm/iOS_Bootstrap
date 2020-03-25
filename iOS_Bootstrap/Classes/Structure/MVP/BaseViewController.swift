@@ -9,7 +9,9 @@
 import UIKit
 
 open class BaseViewController<T, V> :
-                            UIViewController, BaseViewDelegate where T: BasePresenter<V> {
+                            UIViewController, BaseViewDelegate,
+                            ViewControllerCommonEnv
+                            where T: BasePresenter<V> {
 
     private var presenter: T!
     open var isPresented: Bool {
@@ -83,6 +85,8 @@ open class BaseViewController<T, V> :
             navigationController?.popViewController(animated: animated!)
         }
     }
+    
+    open func notify(_ isConnected: Bool, _ isWiFi: Bool?, _ error: String?) {}
 }
 
 

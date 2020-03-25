@@ -8,7 +8,7 @@
 
 import RxSwift
 
-open class BasePresenter<T>: PresenterFunctions {
+open class BasePresenter<T>: PresentationLayerFunctions {
     
     private final weak var viewDelegate: BaseViewDelegate!
     public lazy var disposeBag: DisposeBag = { return DisposeBag() }()

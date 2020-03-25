@@ -6,11 +6,11 @@
 //
 
 public protocol InjectableView {
-    func setCurrent(viewController : UIViewController)
+    func setCurrent(viewController: UIViewController?)
 }
 
 public extension InjectableView {
-    func setCurrent(viewController : UIViewController) {
+    func setCurrent(viewController: UIViewController?) {
         BaseNavigator.currentViewController = viewController
     }
 }

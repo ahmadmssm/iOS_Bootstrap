@@ -69,4 +69,8 @@ class AppViewController<P, V>: BaseViewController<P, V> where P: BasePresenter<V
     override func hideLoading() {
         dialogs.hideDialog()
     }
+    
+    override func notify(_ isConnected: Bool, _ isWiFi: Bool?, _ error: String?) {
+        print("@Here")
+    }
 }

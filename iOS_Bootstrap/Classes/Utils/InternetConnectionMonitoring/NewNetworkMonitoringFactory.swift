@@ -12,10 +12,11 @@ import Network
 open class NewNetworkMonitoringFactory: INetworkMonitoring {
    
     private let monitor = NWPathMonitor()
+    private let networkMonitoringQueue = DispatchQueue(label: "Monitor")
+
     static var shared: NewNetworkMonitoringFactory = { return NewNetworkMonitoringFactory() }()
     
     open func startMonitoring(listener: ConnectivityStatus) {
-        let networkMonitoringQueue = DispatchQueue(label: "Monitor")
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
                 if (path.isExpensive) {
