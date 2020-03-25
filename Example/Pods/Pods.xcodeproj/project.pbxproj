@@ -729,7 +729,6 @@
 		BB895C27EB69F5F60FB2D966034A5E03 /* RLMProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = EA483A04915A0276A5C145DEB5438ED5 /* RLMProperty.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BB92872AAAEBFA981792632E4E9F7BB5 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3796B26CC5CB1FF2F34FA240ECC44 /* Optional.swift */; };
 		BC774DFDB21EFE4A586283C21F150D8C /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8305CC3925C02AAA9A70A757D1EA /* Reactive.swift */; };
-		BC8798518D4AA117809E955A4DFE4229 /* TTGSnackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858262339896471820EC58DA4ABB8191 /* TTGSnackbar.swift */; };
 		BE40BA5FC25A99D63650CF28A36E52CE /* MediaList.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B43246283FF898DF550B1521F122DD7 /* MediaList.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BE504662E4CD2101AD02346B1FC535CE /* UIStepper+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37629FAC270C76AFC7F81EC28626AA85 /* UIStepper+Rx.swift */; };
 		BE871BD7CA0913D390BB2B1462CA23C6 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C041E352FEAA912F8A490CE8F3D2C649 /* DDFileLogger.m */; };
@@ -1711,7 +1710,6 @@
 		84DEA24BDC6A3B357DFF2F95075C4D58 /* DataCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
 		8531DDD7F1F81D4C3800C52F2B866205 /* AlamofireLoadingIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlamofireLoadingIndicator.swift; sourceTree = "<group>"; };
 		858261E1F6C780045EEE99E32CCE9E8B /* EmptyDataSetSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EmptyDataSetSource.swift; sourceTree = "<group>"; };
-		858262339896471820EC58DA4ABB8191 /* TTGSnackbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TTGSnackbar.swift; sourceTree = "<group>"; };
 		85E95E8497B1F82D08CC890A6F128B14 /* AddRef.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AddRef.swift; path = RxSwift/Observables/AddRef.swift; sourceTree = "<group>"; };
 		86166851B8627B0D51B417E5AF74500E /* RxCollectionViewDataSourcePrefetchingProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxCollectionViewDataSourcePrefetchingProxy.swift; path = RxCocoa/iOS/Proxies/RxCollectionViewDataSourcePrefetchingProxy.swift; sourceTree = "<group>"; };
 		862CC925F457049873367311831DC04E /* SVGUseElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVGUseElement.h; path = "Source/DOM classes/SVG-DOM/SVGUseElement.h"; sourceTree = "<group>"; };
@@ -3921,7 +3919,6 @@
 				FE01D258D8E9F5FA77C5D14A53D866FC /* CustomView.swift */,
 				C1AC4103D5DD8AA169048C7176C6F519 /* EZLoadingActivity.swift */,
 				47A5D8698FAA00573B9C92AB431A30FB /* LoadingButton.swift */,
-				858262339896471820EC58DA4ABB8191 /* TTGSnackbar.swift */,
 			);
 			name = CustomComponents;
 			path = iOS_Bootstrap/Classes/CustomComponents;
@@ -5442,7 +5439,6 @@
 				F9FA4B1096456527F8106F5878CBA912 /* SwiftErrorExtensions.swift in Sources */,
 				511E2CEB4194C9F29627A73EE6F8665C /* Tableview + Reusablel.swift in Sources */,
 				A35ED0E6869D988EE2195BBCBEDBD45C /* TestingHelpers.swift in Sources */,
-				BC8798518D4AA117809E955A4DFE4229 /* TTGSnackbar.swift in Sources */,
 				D0E1C6D4B812560E9CAF5D15EEAF096B /* UIApplicationExtensions.swift in Sources */,
 				C96B9D90242B6CEA00178FC0 /* NetworkObservable.swift in Sources */,
 				86EB9E270832A1B0FF5BD56D70EF3880 /* UIButtonExtensions.swift in Sources */,

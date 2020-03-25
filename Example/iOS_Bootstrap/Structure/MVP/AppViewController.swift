@@ -71,6 +71,16 @@ class AppViewController<P, V>: BaseViewController<P, V> where P: BasePresenter<V
     }
     
     override func notify(_ isConnected: Bool, _ isWiFi: Bool?, _ error: String?) {
-        print("@Here")
+        if (isConnected) {
+            if (isWiFi != nil && isWiFi == true) {
+                SnackbarUtils.showWith(message: "Connected throught wifi", duration: .middle, backgroundColor: .green)
+            }
+            else {
+                SnackbarUtils.showWith(message: "Connected throught 4G", duration: .middle, backgroundColor: .green)
+            }
+        }
+        else {
+            SnackbarUtils.showWith(message: "No internet connection!", duration: .forever, backgroundColor: .red)
+        }
     }
 }
