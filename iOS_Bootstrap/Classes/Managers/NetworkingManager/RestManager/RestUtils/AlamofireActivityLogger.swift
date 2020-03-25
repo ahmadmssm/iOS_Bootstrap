@@ -12,19 +12,35 @@ class AlamofireActivityLogger {
         #endif
     }
     
-    func debugPrettyPrint(_ item: @autoclosure () -> Any, separator: String = " ", terminator: String = "\n") {
+    func debugPrettyPrint(_ text: String, separator: String = " ", terminator: String = "\n") {
         #if DEBUG
-        // print(String(data: try! JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted), encoding: .utf8)!)
+        if let data = text.data(using: .utf8),
+           let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers),
+           let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) {
+            let formattedString = String(decoding: jsonData, as: UTF8.self)
+            print(formattedString, separator: separator, terminator: terminator)
+        }
+        else {
+            debugPrint(text)
+        }
         #endif
     }
     
-    func JSONResponseDataFormatter(_ data: Data) -> Data {
-        do {
-            let dataAsJSON = try JSONSerialization.jsonObject(with: data)
-            let prettyData =  try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)
-            return prettyData
-        } catch {
-            return data // fallback to original data if it can't be serialized.
+    func debugPrettyPrint(_ data: Data?, separator: String = " ", terminator: String = "\n") {
+        #if DEBUG
+        if (data != nil) {
+            if let json = try? JSONSerialization.jsonObject(with: data!, options: .mutableContainers),
+               let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) {
+                let formattedString = String(decoding: jsonData, as: UTF8.self)
+                print(formattedString, separator: separator, terminator: terminator)
+            }
+            else {
+                debugPrint("Invalid JSON")
+            }
         }
+        else {
+            debugPrint("No response body")
+        }
+        #endif
     }
 }

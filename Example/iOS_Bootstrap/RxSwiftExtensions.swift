@@ -13,7 +13,7 @@ extension Observable {
     func applyThreadingConfig() -> Observable {
         return self
             .subscribeOn(RxSchedulers.backgroundConcurrentScheduler)
-            .observeOn(RxSchedulers.uiScheduler)
+            .observeOn(RxSchedulers.main)
     }
 }
 
@@ -21,7 +21,7 @@ extension PrimitiveSequence {
     func applyThreadingConfig() -> PrimitiveSequence {
         return self
             .subscribeOn(RxSchedulers.backgroundConcurrentScheduler)
-            .observeOn(RxSchedulers.uiScheduler)
+            .observeOn(RxSchedulers.main)
     }
 }
 
@@ -29,6 +29,6 @@ extension Completable {
     func applyThreadingConfig() -> Completable {
         return self
             .subscribeOn(RxSchedulers.backgroundConcurrentScheduler)
-            .observeOn(RxSchedulers.uiScheduler)
+            .observeOn(RxSchedulers.main)
     }
 }

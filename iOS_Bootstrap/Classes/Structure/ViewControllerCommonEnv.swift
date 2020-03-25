@@ -20,7 +20,6 @@ extension ViewControllerCommonEnv {
     }
                  
     public func setupViewDidDisappearEssentials() {
-        setCurrent(viewController: nil)
         NetworkConnection.shared.removeObserver(self)
     }
 }

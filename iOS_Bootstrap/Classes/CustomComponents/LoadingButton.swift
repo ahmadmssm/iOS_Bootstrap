@@ -21,7 +21,6 @@ public enum ActivityIndicatorAlignment: Int {
     }
 }
 
-
 open class LoadingButton: UIButton {
     
     /** Loading */

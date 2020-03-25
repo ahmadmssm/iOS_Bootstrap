@@ -30,7 +30,6 @@ import Foundation
 
 // Dedbounce
 extension DispatchQueue {
-
     /**
      - parameters:
         - target: Object used as the sentinel for de-duplication.
@@ -82,5 +81,4 @@ private extension DispatchQueue {
     static func debounceIdentifierFor(_ object: AnyObject) -> String {
         return "\(Unmanaged.passUnretained(object).toOpaque())." + String(describing: object)
     }
-
 }

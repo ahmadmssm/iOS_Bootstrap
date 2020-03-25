@@ -9,9 +9,9 @@
 import iOS_Bootstrap
 
 class HomeViewController:
-    AppViewController<HomePresenter, HomeViewDelegate>,
-    HomeViewDelegate,
-    HomeCollectionViewDelegate {
+                    AppViewController<HomePresenter, HomeViewDelegate>,
+                    HomeViewDelegate,
+                    HomeCollectionViewDelegate {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     private var collectionViewAdapter: HomeCollectionViewAdapter!

@@ -8,10 +8,10 @@
 import RxSwift
 
 public struct RxSchedulers {
-    public static let uiScheduler = MainScheduler.instance
+    public static let main = MainScheduler.instance
     public static let backgroundConcurrentScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
     public let workerScheduler = ConcurrentDispatchQueueScheduler(qos: .default)
-    public static var imageLoadingScheduler: SerialDispatchQueueScheduler {
+    public static var imageLoading: SerialDispatchQueueScheduler {
         return SerialDispatchQueueScheduler(internalSerialQueueName: "imageLoadingScheduler")
     }
     public static var backgroundSerialScheduler: SerialDispatchQueueScheduler {

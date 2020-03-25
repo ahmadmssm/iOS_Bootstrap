@@ -16,19 +16,27 @@ open class AlamofireLoadingIndicator: EventMonitor {
     }
     
     public func request(_ request: DataRequest, didValidateRequest urlRequest: URLRequest?, response: HTTPURLResponse, data: Data?, withResult result: Request.ValidationResult) {
-        loadingIndicatorService.showLoader()
+        DispatchQueue.main.async {
+            self.loadingIndicatorService.showLoader()
+        }
     }
     
     public func requestDidResume(_ request: Request) {
-        loadingIndicatorService.showLoader()
+        DispatchQueue.main.async {
+            self.loadingIndicatorService.showLoader()
+        }
     }
     
     public func request<Value>(_ request: DataRequest,
                                didParseResponse response: AFDataResponse<Value>) {
-        loadingIndicatorService.hideLoader()
+        DispatchQueue.main.async {
+            self.loadingIndicatorService.hideLoader()
+        }
     }
     
     public func requestDidCancel(_ request: Request) {
-        loadingIndicatorService.hideLoader()
+        DispatchQueue.main.async {
+            self.loadingIndicatorService.hideLoader()
+        }
     }
 }
