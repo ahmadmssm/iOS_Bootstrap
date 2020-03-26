@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TrendingMovieCellModel: Codable, Equatable {
+struct TrendingMovieCellModel: Decodable, Equatable {
     
     private let baseImgURL = "https://image.tmdb.org/t/p/w92"
     private var posterURL: String?
