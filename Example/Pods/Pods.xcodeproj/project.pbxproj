@@ -617,7 +617,6 @@
 		9FE8D70604DF3118BED0B735BCD3B9FA /* UITextField+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7FF7830AACF7E4ACBDABF1F4DB515 /* UITextField+Rx.swift */; };
 		A043CC95868AD45828F9D0D3BF7A020C /* RealmConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CA6E21AF24976857EF4FEBF43C7567 /* RealmConfiguration.swift */; };
 		A0DB8E5CBE9115775D39110B74412883 /* SubscriptionDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106A34BDB1DD9B9F9BD48B25DA2C4F74 /* SubscriptionDisposable.swift */; };
-		A0ECEB3AD8A8802CC49905C557670CF6 /* BaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E35B74E57B208E57530823AA242D50 /* BaseSession.swift */; };
 		A11A926B7AE8089D3C6F77765FBCE961 /* SVGStyleElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F13A216DEA4AE6B52B7AFDC3EB1646F /* SVGStyleElement.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A1506AE0B7785D6C3E4D04077D4323D1 /* SVGKParserGradient.h in Headers */ = {isa = PBXBuildFile; fileRef = 543C1E98E8524593373D514501060AEE /* SVGKParserGradient.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A21122D759C297518611C159F3C760E6 /* ItemEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FEF93AC5F1450D4EF46F8CE9D3A41 /* ItemEvents.swift */; };
@@ -804,7 +803,7 @@
 		D164B4EBCFD63268132ABC7FE39AF5F0 /* TakeLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6161C7A487C73EA3D4542D78C099D94E /* TakeLast.swift */; };
 		D21023A7D0451282667A68033225BF51 /* NumberShouldLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2893647EFE778803B533CA691CF688B /* NumberShouldLessThan.swift */; };
 		D2643DA05DD27FCBA5E73A8E7F28D653 /* sync_file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 060D994D22FE5595BAF1E916D8DE3B7C /* sync_file.cpp */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"4.3.2\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
-		D270B855BA60EEB383287D6F43E0D37C /* StringConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92388DEB93360DE8E313182953C90E64 /* StringConvertable.swift */; };
+		D270B855BA60EEB383287D6F43E0D37C /* StringConvertableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92388DEB93360DE8E313182953C90E64 /* StringConvertableExtensions.swift */; };
 		D272140EB73B29BF8311E999B97C0DAD /* SVGTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DF69E7BE6CC10B8D9A9B67FA7D28C6 /* SVGTransform.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D2A9A6A8A112F10E357CE45DF65DF86A /* RLMSyncUser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5FB142E6AE4ED3D2D8330345E54F80C8 /* RLMSyncUser.mm */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"4.3.2\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
 		D2FD88106BDCE23041DA90BDFB048C39 /* SVGKDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E210DA2C773557DE22B95C0DD3BD79D /* SVGKDefine.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -1460,7 +1459,6 @@
 		437919EE08EC6BFCCBAC3BD346309742 /* libRealmSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRealmSwift.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EC8320E4184CF0EC4FF37C3E9E85A1 /* UISlider+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISlider+Rx.swift"; path = "RxCocoa/iOS/UISlider+Rx.swift"; sourceTree = "<group>"; };
 		44C7BA433CE560C50EFEBA6294B7E1A6 /* SVGKImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVGKImage.m; path = Source/SVGKImage.m; sourceTree = "<group>"; };
-		44E35B74E57B208E57530823AA242D50 /* BaseSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseSession.swift; sourceTree = "<group>"; };
 		455ED3368669A021F489E0F832B0FFE9 /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDContextFilterLogFormatter.m; path = Sources/CocoaLumberjack/Extensions/DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
 		45C3CAE1A1D9C9269E49F86AD8856910 /* Migration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Migration.swift; path = RealmSwift/Migration.swift; sourceTree = "<group>"; };
 		45C63B65A732D56C51B321F7BE5B93C6 /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
@@ -1760,7 +1758,7 @@
 		921BE4A82C4A7A5C72A0C6F8B8FEF200 /* libRealm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRealm.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		921F2A211620841C056A2AF5DFECDCB7 /* AtomicInt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AtomicInt.swift; path = Platform/AtomicInt.swift; sourceTree = "<group>"; };
 		921F61DDAA6A2AE727D5DB42F1EE43A2 /* BaseGenericCollectionViewFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseGenericCollectionViewFooter.swift; sourceTree = "<group>"; };
-		92388DEB93360DE8E313182953C90E64 /* StringConvertable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StringConvertable.swift; sourceTree = "<group>"; };
+		92388DEB93360DE8E313182953C90E64 /* StringConvertableExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StringConvertableExtensions.swift; sourceTree = "<group>"; };
 		92C760D3460E229B8C138C76028B792F /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
 		92D61A7698433795FFE0541E4BB5C5D5 /* _RXKVOObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _RXKVOObserver.h; path = RxCocoa/Runtime/include/_RXKVOObserver.h; sourceTree = "<group>"; };
 		92DE073BA0694EDB11B822503888C322 /* SVGKParserGradient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVGKParserGradient.m; path = "Source/Parsers/Parser Extensions/SVGKParserGradient.m"; sourceTree = "<group>"; };
@@ -3185,7 +3183,6 @@
 				E579FB0B2B2F3BA36C77FE48809A87E1 /* EventBus.swift */,
 				0575A9699FC0F55F27F4A3ECD403AEE5 /* GenericTypes.swift */,
 				BCE0F7ABCA6D22BDAEC257FBA73FEE07 /* JsonSerializer.swift */,
-				92388DEB93360DE8E313182953C90E64 /* StringConvertable.swift */,
 				243D4B1377261A1BF76EFCCB11181348 /* TestingHelpers.swift */,
 				2DDE44E92664EFA3430E682A732B8AA6 /* Error */,
 			);
@@ -3420,6 +3417,7 @@
 		B92DA593D15A69D86FF328151112D706 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				92388DEB93360DE8E313182953C90E64 /* StringConvertableExtensions.swift */,
 				F97665F75C0FC0DA37F76778D94745AE /* BundleExtensions.swift */,
 				916F075F72ED5B33337FFE4ABEFDE9D4 /* CollectionExtensions.swift */,
 				9FDCFAE4FDFE1491AA2023E995A4A062 /* DispatchQueueExtensions.swift */,
@@ -3504,7 +3502,6 @@
 			isa = PBXGroup;
 			children = (
 				F52BBAC97981857F32F56A11AC1C953C /* BasePage.swift */,
-				44E35B74E57B208E57530823AA242D50 /* BaseSession.swift */,
 				22A6BDC15FD926FE05BA0A289D104178 /* BaseUser.swift */,
 			);
 			name = BaseModels;
@@ -5287,7 +5284,6 @@
 				65DA14C5EBD951FAED6BF9B2C0CBB5B0 /* BasePage.swift in Sources */,
 				43D1DE809AC26D01FF4DC1CB6E971200 /* BasePresenter.swift in Sources */,
 				A3268D0C960D760ABD59999439EF5EC9 /* BaseRefreTokenAPI.swift in Sources */,
-				A0ECEB3AD8A8802CC49905C557670CF6 /* BaseSession.swift in Sources */,
 				ED3C67B174A53100274AACC1EF702A47 /* BaseTableViewAdapter.swift in Sources */,
 				5530EC4663B70765761D6DC52128F401 /* BaseTableViewCell.swift in Sources */,
 				22DD9D4CB867E43F58069F16C9D63D75 /* BaseUser.swift in Sources */,
@@ -5427,7 +5423,7 @@
 				C582A2E2BFC08E891BECEAD8CA01A3BD /* String + URLHelpers.swift in Sources */,
 				A38B1FBEC8C9C7B1A40659E1C6DEE931 /* String to Codable object.swift in Sources */,
 				FC066E00F7ED1D661E3F0C59175400D9 /* String to dicrionary.swift in Sources */,
-				D270B855BA60EEB383287D6F43E0D37C /* StringConvertable.swift in Sources */,
+				D270B855BA60EEB383287D6F43E0D37C /* StringConvertableExtensions.swift in Sources */,
 				8C3A4D5D3A455A33878B093C6DCB4515 /* StringIsAlwaysPass.swift in Sources */,
 				0B0724BAF8C6A7CEBEB100FAB7E3A0DC /* StringIsNotOverflowThen.swift in Sources */,
 				474E71933A62EDE8A59A6641D07E8114 /* StringIsNotUnderflowThen.swift in Sources */,

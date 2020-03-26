@@ -119,7 +119,6 @@
 		C9954A3922FCB98300D4ECE9 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A2E22FCB98300D4ECE9 /* AppViewController.swift */; };
 		C9954A3A22FCB98300D4ECE9 /* AppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A2F22FCB98300D4ECE9 /* AppPresenter.swift */; };
 		C9954A4222FCB99A00D4ECE9 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A3D22FCB99900D4ECE9 /* AppViewModel.swift */; };
-		C9954A4322FCB99A00D4ECE9 /* BaseRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A3F22FCB99900D4ECE9 /* BaseRealmModel.swift */; };
 		C9954A4422FCB99A00D4ECE9 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9954A4022FCB99900D4ECE9 /* BaseModel.swift */; };
 		C99685C62417C09E006BAE56 /* FloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685C52417C09E006BAE56 /* FloatExtensions.swift */; };
 		C99685CA24181170006BAE56 /* CountriesTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99685C924181170006BAE56 /* CountriesTableViewAdapter.swift */; };
@@ -325,7 +324,6 @@
 		C9954A2E22FCB98300D4ECE9 /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		C9954A2F22FCB98300D4ECE9 /* AppPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPresenter.swift; sourceTree = "<group>"; };
 		C9954A3D22FCB99900D4ECE9 /* AppViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
-		C9954A3F22FCB99900D4ECE9 /* BaseRealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRealmModel.swift; sourceTree = "<group>"; };
 		C9954A4022FCB99900D4ECE9 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		C99685C52417C09E006BAE56 /* FloatExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtensions.swift; sourceTree = "<group>"; };
 		C99685C924181170006BAE56 /* CountriesTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewAdapter.swift; sourceTree = "<group>"; };
@@ -1025,7 +1023,6 @@
 		C9954A3E22FCB99900D4ECE9 /* BaseModels */ = {
 			isa = PBXGroup;
 			children = (
-				C9954A3F22FCB99900D4ECE9 /* BaseRealmModel.swift */,
 				C9954A4022FCB99900D4ECE9 /* BaseModel.swift */,
 			);
 			path = BaseModels;
@@ -1624,7 +1621,6 @@
 				C93598142416F9A5000976B2 /* CenteredCurvedButtonTabBar.swift in Sources */,
 				C93597FD2416E2D7000976B2 /* AppDelegateExtensions.swift in Sources */,
 				C973B7BB21C436D400B63A69 /* ValidatorsExamplePresenter.swift in Sources */,
-				C9954A4322FCB99A00D4ECE9 /* BaseRealmModel.swift in Sources */,
 				C9AE6B162424F6C500B5FCD9 /* AlamofireLoader.swift in Sources */,
 				C9954A4422FCB99A00D4ECE9 /* BaseModel.swift in Sources */,
 				C930E1F521CD487400809FB2 /* ToDoViewPagerController.swift in Sources */,

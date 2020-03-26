@@ -4,13 +4,13 @@
 
 import Foundation
 
-struct WeatherForcast : Codable {
+struct WeatherForcast: Decodable {
     
-    let city : City?
-    let country : Int?
-    let code : String?
-    let weatherForcastList : [Forcast]?
-    let message : Float?
+    let city: City?
+    let country: Int?
+    let code: String?
+    let weatherForcastList: [Forcast]?
+    let message: Float?
     
     
     enum CodingKeys: String, CodingKey {
@@ -20,9 +20,7 @@ struct WeatherForcast : Codable {
         case list
         case message
     }
-    
-    func encode(to encoder: Encoder) throws {}
-    
+        
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         city = try values.decodeIfPresent(City.self, forKey: .city)
@@ -31,5 +29,4 @@ struct WeatherForcast : Codable {
         weatherForcastList = try values.decodeIfPresent([Forcast].self, forKey: .list)
         message = try values.decodeIfPresent(Float.self, forKey: .message)
     }
-    
 }

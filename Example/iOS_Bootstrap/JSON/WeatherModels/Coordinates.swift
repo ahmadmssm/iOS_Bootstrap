@@ -2,19 +2,15 @@
 //  Coordinates.swift
 //  Created on November 5, 2018
 
-struct Coordinates : Codable {
+struct Coordinates: Decodable {
     
-    var lat : Double?
-    var lon : Double?
+    var lat: Double?
+    var lon: Double?
     
     enum CodingKeys: String, CodingKey {
         case longitude
         case latitude
     }
-    
-    init() {}
-
-    func encode(to encoder: Encoder) throws {}
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)

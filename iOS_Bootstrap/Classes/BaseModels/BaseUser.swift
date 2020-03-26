@@ -9,38 +9,23 @@
 open class BaseUser: Codable {
     
     public var id : String?
-    public var email:String!
-    public var createdAt:String!
-    public var updatedAt:String!
     public var isLoggedIn : Bool?
-    //
-    private static let appId : String = Bundle.main.appId()
-    static let userDefaults : UserDefaultsManager = UserDefaultsManager()
+    public private(set) var userkKey = "_UserProfile"
+ 
+    public init() {}
     
-    required public init() {}
+    open func save() {}
     
-    public final func cacheUser() {
-        BaseUser.userDefaults.setObjectWithKey(value: self, key: BaseUser.appId + "_UserProfile")
+    open func saveWith(key : String) {}
+    
+    open class func get() -> Self? {
+         fatalError("`get()` function should be implemented.")
     }
     
-    public final func cacheUserWithKey(key : String) {
-        BaseUser.userDefaults.setObjectWithKey(value: self, key: key)
+    open class func getWith(key: String) -> Self? {
+         fatalError("`getWith(key: String)` function should be implemented.")
     }
     
-    public static func getCachedUser() -> Self? {
-         return userDefaults.getObjectWithKey(object: self.self, key: appId + "_UserProfile")
-    }
-    
-    public static func getCachedUserWithKey(key : String) -> Self? {
-         return userDefaults.getObjectWithKey(object: self.self, key: key)
-    }
-    
-    public static func clearCachedUser() {
-        userDefaults.deleteSavedValueWithKey(key: appId + "_UserProfile")
-    }
-    
-    public static func clearCachedUserWithKey(key : String) {
-        userDefaults.deleteSavedValueWithKey(key: key)
-    }
+    open class func delete() {}
 }
 

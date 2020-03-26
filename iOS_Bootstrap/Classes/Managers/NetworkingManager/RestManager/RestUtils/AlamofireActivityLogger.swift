@@ -6,6 +6,7 @@
 //
 
 class AlamofireActivityLogger {
+    
     func debugPrint(_ item: @autoclosure () -> Any, separator: String = " ", terminator: String = "\n") {
         #if DEBUG
         print(item(), separator: separator, terminator: terminator)

@@ -10,9 +10,9 @@ import iOS_Bootstrap
 
 class AppErrorModel: Codable {
     
-    private(set) var statusCode : Int?
-    private(set) var description : String?
-    private(set) var response : String?
+    private(set) var statusCode: Int?
+    private(set) var description: String?
+    private(set) var response: String?
 
     enum CodingKeys: String, CodingKey {
         case statusCode

@@ -2,7 +2,7 @@
 //  City.swift
 //  Created on November 5, 2018
 
-struct City : Decodable {
+struct City: Decodable {
     
     let coordinates : Coordinates?
     let country : String?

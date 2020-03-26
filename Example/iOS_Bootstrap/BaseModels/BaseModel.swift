@@ -6,14 +6,12 @@
 //  Copyright © 2019 Ahmad Mahmoud. All rights reserved.
 //
 
-import Realm
 import RealmSwift
 
-class BaseModel: BaseRealmModel, Decodable {
+@objcMembers
+class BaseModel: Object {
     
     required init() { super.init() }
-    
-    required init(from decoder: Decoder) {
-        super.init()
-    }
+
+    required init(from decoder: Decoder) { super.init() }
 }

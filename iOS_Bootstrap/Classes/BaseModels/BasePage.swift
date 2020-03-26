@@ -5,11 +5,11 @@
 //  Created by Ahmad Mahmoud on 9/29/18.
 //
 
-open class BasePage: Codable {
+open class BasePage: Decodable {
     
     public var totalNumberOfItems : Int?
     public var itemsPerPage : Int?
     
-    required public init() {}
+    public init() {}
 }
 
