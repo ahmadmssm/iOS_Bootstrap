@@ -15,8 +15,7 @@ open class AlamofireLoadingIndicator: EventMonitor {
         self.loadingIndicatorService = alamofireLoadingIndicatorService
     }
     
-    public func request(_ request: DataRequest, didValidateRequest urlRequest: URLRequest?, response: HTTPURLResponse, data: Data?, withResult result: Request.ValidationResult) {
-        DispatchQueue.main.async {
+    public func request(_ request: DataRequest, didValidateRequest urlRequest: URLRequest?, response: HTTPURLResponse, data: Data?, withResult result: Request.ValidationResult) {        DispatchQueue.main.async {
             self.loadingIndicatorService.showLoader()
         }
     }

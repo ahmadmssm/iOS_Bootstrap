@@ -90,6 +90,8 @@
 		C95E24DF21FE5A8300621645 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E24DC21FE5A8200621645 /* CloseButton.swift */; };
 		C95E24E021FE5A8300621645 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E24DD21FE5A8200621645 /* TagListView.swift */; };
 		C95E24E121FE5A8300621645 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95E24DE21FE5A8200621645 /* TagView.swift */; };
+		C964B6FA245EEFC7006FFAE8 /* ResolverArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964B6F9245EEFC7006FFAE8 /* ResolverArgs.swift */; };
+		C964B6FD245F3F3C006FFAE8 /* SafeArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964B6FC245F3F3C006FFAE8 /* SafeArrayExtensions.swift */; };
 		C964F15B235B9C64006320AE /* TrendingMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964F159235B9C64006320AE /* TrendingMoviesViewController.swift */; };
 		C964F15C235B9C64006320AE /* TrendingMoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C964F15A235B9C64006320AE /* TrendingMoviesViewController.xib */; };
 		C964F15E235B9D48006320AE /* TrendingMoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964F15D235B9D48006320AE /* TrendingMoviesPresenter.swift */; };
@@ -296,6 +298,8 @@
 		C95E24DC21FE5A8200621645 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		C95E24DD21FE5A8200621645 /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		C95E24DE21FE5A8200621645 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		C964B6F9245EEFC7006FFAE8 /* ResolverArgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolverArgs.swift; sourceTree = "<group>"; };
+		C964B6FC245F3F3C006FFAE8 /* SafeArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeArrayExtensions.swift; sourceTree = "<group>"; };
 		C964F159235B9C64006320AE /* TrendingMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesViewController.swift; sourceTree = "<group>"; };
 		C964F15A235B9C64006320AE /* TrendingMoviesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingMoviesViewController.xib; sourceTree = "<group>"; };
 		C964F15D235B9D48006320AE /* TrendingMoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesPresenter.swift; sourceTree = "<group>"; };
@@ -589,7 +593,6 @@
 				C91FAD0523A4FD6E00F516CF /* UIViewControllerExtensions.swift */,
 				C93597FC2416E2D7000976B2 /* AppDelegateExtensions.swift */,
 				C93597FF2416E5E3000976B2 /* UIColorExtensions.swift */,
-				C91C797E23A5594D00D4952A /* ResolverExtensions.swift */,
 				C93598012416E637000976B2 /* NSAttributedStringExtensions.swift */,
 				C99685C52417C09E006BAE56 /* FloatExtensions.swift */,
 				C99685CF24183D9A006BAE56 /* CAGradientLayerExtensions.swift */,
@@ -615,6 +618,7 @@
 		C91FFF5C2193306900DFC0CC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C964B6FB245F3F11006FFAE8 /* DI */,
 				C925B947241ED80F00148AF6 /* AppDelegateServices */,
 				C99685FF241D6949006BAE56 /* Swift-GSON */,
 				C91FAD0423A4FD5C00F516CF /* Extensions */,
@@ -878,6 +882,16 @@
 				C95E24DE21FE5A8200621645 /* TagView.swift */,
 			);
 			name = "TagListView ";
+			sourceTree = "<group>";
+		};
+		C964B6FB245F3F11006FFAE8 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				C964B6F9245EEFC7006FFAE8 /* ResolverArgs.swift */,
+				C91C797E23A5594D00D4952A /* ResolverExtensions.swift */,
+				C964B6FC245F3F3C006FFAE8 /* SafeArrayExtensions.swift */,
+			);
+			name = DI;
 			sourceTree = "<group>";
 		};
 		C96B9D77242A2EF800178FC0 /* TableView */ = {
@@ -1545,6 +1559,7 @@
 				C9B18B98218C99C4004520F5 /* TrendingMoviesCell.swift in Sources */,
 				C96892EE2428D1F400688E1C /* BaseURLChanger.swift in Sources */,
 				C973B7BD21C436E500B63A69 /* ValidatorsExampleViewDelegator.swift in Sources */,
+				C964B6FD245F3F3C006FFAE8 /* SafeArrayExtensions.swift in Sources */,
 				C91FAD0323A4FC2800F516CF /* PresenterModules.swift in Sources */,
 				C91FAD0623A4FD6E00F516CF /* UIViewControllerExtensions.swift in Sources */,
 				C9968619241D6D8B006BAE56 /* Nillable.swift in Sources */,
@@ -1563,6 +1578,7 @@
 				C99685EC241BF6D7006BAE56 /* SearchBarUtils.swift in Sources */,
 				C91FACFB23A4F33000F516CF /* RestModules.swift in Sources */,
 				C930E1E421CD3BB600809FB2 /* ToDoPresenter.swift in Sources */,
+				C964B6FA245EEFC7006FFAE8 /* ResolverArgs.swift in Sources */,
 				C9BBA26522FD94770052E57A /* FiveDaysWeatherForcastAPI.swift in Sources */,
 				C93E4B582190575300A62059 /* Wind.swift in Sources */,
 				C930E1CD21CC4F4300809FB2 /* SVGImageLoader.swift in Sources */,

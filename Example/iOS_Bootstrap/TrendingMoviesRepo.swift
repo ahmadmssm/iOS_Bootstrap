@@ -19,8 +19,10 @@ class TrendingMoviesRepo: Resolving {
     
     
     func getTrendingMovies() -> Single<[TrendingMovieCellModel]> {
-       let trendingMoviesAPI: Single<MoviesPage> = resolver.resolve(args: page)
-       return trendingMoviesAPI
+//       let trendingMoviesAPI: Single<MoviesPage> = resolver.resolve(args: page)
+//       let trendingMoviesAPI: Single<MoviesPage> = resolver.resolve(arg0: page)
+        let trendingMoviesAPI: Single<MoviesPage> = resolver.resolve(arguments: page)
+        return trendingMoviesAPI
             .map({ [weak self] moviesPage -> [TrendingMovieCellModel] in
                 let moviesList = self?.getMoviesListFrom(moviesPage: moviesPage) ?? []
                 self?.page += 1

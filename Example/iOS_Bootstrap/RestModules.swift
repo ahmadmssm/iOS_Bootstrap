@@ -26,8 +26,10 @@ extension Resolver {
     
     static func restAPIsModules() {
         register { RefreshTokenAPI() }
-        register { (_, args) -> Single<MoviesPage> in
-            let page = args as! Int
+        register { (resolver, args: Any) -> Single<MoviesPage> in
+            // let page = args as! Int
+            // let page: Int = resolver.argument(from: args, argumentNo: 0)!
+            let page: Int = resolver.arg0(from: args)!
             return getRxAPI(api: TrendingMoviesAPI(page: page))
         }
         register { (_, _) -> Single<[Country]> in
@@ -41,8 +43,8 @@ extension Resolver {
             return getRxAPI(api: LocationCoordinatesAPI(ip: publicIP))
         }
         register { (resolver, args) -> Single<WeatherForcast> in
-            let lat: Double? = resolver.firstArgument(from: args!)
-            let longt: Double? = resolver.secondArgument(from: args!)
+            let lat: Double? = resolver.arg0(from: args!)
+            let longt: Double? = resolver.arg1(from: args!)
             return getRxAPI(api: FiveDaysWeatherForcastAPI(lat: lat!, longt: longt!))
         }
     }
