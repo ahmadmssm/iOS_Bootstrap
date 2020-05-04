@@ -28,53 +28,35 @@ class ResolverArgs {
     }
     
     static func arg0<T>(_ args: Any?) -> T? {
-        if let args = args as? ResolverArgs {
-            return args.argsArray[0] as? T
-        }
-        else {
-            return args as? T
-        }
+        return resolveArgFor(index: 0, args)
     }
     
     static func arg1<T>(_ args: Any?) -> T? {
-        if let args = args as? ResolverArgs {
-            return args.argsArray[1] as? T
-        }
-        else {
-            return args as? T
-        }
+        return resolveArgFor(index: 1, args)
     }
     
     static func arg2<T>(_ args: Any?) -> T? {
-        if let args = args as? ResolverArgs {
-            return args.argsArray[2] as? T
-        }
-        else {
-            return args as? T
-        }
+        return resolveArgFor(index: 2, args)
     }
     
     static func arg3<T>(_ args: Any?) -> T? {
-        if let args = args as? ResolverArgs {
-            return args.argsArray[3] as? T
-        }
-        else {
-            return args as? T
-        }
+        return resolveArgFor(index: 3, args)
     }
     
     static func arg4<T>(_ args: Any?) -> T? {
-        if let args = args as? ResolverArgs {
-            return args.argsArray[5] as? T
-        }
-        else {
-            return args as? T
-        }
+        return resolveArgFor(index: 4, args)
     }
     
     static func arg5<T>(_ args: Any?) -> T? {
-        if let args = args as? ResolverArgs {
-            return args.argsArray[4] as? T
+        return resolveArgFor(index: 5, args)
+    }
+    
+    private static func resolveArgFor<T>(index: Int, _ args: Any?) -> T? {
+        if let resolverArgs = args as? ResolverArgs {
+            if let arg = resolverArgs.argsArray[exist: index] as? T {
+                return arg
+            }
+            fatalError("Wrong Argument index")
         }
         else {
             return args as? T
@@ -82,17 +64,9 @@ class ResolverArgs {
     }
     
     static func argument<T>(from args: Any, argumentNo: Int) -> T? {
-        if let args = args as? ResolverArgs {
-            if let arg = args.argsArray[exist: argumentNo] {
-                return arg as? T
-            }
-            return args as? T
+        if let args: T = resolveArgFor(index: argumentNo, args) {
+            return args
         }
-        else if let arg = args as? T {
-            return arg
-        }
-        else {
-            return nil
-        }
+        return args as? T
     }
 }
