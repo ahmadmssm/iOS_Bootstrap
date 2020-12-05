@@ -4,7 +4,7 @@ PODS:
     - CocoaLumberjack/Core (= 3.6.1)
   - CocoaLumberjack/Core (3.6.1)
   - iOS_Bootstrap (1.7.3):
-    - Alamofire (~> 5.0)
+    - Alamofire (~> 5.2)
     - IQKeyboardManagerSwift (= 6.0.4)
   - IQKeyboardManagerSwift (6.0.4)
   - Realm (4.3.2):
@@ -50,7 +50,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
-  iOS_Bootstrap: 5d461874674ef546890a8cb9e4a33418ecce96a5
+  iOS_Bootstrap: 6c894ee1c08e31880744e5ec9a134eb3ce0303ed
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22

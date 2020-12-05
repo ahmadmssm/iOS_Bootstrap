@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
     # s.pod_target_xcconfig = { 'SWIFT_WHOLE_MODULE_OPTIMIZATION' => 'YES',
     # 'APPLICATION_EXTENSION_API_ONLY' => 'YES', 'DEFINES_MODULE' => 'YES' }
     
-    s.dependency 'Alamofire', '~> 5.0'
+    s.dependency 'Alamofire', '~> 5.2'
     s.dependency 'IQKeyboardManagerSwift', '6.0.4'
     s.frameworks = 'Foundation'
     

@@ -22,7 +22,7 @@
   "source_files": "iOS_Bootstrap/Classes/**/*",
   "dependencies": {
     "Alamofire": [
-      "~> 5.0"
+      "~> 5.2"
     ],
     "IQKeyboardManagerSwift": [
       "6.0.4"
