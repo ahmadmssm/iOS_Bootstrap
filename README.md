@@ -189,24 +189,6 @@ self.presentViewController(homeVC, animated:true, completion:nil)
 #### Erros in one place + Human readable errors :
 When you use Alamofire, you get success and fail result and the failure closure will be called only if there is a network failure but if there is a server failure like forexample 404, 500, etc.., they all come in the success closure and you have to handle this by yourself, i found this wierd so if you used the  `GenericErrorHandler` along with the network abstract layer, you can do filter the result of the result closure using the following operators  `.filterSuccessfulStatusCodes()` & `processErrors()`, you can even localise the server messages in case your app. were in different languages.
 
--  Your network request will be something simple like that (A request to get all the world countries) :
-
-```swift
-func getAllCountries (completion: @escaping completionHandler<[Country]>) {
-    networkRequest = apisProvider.rx
-        .request(.getWorldCountries())
-        .filterSuccessfulStatusAndRedirectCodesAndProcessErrors()
-        .refreshAuthenticationTokenIfNeeded(tokenRefreshDelegate: self)
-        .map([Country].self)
-        .subscribe { event in
-            switch event {
-                case .success(let countries):
-                    completion(.success(countries))
-                case .error(let error):
-                    completion(.failure(error.localizedDescription))
-           }
-        }
-}
 ```
 
 #### Unified result closure :

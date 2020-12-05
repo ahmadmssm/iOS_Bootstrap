@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'iOS_Bootstrap'
-    s.version          = '1.7.0'
+    s.version          = '1.7.2'
     s.summary          = 'iOS Bootstrap library'
     
     # This description is used to generate tags and improve search results.
