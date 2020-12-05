@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'iOS_Bootstrap'
-    s.version          = '1.7.2'
+    s.version          = '1.7.3'
     s.summary          = 'iOS Bootstrap library'
     
     # This description is used to generate tags and improve search results.
@@ -28,6 +28,7 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/ahmadmssm/iOS_Bootstrap.git', :tag => s.version.to_s }
     
     s.ios.deployment_target = '10.0'
+    s.ios.deployment_target = '9.1'
     s.swift_version = '4.0'
     s.source_files = 'iOS_Bootstrap/Classes/**/*'
 
@@ -42,9 +43,7 @@ Pod::Spec.new do |s|
     # 'APPLICATION_EXTENSION_API_ONLY' => 'YES', 'DEFINES_MODULE' => 'YES' }
     
     s.dependency 'Alamofire', '~> 5.0'
-    s.dependency 'RxSwift', '~> 5'
     s.dependency 'IQKeyboardManagerSwift', '6.0.4'
     s.frameworks = 'Foundation'
+    
 end
-
-

@@ -32,7 +32,7 @@ public enum AlamofireError: Swift.Error, LocalizedError {
         //
             return message // An error was encountered. Try again.
         case .alamofireError(let message, _):
-            return message // Moya specific error. Error creating Moya Endpoint, parsing JSON/Image/String, invalid status code received.
+            return message // Alamofire specific error. Error creating Alamofire Endpoint, parsing JSON/Image/String, invalid status code received.
         }
     }
     

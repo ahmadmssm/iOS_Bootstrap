@@ -72,32 +72,31 @@ __Networking__, __tableview__, __user defaults__, __data parsing__, __etc...__, 
 26. Image loading  ad caching from network out of the box.
 27. Coordinator design pattern + viewcontrollers naviagator base class + examples
 28. Simple depenfancy injection implementation.
-29. Refresh token plugin for moya.
-30. Refresh token RX Swift plugin.
-31. Real time listeners for token update/expire event ( Work with point 29 or 30 but not alone ).
-32. Out of the box app build variants/schemes ( Debug - Staging - Release ) handler.
-33. Read/Write Files/Folder managers.
-34. In app localization manager ( No need tor restart your app 😉 ).
-35. Cleaner localization syntax.
-36. UI button show/hide loading extension.
-37. Show/hide loading in any vew controller
-38. BaseTableAdapterController,  BaseTableAdapterPresenter, BaseCollectionAdapterController,  BaseCollectionAdapterPresenter to save you somtime and code when you implement table or collection view.
-39. You can call getUserDefaults from BaseController and BasePresenter by default.
-40. Phone number validator string extension.
-41. ViewPager (AKA : Segmented controller) as the one in Android 😁.
-42. Automated Contexts injection.
-43. Added UITabBar controller MVP base class.
-44. Default app delegate configurations using friendly builder pattern methods.
-45. Cancel any newtowrk request out of the box.
-46. Base side menu controller + Base tabbar controller + base table and collection view controller, all with MVP out of the box.
-47. You can hide the notch for iPhone X series 😁.
-48. Side menu out of the box.
-49. Event bus helper class.
-50. Added Skeleton helper class to add shimmering effect to UIViews, table and collection views.
-51. Added dropdown banner component.
-52. Includes RXvalidation.
-53. Out of the box table and collection view live data.
-54. How to use + examples + documentation + references.
+29. Refresh token RX Swift plugin.
+30. Real time listeners for token update/expire event ( Work with point 29 or 30 but not alone ).
+31. Out of the box app build variants/schemes ( Debug - Staging - Release ) handler.
+32. Read/Write Files/Folder managers.
+33. In app localization manager ( No need tor restart your app 😉 ).
+34. Cleaner localization syntax.
+35. UI button show/hide loading extension.
+36. Show/hide loading in any vew controller
+37. BaseTableAdapterController,  BaseTableAdapterPresenter, BaseCollectionAdapterController,  BaseCollectionAdapterPresenter to save you somtime and code when you implement table or collection view.
+38. You can call getUserDefaults from BaseController and BasePresenter by default.
+39. Phone number validator string extension.
+40. ViewPager (AKA : Segmented controller) as the one in Android 😁.
+41. Automated Contexts injection.
+42. Added UITabBar controller MVP base class.
+43. Default app delegate configurations using friendly builder pattern methods.
+44. Cancel any newtowrk request out of the box.
+45. Base side menu controller + Base tabbar controller + base table and collection view controller, all with MVP out of the box.
+46. You can hide the notch for iPhone X series 😁.
+47. Side menu out of the box.
+48. Event bus helper class.
+49. Added Skeleton helper class to add shimmering effect to UIViews, table and collection views.
+50. Added dropdown banner component.
+51. Includes RXvalidation.
+52. Out of the box table and collection view live data.
+53. How to use + examples + documentation + references.
 
 
 ## Upcoming features
@@ -241,24 +240,22 @@ All you have to do is to import the library instead of importing `iOS_Bootstrap`
 The following awesome libraries are used as dependancies in my pod :
 
 1. [Alamofire](https://github.com/Alamofire/Foundation).
-2. [Moya](https://github.com/Moya/Moya).
-3. [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager).
-4. [Nuke](https://github.com/kean/Nuke)
-5. [SCLAlertView](https://github.com/vikmeup/SCLAlertView-Swift).
+2. [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager).
+3. [Nuke](https://github.com/kean/Nuke)
+4. [SCLAlertView](https://github.com/vikmeup/SCLAlertView-Swift).
 
 In addition, the following Repos helped me alot either by including their codes directly into my pod or using some portion of their codes to improve my library or to learn something new so __**thank you**__ for sharing your awesome codes for free to the community.
 
 1. [EZLoadingActivity](https://github.com/goktugyil/EZLoadingActivity).
-2. [MoyaSugar](https://github.com/devxoul/MoyaSugar).
-3. [Lucid](https://github.com/levibostian/Lucid).
-4. [ActionSheetPicker-3.0](https://github.com/skywinder/ActionSheetPicker-3.0).
-5. [ADTPagerController](https://github.com/tungvoduc/DTPagerController).
-6. [Bartinter](https://github.com/MaximKotliar/Bartinter).
-7. [SlideMenuControllerSwift](https://github.com/dekatotoro/SlideMenuControllerSwift).
-8. [HairPowder](https://github.com/intmain/HairPowder).
-9. [SwiftEventBus](https://github.com/cesarferreira/SwiftEventBus).
-10. [BRYXBanner](https://github.com/bryx-inc/BRYXBanner)
-11. [RxValidator](https://github.com/vbmania/RxValidator)
+2. [Lucid](https://github.com/levibostian/Lucid).
+3. [ActionSheetPicker-3.0](https://github.com/skywinder/ActionSheetPicker-3.0).
+4. [ADTPagerController](https://github.com/tungvoduc/DTPagerController).
+5. [Bartinter](https://github.com/MaximKotliar/Bartinter).
+6. [SlideMenuControllerSwift](https://github.com/dekatotoro/SlideMenuControllerSwift).
+7. [HairPowder](https://github.com/intmain/HairPowder).
+8. [SwiftEventBus](https://github.com/cesarferreira/SwiftEventBus).
+9. [BRYXBanner](https://github.com/bryx-inc/BRYXBanner)
+10. [RxValidator](https://github.com/vbmania/RxValidator)
 
 
 ## Help me improve the documentation
