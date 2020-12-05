@@ -23,7 +23,7 @@ class TrendingMoviesViewController:
     }
      
     override func initPresenter() -> TrendingMoviesPresenter {
-        return  resolver.resolve(args: self)
+        return resolver.resolve(args: self)
     }
     
     override func localizeStrings() {

@@ -50,6 +50,11 @@ extension Resolver {
         return resolve(type, name: name, args: args)
     }
     
+    // This can be used if only one one argument is passed
+    func arg<T>(from args: Any) -> T? {
+        return ResolverArgs.arg0(args)
+    }
+    
     func arg0<T>(from args: Any) -> T? {
         return ResolverArgs.arg0(args)
     }

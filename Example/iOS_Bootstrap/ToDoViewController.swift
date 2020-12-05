@@ -23,7 +23,8 @@ class ToDoViewController:
     }
     
     open override func initPresenter () -> ToDoPresenter? {
-        return ToDoPresenter(viewDelegate: self, mode: mode)
+        // return ToDoPresenter(viewDelegate: self, mode: mode) 
+        return resolver.optional(arguments: self, mode!)
     }
     
     override func viewDidLoad() {

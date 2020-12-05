@@ -11,7 +11,7 @@ class ResolverArgs {
     private var argsArray: [Any?] = []
     
     init(args: Any...) {
-        self.argsArray = args.compactMap { ($0 as? [Any])?.first }
+        self.argsArray = args.map { $0 as! [Any] }.first ?? [Any]()
     }
     
     init<T0, T1, T2, T3, T4, T5>(arg0: T0? = nil,
