@@ -16,7 +16,7 @@
     "tag": "1.7.3"
   },
   "platforms": {
-    "ios": "9.1"
+    "ios": "10.0"
   },
   "swift_versions": "4.0",
   "source_files": "iOS_Bootstrap/Classes/**/*",
@@ -26,6 +26,9 @@
     ],
     "IQKeyboardManagerSwift": [
       "6.0.4"
+    ],
+    "RxSwift": [
+      "~> 6.0.0-rc.2"
     ]
   },
   "frameworks": "Foundation",

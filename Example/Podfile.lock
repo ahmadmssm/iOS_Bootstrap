@@ -6,6 +6,7 @@ PODS:
   - iOS_Bootstrap (1.7.3):
     - Alamofire (~> 5.2)
     - IQKeyboardManagerSwift (= 6.0.4)
+    - RxSwift (~> 6.0.0-rc.2)
   - IQKeyboardManagerSwift (6.0.4)
   - Realm (4.3.2):
     - Realm/Headers (= 4.3.2)
@@ -13,12 +14,12 @@ PODS:
   - RealmSwift (4.3.2):
     - Realm (= 4.3.2)
   - Resolver (1.1.2)
-  - RxCocoa (5.0.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxRelay (5.1.0):
-    - RxSwift (~> 5)
-  - RxSwift (5.0.1)
+  - RxCocoa (6.0.0-rc.2):
+    - RxRelay (= 6.0.0-rc.2)
+    - RxSwift (= 6.0.0-rc.2)
+  - RxRelay (6.0.0-rc.2):
+    - RxSwift (= 6.0.0-rc.2)
+  - RxSwift (6.0.0-rc.2)
   - SVGKit (2.1.1):
     - CocoaLumberjack (~> 3.0)
 
@@ -27,7 +28,7 @@ DEPENDENCIES:
   - Realm
   - RealmSwift
   - Resolver
-  - RxCocoa (~> 5)
+  - RxCocoa (~> 6.0.0-rc.2)
   - SVGKit
 
 SPEC REPOS:
@@ -50,16 +51,16 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
-  iOS_Bootstrap: 6c894ee1c08e31880744e5ec9a134eb3ce0303ed
+  iOS_Bootstrap: 858843c13cd84d7af381b0abe3e2378b3f73ff6a
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
   Resolver: e04ca5a9a19906f2e5cdceb2b90edd3b5daed049
-  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
-  RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  RxCocoa: 38445a25751be5907f52f7ea02c137f52ce2e7f2
+  RxRelay: b9e2483e83f46e4e7bf1234c6fe418e5c2eaf825
+  RxSwift: ada35be6643bedf6881cdbd6bbfb27aeea527670
   SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
 
-PODFILE CHECKSUM: e1249189451245f439e303b789f1c6d2e5c6b289
+PODFILE CHECKSUM: 7de946c8ebc4b1538a440847e4819c64655d991c
 
 COCOAPODS: 1.10.0

@@ -20,13 +20,13 @@ open class RxAlamofireRestClient: AlamofireRestClient, RxAlamofireClientProtocol
                             single(.success(responseObject))
                             break
                         case .failure(let error):
-                            single(.error(error))
+                            single(.failure(error))
                             break
                         }
                 }
             }
             else {
-                single(.error(RestUtils.rxAlamofireUnknownError))
+                single(.failure(RestUtils.rxAlamofireUnknownError))
             }
             return Disposables.create()
         }
@@ -42,13 +42,13 @@ open class RxAlamofireRestClient: AlamofireRestClient, RxAlamofireClientProtocol
                             single(.success(responseObject))
                             break
                         case .failure(let error):
-                            single(.error(error))
+                            single(.failure(error))
                             break
                         }
                     })
             }
             else {
-                single(.error(RestUtils.rxAlamofireUnknownError))
+                single(.failure(RestUtils.rxAlamofireUnknownError))
             }
             return Disposables.create()
         }
@@ -64,13 +64,13 @@ open class RxAlamofireRestClient: AlamofireRestClient, RxAlamofireClientProtocol
                             single(.success(responseObject))
                             break
                         case .failure(let error):
-                            single(.error(error))
+                            single(.failure(error))
                             break
                         }
                     })
             }
             else {
-                single(.error(RestUtils.rxAlamofireUnknownError))
+                single(.failure(RestUtils.rxAlamofireUnknownError))
             }
             return Disposables.create()
         }
@@ -189,13 +189,13 @@ open class RxAlamofireRestClient: AlamofireRestClient, RxAlamofireClientProtocol
                             single(.success(responseObject))
                             break
                         case .failure(let error):
-                            single(.error(error))
+                            single(.failure(error))
                             break
                         }
                 }
             }
             else {
-                single(.error(RestUtils.rxAlamofireUnknownError))
+                single(.failure(RestUtils.rxAlamofireUnknownError))
             }
             return Disposables.create()
         }
@@ -211,13 +211,13 @@ open class RxAlamofireRestClient: AlamofireRestClient, RxAlamofireClientProtocol
                             single(.success(responseObject))
                             break
                         case .failure(let error):
-                            single(.error(error))
+                            single(.failure(error))
                             break
                         }
                     })
             }
             else {
-                single(.error(RestUtils.rxAlamofireUnknownError))
+                single(.failure(RestUtils.rxAlamofireUnknownError))
             }
             return Disposables.create()
         }
@@ -233,13 +233,13 @@ open class RxAlamofireRestClient: AlamofireRestClient, RxAlamofireClientProtocol
                             single(.success(responseObject))
                             break
                         case .failure(let error):
-                            single(.error(error))
+                            single(.failure(error))
                             break
                         }
                     })
             }
             else {
-                single(.error(RestUtils.rxAlamofireUnknownError))
+                single(.failure(RestUtils.rxAlamofireUnknownError))
             }
             return Disposables.create()
         }
@@ -364,13 +364,13 @@ open class RxAlamofireRestClient: AlamofireRestClient, RxAlamofireClientProtocol
                             single(.success(responseObject))
                             break
                         case .failure(let error):
-                            single(.error(error))
+                            single(.failure(error))
                             break
                         }
                 }
             }
             else {
-                single(.error(RestUtils.rxAlamofireUnknownError))
+                single(.failure(RestUtils.rxAlamofireUnknownError))
             }
             return Disposables.create()
         }
@@ -386,13 +386,13 @@ open class RxAlamofireRestClient: AlamofireRestClient, RxAlamofireClientProtocol
                             single(.success(responseObject))
                             break
                         case .failure(let error):
-                            single(.error(error))
+                            single(.failure(error))
                             break
                         }
                     })
             }
             else {
-                single(.error(RestUtils.rxAlamofireUnknownError))
+                single(.failure(RestUtils.rxAlamofireUnknownError))
             }
             return Disposables.create()
         }
@@ -408,13 +408,13 @@ open class RxAlamofireRestClient: AlamofireRestClient, RxAlamofireClientProtocol
                             single(.success(responseObject))
                             break
                         case .failure(let error):
-                            single(.error(error))
+                            single(.failure(error))
                             break
                         }
                     })
             }
             else {
-                single(.error(RestUtils.rxAlamofireUnknownError))
+                single(.failure(RestUtils.rxAlamofireUnknownError))
             }
             return Disposables.create()
         }

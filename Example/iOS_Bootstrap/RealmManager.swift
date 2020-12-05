@@ -207,7 +207,7 @@ class RealmManager<T: Object> {
                 }
                 else {
                     let error = NSError(domain: "", code: 1009, userInfo:[ NSLocalizedDescriptionKey: "Record not found in database !"])
-                    single(.error(error))
+                    single(.failure(error))
                 }
             }
             return Disposables.create()
@@ -223,7 +223,7 @@ class RealmManager<T: Object> {
                     }
                 }
             }
-            catch let error { single(.error(error)) }
+            catch let error { single(.failure(error)) }
             return Disposables.create()
         }
     }
@@ -232,7 +232,7 @@ class RealmManager<T: Object> {
         return Single.create { single in
             do {
                 let results = self.realm.objects(T.self).filter(filter)
-                single(.success(results.toArray()))
+                // single(.success(results.toArray()))
             }
             return Disposables.create()
         }
@@ -247,7 +247,7 @@ class RealmManager<T: Object> {
                     }
                 }
             }
-            catch let error { single(.error(error)) }
+            catch let error { single(.failure(error)) }
             return Disposables.create()
         }
     }
@@ -285,7 +285,7 @@ class RealmManager<T: Object> {
         return Single.create { single in
             do {
                 let results = self.realm.objects(T.self)
-                single(.success(results.toArray()))
+               // single(.success(results.toArray()))
             }
             return Disposables.create()
         }

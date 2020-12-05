@@ -3,7 +3,7 @@ platform :ios, '13.1'
 
 target 'iOS_Bootstrap_Example' do
   pod 'iOS_Bootstrap', :path => '../'
-  pod 'RxCocoa', '~> 5'
+  pod 'RxCocoa', '~> 6.0.0-rc.2'
   pod 'Realm', :modular_headers => true
   pod 'RealmSwift', :modular_headers => true
   pod 'SVGKit', :modular_headers => true

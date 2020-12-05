@@ -1,7 +1,7 @@
-<img src="https://raw.githubusercontent.com/ReactiveX/RxSwift/master/assets/Rx_Logo_M.png" alt="Miss Electric Eel 2016" width="36" height="36"> RxSwift: ReactiveX for Swift
+<img src="https://raw.githubusercontent.com/ReactiveX/RxSwift/main/assets/Rx_Logo_M.png" alt="Miss Electric Eel 2016" width="36" height="36"> RxSwift: ReactiveX for Swift
 ======================================
 
-[![Travis CI](https://travis-ci.org/ReactiveX/RxSwift.svg?branch=master)](https://travis-ci.org/ReactiveX/RxSwift) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux-333333.svg) [![pod](https://img.shields.io/cocoapods/v/RxSwift.svg)](https://cocoapods.org/pods/RxSwift) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+[![Build Status](https://github.com/ReactiveX/RxSwift/workflows/RxSwift/badge.svg?branch=main)](https://actions-badge.atrox.dev/ReactiveX/RxSwift/goto) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux-333333.svg) [![pod](https://img.shields.io/cocoapods/v/RxSwift.svg)](https://cocoapods.org/pods/RxSwift) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
 Rx is a [generic abstraction of computation](https://youtu.be/looJcaeboBY) expressed through `Observable<Element>` interface.
 
@@ -50,7 +50,7 @@ KVO observing, async operations and streams are all unified under [abstraction o
 
 ###### ... understand the structure
 
-RxSwift comprises five separate components depending on eachother in the following way:
+RxSwift comprises five separate components depending on each other in the following way:
 
 ```none
 ┌──────────────┐    ┌──────────────┐
@@ -67,8 +67,8 @@ RxSwift comprises five separate components depending on eachother in the followi
 ```
 
 * **RxSwift**: The core of RxSwift, providing the Rx standard as (mostly) defined by [ReactiveX](https://reactivex.io). It has no other dependencies.
-* **RxCocoa**: Provides Cocoa-specific capabilities for general iOS/macOS/watchOS & tvOS app development, such as Binders, Traits, and much more. It depends on both `RxSwift` and `RxRelay`.
-* **RxRelay**: Provides `PublishRelay` and `BehaviorRelay`, two [simple wrappers around Subjects](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Subjects.md#relays). It depends on `RxSwift`. 
+* **RxCocoa**: Provides Cocoa-specific capabilities for general iOS/macOS/watchOS & tvOS app development, such as Shared Sequences, Traits, and much more. It depends on both `RxSwift` and `RxRelay`.
+* **RxRelay**: Provides `PublishRelay`, `BehaviorRelay` and `ReplayRelay`, three [simple wrappers around Subjects](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Subjects.md#relays). It depends on `RxSwift`. 
 * **RxTest** and **RxBlocking**: Provides testing capabilities for Rx-based systems. It depends on `RxSwift`.
 
 ###### ... find compatible
@@ -102,9 +102,9 @@ let searchResults = searchBar.rx.text.orEmpty
             return .just([])
         }
         return searchGitHub(query)
-            .catchErrorJustReturn([])
+            .catchAndReturn([])
     }
-    .observeOn(MainScheduler.instance)</pre></div></td>
+    .observe(on: MainScheduler.instance)</pre></div></td>
   </tr>
   <tr>
     <td>... then bind the results to your tableview</td>
@@ -124,16 +124,16 @@ searchResults
 
 ## Requirements
 
-* Xcode 10.2
-* Swift 5.0
+* Xcode 12.x
+* Swift 5.x
 
-For Xcode 10.1 and below, [use RxSwift 4.5](https://github.com/ReactiveX/RxSwift/releases/tag/4.5.0).
+For Xcode 11 and below, [use RxSwift 5.x](https://github.com/ReactiveX/RxSwift/releases/tag/5.1.1).
 
 ## Installation
 
-Rx doesn't contain any external dependencies.
+RxSwift doesn't contain any external dependencies.
 
-These are currently the supported options:
+These are currently the supported installation options:
 
 ### Manual
 
@@ -146,14 +146,14 @@ Open Rx.xcworkspace, choose `RxExample` and hit run. This method will build ever
 use_frameworks!
 
 target 'YOUR_TARGET_NAME' do
-    pod 'RxSwift', '~> 5'
-    pod 'RxCocoa', '~> 5'
+    pod 'RxSwift', '6.0.0-rc.2'
+    pod 'RxCocoa', '6.0.0-rc.2'
 end
 
 # RxTest and RxBlocking make the most sense in the context of unit/integration tests
 target 'YOUR_TESTING_TARGET' do
-    pod 'RxBlocking', '~> 5'
-    pod 'RxTest', '~> 5'
+    pod 'RxBlocking', '6.0.0-rc.2'
+    pod 'RxTest', '6.0.0-rc.2'
 end
 ```
 
@@ -163,14 +163,19 @@ Replace `YOUR_TARGET_NAME` and then, in the `Podfile` directory, type:
 $ pod install
 ```
 
-### [Carthage](https://github.com/Carthage/Carthage)
+### XCFrameworks
 
-Officially supported: Carthage 0.33 and up.
+Each release starting with RxSwift 6 includes `*.xcframework` framework binaries.
+Simply drag the needed framework binaries to your **Frameworks, Libraries, and Embedded Content** section under your target's **General** tab.
+
+<img src="https://raw.githubusercontent.com/ReactiveX/RxSwift/main/assets/xcframeworks.png" alt="XCFrameworks instructions" width="65%">
+
+### [Carthage](https://github.com/Carthage/Carthage)
 
 Add this to `Cartfile`
 
 ```
-github "ReactiveX/RxSwift" ~> 5.0
+github "ReactiveX/RxSwift" "6.0.0-rc.2"
 ```
 
 ```bash
@@ -186,10 +191,12 @@ If you wish to build RxSwift as a Static Library using Carthage you may use the 
 ```bash
 carthage update RxSwift --platform iOS --no-build
 sed -i -e 's/MACH_O_TYPE = mh_dylib/MACH_O_TYPE = staticlib/g' Carthage/Checkouts/RxSwift/Rx.xcodeproj/project.pbxproj
-carthage build RxAlamofire --platform iOS
+carthage build RxSwift --platform iOS
 ```
 
 ### [Swift Package Manager](https://github.com/apple/swift-package-manager)
+
+> **Note**: There is a critical cross-dependency bug affecting many projects including RxSwift in Swift Package Manager. We've [filed a bug (SR-12303)](https://bugs.swift.org/browse/SR-12303) in early 2020 but have eno answer yet. Your mileage may vary.
 
 Create a `Package.swift` file.
 
@@ -201,7 +208,7 @@ import PackageDescription
 let package = Package(
   name: "RxTestProject",
   dependencies: [
-    .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "5.0.0")
+    .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.0.0-rc.2"))
   ],
   targets: [
     .target(name: "RxTestProject", dependencies: ["RxSwift", "RxCocoa"])
@@ -228,7 +235,7 @@ $ git submodule add git@github.com:ReactiveX/RxSwift.git
 ```
 
 * Drag `Rx.xcodeproj` into Project Navigator
-* Go to `Project > Targets > Build Phases > Link Binary With Libraries`, click `+` and select `RxSwift-[Platform]` and `RxCocoa-[Platform]` targets
+* Go to `Project > Targets > Build Phases > Link Binary With Libraries`, click `+` and select `RxSwift`, `RxCocoa` and `RxRelay` targets
 
 ## References
 
@@ -238,7 +245,7 @@ $ git submodule add git@github.com:ReactiveX/RxSwift.git
 * [Boxue.io RxSwift Online Course](https://boxueio.com/series/rxswift-101) (Chinese 🇨🇳)
 * [Erik Meijer (Wikipedia)](http://en.wikipedia.org/wiki/Erik_Meijer_%28computer_scientist%29)
 * [Expert to Expert: Brian Beckman and Erik Meijer - Inside the .NET Reactive Framework (Rx) (video)](https://youtu.be/looJcaeboBY)
-* [Reactive Programming Overview (Jafar Husain from Netflix)](https://www.youtube.com/watch?v=dwP1TNXE6fc)
+* [Reactive Programming Overview (Jafar Husain from Netflix)](https://youtu.be/-8Y1-lE6NSA)
 * [Subject/Observer is Dual to Iterator (paper)](http://csl.stanford.edu/~christos/pldi2010.fit/meijer.duality.pdf)
 * [Rx standard sequence operators visualized (visualization tool)](http://rxmarbles.com/)
 * [Haskell](https://www.haskell.org/)

@@ -26,7 +26,7 @@ class ToDoListCachingManager: RealmManager<ToDoListEntity> {
         return Single.create { single in
             do {
                 let results = self.getRealm().objects(ToDoListEntity.self).sorted(byKeyPath: "createdAt", ascending: false)
-                single(.success(results.toArray()))
+              //  single(.success(results.toArray()))
             }
             return Disposables.create()
         }
@@ -36,7 +36,7 @@ class ToDoListCachingManager: RealmManager<ToDoListEntity> {
         return Single.create { single in
             do {
                 let results = self.getRealm().objects(ToDoListEntity.self).sorted(byKeyPath: "id", ascending: true)
-                single(.success(results.toArray()))
+               // single(.success(results.toArray()))
             }
             return Disposables.create()
         }
