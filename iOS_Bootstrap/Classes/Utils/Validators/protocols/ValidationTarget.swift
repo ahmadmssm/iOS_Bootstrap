@@ -46,7 +46,7 @@ extension ValidationTarget {
         if let result = self.result {
             var validationError: RxValidatorResult?
             
-            _ = result.asSingle().subscribe(onError: { (error) in
+            _ = result.asSingle().subscribe(onFailure: { (error) in
                 validationError = RxValidatorResult.determine(error: error)
             })
             
