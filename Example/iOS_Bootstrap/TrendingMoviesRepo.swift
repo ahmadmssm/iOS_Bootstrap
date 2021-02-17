@@ -8,6 +8,7 @@
 
 import RxSwift
 import Resolver
+import iOS_Bootstrap
 
 class TrendingMoviesRepo: Resolving {
     

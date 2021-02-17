@@ -15,7 +15,7 @@ class LocationManager {
     var delegate: LocationManagerDelegate!
     
     final func requestLocationPermission() {
-        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
     }
     
     final func requestLocationUpdate() { locationManager.startUpdatingLocation() }

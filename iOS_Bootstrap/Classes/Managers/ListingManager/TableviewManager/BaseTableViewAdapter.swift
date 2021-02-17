@@ -39,7 +39,7 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem: Equatable>: NS
     
     public convenience init(tableView: TableView,
                             cellClass: BaseTableViewCell.Type,
-                             dataSource: [CellItem] = []) {
+                            dataSource: [CellItem] = []) {
            self.init(tableView: tableView, cellClasses: cellClass, dataSource: dataSource)
     }
     
@@ -247,6 +247,7 @@ open class BaseTableViewAdapter<TableView: UITableView, CellItem: Equatable>: NS
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
+    
     
     open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return false

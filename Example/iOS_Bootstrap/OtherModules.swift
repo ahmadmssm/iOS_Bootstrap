@@ -6,8 +6,8 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import Resolver
 import MapKit
+import Resolver
 
 extension Resolver {
     static func otherModules() {
